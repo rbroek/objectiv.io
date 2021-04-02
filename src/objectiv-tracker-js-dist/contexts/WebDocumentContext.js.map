@@ -1,0 +1,1 @@
+{"version":3,"file":"WebDocumentContext.js","sourceRoot":"","sources":["../../src/contexts/WebDocumentContext.ts"],"names":[],"mappings":"AAKA,MAAM,UAAU,wBAAwB,CAAC,EAAE,EAAE,EAAkB;IAC7D,OAAO;QACL,aAAa,EAAE,oBAAoB;QACnC,EAAE;KACH,CAAC;AACJ,CAAC;AAED,MAAM,UAAU,oCAAoC,CAAC,QAAkB;IACrE,OAAO,wBAAwB,CAAC,EAAE,EAAE,EAAE,QAAQ,CAAC,QAAQ,CAAC,IAAI,EAAE,CAAC,CAAC;AAClE,CAAC"}

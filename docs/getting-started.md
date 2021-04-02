@@ -1,7 +1,17 @@
 ---
-title: Getting Started
+title: Getting Started with Objectiv
 slug: /
 ---
+
+```jsx live
+function MyPlayground(props) {
+  return (
+    <ObjectivProvider tracker={tracker}>
+      <ButtonExample onClick={() => tracker.trackEvent("ClickMeButton")}>Click me</ButtonExample>
+    </ObjectivProvider>
+  );
+}
+```
 
 ## Step 1: Generate a new Docusaurus site
 
