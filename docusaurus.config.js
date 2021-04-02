@@ -11,12 +11,20 @@ module.exports = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
+  themes: ['@docusaurus/theme-live-codeblock'],
+
   themeConfig: {
     colorMode: {
       disableSwitch: true,
     },
     sidebarCollapsible: true,
-
+    liveCodeBlock: {
+      /**
+       * The position of the live playground, above or under the editor
+       * Possible values: "top" | "bottom"
+       */
+      playgroundPosition: 'bottom',
+    },
     navbar: {
       title: '',
       logo: {
@@ -98,6 +106,11 @@ module.exports = {
           showReadingTime: true,
           editUrl:
             'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
         },
       },
     ],
