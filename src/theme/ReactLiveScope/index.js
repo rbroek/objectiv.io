@@ -34,7 +34,6 @@ const ButtonExample = (props) => (
 const ReactLiveScope = {
   React,
   ...React,
-  tracker,
   docsSectionTracker,
   ButtonExample,
 };
