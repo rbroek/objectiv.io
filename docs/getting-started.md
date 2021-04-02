@@ -5,10 +5,16 @@ slug: /
 
 ```jsx live
 function MyPlayground(props) {
+  const trackClickMeButton = () => docsSectionTracker.trackEvent({
+    event: "ClickEvent",
+    contexts: [{
+      __context_type: "ElementContext",
+      id: "ClickMeButton"
+    }]
+  });
+  
   return (
-    <ObjectivProvider tracker={tracker}>
-      <ButtonExample onClick={() => tracker.trackEvent("ClickMeButton")}>Click me</ButtonExample>
-    </ObjectivProvider>
+      <ButtonExample onClick={trackClickMeButton}>Click me</ButtonExample>
   );
 }
 ```

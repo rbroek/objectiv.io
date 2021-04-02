@@ -1,1 +1,0 @@
-{"version":3,"file":"ErrorContext.js","sourceRoot":"","sources":["../../src/contexts/ErrorContext.ts"],"names":[],"mappings":"AAKA,MAAM,UAAU,kBAAkB,CAAC,EAAE,OAAO,EAAuB;IACjE,OAAO;QACL,aAAa,EAAE,cAAc;QAC7B,OAAO;KACR,CAAC;AACJ,CAAC;AAED,MAAM,UAAU,2BAA2B,CAAC,KAAY;IACtD,OAAO,kBAAkB,CAAC,EAAE,OAAO,EAAE,KAAK,CAAC,OAAO,EAAE,CAAC,CAAC;AACxD,CAAC"}
