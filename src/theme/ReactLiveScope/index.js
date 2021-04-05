@@ -1,7 +1,20 @@
+import { Tracker } from "objectiv-tracker-js";
 import React from 'react';
-import {Tracker} from '../../objectiv-tracker-js-dist';
-import { ObjectivProvider } from '../../tracker/ObjectivProvider';
-const tracker = Tracker.forWebDocument({ endpoint: `http://${window.location.hostname}:5000/`, debug: true });
+
+// Create a new Tracker
+const tracker = Tracker.forWebDocument({
+  // TODO make the endpoint optional in debug mode
+  endpoint: `https://httpstat.us/200`,
+  debug: true
+});
+
+// Extend the basic tracker with a default Section representing the Docs
+const docsSectionTracker = tracker.withStack([
+  {
+    _context_type: 'SectionContext',
+    id: "Docs",
+  },
+]);
 
 // Add react-live imports you need here
 const ButtonExample = (props) => (
@@ -21,10 +34,8 @@ const ButtonExample = (props) => (
 const ReactLiveScope = {
   React,
   ...React,
+  docsSectionTracker,
   ButtonExample,
-  Tracker,
-  tracker,
-  ObjectivProvider,
 };
 
 export default ReactLiveScope;

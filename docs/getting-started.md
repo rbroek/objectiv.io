@@ -3,15 +3,33 @@ title: Getting Started with Objectiv
 slug: /
 ---
 
+
 ```jsx live
-function MyPlayground(props) {
+function TestObjectivTracker(props) {
+  const trackClickMeButton = () => {
+    var logger = document.getElementById('consoleLog');
+    console.log = function (message, event) {
+      logger.innerHTML += JSON.stringify(event, null, 4) + '<br />';
+    }
+
+    docsSectionTracker.trackEvent({
+      event: "ClickEvent",
+      contexts: [{
+        __context_type: "ElementContext",
+        id: "ClickMeButton"
+      }]
+    });
+  }
+
   return (
-    <ObjectivProvider tracker={tracker}>
-      <ButtonExample onClick={() => tracker.trackEvent("ClickMeButton")}>Click me</ButtonExample>
-    </ObjectivProvider>
+    <div>
+      <ButtonExample onClick={trackClickMeButton}>Click me</ButtonExample>
+    </div>
   );
 }
 ```
+<div id="consoleLog"></div>
+
 
 ## Step 1: Generate a new Docusaurus site
 
