@@ -2,8 +2,8 @@
 module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon-300x300.png',
-  title: 'Objectiv',
-  tagline: 'We\'re building a product analytics pipeline for generic & reusable modelling',
+  title: 'We\'re building a product analytics pipeline for deep, reusable modelling',
+  tagline: 'Collect high quality data with a standardized taxonomy. Take, build on and run advanced models off the shelf.',
   url: 'https://objectiv.io',
 
   onBrokenLinks: 'throw',

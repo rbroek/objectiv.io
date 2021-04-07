@@ -4,7 +4,9 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import IconHeader from '@site/src/components/icon-header';
 import styles from './styles.module.css';
+import GitHubButton from 'react-github-btn';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -14,23 +16,77 @@ export default function Home() {
       title={siteConfig.title}
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/')}>
-              Get Started
-            </Link>
-          </div>
+        <div className={clsx('container', styles.heroContainer)}>
+          <img 
+            className={clsx(styles.headerImage)}
+            src='../../static/img/header-image.svg' alt="Product Analytics Pipeline" />
+          <h1 className={clsx(styles.heroTitle)}>{siteConfig.title}</h1>
+          <p className={clsx(styles.heroSubTitle)}>
+            Collect high quality data with a standardized taxonomy.<br />
+            Take, build on and run advanced models off the shelf.
+          </p>
+          <GitHubButton href="https://github.com/objectiv" data-size="large" data-show-count="true" aria-label="Star objectiv on GitHub">Star</GitHubButton>
+          <iframe src="https://ghbtns.com/github-btn.html?user=objectiv&repo=objectiv.io&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="170" height="30" title="Star Objectiv on GitHub"></iframe>
         </div>
       </header>
       <main>
-        TODO
+        <div className={clsx(styles.sectionHome,styles.sectionHomeFirst)}>
+          <div class="container">
+            <IconHeader 
+              title="A Data-Science First Approach" 
+              iconName="data-scientist">
+            </IconHeader>
+            <p>If you’re a data scientist and have ever developed models on existing product analytics data, you’ve probably ran into the same problems we did: the data is incomplete, lacks context and needs a lot of work to become usable, if you get there at all. We believe the main cause of this is that tracking instrumentation is not built with the data scientist in mind.</p>
+            <p>We decided to build a product analytics pipeline that puts data-science first. With tracking instrumentation that ensures you collect data that you can slice and dice in any way you want. With a standardized taxonomy that enables you to take, build on and run advanced models off the shelf.</p>
+          </div>
+        </div>
+
+        <div className={clsx(styles.sectionHome,styles.sectionHomeSecond)}>
+          <div class="container">
+            <IconHeader 
+              title="Collect well-structured, high-quality data" 
+              subTitle="Tracking"
+              iconName="diamond">
+            </IconHeader>
+            <p>In order to get the best possible data right at the beginning of the pipeline, Objectiv’s tracker comes with a standardized event taxonomy. It consists of predefined properties for each common event type and carries the analysis requirements for deep modeling on the data science side. The taxonomy enables validation through the pipeline and is extensible to allow your not-so-typical events to be tracked as well.</p>
+            <p>For more details on our tracker and taxonomy, have a look at <Link to="/docs">the docs</Link>.</p>
+          </div>
+        </div>
+
+        <div className={clsx(styles.sectionHome,styles.sectionHomeThird)}>
+          <div class="container">
+            <IconHeader 
+              title="Identify events with locations &amp; contexts" 
+              subTitle="Modeling &amp; Analysis"
+              iconName="bulls-eye">
+            </IconHeader>
+            <p>Events tracked with objectiv carry enough context to be uniquely identified, while you still maintain the ability to easily aggregate events based on shared properties. It embeds everything that’s relevant to the class of event and includes the exact location in the UI from which it was triggered. For example, an event that starts a video will have a video context that describes which video it starts playing and you can tell where in the interface the user clicked to start it. The video context has its own properties, like duration, genre and title.</p>
+            <IconHeader 
+              title="Slice and dice however you want"
+              iconName="slice-dice">
+            </IconHeader>
+            <p>The use of our standardized taxonomy means that all events belong to a class. This enables a level of modeling that normally is only available to those who built their own taxonomy from scratch. You can aggregate your data on a very granular level without doing any gruntwork. The classes enable you to build deep, reusable models for specific parts of your product.</p>
+            <IconHeader 
+              title="Take, build on, and run models off the shelf"
+              iconName="lego">
+            </IconHeader>
+            <p>We ultimately want to enable the data science community to improve the taxonomy and models they (and we) are using. Our latest build includes a set of models for common goals (increasing conversion, engagement, retention) that you can take and build on to hit the ground running.</p>
+          </div>
+        </div>
+
+        <div className={clsx(styles.sectionHome,styles.sectionHomeFourth)}>
+          <div class="container">
+            <IconHeader 
+              title="Try the latest build"
+              iconName="tools">
+            </IconHeader>
+            <p>An initial release that includes event taxonomy, validation of event data against that taxonomy
+               and the first tooling for data scientists to explore &amp; query the data easily. See the 
+               source on <Link to="https://github.com/objectiv">GitHub</Link>, 
+               the <Link to="/docs">Documentation</Link>, 
+               and our <Link to="/blog">Blog</Link>.</p>
+          </div>
+        </div>
       </main>
     </Layout>
   );

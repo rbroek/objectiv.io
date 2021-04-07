@@ -1,20 +1,85 @@
 /* stylelint-disable docusaurus/copyright-header */
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Any CSS included here will be global.
  */
-
-/* You can override the default Infima variables here. */
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+ 
+/* Override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: white;
+  --ifm-color-primary-dark: rgb(235, 235, 235);
+  --ifm-color-primary-darker: rgb(225, 225, 225);
+  --ifm-color-primary-darkest: rgb(215, 215, 215);
+  --ifm-color-primary-light: rgb(215, 215, 215);
+  --ifm-color-primary-lighter: rgb(225, 225, 225);
+  --ifm-color-primary-lightest: rgb(235, 235, 235);
+  --ifm-font-color-base: black;
+  --ifm-font-color-base-inverse: white;
+  --ifm-heading-color: black;
+  --ifm-heading-font-weight: normal;
+  --ifm-hero-text-color: black;
+  --ifm-container-width: 960px;
+  --ifm-link-color: #06A5FA;
+  --ifm-link-hover-color: #06A5FA;
+  --ifm-navbar-link-hover-color: #06A5FA;
+  --ifm-menu-color-active: #06A5FA;
+  --ifm-menu-color-background-active: rgba(171, 233, 254, 0.1);
+  --ifm-footer-background-color: white;
+  --ifm-footer-color: black;
+  --ifm-footer-link-hover-color: black;
+  --ifm-h1-font-size: 18px;
   --ifm-code-font-size: 95%;
+  font-family: 'Roboto', 'Bungee', sans-serif;
+
+  --obj-primary-one: rgba(255, 87, 34, 0.1);
+  --obj-primary-two: rgba(171, 233, 254, 0.1);
+  --obj-primary-three: rgba(196, 166, 252, 0.1);
+  --obj-primary-four: rgba(254, 242, 132, 0.1);
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+.navbar {
+  border-bottom: 1px solid #C4C4C4;
+  box-shadow: none;
+  height: 80px;
+}
+
+.navbar__link {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  padding-right: 30px;
+}
+
+.footer__copyright {
+  font-size: 0.9em;
+  color: rgb(100, 100, 100);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bungee';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 150%;
+  letter-spacing: 0.2em;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+.table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
+  color: #06A5FA;
 }
 
 .docusaurus-highlight-code-line {

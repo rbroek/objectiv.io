@@ -1,0 +1,19 @@
+:local(.titleWrapper) {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+:local(.icon) {
+    margin-right: 40px;
+    height: 48px;
+}
+
+:local(.title h1) {
+  margin-bottom: 0;
+}
+
+:local(.subTitle h2) {
+    margin-bottom: 20px;
+}

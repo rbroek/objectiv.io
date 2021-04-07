@@ -1,25 +1,72 @@
 /* stylelint-disable docusaurus/copyright-header */
 
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * CSS files with the .module.css suffix are treated as CSS modules and scoped locally.
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 80px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  --ifm-hero-text-color: black;
+}
+
+.heroTitle {
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
   }
+  .heroTitle {
+    font-size: 28px;
+  }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.heroContainer {
+  max-width: 780px;
+}
+
+.headerImage {
+  padding-bottom: 50px;
+}
+
+.heroSubTitle {
+  font-size: 18px;
+  line-height: 150%;
+  margin-bottom: 32px;
+}
+
+.sectionHome {
+  padding: 80px 0 70px 0;
+}
+
+.sectionHomeFirst {
+  background-color: var(--obj-primary-one);
+  padding: 110px 0 100px 0;
+}
+
+
+@media screen and (max-width: 966px) {
+  .sectionHome {
+    padding: 60px 0 50px 0;
+  }
+  .sectionHomeFirst {
+    padding: 60px 0 50px 0;
+  }
+}
+
+.sectionHomeSecond {
+  background-color: var(--obj-primary-two);
+}
+
+.sectionHomeThird {
+  background-color: var(--obj-primary-three);
+}
+
+.sectionHomeFourth {
+  background-color: var(--obj-primary-four);;
 }
