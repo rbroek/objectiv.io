@@ -27,13 +27,19 @@ export default function Home() {
             Collect high quality data with a standardized taxonomy.<br />
             Take, build on and run advanced models off the shelf.
           </p>
-          <GitHubButton href="https://github.com/objectiv" data-size="large" data-show-count="true" aria-label="Star objectiv on GitHub">Star</GitHubButton>
-          <iframe src="https://ghbtns.com/github-btn.html?user=objectiv&repo=objectiv.io&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="170" height="30" title="Star Objectiv on GitHub"></iframe>
+          <Link
+              className={clsx(
+                'button w-button',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/')}>
+              View Docs
+          </Link>
         </div>
       </header>
       <main>
         <div className={clsx(styles.sectionHome,styles.sectionHomeFirst)}>
-          <div class="container">
+          <div  className={clsx("container")}>
             <IconHeader 
               title="A Data-Science First Approach" 
               iconName="data-scientist">
@@ -44,7 +50,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeSecond)}>
-          <div class="container">
+          <div className={clsx("container")}>
             <IconHeader 
               title="Collect well-structured, high-quality data" 
               subTitle="Tracking"
@@ -56,7 +62,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeThird)}>
-          <div class="container">
+          <div className={clsx("container")}>
             <IconHeader 
               title="Identify events with locations &amp; contexts" 
               subTitle="Modeling &amp; Analysis"
@@ -77,7 +83,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeFourth)}>
-          <div class="container">
+          <div className={clsx("container")}>
             <IconHeader 
               title="Try the latest build"
               iconName="tools">
