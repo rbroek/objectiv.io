@@ -2,15 +2,17 @@
 module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon-300x300.png',
-  title: 'We\'re building a product analytics pipeline for deep, reusable modelling',
-  tagline: 'Collect high quality data with a standardized taxonomy. Take, build on and run advanced models off the shelf.',
+  title: 'Objectiv: a product analytics pipeline for deep, reusable modelling',
+  titleDelimiter: '|',
+  tagline: 'Collect high quality data with a standardized taxonomy.\nTake, build on and run advanced models ' 
+    +' off the shelf.', //meta description, and og:description
   url: 'https://objectiv.io',
-
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  
   themes: ['@docusaurus/theme-live-codeblock'],
 
   themeConfig: {
@@ -18,13 +20,6 @@ module.exports = {
       disableSwitch: true,
     },
     sidebarCollapsible: true,
-    liveCodeBlock: {
-      /**
-       * The position of the live playground, above or under the editor
-       * Possible values: "top" | "bottom"
-       */
-      playgroundPosition: 'bottom',
-    },
     navbar: {
       title: '',
       logo: {

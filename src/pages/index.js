@@ -20,7 +20,9 @@ export default function Home() {
           <img 
             className={clsx(styles.headerImage)}
             src='../../static/img/header-image.svg' alt="Product Analytics Pipeline" />
-          <h1 className={clsx(styles.heroTitle)}>{siteConfig.title}</h1>
+          <h1 className={clsx(styles.heroTitle)}>
+            We're building a product analytics pipeline for deep, reusable modelling
+          </h1>
           <p className={clsx(styles.heroSubTitle)}>
             Collect high quality data with a standardized taxonomy.<br />
             Take, build on and run advanced models off the shelf.
