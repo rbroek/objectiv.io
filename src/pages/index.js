@@ -6,7 +6,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
 import styles from './styles.module.css';
-import GitHubButton from 'react-github-btn';
 
 export default function Home() {
   const context = useDocusaurusContext();
