@@ -17,3 +17,17 @@
 :local(.subTitle h2) {
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 966px) {
+    :local(.titleWrapper) {
+        display: block;
+        text-align: center;
+    }
+    :local(.icon) {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }   
+    :local(.subTitle h2) {
+        text-align: center;
+    }    
+}      
