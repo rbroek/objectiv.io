@@ -6,6 +6,41 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
 import styles from './styles.module.css';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import { Tracker } from "objectiv-tracker-js";
+
+// TODO: Implement tracker as component
+// Only load the tracker if the environment can execute DOM, so it doesn't break SSR when building.
+// Also see https://github.com/facebook/docusaurus/issues/2494.
+let pagesSectionTracker = null;
+if (ExecutionEnvironment.canUseDOM) {
+  // Create a new Tracker
+  const tracker = Tracker.forWebDocument({
+    // TODO make the endpoint optional in debug mode
+    endpoint: `https://httpstat.us/200`,
+    debug: true
+  });
+
+  // Extend the basic tracker with a default Section representing the Docs
+  pagesSectionTracker = tracker.withStack([
+    {
+      _context_type: 'SectionContext',
+      id: "Pages",
+    },
+  ]);
+}
+
+function trackDocsButtonClick() {
+  pagesSectionTracker.trackEvent({
+    event: 'DocsButtonClicked',
+    contexts: [
+      {
+        _context_type: 'ButtonContext',
+        label: "View Docs",
+      },
+    ],
+  });
+}
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -32,7 +67,8 @@ export default function Home() {
                 'button w-button',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl('docs/')}
+              onClick={trackDocsButtonClick}>
               View Docs
           </Link>
         </div>
