@@ -75,7 +75,7 @@ export default function Home() {
       </header>
       <main>
         <div className={clsx(styles.sectionHome,styles.sectionHomeFirst)}>
-          <div  className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="A Data-Science First Approach" 
               iconName="data-scientist">
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeSecond)}>
-          <div className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="Collect well-structured, high-quality data" 
               subTitle="Tracking"
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeThird)}>
-          <div className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="Identify events with locations &amp; contexts" 
               subTitle="Modeling &amp; Analysis"
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeFourth)}>
-          <div className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="Try the latest build"
               iconName="tools">

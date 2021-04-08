@@ -39,9 +39,12 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .container {
+  /* .container {
     max-width: 960px;
-  }
+  } */
+  /* .main-docs-wrapper .container {
+    max-width: var(--ifm-container-width-xl);
+  } */
 }
 
 .navbar {

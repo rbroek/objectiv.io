@@ -40,6 +40,12 @@
   margin-bottom: 32px;
 }
 
+@media screen and (min-width: 1440px) {
+  .homeContainer {
+    max-width: 960px;
+  }
+}
+
 .sectionHome {
   padding: 80px 0 70px 0;
 }
