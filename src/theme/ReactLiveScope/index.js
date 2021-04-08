@@ -4,7 +4,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 // Only load the tracker if the environment can execute DOM, so it doesn't break SSR when building.
 // Also see https://github.com/facebook/docusaurus/issues/2494.
-const docsSectionTracker = null;
+let docsSectionTracker = null;
 if (ExecutionEnvironment.canUseDOM) {
   // Create a new Tracker
   const tracker = Tracker.forWebDocument({
