@@ -3,7 +3,7 @@ title: Getting Started with Objectiv
 slug: /
 ---
 
-
+<!-- TODO: make the live coder work in static builds -->
 ```jsx live
 function TestObjectivTracker(props) {
   const trackClickMeButton = () => {
