@@ -18,7 +18,8 @@ export default function Home() {
         <div className={clsx('container', styles.heroContainer)}>
           <img 
             className={clsx(styles.headerImage)}
-            src='../../static/img/header-image.svg' alt="Product Analytics Pipeline" />
+            src={require('@site/static/img/header-image.svg').default}
+            alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
             We're building a product analytics pipeline for deep, reusable modelling
           </h1>
