@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
+import GitHubButton from 'react-github-btn'
 import styles from './styles.module.css';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { Tracker } from "objectiv-tracker-js";
@@ -56,18 +57,20 @@ export default function Home() {
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
-            We're building a product analytics pipeline for deep, reusable modelling
+            We're building a <br />product analytics pipeline for effective, reusable modelling
           </h1>
           <p className={clsx(styles.heroSubTitle)}>
             Collect high quality data with a standardized taxonomy.<br />
             Take, build on and run advanced models off the shelf.
           </p>
-          <a 
-            href={"https://github.com/" + siteConfig.organizationName + "/" + siteConfig.projectName}
-            className={clsx('button w-button', styles.getStarted)}
-            onClick={trackGitHubButtonClick}>
-            View GitHub
-          </a>
+ 
+          <GitHubButton 
+            href={"https://github.com/" + siteConfig.organizationName}
+            data-size="large" 
+            data-show-count="false" 
+            aria-label={"Follow @" + siteConfig.organizationName + " on GitHub"}>
+              View GitHub
+          </GitHubButton>
         </div>
       </header>
       <main>
