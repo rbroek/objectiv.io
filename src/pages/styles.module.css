@@ -27,7 +27,7 @@
 }
 
 .heroContainer {
-  max-width: 780px;
+  max-width: 840px;
 }
 
 .headerImage {
@@ -54,7 +54,6 @@
   background-color: var(--obj-primary-one);
   padding: 60px 0;
 }
-
 
 @media screen and (max-width: 966px) {
   .sectionHome {

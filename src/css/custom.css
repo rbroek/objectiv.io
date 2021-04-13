@@ -38,15 +38,6 @@
   --obj-primary-four: rgba(254, 242, 132, 0.1);
 }
 
-@media screen and (min-width: 1440px) {
-  /* .container {
-    max-width: 960px;
-  } */
-  /* .main-docs-wrapper .container {
-    max-width: var(--ifm-container-width-xl);
-  } */
-}
-
 .navbar {
   border-bottom: 1px solid #C4C4C4;
   box-shadow: none;
@@ -58,6 +49,12 @@
   font-size: 14px;
   line-height: 150%;
   padding-right: 30px;
+}
+
+@media (min-width: 1440px) {
+  .footer .container {
+    max-width: 960px;
+  }
 }
 
 .footer__copyright {
