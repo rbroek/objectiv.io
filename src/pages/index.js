@@ -30,13 +30,13 @@ if (ExecutionEnvironment.canUseDOM) {
   ]);
 }
 
-function trackDocsButtonClick() {
+function trackGitHubButtonClick() {
   pagesSectionTracker.trackEvent({
-    event: 'DocsButtonClicked',
+    event: 'GitHubButtonClicked',
     contexts: [
       {
         _context_type: 'ButtonContext',
-        label: "View Docs",
+        label: "View GitHub",
       },
     ],
   });
@@ -62,15 +62,12 @@ export default function Home() {
             Collect high quality data with a standardized taxonomy.<br />
             Take, build on and run advanced models off the shelf.
           </p>
-          <Link
-              className={clsx(
-                'button w-button',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/')}
-              onClick={trackDocsButtonClick}>
-              View Docs
-          </Link>
+          <a 
+            href={"https://github.com/" + siteConfig.organizationName + "/" + siteConfig.projectName}
+            className={clsx('button w-button', styles.getStarted)}
+            onClick={trackGitHubButtonClick}>
+            View GitHub
+          </a>
         </div>
       </header>
       <main>
