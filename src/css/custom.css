@@ -39,9 +39,12 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .container {
+  /* .container {
     max-width: 960px;
-  }
+  } */
+  /* .main-docs-wrapper .container {
+    max-width: var(--ifm-container-width-xl);
+  } */
 }
 
 .navbar {
@@ -70,11 +73,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.2em;
 }
 
-h1 {
-  font-size: 18px;
+h1, .main-docs-wrapper h1 {
+  font-size: 24px;
 }
 
 h2 {
+  font-size: 18px;
+}
+
+h3 {
   font-size: 14px;
 }
 

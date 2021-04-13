@@ -24,7 +24,7 @@ module.exports = {
       title: '',
       logo: {
         alt: 'Objectiv Logo',
-        src: 'img/logo-dark.svg',
+        src: 'img/logo-objectiv.svg',
       },
       items: [
         {

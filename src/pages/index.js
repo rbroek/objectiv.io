@@ -75,7 +75,7 @@ export default function Home() {
       </header>
       <main>
         <div className={clsx(styles.sectionHome,styles.sectionHomeFirst)}>
-          <div  className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="A Data-Science First Approach" 
               iconName="data-scientist">
@@ -86,19 +86,20 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeSecond)}>
-          <div className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="Collect well-structured, high-quality data" 
               subTitle="Tracking"
               iconName="diamond">
             </IconHeader>
-            <p>In order to get the best possible data right at the beginning of the pipeline, Objectiv’s tracker comes with a standardized event taxonomy. It consists of predefined properties for each common event type and carries the analysis requirements for deep modeling on the data science side. The taxonomy enables validation through the pipeline and is extensible to allow your not-so-typical events to be tracked as well.</p>
+            <p>In order to get the best possible data right at the beginning of the pipeline, Our tracker comes with a standardized event taxonomy. It consists of predefined properties for each common event type and carries the analysis requirements for deep modeling on the data science side.</p>
+            <p>The taxonomy enables validation through the pipeline and is extensible to allow your not-so-typical events to be tracked as well. It is consistent by nature, making your tracking instrumentation less prone to errors when your product changes over time. Tools that enable you to easily set up and test your instrumentation are included.</p>
             <p>For more details on our tracker and taxonomy, have a look at <Link to="/docs">the docs</Link>.</p>
           </div>
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeThird)}>
-          <div className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="Identify events with locations &amp; contexts" 
               subTitle="Modeling &amp; Analysis"
@@ -119,7 +120,7 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.sectionHome,styles.sectionHomeFourth)}>
-          <div className={clsx("container")}>
+          <div className={clsx("container", styles.homeContainer)}>
             <IconHeader 
               title="Try the latest build"
               iconName="tools">
