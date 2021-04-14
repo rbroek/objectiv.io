@@ -129,22 +129,26 @@ p, .markdown p {
   font-size: 24px;
   line-height: 36px;
   margin-bottom: 40px;
+  text-align: left;
 }
 
 .body-large {
   font-size: 20px;
   line-height: 30px;
   margin-bottom: 32px;
+  text-align: left;
 }
 
 .body-small {
   font-size: 14px;
   line-height: 21px;
   margin-bottom: 24px;
+  text-align: left;
 }
 
 .body-extra-small {
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 20px;
+  text-align: left;
 }
