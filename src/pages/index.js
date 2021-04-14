@@ -22,7 +22,7 @@ if (ExecutionEnvironment.canUseDOM) {
     debug: true
   });
 
-  // Extend the basic tracker with a default Section representing the Docs
+  // Extend the basic tracker with a default Section representing the page
   pagesSectionTracker = tracker.withStack([
     {
       _context_type: 'SectionContext',
@@ -105,7 +105,7 @@ export default function Home() {
               subTitle="Modeling &amp; Analysis"
               iconName="bulls-eye">
             </IconHeader>
-            <p>Events tracked with objectiv carry enough context to be uniquely identified, while you still maintain the ability to easily aggregate events based on shared properties. It embeds everything that’s relevant to the class of event and includes the exact location in the UI from which it was triggered. For example, an event that starts a video will have a video context that describes which video it starts playing and you can tell where in the interface the user clicked to start it. The video context has its own properties, like duration, genre and title.</p>
+            <p>Events tracked with objectiv carry enough context to be uniquely identified, while you still maintain the ability to easily aggregate events based on shared properties. It embeds everything that’s relevant to the class of event and includes the exact location in the UI from which it was triggered.</p>
             <IconHeader 
               title="Slice and dice however you want"
               iconName="slice-dice">
