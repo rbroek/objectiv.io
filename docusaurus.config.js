@@ -1,4 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+const path = require('path');
+
 module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon/favicon.ico',
@@ -110,4 +112,5 @@ module.exports = {
       },
     ],
   ],
+  plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
 };
