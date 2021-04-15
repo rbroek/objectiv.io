@@ -53,7 +53,7 @@ export default function Home() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.heroContainer)}>
           <img 
-            className={clsx(styles.headerImage)}
+            className={clsx(styles.heroImage)}
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
@@ -74,8 +74,8 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <div className={clsx(styles.sectionHome,styles.sectionHomeFirst)}>
-          <div className={clsx("container", styles.homeContainer)}>
+        <div className={clsx(styles.pageSection,styles.pageSectionPink)}>
+          <div className={clsx("container", styles.contentContainer)}>
             <IconHeader 
               title="A Data-Science First Approach" 
               iconName="data-scientist">
@@ -85,8 +85,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={clsx(styles.sectionHome,styles.sectionHomeSecond)}>
-          <div className={clsx("container", styles.homeContainer)}>
+        <div className={clsx(styles.pageSection,styles.pageSectionGreen)}>
+          <div className={clsx("container", styles.contentContainer)}>
             <IconHeader 
               title="Collect well-structured, high-quality data" 
               subTitle="Tracking"
@@ -98,8 +98,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={clsx(styles.sectionHome,styles.sectionHomeThird)}>
-          <div className={clsx("container", styles.homeContainer)}>
+        <div className={clsx(styles.pageSection,styles.pageSectionPurple)}>
+          <div className={clsx("container", styles.contentContainer)}>
             <IconHeader 
               title="Identify events with locations &amp; contexts" 
               subTitle="Modeling &amp; Analysis"
@@ -119,8 +119,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={clsx(styles.sectionHome,styles.sectionHomeFourth)}>
-          <div className={clsx("container", styles.homeContainer)}>
+        <div className={clsx(styles.pageSection,styles.pageSectionYellow)}>
+          <div className={clsx("container", styles.contentContainer)}>
             <IconHeader 
               title="Try the latest build"
               iconName="tools">
