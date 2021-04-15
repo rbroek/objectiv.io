@@ -5,61 +5,42 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
+import Avatar from 'react-avatar';
 import styles from './styles.module.css';
 
-const contributors = [
-  {
-    name: 'Michael Niblett',
-    contributorImage: 'mike.svg',
-    gitHubUsername: 'mniblett',
-  },
-  {
-    name: 'Michael Niblett',
-    contributorImage: 'mike.svg',
-    gitHubUsername: 'mniblett',
-  },
-  {
-    name: 'Michael Niblett',
-    contributorImage: 'mike.svg',
-    gitHubUsername: 'mniblett',
-  },
-  {
-    name: 'Michael Niblett',
-    contributorImage: 'mike.svg',
-    gitHubUsername: 'mniblett',
-  },
-  {
-    name: 'Michael Niblett',
-    contributorImage: 'mike.svg',
-    gitHubUsername: 'mniblett',
-  },
-  {
-    name: 'Michael Niblett',
-    contributorImage: 'mike.svg',
-    gitHubUsername: 'mniblett',
-  },
-];
+let contributors = require('./contributors.json');
 
-function Contributor({name, contributorImage, gitHubUsername}) {
-  const imgUrl = useBaseUrl('img/contributors/' + contributorImage);
+function Contributor({name, gitHubUsername}) {
+  const ghProfileLink = "https://github.com/" + gitHubUsername;
+  const ghProfileTitle = "Check out @" + gitHubUsername + " on GitHub";
   return (
     <div className={clsx("card", styles.contributorCard)}>
       <div class="card__header">
-        <div class="avatar">
-          <img
-            class="avatar__photo"
-            src={imgUrl}
+        <div className={clsx("avatar", styles.contributorAvatar)}>
+          <Avatar 
+            githubHandle={gitHubUsername} 
+            size={64} 
+            round={true} 
+            name={name} 
+            alt={name} 
+            title={name} 
           />
-          <div class="avatar__intro">
-            <h4 class="avatar__name">{name}</h4>
-            <small class="avatar__subtitle">
+        </div>
+        <div class="avatar__intro">
+          <div className={clsx(styles.contributorAvatarSubtitle)}>
+            <a href={ghProfileLink} title={ghProfileTitle}>
               @{gitHubUsername}
-            </small>
+            </a>
+          </div>
+          <div className={clsx(styles.contributorName)}>
+            {name}
           </div>
         </div>
       </div>
       <div class="card__footer">
-        @{gitHubUsername}
+        <a href={ghProfileLink} title={ghProfileTitle}>
+          <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
+        </a>
       </div>
     </div>
   );
