@@ -37,7 +37,7 @@ function Contributor({name, gitHubUsername}) {
           </div>
         </div>
       </div>
-      <div class="card__footer">
+      <div className={clsx("card__footer", styles.contributorFooter)}>
         <a href={ghProfileLink} title={ghProfileTitle}>
           <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
         </a>

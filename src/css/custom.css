@@ -33,6 +33,7 @@
   --ifm-global-shadow-lw: 0px 2px 0px rgba(70, 76, 92, 0.25);
   --ifm-card-border-radius: 4px;
   --ifm-code-font-size: 14px;
+  --ifm-card-vertical-spacing: 32px;
   --ifm-font-family-monospace: 'Roboto Mono';
   font-family: 'Roboto', 'Bungee', sans-serif;
 

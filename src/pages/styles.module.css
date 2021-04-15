@@ -127,3 +127,7 @@
 .contributorName {
   color: #999999;
 }
+
+.contributorFooter {
+  padding-top: 16px;
+}
