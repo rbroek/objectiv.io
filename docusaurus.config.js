@@ -39,6 +39,11 @@ module.exports = {
           position: 'right'
         },
         {
+          to: 'about-us', 
+          label: 'About Us', 
+          position: 'right'
+        },
+        {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
           position: 'right',
