@@ -17,14 +17,16 @@ function Contributor({name, gitHubUsername}) {
     <div className={clsx("card", styles.contributorCard)}>
       <div class="card__header">
         <div className={clsx("avatar", styles.contributorAvatar)}>
-          <Avatar 
-            githubHandle={gitHubUsername} 
-            size={64} 
-            round={true} 
-            name={name} 
-            alt={name} 
-            title={name} 
-          />
+          <a href={ghProfileLink} title={ghProfileTitle}>
+            <Avatar 
+              githubHandle={gitHubUsername} 
+              size={64} 
+              round={true} 
+              name={name} 
+              alt={name} 
+              title={name} 
+            />
+          </a>
         </div>
         <div class="avatar__intro">
           <div className={clsx(styles.contributorAvatarSubtitle)}>
