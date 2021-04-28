@@ -24,6 +24,7 @@ module.exports = {
     sidebarCollapsible: true,
     navbar: {
       title: '',
+      hideOnScroll: false,
       logo: {
         alt: 'Objectiv Logo',
         src: 'img/logo-objectiv.svg',

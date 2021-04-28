@@ -7,11 +7,11 @@ mermaid.initialize({
 	startOnLoad: true,
   arrowMarkerAbsolute: false,
   fontFamily: 'Roboto Mono, Bungee, sans-serif',
-  deterministicIds: false,
-  deterministicIDSeed: 'ivartest',
   flowchart: {
-    curve:'cardinal',
+    diagramPadding: 20,
     htmlLabels: true,
+    curve:'cardinal',
+    useMaxWidth: true,
   },
   theme: 'base', 
   themeCSS: `
