@@ -42,8 +42,14 @@ This document describes the Events that are standardized in the Objectiv taxonom
 ### AbstractEvent
 Base Event, providing basic properties to all Events.
 
-**Requires Contexts:**
-*  AbstractContext
+**Contexts Required:**
+*  [AbstractContext](contexts#abstractcontext)
+
+TODO:
+* How to use it
+* Examples
+* Debugging
+* Tips & warnings
 
 TODO:
 *   NonInteractiveEvent &lt; AbstractEvent: TODO

@@ -51,6 +51,12 @@ Base Context, providing basic properties to all Contexts.
 *   `id`: string. Short descriptive name. Example: `hero-button`.
 
 TODO:
+* How to use it
+* Examples
+* Debugging
+* Tips & warnings
+
+TODO:
 *   AbstractLocationContext &lt; AbstractContext: TODO
 *   AbstractGlobalContext &lt; AbstractContext: TODO
 *   SectionContext &lt; AbstractLocationContext: TODO
