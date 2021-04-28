@@ -2,21 +2,33 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-function Lightbox({children, src, title, collapsed}) {
-  var collapsedClass = !!collapsed ? styles.collapsed : '';
-
+//TODO: Add lightbox effect
+function Lightbox({children, src, title, caption, size}) {
+  let sizeClass = styles.lightboxImageWidthLarge;
+  switch(size) {
+    case 'xs': {
+      sizeClass = styles.lightboxImageWidthExtraSmall;
+      break;
+    }
+    case 's': {
+      sizeClass = styles.lightboxImageWidthSmall;
+      break;
+    }
+    case 'm': {
+      sizeClass = styles.lightboxImageWidthMedium;
+      break;
+    }
+  }
   return (
-    <div className={ `${styles.docImage} ${collapsedClass}` }>
-        <span>
-            <a href="#" data-featherlight={src}>
-                <img
-                    data-toggle="lightbox"
-                    alt={title}
-                    src={src}
-                />
-            </a>
-        </span>
-        <p className={styles.title}><em>{ title }</em></p>
+    <div className={styles.lightbox}>
+      <a href={src} title={title} target="_blank">
+        <img
+            src={src}
+            alt={title}
+            className={sizeClass}
+        />
+      </a>
+      {caption && <p className={styles.caption}>Figure: {caption}</p>}
     </div>
   );
 }

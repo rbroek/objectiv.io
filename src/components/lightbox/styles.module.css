@@ -1,18 +1,32 @@
+:local(.lightbox) {
+  text-align: center;
+}
 
-:local(.title) {
-    text-align: center;
+:local(.lightboxImageWidthLarge) {
+  width: 100%;
+}
+:local(.lightboxImageWidthMedium) {
+  width: 75%;
+}
+:local(.lightboxImageWidthSmall) {
+  width: 50%;
+}
+:local(.lightboxImageWidthExtraSmall) {
+  width: 25%;
+}
+
+@media (max-width: 768px) {
+  :local(.lightboxImageWidthMedium) {
     width: 100%;
+  }
+  :local(.lightboxImageWidthSmall) {
+    width: 75%;
+  }
+  :local(.lightboxImageWidthExtraSmall) {
+    width: 50%;
+  }
 }
 
-
-:local(.docImage) {
-    filter: drop-shadow(1px 4px 10px #aaaaaa33);
-    margin: 10px auto;
-    display: block;
-    width: 600px;
-}
-
-:local(.collapsed) {
-    max-width: 300px !important;
-    display: inline-block;
+:local(.caption) {
+  font-style: italic;
 }

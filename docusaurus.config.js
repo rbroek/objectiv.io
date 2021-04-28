@@ -118,4 +118,10 @@ module.exports = {
     ],
   ],
   plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
+  scripts: [
+    'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
+  ],
+  stylesheets: [
+    'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
+  ]
 };

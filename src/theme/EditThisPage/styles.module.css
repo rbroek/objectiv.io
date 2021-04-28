@@ -1,0 +1,18 @@
+:local(.docItemFooter) {
+  background-color: #eee;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:local(.docItemFooterPage) {
+  width: calc(50%);
+}
+
+:local(.docItemFooterProject) {
+  width: calc(50%);
+}
+
+:local(.docItemFooterHeading) {
+  font-weight: bold;
+}

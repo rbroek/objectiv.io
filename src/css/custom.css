@@ -38,6 +38,8 @@
   --ifm-font-family-monospace: 'Roboto Mono';
   font-family: 'Roboto', 'Bungee', sans-serif;
 
+  /* --ifm-color-emphasis-200: #ABE9FE; */
+
   --obj-primary-one: rgba(255, 87, 34, 0.1);
   --obj-primary-two: rgba(171, 233, 254, 0.1);
   --obj-primary-three: rgba(196, 166, 252, 0.1);
