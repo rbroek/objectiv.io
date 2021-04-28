@@ -19,6 +19,7 @@
     "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.73",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
+    "mermaid": "^8.9.3",
     "objectiv-tracker-js": "../objectiv-taxonomy-prototypes/objectiv-tracker-js",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

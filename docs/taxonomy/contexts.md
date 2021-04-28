@@ -7,30 +7,50 @@ sidebar_position: 2
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Lightbox from '/src/components/lightbox';
+import Mermaid from '@theme/Mermaid';
 
 This document describes the Contexts that are standardized in the Objectiv taxonomy; see the diagram below for an overview.
 
+<Mermaid chart={`
+	graph LR
+		AbstractContext --> AbstractLocationContext;
+		AbstractContext --> AbstractGlobalContext;
+		AbstractLocationContext --> SectionContext;
+    AbstractLocationContext --> ItemContext;
+    SectionContext --> WebDocumentContext["WebDocumentContext<br><span class='properties'>-url: string</span>"];
+    SectionContext --> ScreenContext["ScreenContext<br><span class='properties'>-screen_name: string</span>"];
+    SectionContext --> ExpandableSectionContext;
+    SectionContext --> MediaPlayerContext;
+    SectionContext --> NavigationContext;
+    SectionContext --> OverlayContext;
+    ItemContext --> InputContext;
+    ItemContext --> ActionContext["ActionContext<br><span class='properties'>-path: string<br>-text: string</span>"];
+    ActionContext --> ButtonContext;
+    ActionContext --> LinkContext;
+    AbstractGlobalContext --> DeviceContext["DeviceContext<br><span class='properties'>-user-agent: string</span>"];
+    AbstractGlobalContext --> ErrorContext["ErrorContext<br><span class='properties'>-errors: Set</span>"];
+    AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>-cookie_id: UUID</span>"];
+    AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>-hit_number: integer</span>"];
+    AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>-host: string<br>-user-agent: string<br>remote_addr: string</span>"];
+    click AbstractContext "#abstractcontext" "See more details" _self;
+    class AbstractContext,AbstractLocationContext,SectionContext,ItemContext,ActionContext,AbstractGlobalContext,WebDocumentContext,ScreenContext,ExpandableSectionContext,MediaPlayerContext,NavigationContext,OverlayContext,InputContext,ButtonContext,LinkContext,DeviceContext,ErrorContext,CookieIdContext,SessionContext,HttpContext diagramContexts;
+`} caption="Figure: Diagram of all Contexts" />
+
+<!-- 
 <Lightbox 
   src={useBaseUrl('/img/docs/contexts-diagram-horizontal.svg')} 
   title="Diagram: All Contexts"
   caption="Diagram of all Contexts"
   size="l" 
-/>
+/> -->
 
 ### AbstractContext
-
 Base Context, providing basic properties to all Contexts.
 
 **Properties:**
-
-
-
 *   `id`: string. Short descriptive name. Example: `hero-button`.
 
 TODO:
-
-
-
 *   AbstractLocationContext &lt; AbstractContext: TODO
 *   AbstractGlobalContext &lt; AbstractContext: TODO
 *   SectionContext &lt; AbstractLocationContext: TODO

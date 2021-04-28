@@ -7,6 +7,7 @@ sidebar_position: 1
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Lightbox from '/src/components/lightbox';
+import Mermaid from '@theme/Mermaid';
 
 The taxonomy forms the foundation of Objectiv: 
 
@@ -53,12 +54,20 @@ Here’s an example of a ‘button click’ event captured in the Objectiv taxon
 ## Taxonomy Elements
 The Taxonomy dictates three elements, explained in detail below: Events, Contexts, and the Location Stack.
 
-<Lightbox 
-  src={useBaseUrl('/img/docs/taxonomy-elements.svg')} 
-  title="Diagram: Objectiv Taxonomy elements" 
-  caption="Objectiv Taxonomy elements"
-  size="m" 
-/>
+<Mermaid chart={`
+	graph TD
+		AbstractEvent -- 0..n --> Context;
+		AbstractEvent -- 1 --> LocationStack;
+    
+    click AbstractEvent "#event" "See more details" _self;
+    click Context "#context" "See more details" _self;
+    click LocationStack "#location" "See more details" _self;
+    
+    class Context diagramContexts;
+    class AbstractEvent diagramEvents;
+    class LocationStack diagramLocation;
+`}  caption="Figure: Objectiv Taxonomy elements" />
+
 
 ### Event
 

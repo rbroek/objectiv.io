@@ -7,19 +7,45 @@ sidebar_position: 3
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Lightbox from '/src/components/lightbox';
+import Mermaid from '@theme/Mermaid';
 
 This document describes the Events that are standardized in the Objectiv taxonomy; see the diagram below for an overview.
 
+<Mermaid chart={`
+	graph LR
+    AbstractEvent["AbstractEvent<br><span class='properties'>requires:<br>-AbstractContext</span>"] --> NonInteractiveEvent;
+    NonInteractiveEvent --> VideoEvent["VideoEvent<br><span class='properties'>requires:<br>-MediaPlayerContext</span>"];
+    VideoEvent --> VideoPauseEvent;
+    VideoEvent --> VideoStopEvent;
+    VideoEvent --> VideoStartEvent;
+    VideoEvent --> VideoLoadEvent["VideoLoadEvent<br><span class='properties'>requires:<br>-MediaPlayerContext</span>"];
+    NonInteractiveEvent --> SectionHiddenEvent["SectionHiddenEvent<br><span class='properties'>requires:<br>-SectionContext</span>"];
+    NonInteractiveEvent --> SectionVisibleEvent["SectionVisibleEvent<br><span class='properties'>requires:<br>-SectionContext</span>"];
+    NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br><span class='properties'>requires:<br>-SectionContext</span>"];
+    NonInteractiveEvent --> URLChangeEvent["URLChangeEvent<br><span class='properties'>requires:<br>-WebDocumentContext</span>"];
+    NonInteractiveEvent --> DocumentLoadedEvent["DocumentLoadedEvent<br><span class='properties'>requires:<br>-WebDocumentContext</span>"];
+    AbstractEvent --> InteractiveEvent;
+    InteractiveEvent["InteractiveEvent<br><span class='properties'>requires:<br>-RootSectionContext</span>"] --> ClickEvent;
+    InteractiveEvent --> InputChangeEvent["InputChangeEvent<br><span class='properties'>requires:<br>-InputContext</span>"];
+    click AbstractEvent "#abstractevent" "See more details" _self;
+    class AbstractEvent,NonInteractiveEvent,InteractiveEvent,VideoEvent,SectionHiddenEvent,SectionVisibleEvent,ApplicationLoadedEvent,URLChangeEvent,DocumentLoadedEvent,ClickEvent,InputChangeEvent,VideoLoadEvent,VideoStartEvent,VideoStopEvent,VideoPauseEvent diagramEvents;
+`} caption="Figure: Diagram of all Events" />
+
+<!-- 
 <Lightbox 
   src={useBaseUrl('/img/docs/events-diagram-horizontal.svg')} 
   title="Diagram: All Events"
   caption="Diagram of all Events"
   size="l" 
-/>
+/> -->
+
+### AbstractEvent
+Base Event, providing basic properties to all Events.
+
+**Requires Contexts:**
+*  AbstractContext
 
 TODO:
-*   Base “AbstractEvent”: TODO
-    *   requiresContext: AbstractContext
 *   NonInteractiveEvent &lt; AbstractEvent: TODO
 *   DocumentLoadedEvent &lt; NonInteractiveEvent: TODO
     *   requiresContext: WebDocumentContext

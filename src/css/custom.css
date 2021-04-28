@@ -169,3 +169,66 @@ p, .markdown p {
   margin-bottom: 20px;
   text-align: left;
 }
+
+.mermaid {
+  text-align: center;
+}
+/* Fixes large margins top and bottom */
+.mermaid svg {
+  height: auto;
+}
+
+.mermaid .label {
+  font-size: 12px;
+}
+
+.mermaid .properties {
+  font-size: 0.8em;
+}
+
+.diagram-caption {
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+ /* HACK: use '!important' as a workaround for styling not being applied to nodes: 
+  https://github.com/mermaid-js/mermaid/issues/1649 */
+.diagramBlocks > rect {
+  fill: #fff !important;
+  stroke: black !important;
+}
+.hover .diagramBlocks > rect {
+  fill: rgb(212, 212, 212) !important;
+}  
+.diagramContexts > rect {
+  fill: #abe9feff !important;
+  stroke: rgb(0, 100, 150) !important;
+}
+.hover .diagramContexts > rect {
+  fill: rgb(100, 200, 250) !important;
+}
+.diagramContexts > rect {
+  fill: #abe9feff !important;
+  stroke: rgb(0, 100, 150) !important;
+}
+.hover .diagramContexts > rect {
+  fill: rgb(100, 200, 250) !important;
+}
+.diagramEvents > rect {
+  fill: #fba99dff !important;
+  stroke: rgb(200, 50, 25) !important;
+}
+.hover .diagramEvents > rect {
+  fill: rgb(255, 150, 125) !important;
+}
+.diagramLocation > rect {
+  fill: #fef284ff !important;
+  stroke: rgb(150, 133, 0) !important;
+}
+.hover .diagramLocation > rect {
+  fill: rgb(255, 243, 81) !important;
+}
+.mermaid .edgeLabel {
+  background-color: rgb(200, 200, 200) !important;
+}

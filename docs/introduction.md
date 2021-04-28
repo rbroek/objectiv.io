@@ -5,6 +5,7 @@ slug: /
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Lightbox from '/src/components/lightbox';
+import Mermaid from '@theme/Mermaid';
 
 Welcome to the official Objectiv documentation. 
 <!-- TBD: make these buttons instead of a list? -->
@@ -15,12 +16,35 @@ Welcome to the official Objectiv documentation.
 
 Below a concise overview of the various areas in Objectiv, with click-throughs to their respective documentation sections.
 
-<Lightbox 
+<Mermaid chart={`
+	graph TD
+    Tracking --- Taxonomy;
+    Collecting["Collecting &amp; Validating"] --- Taxonomy;
+    Modeling --- Taxonomy;
+    Deploying --- Taxonomy;
+    linkStyle 0,1,2,3 stroke:#fff,anything;
+    click Tracking "#tracking" "See more details" _self;
+    click Collecting "#collecting--validating" "See more details" _self;
+    click Modeling "#modeling" "See more details" _self;
+    click Deploying "#deploying" "See more details" _self;
+    click Taxonomy "#taxonomy" "See more details" _self;
+    class Tracking,Collecting,Modeling,Deploying,Taxonomy diagramBlocks;
+`} caption="Figure: Diagram of all Objectiv Areas" />
+
+
+<!-- <Mermaid chart={`
+  gantt
+    dateFormat  YYYY-MM-DD
+    Tracking      :t, 2021-01-01, 1d
+    Collecting    :t, 2021-01-03, 1d
+`} caption="Figure: Diagram of all Objectiv Areas" /> -->
+
+<!-- <Lightbox 
   src={useBaseUrl('/img/docs/overview-areas.svg')} 
   title="Diagram: All Areas"
   caption="Diagram of all Objectiv Areas"
   size="l" 
-/>
+/> -->
 
 ## Taxonomy
 The foundation of Objectiv is the taxonomy. 
