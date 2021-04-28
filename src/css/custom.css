@@ -190,28 +190,28 @@ p, .markdown p {
   fill: #fff !important;
   stroke: black !important;
 }
-.hover .diagram-basic rect {
+.hover .diagram-basic rect, .diagram-basic .hover rect {
   fill: rgb(212, 212, 212) !important;
 }  
 .diagram-blue rect {
   fill: #abe9feff !important;
   stroke: rgb(0, 100, 150) !important;
 }
-.hover .diagram-blue rect {
+.hover .diagram-blue rect, .diagram-blue .hover rect {
   fill: rgb(100, 200, 250) !important;
 }
 .diagram-pink rect {
   fill: #fba99dff !important;
   stroke: rgb(200, 50, 25) !important;
 }
-.hover .diagram-pink rect {
+.hover .diagram-pink rect, .diagram-pink .hover rect {
   fill: rgb(255, 150, 125) !important;
 }
 .diagram-yellow rect {
   fill: #fef284ff !important;
   stroke: rgb(150, 133, 0) !important;
 }
-.hover .diagram-yellow rect {
+.hover .diagram-yellow rect, .diagram-yellow .hover rect {
   fill: rgb(255, 243, 81) !important;
 }
 .mermaid .edgeLabel {
