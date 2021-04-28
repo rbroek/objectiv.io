@@ -6,7 +6,6 @@ sidebar_position: 1
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Lightbox from '/src/components/lightbox';
 import Mermaid from '@theme/Mermaid';
 
 The taxonomy forms the foundation of Objectiv: 
@@ -66,7 +65,7 @@ The Taxonomy dictates three elements, explained in detail below: Events, Context
     class Context diagram-blue;
     class AbstractEvent diagram-pink;
     class LocationStack diagram-yellow;
-`}  caption="Figure: Objectiv Taxonomy elements" />
+`}  caption="Figure: Objectiv Taxonomy elements" diagramType="blue" />
 
 
 ### Event
@@ -172,9 +171,12 @@ For example:
 
 This hierarchical pattern can also be used to create custom Events and Contexts for domain-specific use cases that are not covered out-of-the-box in the Objectiv taxonomy.
 
-<Lightbox 
-  src={useBaseUrl('/img/docs/contexts-example-button-context.svg')} 
-  title="Diagram: ButtonContext with two parents"
-  caption="ButtonContext with two parents"
-  size="xs" 
-/>
+
+<Mermaid chart={`
+	graph TD
+		ItemContext --> ActionContext;
+		ActionContext["ActionContext<br><span class='properties'>-path: string<br>-text: string</span>"] --> ButtonContext;
+    click ItemContext "contexts#itemcontext" "See more details" _self;
+    click ActionContext "contexts#actioncontext" "See more details" _self;
+    click ButtonContext "contexts#buttoncontext" "See more details" _self;
+`}  caption="Figure: ButtonContext with two parents" diagramType="blue" />

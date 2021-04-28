@@ -6,7 +6,6 @@ sidebar_position: 2
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Lightbox from '/src/components/lightbox';
 import Mermaid from '@theme/Mermaid';
 
 This document describes the Contexts that are standardized in the Objectiv taxonomy; see the diagram below for an overview.
@@ -34,14 +33,6 @@ This document describes the Contexts that are standardized in the Objectiv taxon
     AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>-host: string<br>-user-agent: string<br>remote_addr: string</span>"];
     click AbstractContext "#abstractcontext" "See more details" _self;
 `} caption="Figure: Diagram of all Contexts" diagramType="blue" />
-
-<!-- 
-<Lightbox 
-  src={useBaseUrl('/img/docs/contexts-diagram-horizontal.svg')} 
-  title="Diagram: All Contexts"
-  caption="Diagram of all Contexts"
-  size="l" 
-/> -->
 
 ### AbstractContext
 Base Context, providing basic properties to all Contexts.

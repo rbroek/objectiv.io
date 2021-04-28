@@ -6,7 +6,6 @@ sidebar_position: 3
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Lightbox from '/src/components/lightbox';
 import Mermaid from '@theme/Mermaid';
 
 This document describes the Events that are standardized in the Objectiv taxonomy; see the diagram below for an overview.
@@ -29,14 +28,6 @@ This document describes the Events that are standardized in the Objectiv taxonom
     InteractiveEvent --> InputChangeEvent["InputChangeEvent<br><span class='properties'>requires:<br>-InputContext</span>"];
     click AbstractEvent "#abstractevent" "See more details" _self;
 `} caption="Figure: Diagram of all Events" diagramType="pink" />
-
-<!-- 
-<Lightbox 
-  src={useBaseUrl('/img/docs/events-diagram-horizontal.svg')} 
-  title="Diagram: All Events"
-  caption="Diagram of all Events"
-  size="l" 
-/> -->
 
 ### AbstractEvent
 Base Event, providing basic properties to all Events.

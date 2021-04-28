@@ -32,7 +32,7 @@
   --ifm-h1-font-size: 18px;
   --ifm-line-height-base: 150%;
   --ifm-global-shadow-lw: 0px 2px 0px rgba(70, 76, 92, 0.25);
-  --ifm-navbar-height: 80px;
+  --ifm-navbar-height: 80px; /* Fixes issue with internal links hiding under navbar */
   --ifm-card-border-radius: 4px;
   --ifm-card-vertical-spacing: 32px;
   --ifm-code-font-size: 14px;
