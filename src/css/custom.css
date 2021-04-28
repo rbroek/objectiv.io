@@ -218,3 +218,7 @@ p, .markdown p {
 .mermaid .edgeLabel {
   background-color: rgb(200, 200, 200) !important;
 }
+.mermaid .edgeLabel rect {
+  fill: rgb(200, 200, 200) !important;
+  stroke: none !important;
+}
