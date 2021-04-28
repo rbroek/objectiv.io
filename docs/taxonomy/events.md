@@ -28,8 +28,7 @@ This document describes the Events that are standardized in the Objectiv taxonom
     InteractiveEvent["InteractiveEvent<br><span class='properties'>requires:<br>-RootSectionContext</span>"] --> ClickEvent;
     InteractiveEvent --> InputChangeEvent["InputChangeEvent<br><span class='properties'>requires:<br>-InputContext</span>"];
     click AbstractEvent "#abstractevent" "See more details" _self;
-    class AbstractEvent,NonInteractiveEvent,InteractiveEvent,VideoEvent,SectionHiddenEvent,SectionVisibleEvent,ApplicationLoadedEvent,URLChangeEvent,DocumentLoadedEvent,ClickEvent,InputChangeEvent,VideoLoadEvent,VideoStartEvent,VideoStopEvent,VideoPauseEvent diagramEvents;
-`} caption="Figure: Diagram of all Events" />
+`} caption="Figure: Diagram of all Events" diagramType="pink" />
 
 <!-- 
 <Lightbox 

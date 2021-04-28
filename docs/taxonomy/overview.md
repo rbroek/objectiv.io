@@ -63,9 +63,9 @@ The Taxonomy dictates three elements, explained in detail below: Events, Context
     click Context "#context" "See more details" _self;
     click LocationStack "#location" "See more details" _self;
     
-    class Context diagramContexts;
-    class AbstractEvent diagramEvents;
-    class LocationStack diagramLocation;
+    class Context diagram-blue;
+    class AbstractEvent diagram-pink;
+    class LocationStack diagram-yellow;
 `}  caption="Figure: Objectiv Taxonomy elements" />
 
 
