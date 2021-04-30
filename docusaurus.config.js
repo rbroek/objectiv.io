@@ -1,5 +1,10 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const path = require('path');
+const remarkFootnotes = require('remark-footnotes'); // https://github.com/remarkjs/remark-footnotes
+const remarkGitHub = require('remark-github'); // https://github.com/remarkjs/remark-github
+const remarkLicense = require('remark-license'); // https://github.com/remarkjs/remark-license
+const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark-lint
+// TBD: https://github.com/rehypejs/rehype-meta
 
 module.exports = {
   baseUrl: '/',
@@ -39,6 +44,11 @@ module.exports = {
         {
           to: 'blog', 
           label: 'Blog', 
+          position: 'right'
+        },
+        {
+          to: 'https://objectiv.homerun.co/', 
+          label: 'Jobs', 
           position: 'right'
         },
         {
@@ -104,6 +114,12 @@ module.exports = {
           sidebarPath: require.resolve('./docs/sidebars.js'),
           editUrl:
             'https://github.com/objectiv/objectiv.io/edit/master/docs/',
+          remarkPlugins: [
+            [remarkGitHub, {repository: 'https://github.com/objectiv/objectiv.io'}],
+            [remarkLicense, {name: 'Objectiv', license: 'MIT', url: 'https://objectiv.io'}],
+            [remarkFootnotes, {inlineNotes: true}],
+            [remarkLint, {plugins: ['remark-preset-lint-recommended', 'remark-preset-lint-markdown-style-guide']}],
+          ],
         },
         blog: {
           showReadingTime: true,

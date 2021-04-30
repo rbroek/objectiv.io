@@ -40,7 +40,7 @@ Below a concise overview of the various areas in Objectiv, with click-throughs t
     click Deploying "#deploying" "See more details" _self;
     click Taxonomy "#taxonomy" "See more details" _self;
     class Tracking,Collecting,Modeling,Deploying,Taxonomy diagramBlocks;
-`} caption="Figure: Diagram of all Objectiv Areas" diagramType="basic" />
+`} caption="Figure: Diagram of all Objectiv Areas" baseColor="basic" />
 
 ### Taxonomy
 The foundation of Objectiv is the taxonomy. 

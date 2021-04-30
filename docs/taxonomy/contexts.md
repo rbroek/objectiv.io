@@ -33,7 +33,7 @@ This document describes the Contexts that are standardized in the Objectiv taxon
     AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>-host: string<br>-user-agent: string<br>remote_addr: string</span>"];
     class AbstractLocationContext,SectionContext,ItemContext,WebDocumentContext,ScreenContext,ExpandableSectionContext,MediaPlayerContext,NavigationContext,OverlayContext,InputContext,ActionContext,ButtonContext,LinkContext diagram-yellow;
     click AbstractContext "#abstractcontext" "See more details" _self;
-`} caption="Figure: Diagram of all Contexts" diagramType="blue" />
+`} caption="Figure: Diagram of all Contexts" baseColor="blue" />
 
 ### AbstractContext
 Base Context, providing basic properties to all Contexts.

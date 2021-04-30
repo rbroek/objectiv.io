@@ -65,7 +65,7 @@ The Taxonomy dictates three elements, explained in detail below: Events, Context
     class Context diagram-blue;
     class AbstractEvent diagram-pink;
     class LocationStack diagram-yellow;
-`}  caption="Figure: Objectiv Taxonomy elements" diagramType="blue" />
+`}  caption="Figure: Objectiv Taxonomy elements" baseColor="blue" />
 
 
 ### Event
@@ -179,4 +179,4 @@ This hierarchical pattern can also be used to create custom Events and Contexts 
     click ItemContext "contexts#itemcontext" "See more details" _self;
     click ActionContext "contexts#actioncontext" "See more details" _self;
     click ButtonContext "contexts#buttoncontext" "See more details" _self;
-`}  caption="Figure: ButtonContext with two parents" diagramType="blue" />
+`}  caption="Figure: ButtonContext with two parents" baseColor="blue" />

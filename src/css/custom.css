@@ -178,6 +178,12 @@ p, .markdown p {
   line-height: 14px;
 }
 
+.footnotes hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
 /** DIAGRAM (MERMAID) MARKUP **/
 
 .mermaid {

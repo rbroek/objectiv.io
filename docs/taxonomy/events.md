@@ -27,7 +27,7 @@ This document describes the Events that are standardized in the Objectiv taxonom
     InteractiveEvent["InteractiveEvent<br><span class='properties'>requires:<br>-RootSectionContext</span>"] --> ClickEvent;
     InteractiveEvent --> InputChangeEvent["InputChangeEvent<br><span class='properties'>requires:<br>-InputContext</span>"];
     click AbstractEvent "#abstractevent" "See more details" _self;
-`} caption="Figure: Diagram of all Events" diagramType="pink" />
+`} caption="Figure: Diagram of all Events" baseColor="pink" />
 
 ### AbstractEvent
 Base Event, providing basic properties to all Events.

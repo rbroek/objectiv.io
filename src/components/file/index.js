@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-
 function File({children, name}) {
   return (
       <div className={styles.wrapper}>

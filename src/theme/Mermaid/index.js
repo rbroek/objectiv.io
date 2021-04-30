@@ -28,11 +28,11 @@ mermaid.initialize({
 `,
 });
 
-const Mermaid = ({ chart, caption, diagramType}) => {
+const Mermaid = ({ chart, caption, baseColor}) => {
 	useEffect(() => {
 		mermaid.contentLoaded();
 	}, []);
-	return <div className={"diagram-"+diagramType}><div className="mermaid">{chart}</div><p class="diagram-caption">{caption}</p></div>;
+	return <div className={"diagram-"+baseColor}><div className="mermaid">{chart}</div><p class="diagram-caption">{caption}</p></div>;
 };
 
 var exampleCallback = function() {
