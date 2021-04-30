@@ -14,10 +14,9 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@akebifiky/remark-simple-plantuml": "^1.0.2",
-    "@docusaurus/core": "2.0.0-alpha.74",
-    "@docusaurus/preset-classic": "2.0.0-alpha.74",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.73",
+    "@docusaurus/core": "2.0.0-alpha.75",
+    "@docusaurus/preset-classic": "2.0.0-alpha.75",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.75",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "mermaid": "^8.9.3",
