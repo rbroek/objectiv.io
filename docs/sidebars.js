@@ -7,8 +7,8 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'getting-started',
-      label: 'Getting Started',
+      id: 'quickstart',
+      label: 'Quickstart',
     },
     {
       type: 'category',

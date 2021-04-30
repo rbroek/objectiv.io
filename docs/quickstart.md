@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-slug: /getting-started
+title: Quickstart
+slug: /quickstart
 ---
 
 * Introduction & Goal
