@@ -31,6 +31,7 @@ This document describes the Contexts that are standardized in the Objectiv taxon
     AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>-cookie_id: UUID</span>"];
     AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>-hit_number: integer</span>"];
     AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>-host: string<br>-user-agent: string<br>remote_addr: string</span>"];
+    class AbstractLocationContext,SectionContext,ItemContext,WebDocumentContext,ScreenContext,ExpandableSectionContext,MediaPlayerContext,NavigationContext,OverlayContext,InputContext,ActionContext,ButtonContext,LinkContext diagram-yellow;
     click AbstractContext "#abstractcontext" "See more details" _self;
 `} caption="Figure: Diagram of all Contexts" diagramType="blue" />
 

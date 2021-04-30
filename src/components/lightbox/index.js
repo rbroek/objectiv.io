@@ -1,36 +1,68 @@
 import React from 'react';
+import Popup from 'reactjs-popup';
+import Styled from 'styled-components';
+import 'reactjs-popup/dist/index.css';
+
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import styles from './styles.module.css';
 
-//TODO: Add lightbox effect
-function Lightbox({children, src, title, caption, size}) {
+function Lightbox({children, src, title, caption, size='l', type='lightbox'}) {
   let sizeClass = styles.lightboxImageWidthLarge;
   switch(size) {
-    case 'xs': {
-      sizeClass = styles.lightboxImageWidthExtraSmall;
+    case 'm': {
+      sizeClass = styles.lightboxImageWidthMedium;
       break;
     }
     case 's': {
       sizeClass = styles.lightboxImageWidthSmall;
       break;
     }
-    case 'm': {
-      sizeClass = styles.lightboxImageWidthMedium;
+    case 'xs': {
+      sizeClass = styles.lightboxImageWidthExtraSmall;
       break;
     }
   }
-  return (
-    <div className={styles.lightbox}>
-      <a href={src} title={title} target="_blank">
+  
+  const lbImage = <img
+    src={src}
+    alt={title}
+    className={sizeClass}
+    closeText="Unzoom Image"
+    openText="Zoom Image"
+  />;
+  const lbCaption = caption ? <p className={styles.caption}>{caption}</p> : '';
+
+  // TODO: Zoom to full size of image, instead of to what the class applied to it specifies
+  if (type=="zoom")
+    return (
+      <div>
+        <Zoom zoomMargin={0}>
+          <div className={styles.lightbox}>
+            {lbImage}
+          </div>
+        </Zoom>
+        {lbCaption}
+      </div>
+    )
+  else
+    var StyledPopup = Styled(Popup)`
+      &-content {
+        width: auto;
+        max-width: 90%;
+        max-height: 90%;
+        -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+      }
+    `;
+    return (
+      <StyledPopup trigger={<div className={styles.lightbox}>{lbImage}{lbCaption}</div>} modal>
         <img
             src={src}
             alt={title}
-            className={sizeClass}
         />
-      </a>
-      {caption && <p className={styles.caption}>Figure: {caption}</p>}
-    </div>
-  );
+      </StyledPopup>
+    )
 }
 
 export default Lightbox;

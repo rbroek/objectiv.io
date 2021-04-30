@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+:local(.lightbox:hover) {
+  cursor: pointer;
+}
+
 :local(.lightboxImageWidthLarge) {
   width: 100%;
 }
@@ -29,4 +33,5 @@
 
 :local(.caption) {
   font-style: italic;
+  text-align: center;
 }
