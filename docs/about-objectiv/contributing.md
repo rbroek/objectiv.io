@@ -18,10 +18,10 @@ import Mermaid from '@theme/Mermaid';
     Contribution ----> PR;
     LabelUpdate["Label update"] ----> PR;
     Question --> Docs;
-    Docs ---> Discourse
-    GetUpdates["Get Updates"] ----> Discourse;
-    Question ---> OfficeHours["Office Hours"];
+    Docs ---> DiscourseTroubleshooting["Discourse Troubleshooting"]
+    GetUpdates["Get Updates"] ----> DiscourseUpdates["Discourse Updates"];
     GetUpdates ----> OfficeHours["Office Hours"];
+    Question ----> OfficeHours["Office Hours"];
     Docs;
     SecurityIssue["Security Issue"] ----> Email;
 `} caption="Figure: Contributing" baseColor="basic" />
