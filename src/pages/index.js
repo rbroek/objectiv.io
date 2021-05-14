@@ -5,43 +5,9 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
-import GitHubButton from 'react-github-btn'
 import styles from './styles.module.css';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-// import { Tracker } from "objectiv-tracker-js";
-
-// TODO: Implement tracker as component
-// Only load the tracker if the environment can execute DOM, so it doesn't break SSR when building.
-// Also see https://github.com/facebook/docusaurus/issues/2494.
-// let pagesSectionTracker = null;
-// if (ExecutionEnvironment.canUseDOM) {
-//   // Create a new Tracker
-//   const tracker = Tracker.forWebDocument({
-//     // TODO make the endpoint optional in debug mode
-//     endpoint: `https://httpstat.us/200`,
-//     debug: true
-//   });
-
-//   // Extend the basic tracker with a default Section representing the page
-//   pagesSectionTracker = tracker.withStack([
-//     {
-//       _context_type: 'SectionContext',
-//       id: "Pages",
-//     },
-//   ]);
-// }
-
-// function trackGitHubButtonClick() {
-//   pagesSectionTracker.trackEvent({
-//     event: 'GitHubButtonClicked',
-//     contexts: [
-//       {
-//         _context_type: 'ButtonContext',
-//         label: "View GitHub",
-//       },
-//     ],
-//   });
-// }
+import GitHubStargazers from '@site/src/components/github-stargazers';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -50,7 +16,7 @@ export default function Home() {
     <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={clsx('hero', styles.heroBanner)}>
         <div className={clsx('container', styles.heroContainer)}>
           <img 
             className={clsx(styles.heroImage)}
@@ -63,14 +29,7 @@ export default function Home() {
             Collect high quality data with a standardized taxonomy.<br />
             Take, build on and run advanced models off the shelf.
           </p>
- 
-          <GitHubButton 
-            href={"https://github.com/" + siteConfig.organizationName}
-            data-size="large" 
-            data-show-count="false" 
-            aria-label={"Follow @" + siteConfig.organizationName + " on GitHub"}>
-              View GitHub
-          </GitHubButton>
+          <GitHubStargazers />
         </div>
       </header>
       <main className={clsx('body-large')}>

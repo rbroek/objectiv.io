@@ -20,6 +20,7 @@
   --ifm-heading-color: black;
   --ifm-heading-font-weight: normal;
   --ifm-hero-text-color: black;
+  --ifm-hero-background-color: transparent;
   --ifm-container-width: 960px;
   --ifm-link-color: #06A5FA;
   --ifm-link-hover-color: #06A5FA;
@@ -40,8 +41,6 @@
   --ifm-code-font-size: 14px;
   --ifm-font-family-monospace: 'Roboto Mono';
   font-family: 'Roboto', 'Bungee', sans-serif;
-
-  /* --ifm-color-emphasis-200: #ABE9FE; */
 
   --obj-primary-one: rgba(255, 87, 34, 0.1);
   --obj-primary-two: rgba(171, 233, 254, 0.1);

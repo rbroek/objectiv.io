@@ -14,8 +14,9 @@ module.exports = {
   tagline: 'Collect high quality data with a standardized taxonomy.\nTake, build on and run advanced models ' 
     +' off the shelf.', //meta description, and og:description
   url: 'https://objectiv.io',
-  organizationName: 'objectiv', // Usually your GitHub org/user name.
-  projectName: 'objectiv.io', // Usually your repo name.
+  // TODO set these to correct values as soon as we can
+  organizationName: 'ivarpruijn', // Usually your GitHub org/user name.
+  projectName: 'productcampamsterdam.org', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -140,5 +141,9 @@ module.exports = {
   ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
-  ]
+  ],
+  customFields: {
+    // TODO store secret somewhere else
+    gitHubSecretKey: "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"
+  }
 };
