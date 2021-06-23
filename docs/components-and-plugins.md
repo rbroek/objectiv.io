@@ -32,6 +32,22 @@ Show Images full screen, with a simple fade-in or zoom effect.
   type="zoom" />
 `}</pre>
 
+### YouTubeVideo
+Show a YouTube video that's scaled to full-width and height in 16:9 ratio.
+
+**Parameters:**
+* `src`: Path to the YouTube video.
+
+<YouTubeVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+
+**How To**
+
+<pre>{`import YouTubeVideo from '/src/components/youtube-video';
+
+<YouTubeVideo src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+`}</pre>
+
+
 ### Diagrams (Mermaid)
 Component to generate diagrams from Markdown syntax.
 
