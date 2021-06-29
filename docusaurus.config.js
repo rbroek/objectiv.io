@@ -122,9 +122,12 @@ module.exports = {
           ],
         },
         blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
+          blogTitle: 'Objectiv Blog',
+          blogDescription: 'Objectiv Blog',
+          blogSidebarCount: 0,
+          postsPerPage: 10,
+          showReadingTime: false,
+          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
         },
         sitemap: {
           changefreq: 'weekly',
