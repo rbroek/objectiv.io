@@ -17,7 +17,7 @@ module.exports = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
   
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -80,14 +80,7 @@ module.exports = {
             [remarkLint, {plugins: ['remark-preset-lint-recommended', 'remark-preset-lint-markdown-style-guide']}],
           ],
         },
-        blog: {
-          blogTitle: 'Objectiv Blog',
-          blogDescription: 'Objectiv Blog',
-          blogSidebarCount: 0,
-          postsPerPage: 10,
-          showReadingTime: false,
-          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
-        },
+        blog: false,
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
