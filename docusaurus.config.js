@@ -9,10 +9,10 @@ const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark
 module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon/favicon.ico',
-  title: 'Objectiv: a product analytics pipeline for deep, reusable modelling',
+  title: 'Objectiv: The Open Source Analytics Pipeline Built For The Data Scientist',
   titleDelimiter: '|',
-  tagline: 'Collect high quality data with a standardized taxonomy.\nTake, build on and run advanced models ' 
-    +' off the shelf.', //meta description, and og:description
+  tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
+    + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
   url: 'https://objectiv.io',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.

@@ -6,11 +6,11 @@
 
 .announcement {
   background-color: #FEF284;
-  min-height: 80px;
-  font-size: 18px;
+  min-height: 60px;
+  font-size: 16px;
   line-height: 150%;
   text-align: center;
-  padding: 26px;
+  padding: 16px;
 }
 
 .announcement img {
@@ -52,7 +52,7 @@
 }
 
 .heroContainer {
-  margin-top: 80px; /* for announcement bar */
+  margin-top: 0;
   max-width: 920px;
 }
 
