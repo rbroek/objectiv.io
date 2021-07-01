@@ -4,6 +4,20 @@
  * CSS files with the .module.css suffix are treated as CSS modules and scoped locally.
  */
 
+.announcement {
+  background-color: #FEF284;
+  min-height: 80px;
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  padding: 26px;
+}
+
+.announcement img {
+  vertical-align: middle;
+  margin: 0 18px;
+}
+
 .heroBanner {
   padding: 80px 0;
   text-align: center;
@@ -43,8 +57,11 @@
   margin-bottom: 32px;
 }
 
+.heroKeepMePosted {
+  margin-top: 90px;
+}
 .heroKeepMePosted p {
-  margin: 90px 0 27px 0;
+  margin-bottom: 27px;
 }
 
 @media screen and (min-width: 1440px) {

@@ -14,6 +14,12 @@ export default function Home() {
     <Layout
       title={siteConfig.title}
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
+      <div className={clsx(styles.announcement)}>
+        <img src="/img/icons/icon-star.svg" />
+          We’re Hiring! Are you mad about data science &amp; engineering? <a href="/jobs">Check out the 
+          vacancy</a>!
+        <img src="/img/icons/icon-star.svg" />
+      </div>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.heroContainer)}>
           <img 
