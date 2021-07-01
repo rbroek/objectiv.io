@@ -27,6 +27,14 @@ module.exports = {
       disableSwitch: true,
     },
     sidebarCollapsible: true,
+    // announcementBar: {
+    //   id: 'hiring', // Any value that will identify this message.
+    //   content:
+    //     '<img src="/img/icons/icon-star.svg" />We’re Hiring! Are you mad about data science &amp; engineering? <a href="/jobs">Check out the vacancy</a>!<img src="/img/icons/icon-star.svg" />',
+    //   backgroundColor: '#FEF284', // Defaults to `#fff`.
+    //   textColor: '#333333', // Defaults to `#000`.
+    //   isCloseable: false, // Defaults to `true`.
+    // },
     navbar: {
       title: '',
       hideOnScroll: false,

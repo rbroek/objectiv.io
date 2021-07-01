@@ -16,7 +16,7 @@
   font-family: 'Bungee';
   font-size: 32px;
   letter-spacing: 0.2em;
-  margin-bottom: 40px;
+  margin-bottom: 27px;
 }
 
 @media screen and (max-width: 966px) {
@@ -29,7 +29,7 @@
 }
 
 .heroContainer {
-  max-width: 840px;
+  max-width: 920px;
 }
 
 .heroImage {
@@ -47,7 +47,7 @@
     max-width: 960px;
   }
   .heroContainer {
-    max-width: 840px;
+    max-width: 920px;
   }  
 }
 

@@ -108,6 +108,23 @@ body {
   background: url('/img/icons/icon-nav-email-hover.svg') no-repeat;
 }
 
+div[role=banner] {
+  position: absolute;
+  top: 79px;
+  z-index: 1000;
+  height: 80px;
+  font-size: 18px;
+  line-height: 150%;
+  display: flex;
+  align-items:center;
+  background-color: '#FEF284';
+}
+
+div[role=banner] img {
+  vertical-align: middle;
+  margin: 0 18px;
+}
+
 @media (min-width: 1440px) {
   .footer .container {
     max-width: 960px;

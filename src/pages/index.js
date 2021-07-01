@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
 import GitHubButton from 'react-github-btn'
+import KeepMePosted from '../components/keep-me-posted';
 import styles from './styles.module.css';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 // import { Tracker } from "objectiv-tracker-js";
@@ -57,11 +58,12 @@ export default function Home() {
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
-            We're building a <br />product analytics pipeline for effective, reusable modelling
+            The Open Source Analytics Pipeline<br/>
+            Built For The Data Scientist
           </h1>
           <p className={clsx(styles.heroSubTitle)}>
-            Collect high quality data with a standardized taxonomy.<br />
-            Take, build on and run advanced models off the shelf.
+            Build &amp; orchestrate reusable, stackable and interchangeable models <br />
+            that embrace a standardized event taxonomy. Straight from your Jupyter notebook.
           </p>
  
           <GitHubButton 
@@ -71,6 +73,7 @@ export default function Home() {
             aria-label={"Follow @" + siteConfig.organizationName + " on GitHub"}>
               View GitHub
           </GitHubButton>
+
         </div>
       </header>
       <main className={clsx('body-large')}>
