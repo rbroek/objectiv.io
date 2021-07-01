@@ -36,30 +36,39 @@ module.exports = {
       },
       items: [
         {
+          to: 'blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
+        {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
-          position: 'right',
-        },
-        {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'right'
-        },
-        {
-          to: 'https://objectiv.homerun.co/', 
-          label: 'Jobs', 
-          position: 'right'
-        },
-        {
-          to: 'about-us', 
-          label: 'About Us', 
-          position: 'right'
+          position: 'left',
         },
         {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
           position: 'right',
+          className: 'navItem navGitHub',
+        },
+        {
+          href: 'https://discourse.objectiv.io',
+          label: 'Discourse',
+          position: 'right',
+          className: 'navItem navDiscourse',
+        },
+        {
+          href: 'https://twitter.com/objectivHQ',
+          label: 'Twitter',
+          position: 'right',
+          className: 'navItem navTwitter',
+        },
+        {
+          href: 'mailto:hi@objectiv.io',
+          label: 'Contact Us',
+          position: 'right',
+          className: 'navItem navEmail',
         },
       ],
     },

@@ -72,7 +72,40 @@ body {
   font-weight: normal;
   font-size: 14px;
   line-height: 150%;
-  padding-right: 30px;
+  padding-right: 24px;
+}
+
+.navbar .navItem {
+  width: 24px;
+  height: 24px;
+  padding: 0 24px;
+}
+.navbar .navItem span, .navbar .navItem svg {
+  display: none;
+}
+.navbar .navGitHub {
+  background: url('/img/icons/icon-nav-github.svg') no-repeat;
+}
+.navbar .navGitHub:hover {
+  background: url('/img/icons/icon-nav-github-hover.svg') no-repeat;
+}
+.navbar .navDiscourse {
+  background: url('/img/icons/icon-nav-discourse.svg') no-repeat;
+}
+.navbar .navDiscourse:hover {
+  background: url('/img/icons/icon-nav-discourse-hover.svg') no-repeat;
+}
+.navbar .navTwitter {
+  background: url('/img/icons/icon-nav-twitter.svg') no-repeat;
+}
+.navbar .navTwitter:hover {
+  background: url('/img/icons/icon-nav-twitter-hover.svg') no-repeat;
+}
+.navbar .navEmail {
+  background: url('/img/icons/icon-nav-email.svg') no-repeat;
+}
+.navbar .navEmail:hover {
+  background: url('/img/icons/icon-nav-email-hover.svg') no-repeat;
 }
 
 @media (min-width: 1440px) {
