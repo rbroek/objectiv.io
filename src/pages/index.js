@@ -16,7 +16,7 @@ export default function Home() {
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <div className={clsx(styles.announcement)}>
         <img src="/img/icons/icon-star.svg" />
-          We’re Hiring! Are you mad about data science &amp; engineering? <a href="/jobs">Check out the 
+          <strong>We’re Hiring!</strong> Are you mad about data science &amp; engineering? <a href="/jobs">Check out the 
           vacancy</a>!
         <img src="/img/icons/icon-star.svg" />
       </div>

@@ -18,6 +18,15 @@
   margin: 0 18px;
 }
 
+.announcement a {
+  color: black;
+  text-decoration: underline;
+}
+.announcement a:hover {
+  text-decoration: none;
+  color: #a09536;
+}
+
 .heroBanner {
   padding: 80px 0;
   text-align: center;
@@ -176,12 +185,12 @@
 }
 
 .jobsContainer {
-  margin-top: 40px;
+  margin-top: 0;
   text-align: left;
   max-width: 960px;
 }
 
-.jobsContainer h1, .jobsContainer h2 {
+.jobsContainer h2 {
   display: flex;
   align-items:center;
   margin-top: 30px;
