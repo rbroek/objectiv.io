@@ -1,0 +1,49 @@
+:local(.wrapper) {
+  margin: 10px;
+}
+
+:local(.emailAddress) {
+  width: 300px;
+  height: 48px;
+  margin: 0 6px 0 0;
+  padding: 14px 20px;
+  background: #FFFFFF;
+  font-size: 14px;
+  line-height: 150%;
+  color: #333333;
+  border: 1px solid #CED4DA;
+  border-radius: 3px;
+}
+
+:local(.submitButton) {
+  padding: 14px 20px 13px;
+  margin: 0 0 0 6px;
+  width: 142px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  background-color: #06A5FA;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+:local(.statusMessage) {
+  opacity: 0;
+  margin-top: 0.5em;
+}
+
+:local(.alert) {
+  opacity: 1;
+  color: red;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+:local(.success) {
+  opacity: 1;
+  font-size: 0.9em;
+  color: green;
+}
