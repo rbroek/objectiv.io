@@ -27,14 +27,14 @@ module.exports = {
       disableSwitch: true,
     },
     sidebarCollapsible: true,
-    // announcementBar: {
-    //   id: 'hiring', // Any value that will identify this message.
-    //   content:
-    //     '<img src="/img/icons/icon-star.svg" />We’re Hiring! Are you mad about data science &amp; engineering? <a href="/jobs">Check out the vacancy</a>!<img src="/img/icons/icon-star.svg" />',
-    //   backgroundColor: '#FEF284', // Defaults to `#fff`.
-    //   textColor: '#333333', // Defaults to `#000`.
-    //   isCloseable: false, // Defaults to `true`.
-    // },
+    announcementBar: {
+      id: 'hiring', // Any value that will identify this message.
+      content:
+        '<img src="/img/icons/icon-star.svg" />We’re Hiring! Are you mad about data science &amp; engineering? <a href="/jobs">Check out the vacancy</a>!<img src="/img/icons/icon-star.svg" />',
+      backgroundColor: '#FEF284', // Defaults to `#fff`.
+      textColor: '#333333', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
     navbar: {
       title: '',
       hideOnScroll: false,
@@ -44,27 +44,10 @@ module.exports = {
       },
       items: [
         {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'left'
-        },
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
-        },
-        {
-          href: 'https://discourse.objectiv.io',
-          label: 'Discourse',
-          position: 'right',
-          className: 'navItem navDiscourse',
         },
         {
           href: 'https://twitter.com/objectivHQ',
@@ -82,39 +65,6 @@ module.exports = {
     },
     footer: {
       style: 'light',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: 'docs/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/objectiv',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/objectivhq',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
     },
   },
