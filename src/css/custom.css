@@ -5,6 +5,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700@&display=swap');
  
 /* Override the default Infima variables here. */
 :root {
@@ -15,7 +16,8 @@
   --ifm-color-primary-light: rgb(215, 215, 215);
   --ifm-color-primary-lighter: rgb(225, 225, 225);
   --ifm-color-primary-lightest: rgb(235, 235, 235);
-  --ifm-font-color-base: black;
+  --ifm-font-color-base: #333;
+  --ifm-font-color-light: #666;
   --ifm-font-color-base-inverse: white;
   --ifm-heading-color: black;
   --ifm-heading-font-weight: normal;
@@ -94,16 +96,19 @@ h1, h2, h3, h4, h5, h6 {
 h1, .main-docs-wrapper h1 {
   font-size: 32px;
   margin: 16px 0;
+  font-weight: 700;
 }
 
 h2, .main-docs-wrapper h2 {
   font-size: 24px;
   margin: 16px 0;
+  font-weight: 700;
 }
 
 h3, .main-docs-wrapper h3 {
   font-size: 18px;
   margin: 16px 0;
+  font-weight: 700;
 }
 
 h4, .main-docs-wrapper h4 {
@@ -197,18 +202,49 @@ p, .markdown p {
 
 .blog-list-page article header h2 {
   margin: 0;
-  line-height: 100%;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+.blog-list-page article h3 {
+  font-family: "Georgia";
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  color: var(--ifm-font-color-light);
 }
 
 .blog-list-page article header h2 a {
-  font-size: 0.6em;
-  font-weight: 900;
+  font-size: 24px;
+  line-height: 36px;
   color: var(--ifm-font-color-base);
+  font-weight: 900;
 }
 
 .blog-post-page article header h1 {
   margin: 0;
-  font-weight: 900;
+  font-weight: 700;
+}
+
+.blog-post-page article p {
+  
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 36px;
+  --ifm-font-color-base: #333;
+}
+
+.blog-post-page article h2 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.blog-post-page article h3 {
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--ifm-font-color-light);
+  font-weight: 400;
 }
 
 .blog-list-page article header .margin-vert--md, .blog-post-page article header .margin-vert--md { /* blog post date */
@@ -253,7 +289,7 @@ p, .markdown p {
 
 .diagram-caption {
   font-style: italic;
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-align: center;
 }
 
