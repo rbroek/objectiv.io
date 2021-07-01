@@ -71,7 +71,11 @@
   margin-bottom: 32px;
   padding: 0 14%;
 }
-
+@media screen and (max-width: 966px) {
+  .heroSubTitle {
+    padding: 0;
+  }
+}
 .heroKeepMePosted {
   margin-top: 90px;
 }
