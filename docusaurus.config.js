@@ -42,7 +42,7 @@ module.exports = {
           className: 'navItem navGitHub',
         },
         {
-          href: 'https://twitter.com/objectivHQ',
+          href: 'https://twitter.com/objectiv_io',
           label: 'Twitter',
           position: 'right',
           className: 'navItem navTwitter',
