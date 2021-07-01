@@ -29,6 +29,7 @@
 }
 
 .heroContainer {
+  margin-top: 80px; /* for announcement bar */
   max-width: 920px;
 }
 
@@ -40,6 +41,10 @@
   font-size: 18px;
   line-height: 150%;
   margin-bottom: 32px;
+}
+
+.heroKeepMePosted p {
+  margin: 90px 0 27px 0;
 }
 
 @media screen and (min-width: 1440px) {

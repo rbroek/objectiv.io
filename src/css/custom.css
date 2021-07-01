@@ -188,8 +188,8 @@ p, .markdown p {
   color: black;
 }
 .button:hover {
-  --ifm-button-border-color: #06A5FA;
-  color: #06A5FA;
+  --ifm-button-border-color: #ffffffd4;
+  color: #ffffffd4;
 }
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
