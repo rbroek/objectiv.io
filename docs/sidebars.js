@@ -43,5 +43,10 @@ module.exports = {
         },
       ]
     },
+    {
+      type: 'doc',
+      id: 'jobs',
+      label: 'Jobs',
+    },
   ],
 };
