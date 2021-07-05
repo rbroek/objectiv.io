@@ -16,8 +16,7 @@ export default function Home() {
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <div className={clsx(styles.announcement)}>
         <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
-          <strong>We’re Hiring!</strong> Are you mad about data science &amp; engineering? <a href="/jobs">Check out the 
-          vacancy</a>!
+          <strong>We’re Hiring! </strong>Join our mission to create the ultimate SQL-model-based experimental workflow for data science! <a href="/jobs">Check the vacancy</a>
         <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
       </div>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -28,7 +27,7 @@ export default function Home() {
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
             The Open Source Analytics Pipeline
-            Built For The Data Scientist
+            Built For Data Scientists
           </h1>
           <div className={clsx(styles.heroSubTitleWrapper)}>
             <p className={clsx(styles.heroSubTitle)}>

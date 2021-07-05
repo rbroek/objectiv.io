@@ -9,7 +9,7 @@ const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark
 module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon/favicon.ico',
-  title: 'Objectiv: The Open Source Analytics Pipeline Built For The Data Scientist',
+  title: 'Objectiv: The Open Source Analytics Pipeline Built for Data Scientists',
   titleDelimiter: '|',
   tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
     + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
