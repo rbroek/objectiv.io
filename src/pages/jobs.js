@@ -17,7 +17,7 @@ export default function Jobs() {
             <p>With Objectiv, we’re building the open-source analytics pipeline for the data scientist. </p>
 
             <h2> <img width="32px" src='/img/startup.svg' />  Our mission</h2>
-            <p>It’s our dream to create the ultimate, SQL model based, experimental workflow for data science. Let’s break that down.</p>
+            <p>It’s our dream to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
 
             <p>Building a great model as a data scientist happens in experimental iterations. That’s why so many of us live in Notebooks. The analytics data that you work on clearly does not fit a local machine, so it’s either working with samples, or spinning up complex data lakes. We believe there is so much development going on in the SQL space, that today it’s possible to create a single interactive &amp; experimental environment for the data scientist to build models, while iterating on the full dataset.</p>
 
