@@ -39,14 +39,8 @@ export default function Jobs() {
               <li>You have a master’s degree in data science, software engineering, math, physics or something related.</li>
               <li>You have a can-do attitude. Even when the problem seems huge, you're able to chop it up and solve the chunks</li>
               <li>You are fluent in English.</li>
+              <li>This is a remote role in EU timezone with regular team offsites in The Netherlands.</li>
             </ul>
-
-            <h2> <img width="32px" src='/img/basketball.svg' />  Our work setup</h2>
-            <p>Our team meets every Tuesday in Utrecht. This is the day where we do all the team updates, syncs and make decisions to move forward together. The rest of the week everyone works remote and we limit meetings to standups and syncs that can not wait.</p>
-
-            <p>We don’t care when work is being done, we care about what is being done. So our team is used to taking exercise breaks or spending family time during the day and then getting stuff done in the evening. Things like that.</p>
-
-            <p>On a regular basis we meet for a team offsite and make sure there is always something to celebrate together.</p>
 
             <h2> <img width="32px" src='/img/premium.svg' />  What we offer</h2>
             <p>A role in a super driven and experienced team that is on a mission. Our team has over a decade of experience in analytics and has made it their core focus to build the best possible workflow for data science. Thanks to the support of Fly Ventures &amp; LocalGlobe we can focus on the long-term and take the time to get the product just right. They were also the early backers of startups like Figma, Tessian and Robinhood.</p>
