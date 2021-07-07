@@ -14,7 +14,7 @@ export default function Jobs() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.jobsContainer)}>
           <h1>Currently Hiring: Data Infra Scientist / Data Workflow Engineer</h1>
-            <p>With Objectiv, we’re building the open-source analytics pipeline for the data scientist. </p>
+            {/* <p>With Objectiv, we’re building the open-source analytics pipeline for the data scientist. </p> */}
 
             <h2> <img width="32px" src='/img/startup.svg' />  Our mission</h2>
             <p>It’s our dream to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
