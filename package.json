@@ -58,5 +58,8 @@
     "glob-parent": "^6.0.0",
     "browserslist": "^4.16.6",
     "prismjs": "^1.24.0"
+  },
+  "devDependencies": {
+    "@objectiv/schema": "^0.0.1"
   }
 }
