@@ -16,10 +16,11 @@ import {
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const trackerConfig = { // TODO: get from config
-    "id": "objectiv-io",
-    "endpoint": "http://localhost:5000",
-    "debug": true
+  const {trackerId, trackerEndPoint, trackerDebug} = siteConfig.customFields;
+  const trackerConfig = { 
+    "id": trackerId,
+    "endpoint": trackerEndPoint,
+    "debug": trackerDebug
   }
   const tracker = new ReactTracker(trackerConfig);
   

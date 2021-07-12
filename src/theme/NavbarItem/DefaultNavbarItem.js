@@ -15,20 +15,10 @@ import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
 import {
-  makeButtonContext,
-  makeInputChangeEvent,
-  makeInputContext,
   makeLinkContext,
   makeOverlayContext,
-  makeSectionHiddenEvent,
-  makeSectionVisibleEvent,
   ReactTracker,
-  trackButtonClick,
-  useTracker,
   useTrackLinkClick,
-  useTrackOnChange,
-  useTrackOnToggle,
-  TrackerContextProvider
 } from '@objectiv/tracker-react';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -73,7 +63,7 @@ function NavLink({
               : null),
           })}
         {...props}
-        onClick={useTrackLinkClick(makeLinkContext({ id: 'menu', path: href, text: label }), tracker)} //TODO: unique ID for each link?
+        onClick={useTrackLinkClick(makeLinkContext({ id: 'menu', path: href, text: label }), tracker)}
       >
       {isExternalLink ? (
         <span>
@@ -256,10 +246,11 @@ function NavItemMobile({
 function DefaultNavbarItem({mobile = false, ...props}) {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const trackerConfig = { // TODO: get from config
-    "id": "objectiv-io",
-    "endpoint": "http://localhost:5000",
-    "debug": true
+  const {trackerId, trackerEndPoint, trackerDebug} = siteConfig.customFields;
+  const trackerConfig = { 
+    "id": trackerId,
+    "endpoint": trackerEndPoint,
+    "debug": trackerDebug
   }
   const tracker = new ReactTracker(trackerConfig);
   props.tracker = tracker

@@ -1628,7 +1628,7 @@
   dependencies:
     "@objectiv/tracker-core" "~0.0.1"
 
-"@objectiv/schema@^0.0.1", "@objectiv/schema@~0.0.1":
+"@objectiv/schema@~0.0.1":
   version "0.0.1"
   resolved "http://localhost:4873/@objectiv%2fschema/-/schema-0.0.1.tgz#d2a4836e0a8d13ee04fe0df12e7fd518682e27e7"
   integrity sha512-5wMGEs6Hdo9x9OrpyTsWUbJWjuBHuT4DCOnl9glF6PODbB5BaBRrrZ5FJb1SwVyN6nHjOGiQni7BTnCWyJVB0Q==
