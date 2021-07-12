@@ -1642,8 +1642,8 @@
 
 "@objectiv/tracker-react@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.1.tgz#666e5a09b7eaecde3f98d17e7ef160fbf41d888f"
-  integrity sha512-LKwHxjry2k5jFKQI72uHK/MErGQyMstoa60pFb6pp9SctRtJfPO93g5P6k4wblbnQuN4qPHC7iQ5EblLEpkdQg==
+  resolved "http://localhost:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.1.tgz#31e3cab8e30c327a8a9408aa2c601fc0e23e9f6d"
+  integrity sha512-SkLe3UAK+bGVRFqqZfQgiv7mYacFFxGyBD7NxZScVEhj4YnAUwP0J1bsczTmGEwPC+geMMSqWJBWs6Bgq8p6xw==
   dependencies:
     "@objectiv/schema" "~0.0.1"
     "@objectiv/tracker-core" "~0.0.1"

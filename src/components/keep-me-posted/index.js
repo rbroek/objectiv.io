@@ -4,11 +4,37 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
+import {
+  makeButtonContext,
+  makeInputChangeEvent,
+  makeInputContext,
+  makeLinkContext,
+  makeOverlayContext,
+  makeSectionHiddenEvent,
+  makeSectionVisibleEvent,
+  ReactTracker,
+  trackButtonClick,
+  useTracker,
+  useTrackLinkClick,
+  useTrackOnChange,
+  useTrackOnToggle,
+  TrackerContextProvider
+} from '@objectiv/tracker-react';
 
 function KeepMePosted({children, name}) {
   const {siteConfig} = useDocusaurusContext();
+
+  const tracker = useTracker();
+  const inputTracker = new ReactTracker(tracker, {
+    location_stack: [makeInputContext({ id: 'keep-me-posted-input' })],
+  });
+
   const {emailJsUserId} = siteConfig.customFields;
   init(emailJsUserId);
+  
+  const [emailString, setEmailString] = React.useState('');
+  const [blurredEmailString, setBlurredEmailString] = React.useState('');
+  useTrackOnChange(blurredEmailString, makeInputChangeEvent(), inputTracker); // TBD: fire only on blur?
 
   const [statusMessage, setStatusMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
@@ -32,9 +58,31 @@ function KeepMePosted({children, name}) {
   return (
       <div className={styles.wrapper}>
         <form id="keep-me-posted" onSubmit={handleSubmit(onSubmit)}>
-          <input type="email" name="email_address" {...register("email_address", { required: true })} 
-            placeholder="Your email address" className={styles.emailAddress} />
-          <input type="submit" value="Keep me posted" className={clsx("button", "button--primary", styles.submitButton)} />
+          <input 
+            id={'email'}
+            placeholder="Your email address" 
+            type="email" 
+            name="email_address" 
+            {...register("email_address", { required: true })} 
+            onChange={(event) => {
+              setEmailString(event.currentTarget.value);
+            }}
+            onBlur={() => setBlurredEmailString(emailString)}
+            className={styles.emailAddress} 
+          />
+          <input 
+            id="subscribe"
+            type="submit" 
+            value="Keep me posted" 
+            onClick={() => trackButtonClick(  // TODO: should handle this in the sendForm function instead
+              makeButtonContext({ 
+                id: 'subscribe', 
+                text: 'Keep me posted',
+                path: ''
+              }), 
+              inputTracker)}
+            className={clsx("button", "button--primary", styles.submitButton)} 
+          />
           {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
         </form>
         <p className={clsx(styles.statusMessage, (formSent ? styles.success : styles.alert))}>{statusMessage}</p>
