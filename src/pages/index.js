@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -7,7 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import KeepMePosted from '../components/keep-me-posted';
 import styles from './styles.module.css';
 import {
-  makeInputContext,
   makeLinkContext,
   ReactTracker,
   useTrackLinkClick,

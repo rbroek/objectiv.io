@@ -8,17 +8,10 @@ import {
   makeButtonContext,
   makeInputChangeEvent,
   makeInputContext,
-  makeLinkContext,
-  makeOverlayContext,
-  makeSectionHiddenEvent,
-  makeSectionVisibleEvent,
   ReactTracker,
   trackButtonClick,
   useTracker,
-  useTrackLinkClick,
   useTrackOnChange,
-  useTrackOnToggle,
-  TrackerContextProvider
 } from '@objectiv/tracker-react';
 
 function KeepMePosted({children, name}) {
