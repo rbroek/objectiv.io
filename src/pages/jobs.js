@@ -1,8 +1,13 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
+import {
+  makeLinkContext,
+  useTrackLinkClick
+} from '@objectiv/tracker-react';
 
 export default function Jobs() {
   const context = useDocusaurusContext();
@@ -47,7 +52,14 @@ export default function Jobs() {
 
             <p>Early days in the product, where you will be able to leave your mark in the open-source community for data science. Our goals are very ambitious and this will allow you to grow with the company.</p>
 
-            <p>Like what you have read and think you meet the mark? Then <a href="mailto:jobs@objectiv.io">we'd love to hear from you</a>.</p>
+            <p>Like what you have read and think you meet the mark? Then&nbsp;
+            <Link
+              to={'mailto:jobs@objectiv.io'}
+              onClick={useTrackLinkClick(makeLinkContext({ id: 'hear-from-you', href: 'mailto:jobs@objectiv.io', text: "we'd love to hear from you" }))}
+            >
+              we'd love to hear from you
+            </Link>
+            .</p>
         </div>
       </header>
     </Layout>
