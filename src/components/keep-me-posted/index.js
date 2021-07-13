@@ -7,13 +7,12 @@ import { init, sendForm } from 'emailjs-com';
 import {
   makeButtonContext,
   makeErrorContext,
-  makeInputChangeEvent,
+  makeActionContext,
   makeInputContext,
   makeNonInteractiveEvent,
   ReactTracker,
   trackButtonClick,
   useTracker,
-  useTrackOnChange,
 } from '@objectiv/tracker-react';
 
 function KeepMePosted({children, name}) {
@@ -27,10 +26,6 @@ function KeepMePosted({children, name}) {
   const {emailJsUserId} = siteConfig.customFields;
   init(emailJsUserId);
   
-  const [emailString, setEmailString] = React.useState('');
-  const [blurredEmailString, setBlurredEmailString] = React.useState('');
-  useTrackOnChange(blurredEmailString, makeInputChangeEvent(), inputTracker); // TBD: fire only on blur?
-
   const [statusMessage, setStatusMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -39,17 +34,17 @@ function KeepMePosted({children, name}) {
 
     sendForm('keep_me_posted', 'template_keep_me_posted', '#keep-me-posted')
       .then(function(response) {
-        // TODO
-        // tracker.trackEvent(makeFormSubmitEvent())
-        console.log('SUCCESS!', response.status, response.text);
+        // TODO: needs its own event, e.g. tracker.trackEvent(makeFormSubmitEvent())
+        var successMessage = "Thanks for subscribing, we'll notify you when we release!";
+        tracker.trackEvent(makeNonInteractiveEvent({global_contexts: [makeActionContext({id: "keep-me-posted", text: successMessage})]}))
         setFormSent(true);
-        setStatusMessage("Thanks for subscribing, we'll notify you when we release!");
+        setStatusMessage(successMessage);
         form.reset();
       }, function(error) {
-        tracker.trackEvent(makeNonInteractiveEvent({global_contexts: [makeErrorContext({id: "keep-me-posted", message: "failed to send"})]}))
+        var failedMessage = "Whoops, we could not register your email address. Please try again (later).";
+        tracker.trackEvent(makeNonInteractiveEvent({global_contexts: [makeErrorContext({id: "keep-me-posted", message: failedMessage})]}))
         setFormSent(false);
-        console.error('Failed to send form: ', error);
-        setStatusMessage("Whoops, we could not register your email address. Please try again (later).");
+        setStatusMessage(failedMessage);
     });
   }
 
@@ -57,22 +52,16 @@ function KeepMePosted({children, name}) {
       <div className={styles.wrapper}>
         <form id="keep-me-posted" onSubmit={handleSubmit(onSubmit)}>
           <input 
-            id={'email'}
             placeholder="Your email address" 
             type="email" 
             name="email_address" 
             {...register("email_address", { required: true })} 
-            onChange={(event) => {
-              setEmailString(event.currentTarget.value);
-            }}
-            onBlur={() => setBlurredEmailString(emailString)}
             className={styles.emailAddress} 
           />
           <input 
-            id="subscribe"
             type="submit" 
             value="Keep me posted" 
-            onClick={() => trackButtonClick(  // TODO: should handle this in the sendForm function instead
+            onClick={() => trackButtonClick(
               makeButtonContext({ 
                 id: 'subscribe', 
                 text: 'Keep me posted',
