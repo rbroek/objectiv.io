@@ -6,8 +6,10 @@ import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
 import {
   makeButtonContext,
+  makeErrorContext,
   makeInputChangeEvent,
   makeInputContext,
+  makeNonInteractiveEvent,
   ReactTracker,
   trackButtonClick,
   useTracker,
@@ -37,11 +39,14 @@ function KeepMePosted({children, name}) {
 
     sendForm('keep_me_posted', 'template_keep_me_posted', '#keep-me-posted')
       .then(function(response) {
+        // TODO
+        // tracker.trackEvent(makeFormSubmitEvent())
         console.log('SUCCESS!', response.status, response.text);
         setFormSent(true);
         setStatusMessage("Thanks for subscribing, we'll notify you when we release!");
         form.reset();
       }, function(error) {
+        tracker.trackEvent(makeNonInteractiveEvent({global_contexts: [makeErrorContext({id: "keep-me-posted", message: "failed to send"})]}))
         setFormSent(false);
         console.error('Failed to send form: ', error);
         setStatusMessage("Whoops, we could not register your email address. Please try again (later).");
@@ -71,8 +76,7 @@ function KeepMePosted({children, name}) {
               makeButtonContext({ 
                 id: 'subscribe', 
                 text: 'Keep me posted',
-                path: ''
-              }), 
+              }),
               inputTracker)}
             className={clsx("button", "button--primary", styles.submitButton)} 
           />
