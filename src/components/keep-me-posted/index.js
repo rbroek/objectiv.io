@@ -32,10 +32,10 @@ function KeepMePosted({children, name}) {
   return (
       <div className={styles.wrapper}>
         <form id="keep-me-posted" onSubmit={handleSubmit(onSubmit)}>
-          <input type="email" name="user_email" {...register("user_email", { required: true })} 
+          <input type="email" name="email_address" {...register("email_address", { required: true })} 
             placeholder="Your email address" className={styles.emailAddress} />
           <input type="submit" value="Keep me posted" className={clsx("button", "button--primary", styles.submitButton)} />
-          {errors.user_email?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
+          {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
         </form>
         <p className={clsx(styles.statusMessage, (formSent ? styles.success : styles.alert))}>{statusMessage}</p>
         {children}
