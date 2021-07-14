@@ -5,21 +5,32 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import { TrackerSection } from "@objectiv/tracker-react";
+import { 
+  ReactTracker,
+  useTracker,
+  makeOverlayContext,
+  makeSectionContext,
+  makeLinkContext,
+  trackLinkClick,
+} from "@objectiv/tracker-react";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
 
 export function DefaultNavbarItem({mobile = false, ...props}) {
+  const tracker = useTracker();
+  const mobileNavbarTracker = new ReactTracker(tracker, {
+    location_stack: [makeOverlayContext({ id: 'hamburger-menu' })],
+  });
+  const desktopNavbarTracker = new ReactTracker(tracker, {
+    location_stack: [makeSectionContext({ id: 'desktop-menu' })],
+  });
+
   if(mobile) {
-    return <TrackerSection id={"hamburger-menu"}>
-      <OriginalDefaultNavbarItem {...props} />
-    </TrackerSection>
+    return <OriginalDefaultNavbarItem {...props} onClick={() => trackLinkClick(makeLinkContext({ id: props.label, text: props.label, href: props.href }), mobileNavbarTracker)} />
   }
 
   return (
-    <TrackerSection id={"desktop-menu"}>
-      <OriginalDefaultNavbarItem {...props} />
-    </TrackerSection>
-  );
+    <OriginalDefaultNavbarItem {...props} onClick={() => trackLinkClick(makeLinkContext({ id: props.label, text: props.label, href: props.href }), desktopNavbarTracker)} />
+  )
 }
 
 export default DefaultNavbarItem;
