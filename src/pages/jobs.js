@@ -9,7 +9,7 @@ export default function Jobs() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={siteConfig.title}
+      title='Jobs'
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.jobsContainer)}>
