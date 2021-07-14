@@ -32,7 +32,7 @@ const Mermaid = ({ chart, caption, baseColor}) => {
 	useEffect(() => {
 		mermaid.contentLoaded();
 	}, []);
-	return <div className={"diagram-"+baseColor}><div className="mermaid">{chart}</div><p class="diagram-caption">{caption}</p></div>;
+	return <div className={"diagram-"+baseColor}><div className="mermaid">{chart}</div><p className="diagram-caption">{caption}</p></div>;
 };
 
 var exampleCallback = function() {
