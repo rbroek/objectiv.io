@@ -6,7 +6,12 @@
  */
 import React from 'react';
 import Translate from '@docusaurus/Translate';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
+import {
+  makeLinkContext,
+  useTrackLinkClick
+} from '@objectiv/tracker-react';
 
 export default function EditThisPage({editUrl}) {
   return (
@@ -25,14 +30,38 @@ export default function EditThisPage({editUrl}) {
               </Translate>
             </a>
           </li>
-          <li><a href="https://discourse.objectiv.io" target="_blank">Discuss</a></li>
+          <li>
+            <Link
+              to={'https://discourse.objectiv.io'}
+              target="_blank"
+              onClick={useTrackLinkClick(makeLinkContext({ id: 'discuss', href: 'https://discourse.objectiv.io', text: "Discuss" }))}
+            >
+              Discuss
+            </Link>
+          </li>
         </ul>
       </div>
       <div className={styles.docItemFooterProject}>
         <p className={styles.docItemFooterHeading}>The project</p>
         <ul>
-          <li><a href="https://discourse.objectiv.io" target="_blank">Get help</a></li>
-          <li><a href="https://github.com/objectiv" target="_blank">Submit feature request or bug report</a></li>
+          <li>
+            <Link
+              to={'https://discourse.objectiv.io'}
+              target="_blank"
+              onClick={useTrackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://discourse.objectiv.io', text: "Get help" }))}
+            >
+              Get help
+            </Link>
+          </li>
+          <li>
+           <Link
+              to={'https://github.com/objectiv/objectiv-analytics'}
+              target="_blank"
+              onClick={useTrackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://github.com/objectiv/objectiv-analytics', text: "Submit idea or bug report" }))}
+            >
+              Submit idea or bug report
+            </Link>
+          </li>
         </ul>        
       </div>
     </div>
