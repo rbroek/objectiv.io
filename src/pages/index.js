@@ -6,43 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
 import GitHubButton from 'react-github-btn'
-import KeepMePosted from '../components/keep-me-posted';
 import styles from './styles.module.css';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-// import { Tracker } from "objectiv-tracker-js";
-
-// TODO: Implement tracker as component
-// Only load the tracker if the environment can execute DOM, so it doesn't break SSR when building.
-// Also see https://github.com/facebook/docusaurus/issues/2494.
-// let pagesSectionTracker = null;
-// if (ExecutionEnvironment.canUseDOM) {
-//   // Create a new Tracker
-//   const tracker = Tracker.forWebDocument({
-//     // TODO make the endpoint optional in debug mode
-//     endpoint: `https://httpstat.us/200`,
-//     debug: true
-//   });
-
-//   // Extend the basic tracker with a default Section representing the page
-//   pagesSectionTracker = tracker.withStack([
-//     {
-//       _context_type: 'SectionContext',
-//       id: "Pages",
-//     },
-//   ]);
-// }
-
-// function trackGitHubButtonClick() {
-//   pagesSectionTracker.trackEvent({
-//     event: 'GitHubButtonClicked',
-//     contexts: [
-//       {
-//         _context_type: 'ButtonContext',
-//         label: "View GitHub",
-//       },
-//     ],
-//   });
-// }
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -58,12 +22,11 @@ export default function Home() {
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
-            The Open Source Analytics Pipeline<br/>
-            Built For The Data Scientist
+            We're on a mission to create the ultimate iterative workflow for data scientists
           </h1>
           <p className={clsx(styles.heroSubTitle)}>
-            Build &amp; orchestrate reusable, stackable and interchangeable models <br />
-            that embrace a standardized event taxonomy. Straight from your Jupyter notebook.
+            Build &amp; orchestrate reusable, stackable and interchangeable SQL models that embrace a 
+            standardized event taxonomy. Straight from your Notebook.
           </p>
  
           <GitHubButton 

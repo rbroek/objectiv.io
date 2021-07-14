@@ -31,6 +31,7 @@
   --ifm-footer-background-color: white;
   --ifm-footer-color: black;
   --ifm-footer-link-hover-color: black;
+  --ifm-footer-padding-vertical: 20px;
   --ifm-h1-font-size: 18px;
   --ifm-line-height-base: 150%;
   --ifm-global-shadow-lw: 0px 2px 0px rgba(70, 76, 92, 0.25);
@@ -77,6 +78,9 @@ body {
 }
 
 @media (min-width: 960px) {
+  .navbar {
+    z-index: 999; /* so announcement bar can overlap it*/
+  }  
   .navbar .navItem {
     width: 24px;
     height: 24px;
@@ -126,6 +130,10 @@ div[role=banner] {
 div[role=banner] img {
   vertical-align: middle;
   margin: 0 18px;
+}
+
+.footer {
+  padding: 10px;
 }
 
 @media (min-width: 1440px) {

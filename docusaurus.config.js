@@ -9,15 +9,15 @@ const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark
 module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon/favicon.ico',
-  title: 'Objectiv: a product analytics pipeline for deep, reusable modelling',
+  title: 'Objectiv - creating the ultimate iterative workflow for data scientists',
   titleDelimiter: '|',
-  tagline: 'Collect high quality data with a standardized taxonomy.\nTake, build on and run advanced models ' 
-    +' off the shelf.', //meta description, and og:description
+  tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
+    + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
   url: 'https://objectiv.io',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
   
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -27,14 +27,6 @@ module.exports = {
       disableSwitch: true,
     },
     sidebarCollapsible: true,
-    // announcementBar: {
-    //   id: 'hiring', // Any value that will identify this message.
-    //   content:
-    //     '<img src="/img/icons/icon-star.svg" />We’re Hiring! Are you mad about data science &amp; engineering? <a href="/jobs">Check out the vacancy</a>!<img src="/img/icons/icon-star.svg" />',
-    //   backgroundColor: '#FEF284', // Defaults to `#fff`.
-    //   textColor: '#333333', // Defaults to `#000`.
-    //   isCloseable: false, // Defaults to `true`.
-    // },
     navbar: {
       title: '',
       hideOnScroll: false,
@@ -67,7 +59,7 @@ module.exports = {
           className: 'navItem navDiscourse',
         },
         {
-          href: 'https://twitter.com/objectivHQ',
+          href: 'https://twitter.com/objectiv_io',
           label: 'Twitter',
           position: 'right',
           className: 'navItem navTwitter',
