@@ -338,6 +338,13 @@ p, .markdown p {
   display: none;
 }
 
+/** DOCS **/
+.docs-wrapper footer .col {
+  flex: none;
+  width: 80%;
+  margin: 0 10%;
+}
+
 /** DIAGRAM (MERMAID) MARKUP **/
 
 .mermaid {

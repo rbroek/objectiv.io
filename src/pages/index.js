@@ -6,14 +6,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import KeepMePosted from '../components/keep-me-posted';
 import AnnouncementBar from '../components/announcement-bar'
 import styles from './styles.module.css';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import {
+  makeLinkContext,
+  useTrackLinkClick
+} from '@objectiv/tracker-react';
 
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={siteConfig.title}
+      title=''
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <AnnouncementBar 
         title="We're Hiring!"
@@ -22,11 +25,6 @@ export default function Home() {
         ctaText='Check the vacancy'
       >
       </AnnouncementBar>
-      {/* <div className={clsx(styles.announcement)}>
-        <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
-          <strong>We’re Hiring! </strong>Join our mission crew as a Data Infra Scientist / Data Workflow Engineer. <a href="/jobs">Check the vacancy</a>
-        <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
-      </div> */}
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.heroContainer)}>
           <img 
