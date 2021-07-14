@@ -154,6 +154,7 @@ module.exports = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k'
+    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
+    trackerEndPoint: 'http://localhost:5000'
   }
 };
