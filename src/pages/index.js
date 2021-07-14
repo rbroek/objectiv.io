@@ -7,13 +7,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconHeader from '@site/src/components/icon-header';
 import GitHubButton from 'react-github-btn'
 import styles from './styles.module.css';
+import {
+  makeLinkContext,
+  useTrackLinkClick
+} from '@objectiv/tracker-react';
 
 export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={siteConfig.title}
+      title=''
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.heroContainer)}>
