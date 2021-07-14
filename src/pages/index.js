@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={siteConfig.title}
+      title=''
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       {renderBanner}
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
