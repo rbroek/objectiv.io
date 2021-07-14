@@ -1,0 +1,16 @@
+AuthName "Objectiv Restricted Area"
+AuthUserFile /sites/objectiv.io/private/.htpasswd
+AuthGroupFile /dev/null 
+AuthType Basic
+
+require valid-user
+
+# redirect to https
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^objectiv.io [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://objectiv.io/$1 [R,L]
+
+# set hsts header, to prevent client from returning to http
+Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
