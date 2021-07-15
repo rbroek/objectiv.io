@@ -4,6 +4,9 @@ const remarkFootnotes = require('remark-footnotes'); // https://github.com/remar
 const remarkGitHub = require('remark-github'); // https://github.com/remarkjs/remark-github
 const remarkLicense = require('remark-license'); // https://github.com/remarkjs/remark-license
 const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark-lint
+const objectiv_tracker_endpoint = process.env.OBJECTIV_TRACKER_ENDPOINT ? 
+  process.env.OBJECTIV_TRACKER_ENDPOINT : 'http://localhost:5000';
+console.log("USING OBJECTIV TRACKER ENDPOINT:", objectiv_tracker_endpoint);
 // TBD: https://github.com/rehypejs/rehype-meta
 
 module.exports = {
@@ -99,6 +102,6 @@ module.exports = {
   customFields: {
     emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerId: 'objectiv-io',
-    trackerEndPoint: 'http://localhost:5000'
+    trackerEndPoint: objectiv_tracker_endpoint
   }
 };

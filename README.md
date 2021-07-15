@@ -39,14 +39,19 @@ without having to restart the server.
 
 ## Build
 
+First ensure you set the right endpoint for the Objectiv tracker in the environment variables. If not set, by
+default `http://localhost:5000` is used.
+
+Windows Powershell:
+```console
+$env:OBJECTIV_TRACKER_ENDPOINT = '<VALUE>'
+```
+
+Then to build:
+
 ```console
 yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents 
 hosting service.
-
-
-## License
-
-License.
