@@ -101,7 +101,7 @@ module.exports = {
   ],
   customFields: {
     emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
-    trackerId: 'objectiv-io',
+    trackerApplicationId: 'objectiv-website',
     trackerEndPoint: objectiv_tracker_endpoint
   }
 };
