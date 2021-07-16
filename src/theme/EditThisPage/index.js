@@ -54,7 +54,7 @@ export default function EditThisPage({editUrl}) {
             </Link>
           </li>
           <li>
-            <Link
+           <Link
               to={'https://github.com/objectiv/objectiv-analytics'}
               target="_blank"
               onClick={useTrackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://github.com/objectiv/objectiv-analytics', text: "Submit idea or bug report" }))}

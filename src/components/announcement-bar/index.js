@@ -1,6 +1,11 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import {
+  useTrackLinkClick,
+  makeLinkContext,
+} from '@objectiv/tracker-react';
 
 function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
   return (
@@ -9,8 +14,8 @@ function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
         <strong>{title}</strong>&nbsp;
         {content}&nbsp;
         <Link 
-          to="{ctaLink}"
-          onClick={useTrackLinkClick(makeLinkContext({ id: 'home', href: '/jobs', text: 'Check the vacancy' }))}
+          to={ctaLink}
+          onClick={useTrackLinkClick(makeLinkContext({ id: ctaLink, href: '/jobs', text: 'Check the vacancy' }))}
         >
           {ctaText}
         </Link>

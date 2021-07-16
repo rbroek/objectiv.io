@@ -8,8 +8,8 @@ import React from 'react';
 
 function Root({children}) {
   const { siteConfig = {} } = useDocusaurusContext();
-  const { trackerEndPoint } = siteConfig.customFields;
-  const tracker = new ReactTracker({ endpoint: trackerEndPoint });
+  const { trackerEndPoint, trackerApplicationId } = siteConfig.customFields;
+  const tracker = new ReactTracker({ applicationId: trackerApplicationId, endpoint: trackerEndPoint });
 
   useTrackApplicationLoaded(tracker);
 
