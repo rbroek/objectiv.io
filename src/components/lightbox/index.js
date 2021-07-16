@@ -29,8 +29,8 @@ function Lightbox({children, src, title, caption, size='l', type='lightbox'}) {
     src={src}
     alt={title}
     className={sizeClass}
-    closeText="Unzoom Image"
-    openText="Zoom Image"
+    closetext="Unzoom Image"
+    opentext="Zoom Image"
   />;
   const lbCaption = caption ? <p className={styles.caption}>{caption}</p> : '';
 
