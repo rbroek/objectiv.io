@@ -16,21 +16,6 @@ export default function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
 
-  const renderBanner = (
-    <div className={clsx(styles.announcement)}>
-    <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
-      <strong>We’re Hiring!</strong> Join our mission crew as a Data Infra Scientist / Data Workflow Engineer.
-      &nbsp;
-      <Link
-        to={'/jobs'}
-        onClick={useTrackLinkClick(makeLinkContext({ id: 'home', href: '/jobs', text: 'Check the vacancy' }))}
-      >
-        Check the vacancy
-      </Link>
-    <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
-  </div>
-  );
-
   return (
     <Layout
       title=''
