@@ -1,10 +1,5 @@
-import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {
-  makeLinkContext,
-  useTrackLinkClick
-} from '@objectiv/tracker-react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import React from 'react';
