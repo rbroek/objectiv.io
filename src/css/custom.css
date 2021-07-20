@@ -76,7 +76,7 @@ body {
 }
 
 @media (max-width: 996px) {
-  .navbar__item {
+  .navbar-sidebar .navbar__item {
     display: block;
   }
 }
