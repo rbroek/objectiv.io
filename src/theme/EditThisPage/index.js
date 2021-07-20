@@ -9,11 +9,13 @@ import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import {
+  useTracker,
   makeLinkContext,
-  useTrackLinkClick
+  trackLinkClick
 } from '@objectiv/tracker-react';
 
 export default function EditThisPage({editUrl}) {
+  const tracker = useTracker();
   return (
     <div className={styles.docItemFooter}>
       <div className={styles.docItemFooterPage}>
@@ -34,7 +36,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://discourse.objectiv.io'}
               target="_blank"
-              onClick={useTrackLinkClick(makeLinkContext({ id: 'discuss', href: 'https://discourse.objectiv.io', text: "Discuss" }))}
+              onClick={() => trackLinkClick(makeLinkContext({ id: 'discuss', href: 'https://discourse.objectiv.io', text: "Discuss" }), tracker)}
             >
               Discuss
             </Link>
@@ -48,7 +50,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://discourse.objectiv.io'}
               target="_blank"
-              onClick={useTrackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://discourse.objectiv.io', text: "Get help" }))}
+              onClick={() => trackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://discourse.objectiv.io', text: "Get help" }), tracker)}
             >
               Get help
             </Link>
@@ -57,7 +59,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://github.com/objectiv/objectiv-analytics'}
               target="_blank"
-              onClick={useTrackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://github.com/objectiv/objectiv-analytics', text: "Submit idea or bug report" }))}
+              onClick={() => trackLinkClick(makeLinkContext({ id: 'get-help', href: 'https://github.com/objectiv/objectiv-analytics', text: "Submit idea or bug report" }), tracker)}
             >
               Submit idea or bug report
             </Link>

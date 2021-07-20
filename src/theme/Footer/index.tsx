@@ -20,7 +20,7 @@ import {
   useTracker,
   makeSectionContext,
   makeLinkContext,
-  useTrackLinkClick
+  trackLinkClick
 } from '@objectiv/tracker-react';
 
 function FooterLink({
@@ -41,7 +41,7 @@ function FooterLink({
   return (
     <Link
       className="footer__link-item"
-      onClick={useTrackLinkClick(makeLinkContext({ id: label, href: toUrl, text: label }), footerTracker)}
+      onClick={() => trackLinkClick(makeLinkContext({ id: label, href: toUrl, text: label }), footerTracker)}
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
@@ -134,7 +134,7 @@ function Footer(): JSX.Element | null {
                 {logo.href ? (
                   <Link 
                     href={logo.href} 
-                    onClick={useTrackLinkClick(makeLinkContext({ id: logo.alt, href: logo.href, text: logo.alt }), footerTracker)}
+                    onClick={() => trackLinkClick(makeLinkContext({ id: logo.alt, href: logo.href, text: logo.alt }), footerTracker)}
                     className={styles.footerLogoLink}
                   >
                     <FooterLogo alt={logo.alt} sources={sources} />
