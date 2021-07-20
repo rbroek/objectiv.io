@@ -3,13 +3,12 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import {
-  useTracker,
-  trackLinkClick,
+  useTrackLinkClick,
   makeLinkContext,
 } from '@objectiv/tracker-react';
 
 function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
-  const tracker = useTracker();
+  const trackCtaClick = useTrackLinkClick(makeLinkContext({ id: ctaLink, href: '/jobs', text: 'Check the vacancy' }));
   return (
     <div className={clsx(styles.announcement)}>
       <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
@@ -17,7 +16,7 @@ function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
         {content}&nbsp;
         <Link 
           to={ctaLink}
-          onClick={() => trackLinkClick(makeLinkContext({ id: ctaLink, href: '/jobs', text: 'Check the vacancy' }), tracker)}
+          onClick={trackCtaClick}
         >
           {ctaText}
         </Link>

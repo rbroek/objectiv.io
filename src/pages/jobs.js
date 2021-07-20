@@ -5,15 +5,18 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import {
-  useTracker,
+  useTrackLinkClick,
   makeLinkContext,
-  trackLinkClick
 } from '@objectiv/tracker-react';
 
 export default function Jobs() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const tracker = useTracker();
+  const trackCtaClick = useTrackLinkClick(makeLinkContext({ 
+    id: 'hear-from-you', 
+    href: 'mailto:jobs@objectiv.io', 
+    text: "we'd love to hear from you" 
+  }));
   return (
     <Layout
       title='Jobs'
@@ -55,7 +58,7 @@ export default function Jobs() {
             <p>Like what you have read and think you meet the mark? Then&nbsp;
             <Link
               to={'mailto:jobs@objectiv.io'}
-              onClick={() => trackLinkClick(makeLinkContext({ id: 'hear-from-you', href: 'mailto:jobs@objectiv.io', text: "we'd love to hear from you" }), tracker)}
+              onClick={trackCtaClick}
             >
               we'd love to hear from you
             </Link>
