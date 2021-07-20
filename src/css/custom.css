@@ -71,11 +71,15 @@ body {
 
 .navbar__link {
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
   padding-right: 24px;
 }
-
+@media (max-width: 996px) {
+  .navbar__item {
+    display: block;
+  }
+}
 @media (min-width: 960px) {
   .navbar {
     z-index: 999; /* so announcement bar can overlap it*/
