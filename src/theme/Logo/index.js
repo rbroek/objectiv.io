@@ -22,7 +22,11 @@ const Logo = (props) => {
       themeConfig: {
         navbar: {
           logo = {
-            src: '',
+            alt,
+            src,
+            srcDark,
+            href,
+            target,
           },
         },
       },
