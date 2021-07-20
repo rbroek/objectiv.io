@@ -4,19 +4,19 @@ const remarkFootnotes = require('remark-footnotes'); // https://github.com/remar
 const remarkGitHub = require('remark-github'); // https://github.com/remarkjs/remark-github
 const remarkLicense = require('remark-license'); // https://github.com/remarkjs/remark-license
 const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark-lint
-const objectiv_tracker_endpoint = process.env.OBJECTIV_TRACKER_ENDPOINT ? 
-  process.env.OBJECTIV_TRACKER_ENDPOINT : 'http://localhost:5000';
+const environment = process.env.OBJECTIV_ENVIRONMENT;
+const objectiv_tracker_endpoint = (environment == 'dev') ? 'http://localhost:5000' : 'https://collector.objectiv.io';
 console.log("USING OBJECTIV TRACKER ENDPOINT:", objectiv_tracker_endpoint);
 // TBD: https://github.com/rehypejs/rehype-meta
 
 module.exports = {
-  baseUrl: '/',
+  baseUrl: (environment == 'staging') ? '/staging/' : '/',
+  url: (environment == 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
   title: 'Objectiv - creating the ultimate iterative workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
     + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
-  url: 'https://objectiv.io',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 

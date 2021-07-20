@@ -39,12 +39,16 @@ without having to restart the server.
 
 ## Build
 
-First ensure you set the right endpoint for the Objectiv tracker in the environment variables. If not set, by
-default `http://localhost:5000` is used.
+First ensure you set the right environment in the environment variables: either `dev`, `staging`, or `prod`.
+
+* `dev`: tracker endpoint is set to `http://localhost:5000`.
+* `staging`: `url` and `baseUrl` are set to the staging environment.
+
+By default, the tracker endpoint is set to `https://collector.objectiv.io`.
 
 Windows Powershell:
 ```console
-$env:OBJECTIV_TRACKER_ENDPOINT = '<VALUE>'
+$env:OBJECTIV_ENVIRONMENT = '<VALUE>'
 ```
 
 Then to build:
