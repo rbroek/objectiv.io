@@ -29,7 +29,6 @@ module.exports = {
     colorMode: {
       disableSwitch: true,
     },
-    sidebarCollapsible: true,
     navbar: {
       title: '',
       hideOnScroll: false,
@@ -73,6 +72,7 @@ module.exports = {
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
+          sidebarCollapsible: true,
           sidebarPath: require.resolve('./docs/sidebars.js'),
           editUrl:
             'https://github.com/objectiv/objectiv.io/edit/master/docs/',
