@@ -8,7 +8,9 @@ import React from 'react';
 import {
   makeLinkContext,
   trackLinkClick,
-  useTracker
+  useTracker,
+  ReactTracker,
+  makeSectionContext,
 } from "@objectiv/tracker-react";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -16,7 +18,10 @@ import OriginalLogo from '@theme-original/Logo';
 
 const Logo = (props) => {
   const tracker = useTracker();
-
+  const LogoTracker = new ReactTracker(tracker, {
+    location_stack: [makeSectionContext({ id: 'navbar-top' })],
+  });
+  
   const {
     siteConfig: {
       themeConfig: {
@@ -34,7 +39,7 @@ const Logo = (props) => {
   } = useDocusaurusContext();
   const logoLink = useBaseUrl(logo.href || '/');
 
-  return <OriginalLogo onClick={() => trackLinkClick(makeLinkContext({ id: 'logo', href: logoLink, text: logo.alt }), tracker)} {...props} />
+  return <OriginalLogo onClick={() => trackLinkClick(makeLinkContext({ id: 'logo', href: logoLink, text: logo.alt }), LogoTracker)} {...props} />
 };
 
 export default Logo;
