@@ -23,7 +23,7 @@
     "@octokit/rest": "^18.5.3",
     "clsx": "^1.1.1",
     "emailjs-com": "^3.1.0",
-    "mermaid": "^8.11.2",
+    "mermaid": "^8.11.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-avatar": "^3.10.0",
