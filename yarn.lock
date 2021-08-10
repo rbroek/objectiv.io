@@ -1949,13 +1949,13 @@
 
 "@objectiv/plugin-web-device-context@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fplugin-web-device-context/-/plugin-web-device-context-0.0.1.tgz#948dfa643f10a32e96e8d35ad0a0444e503ce278"
-  integrity "sha1-gXpkY3wELUXveTaKGExrD0ScDk0= sha512-RgD9WwPcaFs2lDvx4TijWTto1s8bo+cJE5Q5T1huLuI+Tmrpu2Hg08R/Rnjx6ulzcW0/N1uRf6YcVhG8cD0PEg=="
+  resolved "http://localhost:4873/@objectiv%2fplugin-web-device-context/-/plugin-web-device-context-0.0.1.tgz#c14c8febfe92a755bc78bf253392975bd459705a"
+  integrity sha512-WmTBu8cx4r/GiMGkpwovZxniNLlCHnogv3hY99yEE2YUIQTpunhvE6Cb/OTzfQ/cBvoka9eX595V295Fr4EOGQ==
 
 "@objectiv/plugin-web-document-context@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#9a69b80e99f2e2d8cf1e3650dbf28c48d4407718"
-  integrity "sha1-QE7VLKdiHiDtZHG3A1LE18sr0uM= sha512-JXyuGBzPfMa7NzQUc2ycTg5yE+l+3VkgFPPmtbUSzOKKuVY/vm9gLVhl7QRxhlTDayDZoyaQ9oQDZDCEWyO35g=="
+  resolved "http://localhost:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#e6034c87c0e82ea3f7af6f6a6be5a19ba2d0d29f"
+  integrity sha512-ri1J3TRV3Xx3Qio9q8bmZyF9bpSVSkx9q4lzDjdiXgzhMaJ2NGshPDOeNIRoEHL4y2SJAmTltb2r1CU7OcSKdg==
 
 "@objectiv/schema@~0.0.1":
   version "0.0.1"
@@ -1964,8 +1964,8 @@
 
 "@objectiv/tracker-core@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#29ce1b4bfd0df646169cff4b3c3538276527c2d9"
-  integrity "sha1-Zy1m+cTHdSTg0AbMH6PNajaV9iM= sha512-UVvlJfOxtxZCx18mFj8BD4odviiZ1GG9dZBYTKRS/ehShZJ0oxb5koINHHklvgvBuVJ8Hf2gMhQjHtNuVwqGQg=="
+  resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#bce6b45dad6e191a0752fe1ea0ad4b45971e425f"
+  integrity sha512-tjQwatYG8nlcDBT0wlY5UHo049SZSdC0ZOOpz78GSiXTiYFqae5dUZg1u0RgiyyTy51AN0px+5jbhcSej1vswQ==
   dependencies:
     es6-error "^4.1.1"
     tslib "^2.2.0"
@@ -1973,8 +1973,8 @@
 
 "@objectiv/tracker-react@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.1.tgz#ce24ed0968022991022aaf0fad894af774ec70b5"
-  integrity "sha1-SXEKT5WKVDuqWtWkLkMMxw2eadw= sha512-3e36Ui387DEK8jnd3SrS2INFCoL6sWMhCQ4JujcxzLHbgxvhGxZ9WUTCbz6O8U/xChqBvVzNoquyJtdX3g+nVA=="
+  resolved "http://localhost:4873/@objectiv%2ftracker-react/-/tracker-react-0.0.1.tgz#9c9f452e7a9d07161674511f80f31a1654d151ee"
+  integrity sha512-4AV/dO1YiYB1ryNIM2ROWihXeSSXSuefYKmIW7BgC9mMfGuKrOTSFhqJyNdq6yfAFYVBhBCkYNwUOM5FnmX81g==
   dependencies:
     "@objectiv/schema" "~0.0.1"
     "@objectiv/tracker-core" "~0.0.1"
@@ -1983,8 +1983,8 @@
 
 "@objectiv/tracker-web@~0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-web/-/tracker-web-0.0.1.tgz#0d7c7f9b2633a552db7b7a33749ea58ba59a4b0e"
-  integrity "sha1-Tz89dIDPoKhjWcZcvddqpKEqI00= sha512-LiNq3ovXUxg7l6B1oOmC2q8I6MsFXoRy4Fkur4YvhwDpXREKmzAUcbsoJiEo4vfzn6N18Cg35s11XXLx35senw=="
+  resolved "http://localhost:4873/@objectiv%2ftracker-web/-/tracker-web-0.0.1.tgz#18e308d777ded913efd3f6ff1484dec39ea562f8"
+  integrity sha512-ILdPPOIN/fXh3nF/g+tClXCmLZYWNHykEqRxQB730hv3uVOK+1TnmXmhoembmLLKZIrzfQP7NWwAGUvD4foe7w==
   dependencies:
     "@objectiv/plugin-web-device-context" "~0.0.1"
     "@objectiv/plugin-web-document-context" "~0.0.1"
@@ -4858,6 +4858,11 @@ es-to-primitive@^1.2.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+es6-error@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/es6-error/-/es6-error-4.1.1.tgz#9e3af407459deed47e9a91f9b885a84eb05c561d"
+  integrity sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg==
 
 escalade@^3.1.1:
   version "3.1.1"
