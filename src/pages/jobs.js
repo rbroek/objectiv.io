@@ -23,7 +23,7 @@ export default function Jobs() {
       description={siteConfig.tagline}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.jobsContainer)}>
-          <h1>Currently Hiring: Data Infra Scientist / Data Workflow Engineer</h1>
+          <h1>Currently Hiring: Data Scientist / Engineer</h1>
             <h2> <img width="32px" src='/img/startup.svg' />  Our mission</h2>
             <p>It’s our dream to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
 
@@ -36,8 +36,8 @@ export default function Jobs() {
             <h2> <img width="32px" src='/img/cake.svg' />  So, where is the product?</h2>
             In a repository near you after summer. Our team is working hard to get the initial version ready. Then we will continue to develop in public.
 
-            <h2> <img width="32px" src='/img/cap.svg' />  That is a weird job title!</h2>
-            <p>Well, to start we don’t really get excited about titles. But more importantly; you will be joining an early team of 10 analytics enthusiasts that are together building a great product. The lines between data science, data engineering, frontend and ops are just very blurry in our team, as everyone is taking multiple parts of that.</p>
+            <h2> <img width="32px" src='/img/cap.svg' />  About the role</h2>
+            <p>You will be joining an early team of 10 analytics enthusiasts that are together building a great product. The lines between data science, data engineering, frontend and ops are quite blurry in our team, as everyone is taking multiple parts of that.</p>
 
             <h2> <img width="32px" src='/img/id-card.svg' />  About you</h2>
             <p>This role is at the intersection of data science and data engineering. What we are looking for in this role:</p>

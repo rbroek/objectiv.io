@@ -15,7 +15,7 @@ import {
 } from "@objectiv/tracker-react";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
 
-export function DefaultNavbarItem({mobile = false, ...props}) {
+export function DefaultNavbarItem({mobile = false, position: _position, ...props}) {
   const tracker = useTracker();
   const mobileNavbarTracker = new ReactTracker(tracker, {
     location_stack: [makeOverlayContext({ id: 'hamburger-menu' })],
