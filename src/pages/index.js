@@ -33,7 +33,7 @@ export default function Home() {
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
-            We're on a mission to create the ultimate iterative workflow for data scientists
+            We're on a mission to create<br /> the ultimate iterative workflow<br /> for data scientists
           </h1>
           <p className={clsx(styles.heroSubTitle)}>
             what we’re currently working on:
@@ -91,7 +91,7 @@ export default function Home() {
 
       <main className={clsx('body-large')}>
         <div className={clsx(styles.pageSection,styles.pageSectionBlue)}>
-          <div className={clsx("container", styles.contentContainer, styles.intro)}>
+          <div className={clsx("container", styles.intro)}>
             <img
               className={clsx(styles.introTitleIcon)}
               src={useBaseUrl("img/icons/icon-data-scientist-thinking.svg")}
