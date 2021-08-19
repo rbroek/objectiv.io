@@ -1,9 +1,5 @@
 /* stylelint-disable docusaurus/copyright-header */
 
-/**
- * CSS files with the .module.css suffix are treated as CSS modules and scoped locally.
- */
-
 .heroBanner {
   padding: 50px 0;
   text-align: center;
@@ -32,6 +28,12 @@
   max-width: 920px;
 }
 
+@media screen and (min-width: 1440px) {
+  .heroContainer {
+    max-width: 850px;
+  }  
+}
+
 .heroImage {
   padding-bottom: 52px;
 }
@@ -45,16 +47,7 @@
   font-weight: normal;
 }
 
-@media screen and (min-width: 1440px) {
-  .contentContainer {
-    max-width: 960px;
-  }
-  .heroContainer {
-    max-width: 850px;
-  }  
-}
-
-.usps {
+.heroUsps {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -64,32 +57,32 @@
   margin-bottom: 100px;
 }
 
-.usps>div {
+.heroUsps>div {
   width: 220px;
   font-size: 14px;
   position: relative;
 }
 
-.usps>div:nth-child(1) { /* the first USP */
+.heroUsps>div:nth-child(1) { /* the first USP */
   margin-right: 60px;
 }
 
-.usps>div:nth-child(2) { /* the middle USP */
+.heroUsps>div:nth-child(2) { /* the middle USP */
   width: 240px;
   margin-right: 60px;
 }
 
-.uspIcon {
+.heroUspsIcon {
   float: none;
   margin-bottom: 53px;
 }
 
-.uspArrowUp {
+.heroUspsArrowUp {
   position: absolute;
   top: 20px;
   right: -80px;
 }
-.uspArrowDown {
+.heroUspsArrowDown {
   position: absolute;
   top: 40px;
   right: -80px;
@@ -110,12 +103,6 @@
   margin: 23px 0 29px 0;
 }
 
-.introTitle {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 38px;
-}
-
 .introTeaser {
   font-weight: bold;
   font-size: 14px;
@@ -126,18 +113,28 @@
   margin: 0 40px;
 }
 
-.pageSection {
-  padding: 80px 0 80px 0;
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 38px;
 }
 
-.pageSectionNoSubHeader {
-  padding-top: 30px;
+.pageSection {
+  padding: 60px 0 60px 0;
 }
 
 .pageSectionBlue {
   background-color: var(--obj-primary-one);
   padding: 60px 0;
   color: #fff;
+}
+
+.pageSectionBlue h2 {
+  color: #fff;
+}
+
+.pageSectionLightBlue {
+  background-color: #F7FDFF;
 }
 
 @media screen and (max-width: 966px) {
@@ -149,13 +146,84 @@
   }
 }
 
-.pageTitle {
-  font-family: 'Bungee';
+@media screen and (min-width: 1440px) {
+  .contentContainer {
+    max-width: 750px;
+  }
+}
+
+.solutionTitle {
+  display: flex;
+  margin-bottom: 60px;
+}
+.solutionTitle>div:nth-child(1) { /* the number */
+  width: 56px;
+  margin-right: 50px;
+  font-family: Bungee;
   font-size: 32px;
   line-height: 150%;
-  letter-spacing: 0.2em;
-  margin: 0 0 80px 0;
 }
+.solutionTitle>div:nth-child(2) { /* the text */
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.solutionDiagram {
+  max-width: 110%;
+  position: relative;
+  left: -5%;
+  margin: 70px 0;
+}
+
+.ctaButton {
+  height: 48px;
+  line-height: 28px;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(51, 51, 51, 0.25);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 20px 0;
+  transition: 0.5s;
+}
+
+.ctaButton:hover {
+  background: #F7FDFF;
+  box-shadow: 1px 2px 3px rgba(51, 51, 51, 0.25);
+  color: #000;
+  cursor: pointer;
+}
+
+.pageSectionLightBlue .ctaButton:hover {
+  background: #fff;
+}
+
+.ctaButton span:nth-child(1) { /* the GitHub icon */
+  margin: 0 16px 0 0;
+  float: left;
+}
+
+footer {
+  background-color: var(--obj-primary-one);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 60px 0 120px 0;
+}
+
+footer h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+
+/**************
+ ABOUT US PAGE 
+***************/
 
 .aboutUsBanner {
   padding: 65px 0 50px 0;
@@ -216,6 +284,11 @@
 .contributorFooter {
   padding-top: 16px;
 }
+
+
+/**************
+ JOBS PAGE 
+***************/
 
 .jobsContainer {
   margin-top: 0;

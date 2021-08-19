@@ -7,6 +7,7 @@ const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark
 const environment = process.env.OBJECTIV_ENVIRONMENT;
 const objectiv_tracker_endpoint = (environment == 'dev') ? 'http://localhost:5000' : 'https://collector.objectiv.io';
 console.log("USING OBJECTIV TRACKER ENDPOINT:", objectiv_tracker_endpoint);
+const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 // TBD: https://github.com/rehypejs/rehype-meta
 
 module.exports = {
@@ -55,7 +56,7 @@ module.exports = {
           className: 'navItem navGitHub',
         },
         {
-          href: 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg',
+          href: slackJoinLink,
           label: 'Slack',
           position: 'right',
           className: 'navItem navSlack',
@@ -94,6 +95,10 @@ module.exports = {
               href: 'https://github.com/objectiv',
             },
             {
+              label: 'Slack',
+              href: slackJoinLink,
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/objectivhq',
             },
@@ -105,6 +110,10 @@ module.exports = {
             {
               label: 'Blog',
               to: 'blog',
+            },
+            {
+              label: 'Jobs',
+              to: 'jobs',
             },
           ],
         },
@@ -157,9 +166,9 @@ module.exports = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerApplicationId: 'objectiv-website',
     trackerDocsApplicationId: 'objectiv-docs',
-    trackerEndPoint: objectiv_tracker_endpoint
+    trackerEndPoint: objectiv_tracker_endpoint, 
+    slackJoinLink: slackJoinLink
   }
 };
