@@ -55,10 +55,10 @@ module.exports = {
           className: 'navItem navGitHub',
         },
         {
-          href: 'https://discourse.objectiv.io',
-          label: 'Discourse',
+          href: 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg',
+          label: 'Slack',
           position: 'right',
-          className: 'navItem navDiscourse',
+          className: 'navItem navSlack',
         },
         {
           href: 'https://twitter.com/objectiv_io',

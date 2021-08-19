@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import {
@@ -27,7 +28,7 @@ function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
         <strong>{title}</strong>&nbsp;
         {content}&nbsp;
         <Link 
-          to="{ctaLink}"
+          to={ctaLink}
           onClick={trackCtaClick}
         >
           {ctaText}
