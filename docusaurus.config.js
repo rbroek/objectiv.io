@@ -21,6 +21,7 @@ module.exports = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
+  trailingSlash: false,
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
   
@@ -153,7 +154,6 @@ module.exports = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: false,
         },
       },
     ],
