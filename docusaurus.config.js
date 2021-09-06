@@ -22,6 +22,7 @@ module.exports = {
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
+  trailingSlash: false,
   
   themes: ['@docusaurus/theme-live-codeblock'],
 
@@ -87,7 +88,6 @@ module.exports = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: false,
         },
       },
     ],
