@@ -23,7 +23,7 @@ export default function Jobs() {
       description={siteConfig.tagline}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className={clsx('container', styles.jobsContainer)}>
-          <h1>Currently Hiring: Data Scientist / Engineer</h1>
+          <h1>Currently Hiring: Senior Data Engineer</h1>
             <h2> <img width="32px" src='/img/startup.svg' />  Our mission</h2>
             <p>It’s our dream to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
 
@@ -42,10 +42,10 @@ export default function Jobs() {
             <h2> <img width="32px" src='/img/id-card.svg' />  About you</h2>
             <p>This role is at the intersection of data science and data engineering. What we are looking for in this role:</p>
             <ul>
-              <li>You know your way in Python, Notebooks &amp; SQL, but also get excited about data engineering tech like dbt. </li>
-              <li>You have at least 5 years of working experience in a data science / data engineering role and ideally worked with analytics data.</li>
-              <li>You have a master’s degree in data science, software engineering, math, physics or something related.</li>
-              <li>You have a can-do attitude. Even when the problem seems huge, you're able to chop it up and solve the chunks</li>
+              <li>You speak Python and SQL fluently, and get excited about data engineering tech like dbt.</li>
+              <li>You have at least 4 years of working experience in a data engineering role and ideally worked with analytics data.</li>
+              <li>You have a master's degree in software engineering, math or something related.</li>
+              <li>You have a can-do attitude. Even when the problem seems huge, you're able to chop it up and solve the chunks.</li>
               <li>You are fluent in English.</li>
               <li>This is a remote role in EU timezone with regular team offsites in The Netherlands.</li>
             </ul>
