@@ -36,7 +36,7 @@ function KeepMePosted({children, name}) {
       .then(function(response) {
         // TODO: needs its own event, e.g. tracker.trackEvent(makeFormSubmitEvent())
         var successMessage = "Thanks for subscribing, we'll notify you when we release!";
-        tracker.trackEvent(makeNonInteractiveEvent({global_contexts: [makeActionContext({id: "keep-me-posted", text: successMessage})]}))
+        tracker.trackEvent(makeNonInteractiveEvent({location_stack: [makeActionContext({id: "keep-me-posted", text: successMessage})]}))
         setFormSent(true);
         setStatusMessage(successMessage);
         form.reset();
