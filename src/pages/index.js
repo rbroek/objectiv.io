@@ -38,7 +38,7 @@ standardized event taxonomy. Straight from your Notebook.
             </p>
           </div>
           <div className={styles.heroKeepMePosted}>
-            <p>In a repository near you after summer. Want to get notified?</p>
+            <p>In a repository near you this fall. Want to get notified?</p>
             <KeepMePosted />
           </div>
         </div>
