@@ -124,9 +124,6 @@ export default function AboutUs() {
             <p>
               Establishing such a common taxonomy isn't trivial. Requirements vary and widespread adoption is critical for success. Since early 2021, our team has worked tirelessly on what we think could be the foundation of an open standard taxonomy for analytics, along with the required tools to enable data scientists to use it effectively.
             </p>
-            <p>
-              Objectiv is open source and we’re building it in public. We encourage feedback and contribution by members of the data science community. Check out the project on Github
-            </p>
           </div>
         </div>
         
