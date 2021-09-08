@@ -69,7 +69,7 @@
   }  
 }
 
-.contentContainer {
+.container, .contentContainer {
   max-width: 750px;
 }
 
