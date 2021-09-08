@@ -176,7 +176,7 @@ export default function AboutUs() {
               <Link 
                 to="/jobs" 
                 onClick={trackJobsClick}>
-                  we're hiring a Data Scientist / Engineer. Join us!
+                  we're hiring a Senior Data Engineer. Join us!
               </Link>
             </p>
           </div>
