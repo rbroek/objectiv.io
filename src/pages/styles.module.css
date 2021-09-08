@@ -72,6 +72,11 @@
 .container, .contentContainer {
   max-width: 750px;
 }
+@media (min-width: 1440px) {
+  .container, .contentContainer {
+    max-width: 750px;
+  }  
+}
 
 .pageSection {
   padding: 80px 0 80px 0;
