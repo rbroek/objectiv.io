@@ -5,6 +5,7 @@
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
  
 /* Override the default Infima variables here. */
 :root {
@@ -45,7 +46,7 @@
 
   /* --ifm-color-emphasis-200: #ABE9FE; */
 
-  --obj-primary-one: rgba(255, 87, 34, 0.1);
+  --obj-primary-one: #008FDB;
   --obj-primary-two: rgba(171, 233, 254, 0.1);
   --obj-primary-three: rgba(196, 166, 252, 0.1);
   --obj-primary-four: rgba(254, 242, 132, 0.1);
@@ -97,6 +98,12 @@ body {
   }
   .navbar .navGitHub:hover {
     background: url('/img/icons/icon-nav-github-hover.svg') no-repeat;
+  }
+  .navbar .navSlack {
+    background: url('/img/icons/icon-nav-slack.svg') no-repeat;
+  }
+  .navbar .navSlack:hover {
+    background: url('/img/icons/icon-nav-slack-hover.svg') no-repeat;
   }
   .navbar .navDiscourse {
     background: url('/img/icons/icon-nav-discourse.svg') no-repeat;
