@@ -80,6 +80,7 @@ module.exports = {
           routeBasePath: '/docs',
           sidebarCollapsible: true,
           sidebarPath: require.resolve('./docs/sidebars.js'),
+          sidebarCollapsible: true,
           editUrl:
             'https://github.com/objectiv/objectiv.io/edit/master/docs/',
           remarkPlugins: [

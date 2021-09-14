@@ -58,7 +58,7 @@ export default function AboutUs() {
   const trackJobsClick = useTrackLinkClick(makeLinkContext({ 
     id: 'hiring', 
     href: '/jobs', 
-    text: "we're hiring a Data Scientist / Engineer. Join us!" 
+    text: "we're hiring a Senior Data Engineer. Join us!" 
   }));
 
   return (
