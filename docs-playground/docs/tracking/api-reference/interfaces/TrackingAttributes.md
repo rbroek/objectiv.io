@@ -1,6 +1,6 @@
 # TrackingAttributes
 
-[Location Trackers](/tracking/api-reference/location-trackers/overview.md) and [trackChildren](/tracking/api-reference/advanced/trackChildren.md) decorate [Trackable Elements](/tracking/core-concepts/elements.md#trackable-elements) by adding [Custom data-* Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) to them.
+[Location Trackers](/tracking/api-reference/location-trackers/overview.md) and [trackChildren](/tracking/api-reference/low-level/trackChildren.md) decorate [Trackable Elements](/tracking/core-concepts/elements.md#trackable-elements) by adding [Custom data-* Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) to them.
 
 | Location Trackers | trackChildren   | Short name      | DOM dataset attribute name
 | :-:               | :-:             | :--             | :--                                                                                       
@@ -31,4 +31,4 @@ Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web
 Whether to monitor the [Tracked Element](/tracking/core-concepts/elements.md#tracked-elements) to automatically track either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) events.
 
 ### TrackingAttribute.trackChildren
-A serialized list of [ChildTrackingQuery](/tracking/api-reference/advanced/trackChildren.md#trackchildrenquery-parameter) objects.
+A serialized list of [ChildTrackingQuery](/tracking/api-reference/low-level/trackChildren.md#trackchildrenquery-parameter) objects.

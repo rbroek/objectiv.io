@@ -48,7 +48,7 @@ const App = () => {
 <br />
 
 :::tip Did you know ?
-`trackApplicationLoaded` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackApplicationLoaded` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -56,5 +56,5 @@ const App = () => {
 :::info See also
 - [configureTracker](/tracking/api-reference/general/configureTracker.md)
 - [trackURLChange](/tracking/api-reference/event-trackers/trackURLChange.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

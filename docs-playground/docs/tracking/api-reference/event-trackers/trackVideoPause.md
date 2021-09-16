@@ -45,7 +45,7 @@ trackVideoPause = (parameters: {
 <br />
 
 :::tip Did you know ?
-`trackVideoPause` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackVideoPause` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -54,5 +54,5 @@ trackVideoPause = (parameters: {
 - [trackVideoStart](/tracking/api-reference/event-trackers/trackVideoStart.md)
 - [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

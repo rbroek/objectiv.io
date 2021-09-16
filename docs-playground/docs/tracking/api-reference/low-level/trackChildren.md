@@ -60,6 +60,6 @@ trackChild = (parameters: TrackChildrenQuery) => TrackLocationReturnValue
 
 :::info See also
 - [Location Trackers](/tracking/api-reference/location-trackers/overview.md)
-- [trackLocation](/tracking/api-reference/advanced/trackLocation.md)
+- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
 - [Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tracked-elements-observer)
 :::

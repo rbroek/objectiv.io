@@ -42,7 +42,7 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackLink` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/advanced/trackLocation.md).
+`trackLink` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
 :::
 
 <br />
@@ -51,6 +51,6 @@ Unless customized via the `options` parameter, automatically triggers:
 :::info See also
 - [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
 - [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackLocation](/tracking/api-reference/advanced/trackLocation.md)
+- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
 :::

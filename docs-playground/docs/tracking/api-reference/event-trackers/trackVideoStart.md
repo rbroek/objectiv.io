@@ -45,7 +45,7 @@ trackVideoStart = (parameters: {
 <br />
 
 :::tip Did you know ?
-`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -54,5 +54,5 @@ trackVideoStart = (parameters: {
 - [trackVideoPause](/tracking/api-reference/event-trackers/trackVideoPause.md)
 - [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
   :::

@@ -43,7 +43,7 @@ trackClick = (parameters: {
 <br />
 
 :::tip Did you know ?
-`trackClick` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackClick` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -53,5 +53,5 @@ trackClick = (parameters: {
 - [trackLink](/tracking/api-reference/location-trackers/trackLink.md) 
 - [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
 - [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

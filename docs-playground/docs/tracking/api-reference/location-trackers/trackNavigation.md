@@ -43,7 +43,7 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackNavigation` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/advanced/trackLocation.md).
+`trackNavigation` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
 :::
 
 <br />
@@ -54,5 +54,5 @@ Unless customized via the `options` parameter, automatically triggers:
 - [trackOverlay](/tracking/api-reference/location-trackers/trackOverlay.md)
 - [trackMediaPlayer](/tracking/api-reference/location-trackers/trackMediaPlayer.md)
 - [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackLocation](/tracking/api-reference/advanced/trackLocation.md)
+- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
 :::

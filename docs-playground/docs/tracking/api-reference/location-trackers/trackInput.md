@@ -38,7 +38,7 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackInput` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/advanced/trackLocation.md).
+`trackInput` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
 :::
 
 <br />
@@ -47,5 +47,5 @@ Unless customized via the `options` parameter, automatically triggers:
 :::info See also
 - [trackElement](/tracking/api-reference/location-trackers/trackElement.md)
 - [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
-- [trackLocation](/tracking/api-reference/advanced/trackLocation.md)
+- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
 :::

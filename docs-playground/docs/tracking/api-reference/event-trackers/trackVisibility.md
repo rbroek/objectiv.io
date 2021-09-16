@@ -35,7 +35,7 @@ trackVisibility = (parameters: {
 <br />
 
 :::tip Did you know ?
-`trackVisibility` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackVisibility` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -43,5 +43,5 @@ trackVisibility = (parameters: {
 :::info See also
 - [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
 - [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
   :::

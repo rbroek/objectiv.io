@@ -53,7 +53,7 @@ trackInputChange = (parameters: {
 <br />
 
 :::tip Did you know ?
-`trackInputChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackInputChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -61,5 +61,5 @@ trackInputChange = (parameters: {
 :::info See also
 - [trackInput](/tracking/api-reference/location-trackers/trackInput.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

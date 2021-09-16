@@ -49,7 +49,7 @@ Unless customized via the `options` parameter, the given `instance` determines w
 ```
 
 :::tip Did you notice ?
-In the example above we factored the `instance` parameters by using [Core Location Context Factories](/tracking/api-reference/advanced/core-factories.md#location-context-factories).
+In the example above we factored the `instance` parameters by using [Core Location Context Factories](/tracking/api-reference/low-level/core-factories.md#location-context-factories).
 :::
 
 <br />

@@ -3,11 +3,11 @@
 Automatically generated factories based on the [Taxonomy](/taxonomy/overview.md) schema. 
 
 :::caution
-These are core-level APIs needed only when diving into advanced tracking via [trackLocation](/tracking/api-reference/advanced/trackLocation.md) or [trackEvent](/tracking/api-reference/advanced/trackEvent.md).   
+These are core-level APIs needed only when diving into low-level tracking via [trackLocation](/tracking/api-reference/low-level/trackLocation.md) or [trackEvent](/tracking/api-reference/low-level/trackEvent.md).   
 :::
 
 ## Location Context Factories
-These factories produce [LocationContext](/taxonomy/location-contexts/overview.md) instances ready to be handed over to [trackLocation](/tracking/api-reference/advanced/trackLocation.md).
+These factories produce [LocationContext](/taxonomy/location-contexts/overview.md) instances ready to be handed over to [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
 
 ### Factory list
 
@@ -96,7 +96,7 @@ makeWebDocumentContext = (props: {
 ```
 
 ## Event Factories
-These factories produce [Event](/taxonomy/events/overview.md) instances ready to be handed over to [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+These factories produce [Event](/taxonomy/events/overview.md) instances ready to be handed over to [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 
 ### Common parameters
 All Event factories share some common, optional, parameters: 

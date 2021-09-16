@@ -26,4 +26,4 @@ sidebar_position: 3
 ### Tracked Elements Observer
 Monitors [Tracked Elements](/tracking/core-concepts/elements.md#tracked-elements) and, based on the [TrackingAttributes](/tracking/api-reference/interfaces/TrackingAttributes.md) values, runs the appropriate tasks. 
 
-This includes monitoring the DOM for [Visibility Events](/tracking/core-concepts/visibility.md), binding [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to automatically trigger **Event Trackers** or processing [TrackChildrenQueries](/tracking/api-reference/advanced/trackChildren.md#trackchildrenquery-parameter).
+This includes monitoring the DOM for [Visibility Events](/tracking/core-concepts/visibility.md), binding [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to automatically trigger **Event Trackers** or processing [TrackChildrenQueries](/tracking/api-reference/low-level/trackChildren.md#trackchildrenquery-parameter).

@@ -57,7 +57,7 @@ return (
 <br />
 
 :::tip Did you know ?
-`trackSectionHidden` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/advanced/trackEvent.md).
+`trackSectionHidden` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
@@ -65,5 +65,5 @@ return (
 :::info See also
 - [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
 - [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md)
-- [trackEvent](/tracking/api-reference/advanced/trackEvent.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::
