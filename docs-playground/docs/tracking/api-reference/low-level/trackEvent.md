@@ -12,7 +12,7 @@ trackEvent = (parameters: {
 ```
 
 :::caution
-`trackEvent` is a low-level API. It's main purpose is to ease the development of new [Event Trackers](/tracking/api-reference/event-trackers/overview.md).
+`trackEvent` is a lower-level API. It's main purpose is to ease the development of new [Event Trackers](/tracking/api-reference/event-trackers/overview.md).
 :::
 
 ## Parameters
