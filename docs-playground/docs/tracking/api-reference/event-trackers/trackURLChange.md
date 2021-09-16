@@ -64,7 +64,7 @@ The definition of a `URL Change` is a fuzzy one at best and there are many diffe
 <br />
 
 :::tip Did you know ?
-`trackApplicationLoaded` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackURLChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
