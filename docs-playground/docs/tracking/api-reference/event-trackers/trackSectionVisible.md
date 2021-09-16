@@ -18,6 +18,7 @@ trackSectionVisible = (parameters: {
 | :-:      | :--         | :--                                                                                                                                                       | :--           
 | required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | optional | tracker     | [BrowserTracker](/tracking/api-reference/interfaces/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
+| optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md)                                                                    | `console.error`
 
 ## Returns
 `trackSectionVisible` is a void function.

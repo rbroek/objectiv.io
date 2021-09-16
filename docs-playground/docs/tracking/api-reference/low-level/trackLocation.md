@@ -55,12 +55,6 @@ In the example above we factored the `instance` parameters by using [Core Locati
 <br />
 
 :::info See also
-- [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
-- [trackElement](/tracking/api-reference/location-trackers/trackElement.md)
-- [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackInput](/tracking/api-reference/location-trackers/trackInput.md)
-- [trackLink](/tracking/api-reference/location-trackers/trackLink.md)
-- [trackMediaPlayer](/tracking/api-reference/location-trackers/trackMediaPlayer.md)
-- [trackNavigation](/tracking/api-reference/location-trackers/trackNavigation.md)
-- [trackOverlay](/tracking/api-reference/location-trackers/trackOverlay.md)
+- [Location Trackers](/tracking/api-reference/location-trackers/overview.md)
+- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

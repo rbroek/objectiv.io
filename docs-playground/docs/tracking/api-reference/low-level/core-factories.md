@@ -9,7 +9,7 @@ These are core-level APIs needed only when diving into low-level tracking via [t
 ## Location Context Factories
 These factories produce [LocationContext](/taxonomy/location-contexts/overview.md) instances ready to be handed over to [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
 
-### Factory list
+### Location Context Factory list
 
 ```typescript
 makeActionContext = (props: { 
@@ -106,7 +106,7 @@ All Event factories share some common, optional, parameters:
 | optional | location_stack  | [AbstractLocationContext](/taxonomy/abstract-contexts/AbstractLocationContext.md) | `[]` 
 | optional | global_contexts | [AbstractGlobalContext](/taxonomy/abstract-contexts/AbstractGlobalContext.md)     | `[]`
 
-### Factory list
+### Event Factory list
 
 ```typescript
 makeApplicationLoadedEvent = (props?: {

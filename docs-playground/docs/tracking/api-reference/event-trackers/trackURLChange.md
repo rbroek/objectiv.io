@@ -18,6 +18,7 @@ trackURLChange = (parameters: {
 | :-:      | :--     | :--                                                                                                                                                       | :--           
 | optional | element | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
 | optional | tracker | [BrowserTracker](/tracking/api-reference/interfaces/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md)                                                                    | `console.error`
 
 ## Returns
 `trackURLChange` is a void function.
@@ -63,7 +64,7 @@ These are rather simplistic examples to illustrate the idea.
 
 The definition of a `URL Change` is a fuzzy one at best and there are many different ways of tracking URL changes depending on architecture, used frameworks and requirements. 
 
-[Browser Tracker](/tracking/core-concepts/tracker-architecture.md#browser-tracker) uses none of the above. Instead it relies on a [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) in combination with some state. 
+In fact, [Browser Tracker](/tracking/core-concepts/tracker-architecture.md#browser-tracker) uses none of the above. Instead it relies on a [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) in combination with some state. 
 :::
 
 <br />
