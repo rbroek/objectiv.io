@@ -1,6 +1,6 @@
 # trackMediaPlayer
 
-Marks an [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
+Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
 
 ```typescript
 trackMediaPlayer = (parameters: {

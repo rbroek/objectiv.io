@@ -1,6 +1,6 @@
 # trackButton
 
-Marks an interactive [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
+Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
 
 ```typescript
 trackButton = (parameters: {

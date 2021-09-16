@@ -1,6 +1,6 @@
 # trackNavigation
 
-Marks an [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [NavigationContext](/taxonomy/location-contexts/NavigationContext.md).
+Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [NavigationContext](/taxonomy/location-contexts/NavigationContext.md).
 
 ```typescript
 trackNavigation = (parameters: {

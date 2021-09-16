@@ -6,6 +6,7 @@ title: Interfaces
 
 Some common TypeScript definitions used by Location and Event tracking APIs.
 
+- [BrowserTracker](/tracking/api-reference/interfaces/BrowserTracker.md)
 - [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md)
 - [TrackingAttributes](/tracking/api-reference/interfaces/TrackingAttributes.md)
 - [TrackLocationOptions](/tracking/api-reference/interfaces/TrackLocationOptions.md)

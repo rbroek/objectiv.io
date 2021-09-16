@@ -1,6 +1,6 @@
 # trackElement
 
-Marks an [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [SectionContext](/taxonomy/location-contexts/SectionContext.md).
+Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [SectionContext](/taxonomy/location-contexts/SectionContext.md).
 
 ```typescript
 trackElement = (parameters: {

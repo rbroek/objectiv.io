@@ -1,6 +1,6 @@
 # trackChildren
 
-Marks an [Element](/tracking/api-reference/advanced/elements.md#elements) as a root to track one or more of its children by specifying a set of **TrackChildrenQuery** objects.
+Marks an [Element](/tracking/core-concepts/elements.md#elements) as a root to track one or more of its children by specifying a set of **TrackChildrenQuery** objects.
 
 ```typescript
 trackChildren = (parameters: TrackChildrenQuery[]) => TrackLocationReturnValue

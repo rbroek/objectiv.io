@@ -1,6 +1,6 @@
 # trackExpandableElement
 
-Marks an interactive [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [ExpandableElementContext](/taxonomy/location-contexts/ExpandanbleElementContext.md).
+Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [ExpandableElementContext](/taxonomy/location-contexts/ExpandanbleElementContext.md).
 
 ```typescript
 trackExpandableElement = (parameters: {

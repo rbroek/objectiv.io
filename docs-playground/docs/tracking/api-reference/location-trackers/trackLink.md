@@ -1,6 +1,6 @@
 # trackLink
 
-Marks an interactive [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
+Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
 
 ```typescript
 trackLink = (parameters: {

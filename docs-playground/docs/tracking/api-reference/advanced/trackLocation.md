@@ -1,6 +1,6 @@
 # trackLocation
 
-Marks an [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
+Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
 
 ```typescript
 trackLocation = (parameters: {

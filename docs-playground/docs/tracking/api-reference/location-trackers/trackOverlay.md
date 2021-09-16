@@ -1,6 +1,6 @@
 # trackOverlay
 
-Marks an [Element](/tracking/api-reference/advanced/elements.md#elements) to be tracked as [OverlayContext](/taxonomy/location-contexts/OverlayContext.md).
+Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [OverlayContext](/taxonomy/location-contexts/OverlayContext.md).
 
 ```typescript
 trackOverlay = (parameters: {
