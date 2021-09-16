@@ -33,24 +33,29 @@ trackURLChange = (parameters: {
 </head>
 ```
 
-```typescript jsx
-const [previousURL, setPreviousURL] = useState(document.location.href);
-
-useEffect(() => {
-  if (document.location.href !== previousURL) {
-    setPreviousURL(document.location.href);
-    trackURLChange();
-  }
-}, [previousURL])  
-```
-
 ```typescript
-import { browserHistory } from 'react-router';
-…
-useEffect(() => {
-  return browserHistory.listen(trackURLChange);
-}, []);
-…
+const App = () => {
+  …
+  const MonitorURLChanges = () => {
+    const location = useLocation();
+    const [previousHref, setPreviousHref] = useState(document.location.href);
+    
+    useEffect(() => {
+      if (location.href !== previousHref) {
+        setPreviousHref(location.href);
+        trackURLChange();
+      }
+    }, [location, previousHref])
+    return null;
+  };
+  …
+  return (
+    <BrowserRouter>
+      <Route component = { MonitorURLChanges } />
+      …
+    </BrowserRouter>
+  )
+}
 ```
 
 :::caution Just pseudo code
