@@ -17,8 +17,8 @@ trackURLChange = (parameters: {
 |          |         | type                                                                                                                                                      | default value
 | :-:      | :--     | :--                                                                                                                                                       | :--           
 | optional | element | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
-| optional | tracker | [BrowserTracker](/tracking/api-reference/interfaces/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md)                                                                    | `console.error`
+| optional | tracker | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
 
 ## Returns
 `trackURLChange` is a void function.

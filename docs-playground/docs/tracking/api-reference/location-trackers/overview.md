@@ -3,7 +3,7 @@ sidebar_label: Overview
 title: Location Trackers 
 ---
 
-APIs to factor and bind the appropriate [Location Context](/taxonomy/location-contexts/overview.md) instance to the target [Trackable Element](/tracking/core-concepts/elements.md#trackable-elements) via [Tracking Attributes](/tracking/api-reference/interfaces/TrackingAttributes.md).
+APIs to factor and bind the appropriate [Location Context](/taxonomy/location-contexts/overview.md) instance to the target [Trackable Element](/tracking/core-concepts/elements.md#trackable-elements) via [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md).
 
 - [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
 - [trackElement](/tracking/api-reference/location-trackers/trackElement.md)

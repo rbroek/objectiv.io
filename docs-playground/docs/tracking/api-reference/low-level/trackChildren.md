@@ -11,7 +11,7 @@ trackChildren = (parameters: TrackChildrenQuery[]) => TrackLocationReturnValue
 :::
 
 ### TrackChildrenQuery parameter
-An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TrackingAttributes](/tracking/api-reference/interfaces/TrackingAttributes.md).
+An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TrackingAttributes](/tracking/api-reference/general/TrackingAttributes.md).
 
 [Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tracked-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
 
@@ -25,7 +25,7 @@ type TrackChildrenQuery = {
 |          |              | type
 | :-:      | :--          | :--                                                                                       
 | required | **queryAll** | [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string
-| required | **trackAs**  | [TrackingAttributes](/tracking/api-reference/interfaces/TrackingAttributes.md)
+| required | **trackAs**  | [TrackingAttributes](/tracking/api-reference/general/TrackingAttributes.md)
 
 ## Single query shorthand
 Syntactic sugar API built on top of **trackChildren** which processes a single TrackChildrenQuery.
@@ -35,7 +35,7 @@ trackChild = (parameters: TrackChildrenQuery) => TrackLocationReturnValue
 ```
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/interfaces/TrackLocationReturnValue.md) with only the `trackChildren` attribute set.
+[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md) with only the `trackChildren` attribute set.
 
 ## Usage example
 

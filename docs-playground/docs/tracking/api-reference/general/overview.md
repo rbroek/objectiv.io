@@ -4,6 +4,11 @@ sidebar_label: Overview
 title: General
 ---
 
-Global functions and interfaces.
+Global functions, interfaces and common TypeScript definitions used by Location and Event tracking APIs.
 
+- [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
+- [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)
+- [TrackingAttributes](/tracking/api-reference/general/TrackingAttributes.md)
+- [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)
+- [TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
 - [configureTracker](/tracking/api-reference/general/configureTracker.md)

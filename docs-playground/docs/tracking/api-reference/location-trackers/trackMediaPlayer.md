@@ -14,11 +14,11 @@ trackMediaPlayer = (parameters: {
 |          |         | type                                                                                   | default value
 | :-:      | :--     | :--                                                                                    | :--           
 | required | **id**  | string                                                                                 |
-| optional | options | [TrackLocationOptions](/tracking/api-reference/interfaces/TrackLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md) | `console.error`
+| optional | options | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/interfaces/TrackLocationReturnValue.md)
+[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:

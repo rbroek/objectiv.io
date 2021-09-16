@@ -15,8 +15,8 @@ trackVisibility = (parameters: {
 | :-:      | :--           | :--                                                                                                                                                       | :--           
 | required | **element**   | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | required | **isVisible** | boolean                                                                                                                                                   |
-| optional | tracker       | [BrowserTracker](/tracking/api-reference/interfaces/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
-| optional | onError       | [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md)                                                                    | `console.error`
+| optional | tracker       | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
+| optional | onError       | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
 
 ## Returns
 `trackVisibility` is a void function.

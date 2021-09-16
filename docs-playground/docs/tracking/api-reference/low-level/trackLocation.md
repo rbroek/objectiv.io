@@ -18,11 +18,11 @@ trackLocation = (parameters: {
 |          |              | type                                                                                   | default value
 | :-:      | :--          | :--                                                                                    | :--           
 | required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                             |
-| optional | options      | [TrackLocationOptions](/tracking/api-reference/interfaces/TrackLocationOptions.md)     | Dynamically calculated based on `instance`. See the [Events](#events) table below.
-| optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/interfaces/TrackerOnErrorCallback.md) | `console.error`
+| optional | options      | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | Dynamically calculated based on `instance`. See the [Events](#events) table below.
+| optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/interfaces/TrackLocationReturnValue.md) 
+[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md) 
 
 ## Events
 Unless customized via the `options` parameter, the given `instance` determines which Events are triggered automatically:

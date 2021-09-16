@@ -1,6 +1,6 @@
 # configureTracker
 
-Configures a global instance of [BrowserTracker](/tracking/api-reference/interfaces/BrowserTracker.md) and stores it in `window.objectiv.tracker`. Then initiates auto-tracking.
+Configures a global instance of [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and stores it in `window.objectiv.tracker`. Then initiates auto-tracking.
 
 ```typescript
 configureTracker = (parameters: {
@@ -14,7 +14,7 @@ configureTracker = (parameters: {
 ```
 
 :::info
-`window.objectiv.tracker` is the default tracker used by all [Location Trackers](/tracking/api-reference/location-trackers/overview.md) and [Event Trackers](/tracking/api-reference/event-trackers/overview.md) trackers.
+`window.objectiv.tracker` is the default tracker instance used by all [Location Trackers](/tracking/api-reference/location-trackers/overview.md) and [Event Trackers](/tracking/api-reference/event-trackers/overview.md).
 :::
 
 
