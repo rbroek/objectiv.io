@@ -19,14 +19,14 @@ configureTracker = (parameters: {
 
 
 ## Parameters
-|          |                        | type                      | default value
-| :-:      | :--                    | :--                       | :--           
-| required | **applicationId**      | string                    |
-| optional | **_endpoint_**         | string                    |
-| optional | **_transport_**        | [TrackerTransport](/todo) | [Default Browser Tracker Transport](/todo)
-| optional | plugins                | [TrackerPlugins](/todo)   | [Default Browser Tracker Plugins](/todo)
-| optional | trackApplicationLoaded | boolean                   | `true`
-| optional | trackURLChanges        | boolean                   | `true`
+|          |                        | type                                                                          | default value
+| :-:      | :--                    | :--                                                                           | :--           
+| required | **applicationId**      | string                                                                        |
+| optional | **_endpoint_**         | string                                                                        |
+| optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/tracker-architecture.md#transport) | [Default Browser Tracker Transport](/tracking/api-reference/general/BrowserTracker.md#default-transport)
+| optional | plugins                | [TrackerPlugins](/tracking/core-concepts/tracker-architecture.md#plugins)     | [Default Browser Tracker Plugins](/tracking/api-reference/general/BrowserTracker.md#default-plugins)
+| optional | trackApplicationLoaded | boolean                                                                       | `true`
+| optional | trackURLChanges        | boolean                                                                       | `true`
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
