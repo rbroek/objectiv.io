@@ -1,6 +1,6 @@
 # configureTracker
 
-Configures a global instance of [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and stores it in `window.objectiv.tracker`. Then initiates auto-tracking.
+Configures a global instance of [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and stores it in `window.objectiv.tracker`. Then initiates [auto-tracking](/tracking/api-reference/low-level/startAutoTracking.md).
 
 ```typescript
 configureTracker = (parameters: {
@@ -51,10 +51,16 @@ configureTracker({
 })
 ```
 
+:::tip Transport ?
+[Events](/taxonomy/events/overview.md) are sent to the [Collector](/tracking/core-concepts/collector-architecture.md) via a composable layer of queueing, batching and sending classes called [Transport](/tracking/core-concepts/tracker-architecture.md#transport). 
+:::
 
 <br />
 
 :::info See also
 - [Location Trackers](/tracking/api-reference/location-trackers/overview.md) 
-- [Event Trackers](/tracking/api-reference/event-trackers/overview.md) trackers
+- [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
+- [Transport](/tracking/core-concepts/tracker-architecture.md#transport)
+- [Collector](/tracking/core-concepts/collector-architecture.md)
+- [startAutoTracking](/tracking/api-reference/low-level/startAutoTracking.md)
 :::
