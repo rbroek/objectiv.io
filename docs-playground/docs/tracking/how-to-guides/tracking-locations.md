@@ -74,3 +74,6 @@ Let's define some logical Sections instead. Objectiv Taxonomy comes with a numbe
 [placeholder: prepare a complex example with conflicting components solved by wrapping them in a few Section Contexts]
 
 [placeholder: quick overview of most useful Location Trackers, directing user to the API Reference for full list]
+
+### Tracking multiple siblings at once
+[placeholder]

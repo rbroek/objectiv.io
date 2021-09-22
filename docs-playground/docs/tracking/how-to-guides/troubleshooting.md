@@ -3,15 +3,11 @@ sidebar_position: 3
 ---
 
 # Troubleshooting 
-When dealing with regular HTML, [Location Trackers](/todo) should just work flawlessly. Unfortunately [JSX](/todo) and [React Components](/todo) may carry some challenges at times.
+When dealing with regular HTML [Location Trackers](/todo) should just work flawlessly. Unfortunately [JSX](/todo) and [React Components](/todo) may carry some challenges at times.
 
 The most common issues will be:
-- Incorrect [Locations](/todo)
-- [Events](/todo) no triggering
-
-The most probable causes are:
-- The necessary [HTML Attributes](/todo) not being forwarded
-- Components using [React Portals](/todo) internally
+- Incorrect [Locations](/todo) due to [React Portals](/todo)
+- [Events](/todo) no triggering due to missing [Tracking Attributes](/todo)
 
 ## Problem: Incorrect Locations
 If [Events](/todo) are triggering correctly but [Locations](/todo) are missing [Sections](/todo), the most likely cause is [React Portals](/todo).
@@ -57,7 +53,7 @@ Suppose we click on `Item B`. Our expected [Location](/todo) should look somethi
 app-root > ... > card > menu > menu-item-b
 ```
 
-But because `Menu` renders in a [React Portal](/todo) so, most probably, we get something like this instead:
+But because `Menu` renders in a [React Portal](/todo) we get something like this instead:
 ```typescript jsx
 app-root > menu > menu-item-b
 ```
@@ -65,9 +61,11 @@ app-root > menu > menu-item-b
 The [Location](/todo) ends abruptly at the `Menu` and jumps to the application root.
 
 
-### Make Locations work with Portals
+### Make Locations work across Portals
 
-The solution is to specify the parent [Location Tracker](/todo) of a portaled [Tracked Element](/todo) manually. This tells the [Event Tracker](/todo) to ignore the DOM and, when processing the `Menu` [Location](/todo), to simply continue with and from its parent [Location Tracker](/todo): `cardTracker`.
+The solution is to specify the parent [Location Tracker](/todo) of a portaled [Tracked Element](/todo) manually. 
+
+This tells the [Event Tracker](/todo) to ignore the DOM and, when processing the `Menu` [Location](/todo), to simply continue with and from its parent [Location Tracker](/todo): `cardTracker`.
 
 ```typescript jsx
 const cardTracker = trackElement({ id: 'card' });
