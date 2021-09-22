@@ -101,7 +101,7 @@ export default function AboutUs() {
               We asked around how fellow data scientists were handling this. Answers varied from ‘manually’ to ‘automated data ingestion pipelines with transformation workflows and automated testing’, but in all cases, significant data wrangling was involved and everyone had their own way of doing it.
             </p>
             <p>
-              There is a big gap between what data scientists want their data to look like for modeling and what data actually looks like when it comes from the the tracker. It often lacks the essential context and structure required for effective feature creation and validation is done at a stage where problems are hard to fix. 
+              There is a big gap between what data scientists want their data to look like for modeling and what data actually looks like when it comes from the tracker. It often lacks the essential context and structure required for effective feature creation and validation is done at a stage where problems are hard to fix. 
             </p>
             <p>
               Perhaps even more importantly, there is no common way to collect &amp; model data. Data teams all have similar goals, but everyone builds their own taxonomies and models from scratch.
