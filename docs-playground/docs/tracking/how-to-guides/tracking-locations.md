@@ -75,5 +75,7 @@ Let's define some logical Sections instead. Objectiv Taxonomy comes with a numbe
 
 [placeholder: quick overview of most useful Location Trackers, directing user to the API Reference for full list]
 
+[placeholder: hard to explain why would FE bother with Location tracking: there's no advantage for them to using it]
+
 ### Tracking multiple siblings at once
 [placeholder]

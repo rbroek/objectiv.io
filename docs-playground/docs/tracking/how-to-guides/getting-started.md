@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Getting Started - React
+# Getting Started
 
 [placeholder]
 
