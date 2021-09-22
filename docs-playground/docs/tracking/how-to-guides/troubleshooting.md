@@ -3,16 +3,16 @@ sidebar_position: 3
 ---
 
 # Troubleshooting 
-When dealing with regular HTML [Location Trackers](/todo) should just work flawlessly. Unfortunately [JSX](/todo) and [React Components](/todo) may carry some challenges at times.
+When dealing with regular HTML [Location Trackers](/tracking/api-reference/location-trackers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
 
 The most common issues will be:
-- Incorrect [Locations](/todo) due to [React Portals](/todo)
-- [Events](/todo) no triggering due to missing [Tracking Attributes](/todo)
+- Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html)
+- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md)
 
 ## Problem: Incorrect Locations
-If [Events](/todo) are triggering correctly but [Locations](/todo) are missing [Sections](/todo), the most likely cause is [React Portals](/todo).
+If [Events](/taxonomy/events/overview.md) are triggering correctly but [Location](/tracking/core-concepts/locations.md) are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
 
-[Event Trackers](/todo) can reconstruct [Locations](/todo) by traversing the DOM from the target [Element](/todo) upwards. Unfortunately we cannot 
+[Event Trackers](/tracking/api-reference/event-trackers/overview.md) can reconstruct [Locations](/tracking/core-concepts/locations.md) by traversing the DOM from the target [Element](/tracking/core-concepts/elements.md#elements) upwards. Unfortunately we cannot 
 follow, nor detect (yet), portaled subtrees. 
 
 :::info Auto detect portals?
@@ -21,7 +21,7 @@ Nonetheless it's still highly recommended covering all complex trackers with tes
 :::
 
 ### Example of Component using Portals
-The `Menu` component renders its contents in a [React Portal](/todo). 
+The `Menu` component renders its contents in a [React Portal](https://reactjs.org/docs/portals.html). 
 
 ```typescript jsx
 <Card>
@@ -33,10 +33,10 @@ The `Menu` component renders its contents in a [React Portal](/todo).
 </Card>
 ```
 :::tip
-It's easier to track siblings via [trackChildren](/todo) but, to keep this example simpler, we are going for the verbose syntax here.
+It's easier to track siblings via [trackChildren](/tracking/api-reference/low-level/trackChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
 :::
 
-Unknowingly we may attempt to track it by adding our [Location Trackers](/todo) as follows:
+Unknowingly we may attempt to track it by adding our [Location Trackers](/tracking/api-reference/location-trackers/overview.md) as follows:
 
 ```typescript jsx
 <Card {...trackElement({ id: 'card' })}>
@@ -48,24 +48,24 @@ Unknowingly we may attempt to track it by adding our [Location Trackers](/todo) 
 </Card>
 ```
 
-Suppose we click on `Item B`. Our expected [Location](/todo) should look something like:
+Suppose we click on `Item B`. Our expected [Location](/tracking/core-concepts/locations.md) should look something like:
 ```typescript jsx
 app-root > ... > card > menu > menu-item-b
 ```
 
-But because `Menu` renders in a [React Portal](/todo) we get something like this instead:
+But because `Menu` renders in a [React Portal](https://reactjs.org/docs/portals.html) we get something like this instead:
 ```typescript jsx
 app-root > menu > menu-item-b
 ```
 
-The [Location](/todo) ends abruptly at the `Menu` and jumps to the application root.
+The [Location](/tracking/core-concepts/locations.md) ends abruptly at the `Menu` and jumps to the application root.
 
 
 ### Make Locations work across Portals
 
-The solution is to specify the parent [Location Tracker](/todo) of a portaled [Tracked Element](/todo) manually. 
+The solution is to specify the parent [Location Tracker](/tracking/api-reference/location-trackers/overview.md) of a portaled [Tracked Element](/tracking/core-concepts/elements.md#tracked-elements) manually. 
 
-This tells the [Event Tracker](/todo) to ignore the DOM and, when processing the `Menu` [Location](/todo), to simply continue with and from its parent [Location Tracker](/todo): `cardTracker`.
+This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` [Location](/tracking/core-concepts/locations.md), to simply continue with and from its parent [Location Tracker](/tracking/api-reference/location-trackers/overview.md): `cardTracker`.
 
 ```typescript jsx
 const cardTracker = trackElement({ id: 'card' });
@@ -81,27 +81,27 @@ const cardTracker = trackElement({ id: 'card' });
 
 
 ## Problem: Events not triggering 
-Usually this happens because the TrackingAttributes did not end up being applied to the target Element. This happens
+Usually this happens because the [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) did not end up being applied to the target [ement](/tracking/core-concepts/elements.md#elements). This happens
 almost exclusively when dealing with Components. 
 
 ### Check if TrackingAttributes are set
 To verify if that's the issue we can simply inspect the DOM with the Browser's Developer Tools. 
 
-If the target Element we are trying to track does not have at least `data-objectiv-element-id` set, most probably the Location Tracker failed decorating it.
+If the target [Tracked Element](/tracking/core-concepts/elements.md#elements) we are trying to track does not have at least `data-objectiv-element-id` set, most probably the [Location Tracker](/tracking/api-reference/location-trackers/overview.md) failed decorating it.
 
-As an example a Tracked Element, in this case a button, should look at least like the following:
+As an example a [Tracked Element](/tracking/core-concepts/elements.md#tracked-elements), in this case a `<button>`, should look at least like the following:
 ```
 <button data-objectiv-element-id="…" data-objectiv-context="…" …>…</button>
 ```
 
-The values of the attributes are not really important. What matters is their presence. 
+The values of the [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) are not really important, as they are fully automated. What matters is their presence. 
 
 We can now attempt to fix the issue in two ways:
 1. Verify props forwarding
-2. Manually orchestrating events
+2. Manually orchestrating [events](/taxonomy/events/overview.md)
    1. Via event handlers
    2. Via state
-   3. Via a parent Element
+   3. Via a [Parent Element](/tracking/core-concepts/elements.md#children-tracking-elements)
 
 ### Props forwarding - own Components
 Consider the following component:
@@ -127,13 +127,13 @@ const Button = ({ children, onClick, ...otherProps }) => (
 )
 ```
 
-Tracking will now work as expected, since our extra TrackingAttributes will be forwarded correctly to the `<button>` 
+Tracking will now work as expected, since our extra [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) will be forwarded correctly to the `<button>` 
 
 ### Props forwarding - 3rd party libraries
 Third party components, especially UI libraries, usually allow specifying custom attributes. 
 It's worth verifying by checking the documentation.
 
-Let's look at an example with InputBase from Material UI. This is a search input box.
+Let's look at an example with [InputBase](https://mui.com/api/input-base/) from [Material UI](https://mui.com/). This is a search input box.
 ```typescript jsx
 <InputBase
   id={'search'}
@@ -150,10 +150,10 @@ If InputBase would forwards props we could simply:
 />
 ```
 
-Unfortunately that does not work and our trackInput attributes will just get discarded. Luckily InputBase 
+Unfortunately that does not work and our [trackInput](/tracking/api-reference/location-trackers/trackInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
 provides us with a specific property called `inputProps` that is directly forwarded to the `<input>` tag.
 
-Now we can fix the issue by simply using it to apply our TrackingAttributes:
+Now we can fix the issue by simply using it to apply our [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md):
 
 ```typescript jsx
 <InputBase
@@ -165,7 +165,7 @@ Now we can fix the issue by simply using it to apply our TrackingAttributes:
 
 :::tip
 Sometimes properties for passing extra attributes are already used and we can't assign directly to them as done above.    
-Simply spread the Tracking Attributes and merge them up with the existing props:
+Simply spread the [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) and merge them up with the existing props:
 
 ```typescript jsx
 <InputBase
@@ -181,17 +181,17 @@ Simply spread the Tracking Attributes and merge them up with the existing props:
 
 ## Manual orchestration
 When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to track both
-Elements and attach the correct Events to uncooperative components.
+Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
 
-Everything that Location Trackers try to automate, together with the Tracked Elements Observer, can be done manually.
+Everything that [Location Trackers](/tracking/api-reference/location-trackers/overview.md) try to automate, together with the Tracked Elements Observer, can be done manually.
 
 Let's look at some examples with solutions.
 
 ### Track Events via 3rd party handlers  
-Let's look at a hypothetical component that does not allow forwarding props to its internal JSX.
+Let's look at a hypothetical component that does not allow forwarding props to its internal [JSX](https://reactjs.org/docs/introducing-jsx.html).
 
-We want to track a list of FAQ Items and we use this 3rd party component for that. It's an expandable element that 
-on Click will show its children to the user with an animation. 
+We want to track a list of FAQ Items and we use this 3rd party component for that. It's an expandable element that, 
+on Click, will display its content / children to the user with an animation. 
 
 ```typescript jsx
 <FAQItem title={'How do I track 3rd party components?'}>
@@ -225,8 +225,7 @@ Again, checking the documentation is our friend here. Turns out there are event 
 ```
 
 ### Tracking Visibility via state
-Visibility events can be difficult to detect due to the nature of DOM and the countless possibilities there are when it
-comes to hiding and showing content.
+[Visibility Events](/tracking/core-concepts/visibility.md) can be difficult to detect due to the nature of DOM and the countless ways there to hide and show content.
 
 By default we track when components mount or unmount from the DOM but it's not efficient to check for actual visibility. 
 
@@ -258,7 +257,7 @@ Luckily the menu it's driven by the state variable `isMenuOpen`. We can use that
 </Menu>
 ```
 
-The `isMenuOpen` variable is now driving both the menu visibility and the tracker visibility events for it.
+The `isMenuOpen` variable is now driving both the menu visibility and the tracker [Visibility Events](/tracking/core-concepts/visibility.md) for it.
 
 ### Tracking Visibility via 3rd party handlers
 Sometimes we can also leverage 3rd party event callbacks, like so:
@@ -272,7 +271,7 @@ Sometimes we can also leverage 3rd party event callbacks, like so:
 >
 ```
 
-In the example above the Accordion API has a onChange event handler triggered whenever the Accordion changes state.   
+In the example above the Accordion API has a `onChange` event handler triggered whenever the Accordion changes state.   
 We can directly hook that information into our event tracking.
 
 ### Tracking from a parent Element

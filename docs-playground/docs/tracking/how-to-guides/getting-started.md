@@ -73,4 +73,4 @@ Executing `configureTracker` multiple times is not an issue from a tracking poin
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded and URLChange.
 
-Time to start [Tracking Locations](/tracking/how-to-guides/tracking-locations.mdx)!
+Time to start [Tracking Locations](/tracking/how-to-guides/tracking-locations.md)!
