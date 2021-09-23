@@ -10,15 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import OriginalLogo from '@theme-original/Logo';
-import {
-  makeLinkContext,
-  trackLinkClick,
-  useTracker
-} from "@objectiv/tracker-react";
+import { trackLink } from "@objectiv/tracker-browser";
 
 const Logo = (props: Props): JSX.Element  => {
-  const tracker = useTracker();
-
   const {
     siteConfig: {title},
   } = useDocusaurusContext();
@@ -27,7 +21,10 @@ const Logo = (props: Props): JSX.Element  => {
   } = useThemeConfig();
   const logoLink = useBaseUrl(logo.href || '/');
 
-  return <OriginalLogo onClick={() => trackLinkClick(makeLinkContext({ id: 'logo', href: logoLink, text: logo.alt }), tracker)} {...props} />
+  return <OriginalLogo
+    {...trackLink({ id: 'logo', text: logo.alt, href: logoLink })}
+    {...props} 
+  />
 };
 
 export default Logo;

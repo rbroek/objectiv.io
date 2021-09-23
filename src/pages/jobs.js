@@ -4,19 +4,11 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
-import {
-  useTrackLinkClick,
-  makeLinkContext,
-} from '@objectiv/tracker-react';
+import { trackLink } from "@objectiv/tracker-browser";
 
 export default function Jobs() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const trackCtaClick = useTrackLinkClick(makeLinkContext({ 
-    id: 'hear-from-you', 
-    href: 'mailto:jobs@objectiv.io', 
-    text: "we'd love to hear from you" 
-  }));
   return (
     <Layout
       title='Jobs'
@@ -58,7 +50,7 @@ export default function Jobs() {
             <p>Like what you have read and think you meet the mark? Then&nbsp;
             <Link
               to={'mailto:jobs@objectiv.io'}
-              onClick={trackCtaClick}
+              {...trackLink({ id: 'hear-from-you', text: "we'd love to hear from you", href: 'mailto:jobs@objectiv.io' })}
             >
               we'd love to hear from you
             </Link>

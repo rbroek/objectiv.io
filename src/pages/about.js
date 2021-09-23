@@ -7,10 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
-import {
-  useTrackLinkClick,
-  makeLinkContext,
-} from '@objectiv/tracker-react';
+import { trackLink } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
 
@@ -19,7 +16,7 @@ function Contributor({name, gitHubUsername}) {
   const ghProfileTitle = "Check out @" + gitHubUsername + " on GitHub";
   return (
     <div className={clsx("card", styles.contributorCard)}>
-      <div class="card__header">
+      <div className="card__header">
         <div className={clsx("avatar", styles.contributorAvatar)}>
           <a href={ghProfileLink} title={ghProfileTitle}>
             <Avatar 
@@ -32,7 +29,7 @@ function Contributor({name, gitHubUsername}) {
             />
           </a>
         </div>
-        <div class="avatar__intro">
+        <div className="avatar__intro">
           <div className={clsx(styles.contributorAvatarSubtitle)}>
             <a href={ghProfileLink} title={ghProfileTitle}>
               @{gitHubUsername}
@@ -55,11 +52,6 @@ function Contributor({name, gitHubUsername}) {
 export default function AboutUs() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const trackJobsClick = useTrackLinkClick(makeLinkContext({ 
-    id: 'hiring', 
-    href: '/jobs', 
-    text: "we're hiring a Senior Data Engineer. Join us!" 
-  }));
 
   return (
     <Layout
@@ -175,8 +167,9 @@ export default function AboutUs() {
               Meet the mission crew. Also,&nbsp;
               <Link 
                 to="/jobs" 
-                onClick={trackJobsClick}>
-                  we're hiring a Senior Data Engineer. Join us!
+                {...trackLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", href: '/jobs' })}
+              >
+                we're hiring a Senior Data Engineer. Join us!
               </Link>
             </p>
           </div>
