@@ -8,7 +8,7 @@ import React from 'react';
 import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
-import { trackLink } from "@objectiv/tracker-browser";
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 export default function EditThisPage({editUrl}) {
   return (
