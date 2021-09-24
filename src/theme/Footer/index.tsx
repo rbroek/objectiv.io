@@ -15,7 +15,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
-import { trackLink } from "@objectiv/tracker-browser";
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 function FooterLink({
   to,
@@ -73,6 +73,7 @@ function Footer(): JSX.Element | null {
 
   return (
     <footer
+      {...trackElement({id: 'footer'})}
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
       })}>

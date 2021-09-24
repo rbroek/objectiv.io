@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
-import { trackLink } from "@objectiv/tracker-browser";
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
 
@@ -15,7 +15,10 @@ function Contributor({name, gitHubUsername}) {
   const ghProfileLink = "https://github.com/" + gitHubUsername;
   const ghProfileTitle = "Check out @" + gitHubUsername + " on GitHub";
   return (
-    <div className={clsx("card", styles.contributorCard)}>
+    <div 
+      className={clsx("card", styles.contributorCard)}
+      {...trackElement({id: 'contributor'})}
+    >
       <div className="card__header">
         <div className={clsx("avatar", styles.contributorAvatar)}>
           <a href={ghProfileLink} title={ghProfileTitle}>
@@ -66,7 +69,10 @@ export default function AboutUs() {
       >
       </AnnouncementBar>
 
-      <header className={clsx('hero hero--primary', styles.aboutUsBanner)}>
+      <header 
+        className={clsx('hero hero--primary', styles.aboutUsBanner)}
+        {...trackElement({id: 'header'})}
+      >
         <div className={clsx('container', styles.contentContainer)}>
           <img
             src={useBaseUrl("img/icons/icon-data-heart-broken.svg")}
@@ -81,9 +87,14 @@ export default function AboutUs() {
         </div>
       </header>
 
-      <main className={clsx(styles.aboutUsMain)}>
-        
-        <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}>
+      <main 
+        className={clsx(styles.aboutUsMain)}
+        {...trackElement({id: 'main'})}
+      >
+        <div 
+          className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}
+          {...trackElement({id: 'not-just-us'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
             <img
               src={useBaseUrl("img/icons/icon-raised-hands.svg")}
@@ -101,7 +112,10 @@ export default function AboutUs() {
           </div>
         </div>
  
-        <div className={clsx(styles.aboutUsPageSection)}>
+        <div 
+          className={clsx(styles.aboutUsPageSection)}
+          {...trackElement({id: 'we-will-take-it-on'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
           <img
               src={useBaseUrl("img/icons/icon-astronaut-dancing.svg")}
@@ -119,7 +133,10 @@ export default function AboutUs() {
           </div>
         </div>
         
-        <div className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}>
+        <div 
+          className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
+          {...trackElement({id: 'why-us'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Why we think we’re in the position to fix this</h2>
 
@@ -159,8 +176,11 @@ export default function AboutUs() {
 
           </div>
         </div>
- 
-        <div className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}>
+
+        <div 
+          className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}
+          {...trackElement({id: 'core-team'})}
+        >
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Objectiv's Core Team</h2>
             <p>

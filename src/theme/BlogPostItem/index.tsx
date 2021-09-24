@@ -15,7 +15,7 @@ import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
 import type {Props} from '@theme/BlogPostItem';
-import { trackLink } from "@objectiv/tracker-browser";
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 
@@ -68,7 +68,7 @@ function BlogPostItem(props: Props): JSX.Element {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
     return (
-      <header>
+      <header {...trackElement({id: 'header'})}>
         <TitleHeading className={styles.blogPostTitle}>
           {isBlogPostPage ? title : <Link to={permalink} {...trackLink({ id: permalink, text: title, href: permalink })}>{title}</Link>}            
         </TitleHeading>
@@ -116,13 +116,19 @@ function BlogPostItem(props: Props): JSX.Element {
     <>
       <Seo {...{keywords, image}} />
 
-      <article className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}>
+      <article 
+        {...trackElement({id: 'article'})}
+        className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
+      >
         {renderPostHeader()}
-        <div className="markdown">
+        <div 
+          {...trackElement({id: 'content'})}
+          className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
         </div>
         {(tags.length > 0 || truncated) && (
           <footer
+            {...trackElement({id: 'footer'})}
             className={clsx('row docusaurus-mt-lg', {
               [styles.blogPostDetailsFull]: isBlogPostPage,
             })}>
@@ -154,7 +160,9 @@ function BlogPostItem(props: Props): JSX.Element {
             )}
 
             {!isBlogPostPage && truncated && (
-              <div className="col text--right">
+              <div 
+                {...trackElement({id: 'read-more'})}
+                className="col text--right">
                 <Link
                   to={metadata.permalink}
                   {...trackLink({ id: 'read-more', text: 'Read More', href: metadata.permalink })}

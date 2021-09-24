@@ -9,7 +9,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import type {Props} from '@theme/BlogListPaginator';
-import { trackLink } from "@objectiv/tracker-browser";
+import { trackLink, trackElement } from "@objectiv/tracker-browser";
 
 function BlogListPaginator(props: Props): JSX.Element {
   const {metadata} = props;
@@ -17,6 +17,7 @@ function BlogListPaginator(props: Props): JSX.Element {
 
   return (
     <nav
+      {...trackElement({id: 'blog-list-paginator'})}
       className="pagination-nav"
       aria-label={translate({
         id: 'theme.blog.paginator.navAriaLabel',

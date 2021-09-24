@@ -12,7 +12,10 @@ import { trackLink } from "@objectiv/tracker-browser";
 
 export default function EditThisPage({editUrl}) {
   return (
-    <div className={styles.docItemFooter}>
+    <div 
+      {...trackElement({id: 'edit-this-page'})}
+      className={styles.docItemFooter}
+    >
       <div className={styles.docItemFooterPage}>
         <p className={styles.docItemFooterHeading}>
           This page

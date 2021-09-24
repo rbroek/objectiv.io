@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
-import { trackLink, trackButton } from "@objectiv/tracker-browser";
+import { trackLink, trackButton, trackElement } from "@objectiv/tracker-browser";
 
 function KeepMePosted({children, name}) {
   const {siteConfig} = useDocusaurusContext();
@@ -36,26 +36,29 @@ function KeepMePosted({children, name}) {
   }
 
   return (
-      <div className={styles.wrapper}>
-        <form id="keep-me-posted" onSubmit={handleSubmit(onSubmit)}>
-          <input 
-            placeholder="Your email address" 
-            type="email" 
-            name="email_address" 
-            {...register("email_address", { required: true })} 
-            className={styles.emailAddress} 
-          />
-          <input 
-            type="submit" 
-            value="Keep me posted" 
-            {...trackButton({ id: 'subscribe', text: "Keep me posted" })}
-            className={clsx("button", "button--primary", styles.submitButton)} 
-          />
-          {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
-        </form>
-        <p className={clsx(styles.statusMessage, (formSent ? styles.success : styles.alert))}>{statusMessage}</p>
-        {children}
-      </div>
+    <div 
+      className={styles.wrapper}
+      {...trackElement({id: 'keep-me-posted-form'})}
+    >
+      <form id="keep-me-posted" onSubmit={handleSubmit(onSubmit)}>
+        <input 
+          placeholder="Your email address" 
+          type="email" 
+          name="email_address" 
+          {...register("email_address", { required: true })} 
+          className={styles.emailAddress} 
+        />
+        <input 
+          type="submit" 
+          value="Keep me posted" 
+          {...trackButton({ id: 'subscribe', text: "Keep me posted" })}
+          className={clsx("button", "button--primary", styles.submitButton)} 
+        />
+        {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
+      </form>
+      <p className={clsx(styles.statusMessage, (formSent ? styles.success : styles.alert))}>{statusMessage}</p>
+      {children}
+    </div>
   );
 }
 

@@ -6,6 +6,7 @@ import React from 'react';
 import KeepMePosted from '../components/keep-me-posted';
 import AnnouncementBar from '../components/announcement-bar'
 import styles from './styles.module.css';
+import {trackElement} from '@objectiv/tracker-browser';
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -22,7 +23,10 @@ export default function Home() {
         ctaText='Check the vacancy'
       >
       </AnnouncementBar>
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header 
+        className={clsx('hero hero--primary', styles.heroBanner)}
+        {...trackElement({id: 'header'})}
+      >
         <div className={clsx('container', styles.heroContainer)}>
           <img
             className={clsx(styles.heroImage)}
@@ -37,7 +41,10 @@ export default function Home() {
 standardized event taxonomy. Straight from your Notebook.
             </p>
           </div>
-          <div className={styles.heroKeepMePosted}>
+          <div 
+            className={styles.heroKeepMePosted}
+            {...trackElement({id: 'keep-me-posted'})}
+          >
             <p>In a repository near you this fall. Want to get notified?</p>
             <KeepMePosted />
           </div>
