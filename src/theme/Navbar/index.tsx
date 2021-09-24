@@ -163,6 +163,7 @@ function NavbarMobileSidebar({
   });
 
   return (
+    // TODO: track the opening and closing of the mobile menu
     <div className="navbar-sidebar">
       <div className="navbar-sidebar__brand">
         <Logo
@@ -292,10 +293,6 @@ function Navbar(): JSX.Element {
         <NavbarMobileSidebar
           sidebarShown={mobileSidebar.shown}
           toggleSidebar={mobileSidebar.toggle}
-          {...trackOverlay({
-            id: 'hamburger-menu',
-            // options: { trackVisibility: { mode: 'manual', isVisible: mobileSidebar.shown } }
-          })}
         />
       )}
     </nav>
