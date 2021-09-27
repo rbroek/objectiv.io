@@ -1977,7 +1977,7 @@
     superstruct "^0.15.2"
     uuid "^8.3.2"
 
-"@objectiv/tracker-core@~0.0.1":
+"@objectiv/tracker-core@^0.0.1", "@objectiv/tracker-core@~0.0.1":
   version "0.0.1"
   resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#67e05c056632bdf29d3864e06ac19e6ca1d9c77e"
   integrity sha512-N0c8Zlg+u2k25udqUboj/yyZlyJCPn9zu3mz4o5Uw2EidCRL8zkc/6yUp/QIkTG+B9Wz+ch8wdqtJJBoCX+/8g==
