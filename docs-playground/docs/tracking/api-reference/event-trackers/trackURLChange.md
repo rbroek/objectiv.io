@@ -10,7 +10,7 @@ trackURLChange = (parameters: {
 ```
 
 :::info
-`trackURLChange` events are triggered automatically by the [Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer) whenever [Location.href](https://developer.mozilla.org/en-US/docs/Web/API/Location/href) changes.
+`trackURLChange` events are triggered automatically by the [Tagged Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer) whenever [Location.href](https://developer.mozilla.org/en-US/docs/Web/API/Location/href) changes.
 :::
 
 ## Parameters

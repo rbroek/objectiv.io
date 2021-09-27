@@ -13,16 +13,16 @@ All options are optional and can be either omitted or set to `undefined` to reve
 :::
 
 ### options.trackClicks
-Used to either force or prevent [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tracked Elements](/tracking/core-concepts/elements.md#tagged-elements). 
+Used to either force or prevent [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/elements.md#tagged-elements). 
 
 ### options.trackBlurs
-Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tracked Elements](/tracking/core-concepts/elements.md#tagged-elements).
+Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tagged Elements](/tracking/core-concepts/elements.md#tagged-elements).
 
 ### options.trackVisibility
 Used to customize whether to track [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) and [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) events, either automatically or manually.
 
 #### Visibility mode:auto  
-Either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) are triggered when [Tracked Elements](/tracking/core-concepts/elements.md#tagged-elements) are added or removed to/from the DOM.
+Either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) are triggered when [Tagged Elements](/tracking/core-concepts/elements.md#tagged-elements) are added or removed to/from the DOM.
 
 ```js
 trackVisibility = {

@@ -31,4 +31,4 @@ Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web
 Whether to monitor the [Tagged Element](/tracking/core-concepts/elements.md#tagged-elements) to automatically track either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) events.
 
 ### TaggingAttribute.tagChildren
-A serialized list of [ChildTrackingQuery](/tracking/api-reference/low-level/tagChildren.md#trackchildrenquery-parameter) objects.
+A serialized list of [ChildTrackingQuery](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter) objects.

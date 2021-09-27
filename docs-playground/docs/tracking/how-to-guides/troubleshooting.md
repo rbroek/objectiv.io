@@ -183,7 +183,7 @@ Simply spread the [Tagging Attributes](/tracking/api-reference/general/TaggingAt
 When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to track both
 Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
 
-Everything that [Location Taggers](/tracking/api-reference/location-taggers/overview.md) try to automate, together with the Tracked Elements Observer, can be done manually.
+Everything that [Location Taggers](/tracking/api-reference/location-taggers/overview.md) try to automate, together with the Tagged Elements Observer, can be done manually.
 
 Let's look at some examples with solutions.
 

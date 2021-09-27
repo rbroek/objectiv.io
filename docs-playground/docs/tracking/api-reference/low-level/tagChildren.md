@@ -1,22 +1,22 @@
 # tagChildren
 
-Marks an [Element](/tracking/core-concepts/elements.md#elements) as a root to track one or more of its children by specifying a set of **TrackChildrenQuery** objects.
+Marks an [Element](/tracking/core-concepts/elements.md#elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
 
 ```typescript
-tagChildren = (parameters: TrackChildrenQuery[]) => TagLocationReturnValue
+tagChildren = (parameters: ChildrenTaggingQuery[]) => TagLocationReturnValue
 ```
 
 :::warning
 `tagChildren` is a performance-sensitive API. Avoid using it whenever [Location Taggers](/tracking/api-reference/location-taggers/overview.md) could be used instead.
 :::
 
-### TrackChildrenQuery parameter
+### ChildrenTaggingQuery parameter
 An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md).
 
-[Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
+[Tagged Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
 
 ```typescript
-type TrackChildrenQuery = {
+type ChildrenTaggingQuery = {
   queryAll: string,
   trackAs: TaggingAttributes,
 }
@@ -28,10 +28,10 @@ type TrackChildrenQuery = {
 | required | **trackAs**  | [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md)
 
 ## Single query shorthand
-Syntactic sugar API built on top of **tagChildren** which processes a single TrackChildrenQuery.
+Syntactic sugar API built on top of **tagChildren** which processes a single ChildrenTaggingQuery.
 
 ```typescript
-trackChild = (parameters: TrackChildrenQuery) => TagLocationReturnValue
+trackChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 ```
 
 ## Returns
@@ -61,5 +61,5 @@ trackChild = (parameters: TrackChildrenQuery) => TagLocationReturnValue
 :::info See also
 - [Location Taggers](/tracking/api-reference/location-taggers/overview.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
-- [Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer)
+- [Tagged Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer)
 :::
