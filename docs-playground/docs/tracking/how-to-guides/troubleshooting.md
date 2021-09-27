@@ -33,10 +33,10 @@ The `Menu` component renders its contents in a [React Portal](https://reactjs.or
 </Card>
 ```
 :::tip
-It's easier to track siblings via [tagChildren](/tracking/api-reference/low-level/tagChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
+It's easier to tag siblings via [tagChildren](/tracking/api-reference/low-level/tagChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
 :::
 
-Unknowingly we may attempt to track it by adding our [Location Taggers](/tracking/api-reference/location-taggers/overview.md) as follows:
+Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/api-reference/location-taggers/overview.md) as follows:
 
 ```typescript jsx
 <Card {...tagElement({ id: 'card' })}>
@@ -87,7 +87,7 @@ almost exclusively when dealing with Components.
 ### Check if TaggingAttributes are set
 To verify if that's the issue we can simply inspect the DOM with the Browser's Developer Tools. 
 
-If the target [Tagged Element](/tracking/core-concepts/elements.md#elements) we are trying to track does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/api-reference/location-taggers/overview.md) failed decorating it.
+If the target [Tagged Element](/tracking/core-concepts/elements.md#elements) we are trying to tag does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/api-reference/location-taggers/overview.md) failed decorating it.
 
 As an example a [Tagged Element](/tracking/core-concepts/elements.md#tagged-elements), in this case a `<button>`, should look at least like the following:
 ```
@@ -115,7 +115,7 @@ const Button = ({ children, onClick }) => (
 <Button onClick={doSomething}>Do It!</Button>
 ```
 
-If we would try to track it:
+If we would try to tag it as we normally do:
 ```typescript jsx
 <Button {...tagButton({ id: 'button-do-it', text: 'Yes!' })} onClick={doSomething}>Yes!</Button>
 ```
@@ -180,7 +180,7 @@ Simply spread the [Tagging Attributes](/tracking/api-reference/general/TaggingAt
 :::
 
 ## Manual orchestration
-When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to track both
+When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to tag both
 Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
 
 Everything that [Location Taggers](/tracking/api-reference/location-taggers/overview.md) try to automate, together with the Tagged Elements Observer, can be done manually.
