@@ -6,7 +6,7 @@ When talking about **Elements** we usually refer to DOM Interfaces and APIs such
 [HTMLElements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) and [SVGElements](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement). They can be decorated by [Location Taggers](/tracking/api-reference/location-taggers/overview.md) with [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md).      
 
 ## Tagged Elements
-**Taggable Elements** that have been already decorated with at least the [elementId](/tracking/api-reference/general/TaggingAttributes.md#trackingattributeelementid) and [context](/tracking/api-reference/general/TaggingAttributes.md#trackingattributecontext) Tagging Attributes.
+**Taggable Elements** that have been already decorated with at least the [elementId](/tracking/api-reference/general/TaggingAttributes.md#taggingattributeelementid) and [context](/tracking/api-reference/general/TaggingAttributes.md#taggingattributecontext) Tagging Attributes.
 
 ## Children Tagging Elements
-**Taggable Elements** that have been already decorated with the [tagChildren](/tracking/api-reference/general/TaggingAttributes.md#trackingattributetrackchildren) Tagging Attribute.
+**Taggable Elements** that have been already decorated with the [tagChildren](/tracking/api-reference/general/TaggingAttributes.md#taggingattributetagchildren) Tagging Attribute.
