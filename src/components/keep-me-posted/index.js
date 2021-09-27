@@ -22,6 +22,7 @@ function KeepMePosted({children, name}) {
       .then(function(response) {
         var successMessage = "Thanks for subscribing, we'll notify you when we release!";
         // TODO: Needs a (new?) nonInteractiveEvent
+        // TODO: How to implement this custom nonInteractiveEvent?
         window.objectiv.tracker.trackEvent(makeNonInteractiveEvent({location_stack: [makeActionContext({id: "keep-me-posted", text: successMessage})]}))
         setFormSent(true);
         setStatusMessage(successMessage);
@@ -29,6 +30,7 @@ function KeepMePosted({children, name}) {
       }, function(error) {
         var failedMessage = "Whoops, we could not register your email address. Please try again (later).";
         // TODO: Needs a (new?) nonInteractiveEvent
+        // TODO: How to implement this custom nonInteractiveEvent?
         window.objectiv.tracker.trackEvent(makeNonInteractiveEvent({global_contexts: [makeErrorContext({id: "keep-me-posted", message: failedMessage})]}))
         setFormSent(false);
         setStatusMessage(failedMessage);
