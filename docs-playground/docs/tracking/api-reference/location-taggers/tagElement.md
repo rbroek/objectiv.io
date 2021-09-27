@@ -1,6 +1,6 @@
 # tagElement
 
-Tags an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [SectionContext](/taxonomy/location-contexts/SectionContext.md).
+Tags [Taggable Element](/tracking/core-concepts/elements.md#taggable-elements) to be tracked as [SectionContext](/taxonomy/location-contexts/SectionContext.md).
 
 ```typescript
 tagElement = (parameters: {

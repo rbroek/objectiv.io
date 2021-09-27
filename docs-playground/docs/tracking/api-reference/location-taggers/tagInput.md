@@ -1,6 +1,6 @@
 # tagInput
 
-Tags an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
+Tags [Taggable Element](/tracking/core-concepts/elements.md#taggable-elements) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
 
 ```typescript
 tagInput = (parameters: {

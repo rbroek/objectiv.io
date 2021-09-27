@@ -1,6 +1,6 @@
 # tagButton
 
-Tags an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
+Tags a [Taggable Element](/tracking/core-concepts/elements.md#taggable-elements) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
 
 ```typescript
 tagButton = (parameters: {
