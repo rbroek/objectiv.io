@@ -31,7 +31,7 @@ type ChildrenTaggingQuery = {
 Syntactic sugar API built on top of **tagChildren** which processes a single ChildrenTaggingQuery.
 
 ```typescript
-trackChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
+tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 ```
 
 ## Returns
