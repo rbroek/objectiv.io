@@ -1,6 +1,6 @@
 # trackSectionHidden
 
-Triggers a [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
 trackSectionHidden = (parameters: {
@@ -10,13 +10,13 @@ trackSectionHidden = (parameters: {
 ```
 
 :::info
-`trackSectionHidden` is triggered automatically by [trackElement](/tracking/api-reference/location-trackers/trackElement.md), [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md), [trackMediaPlayer](/tracking/api-reference/location-trackers/trackMediaPlayer.md), [trackNavigation](/tracking/api-reference/location-trackers/trackNavigation.md) and [trackOverlay](/tracking/api-reference/location-trackers/trackOverlay.md).
+`trackSectionHidden` is triggered automatically by [tagElement](/tracking/api-reference/location-taggers/tagElement.md), [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md), [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md), [tagNavigation](/tracking/api-reference/location-taggers/tagNavigation.md) and [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md).
 :::
 
 ## Parameters
 |          |             | type                                                                                                                                                      | default value
 | :-:      | :--         | :--                                                                                                                                                       | :--           
-| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
+| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | optional | tracker     | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
 

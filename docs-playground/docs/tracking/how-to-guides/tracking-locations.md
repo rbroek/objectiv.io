@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Tracking Locations
 
-Now that the [Tracker is up and running](/tracking/how-to-guides/getting-started.md) we can start thinking about marking some [TrackableElements](/tracking/core-concepts/elements.md#trackable-elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Trackers](/tracking/api-reference/location-trackers/overview.md).  
+Now that the [Tracker is up and running](/tracking/how-to-guides/getting-started.md) we can start thinking about marking some [Taggable Elements](/tracking/core-concepts/elements.md#taggable-elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/location-taggers/overview.md).  
 
 ## Tracking Interactive Elements
 A good rule of thumb is to start by identifying all interactive Elements in the Application. 
@@ -14,13 +14,13 @@ Anything that the user can interact with, but does not cause a URL change, is co
 
 ```typescript jsx
 // a button tag 
-<button {...trackButton({ id: 'button-1', text: "Click Me!" })}>Click Me!</button>
+<button {...tagButton({ id: 'button-1', text: "Click Me!" })}>Click Me!</button>
 
 // a Button component 
-<Button {...trackButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
+<Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
 
 // a clickable image
-<img {...trackButton({ id: 'button-3', text: "OK!" })} src="/img/ok.png" alt="OK!" />
+<img {...tagButton({ id: 'button-3', text: "OK!" })} src="/img/ok.png" alt="OK!" />
 ```
 
 :::info WIP
@@ -33,10 +33,10 @@ Links are interactive elements that cause, directly or indirectly, a change in t
 
 ```typescript jsx
 // a link tag 
-<a {...trackLink({ id: 'link-1', text: "Go!", href:"/somewhere" })} href="/somewhere">Go!</a>
+<a {...tagLink({ id: 'link-1', text: "Go!", href:"/somewhere" })} href="/somewhere">Go!</a>
 
 // a Link component 
-<Link {...trackLink({ id: 'link-2', text: "Back To Cart", href:"/cart" })} to="/cart">Back</Link>
+<Link {...tagLink({ id: 'link-2', text: "Back To Cart", href:"/cart" })} to="/cart">Back</Link>
 ```
 
 :::info WIP
@@ -49,12 +49,12 @@ Elements that cause other Elements, usually their children, to be expanded and d
 
 ```typescript jsx
 // an Accordion-like component 
-<FAQItem {...trackExpandableElement({ id: 'how-to-1' })} description="How to track Accordions?">
+<FAQItem {...tagExpandableElement({ id: 'how-to-1' })} description="How to track Accordions?">
   Some content here that will be displayed on click
 </FAQItem>
 
 // a collapsible Menu 
-<Menu {...trackExpandableElement({ id: 'main-menu' })}>
+<Menu {...tagExpandableElement({ id: 'main-menu' })}>
   <MenuItem>Menu A</MenuItem>
   …
   <MenuItem>Menu Z</MenuItem>
@@ -73,7 +73,7 @@ Let's define some logical Sections instead. Objectiv Taxonomy comes with a numbe
 
 [placeholder: prepare a complex example with conflicting components solved by wrapping them in a few Section Contexts]
 
-[placeholder: quick overview of most useful Location Trackers, directing user to the API Reference for full list]
+[placeholder: quick overview of most useful Location Taggers, directing user to the API Reference for full list]
 
 [placeholder: hard to explain why would FE bother with Location tracking: there's no advantage for them to using it]
 

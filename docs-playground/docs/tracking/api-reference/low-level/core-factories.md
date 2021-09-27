@@ -3,11 +3,11 @@
 Automatically generated factories based on the [Taxonomy](/taxonomy/overview.md) schema. 
 
 :::caution
-These are core-level APIs needed only when diving into low-level tracking via [trackLocation](/tracking/api-reference/low-level/trackLocation.md) or [trackEvent](/tracking/api-reference/low-level/trackEvent.md).   
+These are core-level APIs needed only when diving into low-level tracking via [tagLocation](/tracking/api-reference/low-level/tagLocation.md) or [trackEvent](/tracking/api-reference/low-level/trackEvent.md).   
 :::
 
 ## Location Context Factories
-These factories produce [LocationContext](/taxonomy/location-contexts/overview.md) instances ready to be handed over to [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+These factories produce [LocationContext](/taxonomy/location-contexts/overview.md) instances ready to be handed over to [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 
 ### Location Context Factory list
 

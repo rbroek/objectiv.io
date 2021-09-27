@@ -1,24 +1,24 @@
-# trackInput
+# tagInput
 
 Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
 
 ```typescript
-trackInput = (parameters: {
+tagInput = (parameters: {
   id: string,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 ## Parameters
 |          |         | type                                                                                   | default value
 | :-:      | :--     | :--                                                                                    | :--           
 | required | **id**  | string                                                                                 |
-| optional | options | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackBlurs: true }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackBlurs: true }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -28,24 +28,24 @@ Unless customized via the `options` parameter, automatically triggers:
 ## Usage example
 
 ```typescript jsx
-<input {...trackInput({ id: 'search' })} />
+<input {...tagInput({ id: 'search' })} />
 ```
 
 ```typescript jsx
-<Search {...trackInput({ id: 'search' })} />
+<Search {...tagInput({ id: 'search' })} />
 ```
 
 <br />
 
 :::tip Did you know ?
-`trackInput` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+`tagInput` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [trackElement](/tracking/api-reference/location-trackers/trackElement.md)
-- [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagElement](/tracking/api-reference/location-taggers/tagElement.md)
+- [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 :::

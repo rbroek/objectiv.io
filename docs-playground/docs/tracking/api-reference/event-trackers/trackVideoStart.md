@@ -1,6 +1,6 @@
 # trackVideoStart
 
-Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
 trackVideoStart = (parameters: {
@@ -12,7 +12,7 @@ trackVideoStart = (parameters: {
 ## Parameters
 |          |             | type                                                                                                                                                      | default value
 | :-:      | :--         | :--                                                                                                                                                       | :--           
-| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
+| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | optional | tracker     | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
 

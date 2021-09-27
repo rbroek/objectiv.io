@@ -3,11 +3,11 @@ sidebar_position: 3
 ---
 
 # Troubleshooting 
-When dealing with regular HTML [Location Trackers](/tracking/api-reference/location-trackers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
+When dealing with regular HTML [Location Taggers](/tracking/api-reference/location-taggers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
 
 The most common issues will be:
 - Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html)
-- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md)
+- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md)
 
 ## Problem: Incorrect Locations
 If [Events](/taxonomy/events/overview.md) are triggering correctly but [Location](/tracking/core-concepts/locations.md) are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
@@ -33,17 +33,17 @@ The `Menu` component renders its contents in a [React Portal](https://reactjs.or
 </Card>
 ```
 :::tip
-It's easier to track siblings via [trackChildren](/tracking/api-reference/low-level/trackChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
+It's easier to track siblings via [tagChildren](/tracking/api-reference/low-level/tagChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
 :::
 
-Unknowingly we may attempt to track it by adding our [Location Trackers](/tracking/api-reference/location-trackers/overview.md) as follows:
+Unknowingly we may attempt to track it by adding our [Location Taggers](/tracking/api-reference/location-taggers/overview.md) as follows:
 
 ```typescript jsx
-<Card {...trackElement({ id: 'card' })}>
-  <Menu {...trackOverlay({ id: 'menu' })}>
-    <MenuItem {...trackButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
-    <MenuItem {...trackButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
-    <MenuItem {...trackButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>
+<Card {...tagElement({ id: 'card' })}>
+  <Menu {...tagOverlay({ id: 'menu' })}>
+    <MenuItem {...tagButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
+    <MenuItem {...tagButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
+    <MenuItem {...tagButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>
   </Menu> 
 </Card>
 ```
@@ -63,38 +63,38 @@ The [Location](/tracking/core-concepts/locations.md) ends abruptly at the `Menu`
 
 ### Make Locations work across Portals
 
-The solution is to specify the parent [Location Tracker](/tracking/api-reference/location-trackers/overview.md) of a portaled [Tracked Element](/tracking/core-concepts/elements.md#tracked-elements) manually. 
+The solution is to specify the parent [Location Tagger](/tracking/api-reference/location-taggers/overview.md) of a portaled [Tagged Element](/tracking/core-concepts/elements.md#tagged-elements) manually. 
 
-This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` [Location](/tracking/core-concepts/locations.md), to simply continue with and from its parent [Location Tracker](/tracking/api-reference/location-trackers/overview.md): `cardTracker`.
+This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` [Location](/tracking/core-concepts/locations.md), to simply continue with and from its parent [Location Tagger](/tracking/api-reference/location-taggers/overview.md): `cardTracker`.
 
 ```typescript jsx
-const cardTracker = trackElement({ id: 'card' });
+const cardTracker = tagElement({ id: 'card' });
 …
 <Card {...cardTracker}>
-  <Menu {...trackOverlay({ id: 'menu', options: { parentTracker: cardTracker } })}>
-    <MenuItem {...trackButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
-    <MenuItem {...trackButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
-    <MenuItem {...trackButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>
+  <Menu {...tagOverlay({ id: 'menu', options: { parentTracker: cardTracker } })}>
+    <MenuItem {...tagButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
+    <MenuItem {...tagButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
+    <MenuItem {...tagButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>
   </Menu>
 </Card>
 ```
 
 
 ## Problem: Events not triggering 
-Usually this happens because the [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) did not end up being applied to the target [ement](/tracking/core-concepts/elements.md#elements). This happens
+Usually this happens because the [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) did not end up being applied to the target [ement](/tracking/core-concepts/elements.md#elements). This happens
 almost exclusively when dealing with Components. 
 
-### Check if TrackingAttributes are set
+### Check if TaggingAttributes are set
 To verify if that's the issue we can simply inspect the DOM with the Browser's Developer Tools. 
 
-If the target [Tracked Element](/tracking/core-concepts/elements.md#elements) we are trying to track does not have at least `data-objectiv-element-id` set, most probably the [Location Tracker](/tracking/api-reference/location-trackers/overview.md) failed decorating it.
+If the target [Tagged Element](/tracking/core-concepts/elements.md#elements) we are trying to track does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/api-reference/location-taggers/overview.md) failed decorating it.
 
-As an example a [Tracked Element](/tracking/core-concepts/elements.md#tracked-elements), in this case a `<button>`, should look at least like the following:
+As an example a [Tagged Element](/tracking/core-concepts/elements.md#tagged-elements), in this case a `<button>`, should look at least like the following:
 ```
 <button data-objectiv-element-id="…" data-objectiv-context="…" …>…</button>
 ```
 
-The values of the [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) are not really important, as they are fully automated. What matters is their presence. 
+The values of the [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) are not really important, as they are fully automated. What matters is their presence. 
 
 We can now attempt to fix the issue in two ways:
 1. Verify props forwarding
@@ -117,7 +117,7 @@ const Button = ({ children, onClick }) => (
 
 If we would try to track it:
 ```typescript jsx
-<Button {...trackButton({ id: 'button-do-it', text: 'Yes!' })} onClick={doSomething}>Yes!</Button>
+<Button {...tagButton({ id: 'button-do-it', text: 'Yes!' })} onClick={doSomething}>Yes!</Button>
 ```
 
 It would not work, because extra props are not being forwarded to the `<button>` tag. Let's fix that:
@@ -127,7 +127,7 @@ const Button = ({ children, onClick, ...otherProps }) => (
 )
 ```
 
-Tracking will now work as expected, since our extra [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) will be forwarded correctly to the `<button>` 
+Tracking will now work as expected, since our extra [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) will be forwarded correctly to the `<button>` 
 
 ### Props forwarding - 3rd party libraries
 Third party components, especially UI libraries, usually allow specifying custom attributes. 
@@ -144,28 +144,28 @@ Let's look at an example with [InputBase](https://mui.com/api/input-base/) from 
 If InputBase would forwards props we could simply:
 ```typescript jsx
 <InputBase
-  {...trackInput({ id: 'search' })}
+  {...tagInput({ id: 'search' })}
   id={'search'}
   placeholder="Search…"
 />
 ```
 
-Unfortunately that does not work and our [trackInput](/tracking/api-reference/location-trackers/trackInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
+Unfortunately that does not work and our [tagInput](/tracking/api-reference/location-taggers/tagInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
 provides us with a specific property called `inputProps` that is directly forwarded to the `<input>` tag.
 
-Now we can fix the issue by simply using it to apply our [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md):
+Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md):
 
 ```typescript jsx
 <InputBase
   id={'search'}
   placeholder="Search…"
-  inputProps={trackInput({ id: 'search' })}
+  inputProps={tagInput({ id: 'search' })}
 />
 ```
 
 :::tip
 Sometimes properties for passing extra attributes are already used and we can't assign directly to them as done above.    
-Simply spread the [Tracking Attributes](/tracking/api-reference/general/TrackingAttributes.md) and merge them up with the existing props:
+Simply spread the [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) and merge them up with the existing props:
 
 ```typescript jsx
 <InputBase
@@ -173,7 +173,7 @@ Simply spread the [Tracking Attributes](/tracking/api-reference/general/Tracking
   placeholder="Search…"
   inputProps={{ 
     'aria-label': 'search', 
-    ...trackInput({ id: 'search' }) 
+    ...tagInput({ id: 'search' }) 
   }}
 />
 ```
@@ -183,7 +183,7 @@ Simply spread the [Tracking Attributes](/tracking/api-reference/general/Tracking
 When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to track both
 Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
 
-Everything that [Location Trackers](/tracking/api-reference/location-trackers/overview.md) try to automate, together with the Tracked Elements Observer, can be done manually.
+Everything that [Location Taggers](/tracking/api-reference/location-taggers/overview.md) try to automate, together with the Tracked Elements Observer, can be done manually.
 
 Let's look at some examples with solutions.
 
@@ -202,7 +202,7 @@ on Click, will display its content / children to the user with an animation.
 Objectiv Taxonomy has a Context specifically meant for tracking expandable elements, let's use that:
 ```typescript jsx
 <FAQItem
-  {...trackExpandableElement({ id: 'faq-track-3rd-party-components' })}
+  {...tagExpandableElement({ id: 'faq-track-3rd-party-components' })}
   title={'How do I track 3rd party components?'}
 >
   Some explanatory text to be displayed on click
@@ -214,7 +214,7 @@ Unfortunately after some testing we discover that `FAQItem` has its own internal
 Again, checking the documentation is our friend here. Turns out there are event handlers we can hook onto:
 ```typescript jsx
  <FAQItem
-  {...trackExpandableElement({ id: 'faq-track-3rd-party-components' })}
+  {...tagExpandableElement({ id: 'faq-track-3rd-party-components' })}
   onClick={(event) => {
     trackClick({ element: event.target })
   }}  
@@ -232,7 +232,7 @@ By default we track when components mount or unmount from the DOM but it's not e
 Consider this menu:
 ```typescript jsx
 <Menu
-  {...trackOverlay({ id: 'menu' })}
+  {...tagOverlay({ id: 'menu' })}
   open={isMenuOpen}
 >
   <MenuItem>Profile</MenuItem>
@@ -246,7 +246,7 @@ Luckily the menu it's driven by the state variable `isMenuOpen`. We can use that
 
 ```typescript jsx
 <Menu
-  {...trackOverlay({
+  {...tagOverlay({
      id: 'menu',
      options: { trackVisibility: { mode: 'manual', isVisible: isMenuOpen } }
   })}
@@ -264,7 +264,7 @@ Sometimes we can also leverage 3rd party event callbacks, like so:
 
 ```typescript jsx
 <Accordion
-  {...trackExpandableElement({ id: 'fix' })}
+  {...tagExpandableElement({ id: 'fix' })}
   onChange={(event, expanded) => {
     trackVisibility({ element: event.target, isVisible: expanded })
   }}
@@ -275,7 +275,7 @@ In the example above the Accordion API has a `onChange` event handler triggered 
 We can directly hook that information into our event tracking.
 
 ### Tracking from a parent Element
-[placeholder: trackChildren]
+[placeholder: tagChildren]
 
 :::info Why not just wrapping components?
 Many of the issues above may be solved by just wrapping the problematic components in some extra HTML element.

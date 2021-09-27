@@ -1,24 +1,24 @@
-# trackMediaPlayer
+# tagMediaPlayer
 
 Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
 
 ```typescript
-trackMediaPlayer = (parameters: {
+tagMediaPlayer = (parameters: {
   id: string,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 ## Parameters
 |          |         | type                                                                                   | default value
 | :-:      | :--     | :--                                                                                    | :--           
 | required | **id**  | string                                                                                 |
-| optional | options | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -29,13 +29,13 @@ Unless customized via the `options` parameter, automatically triggers:
 ## Examples
 
 ```typescript jsx
-<div {...trackMediaPlayer({ id: 'player-id' })}>
+<div {...tagMediaPlayer({ id: 'player-id' })}>
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
 </div>
 ```
 
 ```typescript jsx
-<Player {...trackMediaPlayer({ id: 'player-id' })}>
+<Player {...tagMediaPlayer({ id: 'player-id' })}>
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
 </Player>
 ```
@@ -43,16 +43,16 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackMediaPlayer` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+`tagMediaPlayer` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [trackElement](/tracking/api-reference/location-trackers/trackElement.md)
-- [trackNavigation](/tracking/api-reference/location-trackers/trackNavigation.md)
-- [trackOverlay](/tracking/api-reference/location-trackers/trackOverlay.md)
-- [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagElement](/tracking/api-reference/location-taggers/tagElement.md)
+- [tagNavigation](/tracking/api-reference/location-taggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md)
+- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 - :::

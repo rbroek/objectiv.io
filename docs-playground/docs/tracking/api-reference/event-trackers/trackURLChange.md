@@ -10,13 +10,13 @@ trackURLChange = (parameters: {
 ```
 
 :::info
-`trackURLChange` events are triggered automatically by the [Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tracked-elements-observer) whenever [Location.href](https://developer.mozilla.org/en-US/docs/Web/API/Location/href) changes.
+`trackURLChange` events are triggered automatically by the [Tracked Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer) whenever [Location.href](https://developer.mozilla.org/en-US/docs/Web/API/Location/href) changes.
 :::
 
 ## Parameters
 |          |         | type                                                                                                                                                      | default value
 | :-:      | :--     | :--                                                                                                                                                       | :--           
-| optional | element | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
+| optional | element | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
 | optional | tracker | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
 

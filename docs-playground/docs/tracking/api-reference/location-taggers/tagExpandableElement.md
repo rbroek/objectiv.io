@@ -1,24 +1,24 @@
-# trackExpandableElement
+# tagExpandableElement
 
 Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [ExpandableElementContext](/taxonomy/location-contexts/ExpandanbleElementContext.md).
 
 ```typescript
-trackExpandableElement = (parameters: {
+tagExpandableElement = (parameters: {
   id: string,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 ## Parameters
 |          |         | type                                                                                   | default value
 | :-:      | :--     | :--                                                                                    | :--           
 | required | **id**  | string                                                                                 |
-| optional | options | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -30,13 +30,13 @@ Unless customized via the `options` parameter, automatically triggers:
 ## Usage example
 
 ```typescript jsx
-<div {...trackExpandableElement({ id: 'faq-item-id' })}>
+<div {...tagExpandableElement({ id: 'faq-item-id' })}>
   …
 </div>
 ```
 
 ```typescript jsx
-<Accordion {...trackExpandableElement({ id: 'accordion-id' })}>
+<Accordion {...tagExpandableElement({ id: 'accordion-id' })}>
   …
 </Accordion>
 ```
@@ -44,19 +44,19 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackExpandableElement` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+`tagExpandableElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [trackButton](trackButton)
-- [trackLink](trackLink)
-- [trackElement](trackNavigation)
-- [trackNavigation](trackNavigation)
-- [trackOverlay](trackOverlay)
-- [trackMediaPlayer](trackMediaPlayer)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagButton](tagButton)
+- [tagLink](tagLink)
+- [tagElement](tagNavigation)
+- [tagNavigation](tagNavigation)
+- [tagOverlay](tagOverlay)
+- [tagMediaPlayer](tagMediaPlayer)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
 :::

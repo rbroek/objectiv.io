@@ -1,24 +1,24 @@
-# trackNavigation
+# tagNavigation
 
 Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [NavigationContext](/taxonomy/location-contexts/NavigationContext.md).
 
 ```typescript
-trackNavigation = (parameters: {
+tagNavigation = (parameters: {
   id: string,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 ## Parameters
 |          |         | type                                                                                   | default value
 | :-:      | :--     | :--                                                                                    | :--           
 | required | **id**  | string                                                                                 |
-| optional | options | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -29,13 +29,13 @@ Unless customized via the `options` parameter, automatically triggers:
 ## Examples
 
 ```typescript jsx
-<nav {...trackNavigation({ id: 'navigation-id' })}>
+<nav {...tagNavigation({ id: 'navigation-id' })}>
   …
 </nav>
 ```
 
 ```typescript jsx
-<TopNav {...trackNavigation({ id: 'navigation-id' })}>
+<TopNav {...tagNavigation({ id: 'navigation-id' })}>
   …
 </TopNav>
 ```
@@ -43,16 +43,16 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackNavigation` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+`tagNavigation` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [trackElement](/tracking/api-reference/location-trackers/trackNavigation.md)
-- [trackOverlay](/tracking/api-reference/location-trackers/trackOverlay.md)
-- [trackMediaPlayer](/tracking/api-reference/location-trackers/trackMediaPlayer.md)
-- [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagElement](/tracking/api-reference/location-taggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md)
+- [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md)
+- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 :::

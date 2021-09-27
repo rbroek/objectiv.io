@@ -1,15 +1,15 @@
-# trackLink
+# tagLink
 
 Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
 
 ```typescript
-trackLink = (parameters: {
+tagLink = (parameters: {
   id: string,
   text: string,
   href: string,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 ## Parameters
@@ -18,11 +18,11 @@ trackLink = (parameters: {
 | required | **id**   | string                                                                                 |
 | required | **text** | string                                                                                 |
 | required | **href** | string                                                                                 |
-| optional | options  | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackClicks: true }`
+| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackClicks: true }`
 | optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -32,25 +32,25 @@ Unless customized via the `options` parameter, automatically triggers:
 ## Usage examples
 
 ```typescript jsx
-<a {...trackLink({ id: 'lnk-id', text: "Go!", href: "/path" })} href="/path">Go!</a>
+<a {...tagLink({ id: 'lnk-id', text: "Go!", href: "/path" })} href="/path">Go!</a>
 ```
 
 ```typescript jsx
-<LinkComponent {...trackLink({ id: 'lnk-id', text: "Go!", href: "/path" })}>Go!</LinkComponent>
+<LinkComponent {...tagLink({ id: 'lnk-id', text: "Go!", href: "/path" })}>Go!</LinkComponent>
 ```
 
 <br />
 
 :::tip Did you know ?
-`trackLink` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+`tagLink` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
-- [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
+- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
 :::

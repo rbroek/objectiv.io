@@ -1,6 +1,6 @@
 # trackClick
 
-Triggers a [ClickEvent](/taxonomy/events/ClickEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).  
+Triggers a [ClickEvent](/taxonomy/events/ClickEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).  
 
 ```typescript
 trackClick = (parameters: {
@@ -10,13 +10,13 @@ trackClick = (parameters: {
 ```
 
 :::info
-`trackClick` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [trackButton](/tracking/api-reference/location-trackers/trackButton.md), [trackLink](/tracking/api-reference/location-trackers/trackLink.md) or [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md).
+`trackClick` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagButton](/tracking/api-reference/location-taggers/tagButton.md), [tagLink](/tracking/api-reference/location-taggers/tagLink.md) or [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md).
 :::
 
 ## Parameters
 |          |             | type                                                                                                                                                      | default value
 | :-:      | :--         | :--                                                                                                                                                       | :--           
-| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#trackable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
+| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | optional | tracker     | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
 
@@ -50,9 +50,9 @@ trackClick = (parameters: {
 <br />
 
 :::info See also
-- [trackButton](/tracking/api-reference/location-trackers/trackButton.md)
-- [trackLink](/tracking/api-reference/location-trackers/trackLink.md) 
-- [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
+- [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
+- [tagLink](/tracking/api-reference/location-taggers/tagLink.md) 
+- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
 - [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

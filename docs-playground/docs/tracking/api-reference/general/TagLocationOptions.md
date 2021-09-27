@@ -1,6 +1,6 @@
-# TrackLocationOptions
+# TagLocationOptions
 
-The `options` object parameter allows to override the default automatic tracking behavior of [Location Trackers](/tracking/api-reference/location-trackers/overview.md) APIs.
+The `options` object parameter allows to override the default automatic tracking behavior of [Location Taggers](/tracking/api-reference/location-taggers/overview.md) APIs.
 
 | Option           | Possible value
 | :--              | :--
@@ -13,16 +13,16 @@ All options are optional and can be either omitted or set to `undefined` to reve
 :::
 
 ### options.trackClicks
-Used to either force or prevent [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tracked Elements](/tracking/core-concepts/elements.md#tracked-elements). 
+Used to either force or prevent [click](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tracked Elements](/tracking/core-concepts/elements.md#tagged-elements). 
 
 ### options.trackBlurs
-Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tracked Elements](/tracking/core-concepts/elements.md#tracked-elements).
+Used to either force or prevent [blur](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) being attached to [Tracked Elements](/tracking/core-concepts/elements.md#tagged-elements).
 
 ### options.trackVisibility
 Used to customize whether to track [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) and [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) events, either automatically or manually.
 
 #### Visibility mode:auto  
-Either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) are triggered when [Tracked Elements](/tracking/core-concepts/elements.md#tracked-elements) are added or removed to/from the DOM.
+Either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) are triggered when [Tracked Elements](/tracking/core-concepts/elements.md#tagged-elements) are added or removed to/from the DOM.
 
 ```js
 trackVisibility = {

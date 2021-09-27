@@ -1,28 +1,28 @@
-# trackLocation
+# tagLocation
 
 Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
 
 ```typescript
-trackLocation = (parameters: {
+tagLocation = (parameters: {
   instance: LocationContext,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 :::caution
-`trackLocation` is a lower-level API. Unless really needed, it's easier to use specific [Location Trackers](/tracking/api-reference/location-trackers/overview.md) APIs. 
+`tagLocation` is a lower-level API. Unless really needed, it's easier to use specific [Location Taggers](/tracking/api-reference/location-taggers/overview.md) APIs. 
 :::
 
 ## Parameters
 |          |              | type                                                                                   | default value
 | :-:      | :--          | :--                                                                                    | :--           
 | required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                             |
-| optional | options      | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | Dynamically calculated based on `instance`. See the [Events](#events) table below.
+| optional | options      | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | Dynamically calculated based on `instance`. See the [Events](#events) table below.
 | optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md) 
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md) 
 
 ## Events
 Unless customized via the `options` parameter, the given `instance` determines which Events are triggered automatically:
@@ -41,8 +41,8 @@ Unless customized via the `options` parameter, the given `instance` determines w
 ## Usage example
 
 ```typescript jsx
-<Layout {...trackLocation({ instance: makeSectionContext({ id: 'layout' }) })}>
-  <div {...trackLocation({ instance: makeOverlayContext({ id: 'modal' }) })}>
+<Layout {...tagLocation({ instance: makeSectionContext({ id: 'layout' }) })}>
+  <div {...tagLocation({ instance: makeOverlayContext({ id: 'modal' }) })}>
     …
   </div>
 </Layout>
@@ -55,6 +55,6 @@ In the example above we factored the `instance` parameters by using [Core Locati
 <br />
 
 :::info See also
-- [Location Trackers](/tracking/api-reference/location-trackers/overview.md)
+- [Location Taggers](/tracking/api-reference/location-taggers/overview.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

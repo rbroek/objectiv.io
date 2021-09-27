@@ -14,7 +14,7 @@ configureTracker = (parameters: {
 ```
 
 :::info
-`window.objectiv.tracker` is the default tracker instance used by all [Location Trackers](/tracking/api-reference/location-trackers/overview.md) and [Event Trackers](/tracking/api-reference/event-trackers/overview.md).
+`window.objectiv.tracker` is the default tracker instance used by all [Location Taggers](/tracking/api-reference/location-taggers/overview.md) and [Event Trackers](/tracking/api-reference/event-trackers/overview.md).
 :::
 
 
@@ -58,7 +58,7 @@ configureTracker({
 <br />
 
 :::info See also
-- [Location Trackers](/tracking/api-reference/location-trackers/overview.md) 
+- [Location Taggers](/tracking/api-reference/location-taggers/overview.md) 
 - [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
 - [Transport](/tracking/core-concepts/tracker-architecture.md#transport)
 - [Collector](/tracking/core-concepts/collector-architecture.md)

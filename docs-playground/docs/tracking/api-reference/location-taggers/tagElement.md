@@ -1,24 +1,24 @@
-# trackElement
+# tagElement
 
 Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [SectionContext](/taxonomy/location-contexts/SectionContext.md).
 
 ```typescript
-trackElement = (parameters: {
+tagElement = (parameters: {
   id: string,
   options?: TrackOptions,
   onError?: TrackerOnErrorCallback
-}) => TrackLocationReturnValue
+}) => TagLocationReturnValue
 ```
 
 ## Parameters
 |          |         | type                                                                                   | default value
 | :-:      | :--     | :--                                                                                    | :--           
 | required | **id**  | string                                                                                 |
-| optional | options | [TrackLocationOptions](/tracking/api-reference/general/TrackLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TrackLocationReturnValue](/tracking/api-reference/general/TrackLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -29,8 +29,8 @@ Unless customized via the `options` parameter, automatically triggers:
 ## Usage example
 
 ```typescript jsx
-<Layout {...trackElement({ id: 'layout' })}>
-  <div {...trackElement({ id: 'section' })}>
+<Layout {...tagElement({ id: 'layout' })}>
+  <div {...tagElement({ id: 'section' })}>
     …
   </div>
 </Layout>
@@ -39,16 +39,16 @@ Unless customized via the `options` parameter, automatically triggers:
 <br />
 
 :::tip Did you know ?
-`trackElement` is just syntactic sugar on top of [trackLocation](/tracking/api-reference/low-level/trackLocation.md).
+`tagElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [trackNavigation](/tracking/api-reference/location-trackers/trackNavigation.md)
-- [trackOverlay](/tracking/api-reference/location-trackers/trackOverlay.md)
-- [trackMediaPlayer](/tracking/api-reference/location-trackers/trackMediaPlayer.md)
-- [trackExpandableElement](/tracking/api-reference/location-trackers/trackExpandableElement.md)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagNavigation](/tracking/api-reference/location-taggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md)
+- [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md)
+- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 :::

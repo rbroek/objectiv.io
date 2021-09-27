@@ -8,6 +8,6 @@ Low-level Factories and APIs for more control, customization and lower-level tra
 
 - [Core Factories](/tracking/api-reference/low-level/core-factories.md)
 - [startAutoTracking](/tracking/api-reference/low-level/startAutoTracking.md)
-- [trackChildren](/tracking/api-reference/low-level/trackChildren.md)
+- [tagChildren](/tracking/api-reference/low-level/tagChildren.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
-- [trackLocation](/tracking/api-reference/low-level/trackLocation.md)
+- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
