@@ -32,7 +32,7 @@ function KeepMePosted({children, name}) {
               text: successMessage
             })
           ]
-        }))
+        }));
         setFormSent(true);
         setStatusMessage(successMessage);
         form.reset();
@@ -48,7 +48,7 @@ function KeepMePosted({children, name}) {
               message: failedMessage
             })
           ]
-        }))
+        }));
         setFormSent(false);
         setStatusMessage(failedMessage);
     });

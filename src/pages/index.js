@@ -20,7 +20,7 @@ export default function Home() {
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <AnnouncementBar 
         title="We're Hiring!"
-        content="Join our mission crew as a Senior Data Engineer."
+        content="Join our mission crew as a Data Scientist / Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
       >
