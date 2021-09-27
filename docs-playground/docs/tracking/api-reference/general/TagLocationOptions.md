@@ -31,7 +31,7 @@ trackVisibility = {
 ```
 
 #### Visibility mode:manual  
-Either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) are triggered whenever the `isVisibile` boolean state attribute changes.
+Either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) are triggered whenever the `isVisible` boolean state attribute changes.
 
 ```js
 trackVisibility = {
