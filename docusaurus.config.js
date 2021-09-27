@@ -118,6 +118,7 @@ module.exports = {
     trackerApplicationId: 'objectiv-website',
     trackerDocsApplicationId: 'objectiv-docs',
     trackerEndPoint: objectiv_tracker_endpoint, 
-    slackJoinLink: slackJoinLink
+    slackJoinLink: slackJoinLink,
+    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k'
   }
 };
