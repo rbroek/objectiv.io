@@ -2,15 +2,15 @@
 sidebar_position: 2
 ---
 
-# Tracking Locations
+# Tagging Locations
 
-Now that the [Tracker is up and running](/tracking/how-to-guides/getting-started.md) we can start thinking about marking some [Taggable Elements](/tracking/core-concepts/elements.md#taggable-elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/location-taggers/overview.md).  
+Now that the [Tracker is up and running](/tracking/how-to-guides/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/elements.md#elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/location-taggers/overview.md).  
 
-## Tracking Interactive Elements
+## Tagging Interactive Elements
 A good rule of thumb is to start by identifying all interactive Elements in the Application. 
 
 ### Buttons
-Anything that the user can interact with, but does not cause a URL change, is considered a Button. 
+Anything that the user can interact with, but does not cause a URL change, can be considered a Button. 
 
 ```typescript jsx
 // a button tag 
@@ -53,7 +53,7 @@ Elements that cause other Elements, usually their children, to be expanded and d
   Some content here that will be displayed on click
 </FAQItem>
 
-// a collapsible Menu 
+// a contextual Menu 
 <Menu {...tagExpandableElement({ id: 'main-menu' })}>
   <MenuItem>Menu A</MenuItem>
   …

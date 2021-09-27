@@ -8,5 +8,5 @@ When talking about **Elements** we usually refer to DOM Interfaces and APIs such
 ## Tagged Elements
 **Taggable Elements** that have been already decorated with at least the [elementId](/tracking/api-reference/general/TaggingAttributes.md#trackingattributeelementid) and [context](/tracking/api-reference/general/TaggingAttributes.md#trackingattributecontext) Tagging Attributes.
 
-## Children Tracking Elements
+## Children Tagging Elements
 **Taggable Elements** that have been already decorated with the [tagChildren](/tracking/api-reference/general/TaggingAttributes.md#trackingattributetrackchildren) Tagging Attribute.

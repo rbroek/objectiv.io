@@ -1,6 +1,6 @@
 # tagChildren
 
-Marks an [Element](/tracking/core-concepts/elements.md#elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
+Tags an [Element](/tracking/core-concepts/elements.md#elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
 
 ```typescript
 tagChildren = (parameters: ChildrenTaggingQuery[]) => TagLocationReturnValue

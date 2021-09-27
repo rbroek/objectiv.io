@@ -1,6 +1,6 @@
 # tagLink
 
-Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
+Tags an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
 
 ```typescript
 tagLink = (parameters: {

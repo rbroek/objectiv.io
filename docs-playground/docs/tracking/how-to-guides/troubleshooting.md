@@ -49,12 +49,12 @@ Unknowingly we may attempt to track it by adding our [Location Taggers](/trackin
 ```
 
 Suppose we click on `Item B`. Our expected [Location](/tracking/core-concepts/locations.md) should look something like:
-```typescript jsx
+```
 app-root > ... > card > menu > menu-item-b
 ```
 
 But because `Menu` renders in a [React Portal](https://reactjs.org/docs/portals.html) we get something like this instead:
-```typescript jsx
+```
 app-root > menu > menu-item-b
 ```
 
@@ -65,13 +65,13 @@ The [Location](/tracking/core-concepts/locations.md) ends abruptly at the `Menu`
 
 The solution is to specify the parent [Location Tagger](/tracking/api-reference/location-taggers/overview.md) of a portaled [Tagged Element](/tracking/core-concepts/elements.md#tagged-elements) manually. 
 
-This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` [Location](/tracking/core-concepts/locations.md), to simply continue with and from its parent [Location Tagger](/tracking/api-reference/location-taggers/overview.md): `cardTracker`.
+This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` [Location](/tracking/core-concepts/locations.md), to simply continue with and from its parent.
 
 ```typescript jsx
-const cardTracker = tagElement({ id: 'card' });
+const parent = tagElement({ id: 'card' });
 …
 <Card {...cardTracker}>
-  <Menu {...tagOverlay({ id: 'menu', options: { parentTracker: cardTracker } })}>
+  <Menu {...tagOverlay({ id: 'menu', options: { parent } })}>
     <MenuItem {...tagButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
     <MenuItem {...tagButton({ id: 'menu-item-b', text: 'Item B' })}>Item B</MenuItem>
     <MenuItem {...tagButton({ id: 'menu-item-c', text: 'Item C' })}>Item C</MenuItem>

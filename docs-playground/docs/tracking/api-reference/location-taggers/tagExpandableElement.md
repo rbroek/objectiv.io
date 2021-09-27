@@ -1,6 +1,6 @@
 # tagExpandableElement
 
-Marks an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [ExpandableElementContext](/taxonomy/location-contexts/ExpandanbleElementContext.md).
+Tags an interactive [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [ExpandableElementContext](/taxonomy/location-contexts/ExpandanbleElementContext.md).
 
 ```typescript
 tagExpandableElement = (parameters: {

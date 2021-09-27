@@ -1,6 +1,6 @@
 # tagOverlay
 
-Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [OverlayContext](/taxonomy/location-contexts/OverlayContext.md).
+Tags an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [OverlayContext](/taxonomy/location-contexts/OverlayContext.md).
 
 ```typescript
 tagOverlay = (parameters: {

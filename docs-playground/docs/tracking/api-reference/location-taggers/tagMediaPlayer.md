@@ -1,6 +1,6 @@
 # tagMediaPlayer
 
-Marks an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
+Tags an [Element](/tracking/core-concepts/elements.md#elements) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
 
 ```typescript
 tagMediaPlayer = (parameters: {
