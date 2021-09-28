@@ -65,7 +65,6 @@ export default function DocSidebarItem({item, ...props}) {
 
     case 'link':
     default:
-      console.log(item);
       return <DocSidebarItemLink {...tagLink({ id: item.label, text: item.label, href: item.href })} item={item} {...props} />;
   }
 } // If we navigate to a category and it becomes active, it should automatically expand itself
