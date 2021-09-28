@@ -6,7 +6,8 @@
  */
 import {
   tagExpandableElement,
-  tagLink
+  tagLink,
+  trackClick
 } from "@objectiv/tracker-browser";
 import React, {useEffect, memo} from 'react';
 import clsx from 'clsx';
@@ -61,11 +62,11 @@ export default function DocSidebarItem({item, ...props}) {
         return null;
       }
 
-      return <DocSidebarItemCategory {...tagExpandableElement({ id: item.label })} item={item} {...props} />;
+      return <DocSidebarItemCategory item={item} {...props} />;
 
     case 'link':
     default:
-      return <DocSidebarItemLink {...tagLink({ id: item.label, text: item.label, href: item.href })} item={item} {...props} />;
+      return <DocSidebarItemLink item={item} {...props} />;
   }
 } // If we navigate to a category and it becomes active, it should automatically expand itself
 
@@ -101,6 +102,12 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
   });
   return (
     <li
+      {...tagExpandableElement({
+        id: item.label,
+        options: {
+          trackVisibility: { mode: 'manual', isVisible: !collapsed  }
+        }
+      })}
       className={clsx(
         ThemeClassNames.docs.docSidebarItemCategory,
         'menu__list-item',
@@ -120,6 +127,7 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
             ? (e) => {
                 e.preventDefault();
                 toggleCollapsed();
+                trackClick({ element: e.target })
               }
             : undefined
         }
@@ -151,13 +159,17 @@ function DocSidebarItemLink({item, onItemClick, activePath, ...props}) {
       )}
       key={label}>
       <Link
+        {...tagLink({ id: item.label, text: item.label, href: item.href })}
         className={clsx('menu__link', {
           'menu__link--active': isActive,
         })}
         aria-current={isActive ? 'page' : undefined}
         to={href}
         {...(isInternalUrl(href) && {
-          onClick: onItemClick,
+          onClick: (e) => {
+            trackClick({ element: e.target })
+            onItemClick && onItemClick(e)
+          },
         })}
         {...props}>
         {isInternalUrl(href) ? (
