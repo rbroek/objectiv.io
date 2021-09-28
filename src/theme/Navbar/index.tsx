@@ -25,7 +25,7 @@ import NavbarItem, {Props as NavbarItemConfig} from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconCloseThin from '@theme/IconCloseThin';
-import { trackElement, trackOverlay } from "@objectiv/tracker-browser";
+import { tagElement, tagOverlay } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 
@@ -164,7 +164,7 @@ function NavbarMobileSidebar({
 
   return (
     <div className="navbar-sidebar"
-      {...trackOverlay({
+      {...tagOverlay({
         id: 'hamburger-menu',
         options: { 
           trackVisibility: { 
@@ -247,7 +247,7 @@ function Navbar(): JSX.Element {
 
   return (
     <nav
-      {...trackElement({id: 'navbar-top'})}
+      {...tagElement({id: 'navbar-top'})}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',

@@ -9,7 +9,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
 import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
 import type { NavLinkProps } from '@theme-original/NavbarItem/DefaultNavbarItem';
-import { trackLink } from "@objectiv/tracker-browser";
+import { tagLink } from "@objectiv/tracker-browser";
 
 export default function DefaultNavbarItem({
   mobile = false,
@@ -19,7 +19,7 @@ export default function DefaultNavbarItem({
   return (
     <OriginalDefaultNavbarItem 
       {...props}
-      {...trackLink({ id: props.label, text: props.label, href: props.href ? props.href : props.to })}
+      {...tagLink({ id: props.label, text: props.label, href: props.href ? props.href : props.to })}
     />
   );
 }
