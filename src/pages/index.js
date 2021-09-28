@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
 import KeepMePosted from '../components/keep-me-posted'
 import styles from './styles.module.css';
-import { trackElement, trackLink } from "@objectiv/tracker-browser";
+import { tagElement } from "@objectiv/tracker-browser";
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -27,7 +27,7 @@ export default function Home() {
       </AnnouncementBar>
       <header 
         className={clsx('hero hero--primary', styles.heroBanner)}
-        {...trackElement({id: 'header'})}
+        {...tagElement({id: 'header'})}
       >
         <div className={clsx('container', styles.heroContainer)}>
           <img

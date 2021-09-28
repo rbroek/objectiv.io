@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
-import { trackLink, trackButton, trackElement } from "@objectiv/tracker-browser";
+import { tagLink, tagButton, tagElement } from "@objectiv/tracker-browser";
 import { makeNonInteractiveEvent, makeSectionContext, makeActionContext } from "@objectiv/tracker-core";
 
 function KeepMePosted({children, name}) {
@@ -57,7 +57,7 @@ function KeepMePosted({children, name}) {
   return (
     <div 
       className={styles.wrapper}
-      {...trackElement({id: 'keep-me-posted-form'})}
+      {...tagElement({id: 'keep-me-posted-form'})}
     >
       <form id="keep-me-posted" onSubmit={handleSubmit(onSubmit)}>
         <input 
@@ -70,7 +70,7 @@ function KeepMePosted({children, name}) {
         <input 
           type="submit" 
           value="Keep me posted" 
-          {...trackButton({ id: 'subscribe', text: "Keep me posted" })}
+          {...tagButton({ id: 'subscribe', text: "Keep me posted" })}
           className={clsx("button", "button--primary", styles.submitButton)} 
         />
         {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
