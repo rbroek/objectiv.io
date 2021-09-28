@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
-import { trackLink, trackElement } from "@objectiv/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 export default function Jobs() {
   const context = useDocusaurusContext();
@@ -15,13 +15,13 @@ export default function Jobs() {
       description={siteConfig.tagline}>
       <header 
         className={clsx('hero hero--primary', styles.jobsHeader)}
-        {...trackElement({id: 'header'})}
+        {...tagElement({id: 'header'})}
       >
         <div className={clsx('container', styles.jobsContainer)}>
           <h1>Currently Hiring: Senior Data Scientist / Engineer</h1>
         </div>
       </header>
-      <main {...trackElement({id: 'main'})}>
+      <main {...tagElement({id: 'main'})}>
         <div className={clsx('container', styles.jobsContainer)}>
           <h2> <img width="32px" src='/img/startup.svg' />  Our mission</h2>
           <p>It’s our dream to create the ultimate iterative workflow for data science that talks SQL. Let’s break that down.</p>
@@ -57,7 +57,7 @@ export default function Jobs() {
           <p>Like what you have read and think you meet the mark? Then&nbsp;
           <Link
             to={'mailto:jobs@objectiv.io'}
-            {...trackLink({ id: 'hear-from-you', text: "we'd love to hear from you", href: 'mailto:jobs@objectiv.io' })}
+            {...tagLink({ id: 'hear-from-you', text: "we'd love to hear from you", href: 'mailto:jobs@objectiv.io' })}
           >
             we'd love to hear from you
           </Link>

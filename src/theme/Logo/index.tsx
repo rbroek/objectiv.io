@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import OriginalLogo from '@theme-original/Logo';
-import { trackLink } from "@objectiv/tracker-browser";
+import { tagLink } from "@objectiv/tracker-browser";
 
 const Logo = (props: Props): JSX.Element  => {
   const {
@@ -22,7 +22,7 @@ const Logo = (props: Props): JSX.Element  => {
   const logoLink = useBaseUrl(logo.href || '/');
 
   return <OriginalLogo
-    {...trackLink({ id: 'logo', text: logo.alt, href: logoLink })}
+    {...tagLink({ id: 'logo', text: logo.alt, href: logoLink })}
     {...props} 
   />
 };

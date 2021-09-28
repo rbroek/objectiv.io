@@ -9,14 +9,14 @@ import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import type {Props} from '@theme/BlogPostPaginator';
-import { trackLink, trackNavigation } from "@objectiv/tracker-browser";
+import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
 function BlogPostPaginator(props: Props): JSX.Element {
   const {nextItem, prevItem} = props;
 
   return (
     <nav
-      {...trackNavigation({id: 'blog-post-navigation'})}
+      {...tagNavigation({id: 'blog-post-navigation'})}
       className="pagination-nav docusaurus-mt-lg"
       aria-label={translate({
         id: 'theme.blog.post.paginator.navAriaLabel',
@@ -28,7 +28,7 @@ function BlogPostPaginator(props: Props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={prevItem.permalink}
-            {...trackLink({ id: 'previous', text: 'Newer', href: prevItem.permalink })}
+            {...tagLink({ id: 'previous', text: 'Newer', href: prevItem.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
@@ -48,7 +48,7 @@ function BlogPostPaginator(props: Props): JSX.Element {
           <Link 
             className="pagination-nav__link" 
             to={nextItem.permalink}
-            {...trackLink({ id: 'next', text: 'Older', href: nextItem.permalink })}
+            {...tagLink({ id: 'next', text: 'Older', href: nextItem.permalink })}
           >
             <div className="pagination-nav__sublabel">
               <Translate
