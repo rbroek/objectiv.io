@@ -30,7 +30,7 @@
   .heroTitle {
     font-size: 28px;
   }
-  .heroTitle br {
+  .heroTitle br, .heroSubTitle br {
     display: none
   }
 }

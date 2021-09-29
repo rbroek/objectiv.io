@@ -35,12 +35,12 @@ export default function Home() {
             src={useBaseUrl("img/header-image.svg")}
             alt="Product Analytics Pipeline" />
           <h1 className={clsx(styles.heroTitle)}>
-            We're on a mission to create<br /> the ultimate iterative workflow<br /> for data scientists
+            We're on a mission to create<br /> the ultimate workflow<br /> for data scientists
           </h1>
           <div className={clsx(styles.heroSubTitleWrapper)}>
             <p className={clsx(styles.heroSubTitle)}>
-            Build &amp; orchestrate reusable, stackable and interchangeable SQL models that embrace a 
-            standardized event taxonomy. Straight from your Notebook.
+              Objectiv is a data collection &amp; modeling library that puts the data scientist first. <br />
+              Embrace a common taxonomy. Collect better data. Model more effectively.
             </p>
           </div>
           <div className={styles.heroKeepMePosted}>
