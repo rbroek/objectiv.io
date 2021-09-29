@@ -30,7 +30,7 @@ function FooterLink({
   return (
     <Link
       className="footer__link-item"
-      {...tagLink({ id: label, text: label, href: toUrl })}
+      {...tagLink({ id: label, text: label, href: href ? prependBaseUrlToHref ? normalizedHref : href : toUrl })}
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
