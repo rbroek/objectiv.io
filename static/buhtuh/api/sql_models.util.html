@@ -1,0 +1,81 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sql_models.util">
+<span id="sql-models-util"></span><h1>sql_models.util<a class="headerlink" href="#module-sql_models.util" title="Permalink to this headline">¶</a></h1>
+<p>Copyright 2021 Objectiv B.V.</p>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.util.extract_format_fields" title="sql_models.util.extract_format_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_format_fields</span></code></a>(format_string[, nested])</p></td>
+<td><p>Given a python format string, return a set with all field names.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.util.extract_format_fields">
+<span class="sig-prename descclassname"><span class="pre">sql_models.util.</span></span><span class="sig-name descname"><span class="pre">extract_format_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/util.py#L8-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/util.html#extract_format_fields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.util.extract_format_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a python format string, return a set with all field names.</p>
+<dl class="simple">
+<dt>If nested is set, it will do x rounds of:</dt><dd><ol class="arabic simple">
+<li><p>find field names in input string</p></li>
+<li><p>fill out values for field names. Use this as input string for step 1.</p></li>
+</ol>
+</dd>
+<dt>Examples:</dt><dd><p>extract_format_fields(‘{x} {{y}} {{{{z}}}} {a}’, 1) == {‘x’, ‘a’}
+extract_format_fields(‘{x} {{y}} {{{{z}}}} {a}’, 2) == {‘y’}
+extract_format_fields(‘{x} {{y}} {{{{z}}}} {a}’, 3) == {‘z’}
+extract_format_fields(‘{x} {{y}} {{{{z}}}}’, 3)     == {‘z’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
+              
+          </main>
+          
+
+      </div>
+    </div>

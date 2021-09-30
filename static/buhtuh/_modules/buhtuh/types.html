@@ -1,0 +1,182 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for buhtuh.types</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">cast</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Copyright 2021 Objectiv B.V.</span>
+
+<span class="sd">Functions for looking up the right classes to handle types and values, and for registering new custom</span>
+<span class="sd">types.</span>
+
+<span class="sd">To prevent cyclic imports, the functions in this file should not be used by pandasql.py before the file</span>
+<span class="sd">is fully initialized (that is, only use within functions).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">buhtuh.pandasql</span> <span class="kn">import</span> <span class="n">BuhTuhSeries</span>
+
+
+<div class="viewcode-block" id="get_series_type_from_dtype"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.get_series_type_from_dtype">[docs]</a><span class="k">def</span> <span class="nf">get_series_type_from_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;BuhTuhSeries&#39;</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot; Given a dtype, return the correct BuhTuhSeries subclass. &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_registry</span><span class="o">.</span><span class="n">get_series_type_from_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="arg_to_type"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.arg_to_type">[docs]</a><span class="k">def</span> <span class="nf">arg_to_type</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Give the dtype, as a string of the given value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># todo: rename to value_to_dtype()</span>
+    <span class="k">return</span> <span class="n">_registry</span><span class="o">.</span><span class="n">value_to_dtype</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s1">&#39;BuhTuhSeries&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="register_dtype"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.register_dtype">[docs]</a><span class="k">def</span> <span class="nf">register_dtype</span><span class="p">(</span><span class="n">value_types</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Decorator to register a BuhTuhSeries subclass as dtype series&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">value_types</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">value_types</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">dtype</span>
+        <span class="c1"># Mypy needs some help here</span>
+        <span class="k">assert</span> <span class="n">value_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="n">_registry</span><span class="o">.</span><span class="n">register_dtype_series</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="n">value_types</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span>
+    <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="TypeRegistry"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.TypeRegistry">[docs]</a><span class="k">class</span> <span class="nc">TypeRegistry</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Do the real initialisation in _real_init, which we&#39;ll defer until usage so we won&#39;t get</span>
+        <span class="c1"># problems with cyclic imports.</span>
+        <span class="c1"># mapping of dtype to a subclass of BuhTuhSeries</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># mapping of python types to matching dtype</span>
+        <span class="c1"># note that some types could be in this dictionary multiple times. For a subtype its super types</span>
+        <span class="c1"># might also be in the list. We resolve conflicts in arg_to_type by returning the latest matching</span>
+        <span class="c1"># entry.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value_type_dtype</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Type</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">_real_init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load the default dtype and value-type mappings</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="c1"># Import locally to prevent cyclic imports</span>
+        <span class="kn">from</span> <span class="nn">buhtuh.pandasql</span> <span class="kn">import</span> <span class="n">BuhTuhSeriesBoolean</span><span class="p">,</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span> \
+            <span class="n">BuhTuhSeriesFloat64</span><span class="p">,</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span> \
+            <span class="n">BuhTuhSeriesDate</span><span class="p">,</span> <span class="n">BuhTuhSeriesTime</span><span class="p">,</span> <span class="n">BuhTuhSeriesTimedelta</span>
+        <span class="kn">import</span> <span class="nn">datetime</span>
+        <span class="kn">import</span> <span class="nn">numpy</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;boolean&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesBoolean</span><span class="p">,</span>
+            <span class="s1">&#39;bool&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesBoolean</span><span class="p">,</span>
+            <span class="s1">&#39;integer&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>
+            <span class="s1">&#39;bigint&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>
+            <span class="s1">&#39;int64&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>
+            <span class="s1">&#39;double precision&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesFloat64</span><span class="p">,</span>
+            <span class="s1">&#39;float64&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesFloat64</span><span class="p">,</span>
+            <span class="s1">&#39;string&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
+            <span class="s1">&#39;json&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
+            <span class="s1">&#39;uuid&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
+
+            <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>
+            <span class="s1">&#39;timestamp without time zone&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>
+            <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>
+            <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesDate</span><span class="p">,</span>
+            <span class="s1">&#39;time without time zone&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTime</span><span class="p">,</span>
+            <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTime</span><span class="p">,</span>
+
+            <span class="s1">&#39;interval&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimedelta</span><span class="p">,</span>
+            <span class="s1">&#39;timedelta&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimedelta</span>
+        <span class="p">}</span>
+        <span class="c1"># note that order can be important here. value_to_dtype starts at end of this list and for example a</span>
+        <span class="c1"># bool can become and &#39;int64&#39; if int would be later in this list.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value_type_dtype</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">int64</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="s1">&#39;bool&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+
+            <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">),</span>
+
+            <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">,</span> <span class="s1">&#39;timedelta&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">,</span> <span class="s1">&#39;timedelta&#39;</span><span class="p">)</span>
+        <span class="p">]</span>
+
+<div class="viewcode-block" id="TypeRegistry.register_dtype_series"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.TypeRegistry.register_dtype_series">[docs]</a>    <span class="k">def</span> <span class="nf">register_dtype_series</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                              <span class="n">dtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                              <span class="n">series_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;BuhTuhSeries&#39;</span><span class="p">],</span>
+                              <span class="n">value_types</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot; TODO: comments&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_real_init</span><span class="p">()</span>
+        <span class="c1"># todo: use dtypes consistently, so we don&#39;t have to lower() it in some places</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span> <span class="o">=</span> <span class="n">series_type</span>
+        <span class="k">for</span> <span class="n">value_type</span> <span class="ow">in</span> <span class="n">value_types</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">value_type_dtype</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">value_type</span><span class="p">,</span> <span class="n">dtype</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TypeRegistry.get_series_type_from_dtype"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.TypeRegistry.get_series_type_from_dtype">[docs]</a>    <span class="k">def</span> <span class="nf">get_series_type_from_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;BuhTuhSeries&#39;</span><span class="p">]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_real_init</span><span class="p">()</span>
+        <span class="c1"># todo: use dtypes consistently, so we don&#39;t have to lower() it in some places</span>
+        <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unknown dtype: </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="TypeRegistry.value_to_dtype"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.TypeRegistry.value_to_dtype">[docs]</a>    <span class="k">def</span> <span class="nf">value_to_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_real_init</span><span class="p">()</span>
+        <span class="c1"># exception for values that are BuhTuhSeries. Check: do we need this exception?</span>
+        <span class="kn">from</span> <span class="nn">buhtuh.pandasql</span> <span class="kn">import</span> <span class="n">BuhTuhSeries</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">BuhTuhSeries</span><span class="p">):</span>
+            <span class="c1"># todo: use dtypes consistently, so we don&#39;t have to lower() it in some places</span>
+            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="c1"># iterate in reverse, the last item added that matches is used in case where multiple entries</span>
+        <span class="c1"># match.</span>
+        <span class="k">for</span> <span class="n">type_object</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_type_dtype</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">type_object</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">dtype</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No dtype know for </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div></div>
+
+
+<span class="n">_registry</span> <span class="o">=</span> <span class="n">TypeRegistry</span><span class="p">()</span>
+</pre></div>
+
+              </div>
+              
+              
+              
+              
+          </main>
+          
+
+      </div>
+    </div>
