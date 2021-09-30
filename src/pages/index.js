@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
 import KeepMePosted from '../components/keep-me-posted'
 import styles from './styles.module.css';
-import { trackElement, trackLink } from "@objectiv/tracker-browser";
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 
 export default function Home() {
   const context = useDocusaurusContext();
@@ -20,14 +20,14 @@ export default function Home() {
       description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
       <AnnouncementBar 
         title="We're Hiring!"
-        content="Join our mission crew as a Senior Data Engineer."
+        content="Join our mission crew as a Data Scientist / Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
       >
       </AnnouncementBar>
       <header 
         className={clsx('hero hero--primary', styles.heroBanner)}
-        {...trackElement({id: 'header'})}
+        {...tagElement({id: 'header'})}
       >
         <div className={clsx('container', styles.heroContainer)}>
           <img
@@ -83,13 +83,13 @@ export default function Home() {
             Objectiv is open source and we’re building it in public. Check out&nbsp; 
             <Link 
               to="https://github.com/objectiv/"
-              {...trackLink({id: 'repo', href: 'https://github.com/objectiv/', text: 'GitHub'})}
+              {...tagLink({id: 'repo', href: 'https://github.com/objectiv/', text: 'GitHub'})}
             >
               GitHub
             </Link> for the latest release, or join our&nbsp;
             <Link 
               to={customFields.slackJoinLink}
-              {...trackLink({id: 'slack', href: customFields.slackJoinLink, text: 'Slack channel'})}
+              {...tagLink({id: 'slack', href: customFields.slackJoinLink, text: 'Slack channel'})}
             >
               Slack channel
             </Link> to stay in the loop.
@@ -99,11 +99,11 @@ export default function Home() {
 
       <main 
         className={clsx('body-large')}
-        {...trackElement({id: 'main'})}
+        {...tagElement({id: 'main'})}
       >
         <div 
           className={clsx(styles.pageSection,styles.pageSectionBlue)}
-          {...trackElement({id: 'intro'})}
+          {...tagElement({id: 'intro'})}
         >
           <div className={clsx("container", styles.intro)}>
             <img
@@ -136,7 +136,7 @@ export default function Home() {
 
         <div 
           className={clsx(styles.pageSection)}
-          {...trackElement({id: 'solution-taxonomy'})}
+          {...tagElement({id: 'solution-taxonomy'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
             <div className={clsx(styles.solutionTitle)}>
@@ -162,7 +162,7 @@ export default function Home() {
             <Link 
               to="https://github.com/objectiv/objectiv-analytics" 
               className={clsx("button", styles.ctaButton)}
-              {...trackLink({id: 'github-taxonomy', href: 'https://github.com/objectiv/objectiv-analytics', 
+              {...tagLink({id: 'github-taxonomy', href: 'https://github.com/objectiv/objectiv-analytics', 
                 text: 'Taxonomy - Objectiv on GitHub'})}
             >
               <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
@@ -173,7 +173,7 @@ export default function Home() {
 
         <div 
           className={clsx(styles.pageSection, styles.pageSectionLightBlue)}
-          {...trackElement({id: 'solution-tracking'})}
+          {...tagElement({id: 'solution-tracking'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
             <div className={clsx(styles.solutionTitle)}>
@@ -200,7 +200,7 @@ export default function Home() {
             <Link 
               to="https://github.com/objectiv/objectiv-analytics" 
               className={clsx("button", styles.ctaButton)}
-              {...trackLink({id: 'github-tracking', href: 'https://github.com/objectiv/objectiv-analytics', 
+              {...tagLink({id: 'github-tracking', href: 'https://github.com/objectiv/objectiv-analytics', 
                 text: 'Tracking - Objectiv on GitHub'})}
             >
               <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
@@ -211,7 +211,7 @@ export default function Home() {
 
         <div 
           className={clsx(styles.pageSection, styles.pageSection)}
-          {...trackElement({id: 'solution-modeling'})}
+          {...tagElement({id: 'solution-modeling'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
             <div className={clsx(styles.solutionTitle)}>
@@ -237,7 +237,7 @@ export default function Home() {
             <Link  
               to="https://github.com/objectiv/objectiv-analytics" 
               className={clsx("button", styles.ctaButton)}
-              {...trackLink({id: 'github-modeling', href: 'https://github.com/objectiv/objectiv-analytics', 
+              {...tagLink({id: 'github-modeling', href: 'https://github.com/objectiv/objectiv-analytics', 
                 text: 'Modeling - Objectiv on GitHub'})}
             >
               <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
@@ -246,14 +246,14 @@ export default function Home() {
           </div>
         </div>
 
-        <footer {...trackElement({id: 'footer'})}>
+        <footer {...tagElement({id: 'footer'})}>
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Objectiv is open source and we’re building it in public.</h2>
             <p>Have opinions on where we should take this or want to stay in the loop?</p>
             <Link 
               to={customFields.slackJoinLink}
               className={clsx("button", styles.ctaButton)}
-              {...trackLink({id: 'slack', href: customFields.slackJoinLink, text: 'Join us on Slack'})}
+              {...tagLink({id: 'slack', href: customFields.slackJoinLink, text: 'Join us on Slack'})}
             >
               <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
               Join us on Slack

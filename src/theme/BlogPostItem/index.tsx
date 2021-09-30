@@ -15,7 +15,7 @@ import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
 import type {Props} from '@theme/BlogPostItem';
-import { trackLink, trackElement } from "@objectiv/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 
@@ -68,9 +68,9 @@ function BlogPostItem(props: Props): JSX.Element {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
 
     return (
-      <header {...trackElement({id: 'header'})}>
+      <header {...tagElement({id: 'header'})}>
         <TitleHeading className={styles.blogPostTitle}>
-          {isBlogPostPage ? title : <Link to={permalink} {...trackLink({ id: permalink, text: title, href: permalink })}>{title}</Link>}            
+          {isBlogPostPage ? title : <Link to={permalink} {...tagLink({ id: permalink, text: title, href: permalink })}>{title}</Link>}            
         </TitleHeading>
         <div className={clsx(styles.blogPostData, 'margin-vert--md')}>
           <time dateTime={date}>{formattedDate}</time>
@@ -87,7 +87,7 @@ function BlogPostItem(props: Props): JSX.Element {
             <Link 
               className="avatar__photo-link avatar__photo" 
               href={authorURL}
-              {...trackLink({ id: 'authorAvatar', text: author, href: authorURL })}
+              {...tagLink({ id: 'authorAvatar', text: author, href: authorURL })}
             >
               <img src={authorImageURL} alt={author} />
             </Link>
@@ -98,7 +98,7 @@ function BlogPostItem(props: Props): JSX.Element {
                 <div className="avatar__name">
                   <Link 
                     href={authorURL}
-                    {...trackLink({ id: 'authorName', text: author, href: authorURL })}
+                    {...tagLink({ id: 'authorName', text: author, href: authorURL })}
                   >
                     {author}
                   </Link>
@@ -117,18 +117,18 @@ function BlogPostItem(props: Props): JSX.Element {
       <Seo {...{keywords, image}} />
 
       <article 
-        {...trackElement({id: 'article'})}
+        {...tagElement({id: 'article'})}
         className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
       >
         {renderPostHeader()}
         <div 
-          {...trackElement({id: 'content'})}
+          {...tagElement({id: 'content'})}
           className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
         </div>
         {(tags.length > 0 || truncated) && (
           <footer
-            {...trackElement({id: 'footer'})}
+            {...tagElement({id: 'footer'})}
             className={clsx('row docusaurus-mt-lg', {
               [styles.blogPostDetailsFull]: isBlogPostPage,
             })}>
@@ -145,7 +145,7 @@ function BlogPostItem(props: Props): JSX.Element {
                   <Link
                     key={tagPermalink}
                     className="margin-horiz--sm"
-                    {...trackLink({ id: 'tags', text: label, href: tagPermalink })}
+                    {...tagLink({ id: 'tags', text: label, href: tagPermalink })}
                     to={tagPermalink}>
                     {label}
                   </Link>
@@ -161,11 +161,11 @@ function BlogPostItem(props: Props): JSX.Element {
 
             {!isBlogPostPage && truncated && (
               <div 
-                {...trackElement({id: 'read-more'})}
+                {...tagElement({id: 'read-more'})}
                 className="col text--right">
                 <Link
                   to={metadata.permalink}
-                  {...trackLink({ id: 'read-more', text: 'Read More', href: metadata.permalink })}
+                  {...tagLink({ id: 'read-more', text: 'Read More', href: metadata.permalink })}
                   aria-label={`Read more about ${title}`}>
                   <b>
                     <Translate

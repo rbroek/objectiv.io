@@ -25,7 +25,7 @@ import NavbarItem, {Props as NavbarItemConfig} from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconCloseThin from '@theme/IconCloseThin';
-import { trackOverlay } from "@objectiv/tracker-browser";
+import { tagElement, tagOverlay } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
 
@@ -163,8 +163,17 @@ function NavbarMobileSidebar({
   });
 
   return (
-    // TODO: track the opening and closing of the mobile menu
-    <div className="navbar-sidebar">
+    <div className="navbar-sidebar"
+      {...tagOverlay({
+        id: 'hamburger-menu',
+        options: { 
+          trackVisibility: { 
+            mode: 'manual', 
+            isVisible: sidebarShown 
+          }
+        }
+      })}
+    >
       <div className="navbar-sidebar__brand">
         <Logo
           className="navbar__brand"
@@ -238,6 +247,7 @@ function Navbar(): JSX.Element {
 
   return (
     <nav
+      {...tagElement({id: 'navbar-top'})}
       ref={navbarRef}
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',

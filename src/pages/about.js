@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import AnnouncementBar from '../components/announcement-bar'
 import Avatar from 'react-avatar';
 import styles from './styles.module.css';
-import { trackLink, trackElement } from "@objectiv/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 let contributors = require('./contributors.json');
 
@@ -17,7 +17,7 @@ function Contributor({name, gitHubUsername}) {
   return (
     <div 
       className={clsx("card", styles.contributorCard)}
-      {...trackElement({id: 'contributor'})}
+      {...tagElement({id: 'contributor'})}
     >
       <div className="card__header">
         <div className={clsx("avatar", styles.contributorAvatar)}>
@@ -63,7 +63,7 @@ export default function AboutUs() {
       
       <AnnouncementBar 
         title="We're Hiring!"
-        content="Join our mission crew as a Senior Data Engineer."
+        content="Join our mission crew as a Data Scientist / Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
       >
@@ -71,7 +71,7 @@ export default function AboutUs() {
 
       <header 
         className={clsx('hero hero--primary', styles.aboutUsBanner)}
-        {...trackElement({id: 'header'})}
+        {...tagElement({id: 'header'})}
       >
         <div className={clsx('container', styles.contentContainer)}>
           <img
@@ -89,11 +89,11 @@ export default function AboutUs() {
 
       <main 
         className={clsx(styles.aboutUsMain)}
-        {...trackElement({id: 'main'})}
+        {...tagElement({id: 'main'})}
       >
         <div 
           className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}
-          {...trackElement({id: 'not-just-us'})}
+          {...tagElement({id: 'not-just-us'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
             <img
@@ -114,7 +114,7 @@ export default function AboutUs() {
  
         <div 
           className={clsx(styles.aboutUsPageSection)}
-          {...trackElement({id: 'we-will-take-it-on'})}
+          {...tagElement({id: 'we-will-take-it-on'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
           <img
@@ -135,7 +135,7 @@ export default function AboutUs() {
         
         <div 
           className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
-          {...trackElement({id: 'why-us'})}
+          {...tagElement({id: 'why-us'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Why we think we’re in the position to fix this</h2>
@@ -179,7 +179,7 @@ export default function AboutUs() {
 
         <div 
           className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}
-          {...trackElement({id: 'core-team'})}
+          {...tagElement({id: 'core-team'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Objectiv's Core Team</h2>
@@ -187,7 +187,7 @@ export default function AboutUs() {
               Meet the mission crew. Also,&nbsp;
               <Link 
                 to="/jobs" 
-                {...trackLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", href: '/jobs' })}
+                {...tagLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", href: '/jobs' })}
               >
                 we're hiring a Senior Data Engineer. Join us!
               </Link>

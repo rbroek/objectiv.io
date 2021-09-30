@@ -15,7 +15,7 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
 import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
-import { trackLink, trackElement } from "@objectiv/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 function FooterLink({
   to,
@@ -30,7 +30,7 @@ function FooterLink({
   return (
     <Link
       className="footer__link-item"
-      {...trackLink({ id: label, text: label, href: toUrl })}
+      {...tagLink({ id: label, text: label, href: href ? prependBaseUrlToHref ? normalizedHref : href : toUrl })}
       {...(href
         ? {
             href: prependBaseUrlToHref ? normalizedHref : href,
@@ -73,7 +73,7 @@ function Footer(): JSX.Element | null {
 
   return (
     <footer
-      {...trackElement({id: 'footer'})}
+      {...tagElement({id: 'footer'})}
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
       })}>
@@ -119,7 +119,7 @@ function Footer(): JSX.Element | null {
                 {logo.href ? (
                   <Link 
                     href={logo.href} 
-                    {...trackLink({ id: logo.alt, text: logo.alt, href: logo.href })}
+                    {...tagLink({ id: logo.alt, text: logo.alt, href: logo.href })}
                     className={styles.footerLogoLink}
                   >
                     <FooterLogo alt={logo.alt} sources={sources} />

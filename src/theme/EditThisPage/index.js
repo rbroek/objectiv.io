@@ -8,12 +8,12 @@ import React from 'react';
 import Translate from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
-import { trackLink } from "@objectiv/tracker-browser";
+import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 export default function EditThisPage({editUrl}) {
   return (
     <div 
-      {...trackElement({id: 'edit-this-page'})}
+      {...tagElement({id: 'edit-this-page'})}
       className={styles.docItemFooter}
     >
       <div className={styles.docItemFooterPage}>
@@ -34,7 +34,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://discourse.objectiv.io'}
               target="_blank"
-              {...trackLink({ id: 'discuss', text: 'Discuss', href: 'https://discourse.objectiv.io' })}
+              {...tagLink({ id: 'discuss', text: 'Discuss', href: 'https://discourse.objectiv.io' })}
             >
               Discuss
             </Link>
@@ -48,7 +48,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://discourse.objectiv.io'}
               target="_blank"
-              {...trackLink({ id: 'get-help', text: 'Get help', href: 'https://discourse.objectiv.io' })}
+              {...tagLink({ id: 'get-help', text: 'Get help', href: 'https://discourse.objectiv.io' })}
             >
               Get help
             </Link>
@@ -57,7 +57,7 @@ export default function EditThisPage({editUrl}) {
             <Link
               to={'https://github.com/objectiv/objectiv-analytics'}
               target="_blank"
-              {...trackLink({ id: 'submit-idea-or-bug-report', text: 'Submit idea or bug report', href: 'https://github.com/objectiv/objectiv-analytics' })}
+              {...tagLink({ id: 'submit-idea-or-bug-report', text: 'Submit idea or bug report', href: 'https://github.com/objectiv/objectiv-analytics' })}
             >
               Submit idea or bug report
             </Link>
