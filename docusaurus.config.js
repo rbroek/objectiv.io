@@ -164,7 +164,8 @@ module.exports = {
   customFields: {
     trackerApplicationId: 'objectiv-website',
     trackerDocsApplicationId: 'objectiv-docs',
-    trackerEndPoint: objectiv_tracker_endpoint, 
-    slackJoinLink: slackJoinLink
+    trackerEndPoint: objectiv_tracker_endpoint,
+    slackJoinLink: slackJoinLink,
+    trackerConsoleEnabled: environment === 'dev'
   }
 };
