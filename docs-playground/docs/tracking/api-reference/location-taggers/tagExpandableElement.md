@@ -11,10 +11,10 @@ tagExpandableElement = (parameters: {
 ```
 
 ## Parameters
-|          |         | type                                                                                   | default value
-| :-:      | :--     | :--                                                                                    | :--           
-| required | **id**  | string                                                                                 |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+|          |         | type                                                                                | default value
+| :-:      | :--     | :--                                                                                 | :--           
+| required | **id**  | string                                                                              |
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -29,6 +29,12 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
 ```typescript jsx
 <div {...tagExpandableElement({ id: 'faq-item-id' })}>
   …
@@ -40,6 +46,20 @@ Unless customized via the `options` parameter, automatically triggers:
   …
 </Accordion>
 ```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/getting-started-angular.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<div [tagExpandableElement]="{ id: 'faq-item-id' }">
+  …
+</div>
+```
+
+  </TabItem>
+</Tabs>
 
 <br />
 

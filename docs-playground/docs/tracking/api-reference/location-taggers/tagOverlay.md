@@ -11,10 +11,10 @@ tagOverlay = (parameters: {
 ```
 
 ## Parameters
-|          |         | type                                                                                   | default value
-| :-:      | :--     | :--                                                                                    | :--           
-| required | **id**  | string                                                                                 |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
+|          |         | type                                                                                | default value
+| :-:      | :--     | :--                                                                                 | :--           
+| required | **id**  | string                                                                              |
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -28,6 +28,12 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Examples
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
 ```typescript jsx
 <div {...tagOverlay({ id: 'modal-id' })}>
   …
@@ -39,6 +45,20 @@ Unless customized via the `options` parameter, automatically triggers:
   …
 </Modal>
 ```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/getting-started-angular.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<div [tagOverlay]="{ id: 'modal-id' }">
+  …
+</div>
+```
+
+  </TabItem>
+</Tabs>
 
 <br />
 

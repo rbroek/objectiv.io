@@ -62,12 +62,9 @@ Assuming the Application has a shared module accessible to all UI templates:
 import { ObjectivTrackerModule } from '@objectiv/tracker-angular';
 
 @NgModule({
-  declarations: [
-    …
-  ],
   imports: [
     …
-    ObjectivTrackerModule,
+    ObjectivTrackerModule
   ],
   exports: [
     …

@@ -11,10 +11,10 @@ tagInput = (parameters: {
 ```
 
 ## Parameters
-|          |         | type                                                                                   | default value
-| :-:      | :--     | :--                                                                                    | :--           
-| required | **id**  | string                                                                                 |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackBlurs: true }`
+|          |         | type                                                                                | default value
+| :-:      | :--     | :--                                                                                 | :--           
+| required | **id**  | string                                                                              |
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackBlurs: true }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -27,6 +27,12 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
 ```typescript jsx
 <input {...tagInput({ id: 'search' })} />
 ```
@@ -34,6 +40,20 @@ Unless customized via the `options` parameter, automatically triggers:
 ```typescript jsx
 <Search {...tagInput({ id: 'search' })} />
 ```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/getting-started-angular.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<input [tagInput]="{ id: 'search' }" />
+```
+
+  </TabItem>
+</Tabs>
+
+
 
 <br />
 

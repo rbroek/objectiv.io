@@ -39,6 +39,12 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 
 ## Usage example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
 ```typescript jsx
 <div
   {...tagChildren([
@@ -52,9 +58,35 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
     }
   ])}
 >
-  <ThirdPartyBlackBox />
+  …
 </div>
 ```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/getting-started-angular.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<div
+  [tagChildren]="[
+    {
+      queryAll: 'button[aria-label=&quot;Previous&quot;]',
+      trackAs: tagButton({ id: 'prev', text: 'Previous' })
+    },
+    {
+      queryAll: 'button[aria-label=&quot;Next&quot;]',
+      trackAs: tagButton({ id: 'next', text: 'Next' })
+    }
+  ]"
+>
+  …
+</div>
+```
+
+  </TabItem>
+</Tabs>
+
 
 <br />
 
