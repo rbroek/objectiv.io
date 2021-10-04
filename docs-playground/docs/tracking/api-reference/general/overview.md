@@ -11,4 +11,4 @@ Global functions, interfaces and common TypeScript definitions used by Location 
 - [TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
 - [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)
 - [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md)
-- [configureTracker](/tracking/api-reference/general/configureTracker.md)
+- [makeTracker](/tracking/api-reference/general/makeTracker.md)

@@ -10,7 +10,7 @@ trackApplicationLoaded = (parameters: {
 ```
 
 :::info
-`trackApplicationLoaded` is triggered automatically by [configureTracker](/tracking/api-reference/general/configureTracker.md) on its first execution.
+`trackApplicationLoaded` is triggered automatically by [makeTracker](/tracking/api-reference/general/makeTracker.md) on its first execution.
 :::
 
 ## Parameters
@@ -55,7 +55,7 @@ const App = () => {
 <br />
 
 :::info See also
-- [configureTracker](/tracking/api-reference/general/configureTracker.md)
+- [makeTracker](/tracking/api-reference/general/makeTracker.md)
 - [trackURLChange](/tracking/api-reference/event-trackers/trackURLChange.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::
