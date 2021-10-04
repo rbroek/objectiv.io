@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Getting Started - Angular
+# Getting Started
 
 [placeholder]
 
@@ -81,4 +81,4 @@ export class SharedModule {
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded and URLChange.
 
-Time to start [Tracking Locations](/tracking/how-to-guides/tracking-locations.md)!
+Time to start [Tracking Locations](/tracking/how-to-guides/angular/tracking-locations.md)!

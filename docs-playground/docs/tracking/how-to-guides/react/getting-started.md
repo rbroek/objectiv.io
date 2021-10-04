@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Getting Started - React
+# Getting Started
 
 [placeholder]
 
@@ -66,4 +66,4 @@ const App = () => {
 ## Done
 The tracker should now be running and auto-tracking some Events already, such as ApplicationLoaded and URLChange.
 
-Time to start [Tracking Locations](/tracking/how-to-guides/tracking-locations.md)!
+Time to start [Tracking Locations](/tracking/how-to-guides/react/tracking-locations.md)!
