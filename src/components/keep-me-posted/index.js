@@ -4,8 +4,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
-import { tagLink, tagButton, tagElement } from "@objectiv/tracker-browser";
-import { makeNonInteractiveEvent, makeSectionContext, makeActionContext } from "@objectiv/tracker-core";
+import { tagButton, tagElement } from "@objectiv/tracker-browser";
+import { makeErrorContext, makeNonInteractiveEvent, makeSectionContext, makeActionContext } from "@objectiv/tracker-core";
 
 function KeepMePosted({children, name}) {
   const {siteConfig} = useDocusaurusContext();
@@ -70,7 +70,10 @@ function KeepMePosted({children, name}) {
         <input 
           type="submit" 
           value="Keep me posted" 
-          {...tagButton({ id: 'subscribe', text: "Keep me posted" })}
+          {
+            // FIXME this won't work as submit buttons and href redirects are not yet supported
+            ...tagButton({ id: 'subscribe', text: "Keep me posted" })
+          }
           className={clsx("button", "button--primary", styles.submitButton)} 
         />
         {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
