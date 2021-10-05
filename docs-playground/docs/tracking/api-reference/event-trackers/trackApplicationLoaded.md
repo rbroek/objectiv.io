@@ -10,15 +10,15 @@ trackApplicationLoaded = (parameters: {
 ```
 
 :::info
-`trackApplicationLoaded` is triggered automatically by [makeTracker](/tracking/api-reference/general/makeTracker.md) on its first execution.
+`trackApplicationLoaded` is triggered automatically.
 :::
 
 ## Parameters
-|          |         | type                                                                                                                                                      | default value
-| :-:      | :--     | :--                                                                                                                                                       | :--           
+|          |         | type                                                                                                                                                     | default value
+| :-:      | :--     | :--                                                                                                                                                      | :--           
 | optional | element | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
-| optional | tracker | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
+| optional | tracker | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
 `trackApplicationLoaded` is a void function.
@@ -49,6 +49,10 @@ const App = () => {
   )
 }
 ```
+
+:::warning
+Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
+:::
 
 <br />
 
