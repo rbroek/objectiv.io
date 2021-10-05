@@ -26,6 +26,10 @@ trackClick = (parameters: {
 ## Usage example
 
 ```typescript jsx
+import { trackClick } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <div
   onClick={(event) => {
     trackClick({ element: event.target })

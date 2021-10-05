@@ -35,6 +35,10 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
+import { tagElement } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <Layout {...tagElement({ id: 'layout' })}>
   <div {...tagElement({ id: 'section' })}>
     …
@@ -45,7 +49,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
   <TabItem value="angular" label="Angular">
 
-Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/getting-started-angular.md#optional---configure-taggers-directive).
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
 <section [tagElement]="{ id: 'layout' }">

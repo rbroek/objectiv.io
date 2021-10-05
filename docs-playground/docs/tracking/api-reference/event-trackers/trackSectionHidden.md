@@ -26,6 +26,10 @@ trackSectionHidden = (parameters: {
 ## Usage example
 
 ```typescript jsx
+import { trackSectionHidden } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <Modal
   onShow={(event) => {
     trackSectionVisible({ element: event.target })

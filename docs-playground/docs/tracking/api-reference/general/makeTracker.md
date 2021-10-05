@@ -5,6 +5,7 @@ Creates a new [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md
 ```typescript
 makeTracker = (parameters: {
   applicationId: string,
+  trackerId?: string,
   endpoint?: string,
   transport?: TrackerTransport,
   plugins?: TrackerPlugins,
@@ -22,6 +23,7 @@ TODO mention TrackerRepository
 |          |                        | type                                                                             | default value
 | :-:      | :--                    | :--                                                                              | :--           
 | required | **applicationId**      | string                                                                           |
+| optional | **trackerId**          | string                                                                           | `applicationId`
 | optional | **_endpoint_**         | string                                                                           |
 | optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/tracker-architecture.md#transport)    | [Default Browser Tracker Transport](/tracking/api-reference/general/BrowserTracker.md#default-transport)
 | optional | plugins                | [TrackerPlugins](/tracking/core-concepts/tracker-architecture.md#plugins)        | [Default Browser Tracker Plugins](/tracking/api-reference/general/BrowserTracker.md#default-plugins)
@@ -37,6 +39,10 @@ TODO mention TrackerRepository
 `makeTracker` is a void function.
 
 ## Usage example
+
+```typescript jsx
+import { makeTracker } from '@objectiv/tracker-browser';
+```
 
 ```typescript jsx
 makeTracker({

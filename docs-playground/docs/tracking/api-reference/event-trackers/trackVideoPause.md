@@ -22,6 +22,10 @@ trackVideoPause = (parameters: {
 ## Usage example
 
 ```typescript jsx
+import { trackVideoPause } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <video
   play={(event) => {
     trackVideoStart({ element: event.target })

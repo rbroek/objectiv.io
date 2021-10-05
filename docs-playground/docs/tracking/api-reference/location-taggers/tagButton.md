@@ -37,6 +37,10 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
+import { tagButton } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <button {...tagButton({ id: 'button-id', text: 'Click Me!' })}>Click Me!</button>
 ```
 
@@ -47,7 +51,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
   <TabItem value="angular" label="Angular">
 
-Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/getting-started-angular.md#optional---configure-taggers-directive).
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
 <button [tagButton]="{ id: 'button-id', text: 'Click Me!' }">Click Me!</button>

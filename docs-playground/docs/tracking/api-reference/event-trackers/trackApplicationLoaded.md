@@ -26,6 +26,10 @@ trackApplicationLoaded = (parameters: {
 ## Usage example
 
 ```typescript jsx
+import { trackApplicationLoaded } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <head>
   …
   <script>

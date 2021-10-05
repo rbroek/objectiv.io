@@ -26,12 +26,7 @@ trackURLChange = (parameters: {
 ## Usage example
 
 ```typescript jsx
-<head>
-  …
-  <script>
-    trackURLChange();
-  </script>
-</head>
+import { trackURLChange } from '@objectiv/tracker-browser';
 ```
 
 ```typescript

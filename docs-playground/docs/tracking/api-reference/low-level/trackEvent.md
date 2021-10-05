@@ -29,6 +29,10 @@ trackEvent = (parameters: {
 ## Usage example
 
 ```typescript jsx
+import { trackEvent } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 export const trackCustomEvent = ({ element, tracker, onError }: TrackEventHelperParameters) => {
   return trackEvent({ eventFactory: makeCustomEvent, element, tracker, onError });
 };

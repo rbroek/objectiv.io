@@ -26,6 +26,10 @@ trackInputChange = (parameters: {
 ## Usage example
 
 ```typescript jsx
+import { trackInputChange } from '@objectiv/tracker-browser';
+```
+
+```typescript jsx
 <input
   onBlur={(event) => {
     trackInputChange({ element: event.target })
