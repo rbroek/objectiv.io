@@ -162,8 +162,9 @@ module.exports = {
   customFields: {
     trackerApplicationId: (environment === 'prod') ? 'objectiv-website' : 'objectiv-website-dev',
     trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
-    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000', 
-    slackJoinLink: slackJoinLink
+    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    slackJoinLink: slackJoinLink,
+    trackerConsoleEnabled: environment === 'dev'
   }
 };
 

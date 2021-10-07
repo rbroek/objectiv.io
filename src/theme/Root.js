@@ -1,16 +1,17 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { configureTracker } from "@objectiv/tracker-browser";
+import { makeTracker } from "@objectiv/tracker-browser";
 import React, { useEffect } from 'react';
 
 function Root({children}) {
   const { siteConfig = {} } = useDocusaurusContext();
-  const { trackerApplicationId, trackerEndPoint } = siteConfig.customFields;
+  const { trackerApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig.customFields;
 
   useEffect(
     () => {
-      configureTracker({
+      makeTracker({
         applicationId: trackerApplicationId,
-        endpoint: trackerEndPoint
+        endpoint: trackerEndPoint,
+        console: trackerConsoleEnabled ? console : undefined
       });
     },
     [] // no dependencies => no side effects on re-render
