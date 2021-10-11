@@ -184,29 +184,73 @@
         <span class="p">)</span>
 
 <div class="viewcode-block" id="BuhTuhDataFrame.from_dataframe"><a class="viewcode-back" href="../../api/buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhDataFrame.from_dataframe">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_dataframe</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">engine</span><span class="p">:</span> <span class="n">Engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;fail&#39;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">from_dataframe</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                       <span class="n">df</span><span class="p">:</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+                       <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                       <span class="n">engine</span><span class="p">:</span> <span class="n">Engine</span><span class="p">,</span>
+                       <span class="n">convert_objects</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">if_exists</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;fail&#39;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Instantiate a new BuhTuhDataFrame based on the content of a Pandas DataFrame. This will first load</span>
-<span class="sd">        the data into the database using pandas&#39; df.to_sql() method.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        Instantiate a new BuhTuhDataFrame based on the content of a Pandas DataFrame. Supported dtypes are</span>
+<span class="sd">        &#39;int64&#39;, &#39;float64&#39;, &#39;string&#39;, &#39;datetime64[ns]&#39;, &#39;bool&#39;</span>
+<span class="sd">        This will first load the data into the database using pandas&#39; df.to_sql() method.</span>
 
-        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for now only one index allowed</span>
+<span class="sd">        :param df: Pandas DataFrame to instantiate as BuhTuhDataFrame</span>
+<span class="sd">        :param name: name of the sql table the Pandas DataFrame will be written to</span>
+<span class="sd">        :param engine: db connection</span>
+<span class="sd">        :param convert_objects: If True, columns of type &#39;object&#39; are converted to &#39;string&#39; using the</span>
+<span class="sd">            pd.convert_dtypes() method where possible.</span>
+<span class="sd">        :param if_exists: {&#39;fail&#39;, &#39;replace&#39;, &#39;append&#39;}, default &#39;fail&#39;</span>
+<span class="sd">            How to behave if the table already exists.</span>
+
+<span class="sd">            * fail: Raise a ValueError.</span>
+<span class="sd">            * replace: Drop the table before inserting new values.</span>
+<span class="sd">            * append: Insert new values to the existing table.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># for now only one index allowed todo check this</span>
             <span class="n">index</span> <span class="o">=</span> <span class="s1">&#39;_index_0&#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">index</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;_index_</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span>
+
+        <span class="c1"># set the index as a normal column, this makes it easier to convert the dtype</span>
+        <span class="n">df_copy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">convert_objects</span><span class="p">:</span>
+            <span class="n">df_copy</span> <span class="o">=</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">(</span><span class="n">convert_integer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                             <span class="n">convert_boolean</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                             <span class="n">convert_floating</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># todo add support for &#39;timedelta64[ns]&#39;. pd.to_sql writes timedelta as bigint to sql, so</span>
+        <span class="c1"># not implemented yet</span>
+        <span class="n">supported_types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">,</span> <span class="s1">&#39;bool&#39;</span><span class="p">]</span>
+        <span class="n">index_dtype</span> <span class="o">=</span> <span class="n">df_copy</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="n">index_dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_types</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;index is of type &#39;</span><span class="si">{</span><span class="n">index_dtype</span><span class="si">}</span><span class="s2">&#39;, should one of </span><span class="si">{</span><span class="n">supported_types</span><span class="si">}</span><span class="s2">. &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;For &#39;object&#39; columns convert_objects=True can be used to convert these columns&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;to type &#39;string&#39;.&quot;</span><span class="p">)</span>
+        <span class="n">dtypes</span> <span class="o">=</span> <span class="p">{</span><span class="n">column_name</span><span class="p">:</span> <span class="n">dtype</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">df_copy</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                  <span class="k">if</span> <span class="n">column_name</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">}</span>
+        <span class="n">unsupported_dtypes</span> <span class="o">=</span> <span class="p">{</span><span class="n">column_name</span><span class="p">:</span> <span class="n">dtype</span> <span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                              <span class="k">if</span> <span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">supported_types</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">unsupported_dtypes</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dtypes </span><span class="si">{</span><span class="n">unsupported_dtypes</span><span class="si">}</span><span class="s2"> are not supported, should one of &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">supported_types</span><span class="si">}</span><span class="s2">. &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;For &#39;object&#39; columns convert_objects=True can be used to convert these columns&quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;to type &#39;string&#39;.&quot;</span><span class="p">)</span>
+
+        <span class="c1"># todo add dtypes argument that explicitly let&#39;s you set the supported dtypes for pandas columns</span>
         <span class="n">conn</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-        <span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">conn</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="n">if_exists</span><span class="p">,</span> <span class="n">index_label</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">df_copy</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">conn</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="n">if_exists</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
         <span class="c1"># Todo, this should use from_table from here on.</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">CustomSqlModel</span><span class="p">(</span><span class="n">sql</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;SELECT * FROM </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
 
-        <span class="n">dtypes</span> <span class="o">=</span> <span class="p">{</span><span class="n">column_name</span><span class="p">:</span> <span class="n">dtype</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
         <span class="c1"># Should this also use _df_or_series?</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_instance</span><span class="p">(</span>
             <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>
             <span class="n">source_node</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
-            <span class="n">index_dtypes</span><span class="o">=</span><span class="p">{</span><span class="n">index</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span><span class="p">},</span>
+            <span class="n">index_dtypes</span><span class="o">=</span><span class="p">{</span><span class="n">index</span><span class="p">:</span> <span class="n">index_dtype</span><span class="p">},</span>
             <span class="n">dtypes</span><span class="o">=</span><span class="n">dtypes</span>
         <span class="p">)</span></div>
 
@@ -965,7 +1009,7 @@
     <span class="k">def</span> <span class="nf">constant_to_sql</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">int64</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;value should be int, actual type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">::bigint&#39;</span></div>
 
 <div class="viewcode-block" id="BuhTuhSeriesInt64.from_dtype_to_sql"><a class="viewcode-back" href="../../api/buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeriesInt64.from_dtype_to_sql">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_dtype_to_sql</span><span class="p">(</span><span class="n">source_dtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -974,7 +1018,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">source_dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;bool&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">]:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cannot convert </span><span class="si">{</span><span class="n">source_dtype</span><span class="si">}</span><span class="s1"> to int64&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">expression</span><span class="si">}</span><span class="s1">)::int&#39;</span></div></div>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">expression</span><span class="si">}</span><span class="s1">)::bigint&#39;</span></div></div>
 
 
 <div class="viewcode-block" id="BuhTuhSeriesFloat64"><a class="viewcode-back" href="../../api/buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeriesFloat64">[docs]</a><span class="k">class</span> <span class="nc">BuhTuhSeriesFloat64</span><span class="p">(</span><span class="n">BuhTuhSeriesAbstractNumeric</span><span class="p">):</span>
@@ -1392,10 +1436,6 @@
 
               </div>
               
-              
-              
-              
-          </main>
           
 
       </div>

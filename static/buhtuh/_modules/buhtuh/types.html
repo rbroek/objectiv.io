@@ -94,20 +94,20 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;boolean&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesBoolean</span><span class="p">,</span>
-            <span class="s1">&#39;bool&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesBoolean</span><span class="p">,</span>
+            <span class="s1">&#39;bool&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesBoolean</span><span class="p">,</span>  <span class="c1"># supported pandas dtype</span>
             <span class="s1">&#39;integer&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>
             <span class="s1">&#39;bigint&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>
-            <span class="s1">&#39;int64&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>
+            <span class="s1">&#39;int64&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesInt64</span><span class="p">,</span>  <span class="c1"># supported pandas dtype</span>
             <span class="s1">&#39;double precision&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesFloat64</span><span class="p">,</span>
-            <span class="s1">&#39;float64&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesFloat64</span><span class="p">,</span>
-            <span class="s1">&#39;string&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
+            <span class="s1">&#39;float64&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesFloat64</span><span class="p">,</span>  <span class="c1"># supported pandas dtype</span>
+            <span class="s1">&#39;string&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>  <span class="c1"># supported pandas dtype</span>
             <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
             <span class="s1">&#39;json&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
             <span class="s1">&#39;uuid&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesString</span><span class="p">,</span>
 
             <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>
             <span class="s1">&#39;timestamp without time zone&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>
-            <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>
+            <span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTimestamp</span><span class="p">,</span>  <span class="c1"># supported pandas dtype</span>
             <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesDate</span><span class="p">,</span>
             <span class="s1">&#39;time without time zone&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTime</span><span class="p">,</span>
             <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">BuhTuhSeriesTime</span><span class="p">,</span>
@@ -138,16 +138,12 @@
                               <span class="n">value_types</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Type</span><span class="p">]):</span>
         <span class="sd">&quot;&quot;&quot; TODO: comments&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_real_init</span><span class="p">()</span>
-        <span class="c1"># todo: use dtypes consistently, so we don&#39;t have to lower() it in some places</span>
-        <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span> <span class="o">=</span> <span class="n">series_type</span>
         <span class="k">for</span> <span class="n">value_type</span> <span class="ow">in</span> <span class="n">value_types</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">value_type_dtype</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">value_type</span><span class="p">,</span> <span class="n">dtype</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="TypeRegistry.get_series_type_from_dtype"><a class="viewcode-back" href="../../api/buhtuh.types.html#buhtuh.types.TypeRegistry.get_series_type_from_dtype">[docs]</a>    <span class="k">def</span> <span class="nf">get_series_type_from_dtype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="s1">&#39;BuhTuhSeries&#39;</span><span class="p">]:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_real_init</span><span class="p">()</span>
-        <span class="c1"># todo: use dtypes consistently, so we don&#39;t have to lower() it in some places</span>
-        <span class="n">dtype</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unknown dtype: </span><span class="si">{</span><span class="n">dtype</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtype_series</span><span class="p">[</span><span class="n">dtype</span><span class="p">]</span></div>
@@ -157,8 +153,7 @@
         <span class="c1"># exception for values that are BuhTuhSeries. Check: do we need this exception?</span>
         <span class="kn">from</span> <span class="nn">buhtuh.pandasql</span> <span class="kn">import</span> <span class="n">BuhTuhSeries</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">BuhTuhSeries</span><span class="p">):</span>
-            <span class="c1"># todo: use dtypes consistently, so we don&#39;t have to lower() it in some places</span>
-            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">dtype</span>
         <span class="c1"># iterate in reverse, the last item added that matches is used in case where multiple entries</span>
         <span class="c1"># match.</span>
         <span class="k">for</span> <span class="n">type_object</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_type_dtype</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
@@ -172,10 +167,6 @@
 
               </div>
               
-              
-              
-              
-          </main>
           
 
       </div>

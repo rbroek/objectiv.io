@@ -65,7 +65,7 @@
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="sql_models.sql_generator.SemiCompiledTuple">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">SemiCompiledTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cte_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L33-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/sql_generator.html#SemiCompiledTuple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">SemiCompiledTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cte_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L33-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Object representing a single CTE select statement from a big select statement
 with common table expressions.</p>
 <dl class="py method">
@@ -97,12 +97,12 @@ with common table expressions.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sql_models.sql_generator.model_to_cte_name">
-<span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">model_to_cte_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L91-L97"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/sql_generator.html#model_to_cte_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.model_to_cte_name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">model_to_cte_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L91-L97"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.model_to_cte_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sql_models.sql_generator.to_sql">
-<span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L10-L30"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/sql_models/sql_generator.html#to_sql"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.to_sql" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L10-L30"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.to_sql" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the sql to query the given model
 :param model: model to convert to sql
 :return: executable select query</p>
@@ -113,10 +113,6 @@ with common table expressions.</p>
 
               </div>
               
-              
-              
-              
-          </main>
           
 
       </div>

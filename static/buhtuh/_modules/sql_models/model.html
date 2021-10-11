@@ -24,11 +24,11 @@
 <span class="sd">Copyright 2021 Objectiv B.V.</span>
 
 <span class="sd">Models:</span>
-<span class="sd">- SqlModel         - Actual sql-model. Instances of this class form the nodes in the model graph</span>
-<span class="sd">- SqlModelSpec     - Specification class, that specifies basic properties of an SqlModel instance</span>
-<span class="sd">- SqlModelBuilder  - Helper class to instantiate the (immutable) SqlModel objects. Generally models should</span>
+<span class="sd">* SqlModel         - Actual sql-model. Instances of this class form the nodes in the model graph</span>
+<span class="sd">* SqlModelSpec     - Specification class, that specifies basic properties of an SqlModel instance</span>
+<span class="sd">* SqlModelBuilder  - Helper class to instantiate the (immutable) SqlModel objects. Generally models should</span>
 <span class="sd">                     extend this class and not the SqlModel class.</span>
-<span class="sd">- CustomSqlModel   - Utility child of SqlModelSpec that can be used to add a node with custom sql to a</span>
+<span class="sd">* CustomSqlModel   - Utility child of SqlModelSpec that can be used to add a node with custom sql to a</span>
 <span class="sd">                     model graph.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
@@ -66,104 +66,6 @@
 
 <span class="sd">    Generally it&#39;s better to actually extend of the subclass ComposableSqlModel, as that has some methods</span>
 <span class="sd">    to make it easier to instantiate an SqlModel based on the Template.</span>
-<span class="sd">    </span>
-<span class="sd">    .. ipython::</span>
-<span class="sd">        </span>
-<span class="sd">        # Example:</span>
-<span class="sd">        In [1]: bar = 2</span>
-<span class="sd">        </span>
-<span class="sd">        @doctest</span>
-<span class="sd">        In [2]: bar</span>
-<span class="sd">        Out[2]: 2</span>
-<span class="sd">        </span>
-<span class="sd">        In [3]: from matplotlib import pyplot as plt</span>
-<span class="sd">        </span>
-<span class="sd">        @savefig plot_simple.png width=4in</span>
-<span class="sd">        In [4]: plt.plot([1, 2, 3, bar, 1], [4, 3, 2, 1, 4])</span>
-<span class="sd">        </span>
-<span class="sd">        In [133]: import numpy.random</span>
-
-<span class="sd">        @suppress</span>
-<span class="sd">        In [134]: numpy.random.seed(2358)</span>
-
-<span class="sd">        </span>
-<span class="sd">        In [135]: numpy.random.rand(10,2)</span>
-<span class="sd">        Out[135]:</span>
-<span class="sd">        array([[ 0.64524308,  0.59943846],</span>
-<span class="sd">        [ 0.47102322,  0.8715456 ],</span>
-<span class="sd">        [ 0.29370834,  0.74776844],</span>
-<span class="sd">        [ 0.99539577,  0.1313423 ],</span>
-<span class="sd">        [ 0.16250302,  0.21103583],</span>
-<span class="sd">        [ 0.81626524,  0.1312433 ],</span>
-<span class="sd">        [ 0.67338089,  0.72302393],</span>
-<span class="sd">        [ 0.7566368 ,  0.07033696],</span>
-<span class="sd">        [ 0.22591016,  0.77731835],</span>
-<span class="sd">        [ 0.0072729 ,  0.34273127]])</span>
-<span class="sd">        </span>
-<span class="sd">        </span>
-<span class="sd">        In [3]: def square(x):</span>
-<span class="sd">           ...:     if x &lt; 0:</span>
-<span class="sd">           ...:         x = abs(x)</span>
-<span class="sd">           ...:     y = x * x</span>
-<span class="sd">           ...:     return y</span>
-<span class="sd">           ...:</span>
-<span class="sd">        </span>
-<span class="sd">        In [4]: square(3)</span>
-<span class="sd">        Out [4]: 9</span>
-
-<span class="sd">        In [5]: square(-2)</span>
-<span class="sd">        Out [5]: 4</span>
-<span class="sd">        </span>
-<span class="sd">        </span>
-<span class="sd">    .. code:: python</span>
-<span class="sd">    </span>
-<span class="sd">        import datetime</span>
-<span class="sd">    </span>
-<span class="sd">       foo = &#39;bar&#39;</span>
-<span class="sd">       print foo</span>
-<span class="sd">       foo = 2</span>
-<span class="sd">       foo**2</span>
-<span class="sd">       </span>
-<span class="sd">       def square(x):</span>
-<span class="sd">       &#39;&#39;&#39;</span>
-<span class="sd">            An overcomplicated square function as an example.</span>
-<span class="sd">       &#39;&#39;&#39;</span>
-<span class="sd">       if x &lt; 0:</span>
-<span class="sd">           x = abs(x)</span>
-<span class="sd">       y = x * x</span>
-<span class="sd">       return y</span>
-<span class="sd">       </span>
-<span class="sd">       DataFrameOrSeries = Union[&#39;BuhTuhDataFrame&#39;, &#39;BuhTuhSeries&#39;]</span>
-
-
-<span class="sd">        class BuhTuhDataFrame:</span>
-<span class="sd">            @property</span>
-<span class="sd">            def __init__(</span>
-<span class="sd">                self,</span>
-<span class="sd">                engine,</span>
-<span class="sd">                source_node: SqlModel,</span>
-<span class="sd">                index: Dict[str, &#39;BuhTuhSeries&#39;],</span>
-<span class="sd">                series: Dict[str, &#39;BuhTuhSeries&#39;]</span>
-<span class="sd">            ):</span>
-<span class="sd">                &#39;&#39;&#39;</span>
-<span class="sd">                TODO: improve this docstring</span>
-<span class="sd">                :param engine: db connection</span>
-<span class="sd">                :param source_node: sqlmodel, must contain all expressions in series</span>
-<span class="sd">                :param index: Dictionary mapping the name of each index-column to a Series object representing</span>
-<span class="sd">                    the column.</span>
-<span class="sd">                :param series: Dictionary mapping the name of each data-column to a Series object representing</span>
-<span class="sd">                    the column.</span>
-<span class="sd">                &#39;&#39;&#39;</span>
-<span class="sd">                self._engine = engine</span>
-<span class="sd">                self._base_node = source_node</span>
-<span class="sd">                self._index = copy(index)</span>
-<span class="sd">                self._data: Dict[str, BuhTuhSeries] = {}</span>
-<span class="sd">                for key, value in series.items():</span>
-<span class="sd">            </span>
-<span class="sd">            def test(bier: Dict[str, Union[str,int]]) -&gt; Dict[str, Any]:</span>
-<span class="sd">                bla: Dict[str, Any] = {k:v for k,v in bier.items()}</span>
-<span class="sd">                return {&#39;mike&#39;: 1 + 2}</span>
-<span class="sd">        </span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -663,10 +565,6 @@
 
               </div>
               
-              
-              
-              
-          </main>
           
 
       </div>
