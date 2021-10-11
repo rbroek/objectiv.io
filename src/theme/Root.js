@@ -1,5 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { configureTracker } from "@objectiv/tracker-browser";
+import { makeTracker } from "@objectiv/tracker-browser";
 import React, { useEffect } from 'react';
 
 function Root({children}) {
@@ -8,7 +8,7 @@ function Root({children}) {
 
   useEffect(
     () => {
-      configureTracker({
+      makeTracker({
         applicationId: trackerApplicationId,
         endpoint: trackerEndPoint
       });
