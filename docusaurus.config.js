@@ -5,8 +5,6 @@ const remarkGitHub = require('remark-github'); // https://github.com/remarkjs/re
 const remarkLicense = require('remark-license'); // https://github.com/remarkjs/remark-license
 const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark-lint
 const environment = process.env.OBJECTIV_ENVIRONMENT;
-const objectiv_tracker_endpoint = (environment == 'dev') ? 'http://localhost:5000' : 'https://collector.objectiv.io';
-console.log("USING OBJECTIV TRACKER ENDPOINT:", objectiv_tracker_endpoint);
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 // TBD: https://github.com/rehypejs/rehype-meta
 
@@ -115,11 +113,13 @@ module.exports = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerApplicationId: 'objectiv-website',
-    trackerDocsApplicationId: 'objectiv-docs',
-    trackerEndPoint: objectiv_tracker_endpoint, 
+    trackerApplicationId: (environment === 'prod') ? 'objectiv-website' : 'objectiv-website-dev',
+    trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
+    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerConsoleEnabled: environment === 'dev'
   }
 };
+
+console.log("USING OBJECTIV TRACKER ENDPOINT:", module.exports.customFields.trackerEndPoint);

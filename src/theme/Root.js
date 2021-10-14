@@ -11,7 +11,7 @@ function Root({children}) {
       makeTracker({
         applicationId: trackerApplicationId,
         endpoint: trackerEndPoint,
-        console: trackerConsoleEnabled ? console : undefined,
+        console: trackerConsoleEnabled ? console : undefined
       });
     },
     [] // no dependencies => no side effects on re-render
