@@ -8,23 +8,16 @@ function Root({children}) {
 
   useEffect(
     () => {
-      let trackerActive = false;
-      if (Cookiebot.consent.statistics) {
-        trackerActive = true;
-      }
       makeTracker({
         applicationId: trackerApplicationId,
         endpoint: trackerEndPoint,
-        active: trackerActive,
+        active: Cookiebot.consent.statistics,
         console: trackerConsoleEnabled ? console : undefined
       });
 
       window.addEventListener('CookiebotOnAccept', function (e) {
-        if (Cookiebot.consent.statistics) {
-          // Activate tracker, which sets statistics cookies
-          getTracker().setActive(true);
-          console.log("Objectiv Tracker activated");
-        } 
+        // Activate tracker, which sets statistics cookies
+        getTracker().setActive(Cookiebot.consent.statistics);
       }, false);
     },
     [] // no dependencies => no side effects on re-render
