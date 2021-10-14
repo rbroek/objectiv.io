@@ -50,12 +50,6 @@ module.exports = {
           className: 'navItem navGitHub',
         },
         {
-          href: slackJoinLink,
-          label: 'Slack',
-          position: 'right',
-          className: 'navItem navSlack',
-        },
-        {
           href: 'https://twitter.com/objectiv_io',
           label: 'Twitter',
           position: 'right',
@@ -71,47 +65,6 @@ module.exports = {
     },
     footer: {
       style: 'light',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: 'docs/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/objectiv',
-            },
-            {
-              label: 'Slack',
-              href: slackJoinLink,
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/objectivhq',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'Jobs',
-              to: 'jobs',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
     },
   },
@@ -164,6 +117,7 @@ module.exports = {
     trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
     trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
+    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerConsoleEnabled: environment === 'dev'
   }
 };
