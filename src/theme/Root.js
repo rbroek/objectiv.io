@@ -1,10 +1,17 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { getTracker, makeTracker } from "@objectiv/tracker-browser";
 import React, { useEffect } from 'react';
+import { useRouteMatch } from "react-router-dom";
 
 function Root({children}) {
   const { siteConfig = {} } = useDocusaurusContext();
-  const { trackerApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig.customFields;
+  const { trackerApplicationId, trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig.customFields;
+  let trackerIdInUse = trackerApplicationId;
+  let match = useRouteMatch("/docs/");
+  if (match) {
+    trackerIdInUse = trackerDocsApplicationId;
+    // TODO: switch default tracker to docs tracking
+  }
 
   useEffect(
     () => {
@@ -13,7 +20,7 @@ function Root({children}) {
         trackerActive = true;
       }
       makeTracker({
-        applicationId: trackerApplicationId,
+        applicationId: trackerIdInUse,
         endpoint: trackerEndPoint,
         active: trackerActive,
         console: trackerConsoleEnabled ? console : undefined
@@ -26,6 +33,7 @@ function Root({children}) {
           console.log("Objectiv Tracker activated");
         } 
       }, false);
+
     },
     [] // no dependencies => no side effects on re-render
   )
