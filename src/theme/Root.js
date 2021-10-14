@@ -1,16 +1,17 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getTracker, makeTracker } from "@objectiv/tracker-browser";
+import { getTracker, makeTracker, getTrackerRepository } from "@objectiv/tracker-browser";
 import React, { useEffect } from 'react';
 import { useRouteMatch } from "react-router-dom";
 
 function Root({children}) {
   const { siteConfig = {} } = useDocusaurusContext();
   const { trackerApplicationId, trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig.customFields;
-  let trackerIdInUse = trackerApplicationId;
   let match = useRouteMatch("/docs/");
   if (match) {
-    trackerIdInUse = trackerDocsApplicationId;
     // TODO: switch default tracker to docs tracking
+    getTrackerRepository().setDefault(trackerDocsApplicationId);
+  } else {
+    getTrackerRepository().setDefault(trackerApplicationId);
   }
 
   useEffect(
@@ -20,7 +21,7 @@ function Root({children}) {
         trackerActive = true;
       }
       makeTracker({
-        applicationId: trackerIdInUse,
+        applicationId: trackerApplicationId,
         endpoint: trackerEndPoint,
         active: trackerActive,
         console: trackerConsoleEnabled ? console : undefined
