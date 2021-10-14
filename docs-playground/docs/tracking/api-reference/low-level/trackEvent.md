@@ -16,17 +16,21 @@ trackEvent = (parameters: {
 :::
 
 ## Parameters
-|          |                  | type                                                                                                                                                      | default value
-| :-:      | :--              | :--                                                                                                                                                       | :--           
-| required | **eventFactory** | [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list)                                                                    |
+|          |                  | type                                                                                                                                                     | default value
+| :-:      | :--              | :--                                                                                                                                                      | :--           
+| required | **eventFactory** | [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list)                                                                   |
 | required | **element**      | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
-| optional | tracker          | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
-| optional | onError          | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
+| optional | tracker          | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
+| optional | onError          | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
 `trackEvent` is a void function.
 
 ## Usage example
+
+```typescript jsx
+import { trackEvent } from '@objectiv/tracker-browser';
+```
 
 ```typescript jsx
 export const trackCustomEvent = ({ element, tracker, onError }: TrackEventHelperParameters) => {

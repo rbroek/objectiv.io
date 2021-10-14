@@ -12,11 +12,11 @@ tagButton = (parameters: {
 ```
 
 ## Parameters
-|          |          | type                                                                                   | default value
-| :-:      | :--      | :--                                                                                    | :--           
-| required | **id**   | string                                                                                 |
-| required | **text** | string                                                                                 |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackClicks: true }`
+|          |          | type                                                                                | default value
+| :-:      | :--      | :--                                                                                 | :--           
+| required | **id**   | string                                                                              |
+| required | **text** | string                                                                              |
+| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackClicks: true }`
 | optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Events
@@ -30,13 +30,35 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
 ```typescript jsx
-<button {...tagButton({ id: 'button-id', text: "Click Me!" })}>Click Me!</button>
+import { tagButton } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<Submit {...tagButton({ id: 'submit', text: "Do It!" })}>Do It!</Submit>
+<button {...tagButton({ id: 'button-id', text: 'Click Me!' })}>Click Me!</button>
 ```
+
+```typescript jsx
+<Submit {...tagButton({ id: 'submit', text: 'Do It!' })}>Do It!</Submit>
+```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<button [tagButton]="{ id: 'button-id', text: 'Click Me!' }">Click Me!</button>
+```
+
+  </TabItem>
+</Tabs>
 
 <br />
 

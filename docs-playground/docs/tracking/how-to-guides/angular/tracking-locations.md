@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Tagging Locations
 
-Now that the [Tracker is up and running](/tracking/how-to-guides/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/elements.md#elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/location-taggers/overview.md).  
+Now that the [Tracker is up and running](/tracking/how-to-guides/angular/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/elements.md#elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/location-taggers/overview.md).  
 
 ## Tagging Interactive Elements
 A good rule of thumb is to start by identifying all interactive Elements in the Application. 
@@ -14,13 +14,10 @@ Anything that the user can interact with, but does not cause a URL change, can b
 
 ```typescript jsx
 // a button tag 
-<button {...tagButton({ id: 'button-1', text: "Click Me!" })}>Click Me!</button>
-
-// a Button component 
-<Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
+<button [tagButton]="{ id: 'button-1', text: 'Click Me!' }">Click Me!</button>
 
 // a clickable image
-<img {...tagButton({ id: 'button-3', text: "OK!" })} src="/img/ok.png" alt="OK!" />
+<img [tagButton]="{ id: 'button-3', text: 'OK!' }" src="/img/ok.png" alt="OK!" />
 ```
 
 :::info WIP
@@ -33,10 +30,7 @@ Links are interactive elements that cause, directly or indirectly, a change in t
 
 ```typescript jsx
 // a link tag 
-<a {...tagLink({ id: 'link-1', text: "Go!", href:"/somewhere" })} href="/somewhere">Go!</a>
-
-// a Link component 
-<Link {...tagLink({ id: 'link-2', text: "Back To Cart", href:"/cart" })} to="/cart">Back</Link>
+<a [tagLink]="{ id: 'link-1', text: 'Go!', href:'/somewhere' }" href="/somewhere">Go!</a>
 ```
 
 :::info WIP
@@ -48,17 +42,11 @@ Currently it's necessary to specify `text` and `href` manually. We are working o
 Elements that cause other Elements, usually their children, to be expanded and displayed to the user. Such as Accordions and collapsible Menus. 
 
 ```typescript jsx
-// an Accordion-like component 
-<FAQItem {...tagExpandableElement({ id: 'how-to-1' })} description="How to track Accordions?">
-  Some content here that will be displayed on click
-</FAQItem>
-
-// a contextual Menu 
-<Menu {...tagExpandableElement({ id: 'main-menu' })}>
-  <MenuItem>Menu A</MenuItem>
+<ul [tagExpandableElement]="{ id: 'main-menu' }">
+  <li>Menu A</li>
   …
-  <MenuItem>Menu Z</MenuItem>
-</Menu>
+  <li>Menu Z</li>
+</ul>
 ```
 
 

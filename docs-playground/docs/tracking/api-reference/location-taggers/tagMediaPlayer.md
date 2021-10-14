@@ -11,10 +11,10 @@ tagMediaPlayer = (parameters: {
 ```
 
 ## Parameters
-|          |         | type                                                                                   | default value
-| :-:      | :--     | :--                                                                                    | :--           
-| required | **id**  | string                                                                                 |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackVisibility: { mode: 'auto' } }`
+|          |         | type                                                                                | default value
+| :-:      | :--     | :--                                                                                 | :--           
+| required | **id**  | string                                                                              |
+| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -28,6 +28,16 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Examples
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
+```typescript jsx
+import { tagMediaPlayer } from '@objectiv/tracker-browser';
+```
+
 ```typescript jsx
 <div {...tagMediaPlayer({ id: 'player-id' })}>
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
@@ -39,6 +49,26 @@ Unless customized via the `options` parameter, automatically triggers:
   <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
 </Player>
 ```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<div [tagMediaPlayer]="{ id: 'player-id' }">
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
+</div>
+```
+
+```typescript jsx
+<video [tagMediaPlayer]="{ id: 'player-id' }">
+  <source src="video.mp4" type="video/mp4">
+</video>
+```
+
+  </TabItem>
+</Tabs>
 
 <br />
 

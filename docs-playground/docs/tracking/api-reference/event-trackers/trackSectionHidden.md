@@ -14,16 +14,20 @@ trackSectionHidden = (parameters: {
 :::
 
 ## Parameters
-|          |             | type                                                                                                                                                      | default value
-| :-:      | :--         | :--                                                                                                                                                       | :--           
+|          |             | type                                                                                                                                                     | default value
+| :-:      | :--         | :--                                                                                                                                                      | :--           
 | required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
-| optional | tracker     | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                    | `window.objectiv.tracker`
-| optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                    | `console.error`
+| optional | tracker     | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
+| optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
 `trackSectionHidden` is a void function.
 
 ## Usage example
+
+```typescript jsx
+import { trackSectionHidden } from '@objectiv/tracker-browser';
+```
 
 ```typescript jsx
 <Modal

@@ -15,10 +15,10 @@ tagLocation = (parameters: {
 :::
 
 ## Parameters
-|          |              | type                                                                                   | default value
-| :-:      | :--          | :--                                                                                    | :--           
-| required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                             |
-| optional | options      | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | Dynamically calculated based on `instance`. See the [Events](#events) table below.
+|          |              | type                                                                                | default value
+| :-:      | :--          | :--                                                                                 | :--           
+| required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                          |
+| optional | options      | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | Dynamically calculated based on `instance`. See the [Events](#events) table below.
 | optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -40,6 +40,16 @@ Unless customized via the `options` parameter, the given `instance` determines w
 
 ## Usage example
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
+```typescript jsx
+import { tagLocation } from '@objectiv/tracker-browser';
+```
+
 ```typescript jsx
 <Layout {...tagLocation({ instance: makeSectionContext({ id: 'layout' }) })}>
   <div {...tagLocation({ instance: makeOverlayContext({ id: 'modal' }) })}>
@@ -47,6 +57,22 @@ Unless customized via the `options` parameter, the given `instance` determines w
   </div>
 </Layout>
 ```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<section [tagLocation]="{ instance: makeSectionContext({ id: 'layout' }) }">
+  <div [tagLocation]="{ instance: makeOverlayContext({ id: 'modal' }) }">
+    …
+  </div>
+</section>
+```
+
+  </TabItem>
+</Tabs>
 
 :::tip Did you notice ?
 In the example above we factored the `instance` parameters by using [Core Location Context Factories](/tracking/api-reference/low-level/core-factories.md#location-context-factories).

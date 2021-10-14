@@ -13,12 +13,12 @@ tagLink = (parameters: {
 ```
 
 ## Parameters
-|          |          | type                                                                                   | default value
-| :-:      | :--      | :--                                                                                    | :--           
-| required | **id**   | string                                                                                 |
-| required | **text** | string                                                                                 |
-| required | **href** | string                                                                                 |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)     | `{ trackClicks: true }`
+|          |          | type                                                                                | default value
+| :-:      | :--      | :--                                                                                 | :--           
+| required | **id**   | string                                                                              |
+| required | **text** | string                                                                              |
+| required | **href** | string                                                                              |
+| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackClicks: true }`
 | optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -31,13 +31,35 @@ Unless customized via the `options` parameter, automatically triggers:
 
 ## Usage examples
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="react" label="React" default>
+
 ```typescript jsx
-<a {...tagLink({ id: 'lnk-id', text: "Go!", href: "/path" })} href="/path">Go!</a>
+import { tagLink } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<LinkComponent {...tagLink({ id: 'lnk-id', text: "Go!", href: "/path" })}>Go!</LinkComponent>
+<a {...tagLink({ id: 'lnk-id', text: 'Go!', href: '/path' })} href="/path">Go!</a>
 ```
+
+```typescript jsx
+<LinkComponent {...tagLink({ id: 'lnk-id', text: 'Go!', href: '/path' })} to="/path">Go!</LinkComponent>
+```
+
+  </TabItem>
+  <TabItem value="angular" label="Angular">
+
+Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
+
+```typescript jsx
+<a [tagLink]="{ id: 'lnk-id', text: 'Go!', href: '/path' }" href="/path">Go!</a>
+```
+
+  </TabItem>
+</Tabs>
 
 <br />
 
