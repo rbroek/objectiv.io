@@ -6,11 +6,6 @@ module.exports = {
       label: 'Home',
     },
     {
-      type: 'doc',
-      id: 'introduction',
-      label: 'Introduction',
-    },
-    {
       type: 'category',
       label: 'BuhTuh',
       collapsed: false,
