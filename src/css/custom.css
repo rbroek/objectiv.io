@@ -2,9 +2,10 @@
 /**
  * Any CSS included here will be global.
  */
- @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
  
 /* Override the default Infima variables here. */
 :root {
@@ -15,7 +16,8 @@
   --ifm-color-primary-light: rgb(215, 215, 215);
   --ifm-color-primary-lighter: rgb(225, 225, 225);
   --ifm-color-primary-lightest: rgb(235, 235, 235);
-  --ifm-font-color-base: black;
+  --ifm-font-color-base: #333;
+  --ifm-font-color-light: #666;
   --ifm-font-color-base-inverse: white;
   --ifm-heading-color: black;
   --ifm-heading-font-weight: normal;
@@ -30,6 +32,7 @@
   --ifm-footer-background-color: white;
   --ifm-footer-color: black;
   --ifm-footer-link-hover-color: black;
+  --ifm-footer-padding-vertical: 20px;
   --ifm-h1-font-size: 18px;
   --ifm-line-height-base: 150%;
   --ifm-global-shadow-lw: 0px 2px 0px rgba(70, 76, 92, 0.25);
@@ -42,7 +45,9 @@
   --ifm-font-family-monospace: 'Roboto Mono';
   font-family: 'Roboto', 'Bungee', sans-serif;
 
-  --obj-primary-one: rgba(255, 87, 34, 0.1);
+  /* --ifm-color-emphasis-200: #ABE9FE; */
+
+  --obj-primary-one: #008FDB;
   --obj-primary-two: rgba(171, 233, 254, 0.1);
   --obj-primary-three: rgba(196, 166, 252, 0.1);
   --obj-primary-four: rgba(254, 242, 132, 0.1);
@@ -63,19 +68,94 @@ body {
   box-shadow: none;
   height: 80px;
   padding: 8px 16px;
+  z-index: 1001;
 }
-
 .navbar__link {
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
-  padding-right: 30px;
+  padding-right: 24px;
+}
+@media (max-width: 996px) {
+  .navbar-sidebar .navbar__item {
+    display: block;
+  }
+}
+@media (min-width: 960px) {
+  .navbar {
+    z-index: 999; /* so announcement bar can overlap it*/
+  }
+  .navbar .navItem {
+    width: 24px;
+    height: 24px;
+    padding: 0 24px;
+  }
+  .navbar .navItem span, .navbar .navItem svg {
+    display: none;
+  }
+  .navbar .navGitHub {
+    background: url('/img/icons/icon-nav-github.svg') no-repeat;
+  }
+  .navbar .navGitHub:hover {
+    background: url('/img/icons/icon-nav-github-hover.svg') no-repeat;
+  }
+  .navbar .navSlack {
+    background: url('/img/icons/icon-nav-slack.svg') no-repeat;
+  }
+  .navbar .navSlack:hover {
+    background: url('/img/icons/icon-nav-slack-hover.svg') no-repeat;
+  }
+  .navbar .navDiscourse {
+    background: url('/img/icons/icon-nav-discourse.svg') no-repeat;
+  }
+  .navbar .navDiscourse:hover {
+    background: url('/img/icons/icon-nav-discourse-hover.svg') no-repeat;
+  }
+  .navbar .navTwitter {
+    background: url('/img/icons/icon-nav-twitter.svg') no-repeat;
+  }
+  .navbar .navTwitter:hover {
+    background: url('/img/icons/icon-nav-twitter-hover.svg') no-repeat;
+  }
+  .navbar .navEmail {
+    background: url('/img/icons/icon-nav-email.svg') no-repeat;
+  }
+  .navbar .navEmail:hover {
+    background: url('/img/icons/icon-nav-email-hover.svg') no-repeat;
+  }
+}
+
+div[role=banner] {
+  position: absolute;
+  top: 79px;
+  z-index: 1000;
+  height: 80px;
+  font-size: 18px;
+  line-height: 150%;
+  display: flex;
+  align-items:center;
+  background-color: '#FEF284';
+}
+
+div[role=banner] img {
+  vertical-align: middle;
+  margin: 0 18px;
+}
+
+.footer {
+  padding: 10px;
 }
 
 @media (min-width: 1440px) {
   .footer .container {
     max-width: 960px;
   }
+}
+
+.footer__item {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0.8em;
 }
 
 .footer__copyright {
@@ -93,16 +173,19 @@ h1, h2, h3, h4, h5, h6 {
 h1, .main-docs-wrapper h1 {
   font-size: 32px;
   margin: 16px 0;
+  font-weight: 700;
 }
 
 h2, .main-docs-wrapper h2 {
   font-size: 24px;
   margin: 16px 0;
+  font-weight: 700;
 }
 
 h3, .main-docs-wrapper h3 {
   font-size: 18px;
   margin: 16px 0;
+  font-weight: 700;
 }
 
 h4, .main-docs-wrapper h4 {
@@ -129,8 +212,8 @@ p, .markdown p {
   color: black;
 }
 .button:hover {
-  --ifm-button-border-color: #06A5FA;
-  color: #06A5FA;
+  --ifm-button-border-color: #ffffffd4;
+  color: #ffffffd4;
 }
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
@@ -183,6 +266,101 @@ p, .markdown p {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
 }
 
+/** BLOG **/
+.blog-wrapper {
+  line-height: 2em;
+  letter-spacing: -0.003em;
+}
+
+.blog-list-page article {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(229,231,235,1);
+}
+
+.blog-list-page article header h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+.blog-list-page article h3 {
+  font-family: "Georgia";
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 400;
+  color: var(--ifm-font-color-light);
+}
+
+.blog-list-page article header h2 a {
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--ifm-font-color-base);
+  font-weight: 900;
+}
+
+.blog-post-page article header h1 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.blog-post-page article p {
+  
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 36px;
+  --ifm-font-color-base: #333;
+}
+
+.blog-post-page article h2 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+.blog-post-page article h3 {
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--ifm-font-color-light);
+  font-weight: 400;
+}
+
+.blog-list-page article header .margin-vert--md, .blog-post-page article header .margin-vert--md { /* blog post date */
+  margin-top: 0 !important;
+  color:rgb(100, 100, 100);
+}
+
+.blog-list-page article header .avatar {
+  display: none;
+}
+
+.blog-list-page article footer div:first-child { /* tags */
+  display: none;
+}
+
+.blog-list-page article footer .text--right, .blog-list-page article footer .text--right a { /* read more */
+  text-align: left;  
+  color: var(--ifm-font-color-base);
+}
+.blog-list-page article footer .text--right a:after {
+  content: " \2192";
+  font-weight: bold;
+}
+
+.blog-post-page article {
+  max-width: 680px;
+}
+
+.blog-post-page .table-of-contents {
+  display: none;
+}
+
+/** DOCS **/
+.docs-wrapper footer .col {
+  flex: none;
+  width: 80%;
+  margin: 0 10%;
+}
+
 /** DIAGRAM (MERMAID) MARKUP **/
 
 .mermaid {
@@ -195,7 +373,7 @@ p, .markdown p {
 
 .diagram-caption {
   font-style: italic;
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-align: center;
 }
 
