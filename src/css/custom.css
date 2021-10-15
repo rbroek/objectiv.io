@@ -151,6 +151,12 @@ div[role=banner] img {
   }
 }
 
+.footer__item {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0.8em;
+}
+
 .footer__copyright {
   font-size: 0.9em;
   color: rgb(100, 100, 100);

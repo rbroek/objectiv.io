@@ -66,6 +66,20 @@ module.exports = {
     footer: {
       style: 'light',
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
+      links: [
+        {
+          items: [
+            {
+              label: 'Privacy Policy',
+              to: 'privacy/',
+            },
+            {
+              label: 'Cookies',
+              to: 'privacy/cookies',
+            },
+          ],
+        },
+      ],
     },
   },
   presets: [
