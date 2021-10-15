@@ -1,0 +1,244 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-buhtuh.partitioning">
+<span id="buhtuh-partitioning"></span><h1>buhtuh.partitioning<a class="headerlink" href="#module-buhtuh.partitioning" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.partitioning.BuhTuhGroupBy" title="buhtuh.partitioning.BuhTuhGroupBy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuhTuhGroupBy</span></code></a>(buh_tuh, group_by_columns)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindow" title="buhtuh.partitioning.BuhTuhWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuhTuhWindow</span></code></a>(buh_tuh, group_by_columns[, ...])</p></td>
+<td><p>Class representing an &quot;immutable&quot; window as defined in the SQL standard.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary" title="buhtuh.partitioning.BuhTuhWindowFrameBoundary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuhTuhWindowFrameBoundary</span></code></a>(value)</p></td>
+<td><p>Class representing the frame boundaries in a BuhTuhWindow</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameMode" title="buhtuh.partitioning.BuhTuhWindowFrameMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuhTuhWindowFrameMode</span></code></a>(value)</p></td>
+<td><p>Class representing the frame mode in a BuhTuhWindow</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhGroupBy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.partitioning.</span></span><span class="sig-name descname"><span class="pre">BuhTuhGroupBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buh_tuh</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhDataFrame" title="buhtuh.pandasql.BuhTuhDataFrame"><span class="pre">buhtuh.pandasql.BuhTuhDataFrame</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by_columns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeries" title="buhtuh.pandasql.BuhTuhSeries"><span class="pre">buhtuh.pandasql.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L8-L144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhGroupBy" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhGroupBy.aggregate">
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregations</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhDataFrame" title="buhtuh.pandasql.BuhTuhDataFrame"><span class="pre">buhtuh.pandasql.BuhTuhDataFrame</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L37-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhGroupBy.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute requested aggregations on this groupby</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>series</strong> – a dict containing ‘name’: ‘aggregation_method’.
+In case you need duplicates: a list of ‘name’s is also supported, but aggregations
+should have the same length list with the aggregation methods requested</p></li>
+<li><p><strong>aggregations</strong> – The aggregation methods requested in case series is a list.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new BuhTuhDataFrame containing the requested aggregations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhGroupBy.window">
+<span class="sig-name descname"><span class="pre">window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeries" title="buhtuh.pandasql.BuhTuhSeries"><span class="pre">buhtuh.pandasql.BuhTuhSeries</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeries" title="buhtuh.pandasql.BuhTuhSeries"><span class="pre">buhtuh.pandasql.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">frame_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L135-L144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhGroupBy.window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to turn this groupby into a window.
+TODO Better argument typing, needs fancy import logic
+:see: BuhTuhWindow __init__ for frame args</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.partitioning.</span></span><span class="sig-name descname"><span class="pre">BuhTuhWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buh_tuh</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhDataFrame" title="buhtuh.pandasql.BuhTuhDataFrame"><span class="pre">buhtuh.pandasql.BuhTuhDataFrame</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by_columns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeries" title="buhtuh.pandasql.BuhTuhSeries"><span class="pre">buhtuh.pandasql.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameMode" title="buhtuh.partitioning.BuhTuhWindowFrameMode"><span class="pre">buhtuh.partitioning.BuhTuhWindowFrameMode</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BuhTuhWindowFrameMode.RANGE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_boundary</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary" title="buhtuh.partitioning.BuhTuhWindowFrameBoundary"><span class="pre">buhtuh.partitioning.BuhTuhWindowFrameBoundary</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BuhTuhWindowFrameBoundary.PRECEDING</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_boundary</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary" title="buhtuh.partitioning.BuhTuhWindowFrameBoundary"><span class="pre">buhtuh.partitioning.BuhTuhWindowFrameBoundary</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BuhTuhWindowFrameBoundary.CURRENT_ROW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L180-L349"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class representing an “immutable” window as defined in the SQL standard. Any operation on this
+class that would alter it returns a fresh copy. It can be reused many time if the window
+is reused.</p>
+<p>A Window for us is basically a partitioned, sorted view on a DataFrame, where the frame
+boundaries as given in the constructor, or in set_frame_clause(), define the window.</p>
+<p>A frame is defined in PG as follows:
+(See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS">https://www.postgresql.org/docs/14/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS</a>)</p>
+<p>{ RANGE | ROWS } frame_start
+{ RANGE | ROWS } BETWEEN frame_start AND frame_end
+where frame_start and frame_end can be one of</p>
+<p>UNBOUNDED PRECEDING
+value PRECEDING
+CURRENT ROW
+value FOLLOWING
+UNBOUNDED FOLLOWING</p>
+<p>The frame_clause specifies the set of rows constituting the window frame, for those window
+functions that act on the frame instead of the whole partition.</p>
+<p>If frame_end is omitted it
+defaults to CURRENT ROW.</p>
+<p>Restrictions are that
+- frame_start cannot be UNBOUNDED FOLLOWING,
+- frame_end cannot be UNBOUNDED PRECEDING
+- frame_end choice cannot appear earlier in the above list than the frame_start choice:</p>
+<blockquote>
+<div><p>for example RANGE BETWEEN CURRENT ROW AND value PRECEDING is not allowed.</p>
+</div></blockquote>
+<p>The default framing option is RANGE UNBOUNDED PRECEDING, which is the same as
+RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW; it sets the frame to be all rows from
+the partition start up through the current row’s last peer in the ORDER BY ordering
+(which means all rows if there is no ORDER BY).</p>
+<p>In general, UNBOUNDED PRECEDING means that the frame starts with the first row of the
+partition, and similarly UNBOUNDED FOLLOWING means that the frame ends with the last row
+of the partition (regardless of RANGE or ROWS mode).</p>
+<p>In ROWS mode, CURRENT ROW means that the frame starts or ends with the current row;
+In RANGE mode it means that the frame starts or ends with the current row’s first or
+last peer in the ORDER BY ordering.</p>
+<p>The value PRECEDING and value FOLLOWING cases are currently only allowed in ROWS mode.
+They indicate that the frame starts or ends with the row that many rows before or after
+the current row.</p>
+<p>value must be an integer expression not containing any variables, aggregate functions,
+or window functions. The value must not be null or negative; but it can be zero,
+which selects the current row itself.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow.aggregate">
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregations</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhDataFrame" title="buhtuh.pandasql.BuhTuhDataFrame"><span class="pre">buhtuh.pandasql.BuhTuhDataFrame</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L37-L101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute requested aggregations on this groupby</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>series</strong> – a dict containing ‘name’: ‘aggregation_method’.
+In case you need duplicates: a list of ‘name’s is also supported, but aggregations
+should have the same length list with the aggregation methods requested</p></li>
+<li><p><strong>aggregations</strong> – The aggregation methods requested in case series is a list.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a new BuhTuhDataFrame containing the requested aggregations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow.frame_clause">
+<span class="sig-name descname"><span class="pre">frame_clause</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow.frame_clause" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow.get_window_expression">
+<span class="sig-name descname"><span class="pre">get_window_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L334-L349"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow.get_window_expression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Given the window_func generate a statement like:</dt><dd><p>{window_func} OVER (PARTITION BY .. ORDER BY … frame_clause)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow.set_frame_clause">
+<span class="sig-name descname"><span class="pre">set_frame_clause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameMode" title="buhtuh.partitioning.BuhTuhWindowFrameMode"><span class="pre">buhtuh.partitioning.BuhTuhWindowFrameMode</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BuhTuhWindowFrameMode.RANGE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_boundary</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary" title="buhtuh.partitioning.BuhTuhWindowFrameBoundary"><span class="pre">buhtuh.partitioning.BuhTuhWindowFrameBoundary</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BuhTuhWindowFrameBoundary.PRECEDING</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_boundary</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary" title="buhtuh.partitioning.BuhTuhWindowFrameBoundary"><span class="pre">buhtuh.partitioning.BuhTuhWindowFrameBoundary</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BuhTuhWindowFrameBoundary.CURRENT_ROW</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindow" title="buhtuh.partitioning.BuhTuhWindow"><span class="pre">buhtuh.partitioning.BuhTuhWindow</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L315-L332"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow.set_frame_clause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to clone this window with new frame parameters
+:see: __init__()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow.sort_values">
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#buhtuh.partitioning.BuhTuhWindow" title="buhtuh.partitioning.BuhTuhWindow"><span class="pre">buhtuh.partitioning.BuhTuhWindow</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L303-L313"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow.sort_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience passthrough for
+&#64;see BuhTuhDataFrame.sort_values()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindow.window">
+<span class="sig-name descname"><span class="pre">window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeries" title="buhtuh.pandasql.BuhTuhSeries"><span class="pre">buhtuh.pandasql.BuhTuhSeries</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="buhtuh.pandasql.html#buhtuh.pandasql.BuhTuhSeries" title="buhtuh.pandasql.BuhTuhSeries"><span class="pre">buhtuh.pandasql.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">frame_args</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L135-L144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindow.window" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to turn this groupby into a window.
+TODO Better argument typing, needs fancy import logic
+:see: BuhTuhWindow __init__ for frame args</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameBoundary">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.partitioning.</span></span><span class="sig-name descname"><span class="pre">BuhTuhWindowFrameBoundary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L155-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class representing the frame boundaries in a BuhTuhWindow</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameBoundary.CURRENT_ROW">
+<span class="sig-name descname"><span class="pre">CURRENT_ROW</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary.CURRENT_ROW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameBoundary.FOLLOWING">
+<span class="sig-name descname"><span class="pre">FOLLOWING</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary.FOLLOWING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameBoundary.PRECEDING">
+<span class="sig-name descname"><span class="pre">PRECEDING</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary.PRECEDING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameBoundary.frame_clause">
+<span class="sig-name descname"><span class="pre">frame_clause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L165-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameBoundary.frame_clause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the frame boundary sub-string</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameMode">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.partitioning.</span></span><span class="sig-name descname"><span class="pre">BuhTuhWindowFrameMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/partitioning.py#L147-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class representing the frame mode in a BuhTuhWindow</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameMode.RANGE">
+<span class="sig-name descname"><span class="pre">RANGE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameMode.RANGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.partitioning.BuhTuhWindowFrameMode.ROWS">
+<span class="sig-name descname"><span class="pre">ROWS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#buhtuh.partitioning.BuhTuhWindowFrameMode.ROWS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>
