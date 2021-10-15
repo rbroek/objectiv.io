@@ -18,7 +18,7 @@ export default function Jobs() {
         {...tagElement({id: 'header'})}
       >
         <div className={clsx('container', styles.jobsContainer)}>
-          <h1>Currently Hiring: Senior Data Scientist / Engineer</h1>
+          <h1>Currently Hiring: Data Scientist / Engineer</h1>
         </div>
       </header>
       <main {...tagElement({id: 'main'})}>
