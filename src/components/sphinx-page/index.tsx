@@ -99,7 +99,7 @@ const SphinxPage = (props) => {
                     * 
                     * Code below transforms the Sphinx structure into the Docusaurus one
                     */
-                    for ( let line of lines ){
+                    Object.values(lines).forEach( line => {
                         const codeLine = document.createElement("span");
                         codeLine.className = 'token-line';
                         
@@ -113,7 +113,7 @@ const SphinxPage = (props) => {
                             codeLine.innerHTML = line;
                         }
                         code.appendChild(codeLine);
-                    }
+                    });
                     // remove current lines
                     while ( codeBlock.lastChild ){
                         codeBlock.removeChild(codeBlock.lastChild);
@@ -123,12 +123,12 @@ const SphinxPage = (props) => {
                 });
 
                 // map background of code block
-                Object.values(tempDiv.querySelectorAll("div.highlight")).forEach(codeBlockContainer => {
+                Object.values(tempDiv.querySelectorAll("div.highlight")).forEach( (codeBlockContainer: HTMLElement) => {
                     const old = codeBlockContainer.className;
                     codeBlockContainer.className = old + " codeBlockContent_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module python";
                 });
 
-                const data: string = tempDiv.innerHTML;
+                const data = tempDiv.innerHTML;
                 setData(data)
             });
     }, [])
