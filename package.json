@@ -24,6 +24,7 @@
     "@octokit/plugin-throttling": "^3.5.2",
     "@octokit/rest": "^18.12.0",
     "clsx": "^1.1.1",
+    "docusaurus-plugin-image-zoom": "^0.0.2",
     "emailjs-com": "^3.2.0",
     "mermaid": "^8.13.3",
     "prop-types": "^15.7.2",
