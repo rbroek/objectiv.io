@@ -8,10 +8,9 @@
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
-import type {Props} from '@theme/BlogPostPaginator';
 import { tagLink, tagNavigation } from "@objectiv/tracker-browser";
 
-function BlogPostPaginator(props: Props): JSX.Element {
+function BlogPostPaginator(props): JSX.Element {
   const {nextItem, prevItem} = props;
 
   return (

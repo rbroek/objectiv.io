@@ -1,4 +1,5 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+// @ts-check
+
 const path = require('path');
 const remarkFootnotes = require('remark-footnotes'); // https://github.com/remarkjs/remark-footnotes
 const remarkGitHub = require('remark-github'); // https://github.com/remarkjs/remark-github
@@ -8,9 +9,10 @@ const environment = process.env.OBJECTIV_ENVIRONMENT;
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 // TBD: https://github.com/rehypejs/rehype-meta
 
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  baseUrl: (environment == 'staging') ? '/staging/' : '/',
-  url: (environment == 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
+  baseUrl: (environment === 'staging') ? '/staging/' : '/',
+  url: (environment === 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
   title: 'Objectiv - creating the ultimate iterative workflow for data scientists',
   titleDelimiter: '|',
@@ -19,14 +21,15 @@ module.exports = {
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  trailingSlash: false,
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
   trailingSlash: false,
   
   themes: ['@docusaurus/theme-live-codeblock'],
 
-  themeConfig: {
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
     colorMode: {
       disableSwitch: true,
     },
@@ -66,19 +69,33 @@ module.exports = {
     footer: {
       style: 'light',
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
+      links: [
+        {
+          items: [
+            {
+              label: 'Privacy Policy',
+              to: 'privacy/',
+            },
+            {
+              label: 'Cookies',
+              to: 'privacy/cookies',
+            },
+          ],
+        },
+      ],
     },
-  },
+  }),
   presets: [
     [
       '@docusaurus/preset-classic',
-      {
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
-          sidebarCollapsible: true,
           sidebarPath: require.resolve('./docs/sidebars.js'),
           sidebarCollapsible: true,
           editUrl:
@@ -95,19 +112,18 @@ module.exports = {
           changefreq: 'weekly',
           priority: 0.5,
         },
-      },
+      }),
     ],
   ],
   plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
   scripts: [
     'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
-    // TODO: enable cookiebot once tracker can be enabled/disabled programmatically
-    // {
-    //   src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
-    //   'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-    //   'data-blockingmode': 'auto',
-    //   id: 'Cookiebot'
-    // },
+    {
+      src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
+      'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
+      'data-blockingmode': 'auto',
+      id: 'Cookiebot'
+    },
   ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',

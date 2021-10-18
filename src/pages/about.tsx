@@ -24,7 +24,7 @@ function Contributor({name, gitHubUsername}) {
           <a href={ghProfileLink} title={ghProfileTitle}>
             <Avatar 
               githubHandle={gitHubUsername} 
-              size={64} 
+              size='64'
               round={true} 
               name={name} 
               alt={name} 
@@ -54,22 +54,21 @@ function Contributor({name, gitHubUsername}) {
 
 export default function AboutUs() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const {siteConfig} = context;
 
   return (
     <Layout
-      title={siteConfig.title}
-      description={siteConfig.tagline}> {/*Description will go into a meta tag in <head />*/}
-      
-      <AnnouncementBar 
+      title={siteConfig?.title}
+      description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
+
+      <AnnouncementBar
         title="We're Hiring!"
         content="Join our mission crew as a Data Scientist / Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
-      >
-      </AnnouncementBar>
+      />
 
-      <header 
+      <header
         className={clsx('hero hero--primary', styles.aboutUsBanner)}
         {...tagElement({id: 'header'})}
       >
@@ -87,11 +86,11 @@ export default function AboutUs() {
         </div>
       </header>
 
-      <main 
+      <main
         className={clsx(styles.aboutUsMain)}
         {...tagElement({id: 'main'})}
       >
-        <div 
+        <div
           className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue)}
           {...tagElement({id: 'not-just-us'})}
         >
@@ -104,15 +103,15 @@ export default function AboutUs() {
               We asked around how fellow data scientists were handling this. Answers varied from ‘manually’ to ‘automated data ingestion pipelines with transformation workflows and automated testing’, but in all cases, significant data wrangling was involved and everyone had their own way of doing it.
             </p>
             <p>
-              There is a big gap between what data scientists want their data to look like for modeling and what data actually looks like when it comes from the tracker. It often lacks the essential context and structure required for effective feature creation and validation is done at a stage where problems are hard to fix. 
+              There is a big gap between what data scientists want their data to look like for modeling and what data actually looks like when it comes from the tracker. It often lacks the essential context and structure required for effective feature creation and validation is done at a stage where problems are hard to fix.
             </p>
             <p>
               Perhaps even more importantly, there is no common way to collect &amp; model data. Data teams all have similar goals, but everyone builds their own taxonomies and models from scratch.
             </p>
           </div>
         </div>
- 
-        <div 
+
+        <div
           className={clsx(styles.aboutUsPageSection)}
           {...tagElement({id: 'we-will-take-it-on'})}
         >
@@ -132,8 +131,8 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
-        
-        <div 
+
+        <div
           className={clsx(styles.aboutUsPageSection, styles.pageSectionLightBlue, styles.aboutUsPageWhyUs)}
           {...tagElement({id: 'why-us'})}
         >
@@ -177,7 +176,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div 
+        <div
           className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}
           {...tagElement({id: 'core-team'})}
         >
@@ -185,8 +184,8 @@ export default function AboutUs() {
             <h2>Objectiv's Core Team</h2>
             <p>
               Meet the mission crew. Also,&nbsp;
-              <Link 
-                to="/jobs" 
+              <Link
+                to="/jobs"
                 {...tagLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", href: '/jobs' })}
               >
                 we're hiring a Senior Data Engineer. Join us!

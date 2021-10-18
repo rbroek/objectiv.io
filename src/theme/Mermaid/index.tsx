@@ -35,8 +35,4 @@ const Mermaid = ({ chart, caption, baseColor}) => {
 	return <div className={"diagram-"+baseColor}><div className="mermaid">{chart}</div><p className="diagram-caption">{caption}</p></div>;
 };
 
-var exampleCallback = function() {
-  alert('A callback was triggered');
-}
-
 export default Mermaid;
