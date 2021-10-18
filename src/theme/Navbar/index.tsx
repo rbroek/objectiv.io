@@ -206,6 +206,7 @@ function NavbarMobileSidebar({
         <div className="navbar-sidebar__item menu">
           <ul className="menu__list">
             {items.map((item, i) => (
+              // @ts-ignore - ts incompatible swizzled code
               <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
             ))}
           </ul>
