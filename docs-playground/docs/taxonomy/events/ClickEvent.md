@@ -1,3 +1,0 @@
-# ClickEvent
-
-[placeholder]

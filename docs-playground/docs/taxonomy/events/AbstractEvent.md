@@ -1,3 +1,0 @@
-# AbstractEvent
-
-[placeholder]

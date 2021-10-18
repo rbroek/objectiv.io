@@ -1,3 +1,0 @@
-# SectionContext
-
-[placeholder]

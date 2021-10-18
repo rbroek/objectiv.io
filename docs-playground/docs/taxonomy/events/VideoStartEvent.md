@@ -1,3 +1,0 @@
-# VideoStartEvent
-
-[placeholder]

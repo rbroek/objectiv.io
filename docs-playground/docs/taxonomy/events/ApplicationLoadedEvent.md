@@ -1,3 +1,0 @@
-# ApplicationLoadedEvent
-
-[placeholder]

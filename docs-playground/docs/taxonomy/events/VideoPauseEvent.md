@@ -1,3 +1,0 @@
-# VideoPauseEvent
-
-[placeholder]

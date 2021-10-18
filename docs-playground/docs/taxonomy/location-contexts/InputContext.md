@@ -1,3 +1,0 @@
-# InputContext
-
-[placeholder]
