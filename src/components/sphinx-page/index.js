@@ -57,7 +57,11 @@ const SphinxPage = (props) => {
                             }
                             // override style
                             if ( 'style' in props ){
-                                token.style = props['style'];
+                                const styles = props.style.split(';');
+                                Object.values(styles).forEach( style =>{
+                                    let [styleName, styleValue] = style.split(':');
+                                    token.style.setProperty(styleName, styleValue)
+                                });
                             }
                         }
                     }
@@ -68,11 +72,13 @@ const SphinxPage = (props) => {
                 for ( let codeBlock of tempDiv.querySelectorAll("div.highlight pre") ){
                     const old = codeBlock.className;
                     codeBlock.className = old + " prism-code language-python codeBlock_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module thin-scrollbar";
-                    codeBlock.style = 'color: rgb(191, 199, 213); background-color: rgb(41, 45, 62);padding: var(--ifm-pre-padding);';
+                    codeBlock.style.setProperty('color', "rgb(191, 199, 213)");
+                    codeBlock.style.setProperty('background-color', "rgb(41, 45, 62)");
+                    codeBlock.style.setProperty('padding', "var(--ifm-pre-padding)");
                     
                     const code = document.createElement("code");
                     code.className = "codeBlockLines_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module";
-                    code.style = "color: rgb(191, 199, 213);";
+                    code.style.setProperty("color", "rgb(191, 199, 213)");
                     
                     // get lines
                     const lines = codeBlock.innerHTML.split("\n");
@@ -100,7 +106,7 @@ const SphinxPage = (props) => {
                             // this is simply a span for a newline
                             const emptyLine = document.createElement("span");
                             emptyLine.className = "token plain";
-                            emptyLine.style = "display: inline-block;";
+                            emptyLine.style.setProperty("display", "inline-block");
                             codeLine.appendChild(emptyLine);
                         } else {
                             codeLine.innerHTML = line;
