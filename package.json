@@ -18,29 +18,29 @@
     "@docusaurus/preset-classic": "^2.0.0-beta.7",
     "@docusaurus/theme-classic": "^2.0.0-beta.7",
     "@docusaurus/theme-live-codeblock": "^2.0.0-beta.7",
-    "@mdx-js/react": "^1.6.21",
+    "@mdx-js/react": "^1.6.22",
     "@objectiv/tracker-browser": "^0.0.1",
     "@octokit/plugin-retry": "^3.0.9",
     "@octokit/plugin-throttling": "^3.5.2",
-    "@octokit/rest": "^18.5.3",
+    "@octokit/rest": "^18.12.0",
     "clsx": "^1.1.1",
-    "emailjs-com": "^3.1.0",
-    "mermaid": "^8.11.3",
+    "emailjs-com": "^3.2.0",
+    "mermaid": "^8.13.3",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-async": "^10.0.1",
     "react-avatar": "^3.10.0",
-    "react-dom": "^17.0.1",
-    "react-github-btn": "^1.2.0",
-    "react-hook-form": "^7.9.0",
-    "react-medium-image-zoom": "4.3.3",
-    "reactjs-popup": "^2.0.4",
+    "react-dom": "^17.0.2",
+    "react-github-btn": "^1.2.1",
+    "react-hook-form": "^7.17.4",
+    "react-medium-image-zoom": "^4.3.5",
+    "reactjs-popup": "^2.0.5",
     "remark-footnotes": "^3.0.0",
     "remark-github": "^10.0.1",
     "remark-jargon": "^2.15.2",
     "remark-license": "^5.2.0",
     "remark-lint": "^8.0.0",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.3.1"
   },
   "browserslist": {
     "production": [
@@ -56,10 +56,10 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.7",
-    "@tsconfig/docusaurus": "^1.0.2",
-    "@types/react": "^17.0.14",
-    "@types/react-helmet": "^6.1.2",
-    "@types/react-router-dom": "^5.1.8",
-    "typescript": "^4.3.5"
+    "@tsconfig/docusaurus": "^1.0.4",
+    "@types/react": "^17.0.30",
+    "@types/react-helmet": "^6.1.4",
+    "@types/react-router-dom": "^5.3.1",
+    "typescript": "^4.4.4"
   }
 }
