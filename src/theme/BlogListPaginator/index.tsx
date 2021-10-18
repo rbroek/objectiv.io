@@ -5,13 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
 import Link from '@docusaurus/Link';
-import Translate, {translate} from '@docusaurus/Translate';
-import type {Props} from '@theme/BlogListPaginator';
-import { tagLink, tagElement } from "@objectiv/tracker-browser";
+import Translate, { translate } from '@docusaurus/Translate';
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
+import React from 'react';
 
-function BlogListPaginator(props: Props): JSX.Element {
+function BlogListPaginator(props): JSX.Element {
   const {metadata} = props;
   const {previousPage, nextPage} = metadata;
 

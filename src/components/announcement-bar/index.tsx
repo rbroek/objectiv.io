@@ -1,16 +1,16 @@
-import React from 'react';
 import Link from '@docusaurus/Link';
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 import clsx from 'clsx';
+import React from 'react';
 import styles from './styles.module.css';
-import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
-function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
+function AnnouncementBar({title, content, ctaLink, ctaText}) {
   return (
     <div 
       {...tagElement({id: 'announcement-bar'})}
       className={clsx(styles.announcement)}
     >
-      <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
+      <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" alt='star' /></span>
         <strong>{title}</strong>&nbsp;
         {content}&nbsp;
         <Link 
@@ -19,7 +19,7 @@ function AnnouncementBar({children, title, content, ctaLink, ctaText}) {
         >
           {ctaText}
         </Link>
-      <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" /></span>
+      <span className={styles.announcementStar}><img src="/img/icons/icon-star.svg" alt='star' /></span>
     </div>
   );
 }

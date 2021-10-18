@@ -134,7 +134,7 @@ div[role=banner] {
   line-height: 150%;
   display: flex;
   align-items:center;
-  background-color: '#FEF284';
+  background-color: #FEF284;
 }
 
 div[role=banner] img {
@@ -164,7 +164,7 @@ div[role=banner] img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto';
+  font-family: 'Roboto', serif;
   font-style: normal;
   font-weight: normal;
   line-height: 150%;
@@ -189,14 +189,14 @@ h3, .main-docs-wrapper h3 {
 }
 
 h4, .main-docs-wrapper h4 {
-  font-family: 'Bungee';
+  font-family: 'Bungee', serif;
   font-size: 18px;
   letter-spacing: 0.1em;
   margin: 16px 0;
 }
 
 h5, .main-docs-wrapper h5 {
-  font-family: 'Bungee';
+  font-family: 'Bungee', serif;
   font-size: 14px;
   letter-spacing: 0.1em;
   margin: 16px 0;
@@ -223,7 +223,9 @@ p, .markdown p {
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
+  /*noinspection CssUnresolvedCustomProperty*/
   margin: 0 calc(-1 * var(--ifm-pre-padding));
+  /*noinspection CssUnresolvedCustomProperty*/
   padding: 0 var(--ifm-pre-padding);
 }
 
@@ -284,7 +286,7 @@ p, .markdown p {
   font-weight: 700;
 }
 .blog-list-page article h3 {
-  font-family: "Georgia";
+  font-family: "Georgia", serif;
   font-size: 18px;
   line-height: 27px;
   font-weight: 400;
@@ -304,8 +306,8 @@ p, .markdown p {
 }
 
 .blog-post-page article p {
-  
-  font-family: "Georgia";
+
+  font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
   --ifm-font-color-base: #333;

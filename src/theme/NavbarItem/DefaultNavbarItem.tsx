@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -5,17 +7,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState, useRef, useEffect} from 'react';
+import { tagLink } from "@objectiv/tracker-browser";
 import OriginalDefaultNavbarItem from '@theme-original/NavbarItem/DefaultNavbarItem';
 import OriginalNavLink from '@theme-original/NavbarItem/DefaultNavbarItem';
-import type { NavLinkProps } from '@theme-original/NavbarItem/DefaultNavbarItem';
-import { tagLink } from "@objectiv/tracker-browser";
+import React from 'react';
 
 export default function DefaultNavbarItem({
   mobile = false,
   position: _position, // Need to destructure position from props so that it doesn't get passed on.
   ...props
-}: Props): JSX.Element {
+}): JSX.Element {
   return (
     <OriginalDefaultNavbarItem 
       {...props}
@@ -33,7 +34,7 @@ export function NavLink({
   activeClassName = '',
   prependBaseUrlToHref,
   ...props
-}: NavLinkProps): JSX.Element {
+}): JSX.Element {
   return (
     <OriginalNavLink 
       {...props} 

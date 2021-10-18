@@ -7,17 +7,14 @@
 
 import React from 'react';
 import clsx from 'clsx';
-import useTOCHighlight, {
-  Params as TOCHighlightParams,
-} from '@theme/hooks/useTOCHighlight';
-import type {TOCProps, TOCHeadingsProps} from '@theme/TOC';
+import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import { tagElement, tagLink } from '@objectiv/tracker-browser';
 
 const LINK_CLASS_NAME = 'table-of-contents__link';
 
-const TOC_HIGHLIGHT_PARAMS: TOCHighlightParams = {
+const TOC_HIGHLIGHT_PARAMS = {
   linkClassName: LINK_CLASS_NAME,
   linkActiveClassName: 'table-of-contents__link--active',
 };
@@ -26,7 +23,7 @@ const TOC_HIGHLIGHT_PARAMS: TOCHighlightParams = {
 export function TOCHeadings({
   toc,
   isChild,
-}: TOCHeadingsProps): JSX.Element | null {
+}): JSX.Element | null {
   if (!toc.length) {
     return null;
   }
@@ -54,14 +51,14 @@ export function TOCHeadings({
   );
 }
 
-function TOC({toc}: TOCProps): JSX.Element {
+function TOC({toc}): JSX.Element {
   useTOCHighlight(TOC_HIGHLIGHT_PARAMS);
   return (
     <div 
       className={clsx(styles.tableOfContents, 'thin-scrollbar')}
       {...tagElement({id: 'toc'})}
     >
-      <TOCHeadings toc={toc} />
+      <TOCHeadings toc={toc} isChild={false} />
     </div>
   );
 }

@@ -1,21 +1,19 @@
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import styles from './styles.module.css';
 
 import { Octokit } from "@octokit/rest"
 import { retry } from "@octokit/plugin-retry";
 import { throttling } from "@octokit/plugin-throttling";
 import { useAsync } from "react-async";
+import clsx from 'clsx';
 
 const createOctokit = ({gitHubSecretKey}) => {
   const ObOctokit = Octokit.plugin(retry, throttling);
-  const octo = new ObOctokit({
+  return new ObOctokit({
     auth: gitHubSecretKey,
     userAgent: 'Objectiv Documentation',
-    log: {
-      debug: console.debug,
-      warn: console.warn,
-      error: console.error,
-    },
+    log: console,
     throttle: {
       onRateLimit: (retryAfter, options) => {
         console.warn(
@@ -36,57 +34,52 @@ const createOctokit = ({gitHubSecretKey}) => {
       },
     },
   });
-  return octo;
 }
 
-const getReleaseChangeLog = async ({octokit, organization, repo, releaseId }) => {
-  const res = await octokit.rest.repos.getRelease({
+const getNumberOfStarGazers = async ({octokit, organization, repo}) => {
+  const res = await octokit.rest.activity.listStargazersForRepo({
     owner: organization,
-    repo: repo,
-    release_id: releaseId
+    repo: repo
   });
   if (res.status != 200) throw new Error(res);
-  return res.data;
+  return res.data.length;
 }
 
-function Changelog({children, releaseId}) {
-  if (!releaseId) {
-    console.error("No Release ID provided");
-    return null;
-  }
-
+function GitHubStargazers() {
   const {siteConfig} = useDocusaurusContext();
   const {organizationName, projectName} = siteConfig;
   const {gitHubSecretKey} = siteConfig.customFields;
 
-  const octo = createOctokit(gitHubSecretKey);
+  const octo = createOctokit({gitHubSecretKey});
 
   const { data, error, isPending } = useAsync({ 
-    promiseFn: getReleaseChangeLog, 
+    promiseFn: getNumberOfStarGazers, 
     octokit: octo,
     organization: organizationName,
-    repo: projectName,
-    releaseId: releaseId 
+    repo: projectName
   })
 
-  if (isPending) return "Loading...";
+  if (isPending) return "";
   if (error) {
     console.error(error);
     return `Something went wrong: ${error.message}`;
   }
   if (data) {
-    var url = data.html_url;
-    var published_date = new Date(data.published_at).toString();
-    var name = data.name;
-    var body = data.body;
+    const stars = data.toLocaleString();
     return (
-      <div>
-        <h2><a href="{url}">{name}</a></h2>
-        <h6>Published: {published_date}</h6>
-        <div>{body}</div>
+      <div className={clsx(styles.gitHubButtons, styles.gitHubButton, styles.gitHubButtonLarge)}>
+        <a className={styles.ghBtn}>
+          <span className={styles.ghIco}/>
+          <span className={styles.ghText}>
+            Star
+          </span>
+        </a>
+        <a className={styles.ghCount}>
+          {stars}
+        </a>
       </div>
     );
   }
 }
 
-export default Changelog;
+export default GitHubStargazers;

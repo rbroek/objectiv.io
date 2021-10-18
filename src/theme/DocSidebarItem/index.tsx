@@ -39,10 +39,8 @@ const isActiveSidebarItem = (item, activePath) => {
 // TODO this item should probably not receive the "activePath" props
 // TODO this triggers whole sidebar re-renders on navigation
 
-export const DocSidebarItems = memo(function DocSidebarItems({
-  items,
-  ...props
-}) {
+// @ts-ignore - types are all broken here, ignoring them since this is swizzled code
+export const DocSidebarItems = memo(function DocSidebarItems({items, ...props}) {
   return (
     <>
       {items.map((item, index) => (
@@ -62,10 +60,12 @@ export default function DocSidebarItem({item, ...props}) {
         return null;
       }
 
+      // @ts-ignore - types are all broken here, ignoring them since this is swizzled code
       return <DocSidebarItemCategory item={item} {...props} />;
 
     case 'link':
     default:
+      // @ts-ignore - types are all broken here, ignoring them since this is swizzled code
       return <DocSidebarItemLink item={item} {...props} />;
   }
 } // If we navigate to a category and it becomes active, it should automatically expand itself
@@ -100,6 +100,7 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
     collapsed,
     setCollapsed,
   });
+  // @ts-ignore
   return (
     <li
       {...tagExpandableElement({
@@ -138,6 +139,7 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
 
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
         <DocSidebarItems
+          // @ts-ignore - types are all broken here, ignoring them since this is swizzled code
           items={items}
           tabIndex={collapsed ? -1 : 0}
           onItemClick={onItemClick}

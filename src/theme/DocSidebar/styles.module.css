@@ -36,6 +36,7 @@
   .sidebarLogo {
     display: flex !important;
     align-items: center;
+    /*noinspection CssUnresolvedCustomProperty*/
     margin: 0 var(--ifm-navbar-padding-horizontal);
     min-height: var(--ifm-navbar-height);
     max-height: var(--ifm-navbar-height);
@@ -64,6 +65,7 @@
     position: sticky;
     bottom: 0;
     border-radius: 0;
+    /*noinspection CssUnresolvedCustomProperty*/
     border: 1px solid var(--ifm-toc-border-color);
   }
 
@@ -81,6 +83,7 @@
 
   html[data-theme='dark'] .collapseSidebarButton:hover,
   html[data-theme='dark'] .collapseSidebarButton:focus {
+    /*noinspection CssUnresolvedCustomProperty*/
     background-color: var(--ifm-color-emphasis-200);
   }
 }
@@ -100,6 +103,7 @@
   align-items: center;
   height: 24px;
   font-size: 1.5rem;
+  /*noinspection CssUnresolvedCustomProperty*/
   font-weight: var(--ifm-font-weight-bold);
   line-height: 0.9;
   width: 24px;
