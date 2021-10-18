@@ -45,7 +45,7 @@ const SphinxPage = (props) => {
 
                 // map styles of tokens (spans)
                 const tokens = tempDiv.querySelectorAll("div.highlight pre span");
-                Object.values(tokens).forEach(token => {
+                Object.values(tokens).forEach((token: HTMLElement) => {
                     const className = token.className;
                     if ( className in styleMap ){
                         const props = styleMap[className];
@@ -69,7 +69,7 @@ const SphinxPage = (props) => {
                 
                 // code blocks are in a <pre> inside a <div>
                 // we keep the old class, and add the Docusaurus ones
-                Object.values(tempDiv.querySelectorAll("div.highlight pre")).forEach( codeBlock => {
+                Object.values(tempDiv.querySelectorAll("div.highlight pre")).forEach( (codeBlock: HTMLElement) => {
                     const old = codeBlock.className;
                     codeBlock.className = old + " prism-code language-python codeBlock_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module thin-scrollbar";
 
