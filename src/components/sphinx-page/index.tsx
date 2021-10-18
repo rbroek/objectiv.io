@@ -39,13 +39,13 @@ const SphinxPage = (props) => {
                 tempDiv.innerHTML = raw;
                 
                 // fix anchors (remove .html)
-                for ( let a of tempDiv.getElementsByTagName('a') ){
+                Object.values(tempDiv.getElementsByTagName('a')).forEach( a=> {
                     a.href = a.href.replace(/\.html/g, '');
-                }
-                
+                });
+
                 // map styles of tokens (spans)
                 const tokens = tempDiv.querySelectorAll("div.highlight pre span");
-                for ( let token of tokens ){
+                Object.values(tokens).forEach(token => {
                     const className = token.className;
                     if ( className in styleMap ){
                         const props = styleMap[className];
@@ -58,24 +58,25 @@ const SphinxPage = (props) => {
                             // override style
                             if ( 'style' in props ){
                                 const styles = props.style.split(';');
-                                Object.values(styles).forEach( style =>{
+                                Object.values(styles).forEach( (style: string) => {
                                     let [styleName, styleValue] = style.split(':');
                                     token.style.setProperty(styleName, styleValue)
                                 });
                             }
                         }
                     }
-                }
+                });
                 
                 // code blocks are in a <pre> inside a <div>
                 // we keep the old class, and add the Docusaurus ones
-                for ( let codeBlock of tempDiv.querySelectorAll("div.highlight pre") ){
+                Object.values(tempDiv.querySelectorAll("div.highlight pre")).forEach( codeBlock => {
                     const old = codeBlock.className;
                     codeBlock.className = old + " prism-code language-python codeBlock_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module thin-scrollbar";
+
                     codeBlock.style.setProperty('color', "rgb(191, 199, 213)");
                     codeBlock.style.setProperty('background-color', "rgb(41, 45, 62)");
                     codeBlock.style.setProperty('padding', "var(--ifm-pre-padding)");
-                    
+
                     const code = document.createElement("code");
                     code.className = "codeBlockLines_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module";
                     code.style.setProperty("color", "rgb(191, 199, 213)");
@@ -119,19 +120,19 @@ const SphinxPage = (props) => {
                     }
                     // and replace with new <code> block
                     codeBlock.appendChild(code);
-                }
+                });
 
                 // map background of code block
-                for ( let codeBlockContainer of tempDiv.querySelectorAll("div.highlight") ){                                        
+                Object.values(tempDiv.querySelectorAll("div.highlight")).forEach(codeBlockContainer => {
                     const old = codeBlockContainer.className;
                     codeBlockContainer.className = old + " codeBlockContent_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module python";
-                }
+                });
 
-                const data = tempDiv.innerHTML;
-                setData({ data })
+                const data: string = tempDiv.innerHTML;
+                setData(data)
             });
     }, [])
-    return (<div dangerouslySetInnerHTML={{ __html: data.data}} />);
+    return (<div dangerouslySetInnerHTML={{ __html: data}} />);
 }
 
 export default SphinxPage;
