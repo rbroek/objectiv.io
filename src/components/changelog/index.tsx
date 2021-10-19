@@ -8,14 +8,10 @@ import { useAsync } from "react-async";
 
 const createOctokit = ({gitHubSecretKey}) => {
   const ObOctokit = Octokit.plugin(retry, throttling);
-  const octo = new ObOctokit({
+  return new ObOctokit({
     auth: gitHubSecretKey,
     userAgent: 'Objectiv Documentation',
-    log: {
-      debug: console.debug,
-      warn: console.warn,
-      error: console.error,
-    },
+    log: console,
     throttle: {
       onRateLimit: (retryAfter, options) => {
         console.warn(
@@ -36,40 +32,36 @@ const createOctokit = ({gitHubSecretKey}) => {
       },
     },
   });
-  return octo;
 }
 
-const getReleases = async ({octokit, organization, repo}) => {
-  const res = await octokit.rest.repos.listReleases({
+const getReleaseChangeLog = async ({octokit, organization, repo, releaseId }) => {
+  const res = await octokit.rest.repos.getRelease({
     owner: organization,
-    repo: repo
+    repo: repo,
+    release_id: releaseId
   });
   if (res.status != 200) throw new Error(res);
   return res.data;
 }
 
-const getLatestRelease = async ({octokit, organization, repo}) => {
-  const res = await octokit.rest.repos.getLatestRelease({
-    owner: organization,
-    repo: repo
-  });
-  if (res.status != 200) throw new Error(res);
-  return [res.data];
-}
+function Changelog({releaseId}) {
+  if (!releaseId) {
+    console.error("No Release ID provided");
+    return null;
+  }
 
-function Releases({children, limit}) {
   const {siteConfig} = useDocusaurusContext();
   const {organizationName, projectName} = siteConfig;
   const {gitHubSecretKey} = siteConfig.customFields;
 
-  const octo = createOctokit(gitHubSecretKey);
+  const octo = createOctokit({gitHubSecretKey});
 
-  var releaseFunction = (limit == 1) ? getLatestRelease : getReleases;
   const { data, error, isPending } = useAsync({ 
-    promiseFn: releaseFunction,
+    promiseFn: getReleaseChangeLog, 
     octokit: octo,
     organization: organizationName,
-    repo: projectName
+    repo: projectName,
+    releaseId: releaseId 
   })
 
   if (isPending) return "Loading...";
@@ -78,12 +70,18 @@ function Releases({children, limit}) {
     return `Something went wrong: ${error.message}`;
   }
   if (data) {
+    const url = data.html_url;
+    const published_date = new Date(data.published_at).toString();
+    const name = data.name;
+    const body = data.body;
     return (
       <div>
-          {data.map(release => <details><summary>{release.name}</summary>{release.body} </details>)} 
+        <h2><a href={url}>{name}</a></h2>
+        <h6>Published: {published_date}</h6>
+        <div>{body}</div>
       </div>
     );
   }
 }
 
-export default Releases;
+export default Changelog;

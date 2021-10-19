@@ -13,7 +13,7 @@ import {FooterLinkItem, useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import styles from './styles.module.css';
-import ThemedImage, {Props as ThemedImageProps} from '@theme/ThemedImage';
+import ThemedImage from '@theme/ThemedImage';
 import IconExternalLink from '@theme/IconExternalLink';
 import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
@@ -54,7 +54,7 @@ function FooterLink({
 const FooterLogo = ({
   sources,
   alt,
-}: Pick<ThemedImageProps, 'sources' | 'alt'>) => (
+}) => (
   <ThemedImage className="footer__logo" alt={alt} sources={sources} />
 );
 

@@ -5,12 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState} from 'react';
-import type {Props} from '@theme/DocSidebar';
-import OriginalDocSidebar from '@theme-original/DocSidebar';
 import { tagElement } from '@objectiv/tracker-browser';
+import OriginalDocSidebar from '@theme-original/DocSidebar';
+import React from 'react';
 
-export default function DocSidebar(props: Props): JSX.Element {
+export default function DocSidebar(props): JSX.Element {
   return (
     <>
       <div {...tagElement({id: 'docs-sidebar'})}>

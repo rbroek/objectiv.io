@@ -21,7 +21,7 @@ import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useWindowSize from '@theme/hooks/useWindowSize';
 import {useActivePlugin} from '@theme/hooks/useDocs';
-import NavbarItem, {Props as NavbarItemConfig} from '@theme/NavbarItem';
+import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconCloseThin from '@theme/IconCloseThin';
@@ -34,12 +34,12 @@ const DefaultNavItemPosition = 'right';
 
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
-  return useThemeConfig().navbar.items as NavbarItemConfig[];
+  return useThemeConfig().navbar.items;
 }
 
 // If split links by left/right
 // if position is unspecified, fallback to right (as v1)
-function splitNavItemsByPosition(items: NavbarItemConfig[]) {
+function splitNavItemsByPosition(items) {
   const leftItems = items.filter(
     (item) => (item.position ?? DefaultNavItemPosition) === 'left',
   );
@@ -206,6 +206,7 @@ function NavbarMobileSidebar({
         <div className="navbar-sidebar__item menu">
           <ul className="menu__list">
             {items.map((item, i) => (
+              // @ts-ignore - ts incompatible swizzled code
               <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
             ))}
           </ul>

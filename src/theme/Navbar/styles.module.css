@@ -15,6 +15,7 @@ Hide toggle in small viewports
 }
 
 .navbarHideable {
+  /*noinspection CssUnresolvedCustomProperty*/
   transition: transform var(--ifm-transition-fast) ease;
 }
 
@@ -27,5 +28,6 @@ Hide toggle in small viewports
 }
 
 .navbarSidebarCloseSvg {
+  /*noinspection CssUnresolvedCustomProperty*/
   fill: var(--ifm-color-emphasis-600);
 }

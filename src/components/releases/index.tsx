@@ -1,23 +1,17 @@
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './styles.module.css';
 
 import { Octokit } from "@octokit/rest"
 import { retry } from "@octokit/plugin-retry";
 import { throttling } from "@octokit/plugin-throttling";
 import { useAsync } from "react-async";
-import clsx from 'clsx';
 
 const createOctokit = ({gitHubSecretKey}) => {
   const ObOctokit = Octokit.plugin(retry, throttling);
-  const octo = new ObOctokit({
+  return new ObOctokit({
     auth: gitHubSecretKey,
     userAgent: 'Objectiv Documentation',
-    log: {
-      debug: console.debug,
-      warn: console.warn,
-      error: console.error,
-    },
+    log: console,
     throttle: {
       onRateLimit: (retryAfter, options) => {
         console.warn(
@@ -38,53 +32,53 @@ const createOctokit = ({gitHubSecretKey}) => {
       },
     },
   });
-  return octo;
 }
 
-const getNumberOfStarGazers = async ({octokit, organization, repo}) => {
-  const res = await octokit.rest.activity.listStargazersForRepo({
+const getReleases = async ({octokit, organization, repo}) => {
+  const res = await octokit.rest.repos.listReleases({
     owner: organization,
     repo: repo
   });
   if (res.status != 200) throw new Error(res);
-  return res.data.length;
+  return res.data;
 }
 
-function GitHubStargazers({children}) {
+const getLatestRelease = async ({octokit, organization, repo}) => {
+  const res = await octokit.rest.repos.getLatestRelease({
+    owner: organization,
+    repo: repo
+  });
+  if (res.status != 200) throw new Error(res);
+  return [res.data];
+}
+
+function Releases({limit}) {
   const {siteConfig} = useDocusaurusContext();
   const {organizationName, projectName} = siteConfig;
   const {gitHubSecretKey} = siteConfig.customFields;
 
-  const octo = createOctokit(gitHubSecretKey);
+  const octo = createOctokit({gitHubSecretKey});
 
+  const releaseFunction = (limit == 1) ? getLatestRelease : getReleases;
   const { data, error, isPending } = useAsync({ 
-    promiseFn: getNumberOfStarGazers, 
+    promiseFn: releaseFunction,
     octokit: octo,
     organization: organizationName,
     repo: projectName
   })
 
-  if (isPending) return "";
+  if (isPending) return "Loading...";
   if (error) {
     console.error(error);
     return `Something went wrong: ${error.message}`;
   }
   if (data) {
-    const stars = data.toLocaleString();
     return (
-      <div className={clsx(styles.gitHubButtons, styles.gitHubButton, styles.gitHubButtonLarge)}>
-        <a className={styles.ghBtn}>
-          <span className={styles.ghIco}></span>
-          <span className={styles.ghText}>
-            Star
-          </span>
-        </a>
-        <a className={styles.ghCount}>
-          {stars}
-        </a>
+      <div>
+          {data.map(release => <details><summary>{release.name}</summary>{release.body} </details>)} 
       </div>
     );
   }
 }
 
-export default GitHubStargazers;
+export default Releases;
