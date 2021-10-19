@@ -47,6 +47,18 @@ module.exports = {
           position: 'right',
         },
         {
+          label: 'Tracking',
+          to: '/docs/tracking',
+        },
+        {
+          label: 'Modeling',
+          to: '/docs/modeling',
+        },
+        {
+          label: 'Taxonomy',
+          to: '/docs/taxonomy',
+        },
+        {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
           position: 'right',
@@ -84,6 +96,14 @@ module.exports = {
         },
       ],
     },
+    zoom: {
+      config: {
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        }
+      }
+    },
   }),
   presets: [
     [
@@ -96,7 +116,7 @@ module.exports = {
         docs: {
           path: 'docs',
           routeBasePath: '/docs',
-          sidebarPath: require.resolve('./docs/sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: true,
           editUrl:
             'https://github.com/objectiv/objectiv.io/edit/master/docs/',
@@ -115,7 +135,10 @@ module.exports = {
       }),
     ],
   ],
-  plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
+  plugins: [
+    path.resolve(__dirname, 'src/plugins/favicons/'),
+    require.resolve('docusaurus-plugin-image-zoom')
+  ],
   scripts: [
     'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
     {
