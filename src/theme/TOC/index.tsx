@@ -14,7 +14,7 @@ import styles from './styles.module.css'; // Using a custom className
 const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
 const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
 
-function TOC({className, ...props}) {
+function TOC({className, ...props}: {className: string, toc: []}) {
   return (
     <div
       className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}
