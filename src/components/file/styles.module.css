@@ -1,7 +1,7 @@
 
 :local(.wrapper pre) {
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 :local(.title) {
@@ -9,7 +9,7 @@
     color: rgb(1, 22, 39);
 
     border: 1px solid #dddddd;
-    border-bottom: 0px;
+    border-bottom: 0;
 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

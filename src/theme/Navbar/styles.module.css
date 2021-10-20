@@ -8,13 +8,14 @@
 /*
 Hide toggle in small viewports
  */
-@media screen and (max-width: 997px) {
+@media (max-width: 996px) {
   .toggle {
     display: none;
   }
 }
 
 .navbarHideable {
+  /*noinspection CssUnresolvedCustomProperty*/
   transition: transform var(--ifm-transition-fast) ease;
 }
 
@@ -24,8 +25,4 @@ Hide toggle in small viewports
 
 .navbarSidebarToggle {
   margin-right: 1rem;
-}
-
-.navbarSidebarCloseSvg {
-  fill: var(--ifm-color-emphasis-600);
 }

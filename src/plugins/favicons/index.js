@@ -1,13 +1,7 @@
-module.exports = function (context, options) {
-  // ...
+module.exports = function () {
+  // noinspection JSUnusedGlobalSymbols
   return {
     name: 'favicons-plugin',
-    async loadContent() {
-      /* ... */
-    },
-    async contentLoaded({content, actions}) {
-      /* ... */
-    },
     /* other lifecycle API */
     injectHtmlTags() {
       return {

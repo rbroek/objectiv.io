@@ -14,7 +14,6 @@ import {usePluralForm} from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import Seo from '@theme/Seo';
 import EditThisPage from '@theme/EditThisPage';
-import type {Props} from '@theme/BlogPostItem';
 import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 import styles from './styles.module.css';
@@ -39,7 +38,7 @@ function useReadingTimePlural() {
   };
 }
 
-function BlogPostItem(props: Props): JSX.Element {
+function BlogPostItem(props): JSX.Element {
   const readingTimePlural = useReadingTimePlural();
   const {
     children,

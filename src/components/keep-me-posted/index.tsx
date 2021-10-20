@@ -5,44 +5,42 @@ import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
 import { getTracker, tagButton, tagElement, trackClick } from "@objectiv/tracker-browser";
-import { makeNonInteractiveEvent, makeSectionContext, makeActionContext, makeErrorContext } from "@objectiv/tracker-core";
+import { makeCompletedEvent, makeAbortedEvent, makeSectionContext, makeErrorContext } from "@objectiv/tracker-core";
 
-function KeepMePosted({children, name}) {
+function KeepMePosted() {
   const {siteConfig} = useDocusaurusContext();
 
   const {emailJsUserId} = siteConfig.customFields;
-  init(emailJsUserId);
+  init(emailJsUserId as string);
   
   const [statusMessage, setStatusMessage] = useState("");
   const [formSent, setFormSent] = useState(false);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => {
-    const form = document.querySelector('#keep-me-posted');
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = () => {
+    const form: HTMLFormElement = document.querySelector('#keep-me-posted');
 
     sendForm('keep_me_posted', 'template_keep_me_posted', '#keep-me-posted')
-      .then(function(response) {
-        var successMessage = "Thanks for subscribing, we'll notify you when we release!";
-        getTracker().trackEvent(makeNonInteractiveEvent({
+      .then(function() {
+        const successMessage = "Thanks for subscribing, we'll notify you when we release!";
+        getTracker().trackEvent(makeCompletedEvent({
           location_stack: [
             makeSectionContext({
               id: 'keep-me-posted-form'
-            }),
-            makeActionContext({
-              id: "keep-me-posted", 
-              text: successMessage
             })
           ]
         }));
         setFormSent(true);
         setStatusMessage(successMessage);
         form.reset();
-      }, function(error) {
-        var failedMessage = "Whoops, we could not register your email address. Please try again (later).";
-        getTracker().trackEvent(makeNonInteractiveEvent({
+      }, function() {
+        const failedMessage = "Whoops, we could not register your email address. Please try again (later).";
+        getTracker().trackEvent(makeAbortedEvent({
           location_stack: [
             makeSectionContext({
               id: 'keep-me-posted-form'
             }),
+            ],
+          global_contexts: [
             makeErrorContext({
               id: "keep-me-posted", 
               message: failedMessage
@@ -77,7 +75,6 @@ function KeepMePosted({children, name}) {
         {errors.email_address?.type === 'required' && <div className={styles.alert}>Please enter an email address</div>}
       </form>
       <p className={clsx(styles.statusMessage, (formSent ? styles.success : styles.alert))}>{statusMessage}</p>
-      {children}
     </div>
   );
 }

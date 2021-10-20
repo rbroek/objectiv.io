@@ -1,5 +1,4 @@
 import React from 'react';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 // Add react-live imports you need here
 const ButtonExample = (props) => (
