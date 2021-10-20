@@ -35,11 +35,6 @@
     "react-hook-form": "^7.17.4",
     "react-medium-image-zoom": "^4.3.5",
     "reactjs-popup": "^2.0.5",
-    "remark-footnotes": "^3.0.0",
-    "remark-github": "^10.0.1",
-    "remark-jargon": "^2.15.2",
-    "remark-license": "^5.2.0",
-    "remark-lint": "^8.0.0",
     "styled-components": "^5.3.1"
   },
   "browserslist": {
