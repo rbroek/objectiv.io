@@ -72,7 +72,7 @@ function Root({children}) {
       const trackerId = (!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string;
       getTrackerRepository().deactivateAll();
       getTracker(trackerId).setActive(true);
-      setDefaultTracker(trackerId)
+      setDefaultTracker(trackerId);
     },
     [isDocs] // execute every time `match` changes
   )
