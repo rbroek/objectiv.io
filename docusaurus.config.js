@@ -134,7 +134,7 @@ module.exports = {
     trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
-    trackerConsoleEnabled: environment === 'dev'
+    trackerConsoleEnabled: environment !== 'prod'
   }
 };
 
