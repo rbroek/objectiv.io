@@ -3,7 +3,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { getTracker, makeTracker, setDefaultTracker } from "@objectiv/tracker-browser";
 import React, { useEffect } from 'react';
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "@docusaurus/router";
 
 declare namespace cookiebot {
   class Cookiebot {
