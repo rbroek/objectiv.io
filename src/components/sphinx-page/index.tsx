@@ -102,15 +102,15 @@ const SphinxPage = (props) => {
                     Object.values(lines).forEach( line => {
                         const codeLine = document.createElement("span");
                         codeLine.className = 'token-line';
-                        
                         if ( line.length == 0 ){
                             // this is simply a span for a newline
                             const emptyLine = document.createElement("span");
+                            emptyLine.innerHTML = "\n\n";
                             emptyLine.className = "token plain";
                             emptyLine.style.setProperty("display", "inline-block");
                             codeLine.appendChild(emptyLine);
                         } else {
-                            codeLine.innerHTML = line;
+                            codeLine.innerHTML = line + "\n";
                         }
                         code.appendChild(codeLine);
                     });
