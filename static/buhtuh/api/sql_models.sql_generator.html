@@ -1,0 +1,119 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sql_models.sql_generator">
+<span id="sql-models-sql-generator"></span><h1>sql_models.sql_generator<a class="headerlink" href="#module-sql_models.sql_generator" title="Permalink to this headline">¶</a></h1>
+<p>Copyright 2021 Objectiv B.V.</p>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.sql_generator.model_to_cte_name" title="sql_models.sql_generator.model_to_cte_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_to_cte_name</span></code></a>(model)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sql_models.sql_generator.to_sql" title="sql_models.sql_generator.to_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_sql</span></code></a>(model)</p></td>
+<td><p>Give the sql to query the given model :param model: model to convert to sql :return: executable select query</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.sql_generator.SemiCompiledTuple" title="sql_models.sql_generator.SemiCompiledTuple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SemiCompiledTuple</span></code></a>(cte_name, sql)</p></td>
+<td><p>Object representing a single CTE select statement from a big select statement with common table expressions.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.sql_generator.SemiCompiledTuple">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">SemiCompiledTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cte_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L33-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object representing a single CTE select statement from a big select statement
+with common table expressions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.sql_generator.SemiCompiledTuple.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.sql_generator.SemiCompiledTuple.cte_name">
+<span class="sig-name descname"><span class="pre">cte_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple.cte_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.sql_generator.SemiCompiledTuple.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.sql_generator.SemiCompiledTuple.sql">
+<span class="sig-name descname"><span class="pre">sql</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#sql_models.sql_generator.SemiCompiledTuple.sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.sql_generator.model_to_cte_name">
+<span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">model_to_cte_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L91-L97"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.model_to_cte_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.sql_generator.to_sql">
+<span class="sig-prename descclassname"><span class="pre">sql_models.sql_generator.</span></span><span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_generator.py#L10-L30"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_generator.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the sql to query the given model
+:param model: model to convert to sql
+:return: executable select query</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>
