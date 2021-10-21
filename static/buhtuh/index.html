@@ -37,19 +37,6 @@
 <h1>Welcome to BuhTuh’s documentation!<a class="headerlink" href="#welcome-to-buhtuh-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlalchemy</span>
-
-<span class="c1"># import Objectiv buh_tuh</span>
-<span class="kn">from</span> <span class="nn">objectiv_buhtuh.util</span> <span class="kn">import</span> <span class="n">duplo_basic_features</span>
-
-<span class="c1">## get some data, add database and credentials here</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql://objectiv:@localhost:5432/objectiv&#39;</span><span class="p">)</span>
-
-<span class="c1">## production website data (from sessionized_data + features)</span>
-<span class="n">basic_features</span> <span class="o">=</span> <span class="n">duplo_basic_features</span><span class="p">()</span>
-<span class="n">full_df</span> <span class="o">=</span> <span class="n">BuhTuhDataFrame</span><span class="o">.</span><span class="n">from_model</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">basic_features</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
@@ -57,9 +44,6 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="api/sql_models.html#module-sql_models" title="sql_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sql_models</span></code></a></p></td>
-<td><p>Copyright 2021 Objectiv B.V.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/buhtuh.html#module-buhtuh" title="buhtuh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buhtuh</span></code></a></p></td>
 <td><p>Copyright 2021 Objectiv B.V.</p></td>
 </tr>
 </tbody>
