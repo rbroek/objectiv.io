@@ -41,7 +41,7 @@ function Root({children}) {
           makeTracker({
             applicationId: trackerApplicationId as string,
             ...trackerOptions,
-            active: cookiebotStatisticsConsent && !isDocs,
+            active: cookiebotStatisticsConsent,
           });
         }
 
@@ -49,7 +49,7 @@ function Root({children}) {
           makeTracker({
             applicationId: trackerDocsApplicationId as string,
             ...trackerOptions,
-            active: cookiebotStatisticsConsent && isDocs,
+            active: cookiebotStatisticsConsent,
           });
         }
       }
@@ -60,8 +60,11 @@ function Root({children}) {
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
   useEffect(
     () => {
-      getTrackerRepository().deactivateAll();
-      getTracker().setActive(cookiebotStatisticsConsent);
+      if(cookiebotStatisticsConsent) {
+        getTrackerRepository().activateAll();
+      } else {
+        getTrackerRepository().deactivateAll();
+      }
     },
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
   )
@@ -69,10 +72,7 @@ function Root({children}) {
   // This Effect monitor the `isDocs` state and when it changes it switches the default Tracker instance
   useEffect(
     () => {
-      const trackerId = (!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string;
-      getTrackerRepository().deactivateAll();
-      getTracker(trackerId).setActive(true);
-      setDefaultTracker(trackerId);
+      setDefaultTracker((!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string);
     },
     [isDocs] // execute every time `match` changes
   )
