@@ -33,8 +33,112 @@
               
               <div>
                 
-  <section id="buhtuh-types">
-<h1>buhtuh.types<a class="headerlink" href="#buhtuh-types" title="Permalink to this headline">¶</a></h1>
+  <section id="module-buhtuh.types">
+<span id="buhtuh-types"></span><h1>buhtuh.types<a class="headerlink" href="#module-buhtuh.types" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.types.get_dtype_from_db_dtype" title="buhtuh.types.get_dtype_from_db_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dtype_from_db_dtype</span></code></a>(db_dtype)</p></td>
+<td><p>Given a database datatype, return the dtype of the BuhTuhSeries subclass for that datatype.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#buhtuh.types.get_series_type_from_db_dtype" title="buhtuh.types.get_series_type_from_db_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_series_type_from_db_dtype</span></code></a>(db_dtype)</p></td>
+<td><p>Given a database datatype, return the correct BuhTuhSeries subclass.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.types.get_series_type_from_dtype" title="buhtuh.types.get_series_type_from_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_series_type_from_dtype</span></code></a>(dtype)</p></td>
+<td><p>Given a dtype, return the correct BuhTuhSeries subclass.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#buhtuh.types.register_dtype" title="buhtuh.types.register_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_dtype</span></code></a>([value_types, ...])</p></td>
+<td><p>Decorator to register a BuhTuhSeries subclass as dtype series :value_types: List of Types for which values should be instantiated as the registered class :override_registerd_types: If False an Exception is raised if the class' dtype or db_dtype conflict     with existing registerd types or if one of the value_types are already coupled. If True this new     registration will override the existing one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.types.value_to_dtype" title="buhtuh.types.value_to_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_to_dtype</span></code></a>(value)</p></td>
+<td><p>Give the dtype, as a string of the given value.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.types.TypeRegistry" title="buhtuh.types.TypeRegistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeRegistry</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.types.TypeRegistry">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.types.</span></span><span class="sig-name descname"><span class="pre">TypeRegistry</span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L65-L207"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.TypeRegistry" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.types.TypeRegistry.get_series_type_from_db_dtype">
+<span class="sig-name descname"><span class="pre">get_series_type_from_db_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L182-L190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.TypeRegistry.get_series_type_from_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a db_dtype string, will return the correct BuhTuhSeries object to represent such data from the
+database..</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.types.TypeRegistry.get_series_type_from_dtype">
+<span class="sig-name descname"><span class="pre">get_series_type_from_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L173-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.TypeRegistry.get_series_type_from_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dtype string, will return the correct BuhTuhSeries object to represent such data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.types.TypeRegistry.register_dtype_series">
+<span class="sig-name descname"><span class="pre">register_dtype_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_registered_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L159-L171"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.TypeRegistry.register_dtype_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a BuhTuhSeries sub-class to this registry.
+Will register the given series_type as the default type for its dtype and db_dtype</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.types.TypeRegistry.value_to_dtype">
+<span class="sig-name descname"><span class="pre">value_to_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L192-L207"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.TypeRegistry.value_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a python value, return the dtype string of the BuhTuhSeries that’s registered as the default
+for the type of value.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buhtuh.types.get_dtype_from_db_dtype">
+<span class="sig-prename descclassname"><span class="pre">buhtuh.types.</span></span><span class="sig-name descname"><span class="pre">get_dtype_from_db_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L31-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.get_dtype_from_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a database datatype, return the dtype of the BuhTuhSeries subclass for that datatype.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buhtuh.types.get_series_type_from_db_dtype">
+<span class="sig-prename descclassname"><span class="pre">buhtuh.types.</span></span><span class="sig-name descname"><span class="pre">get_series_type_from_db_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L26-L28"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.get_series_type_from_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a database datatype, return the correct BuhTuhSeries subclass.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buhtuh.types.get_series_type_from_dtype">
+<span class="sig-prename descclassname"><span class="pre">buhtuh.types.</span></span><span class="sig-name descname"><span class="pre">get_series_type_from_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L21-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.get_series_type_from_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dtype, return the correct BuhTuhSeries subclass.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buhtuh.types.register_dtype">
+<span class="sig-prename descclassname"><span class="pre">buhtuh.types.</span></span><span class="sig-name descname"><span class="pre">register_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_registered_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L46-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.register_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to register a BuhTuhSeries subclass as dtype series
+:value_types: List of Types for which values should be instantiated as the registered class
+:override_registerd_types: If False an Exception is raised if the class’ dtype or db_dtype conflict</p>
+<blockquote>
+<div><p>with existing registerd types or if one of the value_types are already coupled. If True this new
+registration will override the existing one.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buhtuh.types.value_to_dtype">
+<span class="sig-prename descclassname"><span class="pre">buhtuh.types.</span></span><span class="sig-name descname"><span class="pre">value_to_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/types.py#L36-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.types.value_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the dtype, as a string of the given value.</p>
+</dd></dl>
+
 </section>
 
 
