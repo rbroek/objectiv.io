@@ -6,7 +6,6 @@ mermaid.initialize({
   securityLevel: 'loose', //enable click functionality
 	startOnLoad: true,
   arrowMarkerAbsolute: false,
-  fontFamily: 'Roboto Mono, Bungee, sans-serif',
   flowchart: {
     diagramPadding: 20,
     htmlLabels: true,

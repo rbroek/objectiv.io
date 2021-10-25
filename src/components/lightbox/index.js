@@ -41,8 +41,7 @@ function Lightbox({src, title, caption, size='l', type='lightbox'}) {
   const lbCaption = caption ? <p className={styles.caption}>{caption}</p> : '';
 
   // TODO: Zoom to full size of image, instead of to what the class applied to it specifies
-  if (type==="zoom")
-    {
+  if (type==="zoom") {
       // noinspection JSUnresolvedVariable
       return (
             <div>
@@ -54,8 +53,8 @@ function Lightbox({src, title, caption, size='l', type='lightbox'}) {
               {lbCaption}
             </div>
           )
-    }
-  else
+  }
+  else {
     const StyledPopup = Styled(Popup)`
       &-content {
         width: auto;
@@ -73,6 +72,7 @@ function Lightbox({src, title, caption, size='l', type='lightbox'}) {
         />
       </StyledPopup>
     )
+  }
 }
 
 export default Lightbox;
