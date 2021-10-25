@@ -55,12 +55,6 @@
   --obj-primary-four: rgba(254, 242, 132, 0.1);
 }
 
-@media (min-width: 960px) {
-  :root {
-    --ifm-spacing-horizontal: 0;
-  }
-}
-
 body {
   line-height: 150%;
 }
@@ -346,10 +340,15 @@ p, .markdown p {
 }
 
 /** DOCS **/
-.docs-wrapper footer .col {
+div.docs-wrapper footer {
+  padding: 0;
+  text-align: left;
+}
+div.docs-wrapper footer .col {
   flex: none;
-  width: 80%;
-  margin: 0 10%;
+}
+div.docs-wrapper footer .col div {
+  background-color: var(--ifm-table-stripe-background);
 }
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
