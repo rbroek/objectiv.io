@@ -218,19 +218,6 @@ p, .markdown p {
   color: #ffffffd4;
 }
 
-.table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
-  color: #06A5FA;
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  /*noinspection CssUnresolvedCustomProperty*/
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  /*noinspection CssUnresolvedCustomProperty*/
-  padding: 0 var(--ifm-pre-padding);
-}
-
 .body-extra-large {
   font-size: 20px;
   line-height: 150%;
@@ -363,6 +350,66 @@ p, .markdown p {
   flex: none;
   width: 80%;
   margin: 0 10%;
+}
+
+.table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
+  color: #06A5FA;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  /*noinspection CssUnresolvedCustomProperty*/
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  /*noinspection CssUnresolvedCustomProperty*/
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.autosummary p {
+  margin-bottom: 0;
+}
+
+p.rubric {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 24px 0;
+}
+
+dl.class {
+  margin: 30px 0;
+}
+dl.class dt.sig {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 0.5em 0;
+}
+
+dl.method dt.sig, dl.function dt.sig {
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0 0 0.5em 0;
+}
+
+dl.attribute dt.sig, dl.property dt.sig {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+dl.attribute .descname, dl.property .descname, .field-list strong {
+  font-family: 'Roboto Mono';
+  font-weight: normal;
+}
+
+dl blockquote {
+  padding: 0 0.5em;
+}
+
+.field-list dt {
+  font-weight: bold;
+}
+
+.viewcode-link {
+  margin: 0 0.3em;
 }
 
 /** DIAGRAM (MERMAID) MARKUP **/
