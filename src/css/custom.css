@@ -344,12 +344,6 @@ div.docs-wrapper footer {
   padding: 0;
   text-align: left;
 }
-div.docs-wrapper footer .col {
-  flex: none;
-}
-div.docs-wrapper footer .col div {
-  background-color: var(--ifm-table-stripe-background);
-}
 
 .table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
   color: #06A5FA;
