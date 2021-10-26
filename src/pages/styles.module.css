@@ -266,8 +266,6 @@ h2 {
 }
 
 footer {
-  background-color: var(--obj-primary-one);
-  color: #fff;
   font-size: 16px;
   text-align: center;
   padding: 60px 0 120px 0;
