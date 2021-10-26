@@ -446,28 +446,40 @@ dl.class .reference, dl.class .headerlink {
 }
 
 /* Functions (in classes) */
-dl.method {
+dl.method, dl.function {
   margin-top: 40px;
 }
 /* Function content */
-dl.method dd {
+dl.method dd, dl.function dd {
   margin-inline-start: 40px;
 }
 /* Function content heading */
-dl.method dt {
+dl.method dt, dl.function dt {
   font-weight: bold;
 }
 /* Function fields (e.g. parameters or notes) */
-dl.method .field-list dd {
+dl.method .field-list dd, dl.function .field-list dd {
   margin-inline-start: 0;
 }
-dl.method .field-list dd strong {
+dl.method .field-list dd strong, dl.function .field-list dd strong {
   font-family: 'Roboto Mono';
   font-weight: normal;
   font-style: italic;
 }
-dl.method dd blockquote {
+dl.method dd blockquote, dl.function dd blockquote {
   border: none;
+}
+/* Function - function namespace (do not show) */
+dl.function .descname {
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+}
+dl.function .descclassname {
+  display: none;
+}
+dl.function .descname::after {
+  content: "\A";
+  white-space: pre;
 }
 
 
