@@ -180,19 +180,16 @@ occurrences in fmt.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="buhtuh.expression.expression_to_sql">
-<span class="sig-prename descclassname"><span class="pre">buhtuh.expression.</span></span><span class="sig-name descname"><span class="pre">expression_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/expression.py#L108-L133"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.expression.expression_to_sql" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Compile the expression to a SQL fragment.</dt><dd><ul class="simple">
-<li><p>RawTokens will be represented by the raw string they embed.</p></li>
-<li><p>StringValueTokens will be quoted and escaped</p></li>
-<li><dl class="simple">
-<dt>ColumnReferenceTokens will be quoted and escaped, and if table_name is provided preceded by the</dt><dd><p>table name.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
+<span class="sig-prename descclassname"><span class="pre">buhtuh.expression.</span></span><span class="sig-name descname"><span class="pre">expression_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/expression.py#L108-L140"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.expression.expression_to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment.
+* RawTokens will be represented by the raw string they embed.
+* StringValueTokens will be quoted and escaped
+* ColumnReferenceTokens will be quoted and escaped, and if table_name is provided preceded by the
+table name.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="n">expression_to_sql</span><span class="p">(</span><span class="s1">&#39;blala&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -207,32 +204,53 @@ occurrences in fmt.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="buhtuh.expression.quote_identifier">
-<span class="sig-prename descclassname"><span class="pre">buhtuh.expression.</span></span><span class="sig-name descname"><span class="pre">quote_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/expression.py#L155-L171"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.expression.quote_identifier" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">buhtuh.expression.</span></span><span class="sig-name descname"><span class="pre">quote_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/expression.py#L174-L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.expression.quote_identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add quotes around an identifier (e.g. a table or column name), and escape special characters in the name.</p>
 <p>This is in accordance with the Postgres string notation format, no guarantees for other databses.
 See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS">https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS</a></p>
-<p>Examples:
-&gt;&gt;&gt; quote_identifier(‘test’)
-‘“test”’
-&gt;&gt;&gt; quote_identifier(‘te”st’)
-‘“te””st”’
-&gt;&gt;&gt; quote_identifier(‘“te””st”’)
-“”””te””””st””””</p>
+<p>Examples:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quote_identifier</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="go">&#39;&quot;tests&quot;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quote_identifier</span><span class="p">(</span><span class="s1">&#39;te&quot;st&#39;</span><span class="p">)</span>
+<span class="go">&#39;&quot;te&quot;&quot;st&quot;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quote_identifier</span><span class="p">(</span><span class="s1">&#39;&quot;te&quot;&quot;st&quot;&#39;</span><span class="p">)</span>
+<span class="go">&quot;&quot;&quot;&quot;te&quot;&quot;&quot;&quot;st&quot;&quot;&quot;&quot;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="buhtuh.expression.quote_string">
-<span class="sig-prename descclassname"><span class="pre">buhtuh.expression.</span></span><span class="sig-name descname"><span class="pre">quote_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/expression.py#L136-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.expression.quote_string" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">buhtuh.expression.</span></span><span class="sig-name descname"><span class="pre">quote_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/expression.py#L143-L171"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.expression.quote_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add single quotes around the value and escape any quotes in the value.</p>
 <p>This is in accordance with the Postgres string notation format, no guarantees for other databses.
 See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS">https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS</a></p>
 <p>Examples:
-&gt;&gt;&gt; quote_string(“test”)
-“‘test’”
-&gt;&gt;&gt; quote_string(“te’st”)
-“‘te’’st’”
-&gt;&gt;&gt; quote_string(“‘te’’st’”)
-“’’’te’’’’st’’’”</p>
+.. ipython:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">doctest</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s2">&quot;&#39;test&#39;&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;te&#39;st&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s2">&quot;&#39;te&#39;&#39;st&#39;&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;&#39;te&#39;&#39;st&#39;&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s2">&quot;&#39;&#39;&#39;te&#39;&#39;&#39;&#39;st&#39;&#39;&#39;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="gh">Out[1]: </span><span class="go">&quot;&#39;test&#39;&quot;</span>
+
+<span class="gp">In [2]: </span><span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;te&#39;st&quot;</span><span class="p">)</span>
+<span class="gh">Out[2]: </span><span class="go">&quot;&#39;te&#39;&#39;st&#39;&quot;</span>
+
+<span class="gp">In [3]: </span><span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;&#39;te&#39;&#39;st&#39;&quot;</span><span class="p">)</span>
+<span class="gh">Out[3]: </span><span class="go">&quot;&#39;&#39;&#39;te&#39;&#39;&#39;&#39;st&#39;&#39;&#39;&quot;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
