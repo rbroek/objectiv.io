@@ -1,6 +1,6 @@
-# VideoPauseEvent
+# VideoLoadEvent
 
-Event emitted after a video pauses playback (toggle).
+Event emitted after a video completes loading.
 
 ### Parents
 - [VideoEvent](/docs/taxonomy/events/VideoEvent).

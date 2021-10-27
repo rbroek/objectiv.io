@@ -23,6 +23,13 @@ mermaid.initialize({
     }
     .properties, .requires_context {
       font-size: 0.8em;
+      display: block;
+    }
+    .requires_context .properties {
+      border-top: 1px solid #000;
+      margin-top: 3px;
+      padding-top: 3px;
+      font-size: 1em;
     }
 `,
 });
