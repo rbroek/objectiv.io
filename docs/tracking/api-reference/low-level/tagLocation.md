@@ -28,15 +28,15 @@ tagLocation = (parameters: {
 Unless customized via the `options` parameter, the given `instance` determines which Events are triggered automatically:
 
 | LocationContext | Automatically triggers
-| :--                                                                                  | :--           
-| [ButtonContext](/taxonomy/location-contexts/ButtonContext.md)                        | [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-| [SectionContext](/taxonomy/location-contexts/SectionContext.md)                      | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [ExpandableElementContext](/taxonomy/location-contexts/ExpandanbleElementContext.md) | [trackClick](/tracking/api-reference/event-trackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [InputContext](/taxonomy/location-contexts/InputContext.md)                          | [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
-| [LinkContext](/taxonomy/location-contexts/LinkContext.md)                            | [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-| [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md)              | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [NavigationContext](/taxonomy/location-contexts/NavigationContext.md)                | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [OverlayContext](/taxonomy/location-contexts/OverlayContext.md)                      | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+| :--                                                                                 | :--           
+| [ButtonContext](/taxonomy/location-contexts/ButtonContext.md)                       | [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
+| [SectionContext](/taxonomy/location-contexts/SectionContext.md)                     | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+| [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md) | [trackClick](/tracking/api-reference/event-trackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+| [InputContext](/taxonomy/location-contexts/InputContext.md)                         | [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
+| [LinkContext](/taxonomy/location-contexts/LinkContext.md)                           | [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
+| [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md)             | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+| [NavigationContext](/taxonomy/location-contexts/NavigationContext.md)               | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+| [OverlayContext](/taxonomy/location-contexts/OverlayContext.md)                     | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
 
 ## Usage example
 
