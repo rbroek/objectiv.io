@@ -8,7 +8,9 @@ sidebar_label: Overview
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Mermaid from '@theme/Mermaid';
 
-This document describes the Events that are standardized in the Objectiv taxonomy; see the diagram below for an overview.
+Events must provide an `id` and optionally can, but most likely will, carry a list of Location and Global 
+Contexts. Additionally, every event must have an `ApplicationContext` to be able to distinguish from what 
+application the event originated.
 
 <Mermaid chart={`
 	graph LR

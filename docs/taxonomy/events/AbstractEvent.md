@@ -1,8 +1,6 @@
 # AbstractEvent
 
-Events must provide a `name` and optionally can, but most likely will, carry a list of Location and Global 
-Contexts. Additionally, every event must have an `ApplicationContext` to be able to distinguish from what
-application the event originated.
+This is the abstract parent of all Events.
 
 ### Parents
 None (root event).
