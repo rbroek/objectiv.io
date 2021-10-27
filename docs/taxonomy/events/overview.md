@@ -12,7 +12,7 @@ This document describes the Events that are standardized in the Objectiv taxonom
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='properties'>requires:<br>-AbstractContext</span>"] --> NonInteractiveEvent;
+    AbstractEvent["AbstractEvent<br><span class='requires_context'>requiresContext:<br>[ApplicationContext]</span><span class='properties'>properties:type</span>"] --> NonInteractiveEvent;
     NonInteractiveEvent --> VideoEvent["VideoEvent<br><span class='properties'>requires:<br>-MediaPlayerContext</span>"];
     VideoEvent --> VideoPauseEvent;
     VideoEvent --> VideoStopEvent;

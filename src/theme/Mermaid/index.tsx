@@ -21,7 +21,7 @@ mermaid.initialize({
     .label {
       font-size: 14px;
     }
-    .properties {
+    .properties, .requires_context {
       font-size: 0.8em;
     }
 `,

@@ -1,3 +1,0 @@
-# ExpandableElementContext
-
-[placeholder]
