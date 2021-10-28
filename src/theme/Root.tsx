@@ -1,9 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getTracker, getTrackerRepository, makeTracker, setDefaultTracker } from "@objectiv/tracker-browser";
-import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from "@docusaurus/router";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { getOrMakeTracker, getTrackerRepository, setDefaultTracker } from "@objectiv/tracker-browser";
+import React, { useEffect, useState } from 'react';
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -28,34 +28,29 @@ function Root({children}) {
     }
   }, false);
 
-  // This Effect is responsible for creating our Tracker Instances. It runs only once on mount
-  useEffect(
-    () => {
-      if (trackerEndPoint) {
-        const trackerOptions = {
-          endpoint: trackerEndPoint as string,
-          console: trackerConsoleEnabled ? console : undefined
-        }
+  // This component can re-mount. Use `getOrMakeTracker` instead of `makeTracker`. It's safe to call multiple times.
+  if (trackerEndPoint) {
+    const trackerOptions = {
+      endpoint: trackerEndPoint as string,
+      console: trackerConsoleEnabled ? console : undefined
+    }
 
-        if (trackerApplicationId) {
-          makeTracker({
-            applicationId: trackerApplicationId as string,
-            ...trackerOptions,
-            active: cookiebotStatisticsConsent,
-          });
-        }
+    if (trackerApplicationId) {
+      getOrMakeTracker({
+        applicationId: trackerApplicationId as string,
+        ...trackerOptions,
+        active: cookiebotStatisticsConsent,
+      });
+    }
 
-        if (trackerDocsApplicationId) {
-          makeTracker({
-            applicationId: trackerDocsApplicationId as string,
-            ...trackerOptions,
-            active: cookiebotStatisticsConsent,
-          });
-        }
-      }
-    },
-    [] // execute once on Root mount
-  )
+    if (trackerDocsApplicationId) {
+      getOrMakeTracker({
+        applicationId: trackerDocsApplicationId as string,
+        ...trackerOptions,
+        active: cookiebotStatisticsConsent,
+      });
+    }
+  }
 
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
   useEffect(
@@ -74,7 +69,7 @@ function Root({children}) {
     () => {
       setDefaultTracker((!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string);
     },
-    [isDocs] // execute every time `match` changes
+    [isDocs] // execute every time `isDocs` changes
   )
 
   return (
