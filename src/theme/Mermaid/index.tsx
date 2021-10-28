@@ -18,8 +18,14 @@ mermaid.initialize({
       fill: #abe9feff;
       stroke: rgb(0, 100, 150);
     }
+    a:hover {
+      cursor: pointer;
+    }
     .label {
       font-size: 14px;
+    }
+    .edgeTerminals {
+      font-size: 16px;
     }
     .properties, .requires_context {
       font-size: 0.8em;

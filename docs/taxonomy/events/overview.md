@@ -15,6 +15,9 @@ application the event originated.
 <Mermaid chart={`
 	graph LR
     AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"] --> NonInteractiveEvent;
+    AbstractEvent --> InteractiveEvent;
+    InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
+    InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
     NonInteractiveEvent --> CompletedEvent;
     NonInteractiveEvent --> AbortedEvent["AbortedEvent<br /><span class='properties'>requires:<br />ErrorContext</span>"];
     NonInteractiveEvent --> DocumentLoadedEvent["DocumentLoadedEvent<br /><span class='properties'>requires:<br />WebDocumentContext</span>"];
@@ -27,9 +30,6 @@ application the event originated.
     VideoEvent --> VideoPauseEvent;
     VideoEvent --> VideoStopEvent;
     VideoEvent --> VideoStartEvent;
-    AbstractEvent --> InteractiveEvent;
-    InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
-    InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
     click AbstractEvent "/docs/taxonomy/events/AbstractEvent" "See more details" _self;
     click NonInteractiveEvent "/docs/taxonomy/events/NonInteractiveEvent" "See more details" _self;
     click CompletedEvent "/docs/taxonomy/events/CompletedEvent" "See more details" _self;
