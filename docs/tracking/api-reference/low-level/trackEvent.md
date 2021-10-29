@@ -1,6 +1,6 @@
 # trackEvent
 
-First, it determines the [Location](/tracking/core-concepts/locations.md) of a [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget), then factors an [Event](/taxonomy/events/AbstractEvent.md) with the given [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list), finally enriches the newly created Event it with the Location and triggers it.
+First, it determines the [Location](/tracking/core-concepts/locations.md) of a [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget), then factors an [Event](/taxonomy/events/AbstractEvent.md) with the given [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list), finally enriches the newly created Event it with the Location and triggers it.
 
 ```typescript
 trackEvent = (parameters: {
@@ -19,7 +19,7 @@ trackEvent = (parameters: {
 |          |                  | type                                                                                                                                                     | default value
 | :-:      | :--              | :--                                                                                                                                                      | :--           
 | required | **eventFactory** | [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list)                                                                   |
-| required | **element**      | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
+| required | **element**      | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | optional | tracker          | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
 | optional | onError          | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
