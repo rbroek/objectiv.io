@@ -39,7 +39,13 @@ const SphinxPage = (props) => {
                 tempDiv.innerHTML = raw;
                 
                 // fix anchors (remove .html)
-                Object.values(tempDiv.getElementsByTagName('a')).forEach( a=> {
+                Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
+                    // fix the href's in the overview/index page in case of missing trailing /
+                    if ( url == "/modeling/index.html" ){
+                        if ( a.href.indexOf('modeling') == -1){
+                            a.href = a.href.replace('/docs/', '/docs/modeling/');
+                        }
+                    }
                     a.href = a.href.replace(/\.html/g, '');
                 });
 
