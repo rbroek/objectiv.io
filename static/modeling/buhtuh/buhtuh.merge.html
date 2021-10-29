@@ -1,0 +1,150 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-buhtuh.merge">
+<span id="buhtuh-merge"></span><h1>buhtuh.merge<a class="headerlink" href="#module-buhtuh.merge" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.merge.merge" title="buhtuh.merge.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(left, right, how, on, left_on, ...)</p></td>
+<td><p>Join the left and right Dataframes, or a DataFrame (left) and a Series (right).</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.merge.How" title="buhtuh.merge.How"><code class="xref py py-obj docutils literal notranslate"><span class="pre">How</span></code></a>(value)</p></td>
+<td><p>Enum with all valid values of 'how' parameter</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#buhtuh.merge.ResultColumn" title="buhtuh.merge.ResultColumn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResultColumn</span></code></a>(name, expression_sql, dtype)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.merge.How">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.merge.</span></span><span class="sig-name descname"><span class="pre">How</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/merge.py#L12-L18"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.merge.How" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enum with all valid values of ‘how’ parameter</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.How.cross">
+<span class="sig-name descname"><span class="pre">cross</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'cross'</span></em><a class="headerlink" href="#buhtuh.merge.How.cross" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.How.inner">
+<span class="sig-name descname"><span class="pre">inner</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'inner'</span></em><a class="headerlink" href="#buhtuh.merge.How.inner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.How.left">
+<span class="sig-name descname"><span class="pre">left</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'left'</span></em><a class="headerlink" href="#buhtuh.merge.How.left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.How.outer">
+<span class="sig-name descname"><span class="pre">outer</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'outer'</span></em><a class="headerlink" href="#buhtuh.merge.How.outer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.How.right">
+<span class="sig-name descname"><span class="pre">right</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'right'</span></em><a class="headerlink" href="#buhtuh.merge.How.right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.merge.ResultColumn">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.merge.</span></span><span class="sig-name descname"><span class="pre">ResultColumn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression_sql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/merge.py#L114-L117"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.merge.ResultColumn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.merge.ResultColumn.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buhtuh.merge.ResultColumn.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.ResultColumn.dtype">
+<span class="sig-name descname"><span class="pre">dtype</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#buhtuh.merge.ResultColumn.dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.ResultColumn.expression_sql">
+<span class="sig-name descname"><span class="pre">expression_sql</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#buhtuh.merge.ResultColumn.expression_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.merge.ResultColumn.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buhtuh.merge.ResultColumn.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.merge.ResultColumn.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#buhtuh.merge.ResultColumn.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buhtuh.merge.merge">
+<span class="sig-prename descclassname"><span class="pre">buhtuh.merge.</span></span><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="buhtuh.dataframe.html#buhtuh.dataframe.BuhTuhDataFrame" title="buhtuh.dataframe.BuhTuhDataFrame"><span class="pre">buhtuh.dataframe.BuhTuhDataFrame</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="buhtuh.dataframe.html#buhtuh.dataframe.BuhTuhDataFrame" title="buhtuh.dataframe.BuhTuhDataFrame"><span class="pre">buhtuh.dataframe.BuhTuhDataFrame</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="series/buhtuh.series.series.html#buhtuh.series.series.BuhTuhSeries" title="buhtuh.series.series.BuhTuhSeries"><span class="pre">buhtuh.series.series.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_on</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_on</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffixes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="buhtuh.dataframe.html#buhtuh.dataframe.BuhTuhDataFrame" title="buhtuh.dataframe.BuhTuhDataFrame"><span class="pre">buhtuh.dataframe.BuhTuhDataFrame</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/merge.py#L209-L284"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.merge.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Join the left and right Dataframes, or a DataFrame (left) and a Series (right). This will return a new
+DataFrame that contains the combined columns of both dataframes, and the rows that result from joining
+on the specified columns. The columns that are joined on can consists (partially or fully) out of index
+columns.</p>
+<p>If the column names on the left and right conflict, then the suffixes are used to distinguish them in the
+resulting DataFrame. The algorithm for determining the resulting columns and their names is similar to
+Pandas, but has slight differences when joining on indices and column names conflict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> – left DataFrame</p></li>
+<li><p><strong>right</strong> – DataFrame or Series to join on left</p></li>
+<li><p><strong>how</strong> – supported values: {‘left’, ‘right’, ‘outer’, ‘inner’, ‘cross’}</p></li>
+<li><p><strong>on</strong> – optional, column(s) to join left and right on.</p></li>
+<li><p><strong>left_on</strong> – optional, column(s) from the left df to join on</p></li>
+<li><p><strong>right_on</strong> – optional, column(s) from the right df/series to join on</p></li>
+<li><p><strong>left_index</strong> – If true uses the index of the left df as columns to join on</p></li>
+<li><p><strong>right_index</strong> – If true uses the index of the right df/series as columns to join on</p></li>
+<li><p><strong>suffixes</strong> – Tuple of two strings. Will be used to suffix duplicate column names. Must make column
+names unique</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A new Dataframe. The original frames are not modified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>

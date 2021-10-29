@@ -1,0 +1,90 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sql_models.sql_query_parser">
+<span id="sql-models-sql-query-parser"></span><h1>sql_models.sql_query_parser<a class="headerlink" href="#module-sql_models.sql_query_parser" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.sql_query_parser.raw_sql_to_selects" title="sql_models.sql_query_parser.raw_sql_to_selects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_sql_to_selects</span></code></a>(sql)</p></td>
+<td><p>Given a raw sql select statement, return a list with all CTEs and the final select statement.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.sql_query_parser.CteTuple" title="sql_models.sql_query_parser.CteTuple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CteTuple</span></code></a>(name, select_sql)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.sql_query_parser.CteTuple">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.sql_query_parser.</span></span><span class="sig-name descname"><span class="pre">CteTuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_sql</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_query_parser.py#L10-L12"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_query_parser.CteTuple" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sql_models.sql_query_parser.CteTuple.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sql_models.sql_query_parser.CteTuple.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.sql_query_parser.CteTuple.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sql_models.sql_query_parser.CteTuple.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.sql_query_parser.CteTuple.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.sql_query_parser.CteTuple.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.sql_query_parser.CteTuple.select_sql">
+<span class="sig-name descname"><span class="pre">select_sql</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#sql_models.sql_query_parser.CteTuple.select_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.sql_query_parser.raw_sql_to_selects">
+<span class="sig-prename descclassname"><span class="pre">sql_models.sql_query_parser.</span></span><span class="sig-name descname"><span class="pre">raw_sql_to_selects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#sql_models.sql_query_parser.CteTuple" title="sql_models.sql_query_parser.CteTuple"><span class="pre">sql_models.sql_query_parser.CteTuple</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/sql_query_parser.py#L15-L75"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.sql_query_parser.raw_sql_to_selects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a raw sql select statement, return a list with all CTEs and the final select statement.</p>
+<p>If the sql consists of a simple query without CTEs then the returned list contains a single item.
+If the sql consists of a CTEs followed by a final select, then the returned list contains all CTEs in
+the encountered order, followed by the select statement.
+For each CTE in the returned value the <cite>name</cite> field is guaranteed to be set, for the final select
+statement it will be None.</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>

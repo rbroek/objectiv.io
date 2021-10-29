@@ -1,0 +1,963 @@
+---
+id: buhtuh.series.series_numeric
+hide_title: true
+slug: /modeling/buhtuh/series/buhtuh.series.series_numeric
+sidebar_position: 14
+sidebar_label: buhtuh.series.series_numeric
+---
+
+export const toc = [
+    {
+        "value": "buhtuh.series.series_numeric",
+        "id": "module-buhtuh.series.series_numeric",
+        "children": [],
+        "level": 2
+    },
+    {
+        "value": "Classes",
+        "id": "",
+        "children": [
+            {
+                "value": "BuhTuhSeriesAbstractNumeric",
+                "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurt",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.kurt",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurtosis",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.kurtosis",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mad",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.mad",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mean",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.mean",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "prod",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.prod",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "product",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.product",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "round",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.round",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sem",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.sem",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "skew",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.skew",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "std",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.std",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sum",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.sum",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "var",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.var",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesAbstractNumeric.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": "BuhTuhSeriesFloat64",
+                "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurt",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.kurt",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurtosis",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.kurtosis",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mad",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.mad",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mean",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.mean",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "prod",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.prod",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "product",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.product",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "round",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.round",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sem",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.sem",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "skew",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.skew",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "std",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.std",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sum",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.sum",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "var",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.var",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesFloat64.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": "BuhTuhSeriesInt64",
+                "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurt",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.kurt",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurtosis",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.kurtosis",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mad",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.mad",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mean",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.mean",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "prod",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.prod",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "product",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.product",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "round",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.round",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sem",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.sem",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "skew",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.skew",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "std",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.std",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sum",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.sum",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "var",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.var",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "buhtuh.series.series_numeric.BuhTuhSeriesInt64.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            }
+        ],
+        "level": 2
+    }
+];
+
+
+import SphinxPages from '@site/src/components/sphinx-page'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+
+
+<SphinxPages url={useBaseUrl('modeling/buhtuh/series/buhtuh.series.series_numeric.html')} />

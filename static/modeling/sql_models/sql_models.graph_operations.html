@@ -1,0 +1,160 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sql_models.graph_operations">
+<span id="sql-models-graph-operations"></span><h1>sql_models.graph_operations<a class="headerlink" href="#module-sql_models.graph_operations" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.graph_operations.get_graph_nodes_info" title="sql_models.graph_operations.get_graph_nodes_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_graph_nodes_info</span></code></a>(start_node)</p></td>
+<td><p>Build a list of NodeInfo objects from the final node of the graph backwards.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sql_models.graph_operations.get_node" title="sql_models.graph_operations.get_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_node</span></code></a>(start_node, reference_path)</p></td>
+<td><p>Get a single node from the graph, by recursively traversing the references starting at start_node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.graph_operations.get_node_info_selected_node" title="sql_models.graph_operations.get_node_info_selected_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_node_info_selected_node</span></code></a>(start_node, ...)</p></td>
+<td><p>Similar to get_graph_nodes_info, but only gets the NodeInfo for the node at the specified reference_path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sql_models.graph_operations.replace_node_in_graph" title="sql_models.graph_operations.replace_node_in_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_node_in_graph</span></code></a>(start_node, ...)</p></td>
+<td><p>Create a (partial) copy of the graph that can be reached from start_node, with the referenced node replaced by replacement_model.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.graph_operations.NodeInfo" title="sql_models.graph_operations.NodeInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeInfo</span></code></a>(node_id, reference_path, model, ...)</p></td>
+<td><p>Object that wraps an SqlModel and adds extra information that is not relevant for sql generation, but that can be relevant for visualizing and manipulating the graph.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sql_models.graph_operations.</span></span><span class="sig-name descname"><span class="pre">NodeInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_edges</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_edges</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/graph_operations.py#L9-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.graph_operations.NodeInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that wraps an SqlModel and adds extra information that is not relevant for
+sql generation, but that can be relevant for visualizing and manipulating the graph.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.in_edges">
+<span class="sig-name descname"><span class="pre">in_edges</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.in_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">9223372036854775807</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.model">
+<span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></em><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.node_id">
+<span class="sig-name descname"><span class="pre">node_id</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.node_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.out_edges">
+<span class="sig-name descname"><span class="pre">out_edges</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><span class="pre">list</span></a></em><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.out_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sql_models.graph_operations.NodeInfo.reference_path">
+<span class="sig-name descname"><span class="pre">reference_path</span></span><em class="property"><span class="pre">:</span> <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#sql_models.graph_operations.NodeInfo.reference_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.graph_operations.get_graph_nodes_info">
+<span class="sig-prename descclassname"><span class="pre">sql_models.graph_operations.</span></span><span class="sig-name descname"><span class="pre">get_graph_nodes_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#sql_models.graph_operations.NodeInfo" title="sql_models.graph_operations.NodeInfo"><span class="pre">sql_models.graph_operations.NodeInfo</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/graph_operations.py#L23-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.graph_operations.get_graph_nodes_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build a list of NodeInfo objects from the final node of the graph backwards.</p>
+<p>The NodeInfo objects contain a bit more information than the normal graph nodes. However this
+information is not kept in-sync with the actual graph (e.g. out-edges), or is dependent on the starting
+point in the graph (e.g. reference_path). Make sure to not use the return values of this function after
+the graph has been changed, or the context changed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>start_node</strong> – final node of the graph. Start point for building the graph</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of NodeInfo objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.graph_operations.get_node">
+<span class="sig-prename descclassname"><span class="pre">sql_models.graph_operations.</span></span><span class="sig-name descname"><span class="pre">get_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/graph_operations.py#L88-L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.graph_operations.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a single node from the graph, by recursively traversing the references starting at start_node.
+:param start_node: start node
+:param reference_path: references to traverse to get to the node
+:return: found node</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.graph_operations.get_node_info_selected_node">
+<span class="sig-prename descclassname"><span class="pre">sql_models.graph_operations.</span></span><span class="sig-name descname"><span class="pre">get_node_info_selected_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#sql_models.graph_operations.NodeInfo" title="sql_models.graph_operations.NodeInfo"><span class="pre">sql_models.graph_operations.NodeInfo</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/graph_operations.py#L69-L85"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.graph_operations.get_node_info_selected_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to get_graph_nodes_info, but only gets the NodeInfo for the node at the specified
+reference_path. This does build the complete graph, which is recursively available through the
+in_edges and out_edges of the returned NodeInfo
+:param start_node: start node
+:param reference_path: identifier of selected model
+:return: NodeInfo for the selected node
+:raise ValueError: if the selected node doesn’t exist</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.graph_operations.replace_node_in_graph">
+<span class="sig-prename descclassname"><span class="pre">sql_models.graph_operations.</span></span><span class="sig-name descname"><span class="pre">replace_node_in_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replacement_model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/sql_models/graph_operations.py#L103-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.graph_operations.replace_node_in_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from start_node, with the referenced node
+replaced by replacement_model. All nodes along all reference paths to the referenced node will be
+replaced with copies of the original nodes that (indirectly) link to replacement_model.</p>
+<p>The original start node, and all nodes that it refers recursively are unchanged.
+:param start_node: start node
+:param reference_path: references to traverse to get to the node that has to be updated
+:param replacement_model: model instance that will replace the reference node
+:return: an updated copy of the start node</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>

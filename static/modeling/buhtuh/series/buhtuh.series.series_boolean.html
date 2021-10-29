@@ -1,0 +1,373 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-buhtuh.series.series_boolean">
+<span id="buhtuh-series-series-boolean"></span><h1>buhtuh.series.series_boolean<a class="headerlink" href="#module-buhtuh.series.series_boolean" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean" title="buhtuh.series.series_boolean.BuhTuhSeriesBoolean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BuhTuhSeriesBoolean</span></code></a>(engine, base_node, ...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">buhtuh.series.series_boolean.</span></span><span class="sig-name descname"><span class="pre">BuhTuhSeriesBoolean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_ascending</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L10-L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.agg">
+<span class="sig-name descname"><span class="pre">agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BuhTuhGroupBy</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L495-L521"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.agg" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> – the aggregation function to look for on all series.
+See BuhTuhGroupBy.agg() for supported arguments</p></li>
+<li><p><strong>group_by</strong> – the group_by to use, or aggregation over full base_node if None</p></li>
+<li><p><strong>args</strong> – Positional arguments to pass through to the aggregation function</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments to pass through to the aggregation function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Aggregated BuhTuhSeries, or BuhTuhDataFrame if multiple series are returned</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.aggregate">
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">BuhTuhGroupBy</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L486-L493"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>use agg(..)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.apply_func">
+<span class="sig-name descname"><span class="pre">apply_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="buhtuh.series.series.html#buhtuh.series.series.BuhTuhSeries" title="buhtuh.series.series.BuhTuhSeries"><span class="pre">buhtuh.series.series.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L444-L484"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.apply_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the given func to this Series. If multiple are given, multiple new series will
+be returned.
+:param func: the function to look for on all series, either as a str, or callable,</p>
+<blockquote>
+<div><p>or a list of such</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – Positional arguments to pass through to the aggregation function</p></li>
+<li><p><strong>kwargs</strong> – Keyword arguments to pass through to the aggregation function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of BuhTuhSeries with the func applied</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>you should probably not use this method directly.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.astype">
+<span class="sig-name descname"><span class="pre">astype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Type</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="buhtuh.series.series.html#buhtuh.series.series.BuhTuhSeries" title="buhtuh.series.series.BuhTuhSeries"><span class="pre">buhtuh.series.series.BuhTuhSeries</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L315-L322"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.astype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.base_node">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">base_node</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="../../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.base_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.copy_override">
+<span class="sig-name descname"><span class="pre">copy_override</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L237-L259"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.copy_override" title="Permalink to this definition">¶</a></dt>
+<dd><p>Big fat warning: group_by can legally be None, but if you want to set that,
+set the param in a list: [None], or [someitem]. If you set None, it will be left alone.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L630-L631"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.dtype">
+<span class="sig-name descname"><span class="pre">dtype</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'bool'</span></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.dtype_aliases">
+<span class="sig-name descname"><span class="pre">dtype_aliases</span></span><em class="property"> <span class="pre">=</span> <span class="pre">('boolean',</span> <span class="pre">'?',</span> <span class="pre">&lt;class</span> <span class="pre">'bool'&gt;)</span></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.dtype_aliases" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.dtype_to_expression">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">dtype_to_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L22-L28"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.dtype_to_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.engine">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">engine</span></span><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.engine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.equals">
+<span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursion</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L324-L347"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.equals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether other is the same as self. This implements the check that would normally be
+implemented in __eq__, but we already use that method for other purposes.
+This strictly checks that other is the same type as self. If other is a subclass this will return
+False.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.expression">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">expression</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.fillna">
+<span class="sig-name descname"><span class="pre">fillna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constant_value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L616-L628"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.fillna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill any NULL value with the given constant
+:param constant_value: the value to replace the NULL values with. Should be a supported</p>
+<blockquote>
+<div><p>type by the series, or a TypeError is raised.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Pandas replaces np.nan values, we can only replace NULL.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>you can replace None with None, have fun, forever!</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.from_const">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_const</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../buhtuh.dataframe.html#buhtuh.dataframe.BuhTuhDataFrame" title="buhtuh.dataframe.BuhTuhDataFrame"><span class="pre">buhtuh.dataframe.BuhTuhDataFrame</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="buhtuh.series.series.html#buhtuh.series.series.BuhTuhSeries" title="buhtuh.series.series.BuhTuhSeries"><span class="pre">buhtuh.series.series.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="buhtuh.series.series.html#buhtuh.series.series.BuhTuhSeries" title="buhtuh.series.series.BuhTuhSeries"><span class="pre">buhtuh.series.series.BuhTuhSeries</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L221-L235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.from_const" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an instance of this class, that represents a column with the given value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.get_class_instance">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_class_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhSeries</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_ascending</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L184-L202"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.get_class_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an instance of this class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.get_column_expression">
+<span class="sig-name descname"><span class="pre">get_column_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_alias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L261-L266"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.get_column_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.group_by">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">group_by</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.group_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.head">
+<span class="sig-name descname"><span class="pre">head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L279-L284"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first <cite>n</cite> rows.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.index">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="buhtuh.series.series.html#buhtuh.series.series.BuhTuhSeries" title="buhtuh.series.series.BuhTuhSeries"><span class="pre">buhtuh.series.series.BuhTuhSeries</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.index" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.isnull">
+<span class="sig-name descname"><span class="pre">isnull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L366-L372"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.isnull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.max">
+<span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L633-L634"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.median">
+<span class="sig-name descname"><span class="pre">median</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L636-L641"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.median" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.min">
+<span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L643-L644"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.min" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L646-L651"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.notnull">
+<span class="sig-name descname"><span class="pre">notnull</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L374-L380"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.notnull" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.nunique">
+<span class="sig-name descname"><span class="pre">nunique</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">partition</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhGroupBy</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L653-L660"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.nunique" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.sort_values">
+<span class="sig-name descname"><span class="pre">sort_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L286-L294"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.sort_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a copy of this Series that is sorted by its values. Returns self if self is already sorted
+in that way.
+:param ascending: Whether to sort ascending (True) or descending (False)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.supported_db_dtype">
+<span class="sig-name descname"><span class="pre">supported_db_dtype</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'boolean'</span></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.supported_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.supported_value_to_expression">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">supported_value_to_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L16-L20"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.supported_value_to_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.supported_value_types">
+<span class="sig-name descname"><span class="pre">supported_value_types</span></span><em class="property"> <span class="pre">=</span> <span class="pre">(&lt;class</span> <span class="pre">'bool'&gt;,)</span></em><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.supported_value_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.to_frame">
+<span class="sig-name descname"><span class="pre">to_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../buhtuh.dataframe.html#buhtuh.dataframe.BuhTuhDataFrame" title="buhtuh.dataframe.BuhTuhDataFrame"><span class="pre">buhtuh.dataframe.BuhTuhDataFrame</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L299-L313"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.to_frame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.value_to_expression">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">value_to_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../buhtuh.expression.html#buhtuh.expression.Expression" title="buhtuh.expression.Expression"><span class="pre">buhtuh.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L204-L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.value_to_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the expression for the given value.
+Wrapper around cls.supported_value_to_expression() that handles two generic cases:</p>
+<blockquote>
+<div><p>If value is None a simple ‘NULL’ expresison is returned.
+If value is not in supported_value_types raises an error.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.10)"><strong>TypeError</strong></a> – if value is not an instance of cls.supported_value_types, and not None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.view_sql">
+<span class="sig-name descname"><span class="pre">view_sql</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L296-L297"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.view_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_cume_dist">
+<span class="sig-name descname"><span class="pre">window_cume_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L704-L711"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_cume_dist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Returns the cumulative distribution, that is</dt><dd><p>(number of partition rows preceding or peers with current row) / (total partition rows).</p>
+</dd>
+</dl>
+<p>The value thus ranges from 1/N to 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_dense_rank">
+<span class="sig-name descname"><span class="pre">window_dense_rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L687-L693"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_dense_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rank of the current row, without gaps; this function effectively counts peer
+groups.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_first_value">
+<span class="sig-name descname"><span class="pre">window_first_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L753-L762"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_first_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns value evaluated at the row that is the first row of the window frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_lag">
+<span class="sig-name descname"><span class="pre">window_lag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L721-L736"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_lag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns value evaluated at the row that is offset rows before the current row
+within the partition; if there is no such row, instead returns default
+(which must be of the same type as value).</p>
+<p>Both offset and default are evaluated with respect to the current row.
+If omitted, offset defaults to 1 and default to None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_last_value">
+<span class="sig-name descname"><span class="pre">window_last_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L764-L769"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_last_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns value evaluated at the row that is the last row of the window frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_lead">
+<span class="sig-name descname"><span class="pre">window_lead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L738-L751"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_lead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns value evaluated at the row that is offset rows after the current row within the partition;
+if there is no such row, instead returns default (which must be of the same type as value).
+Both offset and default are evaluated with respect to the current row.
+If omitted, offset defaults to 1 and default to None.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_nth_value">
+<span class="sig-name descname"><span class="pre">window_nth_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L771-L781"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_nth_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns value evaluated at the row that is the n’th row of the window frame
+(counting from 1); returns NULL if there is no such row.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_ntile">
+<span class="sig-name descname"><span class="pre">window_ntile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_buckets</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L713-L719"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_ntile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an integer ranging from 1 to the argument value,
+dividing the partition as equally as possible.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_percent_rank">
+<span class="sig-name descname"><span class="pre">window_percent_rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L695-L702"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_percent_rank" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Returns the relative rank of the current row, that is</dt><dd><p>(rank - 1) / (total partition rows - 1).</p>
+</dd>
+</dl>
+<p>The value thus ranges from 0 to 1 inclusive.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_rank">
+<span class="sig-name descname"><span class="pre">window_rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L679-L685"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_rank" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rank of the current row, with gaps; that is, the row_number of the first row
+in its peer group.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_row_number">
+<span class="sig-name descname"><span class="pre">window_row_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">BuhTuhWindow</span><span class="p"><span class="pre">,</span> </span><span class="pre">BuhTuhDataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/buhtuh/buhtuh/series/series_boolean.py#L672-L677"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buhtuh.series.series_boolean.BuhTuhSeriesBoolean.window_row_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of the current row within its partition, counting from 1.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>
