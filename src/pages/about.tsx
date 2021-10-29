@@ -17,7 +17,7 @@ function Contributor({name, gitHubUsername}) {
   return (
     <div 
       className={clsx("card", styles.contributorCard)}
-      {...tagElement({id: 'contributor'})}
+      {...tagElement({id: gitHubUsername})}
     >
       <div className="card__header">
         <div className={clsx("avatar", styles.contributorAvatar)}>
@@ -194,7 +194,7 @@ export default function AboutUs() {
           </div>
           <div className={clsx("container")}>
             {contributors && contributors.length > 0 && (
-              <div className={clsx(styles.contributorCards)}>
+              <div {...tagElement({id: 'contributor'})} className={clsx(styles.contributorCards)}>
                 {contributors.map((props, idx) => (
                   <Contributor key={idx} {...props} />
                 ))}
