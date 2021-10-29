@@ -62,7 +62,7 @@ Three plugins are supported out of the box, and automatically enabled when the e
   to each Event;
 * `web-device-context`: adds a Global [DeviceContext](/taxonomy/global-contexts/DeviceContext.md) to each 
   Event;
-* `web-document-context`: adds a Location 
+* `web-document-context`: adds a [Location](/tracking/core-concepts/locations.md) 
   [WebDocumentContext](/taxonomy/location-contexts/WebDocumentContext.md) to each Event;
 
 ## Tracker Architecture
@@ -87,7 +87,7 @@ Three plugins are supported out of the box, and automatically enabled when the e
 [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md) is organized in three main modules: [Location Taggers](/tracking/api-reference/location-taggers/overview.md), [Event Trackers](/tracking/api-reference/event-trackers/overview.md) and the **Tagged Elements Observer**.
 
 #### Location Taggers
-[Location Taggers](/tracking/api-reference/location-taggers/overview.md) are decorator functions binding [Location Contexts](/tracking/core-concepts/locations.md) to [Taggable Elements](/tracking/core-concepts/elements.md#taggable-elements) via [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md).
+[Location Taggers](/tracking/api-reference/location-taggers/overview.md) are decorator functions binding [Location Contexts](/taxonomy/location-contexts/overview.md) to [Taggable Elements](/tracking/core-concepts/elements.md#taggable-elements) via [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md).
 
 #### Event Trackers
 [Event Trackers](/tracking/api-reference/event-trackers/overview.md) reconstruct [Locations](/tracking/core-concepts/locations.md) before handing [Events](/taxonomy/events/overview.md) over to **Core Tracker**.
@@ -95,4 +95,4 @@ Three plugins are supported out of the box, and automatically enabled when the e
 #### Tagged Elements Observer
 Monitors [Tagged Elements](/tracking/core-concepts/elements.md#tagged-elements) and, based on the [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md) values, runs the appropriate tasks. 
 
-This includes monitoring the DOM for [Visibility Events](/tracking/core-concepts/visibility.md), binding [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to automatically trigger **Event Trackers** or processing [ChildrenTaggingQueries](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter).
+This includes monitoring the DOM for Visibility Events, binding [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to automatically trigger **Event Trackers** or processing [ChildrenTaggingQueries](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter).

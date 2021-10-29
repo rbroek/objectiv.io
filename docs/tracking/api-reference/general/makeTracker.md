@@ -25,9 +25,9 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 | required | **applicationId**      | string                                                                           |
 | optional | **trackerId**          | string                                                                           | `applicationId`
 | optional | **_endpoint_**         | string                                                                           |
-| optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/tracker-architecture.md#transport)    | [Default Browser Tracker Transport](/tracking/api-reference/general/BrowserTracker.md#default-transport)
-| optional | plugins                | [TrackerPlugins](/tracking/core-concepts/tracker-architecture.md#plugins)        | [Default Browser Tracker Plugins](/tracking/api-reference/general/BrowserTracker.md#default-plugins)
-| optional | console                | [TrackerConsole](/tracking/core-concepts/tracker-architecture.md#trackerconsole) |
+| optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/trackers.md#transport)    | [Default Browser Tracker Transport](/tracking/api-reference/general/BrowserTracker.md#default-transport)
+| optional | plugins                | [TrackerPlugins](/tracking/core-concepts/trackers.md#plugins)        | [Default Browser Tracker Plugins](/tracking/api-reference/general/BrowserTracker.md#default-plugins)
+| optional | console                | [TrackerConsole](/tracking/core-concepts/trackers.md#trackerconsole) |
 | optional | trackApplicationLoaded | boolean                                                                          | `true`
 | optional | trackURLChanges        | boolean                                                                          | `true`
 
@@ -60,7 +60,7 @@ makeTracker({
 ```
 
 :::tip Transport ?
-[Events](/taxonomy/events/overview.md) are sent to the [Collector](/tracking/core-concepts/collector-architecture.md) via a composable layer of queueing, batching and sending classes called [Transport](/tracking/core-concepts/tracker-architecture.md#transport). 
+[Events](/taxonomy/events/overview.md) are sent to the [Collector](/tracking/core-concepts/collector.md) via a composable layer of queueing, batching and sending classes called [Transport](/tracking/core-concepts/trackers.md#transport). 
 :::
 
 <br />
@@ -69,7 +69,7 @@ makeTracker({
 - [Location Taggers](/tracking/api-reference/location-taggers/overview.md) 
 - [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
 - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
-- [Transport](/tracking/core-concepts/tracker-architecture.md#transport)
-- [Collector](/tracking/core-concepts/collector-architecture.md)
+- [Transport](/tracking/core-concepts/trackers.md#transport)
+- [Collector](/tracking/core-concepts/collector.md)
 - [startAutoTracking](/tracking/api-reference/low-level/startAutoTracking.md)
 :::

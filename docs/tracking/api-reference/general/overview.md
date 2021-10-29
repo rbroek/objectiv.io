@@ -4,7 +4,7 @@ sidebar_label: Overview
 title: General
 ---
 
-Global functions, interfaces and common TypeScript definitions used by Location tagging and Event tracking APIs.
+Global functions, interfaces and common TypeScript definitions used by [Location](/tracking/core-concepts/locations.md) tagging and Event tracking APIs.
 
 - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
 - [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)

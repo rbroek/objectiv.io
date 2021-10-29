@@ -22,13 +22,11 @@ import Mermaid from '@theme/Mermaid';
       Plugins---Debugger["Validation &amp;<br /> Debugging"]
     end
     TrackerGraph --> Events
-    Events --> Transport
-    Transport --> Collector
+    Events --> Collector
     click Tracker href "/docs/tracking/core-concepts/trackers" "See more details" _self
     click Plugins href "/docs/tracking/core-concepts/trackers#extensibility-plugins" "See more details" _self
     click Debugger href "/docs/tracking/core-concepts/validation" "See more details" _self
     click Events href "/docs/tracking/core-concepts/events" "See more details" _self
-    click Transport href "/docs/tracking/core-concepts/transports" "See more details" _self
     click Collector href "/docs/tracking/core-concepts/collector" "See more details" _self
     linkStyle 0,1 stroke:#fff,anything;
 `} caption="Figure: Objectiv Tracking" baseColor="basic" />
