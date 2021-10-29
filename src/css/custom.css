@@ -395,16 +395,13 @@ dl.class .property .pre {
 }
 dl.class .property .pre::after {
   content: "\A";
-  white-space: pre;
+
 }
 /* Class heading - class name */
 dl.class .descname {
   font-family: 'Roboto Mono';
 }
-dl.class .descname::after {
-  content: "\A";
-  white-space: pre;
-}
+
 /* Class heading - function parameters */
 dl.class dl.property .property .pre, dl.class dl.property .descname .pre, dl.class dl.property .descname .viewcode-link {
   font-size: 18px;
@@ -472,11 +469,10 @@ dl.function .descname {
 dl.function .descclassname {
   display: none;
 }
-dl.function .descname::after {
-  content: "\A";
-  white-space: pre;
-}
 
+span.viewcode-link {
+  float: right;
+}
 
 /* Content of a class or function */
 dd {
