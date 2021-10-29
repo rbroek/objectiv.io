@@ -132,9 +132,7 @@ const SphinxPage = (props) => {
                 setData(data)
             });
     }, [])
+
     return (<div dangerouslySetInnerHTML={{ __html: data}} />);
 }
-
 export default SphinxPage;
-
-
