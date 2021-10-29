@@ -392,7 +392,6 @@ dl.class dt.sig {
 dl.class .property .pre {
   font-size: 14px;
   color: var(--ifm-font-color-light);
-  text-transform: uppercase;
 }
 dl.class .property .pre::after {
   content: "\A";
@@ -401,10 +400,6 @@ dl.class .property .pre::after {
 /* Class heading - class name */
 dl.class .descname {
   font-family: 'Roboto Mono';
-}
-/* Class heading - class namespace (do not show) */
-dl.class .descclassname {
-  display: none;
 }
 dl.class .descname::after {
   content: "\A";
