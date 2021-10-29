@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: Events
 slug: events
 ---
@@ -11,7 +11,8 @@ automatically, e.g. when a form callback or payments completes at a later time (
 
 ### Properties
 Next to specifying its `_type`, [Events](/taxonomy/events/overview.md) must provide a unique `id`. Together 
-with its Location Stack, every Event in an application should be unique - Trackers help to enforce this.
+with its [Location](/tracking/core-concepts/locations.md) Stack, every Event in an application should be unique - Trackers 
+[help to enforce this](validation.md).
 
 Additionally, every Event must have [GlobalContexts](taxonomy/global-contexts), with at least an 
 [`ApplicationContext`](/taxonomy/global-contexts/ApplicationContext.md), to be able to distinguish from what application the event originated.

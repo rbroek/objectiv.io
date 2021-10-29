@@ -10,9 +10,9 @@ The most common issues will be:
 - [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md)
 
 ## Problem: Incorrect Locations
-If [Events](/taxonomy/events/overview.md) are triggering correctly but [Location](/tracking/core-concepts/locations.md) are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
+If [Events](/taxonomy/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
 
-[Event Trackers](/tracking/api-reference/event-trackers/overview.md) can reconstruct [Locations](/tracking/core-concepts/locations.md) by traversing the DOM from the target [Element](/tracking/core-concepts/elements.md#elements) upwards. Unfortunately we cannot 
+[Event Trackers](/tracking/api-reference/event-trackers/overview.md) can reconstruct Locations by traversing the DOM from the target [Element](/tracking/core-concepts/elements.md#elements) upwards. Unfortunately we cannot 
 follow, nor detect (yet), portaled subtrees. 
 
 :::info Auto detect portals?
@@ -48,7 +48,7 @@ Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/
 </Card>
 ```
 
-Suppose we click on `Item B`. Our expected [Location](/tracking/core-concepts/locations.md) should look something like:
+Suppose we click on `Item B`. Our expected Location should look something like:
 ```
 app-root > ... > card > menu > menu-item-b
 ```
@@ -58,14 +58,14 @@ But because `Menu` renders in a [React Portal](https://reactjs.org/docs/portals.
 app-root > menu > menu-item-b
 ```
 
-The [Location](/tracking/core-concepts/locations.md) ends abruptly at the `Menu` and jumps to the application root.
+The Location ends abruptly at the `Menu` and jumps to the application root.
 
 
 ### Make Locations work across Portals
 
 The solution is to specify the parent [Location Tagger](/tracking/api-reference/location-taggers/overview.md) of a portaled [Tagged Element](/tracking/core-concepts/elements.md#tagged-elements) manually. 
 
-This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` [Location](/tracking/core-concepts/locations.md), to simply continue with and from its parent.
+This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` Location, to simply continue with and from its parent.
 
 ```typescript jsx
 const parent = tagElement({ id: 'card' });
@@ -225,7 +225,7 @@ Again, checking the documentation is our friend here. Turns out there are event 
 ```
 
 ### Tracking Visibility via state
-[Visibility Events](/tracking/core-concepts/visibility.md) can be difficult to detect due to the nature of DOM and the countless ways there to hide and show content.
+Visibility Events can be difficult to detect due to the nature of DOM and the countless ways there to hide and show content.
 
 By default we track when components mount or unmount from the DOM but it's not efficient to check for actual visibility. 
 
@@ -257,7 +257,7 @@ Luckily the menu it's driven by the state variable `isMenuOpen`. We can use that
 </Menu>
 ```
 
-The `isMenuOpen` variable is now driving both the menu visibility and the tracker [Visibility Events](/tracking/core-concepts/visibility.md) for it.
+The `isMenuOpen` variable is now driving both the menu visibility and the tracker Visibility Events for it.
 
 ### Tracking Visibility via 3rd party handlers
 Sometimes we can also leverage 3rd party event callbacks, like so:

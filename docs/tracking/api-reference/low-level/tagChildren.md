@@ -13,7 +13,7 @@ tagChildren = (parameters: ChildrenTaggingQuery[]) => TagLocationReturnValue
 ### ChildrenTaggingQuery parameter
 An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md).
 
-[Tagged Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
+[Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
 
 ```typescript
 type ChildrenTaggingQuery = {
@@ -97,5 +97,5 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 :::info See also
 - [Location Taggers](/tracking/api-reference/location-taggers/overview.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
-- [Tagged Elements Observer](/tracking/core-concepts/tracker-architecture.md#tagged-elements-observer)
+- [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer)
 :::
