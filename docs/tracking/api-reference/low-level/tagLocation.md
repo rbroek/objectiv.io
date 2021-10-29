@@ -1,6 +1,6 @@
 # tagLocation
 
-Tags a [Taggable Element](/tracking/core-concepts/elements.md#taggable-elements) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
+Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
 
 ```typescript
 tagLocation = (parameters: {

@@ -1,6 +1,6 @@
 # trackSectionVisible
 
-Triggers a [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md) for the given [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
 trackSectionVisible = (parameters: {
@@ -16,7 +16,7 @@ trackSectionVisible = (parameters: {
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
 | :-:      | :--         | :--                                                                                                                                                      | :--           
-| required | **element** | [TrackableElement](/tracking/core-concepts/elements.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
+| required | **element** | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
 | optional | tracker     | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
 

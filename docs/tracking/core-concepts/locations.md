@@ -67,7 +67,7 @@ When [tagging](/tracking/api-reference/location-taggers/overview.md) Elements in
 appropriate [LocationContext](/taxonomy/location-contexts/overview.md) to it, using 
 [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md). Events are then triggered 
 automatically based on that [LocationContext](/taxonomy/location-contexts/overview.md) bound to the 
-[Tagged Element](/tracking/core-concepts/elements.md#tagged-elements).
+[Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
 
 
 Sometimes it may be preferable, or necessary, to tag Locations manually; for these cases, a low-level 
