@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Collector
 
-Objectiv's Collector provides an API and storage connectors for sending and storing 
+Objectiv's Collector provides an API and storage connectors for receiving, validating, and storing 
 [Events](/tracking/core-concepts/events.md).
 
 ## First-party data

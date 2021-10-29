@@ -6,18 +6,14 @@ title: Overview
 
 # Core Concepts
 
-TODO:
-* Elements & tagging (through observers/listeners).
-* Events
-  * Event = metadata, global_contexts, location_contexts
-  * Global Contexts (see more in Taxonomy)
-  * Location Stack
-* Trackers
-  * Platforms & frameworks: browser, web, React, Angular
-  * Extensibility through plugins (application-context, web-device-context, web-document-context - automatically included based on platform)
-  * Auto-tracking (URL change, application loaded)
-  * Transports
-* Validation
-  * Debugging: logging & uniqueness
-* Collector
+High level overview of all concepts enabling tracking:
+* [Tagging](/tracking/core-concepts/tagging.md) of Elements to track.
+* [Events](/tracking/core-concepts/events.md) triggered based on tags.
+* [Locations](/tracking/core-concepts/locations.md) that describe the exact UI position for an 
+  [Event](/tracking/core-concepts/events.md).
+* [Trackers](/tracking/core-concepts/trackers.md) to instrument on various platforms.
+* [Validation](/tracking/core-concepts/validation.md) of Events according to the 
+  [Taxonomy](/taxonomy/overview.md).
+* [Collector](/tracking/core-concepts/validation.md) to receive, validate and store 
+  [Events](/tracking/core-concepts/events.md).
 
