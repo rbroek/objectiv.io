@@ -393,13 +393,17 @@ dl.class .property .pre {
   font-size: 14px;
   color: var(--ifm-font-color-light);
 }
-dl.class .property .pre::after {
-  content: "\A";
-
-}
 /* Class heading - class name */
 dl.class .descname {
   font-family: 'Roboto Mono';
+}
+/* Class heading - class namespace (do not show) */
+dl.class .descclassname {
+  display: none;
+}
+dl.class .descname::after {
+  content: "\A";
+  white-space: pre;
 }
 
 /* Class heading - function parameters */
@@ -432,7 +436,7 @@ dl.class dl.property .pre::after, dl.class dl.property .descname::after, dl.clas
 }
 
 /* Class & function headings - function parameters - link to source & permalink */
-dl.class .reference, dl.class .headerlink {
+dl.class .reference, dl.class .headerlink, dl.function .reference, dl.method .reference {
   font-size: 14px;
   font-weight: normal; 
 }
@@ -483,12 +487,6 @@ dd {
 dl blockquote {
   padding: 0 0.5em;
 }
-
-.viewcode-link, .headerlink {
-  margin: 0 0.3em;
-}
-
-
 
 /** DIAGRAM (MERMAID) MARKUP **/
 
