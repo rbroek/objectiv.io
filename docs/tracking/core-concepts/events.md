@@ -14,11 +14,11 @@ Next to specifying its `_type`, [Events](/taxonomy/events/overview.md) must prov
 with its [Location](/tracking/core-concepts/locations.md) Stack, every Event in an application should be unique - Trackers 
 [help to enforce this](validation.md).
 
-Additionally, every Event must have [GlobalContexts](taxonomy/global-contexts), with at least an 
+Additionally, every Event must have [GlobalContexts](taxonomy/global-contexts/overview.md), with at least an 
 [`ApplicationContext`](/taxonomy/global-contexts/ApplicationContext.md), to be able to distinguish from what application the event originated.
 
 Every Event optionally can, but most likely will, carry a list of 
-[LocationContexts](taxonomy/location-contexts) that describe where the event happened
+[LocationContexts](taxonomy/location-contexts/overview.md) that describe where the event happened
 
 An example event with `location_stack` and `global_context` properties:
 

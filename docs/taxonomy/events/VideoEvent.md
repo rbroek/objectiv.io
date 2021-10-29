@@ -13,4 +13,4 @@ import Mermaid from '@theme/Mermaid';
 `} caption="Figure: Diagram of VideoEvent inheritance" baseColor="blue" />
 
 ### Requires
-- [MediaPlayerContext](/docs/taxonomy/global-contexts/MediaPlayerContext).
+- [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).

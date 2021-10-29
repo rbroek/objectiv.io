@@ -14,4 +14,4 @@ import Mermaid from '@theme/Mermaid';
 `} caption="Figure: Diagram of ApplicationLoadedEvent inheritance" baseColor="blue" />
 
 ### Requires
-- [SectionContext](/docs/taxonomy/global-contexts/SectionContext).
+- [SectionContext](/taxonomy/location-contexts/SectionContext.md).
