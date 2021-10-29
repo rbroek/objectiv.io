@@ -44,14 +44,14 @@ To immediately jump into instrumenting your application, follow the step-by-step
 A number of web & mobile platforms and frameworks are currently supported, such as JS, React, React Native, 
 and Angular - with more support coming.
 
-[Follow the How-to Guides](how-to-guides)
+[Follow the How-to Guides](/tracking/how-to-guides/overview.md)
 
 ## Core Concepts
 To understand in more detail how the tracking works, read about the underlying core concepts.
 
-[Read up on the Core Concepts](core-concepts)
+[Read up on the Core Concepts](/tracking/core-concepts/overview.md)
 
 ## API Reference
 To implement low-level functionality and configuration of the Trackers, all core APIs are open and documented. 
 
-[Check out the API Reference](api-reference)
+[Check out the API Reference](/tracking/api-reference/overview.mdx)
