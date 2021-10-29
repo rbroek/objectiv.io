@@ -4,8 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 import { useForm } from 'react-hook-form';
 import { init, sendForm } from 'emailjs-com';
-import { getTracker, tagButton, tagElement, trackClick } from "@objectiv/tracker-browser";
-import { makeCompletedEvent, makeAbortedEvent, makeSectionContext, makeErrorContext } from "@objectiv/tracker-core";
+import { makeErrorContext, tagButton, tagElement, trackAborted, trackClick, trackCompleted } from "@objectiv/tracker-browser";
 
 function KeepMePosted() {
   const {siteConfig} = useDocusaurusContext();
@@ -22,31 +21,14 @@ function KeepMePosted() {
     sendForm('keep_me_posted', 'template_keep_me_posted', '#keep-me-posted')
       .then(function() {
         const successMessage = "Thanks for subscribing, we'll notify you when we release!";
-        getTracker().trackEvent(makeCompletedEvent({
-          location_stack: [
-            makeSectionContext({
-              id: 'keep-me-posted-form'
-            })
-          ]
-        }));
+        trackCompleted({ element: form });
         setFormSent(true);
         setStatusMessage(successMessage);
         form.reset();
       }, function() {
         const failedMessage = "Whoops, we could not register your email address. Please try again (later).";
-        getTracker().trackEvent(makeAbortedEvent({
-          location_stack: [
-            makeSectionContext({
-              id: 'keep-me-posted-form'
-            }),
-            ],
-          global_contexts: [
-            makeErrorContext({
-              id: "keep-me-posted", 
-              message: failedMessage
-            })
-          ]
-        }));
+        const errorContext = makeErrorContext({ id: "keep-me-posted", message: failedMessage });
+        trackAborted({ globalContexts: [errorContext], element: form });
         setFormSent(false);
         setStatusMessage(failedMessage);
     });

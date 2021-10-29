@@ -1,9 +1,12 @@
 ---
 sidebar_position: 2
-title: Elements
-slug: elements
+title: Tagging
+slug: tagging
 ---
 
+To understand **tagging**, we first need to know what we mean by **Elements**. 
+
+## Elements 
 When talking about **Elements** we usually refer to DOM Interfaces and APIs such as 
 [Nodes](https://developer.mozilla.org/en-US/docs/Web/API/Node) / 
 [Elements](https://developer.mozilla.org/en-US/docs/Web/API/Element) and 
@@ -16,12 +19,12 @@ beforementioned [Elements](https://developer.mozilla.org/en-US/docs/Web/API/Elem
 
 Examples are a `<div>` or an `<a>` element in HTML.
 
-## Tagging
+## Tagging of Elements
 [Objectiv's Tracker API](/tracking/api-reference/location-taggers/overview.md) is used to **tag** any Element
 that you want to track. The Tracker then uses this information to automatically decorate the Element in the 
 DOM with the respective [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md). 
 
-A tagging example in React:
+A **tagging** example in React:
 ```js
 <LinkComponent 
   {...tagLink({ id: 'link-id', text: 'Go!', href: '/path' })} 
