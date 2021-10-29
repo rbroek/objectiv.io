@@ -1,9 +1,7 @@
-// noinspection JSUnusedGlobalSymbols
-
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getTracker, getTrackerRepository, makeTracker, setDefaultTracker } from "@objectiv/tracker-browser";
-import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from "@docusaurus/router";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { getOrMakeTracker, getTrackerRepository, setDefaultTracker, windowExists } from "@objectiv/tracker-browser";
+import React, { useEffect, useState } from 'react';
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -15,51 +13,71 @@ declare namespace cookiebot {
 
 declare const Cookiebot: cookiebot.Cookiebot;
 
+const registerCookiebotEventListener = (callback: EventListenerOrEventListenerObject) => {
+  // Skip if we are in SSR
+  if (!windowExists()) {
+    return;
+  }
+
+  window.addEventListener('CookiebotOnAccept', callback, false);
+}
+
+const cookiebotConsentStatistics = (): boolean => {
+  // Skip if we are in SSR
+  if (!windowExists()) {
+    return false;
+  }
+
+  return Cookiebot.consent.statistics ?? false;
+}
+
 function Root({children}) {
-  const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(Cookiebot.consent.statistics ?? false);
+  const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
   const { trackerApplicationId, trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
   const isDocs = useRouteMatch("/docs/") !== null;
 
   // Listen for 'CookiebotOnAccept' and if `Cookiebot.consent.statistics` changed, update state
-  window.addEventListener('CookiebotOnAccept', function () {
-    if (cookiebotStatisticsConsent !== Cookiebot.consent.statistics) {
-      setCookiebotStatisticsConsent(Cookiebot.consent.statistics);
+  registerCookiebotEventListener(function () {
+    if (cookiebotStatisticsConsent !== cookiebotConsentStatistics()) {
+      setCookiebotStatisticsConsent(cookiebotConsentStatistics());
     }
-  }, false);
+  })
 
-  // This Effect is responsible for creating our Tracker Instances. It runs only once on mount
-  useEffect(
-    () => {
-      if (trackerEndPoint) {
-        const trackerOptions = {
-          endpoint: trackerEndPoint as string,
-          console: trackerConsoleEnabled ? console : undefined
-        }
-
-        if (trackerApplicationId) {
-          makeTracker({
-            applicationId: trackerApplicationId as string,
-            ...trackerOptions,
-            active: cookiebotStatisticsConsent,
-          });
-        }
-
-        if (trackerDocsApplicationId) {
-          makeTracker({
-            applicationId: trackerDocsApplicationId as string,
-            ...trackerOptions,
-            active: cookiebotStatisticsConsent,
-          });
-        }
+  // This component can re-mount. Use `getOrMakeTracker` instead of `makeTracker`. It's safe to call multiple times.
+  if (trackerEndPoint) {
+    // Execute only if we are not in SSR
+    if (windowExists()) {
+      const trackerOptions = {
+        endpoint: trackerEndPoint as string,
+        console: trackerConsoleEnabled ? console : undefined
       }
-    },
-    [] // execute once on Root mount
-  )
+
+      if (trackerApplicationId) {
+        getOrMakeTracker({
+          applicationId: trackerApplicationId as string,
+          ...trackerOptions,
+          active: cookiebotStatisticsConsent,
+        });
+      }
+
+      if (trackerDocsApplicationId) {
+        getOrMakeTracker({
+          applicationId: trackerDocsApplicationId as string,
+          ...trackerOptions,
+          active: cookiebotStatisticsConsent,
+        });
+      }
+    }
+  }
 
   // This Effect monitors the `cookiebotStatisticsConsent` and activates or deactivates our Tracker instances
   useEffect(
     () => {
+      // Skip if we are in SSR
+      if (!windowExists()) {
+        return;
+      }
       if(cookiebotStatisticsConsent) {
         getTrackerRepository().activateAll();
       } else {
@@ -72,9 +90,13 @@ function Root({children}) {
   // This Effect monitor the `isDocs` state and when it changes it switches the default Tracker instance
   useEffect(
     () => {
+      // Skip if we are in SSR
+      if (!windowExists()) {
+        return;
+      }
       setDefaultTracker((!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string);
     },
-    [isDocs] // execute every time `match` changes
+    [isDocs] // execute every time `isDocs` changes
   )
 
   return (
