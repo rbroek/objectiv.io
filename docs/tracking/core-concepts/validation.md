@@ -35,8 +35,7 @@ TODO
 
 ## Collector validation
 As a final catch-all, Objectiv's [Collector](./collector.md) validates any incoming Event against the 
-[Taxonomy and its properties](/taxonomy/events/overview.md). If it fails, the Collector will respond with an 
-error, and store the Event in the `NOK` folder on disk.
+[Taxonomy and its properties](/taxonomy/events/overview.md). 
 
 For more background, see [Collector docs](./collector.md).
 

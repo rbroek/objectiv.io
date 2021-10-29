@@ -16,19 +16,24 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	flowchart LR
-    subgraph TrackerGraph["Trackers"]
+    subgraph TrackerGraph["Tracking"]
       direction LR
       Tracker["Tracker"]---Plugins
-      Plugins---Debugger["Validation &amp;<br /> Debugging"]
+      Plugins---Validation
     end
-    TrackerGraph --> Events
-    Events --> Collector
+    TrackerGraph --> EventsGraph
+    subgraph EventsGraph["Events"]
+      direction LR
+      Event --- Location
+    end
+    EventsGraph --> Collector
     click Tracker href "/docs/tracking/core-concepts/trackers" "See more details" _self
     click Plugins href "/docs/tracking/core-concepts/trackers#extensibility-plugins" "See more details" _self
-    click Debugger href "/docs/tracking/core-concepts/validation" "See more details" _self
-    click Events href "/docs/tracking/core-concepts/events" "See more details" _self
+    click Validation href "/docs/tracking/core-concepts/validation" "See more details" _self
+    click Event href "/docs/tracking/core-concepts/events" "See more details" _self
+    click Location href "/docs/tracking/core-concepts/locations" "See more details" _self
     click Collector href "/docs/tracking/core-concepts/collector" "See more details" _self
-    linkStyle 0,1 stroke:#fff,anything;
+    linkStyle 0,1,3 stroke:#fff,anything;
 `} caption="Figure: Objectiv Tracking" baseColor="basic" />
 
 ## How-to Guides
