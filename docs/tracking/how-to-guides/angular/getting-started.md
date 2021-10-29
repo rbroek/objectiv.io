@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting Started
 
-[placeholder]
+Follow the step-by-step Guide below to get started with tracking on your Angular application.
 
 We provide an extra package for Angular with a Module and a set of Directives to ease the tracking instrumentation.
 
