@@ -56,7 +56,7 @@ Elements that cause other Elements, usually their children, to be expanded and d
 // a contextual Menu 
 <Menu {...tagExpandableElement({ id: 'main-menu' })}>
   <MenuItem>Menu A</MenuItem>
-  …
+  ...
   <MenuItem>Menu Z</MenuItem>
 </Menu>
 ```

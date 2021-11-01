@@ -5,7 +5,7 @@ Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to
 ```typescript
 tagOverlay = (parameters: {
   id: string,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -14,11 +14,11 @@ tagOverlay = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -40,13 +40,13 @@ import { tagOverlay } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <div {...tagOverlay({ id: 'modal-id' })}>
-  …
+  ...
 </div>
 ```
 
 ```typescript jsx
 <Modal {...tagOverlay({ id: 'modal-id' })}>
-  …
+  ...
 </Modal>
 ```
 
@@ -57,7 +57,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 ```typescript jsx
 <div [tagOverlay]="{ id: 'modal-id' }">
-  …
+  ...
 </div>
 ```
 

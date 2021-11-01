@@ -6,7 +6,7 @@ Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) 
 tagButton = (parameters: {
   id: string,
   text: string,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -16,8 +16,8 @@ tagButton = (parameters: {
 | :-:      | :--      | :--                                                                                 | :--           
 | required | **id**   | string                                                                              |
 | required | **text** | string                                                                              |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackClicks: true }`
-| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options  | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true }`
+| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Events
 
@@ -26,7 +26,7 @@ Unless customized via the `options` parameter, automatically triggers:
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
 ## Usage example
 

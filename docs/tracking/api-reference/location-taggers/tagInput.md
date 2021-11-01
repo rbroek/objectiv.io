@@ -5,7 +5,7 @@ Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to
 ```typescript
 tagInput = (parameters: {
   id: string,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -14,11 +14,11 @@ tagInput = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackBlurs: true }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackBlurs: true }`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:

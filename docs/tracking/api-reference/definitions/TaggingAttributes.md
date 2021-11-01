@@ -3,14 +3,16 @@
 [Location Taggers](/tracking/api-reference/location-taggers/overview.md) and [tagChildren](/tracking/api-reference/low-level/tagChildren.md) decorate [Taggable Elements](/tracking/core-concepts/tagging.md#taggable-elements) by adding [Custom data-* Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) to them.
 
 | Location Taggers | tagChildren   | Short name      | DOM dataset attribute name
-| :-:               | :-:             | :--             | :--                                                                                       
-| required          | never           | elementId       | `data-objectiv-element-id`
-| required          | never           | context         | `data-objectiv-context`
-| optional          | never           | parentElementId | `data-objectiv-parent-element-id`
-| optional          | never           | trackClicks     | `data-objectiv-track-clicks`
-| optional          | never           | trackBlurs      | `data-objectiv-track-blurs`
-| optional          | never           | trackVisibility | `data-objectiv-track-visibility`
-| never             | always          | tagChildren   | `data-objectiv-track-children`
+| :-:              | :-:           | :--             | :--                                                                                       
+| required         | never         | elementId       | `data-objectiv-element-id`
+| required         | never         | context         | `data-objectiv-context`
+| optional         | never         | parentElementId | `data-objectiv-parent-element-id`
+| optional         | never         | trackClicks     | `data-objectiv-track-clicks`
+| optional         | never         | trackBlurs      | `data-objectiv-track-blurs`
+| optional         | never         | trackVisibility | `data-objectiv-track-visibility`
+| optional         | never         | validate        | `data-objectiv-validate`
+| never            | always        | tagChildren     | `data-objectiv-tag-children`
+| automatic        | automatic     | tracked         | `data-objectiv-tracked`
 
 ### TaggingAttribute.elementId
 A unique identifier used internally to pinpoint a specific [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
@@ -30,5 +32,12 @@ Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web
 ### TaggingAttribute.trackVisibility
 Whether to monitor the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track either [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md) events.
 
+### TaggingAttribute.validate
+A serialized [TagLocationOptions.validate](/tracking/api-reference/globals/TagLocationOptions.md#optionsvalidate) object to customize how validation occurs for the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
+
 ### TaggingAttribute.tagChildren
 A serialized list of [ChildrenTaggingQuery](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter) objects.
+
+### TaggingAttribute.tracked
+Automatically added by the [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer) when this [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) is registered as being tracked.
+

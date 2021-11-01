@@ -17,8 +17,8 @@ trackURLChange = (parameters: {
 |          |         | type                                                                                                                                                     | default value
 | :-:      | :--     | :--                                                                                                                                                      | :--           
 | optional | element | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
-| optional | tracker | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
+| optional | tracker | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
 `trackURLChange` is a void function.
@@ -31,7 +31,7 @@ import { trackURLChange } from '@objectiv/tracker-browser';
 
 ```typescript
 const App = () => {
-  …
+  ...
   const MonitorURLChanges = () => {
     const location = useLocation();
     const [previousHref, setPreviousHref] = useState(document.location.href);
@@ -44,26 +44,26 @@ const App = () => {
     }, [location, previousHref])
     return null;
   };
-  …
+  ...
   return (
     <BrowserRouter>
       <Route component = { MonitorURLChanges } />
-      …
+      ...
     </BrowserRouter>
   )
 }
 ```
 
 :::warning
-Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s `trackURLChanges` to `false`, when manually tracking this event, to avoid double calls.
+Make sure to set [makeTracker](/tracking/api-reference/globals/makeTracker.md)'s `trackURLChanges` to `false`, when manually tracking this event, to avoid double calls.
 :::
 
-:::caution Just pseudo code
+:::caution Just pseudocode
 These are rather simplistic examples to illustrate the idea.  
 
-The definition of a `URL Change` is a fuzzy one at best and there are many different ways of tracking URL changes depending on architecture, used frameworks and requirements. 
+The definition of a `URL Change` is a fuzzy one at best and there are many ways of tracking URL changes depending on architecture, used frameworks and requirements. 
 
-In fact, [Browser Tracker](/tracking/core-concepts/trackers.md#browser-tracker) uses none of the above. Instead it relies on a [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) in combination with some state. 
+In fact, [Browser Tracker](/tracking/core-concepts/trackers.md#browser-tracker) uses none of the above. Instead, it relies on a [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) in combination with some state. 
 :::
 
 <br />
@@ -75,7 +75,7 @@ In fact, [Browser Tracker](/tracking/core-concepts/trackers.md#browser-tracker) 
 <br />
 
 :::info See also
-- [makeTracker](/tracking/api-reference/general/makeTracker.md)
+- [makeTracker](/tracking/api-reference/globals/makeTracker.md)
 - [trackApplicationLoaded](/tracking/api-reference/event-trackers/trackApplicationLoaded.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

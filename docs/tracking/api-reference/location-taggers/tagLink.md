@@ -7,7 +7,7 @@ tagLink = (parameters: {
   id: string,
   text: string,
   href: string,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -18,11 +18,11 @@ tagLink = (parameters: {
 | required | **id**   | string                                                                              |
 | required | **text** | string                                                                              |
 | required | **href** | string                                                                              |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackClicks: true }`
-| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options  | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true }`
+| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:

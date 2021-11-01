@@ -1,12 +1,13 @@
 # trackEvent
 
-First, it determines the [Location](/tracking/core-concepts/locations.md) of a [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget), then factors an [Event](/taxonomy/events/AbstractEvent.md) with the given [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list), finally enriches the newly created Event it with the Location and triggers it.
+First, it determines the [Location](/tracking/core-concepts/locations.md) of a [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget), then enriches the given [Event](/taxonomy/events/AbstractEvent.md) with the Location and triggers it.
 
 ```typescript
 trackEvent = (parameters: {
-  eventFactory: EventFactory;
-  element: TrackableElement | EventTarget;
+  event: TrackerEvent;
+  element?: TaggableElement | EventTarget;
   tracker?: BrowserTracker;
+  trackerId?: string;
   onError?: TrackOnErrorCallback;
 }) => void
 ```
@@ -16,12 +17,13 @@ trackEvent = (parameters: {
 :::
 
 ## Parameters
-|          |                  | type                                                                                                                                                     | default value
-| :-:      | :--              | :--                                                                                                                                                      | :--           
-| required | **eventFactory** | [EventFactory](/tracking/api-reference/low-level/core-factories.md#event-factory-list)                                                                   |
-| required | **element**      | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
-| optional | tracker          | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError          | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
+|          |           | type                                                                                                                                                      | default value
+| :-:      | :--       | :--                                                                                                                                                       | :--           
+| required | **event** | [Event](/taxonomy/events/overview.md) (see [Event Factories](/tracking/api-reference/low-level/core-factories.md#event-factories)) | 
+| optional | element   | [TaggableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)    | [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
+| optional | tracker   | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                       | The default tracker as returned by [getTracker](/TODO)
+| optional | trackerId | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                       | The default tracker as returned by [getTracker](/TODO)
+| optional | onError   | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                       | `console.error`
 
 ## Returns
 `trackEvent` is a void function.
@@ -29,12 +31,16 @@ trackEvent = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackEvent } from '@objectiv/tracker-browser';
+import { trackEvent, makeClickEvent } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-export const trackCustomEvent = ({ element, tracker, onError }: TrackEventHelperParameters) => {
-  return trackEvent({ eventFactory: makeCustomEvent, element, tracker, onError });
+export const trackClickEvent = (parameters: {
+  element: TaggableElement | EventTarget;
+  tracker?: BrowserTracker;
+  onError?: TrackOnErrorCallback;
+}) => {
+  return trackEvent({ event: makeClickEvent(), ...parameters });
 };
 ```
 

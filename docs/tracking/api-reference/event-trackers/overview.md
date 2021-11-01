@@ -5,7 +5,7 @@ title: Event Trackers
 
 Events are triggered automatically based on the [Location Context](/taxonomy/location-contexts/overview.md) bound to the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements), as summarised in [this table](/tracking/api-reference/low-level/tagLocation.md#events).
 
-Nonetheless sometimes it may be preferable, or necessary, to trigger Events programmatically.
+Nonetheless, sometimes it may be preferable, or necessary, to trigger Events programmatically.
 
 - [trackApplicationLoaded](/tracking/api-reference/event-trackers/trackApplicationLoaded.md)
 - [trackClick](/tracking/api-reference/event-trackers/trackClick.md)

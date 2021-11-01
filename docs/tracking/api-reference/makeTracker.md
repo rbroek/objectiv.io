@@ -1,6 +1,6 @@
 # makeTracker
 
-Creates a new [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and adds it to the [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md). Then initiates [auto-tracking](/tracking/api-reference/low-level/startAutoTracking.md) for it.
+Creates a new [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md) and adds it to the [TrackerRepository](/tracking/api-reference/globals/TrackerRepository.md). Then initiates [auto-tracking](/tracking/api-reference/low-level/startAutoTracking.md) for it.
 
 ```typescript
 makeTracker = (parameters: {
@@ -15,7 +15,7 @@ makeTracker = (parameters: {
 ```
 
 :::info
-The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
+The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/globals/TrackerRepository.md). See also [getTracker](/tracking/api-reference/globals/getTracker.md) and [setDefaultTracker](/tracking/api-reference/globals/setDefaultTracker.md)
 :::
 
 
@@ -25,8 +25,8 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 | required | **applicationId**      | string                                                                           |
 | optional | **trackerId**          | string                                                                           | `applicationId`
 | optional | **_endpoint_**         | string                                                                           |
-| optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/trackers.md#transport)    | [Default Browser Tracker Transport](/tracking/api-reference/general/BrowserTracker.md#default-transport)
-| optional | plugins                | [TrackerPlugins](/tracking/core-concepts/trackers.md#plugins)        | [Default Browser Tracker Plugins](/tracking/api-reference/general/BrowserTracker.md#default-plugins)
+| optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/trackers.md#transport)    | [Default Browser Tracker Transport](/tracking/api-reference/globals/BrowserTracker.md#default-transport)
+| optional | plugins                | [TrackerPlugins](/tracking/core-concepts/trackers.md#plugins)        | [Default Browser Tracker Plugins](/tracking/api-reference/globals/BrowserTracker.md#default-plugins)
 | optional | console                | [TrackerConsole](/tracking/core-concepts/trackers.md#trackerconsole) |
 | optional | trackApplicationLoaded | boolean                                                                          | `true`
 | optional | trackURLChanges        | boolean                                                                          | `true`
@@ -36,7 +36,7 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 :::
 
 ## Returns
- - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
+ - [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)
 
 ## Usage example
 
@@ -68,7 +68,7 @@ makeTracker({
 :::info See also
 - [Location Taggers](/tracking/api-reference/location-taggers/overview.md) 
 - [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
-- [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
+- [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)
 - [Transport](/tracking/core-concepts/trackers.md#transport)
 - [Collector](/tracking/core-concepts/collector.md)
 - [startAutoTracking](/tracking/api-reference/low-level/startAutoTracking.md)

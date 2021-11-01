@@ -5,7 +5,7 @@ Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to
 ```typescript
 tagExpandableElement = (parameters: {
   id: string,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -14,11 +14,11 @@ tagExpandableElement = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -41,13 +41,13 @@ import { tagExpandableElement } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <div {...tagExpandableElement({ id: 'faq-item-id' })}>
-  …
+  ...
 </div>
 ```
 
 ```typescript jsx
 <Accordion {...tagExpandableElement({ id: 'accordion-id' })}>
-  …
+  ...
 </Accordion>
 ```
 
@@ -58,7 +58,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 ```typescript jsx
 <div [tagExpandableElement]="{ id: 'faq-item-id' }">
-  …
+  ...
 </div>
 ```
 

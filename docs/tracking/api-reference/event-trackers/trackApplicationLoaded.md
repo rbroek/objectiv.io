@@ -17,8 +17,8 @@ trackApplicationLoaded = (parameters: {
 |          |         | type                                                                                                                                                     | default value
 | :-:      | :--     | :--                                                                                                                                                      | :--           
 | optional | element | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
-| optional | tracker | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)                                                                      | `console.error`
+| optional | tracker | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
 `trackApplicationLoaded` is a void function.
@@ -31,7 +31,7 @@ import { trackApplicationLoaded } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 <head>
-  …
+  ...
   <script>
     trackApplicationLoaded();
   </script>
@@ -40,18 +40,18 @@ import { trackApplicationLoaded } from '@objectiv/tracker-browser';
 
 ```typescript jsx
 const App = () => {
-  …
+  ...
   
   trackApplicationLoaded();
   
   return (
-    …
+    ...
   )
 }
 ```
 
 :::warning
-Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
+Make sure to set [makeTracker](/tracking/api-reference/globals/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
 :::
 
 <br />
@@ -63,7 +63,7 @@ Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s
 <br />
 
 :::info See also
-- [makeTracker](/tracking/api-reference/general/makeTracker.md)
+- [makeTracker](/tracking/api-reference/globals/makeTracker.md)
 - [trackURLChange](/tracking/api-reference/event-trackers/trackURLChange.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

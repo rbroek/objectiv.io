@@ -11,7 +11,7 @@ tagChildren = (parameters: ChildrenTaggingQuery[]) => TagLocationReturnValue
 :::
 
 ### ChildrenTaggingQuery parameter
-An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md).
+An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md).
 
 [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
 
@@ -25,7 +25,7 @@ type ChildrenTaggingQuery = {
 |          |              | type
 | :-:      | :--          | :--                                                                                       
 | required | **queryAll** | [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string
-| required | **trackAs**  | [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md)
+| required | **trackAs**  | [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md)
 
 ## Single query shorthand
 Syntactic sugar API built on top of **tagChildren** which processes a single ChildrenTaggingQuery.
@@ -35,7 +35,7 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 ```
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md) with only the `tagChildren` attribute set.
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md) with only the `tagChildren` attribute set.
 
 ## Usage example
 
@@ -62,7 +62,7 @@ import { tagChildren } from '@objectiv/tracker-browser';
     }
   ])}
 >
-  …
+  ...
 </div>
 ```
 
@@ -84,7 +84,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
     }
   ]"
 >
-  …
+  ...
 </div>
 ```
 

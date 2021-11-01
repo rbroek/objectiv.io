@@ -5,7 +5,7 @@ Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to
 ```typescript
 tagElement = (parameters: {
   id: string,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -14,11 +14,11 @@ tagElement = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -41,7 +41,7 @@ import { tagElement } from '@objectiv/tracker-browser';
 ```typescript jsx
 <Layout {...tagElement({ id: 'layout' })}>
   <div {...tagElement({ id: 'section' })}>
-    …
+    ...
   </div>
 </Layout>
 ```
@@ -54,7 +54,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 ```typescript jsx
 <section [tagElement]="{ id: 'layout' }">
   <div [tagElement]="{ id: 'section' }">
-    …
+    ...
   </div>
 </section>
 ```

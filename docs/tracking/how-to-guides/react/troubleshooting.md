@@ -7,7 +7,7 @@ When dealing with regular HTML [Location Taggers](/tracking/api-reference/locati
 
 The most common issues will be:
 - Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html)
-- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md)
+- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md)
 
 ## Problem: Incorrect Locations
 If [Events](/taxonomy/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
@@ -17,7 +17,7 @@ follow, nor detect (yet), portaled subtrees.
 
 :::info Auto detect portals?
 We are working on static analysis tools to make the detection of these cases possible.   
-Nonetheless it's still highly recommended covering all complex trackers with test cases. That's the most effective way of detecting anomalies and adding a cheap safe-guard for future regressions. 
+Nonetheless, it's still highly recommended covering all complex trackers with test cases. That's the most effective way of detecting anomalies and adding a cheap safe-guard for future regressions. 
 :::
 
 ### Example of Component using Portals
@@ -69,7 +69,7 @@ This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.m
 
 ```typescript jsx
 const parent = tagElement({ id: 'card' });
-…
+...
 <Card {...cardTracker}>
   <Menu {...tagOverlay({ id: 'menu', options: { parent } })}>
     <MenuItem {...tagButton({ id: 'menu-item-a', text: 'Item A' })}>Item A</MenuItem>
@@ -81,7 +81,7 @@ const parent = tagElement({ id: 'card' });
 
 
 ## Problem: Events not triggering 
-Usually this happens because the [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) did not end up being applied to the target [ement](/tracking/core-concepts/tagging.md#elements). This happens
+Usually this happens because the [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) did not end up being applied to the target [ement](/tracking/core-concepts/tagging.md#elements). This happens
 almost exclusively when dealing with Components. 
 
 ### Check if TaggingAttributes are set
@@ -91,10 +91,10 @@ If the target [Tagged Element](/tracking/core-concepts/tagging.md#elements) we a
 
 As an example a [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements), in this case a `<button>`, should look at least like the following:
 ```
-<button data-objectiv-element-id="…" data-objectiv-context="…" …>…</button>
+<button data-objectiv-element-id="..." data-objectiv-context="..." ...>...</button>
 ```
 
-The values of the [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) are not really important, as they are fully automated. What matters is their presence. 
+The values of the [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) are not really important, as they are fully automated. What matters is their presence. 
 
 We can now attempt to fix the issue in two ways:
 1. Verify props forwarding
@@ -127,7 +127,7 @@ const Button = ({ children, onClick, ...otherProps }) => (
 )
 ```
 
-Tracking will now work as expected, since our extra [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) will be forwarded correctly to the `<button>` 
+Tracking will now work as expected, since our extra [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) will be forwarded correctly to the `<button>` 
 
 ### Props forwarding - 3rd party libraries
 Third party components, especially UI libraries, usually allow specifying custom attributes. 
@@ -137,7 +137,7 @@ Let's look at an example with [InputBase](https://mui.com/api/input-base/) from 
 ```typescript jsx
 <InputBase
   id={'search'}
-  placeholder="Search…"
+  placeholder="Search..."
 />
 ```
 
@@ -146,31 +146,31 @@ If InputBase would forwards props we could simply:
 <InputBase
   {...tagInput({ id: 'search' })}
   id={'search'}
-  placeholder="Search…"
+  placeholder="Search..."
 />
 ```
 
 Unfortunately that does not work and our [tagInput](/tracking/api-reference/location-taggers/tagInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
 provides us with a specific property called `inputProps` that is directly forwarded to the `<input>` tag.
 
-Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md):
+Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md):
 
 ```typescript jsx
 <InputBase
   id={'search'}
-  placeholder="Search…"
+  placeholder="Search..."
   inputProps={tagInput({ id: 'search' })}
 />
 ```
 
 :::tip
 Sometimes properties for passing extra attributes are already used and we can't assign directly to them as done above.    
-Simply spread the [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md) and merge them up with the existing props:
+Simply spread the [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) and merge them up with the existing props:
 
 ```typescript jsx
 <InputBase
   id={'search'}
-  placeholder="Search…"
+  placeholder="Search..."
   inputProps={{ 
     'aria-label': 'search', 
     ...tagInput({ id: 'search' }) 
@@ -227,7 +227,7 @@ Again, checking the documentation is our friend here. Turns out there are event 
 ### Tracking Visibility via state
 Visibility Events can be difficult to detect due to the nature of DOM and the countless ways there to hide and show content.
 
-By default we track when components mount or unmount from the DOM but it's not efficient to check for actual visibility. 
+By default, we track when components mount or unmount from the DOM but it's not efficient to check for actual visibility. 
 
 Consider this menu:
 ```typescript jsx

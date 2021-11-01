@@ -5,7 +5,7 @@ Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) 
 ```typescript
 tagLocation = (parameters: {
   instance: LocationContext,
-  options?: TrackOptions,
+  options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
 ```
@@ -18,11 +18,11 @@ tagLocation = (parameters: {
 |          |              | type                                                                                | default value
 | :-:      | :--          | :--                                                                                 | :--           
 | required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                          |
-| optional | options      | [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)         | Dynamically calculated based on `instance`. See the [Events](#events) table below.
-| optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md) | `console.error`
+| optional | options      | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | Dynamically calculated based on `instance`. See the [Events](#events) table below.
+| optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md) 
+[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md) 
 
 ## Events
 Unless customized via the `options` parameter, the given `instance` determines which Events are triggered automatically:
@@ -53,7 +53,7 @@ import { tagLocation } from '@objectiv/tracker-browser';
 ```typescript jsx
 <Layout {...tagLocation({ instance: makeSectionContext({ id: 'layout' }) })}>
   <div {...tagLocation({ instance: makeOverlayContext({ id: 'modal' }) })}>
-    …
+    ...
   </div>
 </Layout>
 ```
@@ -66,7 +66,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 ```typescript jsx
 <section [tagLocation]="{ instance: makeSectionContext({ id: 'layout' }) }">
   <div [tagLocation]="{ instance: makeOverlayContext({ id: 'modal' }) }">
-    …
+    ...
   </div>
 </section>
 ```

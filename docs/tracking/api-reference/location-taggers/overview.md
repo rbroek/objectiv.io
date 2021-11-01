@@ -3,7 +3,7 @@ sidebar_label: Overview
 title: Location Taggers 
 ---
 
-APIs to factor and bind the appropriate [Location Context](/taxonomy/location-contexts/overview.md) instance to the target [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) via [Tagging Attributes](/tracking/api-reference/general/TaggingAttributes.md).
+APIs to factor and bind the appropriate [Location Context](/taxonomy/location-contexts/overview.md) instance to the target [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) via [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md).
 
 - [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
 - [tagElement](/tracking/api-reference/location-taggers/tagElement.md)

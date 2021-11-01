@@ -44,7 +44,7 @@ Elements that cause other Elements, usually their children, to be expanded and d
 ```typescript jsx
 <ul [tagExpandableElement]="{ id: 'main-menu' }">
   <li>Menu A</li>
-  …
+  ...
   <li>Menu Z</li>
 </ul>
 ```
