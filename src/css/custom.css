@@ -397,14 +397,6 @@ dl.class .property .pre {
 dl.class .descname {
   font-family: 'Roboto Mono';
 }
-/* Class heading - class namespace (do not show) */
-dl.class .descclassname {
-  display: none;
-}
-dl.class .descname::after {
-  content: "\A";
-  white-space: pre;
-}
 
 /* Class heading - function parameters */
 dl.class dl.property .property .pre, dl.class dl.property .descname .pre, dl.class dl.property .descname .viewcode-link {
