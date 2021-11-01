@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 
 const SphinxPage = (props) => {
     const [data, setData] = useState('loading');
@@ -25,7 +25,20 @@ const SphinxPage = (props) => {
         'sd': {'class': 'token triple-quoted-string string', 'style': 'color: rgb(195, 232, 141);'},// triple quoted string
         's1': {'class': 'token string', 'style': 'color: rgb(195, 232, 141);'}                      // string
     };
-    
+
+    useLayoutEffect ( () => {
+        const location = window.location;
+        // the id of the element is the part after # in the url
+        const id = location.toString().split('#')[1];
+
+        const element = document.getElementById(id);
+
+        // if we can find the element, try to scroll to it
+        if (element) {
+            element.scrollIntoView();
+        }
+    });
+
     useEffect(() => {
         const url = props.url;
         
@@ -37,7 +50,7 @@ const SphinxPage = (props) => {
             .then(raw => {
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = raw;
-                
+
                 // fix anchors (remove .html)
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
                     // fix the href's in the overview/index page in case of missing trailing /
@@ -47,6 +60,45 @@ const SphinxPage = (props) => {
                         }
                     }
                     a.href = a.href.replace(/\.html/g, '');
+                });
+
+                // fix #anchors
+                // we do this, by adding empty h2/h3's with the appropriate css classes
+                // apply to <section> and <dt> elements
+                const headings = [];
+                Object.values(tempDiv.getElementsByTagName('section')).forEach(element =>{
+                    headings.push(element);
+                })
+                Object.values(tempDiv.getElementsByTagName('dt')).forEach(element => {
+                    headings.push(element);
+                })
+                Object.values(headings).forEach( (element: HTMLElement) => {
+                    const originalId = element.id;
+
+                    if ( originalId && originalId !== "" ) {
+                        const parts = originalId.split('.');
+
+                        let headerType = "h2";
+                        if (parts.length > 2){
+                            const lastPart = parts.slice(-1);
+                            const firstChar = lastPart.toString().charAt(0);
+                            // if the first character is lowercase, this is not a class, but a property/method
+                            // of a class, so we increase the header type
+
+                            if ( firstChar === firstChar.toLowerCase() ){
+                               headerType = "h3";
+                            }
+                        }
+
+                        // change id of item in original definition list
+                        element.id = '_' + originalId;
+
+                        // create new heading element
+                        const heading = document.createElement(headerType);
+                        heading.id = originalId;
+                        heading.className = "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
+                        element.insertBefore(heading, element.firstChild);
+                    }
                 });
 
                 // map styles of tokens (spans)
