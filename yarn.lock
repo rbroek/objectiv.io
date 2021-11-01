@@ -2371,36 +2371,36 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@objectiv/plugin-web-device-context@~0.0.1":
+"@objectiv/plugin-web-device-context@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fplugin-web-device-context/-/plugin-web-device-context-0.0.1.tgz#39ed0b16f640680d7794f0fbd09941285b288a41"
-  integrity sha512-L3aGJFay1bDJ92v9InU9Ro3eTpPNYaUWfuzIA+0ylXpKDFabmXQ9nDpQ6fonTBMYcoe532Jxi4JhUL0yb0bFog==
+  resolved "http://localhost:4873/@objectiv%2fplugin-web-device-context/-/plugin-web-device-context-0.0.1.tgz#143668f418880a9703f1c43cd4dba809e47ab7dd"
+  integrity sha512-xDy2z6zBGT6iOMtStSL1zFT8Vo7jlyjS3wJsOYr1U6NZF2IkzWqq5C8ytGIbU49mlQznK3aeq23TyiqPkQFL4A==
 
-"@objectiv/plugin-web-document-context@~0.0.1":
+"@objectiv/plugin-web-document-context@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#235aa8640d6c9a7b78e8d5c887c016248df2beca"
-  integrity sha512-TzeU50PXMZHB3l9Ht2qnPS43TIb39I7vIaog2C5X8+iYqIKfV8oDjeeMHoGAjsFZdqZ2M5hIEj9KxL7EVNaTZQ==
+  resolved "http://localhost:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#90de78a913dcf53f9b565e88f833d0ffaaf059af"
+  integrity sha512-hFmSHHVU8me0ttq/w4EPQPLGYorJB+6BFXT6KY3FunSApamYVRb2Yoippip9MHQUTkgn8ezODqAFBsXsnll4lQ==
 
-"@objectiv/schema@~0.0.1":
+"@objectiv/schema@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2fschema/-/schema-0.0.1.tgz#c9e4ae3b0100b7b20dc763c69c93e644e1189ca0"
-  integrity sha512-hdjlAbzVxDHHZB79qhxd/5LYYZogjwxSk3kPcBR+Az5zW8fq7N9B9tPHNuCOsBuwPh05+9gkbAEC2PPHZ3l7/A==
+  resolved "http://localhost:4873/@objectiv%2fschema/-/schema-0.0.1.tgz#c0c07b3f40db0894e346633724dec52151046614"
+  integrity sha512-oEaZWukmq9KejxciV+/fvWuID/K8vBEwTbz+Q6lkAbsW0REthj7I9Gq9gSwGIES3GqWWSvXUmLtfy12VWCu+MA==
 
 "@objectiv/tracker-browser@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.1.tgz#faec94d1af1f2acd38657691f6741429be6a8dce"
-  integrity sha512-pcZGzDKPxwkLGpDtF5sXryobwx1Qmt2jqa51ONEP7GewyZNsGG7L2bBiZWuNy0qzQo0X+H948/nsa+VJrIDPLA==
+  resolved "http://localhost:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.1.tgz#7ef880bf31e0a58c3b964692af8c16ab8f42798b"
+  integrity sha512-oZhtMSqLW6n+qjj9kkDuKQErP2P5kk38ZFqSzD7lE5QE9cR2qyNx9axSfUwAnj3bjyy+ixbKUzR7TMXYAjXS9Q==
   dependencies:
-    "@objectiv/plugin-web-device-context" "~0.0.1"
-    "@objectiv/plugin-web-document-context" "~0.0.1"
-    "@objectiv/schema" "~0.0.1"
-    "@objectiv/tracker-core" "~0.0.1"
-    superstruct "^0.15.2"
+    "@objectiv/plugin-web-device-context" "^0.0.1"
+    "@objectiv/plugin-web-document-context" "^0.0.1"
+    "@objectiv/schema" "^0.0.1"
+    "@objectiv/tracker-core" "^0.0.1"
+    superstruct "^0.15.3"
 
-"@objectiv/tracker-core@~0.0.1":
+"@objectiv/tracker-core@^0.0.1":
   version "0.0.1"
-  resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#e64cb96ba3ba18d13c27ab2b9d28d1b1c90c9bbe"
-  integrity sha512-9xK4zm+gP8p9QqxcC8QE6Ehx1y2ssgzt21Af3pihLRj7E58YFNyf/bsHgNJtjG3nGOK8W0GGYND5G6HbrQAC7g==
+  resolved "http://localhost:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#c89502a97dda48b7a67264438fc08dc48f0dd544"
+  integrity sha512-3G9gLB82Q/+ktqDy7vVNB8j704Rp9E+ksyJ39vfC+bl7TV0d87YQlAAa02FL3TWq2+1XZMgKUQxB/vUDySUh7g==
   dependencies:
     es6-error "^4.1.1"
     uuid-random "^1.3.2"
@@ -10178,7 +10178,7 @@ stylis@^4.0.10, stylis@^4.0.6:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.0.10.tgz#446512d1097197ab3f02fb3c258358c3f7a14240"
   integrity sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg==
 
-superstruct@^0.15.2:
+superstruct@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.15.3.tgz#07edfc715259ebfe3b4b2e4cb53e8e45b51674a4"
   integrity sha512-wilec1Rg3FtKuRjRyCt70g5W29YUEuaLnybdVQUI+VQ7m0bw8k7TzrRv5iYmo6IpjLVrwxP5t3RgjAVqhYh4Fg==
