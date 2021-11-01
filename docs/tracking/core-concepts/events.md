@@ -58,17 +58,18 @@ An example event with `location_stack` and `global_context` properties:
 ```
 
 ## Triggers
-For tagged Elements, their Events are 
+For tagged Elements, most Events will be 
 [triggered automatically](/tracking/api-reference/low-level/tagLocation.md#events), based on the 
-LocationContext bound to the Tagged Element.
+LocationContext bound to the Tagged Element. To do so, internally, the Web tracker uses a Mutation Observer 
+to monitor the DOM. When existing nodes change or get removed, or if subtrees get added, it traverses the 
+Nodes and scouts for Elements that have been enriched with Tracking Attributes. For those Elements it 
+attaches Event listeners, which will automatically handle their tracking.
 
-Internally, the Web tracker uses a Mutation Observer to monitor the DOM. When existing nodes change or get 
-removed, or if subtrees get added, it traverses the Nodes and scouts for Elements that have been enriched 
-with Tracking Attributes. For those Elements it attaches Event listeners, which will automatically handle 
-their tracking.
+However, sometimes it may be preferable, or necessary, to 
+[trigger Events programmatically](/tracking/api-reference/event-trackers/overview.md).
 
-## Automatic Event Triggers
-The Tracker uses the same Observer described above to trigger the events below.
+## Out-of-the-box Events
+The Tracker uses the same Observer described above to trigger the events below by default.
 
 ### ApplicationLoaded
 An [ApplicationLoaded](/taxonomy/events/ApplicationLoadedEvent.md) Event (by default enabled, configurable)
@@ -77,21 +78,3 @@ triggers once on application load.
 ### URLChange
 An [URLChange](/taxonomy/events/URLChangeEvent.md) Event (by default enabled, configurable) triggers on SPA 
 URL changes, by keeping track of the last URL detected.
-
-### Visibility
-[SectionHidden](/taxonomy/events/SectionHiddenEvent.md) and 
-[SectionVisible](/taxonomy/events/SectionVisibleEvent.md) Events (by default enabled, configurable) trigger 
-on Sections that render hidden or visible, respectively. 
-
-To do so, the tracker observes elements with the `trackVisibility` attribute set to `auto`:
-* When it detects a change in the visibility of such a tagged element, it triggers the corresponding 
-  visibility events. 
-* When such a node is removed, it will trigger a [SectionVisible](/taxonomy/events/SectionVisibleEvent.md) 
-  Event for it.
-
-Alternatively, it triggers the corresponding Events when an Element has its visibility manually set to 
-visible or not visible.
-
-## Manual Event Triggers
-Sometimes it may be preferable, or necessary, to 
-[trigger Events programmatically](/tracking/api-reference/event-trackers/overview.md).
