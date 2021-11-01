@@ -17,11 +17,18 @@ function Contributor({name, gitHubUsername}) {
   return (
     <div 
       className={clsx("card", styles.contributorCard)}
-      {...tagElement({id: gitHubUsername})}
+      {...tagElement({id: 'contributor-card-'+gitHubUsername})}
     >
       <div className="card__header">
-        <div className={clsx("avatar", styles.contributorAvatar)}>
-          <a href={ghProfileLink} title={ghProfileTitle}>
+        <div 
+          className={clsx("avatar", styles.contributorAvatar)}
+          {...tagElement({id: 'avatar'})}
+        >
+          <Link 
+            {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+            href={ghProfileLink} 
+            title={ghProfileTitle}
+          >
             <Avatar 
               githubHandle={gitHubUsername} 
               size='64'
@@ -30,23 +37,37 @@ function Contributor({name, gitHubUsername}) {
               alt={name} 
               title={name} 
             />
-          </a>
+          </Link>
         </div>
         <div className="avatar__intro">
-          <div className={clsx(styles.contributorAvatarSubtitle)}>
-            <a href={ghProfileLink} title={ghProfileTitle}>
+          <div 
+            className={clsx(styles.contributorAvatarSubtitle)}
+            {...tagElement({id: 'avatar-subtitle'})}
+          >
+            <Link 
+              {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+              href={ghProfileLink} 
+              title={ghProfileTitle}
+            >
               @{gitHubUsername}
-            </a>
+            </Link>
           </div>
           <div className={clsx(styles.contributorName)}>
             {name}
           </div>
         </div>
       </div>
-      <div className={clsx("card__footer", styles.contributorFooter)}>
-        <a href={ghProfileLink} title={ghProfileTitle}>
+      <div 
+        className={clsx("card__footer", styles.contributorFooter)}
+        {...tagElement({id: 'card-footer'})}
+      >
+        <Link 
+          {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+          href={ghProfileLink} 
+          title={ghProfileTitle}
+        >
           <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
-        </a>
+        </Link>
       </div>
     </div>
   );
