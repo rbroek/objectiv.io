@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Overview
-title: Definitions
+title: Definition
 ---
 
 Interfaces and common TypeScript definitions.

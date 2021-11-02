@@ -7,13 +7,13 @@ isParentTaggedElement = (element: GuardableElement): element is ParentTaggedElem
 ```
 
 ## Parameters
-|          |             | type                      | default value
-| :-:      | :--         | :--                       | :--           
-| required | **element** | [GuardableElement](/TODO) |
+|          |             | type                                                                        | default value
+| :-:      | :--         | :--                                                                         | :--           
+| required | **element** | [GuardableElement](/tracking/api-reference/definitions/GuardableElement.md) |
 
 ## Returns
 boolean
 
 :::info See also
-- [GuardableElement](/TODO)
+- [TaggingAttribute.parentElementId](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributeparentelementid)
 :::

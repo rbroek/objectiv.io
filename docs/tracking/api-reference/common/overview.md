@@ -7,31 +7,31 @@ title: Common
 Common modules and helper functions used across the whole Browser Tracker.
 
 ## Factory
-- [makeBrowserTrackerDefaultPluginList](factory/makeBrowserTrackerDefaultPluginList.md)
-- [makeBrowserTrackerDefaultQueue](factory/makeBrowserTrackerDefaultQueue.md)
-- [makeBrowserTrackerDefaultTransport](factory/makeBrowserTrackerDefaultTransport.md)
+- [makeBrowserTrackerDefaultPluginList](factories/makeBrowserTrackerDefaultPluginList.md)
+- [makeBrowserTrackerDefaultQueue](factories/makeBrowserTrackerDefaultQueue.md)
+- [makeBrowserTrackerDefaultTransport](factories/makeBrowserTrackerDefaultTransport.md)
 
 ## Guard
-- [isParentTaggedElement](guard/isParentTaggedElement.md)
-- [isTagChildrenElement](guard/isTagChildrenElement.md)
-- [isTaggableElement](guard/isTaggableElement.md)
-- [isTaggedElement](guard/isTaggedElement.md)
+- [isParentTaggedElement](guards/isParentTaggedElement.md)
+- [isTagChildrenElement](guards/isTagChildrenElement.md)
+- [isTaggableElement](guards/isTaggableElement.md)
+- [isTaggedElement](guards/isTaggedElement.md)
 
 ## Parser
-- [parseChildrenTaggingAttribute](parser/parseChildrenTaggingAttribute.md)
-- [parseJson](parser/parseJson.md)
-- [parseLocationContext](parser/parseLocationContext.md)
-- [parseTrackClicksAttribute](parser/parseTrackClicksAttribute.md)
-- [parseTrackVisibilityAttribute](parser/parseTrackVisibilityAttribute.md)
-- [parseValidateAttribute](parser/parseValidateAttribute.md)
+- [parseChildrenTaggingAttribute](parsers/parseChildrenTaggingAttribute.md)
+- [parseJson](parsers/parseJson.md)
+- [parseLocationContext](parsers/parseLocationContext.md)
+- [parseTrackClicksAttribute](parsers/parseTrackClicksAttribute.md)
+- [parseTrackVisibilityAttribute](parsers/parseTrackVisibilityAttribute.md)
+- [parseValidateAttribute](parsers/parseValidateAttribute.md)
 
 ## Stringifier
-- [stringifyChildrenTaggingAttribute](stringifier/stringifyChildrenTaggingAttribute.md)
-- [stringifyJson](stringifier/stringifyJson.md)
-- [stringifyLocationContext](stringifier/stringifyLocationContext.md)
-- [stringifyTrackClicksAttribute](stringifier/stringifyTrackClicksAttribute.md)
-- [stringifyTrackVisibilityAttribute](stringifier/stringifyTrackVisibilityAttribute.md)
-- [stringifyValidateAttribute](stringifier/stringifyValidateAttribute.md)
+- [stringifyChildrenTaggingAttribute](stringifiers/stringifyChildrenTaggingAttribute.md)
+- [stringifyJson](stringifiers/stringifyJson.md)
+- [stringifyLocationContext](stringifiers/stringifyLocationContext.md)
+- [stringifyTrackClicksAttribute](stringifiers/stringifyTrackClicksAttribute.md)
+- [stringifyTrackVisibilityAttribute](stringifiers/stringifyTrackVisibilityAttribute.md)
+- [stringifyValidateAttribute](stringifiers/stringifyValidateAttribute.md)
 
 ## General
 - [compareTrackerConfigs](compareTrackerConfigs.md)

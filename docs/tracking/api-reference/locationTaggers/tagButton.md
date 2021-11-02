@@ -1,6 +1,6 @@
 # tagButton
 
-Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
 
 ```typescript
 tagButton = (parameters: {
@@ -12,12 +12,12 @@ tagButton = (parameters: {
 ```
 
 ## Parameters
-|          |          | type                                                                                | default value
-| :-:      | :--      | :--                                                                                 | :--           
-| required | **id**   | string                                                                              |
-| required | **text** | string                                                                              |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true }`
-| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
+|          |          | type                                                                                    | default value
+| :-:      | :--      | :--                                                                                     | :--           
+| required | **id**   | string                                                                                  |
+| required | **text** | string                                                                                  |
+| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)         | `{ trackClicks: true }`
+| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/definitions/TrackerOnErrorCallback.md) | `console.error`
 
 ## Events
 
@@ -26,7 +26,7 @@ Unless customized via the `options` parameter, automatically triggers:
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Usage example
 
@@ -63,7 +63,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagButton` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagButton` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />
@@ -71,6 +71,6 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 :::info See also
 - [tagLink](/tracking/api-reference/locationTaggers/tagLink.md)
 - [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
-- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
+- [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 :::

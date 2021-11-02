@@ -1,6 +1,6 @@
 # parseTrackClicksAttribute
 
-[TaggingAttribute.trackClicks](/TODO) to TrackClicksOptions parser
+[TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) to [TrackClicksOptions](/tracking/api-reference/definitions/TrackClicksOptions.md) parser
 
 ```typescript
 parseTrackClicksAttribute = (stringifiedTrackClicksAttribute: string | null) => TrackClicksOptions
@@ -16,7 +16,7 @@ Differently than other simplistic parsers, this one transforms the input to a di
 | required | **stringifiedTrackClicksAttribute** | `string` \| `null` |
 
 ## Returns
-[TrackClicksOptions](/TODO) instance
+[TrackClicksOptions](/tracking/api-reference/definitions/TrackClicksOptions.md) instance
 
 ## Throws
 Error when the given `stringifiedTrackClicksAttribute` cannot be parsed

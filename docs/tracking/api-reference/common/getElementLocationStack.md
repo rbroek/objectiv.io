@@ -1,10 +1,10 @@
 # getElementLocationStack
 
-Generates a [LocationStack](/TODO) for the given [TrackedElement](/TODO). If a [BrowserTracker](/TODO) instance is provided, also predicts its mutations.
+Generates a [LocationStack](/tracking/api-reference/core/LocationStack.md) for the given [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md). If a [BrowserTracker](/tracking/api-reference/BrowserTracker.md) instance is provided, also predicts its mutations.
 
 ```typescript
 getElementLocationStack = (parameters: { 
-  element: TrackedElement; 
+  element: TaggedElement; 
   tracker?: BrowserTracker;
 }) => LocationStack 
 ```  
@@ -12,12 +12,12 @@ getElementLocationStack = (parameters: {
 ## Parameters
 |          |             | type                    | default value
 | :-:      | :--         | :--                     | :--           
-| required | **element** | [TrackedElement](/TODO) |
-| optional | tracker     | [BrowserTracker](/TODO) |
+| required | **element** | [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md) |
+| optional | tracker     | [BrowserTracker](/tracking/api-reference/BrowserTracker.md) |
 
 ## Returns
-[LocationStack](/TODO)
+[LocationStack](/tracking/api-reference/core/LocationStack.md)
 
 :::info See also
-- [findParentTaggedElements](/TODO)
+- [findParentTaggedElements](/tracking/api-reference/common/findParentTaggedElements.md)
 :::

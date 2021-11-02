@@ -1,6 +1,6 @@
 # tagExpandableElement
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md).
 
 ```typescript
 tagExpandableElement = (parameters: {
@@ -10,15 +10,19 @@ tagExpandableElement = (parameters: {
 }) => TagLocationReturnValue
 ```
 
+::: info Element vs Section
+Our Taxonomy names a logical UI unit as Section. We felt this would be confusing in Browser's world, hence Element. 
+:::
+
 ## Parameters
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/definitions/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -68,19 +72,19 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagExpandableElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagExpandableElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagButton](tagButton)
-- [tagLink](tagLink)
-- [tagElement](tagNavigation)
-- [tagNavigation](tagNavigation)
-- [tagOverlay](tagOverlay)
-- [tagMediaPlayer](tagMediaPlayer)
-- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
+- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
+- [tagLink](/tracking/api-reference/locationTaggers/tagLink.md)
+- [tagElement](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
+- [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
+- [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 :::

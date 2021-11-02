@@ -3,39 +3,34 @@
 Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) as a root to track one or more of its children by specifying a set of **ChildrenTaggingQuery** objects.
 
 ```typescript
-tagChildren = (parameters: ChildrenTaggingQuery[]) => TagLocationReturnValue
+tagChildren = (parameters: ChildrenTaggingQueries) => TagLocationReturnValue
 ```
 
 :::warning
 `tagChildren` is a performance-sensitive API. Avoid using it whenever [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) could be used instead.
 :::
 
-### ChildrenTaggingQuery parameter
-An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string to a set of [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md).
+### Parameters
+|          |                | type
+| :-:      | :--            | :--                                                                                       
+| required | **parameters** | [ChildrenTaggingQueries](/tracking/api-reference/definitions/ChildrenTaggingQueries.md)
+| optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)
 
-[Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer) executes `queryAll` via [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll). Matches are decorated with `trackAs` attributes.
-
-```typescript
-type ChildrenTaggingQuery = {
-  queryAll: string,
-  trackAs: TaggingAttributes,
-}
-```
-
-|          |              | type
-| :-:      | :--          | :--                                                                                       
-| required | **queryAll** | [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) string
-| required | **trackAs**  | [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md)
-
-## Single query shorthand
+## tagChild - Single query shorthand
 Syntactic sugar API built on top of **tagChildren** which processes a single ChildrenTaggingQuery.
 
 ```typescript
 tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 ```
 
+### Parameters
+|          |                | type
+| :-:      | :--            | :--                                                                                       
+| required | **parameters** | [ChildrenTaggingQuery](/tracking/api-reference/definitions/ChildrenTaggingQueries.md)
+| optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)
+
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md) with only the `tagChildren` attribute set.
+[TagChildrenReturnValue](/tracking/api-reference/definitions/TagChildrenReturnValue.md)
 
 ## Usage example
 
@@ -96,6 +91,6 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 
 :::info See also
 - [Location Taggers](/tracking/api-reference/locationTaggers/overview.md)
-- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
+- [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 - [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer)
 :::

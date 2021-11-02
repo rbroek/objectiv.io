@@ -1,6 +1,6 @@
 # parseTrackVisibilityAttribute
 
-[TaggingAttribute.trackVisibility](/TODO) parser
+[TaggingAttribute.trackVisibility](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility) parser
 
 ```typescript
 parseTrackVisibilityAttribute = (stringifiedTrackVisibilityAttribute: string | null) => TrackVisibilityAttribute
@@ -12,7 +12,7 @@ parseTrackVisibilityAttribute = (stringifiedTrackVisibilityAttribute: string | n
 | required | **stringifiedTrackVisibilityAttribute** | `string` \| `null` |
 
 ## Returns
-[TrackVisibilityAttribute](/TODO) instance
+[TrackVisibilityAttribute](/tracking/api-reference/definitions/TrackVisibilityAttribute.md) instance
 
 ## Throws
 Error when the given `stringifiedTrackVisibilityAttribute` cannot be parsed

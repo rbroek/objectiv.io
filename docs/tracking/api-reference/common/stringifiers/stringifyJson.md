@@ -6,6 +6,10 @@ JSON Objects stringifier
 stringifyJson = <T = unknown>(object: T, struct: Struct<T>): string
 ```  
 
+:::info struct?
+Browser Tracker currently uses [Superstruct](https://docs.superstructjs.org/) for validation and parsing of some objects.
+:::
+
 ## Parameters
 |          |            | type     | default value
 | :-:      | :--        | :--      | :--           
