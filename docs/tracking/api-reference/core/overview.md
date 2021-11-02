@@ -6,7 +6,7 @@ title: Core
 
 Core Tracker modules and functions.
 
-:::careful WIP
+:::caution WIP
 This documentation section is incomplete.
 :::
 

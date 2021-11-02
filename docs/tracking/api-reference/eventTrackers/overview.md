@@ -7,7 +7,7 @@ Events are triggered automatically based on the [Location Context](/taxonomy/loc
 
 Nonetheless, sometimes it may be preferable, or necessary, to trigger Events programmatically.
 
-## Interactive
+#### Interactive
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
 - [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
@@ -16,11 +16,11 @@ Nonetheless, sometimes it may be preferable, or necessary, to trigger Events pro
 - [trackVideoStart](/tracking/api-reference/eventTrackers/trackVideoStart.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 
-## Non-interactive
+#### Non-interactive
 - [trackAborted](/tracking/api-reference/eventTrackers/trackAborted.md)
 - [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
 - [trackCompleted](/tracking/api-reference/eventTrackers/trackCompleted.md)
 - [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 
-## Low-level
+#### Low-level
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)

@@ -6,18 +6,18 @@ title: Common
 
 Common modules and helper functions used across the whole Browser Tracker.
 
-## Factory
+#### Factories
 - [makeBrowserTrackerDefaultPluginList](factories/makeBrowserTrackerDefaultPluginList.md)
 - [makeBrowserTrackerDefaultQueue](factories/makeBrowserTrackerDefaultQueue.md)
 - [makeBrowserTrackerDefaultTransport](factories/makeBrowserTrackerDefaultTransport.md)
 
-## Guard
+#### Guards
 - [isParentTaggedElement](guards/isParentTaggedElement.md)
 - [isTagChildrenElement](guards/isTagChildrenElement.md)
 - [isTaggableElement](guards/isTaggableElement.md)
 - [isTaggedElement](guards/isTaggedElement.md)
 
-## Parser
+#### Parsers
 - [parseChildrenTaggingAttribute](parsers/parseChildrenTaggingAttribute.md)
 - [parseJson](parsers/parseJson.md)
 - [parseLocationContext](parsers/parseLocationContext.md)
@@ -25,7 +25,7 @@ Common modules and helper functions used across the whole Browser Tracker.
 - [parseTrackVisibilityAttribute](parsers/parseTrackVisibilityAttribute.md)
 - [parseValidateAttribute](parsers/parseValidateAttribute.md)
 
-## Stringifier
+#### Stringifiers
 - [stringifyChildrenTaggingAttribute](stringifiers/stringifyChildrenTaggingAttribute.md)
 - [stringifyJson](stringifiers/stringifyJson.md)
 - [stringifyLocationContext](stringifiers/stringifyLocationContext.md)
@@ -33,7 +33,7 @@ Common modules and helper functions used across the whole Browser Tracker.
 - [stringifyTrackVisibilityAttribute](stringifiers/stringifyTrackVisibilityAttribute.md)
 - [stringifyValidateAttribute](stringifiers/stringifyValidateAttribute.md)
 
-## General
+#### Miscellaneous
 - [compareTrackerConfigs](compareTrackerConfigs.md)
 - [findParentTaggedElements](findParentTaggedElements.md)
 - [getElementLocationStack](getElementLocationStack.md)
