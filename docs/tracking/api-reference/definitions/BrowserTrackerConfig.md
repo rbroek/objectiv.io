@@ -10,8 +10,10 @@ type BrowserTrackerConfig = TrackerConfig & {
 };
 ```
 
+:::info
 Browser Tracker can be configured in an easier way, as opposed to the Core Tracker, by specifying just an `endpoint`.  
 Internally it will automatically configure the Transport layer for the given `endpoint` with sensible defaults.
+:::
 
 ## Attributes
 |          |                        | type    | default value | description
