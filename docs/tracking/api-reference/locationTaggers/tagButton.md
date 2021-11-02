@@ -7,17 +7,17 @@ tagButton = (parameters: {
   id: string,
   text: string,
   options?: TagLocationOptions,
-  onError?: TrackerOnErrorCallback
+  onError?: TrackerErrorHandlerCallback
 }) => TagLocationReturnValue
 ```
 
 ## Parameters
-|          |          | type                                                                                    | default value
-| :-:      | :--      | :--                                                                                     | :--           
-| required | **id**   | string                                                                                  |
-| required | **text** | string                                                                                  |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)         | `{ trackClicks: true }`
-| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/definitions/TrackerOnErrorCallback.md) | `console.error`
+|          |          | type                                                                                              | default value
+| :-:      | :--      | :--                                                                                               | :--           
+| required | **id**   | string                                                                                            |
+| required | **text** | string                                                                                            |
+| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
+| optional | onError  | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Events
 

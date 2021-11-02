@@ -7,7 +7,7 @@ When dealing with regular HTML [Location Taggers](/tracking/api-reference/locati
 
 The most common issues will be:
 - Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html)
-- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md)
+- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md)
 
 ## Problem: Incorrect Locations
 If [Events](/taxonomy/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
@@ -33,7 +33,7 @@ The `Menu` component renders its contents in a [React Portal](https://reactjs.or
 </Card>
 ```
 :::tip
-It's easier to tag siblings via [tagChildren](/tracking/api-reference/low-level/tagChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
+It's easier to tag siblings via [tagChildren](/tracking/api-reference/locationTaggers/tagChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
 :::
 
 Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) as follows:
@@ -81,7 +81,7 @@ const parent = tagElement({ id: 'card' });
 
 
 ## Problem: Events not triggering 
-Usually this happens because the [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) did not end up being applied to the target [ement](/tracking/core-concepts/tagging.md#elements). This happens
+Usually this happens because the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [ement](/tracking/core-concepts/tagging.md#elements). This happens
 almost exclusively when dealing with Components. 
 
 ### Check if TaggingAttributes are set
@@ -94,7 +94,7 @@ As an example a [Tagged Element](/tracking/core-concepts/tagging.md#tagged-eleme
 <button data-objectiv-element-id="..." data-objectiv-context="..." ...>...</button>
 ```
 
-The values of the [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) are not really important, as they are fully automated. What matters is their presence. 
+The values of the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) are not really important, as they are fully automated. What matters is their presence. 
 
 We can now attempt to fix the issue in two ways:
 1. Verify props forwarding
@@ -127,7 +127,7 @@ const Button = ({ children, onClick, ...otherProps }) => (
 )
 ```
 
-Tracking will now work as expected, since our extra [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) will be forwarded correctly to the `<button>` 
+Tracking will now work as expected, since our extra [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) will be forwarded correctly to the `<button>` 
 
 ### Props forwarding - 3rd party libraries
 Third party components, especially UI libraries, usually allow specifying custom attributes. 
@@ -153,7 +153,7 @@ If InputBase would forwards props we could simply:
 Unfortunately that does not work and our [tagInput](/tracking/api-reference/locationTaggers/tagInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
 provides us with a specific property called `inputProps` that is directly forwarded to the `<input>` tag.
 
-Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md):
+Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md):
 
 ```typescript jsx
 <InputBase
@@ -164,8 +164,8 @@ Now we can fix the issue by simply using it to apply our [Tagging Attributes](/t
 ```
 
 :::tip
-Sometimes properties for passing extra attributes are already used and we can't assign directly to them as done above.    
-Simply spread the [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md) and merge them up with the existing props:
+Sometimes properties for passing extra attributes are already used, and we can't assign directly to them as done above.    
+Simply spread the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) and merge them up with the existing props:
 
 ```typescript jsx
 <InputBase

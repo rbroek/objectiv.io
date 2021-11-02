@@ -1,12 +1,12 @@
 # tagLocation
 
-Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
 
 ```typescript
 tagLocation = (parameters: {
   instance: LocationContext,
   options?: TagLocationOptions,
-  onError?: TrackerOnErrorCallback
+  onError?: TrackerErrorHandlerCallback
 }) => TagLocationReturnValue
 ```
 
@@ -15,14 +15,14 @@ tagLocation = (parameters: {
 :::
 
 ## Parameters
-|          |              | type                                                                                | default value
-| :-:      | :--          | :--                                                                                 | :--           
-| required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                          |
-| optional | options      | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | Dynamically calculated based on `instance`. See the [Events](#events) table below.
-| optional | onError      | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
+|          |              | type                                                                                              | default value
+| :-:      | :--          | :--                                                                                               | :--           
+| required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                                        |
+| optional | options      | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | Dynamically calculated based on `instance`. See the [Events](#events) table below.
+| optional | onError      | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md) 
+[TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md) 
 
 ## Events
 Unless customized via the `options` parameter, the given `instance` determines which Events are triggered automatically:
@@ -75,12 +75,12 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 </Tabs>
 
 :::tip Did you notice ?
-In the example above we factored the `instance` parameters by using [Core Location Context Factories](/tracking/api-reference/low-level/core-factories.md#location-context-factories).
+In the example above we factored the `instance` parameters by using [Location Context Core Factories](/tracking/api-reference/core/coreFactories.md#location-context-factories).
 :::
 
 <br />
 
 :::info See also
 - [Location Taggers](/tracking/api-reference/locationTaggers/overview.md)
-- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
+- [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

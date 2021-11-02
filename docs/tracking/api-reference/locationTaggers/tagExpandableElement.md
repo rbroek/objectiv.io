@@ -6,7 +6,7 @@ Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md)
 tagExpandableElement = (parameters: {
   id: string,
   options?: TagLocationOptions,
-  onError?: TrackerOnErrorCallback
+  onError?: TrackerErrorHandlerCallback
 }) => TagLocationReturnValue
 ```
 
@@ -15,11 +15,11 @@ Our Taxonomy names a logical UI unit as Section. We felt this would be confusing
 :::
 
 ## Parameters
-|          |         | type                                                                                | default value
-| :-:      | :--     | :--                                                                                 | :--           
-| required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/definitions/TrackerOnErrorCallback.md) | `console.error`
+|          |         | type                                                                                              | default value
+| :-:      | :--     | :--                                                                                               | :--           
+| required | **id**  | string                                                                                            |
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | onError | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
 [TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)

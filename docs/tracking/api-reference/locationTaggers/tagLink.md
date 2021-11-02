@@ -1,6 +1,6 @@
 # tagLink
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
 
 ```typescript
 tagLink = (parameters: {
@@ -8,21 +8,21 @@ tagLink = (parameters: {
   text: string,
   href: string,
   options?: TagLocationOptions,
-  onError?: TrackerOnErrorCallback
+  onError?: TrackerErrorHandlerCallback
 }) => TagLocationReturnValue
 ```
 
 ## Parameters
-|          |          | type                                                                                | default value
-| :-:      | :--      | :--                                                                                 | :--           
-| required | **id**   | string                                                                              |
-| required | **text** | string                                                                              |
-| required | **href** | string                                                                              |
-| optional | options  | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true }`
-| optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
+|          |          | type                                                                                              | default value
+| :-:      | :--      | :--                                                                                               | :--           
+| required | **id**   | string                                                                                            |
+| required | **text** | string                                                                                            |
+| required | **href** | string                                                                                            |
+| optional | options  | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackClicks: true }`
+| optional | onError  | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -64,7 +64,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagLink` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagLink` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />
@@ -73,6 +73,6 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 :::info See also
 - [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
 - [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
-- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
+- [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 :::

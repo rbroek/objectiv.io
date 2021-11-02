@@ -12,7 +12,7 @@ Objectiv currently supports three trackers:
 * [Angular Tracker](#angular-tracker) for installation into Angular web apps.
 
 ## Browser Tracker
-The [Browser Tracker](/tracking/api-reference/globals/BrowserTracker.md) is available via npm. It supports 
+The [Browser Tracker](/tracking/api-reference/BrowserTracker.md) is available via npm. It supports 
 core tracking methods out of the box.
 
 Example usage:
@@ -82,15 +82,15 @@ Three plugins are supported out of the box, and automatically enabled when the e
 [placeholder]
 
 ### Browser Tracker
-[Browser Tracker](/tracking/api-reference/globals/BrowserTracker.md) is organized in three main modules: [Location Taggers](/tracking/api-reference/locationTaggers/overview.md), [Event Trackers](/tracking/api-reference/eventTrackers/overview.md) and the **Tagged Elements Observer**.
+[Browser Tracker](/tracking/api-reference/BrowserTracker.md) is organized in three main modules: [Location Taggers](/tracking/api-reference/locationTaggers/overview.md), [Event Trackers](/tracking/api-reference/eventTrackers/overview.md) and the **Tagged Elements Observer**.
 
 #### Location Taggers
-[Location Taggers](/tracking/api-reference/locationTaggers/overview.md) are decorator functions binding [Location Contexts](/taxonomy/location-contexts/overview.md) to [Taggable Elements](/tracking/core-concepts/tagging.md#taggable-elements) via [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md).
+[Location Taggers](/tracking/api-reference/locationTaggers/overview.md) are decorator functions binding [Location Contexts](/taxonomy/location-contexts/overview.md) to [Taggable Elements](/tracking/core-concepts/tagging.md#taggable-elements) via [TaggingAttributes](/tracking/api-reference/definitions/TaggingAttribute.md).
 
 #### Event Trackers
 [Event Trackers](/tracking/api-reference/eventTrackers/overview.md) reconstruct [Locations](/tracking/core-concepts/locations.md) before handing [Events](/taxonomy/events/overview.md) over to **Core Tracker**.
 
 #### Tagged Elements Observer
-Monitors [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements) and, based on the [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md) values, runs the appropriate tasks. 
+Monitors [Tagged Elements](/tracking/core-concepts/tagging.md#tagged-elements) and, based on the [TaggingAttributes](/tracking/api-reference/definitions/TaggingAttribute.md) values, runs the appropriate tasks. 
 
-This includes monitoring the DOM for Visibility Events, binding [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to automatically trigger **Event Trackers** or processing [ChildrenTaggingQueries](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter).
+This includes monitoring the DOM for Visibility Events, binding [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener) to automatically trigger **Event Trackers** or processing [ChildrenTaggingQueries](/tracking/api-reference/locationTaggers/tagChildren.md#childrentaggingquery-parameter).

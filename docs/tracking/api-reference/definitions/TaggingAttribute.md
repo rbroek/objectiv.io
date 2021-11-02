@@ -1,6 +1,6 @@
 # TaggingAttribute enum
 
-[Location Taggers](/tracking/api-reference/locationTaggers/overview.md) and [tagChildren](/tracking/api-reference/low-level/tagChildren.md) decorate [Taggable Elements](/tracking/core-concepts/tagging.md#taggable-elements) by adding [Custom data-* Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) to them.
+[Location Taggers](/tracking/api-reference/locationTaggers/overview.md) and [tagChildren](/tracking/api-reference/locationTaggers/tagChildren.md) decorate [Taggable Elements](/tracking/core-concepts/tagging.md#taggable-elements) by adding [Custom data-* Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) to them.
 
 | Location Taggers | tagChildren   | Short name      | DOM dataset attribute name
 | :-:              | :-:           | :--             | :--                                                                                       
@@ -33,10 +33,10 @@ Whether to attach [Event Listeners](https://developer.mozilla.org/en-US/docs/Web
 Whether to monitor the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) to automatically track either [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md) or [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md) events.
 
 ### TaggingAttribute.validate
-A serialized [TagLocationOptions.validate](/tracking/api-reference/globals/TagLocationOptions.md#optionsvalidate) object to customize how validation occurs for the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
+A serialized [TagLocationOptions.validate](/tracking/api-reference/definitions/TagLocationOptions.md#optionsvalidate) object to customize how validation occurs for the [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
 
 ### TaggingAttribute.tagChildren
-A serialized list of [ChildrenTaggingQuery](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter) objects.
+A serialized list of [ChildrenTaggingQuery](/tracking/api-reference/locationTaggers/tagChildren.md#childrentaggingquery-parameter) objects.
 
 ### TaggingAttribute.tracked
 Automatically added by the [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer) when this [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) is registered as being tracked.

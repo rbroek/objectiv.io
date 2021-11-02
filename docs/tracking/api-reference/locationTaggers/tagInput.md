@@ -1,24 +1,24 @@
 # tagInput
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
 
 ```typescript
 tagInput = (parameters: {
   id: string,
   options?: TagLocationOptions,
-  onError?: TrackerOnErrorCallback
+  onError?: TrackerErrorHandlerCallback
 }) => TagLocationReturnValue
 ```
 
 ## Parameters
-|          |         | type                                                                                | default value
-| :-:      | :--     | :--                                                                                 | :--           
-| required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackBlurs: true }`
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
+|          |         | type                                                                                              | default value
+| :-:      | :--     | :--                                                                                               | :--           
+| required | **id**  | string                                                                                            |
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackBlurs: true }`
+| optional | onError | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-[TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
+[TagLocationReturnValue](/tracking/api-reference/definitions/TagLocationReturnValue.md)
 
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
@@ -62,7 +62,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagInput` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagInput` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 :::
 
 <br />
@@ -71,5 +71,5 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 :::info See also
 - [tagElement](/tracking/api-reference/locationTaggers/tagElement.md)
 - [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
-- [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
+- [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md)
 :::

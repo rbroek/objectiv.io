@@ -4,7 +4,7 @@ The `onError` parameter of [Location Taggers](/tracking/api-reference/locationTa
 
 ```typescript jsx
 
-type TrackerOnErrorCallback = <T = unknown>(error: unknown, parameters?: T) => void
+type TrackerErrorHandlerCallback = <T = unknown>(error: unknown, parameters?: T) => void
 
 ```
 :::info

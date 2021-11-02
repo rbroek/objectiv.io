@@ -18,7 +18,7 @@ npm install @objectiv/tracker-browser
 
 ## Configure the Tracker
 
-The fastest way to configure a global Tracker instance is to import and call [makeTracker](/tracking/api-reference/globals/makeTracker.md).
+The fastest way to configure a global Tracker instance is to import and call [makeTracker](/tracking/api-reference/makeTracker.md).
 
 :::info
 Ideally, the tracker should be configured as early as possible. Best before the Application renders or as high up as possible in the component tree.
