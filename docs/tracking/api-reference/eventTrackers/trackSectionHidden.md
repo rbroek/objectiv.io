@@ -10,7 +10,7 @@ trackSectionHidden = (parameters: {
 ```
 
 :::info
-`trackSectionHidden` is triggered automatically by [tagElement](/tracking/api-reference/location-taggers/tagElement.md), [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md), [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md), [tagNavigation](/tracking/api-reference/location-taggers/tagNavigation.md) and [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md).
+`trackSectionHidden` is triggered automatically by [tagElement](/tracking/api-reference/locationTaggers/tagElement.md), [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md), [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md), [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md) and [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md).
 :::
 
 ## Parameters
@@ -68,7 +68,7 @@ return (
 <br />
 
 :::info See also
-- [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
-- [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md)
+- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
+- [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

@@ -76,6 +76,6 @@ In fact, [Browser Tracker](/tracking/core-concepts/trackers.md#browser-tracker) 
 
 :::info See also
 - [makeTracker](/tracking/api-reference/globals/makeTracker.md)
-- [trackApplicationLoaded](/tracking/api-reference/event-trackers/trackApplicationLoaded.md)
+- [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

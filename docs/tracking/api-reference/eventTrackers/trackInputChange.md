@@ -1,13 +1,17 @@
-# trackVideoStart
+# trackInputChange
 
-Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [InputChangeEvent](/taxonomy/events/InputChangeEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
-trackVideoStart = (parameters: {
+trackInputChange = (parameters: {
   element: TrackableElement | EventTarget,
   tracker?: BrowserTracker
 }) => void
 ```
+
+:::info
+`trackInputChange` is triggered automatically, on [blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event), by [tagInput](/tracking/api-reference/locationTaggers/tagInput.md).
+:::
 
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
@@ -17,32 +21,36 @@ trackVideoStart = (parameters: {
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
-`trackVideoStart` is a void function.
+`trackInputChange` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackVideoStart } from '@objectiv/tracker-browser';
+import { trackInputChange } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<video
-  play={(event) => {
-    trackVideoStart({ element: event.target })
-  }}
-  pause={(event) => {
-    trackVideoPause({ element: event.target })
+<input
+  onBlur={(event) => {
+    trackInputChange({ element: event.target })
   }}
 />
 ```
 
 ```typescript jsx
-<YouTube
-  onPlay={({ target: youTubePlayerInstance }) => {
-    trackVideoStart({ element: youTubePlayerInstance.getIframe() })
+<select
+  onChange={(event) => {
+    trackInputChange({ element: event.target })
   }}
-  onPause={({ target: youTubePlayerInstance }) => {
-    trackVideoPause({ element: youTubePlayerInstance.getIframe() })
+>
+  ...
+</select>
+```
+
+```typescript jsx
+<TextField
+  onBlur={(event) => {
+    trackInputChange({ element: event.target })
   }}
 />
 ```
@@ -50,14 +58,13 @@ import { trackVideoStart } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackInputChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackVideoPause](/tracking/api-reference/event-trackers/trackVideoPause.md)
-- [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md)
-- [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
+- [tagInput](/tracking/api-reference/locationTaggers/tagInput.md)
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
-  :::
+:::

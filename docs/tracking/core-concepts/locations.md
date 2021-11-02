@@ -63,7 +63,7 @@ Together with an `id`, a Location Stack makes every Event unique. For example, a
 
 ## Applying Locations
 
-When [tagging](/tracking/api-reference/location-taggers/overview.md) Elements in the UI, this binds the 
+When [tagging](/tracking/api-reference/locationTaggers/overview.md) Elements in the UI, this binds the 
 appropriate [LocationContext](/taxonomy/location-contexts/overview.md) to it, using 
 [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md). Events are then triggered 
 automatically based on that [LocationContext](/taxonomy/location-contexts/overview.md) bound to the 

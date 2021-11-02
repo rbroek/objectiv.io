@@ -1,6 +1,6 @@
 # findParentTaggedElements
 
-Walk the [DOM]() upwards looking for [TaggedElements](/TODO). The resulting array can be used to reconstruct a [LocationStack](/TODO).
+Walks the [DOM](/TODO) upwards looking for [TaggedElements](/TODO). The resulting array can be used to reconstruct a [LocationStack](/TODO).
 
 ```typescript
 findParentTaggedElements = (

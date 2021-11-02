@@ -1,9 +1,9 @@
-# tagInput
+# tagNavigation
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
+Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [NavigationContext](/taxonomy/location-contexts/NavigationContext.md).
 
 ```typescript
-tagInput = (parameters: {
+tagNavigation = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
@@ -14,7 +14,7 @@ tagInput = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackBlurs: true }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -23,9 +23,10 @@ tagInput = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
+- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
+- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
-## Usage example
+## Examples
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -34,15 +35,19 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagInput } from '@objectiv/tracker-browser';
+import { tagNavigation } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<input {...tagInput({ id: 'search' })} />
+<nav {...tagNavigation({ id: 'navigation-id' })}>
+  ...
+</nav>
 ```
 
 ```typescript jsx
-<Search {...tagInput({ id: 'search' })} />
+<TopNav {...tagNavigation({ id: 'navigation-id' })}>
+  ...
+</TopNav>
 ```
 
   </TabItem>
@@ -51,25 +56,27 @@ import { tagInput } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<input [tagInput]="{ id: 'search' }" />
+<nav [tagNavigation]="{ id: 'navigation-id' }">
+  ...
+</nav>
 ```
 
   </TabItem>
 </Tabs>
 
-
-
 <br />
 
 :::tip Did you know ?
-`tagInput` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagNavigation` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagElement](/tracking/api-reference/location-taggers/tagElement.md)
-- [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
+- [tagElement](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
+- [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
+- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 :::

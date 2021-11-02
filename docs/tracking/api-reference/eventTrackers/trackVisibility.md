@@ -46,7 +46,7 @@ import { trackVisibility } from '@objectiv/tracker-browser';
 <br />
 
 :::info See also
-- [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-- [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
+- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
   :::

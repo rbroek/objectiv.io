@@ -7,7 +7,7 @@ tagChildren = (parameters: ChildrenTaggingQuery[]) => TagLocationReturnValue
 ```
 
 :::warning
-`tagChildren` is a performance-sensitive API. Avoid using it whenever [Location Taggers](/tracking/api-reference/location-taggers/overview.md) could be used instead.
+`tagChildren` is a performance-sensitive API. Avoid using it whenever [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) could be used instead.
 :::
 
 ### ChildrenTaggingQuery parameter
@@ -95,7 +95,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::info See also
-- [Location Taggers](/tracking/api-reference/location-taggers/overview.md)
+- [Location Taggers](/tracking/api-reference/locationTaggers/overview.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 - [Tagged Elements Observer](/tracking/core-concepts/trackers.md#tagged-elements-observer)
 :::

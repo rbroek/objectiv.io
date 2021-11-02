@@ -10,8 +10,8 @@ well-structured & self-descriptive, and can be validated at the first step of th
 several tools to catch errors before data starts flowing in, outlined below.
 
 ## Build-time validation
-Objectiv's [tagging](/tracking/api-reference/location-taggers/overview.md) & 
-[tracking](/tracking/api-reference/event-trackers/overview.md) functions are typed and documented.
+Objectiv's [tagging](/tracking/api-reference/locationTaggers/overview.md) & 
+[tracking](/tracking/api-reference/eventTrackers/overview.md) functions are typed and documented.
 
 During instrumentation, you'll get inline documentation for every function, and linting for any validation 
 issues: unknown tagging/tracking calls, missing properties, or wrongly typed properties.

@@ -1,6 +1,6 @@
 # makeBrowserTrackerDefaultPluginList
 
-Generates the default list of [TrackerPlugins](/TODO) for [Browser Tracker](/TODO).
+Generates the default list of [TrackerPlugins](/TODO) for [Browser Tracker](../../BrowserTracker.md).
 
 ```typescript
 makeDefaultBrowserTrackerPluginsList = (trackerConfig: BrowserTrackerConfig) => TrackerPluginInterface[]

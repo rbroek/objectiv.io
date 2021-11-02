@@ -1,6 +1,6 @@
 # TagLocationReturnValue
 
-[Location Taggers](/tracking/api-reference/location-taggers/overview.md) APIs return either a set of [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md) or `undefined`. The latter occurs whenever an Error is thrown. 
+[Location Taggers](/tracking/api-reference/locationTaggers/overview.md) APIs return either a set of [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md) or `undefined`. The latter occurs whenever an Error is thrown. 
 
 ```typescript jsx
 

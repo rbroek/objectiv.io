@@ -1,9 +1,9 @@
-# tagElement
+# tagOverlay
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [SectionContext](/taxonomy/location-contexts/SectionContext.md).
+Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [OverlayContext](/taxonomy/location-contexts/OverlayContext.md).
 
 ```typescript
-tagElement = (parameters: {
+tagOverlay = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
@@ -23,10 +23,10 @@ tagElement = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
+- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
-## Usage example
+## Examples
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -35,15 +35,19 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagElement } from '@objectiv/tracker-browser';
+import { tagOverlay } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<Layout {...tagElement({ id: 'layout' })}>
-  <div {...tagElement({ id: 'section' })}>
-    ...
-  </div>
-</Layout>
+<div {...tagOverlay({ id: 'modal-id' })}>
+  ...
+</div>
+```
+
+```typescript jsx
+<Modal {...tagOverlay({ id: 'modal-id' })}>
+  ...
+</Modal>
 ```
 
   </TabItem>
@@ -52,11 +56,9 @@ import { tagElement } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<section [tagElement]="{ id: 'layout' }">
-  <div [tagElement]="{ id: 'section' }">
-    ...
-  </div>
-</section>
+<div [tagOverlay]="{ id: 'modal-id' }">
+  ...
+</div>
 ```
 
   </TabItem>
@@ -65,16 +67,16 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagOverlay` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagNavigation](/tracking/api-reference/location-taggers/tagNavigation.md)
-- [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md)
-- [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md)
-- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagElement](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
+- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
 :::

@@ -1,3 +1,0 @@
-# makeBlurEventHandler
-
-TODO

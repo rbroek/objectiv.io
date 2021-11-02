@@ -66,8 +66,8 @@ makeTracker({
 <br />
 
 :::info See also
-- [Location Taggers](/tracking/api-reference/location-taggers/overview.md) 
-- [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
+- [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) 
+- [Event Trackers](/tracking/api-reference/eventTrackers/overview.md)
 - [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)
 - [Transport](/tracking/core-concepts/trackers.md#transport)
 - [Collector](/tracking/core-concepts/collector.md)

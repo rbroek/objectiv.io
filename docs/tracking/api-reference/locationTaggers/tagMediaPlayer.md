@@ -1,9 +1,9 @@
-# tagNavigation
+# tagMediaPlayer
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [NavigationContext](/taxonomy/location-contexts/NavigationContext.md).
+Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
 
 ```typescript
-tagNavigation = (parameters: {
+tagMediaPlayer = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
@@ -23,8 +23,8 @@ tagNavigation = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
+- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
 ## Examples
 
@@ -35,19 +35,19 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagNavigation } from '@objectiv/tracker-browser';
+import { tagMediaPlayer } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<nav {...tagNavigation({ id: 'navigation-id' })}>
-  ...
-</nav>
+<div {...tagMediaPlayer({ id: 'player-id' })}>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
+</div>
 ```
 
 ```typescript jsx
-<TopNav {...tagNavigation({ id: 'navigation-id' })}>
-  ...
-</TopNav>
+<Player {...tagMediaPlayer({ id: 'player-id' })}>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />
+</Player>
 ```
 
   </TabItem>
@@ -56,9 +56,15 @@ import { tagNavigation } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<nav [tagNavigation]="{ id: 'navigation-id' }">
-  ...
-</nav>
+<div [tagMediaPlayer]="{ id: 'player-id' }">
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" />  
+</div>
+```
+
+```typescript jsx
+<video [tagMediaPlayer]="{ id: 'player-id' }">
+  <source src="video.mp4" type="video/mp4">
+</video>
 ```
 
   </TabItem>
@@ -67,16 +73,16 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagNavigation` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagMediaPlayer` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagElement](/tracking/api-reference/location-taggers/tagNavigation.md)
-- [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md)
-- [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md)
-- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagElement](/tracking/api-reference/locationTaggers/tagElement.md)
+- [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
+- [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
+- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
-:::
+- :::

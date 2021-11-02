@@ -21,11 +21,11 @@ Objectiv supports two Events for Elements that become visible or hidden:
 
 ## How To Use
 You can manually specify whether and how an Element triggers Visibility Events, via:
-* [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md): For a given TrackableElement, 
+* [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md): For a given TrackableElement, 
   defines a state that triggers Visibility Events.
-* [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md): Immediately trigger a
+* [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md): Immediately trigger a
   SectionVisible Event for the given TrackableElement.
-* [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md): Immediately trigger a
+* [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md): Immediately trigger a
   SectionHidden Event for the given TrackableElement.
 
 ## Use Cases
@@ -43,11 +43,11 @@ loaded through Visibility Events helps you understand for instance:
 Some Elements may only be shown on screen when a user interacts with them, which then overlay the current UI.
 Examples are tooltips and notification menus. 
 
-A [tagOverlay](/tracking/api-reference/location-taggers/tagOverlay.md) method is available for these cases.
+A [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md) method is available for these cases.
 
 ### Expandable Elements
 When an Element shows in the current UI only on interaction (but does not overlay it), we define these as 
 [ExpandableSections](/taxonomy/location-contexts/ExpandableSectionContext.md).
 
-A [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md) method is 
+A [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md) method is 
 available for these cases.

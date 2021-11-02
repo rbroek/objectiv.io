@@ -1,9 +1,9 @@
-# tagOverlay
+# tagExpandableElement
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [OverlayContext](/taxonomy/location-contexts/OverlayContext.md).
+Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md).
 
 ```typescript
-tagOverlay = (parameters: {
+tagExpandableElement = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
@@ -14,7 +14,7 @@ tagOverlay = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -23,10 +23,11 @@ tagOverlay = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+- [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
+- [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
-## Examples
+## Usage example
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -35,19 +36,19 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagOverlay } from '@objectiv/tracker-browser';
+import { tagExpandableElement } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<div {...tagOverlay({ id: 'modal-id' })}>
+<div {...tagExpandableElement({ id: 'faq-item-id' })}>
   ...
 </div>
 ```
 
 ```typescript jsx
-<Modal {...tagOverlay({ id: 'modal-id' })}>
+<Accordion {...tagExpandableElement({ id: 'accordion-id' })}>
   ...
-</Modal>
+</Accordion>
 ```
 
   </TabItem>
@@ -56,7 +57,7 @@ import { tagOverlay } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<div [tagOverlay]="{ id: 'modal-id' }">
+<div [tagExpandableElement]="{ id: 'faq-item-id' }">
   ...
 </div>
 ```
@@ -67,16 +68,19 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagOverlay` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagExpandableElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagElement](/tracking/api-reference/location-taggers/tagNavigation.md)
-- [tagNavigation](/tracking/api-reference/location-taggers/tagNavigation.md)
-- [tagMediaPlayer](/tracking/api-reference/location-taggers/tagMediaPlayer.md)
-- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagButton](tagButton)
+- [tagLink](tagLink)
+- [tagElement](tagNavigation)
+- [tagNavigation](tagNavigation)
+- [tagOverlay](tagOverlay)
+- [tagMediaPlayer](tagMediaPlayer)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 :::

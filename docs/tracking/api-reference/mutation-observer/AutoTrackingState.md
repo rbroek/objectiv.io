@@ -1,3 +1,0 @@
-# AutoTrackingState
-
-TODO

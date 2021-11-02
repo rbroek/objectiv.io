@@ -1,12 +1,11 @@
-# tagLink
+# tagButton
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
+Tags a [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
 
 ```typescript
-tagLink = (parameters: {
+tagButton = (parameters: {
   id: string,
   text: string,
-  href: string,
   options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
 }) => TagLocationReturnValue
@@ -17,19 +16,19 @@ tagLink = (parameters: {
 | :-:      | :--      | :--                                                                                 | :--           
 | required | **id**   | string                                                                              |
 | required | **text** | string                                                                              |
-| required | **href** | string                                                                              |
 | optional | options  | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true }`
 | optional | onError  | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
+
+## Events
+
+Unless customized via the `options` parameter, automatically triggers:
+
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 
 ## Returns
 [TagLocationReturnValue](/tracking/api-reference/globals/TagLocationReturnValue.md)
 
-## Events
-Unless customized via the `options` parameter, automatically triggers:
-
-- [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-
-## Usage examples
+## Usage example
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -38,15 +37,15 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagLink } from '@objectiv/tracker-browser';
+import { tagButton } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<a {...tagLink({ id: 'lnk-id', text: 'Go!', href: '/path' })} href="/path">Go!</a>
+<button {...tagButton({ id: 'button-id', text: 'Click Me!' })}>Click Me!</button>
 ```
 
 ```typescript jsx
-<LinkComponent {...tagLink({ id: 'lnk-id', text: 'Go!', href: '/path' })} to="/path">Go!</LinkComponent>
+<Submit {...tagButton({ id: 'submit', text: 'Do It!' })}>Do It!</Submit>
 ```
 
   </TabItem>
@@ -55,7 +54,7 @@ import { tagLink } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<a [tagLink]="{ id: 'lnk-id', text: 'Go!', href: '/path' }" href="/path">Go!</a>
+<button [tagButton]="{ id: 'button-id', text: 'Click Me!' }">Click Me!</button>
 ```
 
   </TabItem>
@@ -64,15 +63,14 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 <br />
 
 :::tip Did you know ?
-`tagLink` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagButton` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
-
 :::info See also
-- [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
-- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
+- [tagLink](/tracking/api-reference/locationTaggers/tagLink.md)
+- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
-- [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 :::

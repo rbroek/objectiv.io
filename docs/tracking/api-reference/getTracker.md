@@ -43,6 +43,6 @@ const secondaryTracker = getTracker('secondary-tracker');
 - [setDefaultTracker](/tracking/api-reference/globals/setDefaultTracker.md)
 - [makeTracker](/tracking/api-reference/globals/makeTracker.md)
 - [TrackerRepository](/tracking/api-reference/globals/TrackerRepository.md)
-- [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
+- [Event Trackers](/tracking/api-reference/eventTrackers/overview.md)
 - [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)
 :::

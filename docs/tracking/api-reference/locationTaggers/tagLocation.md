@@ -11,7 +11,7 @@ tagLocation = (parameters: {
 ```
 
 :::caution
-`tagLocation` is a lower-level API. Unless really needed, it's easier to use specific [Location Taggers](/tracking/api-reference/location-taggers/overview.md) APIs. 
+`tagLocation` is a lower-level API. Unless really needed, it's easier to use specific [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) APIs. 
 :::
 
 ## Parameters
@@ -29,14 +29,14 @@ Unless customized via the `options` parameter, the given `instance` determines w
 
 | LocationContext | Automatically triggers
 | :--                                                                                 | :--           
-| [ButtonContext](/taxonomy/location-contexts/ButtonContext.md)                       | [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-| [SectionContext](/taxonomy/location-contexts/SectionContext.md)                     | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md) | [trackClick](/tracking/api-reference/event-trackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [InputContext](/taxonomy/location-contexts/InputContext.md)                         | [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
-| [LinkContext](/taxonomy/location-contexts/LinkContext.md)                           | [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-| [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md)             | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [NavigationContext](/taxonomy/location-contexts/NavigationContext.md)               | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
-| [OverlayContext](/taxonomy/location-contexts/OverlayContext.md)                     | [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+| [ButtonContext](/taxonomy/location-contexts/ButtonContext.md)                       | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+| [SectionContext](/taxonomy/location-contexts/SectionContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md) | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [InputContext](/taxonomy/location-contexts/InputContext.md)                         | [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
+| [LinkContext](/taxonomy/location-contexts/LinkContext.md)                           | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+| [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md)             | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [NavigationContext](/taxonomy/location-contexts/NavigationContext.md)               | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [OverlayContext](/taxonomy/location-contexts/OverlayContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
 ## Usage example
 
@@ -81,6 +81,6 @@ In the example above we factored the `instance` parameters by using [Core Locati
 <br />
 
 :::info See also
-- [Location Taggers](/tracking/api-reference/location-taggers/overview.md)
+- [Location Taggers](/tracking/api-reference/locationTaggers/overview.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

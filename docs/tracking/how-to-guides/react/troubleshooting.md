@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 
 # Troubleshooting 
-When dealing with regular HTML [Location Taggers](/tracking/api-reference/location-taggers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
+When dealing with regular HTML [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
 
 The most common issues will be:
 - Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html)
@@ -12,7 +12,7 @@ The most common issues will be:
 ## Problem: Incorrect Locations
 If [Events](/taxonomy/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
 
-[Event Trackers](/tracking/api-reference/event-trackers/overview.md) can reconstruct Locations by traversing the DOM from the target [Element](/tracking/core-concepts/tagging.md#elements) upwards. Unfortunately we cannot 
+[Event Trackers](/tracking/api-reference/eventTrackers/overview.md) can reconstruct Locations by traversing the DOM from the target [Element](/tracking/core-concepts/tagging.md#elements) upwards. Unfortunately we cannot 
 follow, nor detect (yet), portaled subtrees. 
 
 :::info Auto detect portals?
@@ -36,7 +36,7 @@ The `Menu` component renders its contents in a [React Portal](https://reactjs.or
 It's easier to tag siblings via [tagChildren](/tracking/api-reference/low-level/tagChildren.md) but, to keep this example simpler, we are going for the verbose syntax here.
 :::
 
-Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/api-reference/location-taggers/overview.md) as follows:
+Unknowingly we may attempt to tag it by adding our [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) as follows:
 
 ```typescript jsx
 <Card {...tagElement({ id: 'card' })}>
@@ -63,9 +63,9 @@ The Location ends abruptly at the `Menu` and jumps to the application root.
 
 ### Make Locations work across Portals
 
-The solution is to specify the parent [Location Tagger](/tracking/api-reference/location-taggers/overview.md) of a portaled [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) manually. 
+The solution is to specify the parent [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) of a portaled [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements) manually. 
 
-This tells the [Event Tracker](/tracking/api-reference/event-trackers/overview.md) to ignore the DOM and, when processing the `Menu` Location, to simply continue with and from its parent.
+This tells the [Event Tracker](/tracking/api-reference/eventTrackers/overview.md) to ignore the DOM and, when processing the `Menu` Location, to simply continue with and from its parent.
 
 ```typescript jsx
 const parent = tagElement({ id: 'card' });
@@ -87,7 +87,7 @@ almost exclusively when dealing with Components.
 ### Check if TaggingAttributes are set
 To verify if that's the issue we can simply inspect the DOM with the Browser's Developer Tools. 
 
-If the target [Tagged Element](/tracking/core-concepts/tagging.md#elements) we are trying to tag does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/api-reference/location-taggers/overview.md) failed decorating it.
+If the target [Tagged Element](/tracking/core-concepts/tagging.md#elements) we are trying to tag does not have at least `data-objectiv-element-id` set, most probably the [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) failed decorating it.
 
 As an example a [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements), in this case a `<button>`, should look at least like the following:
 ```
@@ -150,7 +150,7 @@ If InputBase would forwards props we could simply:
 />
 ```
 
-Unfortunately that does not work and our [tagInput](/tracking/api-reference/location-taggers/tagInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
+Unfortunately that does not work and our [tagInput](/tracking/api-reference/locationTaggers/tagInput.md) attributes will just get discarded. Luckily [InputBase](https://mui.com/api/input-base/) 
 provides us with a specific property called `inputProps` that is directly forwarded to the `<input>` tag.
 
 Now we can fix the issue by simply using it to apply our [Tagging Attributes](/tracking/api-reference/globals/TaggingAttributes.md):
@@ -183,7 +183,7 @@ Simply spread the [Tagging Attributes](/tracking/api-reference/globals/TaggingAt
 When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to tag both
 Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
 
-Everything that [Location Taggers](/tracking/api-reference/location-taggers/overview.md) try to automate, together with the Tagged Elements Observer, can be done manually.
+Everything that [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) try to automate, together with the Tagged Elements Observer, can be done manually.
 
 Let's look at some examples with solutions.
 

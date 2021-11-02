@@ -7,7 +7,7 @@ setDefaultTracker = (trackerId: string) => void
 ```
 
 :::tip Default Tracker ?
-[Event Trackers](/tracking/api-reference/event-trackers/overview.md) internally use [getTracker](/tracking/api-reference/globals/getTracker.md) to retrieve the default [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md) instance to use.
+[Event Trackers](/tracking/api-reference/eventTrackers/overview.md) internally use [getTracker](/tracking/api-reference/globals/getTracker.md) to retrieve the default [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md) instance to use.
 :::
 
 ## Parameters
@@ -35,5 +35,5 @@ setDefaultTracker('secondary-tracker');
 - [getTracker](/tracking/api-reference/globals/getTracker.md)
 - [TrackerRepository](/tracking/api-reference/globals/TrackerRepository.md)
 - [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md) 
-- [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
+- [Event Trackers](/tracking/api-reference/eventTrackers/overview.md)
 :::

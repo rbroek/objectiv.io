@@ -66,7 +66,7 @@ Nodes and scouts for Elements that have been enriched with Tracking Attributes. 
 attaches Event listeners, which will automatically handle their tracking.
 
 However, sometimes it may be preferable, or necessary, to 
-[trigger Events programmatically](/tracking/api-reference/event-trackers/overview.md).
+[trigger Events programmatically](/tracking/api-reference/eventTrackers/overview.md).
 
 ## Out-of-the-box Events
 The Tracker uses the same Observer described above to trigger the events below by default.

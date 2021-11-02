@@ -1,9 +1,9 @@
-# trackVideoPause
+# trackVideoStart
 
-Triggers a [VideoPauseEvent](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
-trackVideoPause = (parameters: {
+trackVideoStart = (parameters: {
   element: TrackableElement | EventTarget,
   tracker?: BrowserTracker
 }) => void
@@ -17,12 +17,12 @@ trackVideoPause = (parameters: {
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
-`trackVideoPause` is a void function.
+`trackVideoStart` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackVideoPause } from '@objectiv/tracker-browser';
+import { trackVideoStart } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
@@ -50,14 +50,14 @@ import { trackVideoPause } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackVideoPause` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [trackVideoStart](/tracking/api-reference/event-trackers/trackVideoStart.md)
-- [trackVisibility](/tracking/api-reference/event-trackers/trackVisibility.md)
-- [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
+- [trackVideoPause](/tracking/api-reference/eventTrackers/trackVideoPause.md)
+- [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
-:::
+  :::

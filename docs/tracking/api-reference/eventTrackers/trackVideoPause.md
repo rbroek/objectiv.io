@@ -1,17 +1,13 @@
-# trackClick
+# trackVideoPause
 
-Triggers a [ClickEvent](/taxonomy/events/ClickEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).  
+Triggers a [VideoPauseEvent](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
-trackClick = (parameters: {
+trackVideoPause = (parameters: {
   element: TrackableElement | EventTarget,
   tracker?: BrowserTracker
 }) => void
 ```
-
-:::info
-`trackClick` is triggered automatically, on [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event), by [tagButton](/tracking/api-reference/location-taggers/tagButton.md), [tagLink](/tracking/api-reference/location-taggers/tagLink.md) or [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md).
-:::
 
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
@@ -21,26 +17,32 @@ trackClick = (parameters: {
 | optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
 
 ## Returns
-`trackClick` is a void function.
+`trackVideoPause` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackClick } from '@objectiv/tracker-browser';
+import { trackVideoPause } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<div
-  onClick={(event) => {
-    trackClick({ element: event.target })
+<video
+  play={(event) => {
+    trackVideoStart({ element: event.target })
+  }}
+  pause={(event) => {
+    trackVideoPause({ element: event.target })
   }}
 />
 ```
 
 ```typescript jsx
-<Accordion
-  onClick={(event) => {
-    trackClick({ element: event.target })
+<YouTube
+  onPlay={({ target: youTubePlayerInstance }) => {
+    trackVideoStart({ element: youTubePlayerInstance.getIframe() })
+  }}
+  onPause={({ target: youTubePlayerInstance }) => {
+    trackVideoPause({ element: youTubePlayerInstance.getIframe() })
   }}
 />
 ```
@@ -48,15 +50,14 @@ import { trackClick } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackClick` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackVideoPause` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [tagButton](/tracking/api-reference/location-taggers/tagButton.md)
-- [tagLink](/tracking/api-reference/location-taggers/tagLink.md) 
-- [tagExpandableElement](/tracking/api-reference/location-taggers/tagExpandableElement.md)
-- [trackInputChange](/tracking/api-reference/event-trackers/trackInputChange.md)
+- [trackVideoStart](/tracking/api-reference/eventTrackers/trackVideoStart.md)
+- [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
+- [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
 - [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
 :::

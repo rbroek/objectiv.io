@@ -20,7 +20,7 @@ beforementioned [Elements](https://developer.mozilla.org/en-US/docs/Web/API/Elem
 Examples are a `<div>` or an `<a>` element in HTML.
 
 ## Tagging of Elements
-[Objectiv's Tracker API](/tracking/api-reference/location-taggers/overview.md) is used to **tag** any Element
+[Objectiv's Tracker API](/tracking/api-reference/locationTaggers/overview.md) is used to **tag** any Element
 that you want to track. The Tracker then uses this information to automatically decorate the Element in the 
 DOM with the respective [TaggingAttributes](/tracking/api-reference/globals/TaggingAttributes.md). 
 

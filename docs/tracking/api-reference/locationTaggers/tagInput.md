@@ -1,9 +1,9 @@
-# tagExpandableElement
+# tagInput
 
-Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md).
+Tags [Taggable Element](/tracking/core-concepts/tagging.md#taggable-elements) to be tracked as [InputContext](/taxonomy/location-contexts/InputContext.md).
 
 ```typescript
-tagExpandableElement = (parameters: {
+tagInput = (parameters: {
   id: string,
   options?: TagLocationOptions,
   onError?: TrackerOnErrorCallback
@@ -14,7 +14,7 @@ tagExpandableElement = (parameters: {
 |          |         | type                                                                                | default value
 | :-:      | :--     | :--                                                                                 | :--           
 | required | **id**  | string                                                                              |
-| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackClicks: true, trackVisibility: { mode: 'auto' } }`
+| optional | options | [TagLocationOptions](/tracking/api-reference/globals/TagLocationOptions.md)         | `{ trackBlurs: true }`
 | optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md) | `console.error`
 
 ## Returns
@@ -23,9 +23,7 @@ tagExpandableElement = (parameters: {
 ## Events
 Unless customized via the `options` parameter, automatically triggers:
 
-- [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
-- [trackSectionVisible](/tracking/api-reference/event-trackers/trackSectionVisible.md)
-- [trackSectionHidden](/tracking/api-reference/event-trackers/trackSectionHidden.md)
+- [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
 
 ## Usage example
 
@@ -36,19 +34,15 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagExpandableElement } from '@objectiv/tracker-browser';
+import { tagInput } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<div {...tagExpandableElement({ id: 'faq-item-id' })}>
-  ...
-</div>
+<input {...tagInput({ id: 'search' })} />
 ```
 
 ```typescript jsx
-<Accordion {...tagExpandableElement({ id: 'accordion-id' })}>
-  ...
-</Accordion>
+<Search {...tagInput({ id: 'search' })} />
 ```
 
   </TabItem>
@@ -57,30 +51,25 @@ import { tagExpandableElement } from '@objectiv/tracker-browser';
 Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/angular/getting-started.md#optional---configure-taggers-directive).
 
 ```typescript jsx
-<div [tagExpandableElement]="{ id: 'faq-item-id' }">
-  ...
-</div>
+<input [tagInput]="{ id: 'search' }" />
 ```
 
   </TabItem>
 </Tabs>
 
+
+
 <br />
 
 :::tip Did you know ?
-`tagExpandableElement` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
+`tagInput` is just syntactic sugar on top of [tagLocation](/tracking/api-reference/low-level/tagLocation.md).
 :::
 
 <br />
 
 
 :::info See also
-- [tagButton](tagButton)
-- [tagLink](tagLink)
-- [tagElement](tagNavigation)
-- [tagNavigation](tagNavigation)
-- [tagOverlay](tagOverlay)
-- [tagMediaPlayer](tagMediaPlayer)
+- [tagElement](/tracking/api-reference/locationTaggers/tagElement.md)
+- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
 - [tagLocation](/tracking/api-reference/low-level/tagLocation.md)
-- [trackClick](/tracking/api-reference/event-trackers/trackClick.md)
 :::
