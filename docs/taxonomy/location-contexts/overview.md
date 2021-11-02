@@ -47,4 +47,4 @@ AbstractLocationContext defines the bare minimum properties for every Location C
 inherit from it.
 
 ### Properties
-All inherited from [AbstractContext](overview#abstractcontext).
+All inherited from [AbstractContext](/taxonomy/abstract-contexts/overview.md#abstractcontext).

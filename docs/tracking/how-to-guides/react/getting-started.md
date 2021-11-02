@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Getting Started
 
-[placeholder]
+Follow the step-by-step Guide below to get started with tracking on your React application.
 
 ## Install Tracker from NPM
 

@@ -14,4 +14,4 @@ import Mermaid from '@theme/Mermaid';
 `} caption="Figure: Diagram of URLChangeEvent inheritance" baseColor="blue" />
 
 ### Requires
-- [WebDocumentContext](/docs/taxonomy/global-contexts/WebDocumentContext).
+- [WebDocumentContext](/taxonomy/location-contexts/WebDocumentContext.md).

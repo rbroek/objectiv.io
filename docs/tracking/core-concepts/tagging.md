@@ -57,5 +57,5 @@ Tagging Attributes supply the Tracker with the information needed to compose & s
 These are **Taggable Elements** that have been already decorated with the 
 [tagChildren](/tracking/api-reference/globals/TaggingAttributes.md#taggingattributetagchildren) Tagging 
 Attribute, because their parent was tagged to 
-[track its children](/tracking/api-reference/low-level/tagChildren#childrentaggingquery-parameter)
+[track its children](/tracking/api-reference/low-level/tagChildren.md#childrentaggingquery-parameter)
 using a CSS Selector query.

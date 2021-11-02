@@ -14,11 +14,11 @@ Next to specifying its `_type`, [Events](/taxonomy/events/overview.md) must prov
 with its [Location](/tracking/core-concepts/locations.md) Stack, every Event in an application should be unique - Trackers 
 [help to enforce this](validation.md).
 
-Additionally, every Event must have [GlobalContexts](taxonomy/global-contexts), with at least an 
+Additionally, every Event must have [GlobalContexts](taxonomy/global-contexts/overview.md), with at least an 
 [`ApplicationContext`](/taxonomy/global-contexts/ApplicationContext.md), to be able to distinguish from what application the event originated.
 
 Every Event optionally can, but most likely will, carry a list of 
-[LocationContexts](taxonomy/location-contexts) that describe where the event happened
+[LocationContexts](taxonomy/location-contexts/overview.md) that describe where the event happened
 
 An example event with `location_stack` and `global_context` properties:
 
@@ -58,8 +58,23 @@ An example event with `location_stack` and `global_context` properties:
 ```
 
 ## Triggers
-Events are [triggered automatically](/tracking/api-reference/low-level/tagLocation.md#events), based on the 
-LocationContext bound to the Tagged Element.
+For tagged Elements, most Events will be 
+[triggered automatically](/tracking/api-reference/low-level/tagLocation.md#events), based on the 
+LocationContext bound to the Tagged Element. To do so, internally, the Web tracker uses a Mutation Observer 
+to monitor the DOM. When existing nodes change or get removed, or if subtrees get added, it traverses the 
+Nodes and scouts for Elements that have been enriched with Tracking Attributes. For those Elements it 
+attaches Event listeners, which will automatically handle their tracking.
 
-Nonetheless, sometimes it may be preferable, or necessary, to 
+However, sometimes it may be preferable, or necessary, to 
 [trigger Events programmatically](/tracking/api-reference/event-trackers/overview.md).
+
+## Out-of-the-box Events
+The Tracker uses the same Observer described above to trigger the events below by default.
+
+### ApplicationLoaded
+An [ApplicationLoaded](/taxonomy/events/ApplicationLoadedEvent.md) Event (by default enabled, configurable)
+triggers once on application load.
+
+### URLChange
+An [URLChange](/taxonomy/events/URLChangeEvent.md) Event (by default enabled, configurable) triggers on SPA 
+URL changes, by keeping track of the last URL detected.

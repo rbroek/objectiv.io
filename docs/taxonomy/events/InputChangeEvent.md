@@ -13,4 +13,4 @@ import Mermaid from '@theme/Mermaid';
 `} caption="Figure: Diagram of InputChangeEvent inheritance" baseColor="blue" />
 
 ### Requires
-- [InputContext](/docs/taxonomy/global-contexts/InputContext).
+- [InputContext](/taxonomy/location-contexts/InputContext.md).
