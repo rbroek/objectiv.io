@@ -124,6 +124,20 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
+      links: [
+        {
+          items: [
+            {
+              label: 'Privacy Policy',
+              to: 'privacy/',
+            },
+            {
+              label: 'Cookies',
+              to: 'privacy/cookies',
+            },
+          ],
+        },
+      ],
     },
   },
   presets: [
@@ -160,13 +174,12 @@ module.exports = {
   plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
   scripts: [
     'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
-    // TODO: enable cookiebot once tracker can be enabled/disabled programmatically
-    // {
-    //   src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
-    //   'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-    //   'data-blockingmode': 'auto',
-    //   id: 'Cookiebot'
-    // },
+    {
+      src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
+      'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
+      'data-blockingmode': 'auto',
+      id: 'Cookiebot'
+    },
   ],
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',

@@ -21,6 +21,7 @@
     "@mdx-js/react": "^1.6.21",
     "@objectiv/tracker-browser": "^0.0.1",
     "@octokit/rest": "^18.5.3",
+    "ansi-html-community": "0.0.8",
     "clsx": "^1.1.1",
     "emailjs-com": "^3.1.0",
     "mermaid": "^8.11.3",
