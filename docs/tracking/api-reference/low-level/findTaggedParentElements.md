@@ -1,3 +1,0 @@
-# findTaggedParentElements
-
-TODO

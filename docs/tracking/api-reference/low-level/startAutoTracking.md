@@ -1,3 +1,0 @@
-# startAutoTracking
-
-TODO

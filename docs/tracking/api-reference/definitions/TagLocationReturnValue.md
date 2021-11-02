@@ -4,7 +4,7 @@
 
 ```typescript jsx
 
-type TagLocationReturnValue = TaggingAttributes | undefined; 
+type TagLocationReturnValue = StringifiedLocationTaggingAttributes | undefined; 
 
 ```
 
