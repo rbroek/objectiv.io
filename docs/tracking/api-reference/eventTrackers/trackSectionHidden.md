@@ -1,11 +1,14 @@
 # trackSectionHidden
 
-Triggers a [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackSectionHidden = (parameters: {
-  element: TrackableElement | EventTarget,
-  tracker?: BrowserTracker
+  element: TrackedElement;
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+  tracker?: BrowserTracker;
+  onError?: TrackerErrorHandlerCallback;
 }) => void
 ```
 
@@ -16,9 +19,11 @@ trackSectionHidden = (parameters: {
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
 | :-:      | :--         | :--                                                                                                                                                      | :--           
-| required | **element** | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
-| optional | tracker     | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
+| required | **element**    | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           |
+| optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
+| optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
 `trackSectionHidden` is a void function.
@@ -62,7 +67,7 @@ return (
 <br />
 
 :::tip Did you know ?
-`trackSectionHidden` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackSectionHidden` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
@@ -70,5 +75,5 @@ return (
 :::info See also
 - [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
-- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
+- [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

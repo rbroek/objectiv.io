@@ -17,13 +17,13 @@ trackEvent = (parameters: {
 :::
 
 ## Parameters
-|          |           | type                                                                                                           | default value
-| :-:      | :--       | :--                                                                                                            | :--           
-| required | **event** | [UntrackedEvent](/TODO) (see [Event Factories](/tracking/api-reference/core/coreFactories.md#event-factories)) | 
-| optional | element   | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                                        | [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
-| optional | tracker   | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                            | The default tracker as returned by [getTracker](/TODO)
-| optional | trackerId | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                            | The default tracker as returned by [getTracker](/TODO)
-| optional | onError   | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                            | `console.error`
+|          |           | type                                                                                                    | default value
+| :-:      | :--       | :--                                                                                                     | :--           
+| required | **event** | Instance returned by any [Event Factory](/tracking/api-reference/core/coreFactories.md#event-factories) | 
+| optional | element   | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                                 | [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
+| optional | tracker   | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                             | The default tracker as returned by [getTracker](/tracking/api-reference/getTracker.md)
+| optional | trackerId | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                             |  
+| optional | onError   | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)       | `console.error`
 
 ## Returns
 `trackEvent` is a void function.

@@ -4,8 +4,11 @@ Triggers a [URLChangeEvent](/taxonomy/events/URLChangeEvent.md).
 
 ```typescript
 trackURLChange = (parameters: {
-  element?: TrackableElement | EventTarget,
-  tracker?: BrowserTracker
+  element?: TrackedElement;
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+  tracker?: BrowserTracker;
+  onError?: TrackerErrorHandlerCallback;
 }) => void
 ```
 
@@ -16,9 +19,11 @@ trackURLChange = (parameters: {
 ## Parameters
 |          |         | type                                                                                                                                                     | default value
 | :-:      | :--     | :--                                                                                                                                                      | :--           
-| optional | element | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) | `document`
-| optional | tracker | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
+| optional | element        | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           | `document`
+| optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
+| optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
 `trackURLChange` is a void function.
@@ -55,7 +60,7 @@ const App = () => {
 ```
 
 :::warning
-Make sure to set [makeTracker](/tracking/api-reference/globals/makeTracker.md)'s `trackURLChanges` to `false`, when manually tracking this event, to avoid double calls.
+Make sure to set [makeTracker](/tracking/api-reference/makeTracker.md)'s `trackURLChanges` to `false`, when manually tracking this event, to avoid double calls.
 :::
 
 :::caution Just pseudocode
@@ -69,13 +74,13 @@ In fact, [Browser Tracker](/tracking/core-concepts/trackers.md#browser-tracker) 
 <br />
 
 :::tip Did you know ?
-`trackURLChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackURLChange` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
 
 :::info See also
-- [makeTracker](/tracking/api-reference/globals/makeTracker.md)
+- [makeTracker](/tracking/api-reference/makeTracker.md)
 - [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
-- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
+- [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

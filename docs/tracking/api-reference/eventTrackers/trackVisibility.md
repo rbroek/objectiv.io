@@ -1,22 +1,28 @@
 # trackVisibility
 
-Triggers either a [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md) or [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) based on state.
+Triggers either a [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md) or [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md) based on state.
 
 ```typescript
 trackVisibility = (parameters: {
-  element: TrackableElement | EventTarget,
+  element: TrackedElement;
   isVisible: boolean,
-  tracker?: BrowserTracker
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+  tracker?: BrowserTracker;
+  onError?: TrackerErrorHandlerCallback;
 }) => void
 ```
 
 ## Parameters
-|          |               | type                                                                                                                                                     | default value
-| :-:      | :--           | :--                                                                                                                                                      | :--           
-| required | **element**   | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
-| required | **isVisible** | boolean                                                                                                                                                  |
-| optional | tracker       | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError       | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
+|          |                | type                                                                                                                                                     | default value
+| :-:      | :--            | :--                                                                                                                                                      | :--           
+| required | **element**    | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           |
+| required | **isVisible**  | boolean                                                                                           |
+| optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
+| optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
+
 
 ## Returns
 `trackVisibility` is a void function.
@@ -40,7 +46,7 @@ import { trackVisibility } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackVisibility` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackVisibility` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
@@ -48,5 +54,5 @@ import { trackVisibility } from '@objectiv/tracker-browser';
 :::info See also
 - [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 - [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md)
-- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
+- [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
   :::

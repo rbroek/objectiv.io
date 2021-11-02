@@ -1,9 +1,9 @@
-# trackApplicationLoaded
+# trackAborted
 
-Triggers a [ApplicationLoadedEvent](/taxonomy/events/ApplicationLoadedEvent.md).
+Triggers a [AbortedEvent](/taxonomy/events/AbortedEvent.md).
 
 ```typescript
-trackApplicationLoaded = (parameters: {
+trackAborted = (parameters: {
   element?: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
@@ -11,10 +11,6 @@ trackApplicationLoaded = (parameters: {
   onError?: TrackerErrorHandlerCallback;  
 }) => void
 ```
-
-:::info
-`trackApplicationLoaded` is triggered automatically.
-:::
 
 ## Parameters
 |          |                | type                                                                                              | default value
@@ -26,43 +22,22 @@ trackApplicationLoaded = (parameters: {
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
-`trackApplicationLoaded` is a void function.
+`trackAborted` is a void function.
 
 ## Usage example
 
 ```typescript jsx
-import { trackApplicationLoaded } from '@objectiv/tracker-browser';
+import { trackAborted } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-<head>
-  ...
-  <script>
-    trackApplicationLoaded();
-  </script>
-</head>
+TODO
 ```
-
-```typescript jsx
-const App = () => {
-  ...
-  
-  trackApplicationLoaded();
-  
-  return (
-    ...
-  )
-}
-```
-
-:::warning
-Make sure to set [makeTracker](/tracking/api-reference/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
-:::
 
 <br />
 
 :::tip Did you know ?
-`trackApplicationLoaded` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+`trackAborted` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />

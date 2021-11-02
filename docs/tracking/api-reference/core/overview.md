@@ -10,5 +10,7 @@ Core Tracker modules and functions.
 This documentation section is incomplete.
 :::
 
-- [Core Factories](coreFactories.md)
-- [TrackerRepository](TrackerRepository.md)
+- [Core Factories](/tracking/api-reference/core/coreFactories.md)
+- [LocationStack](/tracking/api-reference/core/LocationStack.md)
+- [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)
+- [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md)

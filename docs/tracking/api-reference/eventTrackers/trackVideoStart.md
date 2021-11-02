@@ -1,20 +1,25 @@
 # trackVideoStart
 
-Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
+Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackVideoStart = (parameters: {
-  element: TrackableElement | EventTarget,
-  tracker?: BrowserTracker
+  element: TrackedElement;
+  locationStack?: LocationStack;
+  globalContexts?: GlobalContexts;
+  tracker?: BrowserTracker;
+  onError?: TrackerErrorHandlerCallback;
 }) => void
 ```
 
 ## Parameters
 |          |             | type                                                                                                                                                     | default value
 | :-:      | :--         | :--                                                                                                                                                      | :--           
-| required | **element** | [TrackableElement](/tracking/core-concepts/tagging.md#taggable-elements) \| [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) |
-| optional | tracker     | [BrowserTracker](/tracking/api-reference/globals/BrowserTracker.md)                                                                                      | The default tracker as returned by [getTracker](/TODO)
-| optional | onError     | [TrackerOnErrorCallback](/tracking/api-reference/globals/TrackerOnErrorCallback.md)                                                                      | `console.error`
+| required | **element**    | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           |
+| optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
+| optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
 `trackVideoStart` is a void function.
@@ -50,7 +55,7 @@ import { trackVideoStart } from '@objectiv/tracker-browser';
 <br />
 
 :::tip Did you know ?
-`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/low-level/trackEvent.md).
+`trackVideoStart` is just syntactic sugar on top of [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 :::
 
 <br />
@@ -59,5 +64,5 @@ import { trackVideoStart } from '@objectiv/tracker-browser';
 - [trackVideoPause](/tracking/api-reference/eventTrackers/trackVideoPause.md)
 - [trackVisibility](/tracking/api-reference/eventTrackers/trackVisibility.md)
 - [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-- [trackEvent](/tracking/api-reference/low-level/trackEvent.md)
+- [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
   :::

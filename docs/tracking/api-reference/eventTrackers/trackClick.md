@@ -1,10 +1,10 @@
 # trackClick
 
-Triggers a [ClickEvent](/taxonomy/events/ClickEvent.md) for the given [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) or [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).  
+Triggers a [ClickEvent](/taxonomy/events/ClickEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).  
 
 ```typescript
 trackClick = (parameters: {
-  element: TaggableElement | EventTarget;
+  element: TrackedElement;
   locationStack?: LocationStack;
   globalContexts?: GlobalContexts;
   tracker?: BrowserTracker;
@@ -20,8 +20,8 @@ trackClick = (parameters: {
 |          |                | type                                                                                              | default value
 | :-:      | :--            | :--                                                                                               | :--           
 | required | **element**    | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           |
-| optional | locationStack  | [LocationStack](/TODO)                                                                            |
-| optional | globalContexts | [GlobalContexts](/TODO)                                                                           |
+| optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
+| optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
 | optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
