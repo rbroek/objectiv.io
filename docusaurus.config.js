@@ -140,13 +140,7 @@ module.exports = {
           sidebarPath: require.resolve('./docs/sidebars.js'),
           sidebarCollapsible: true,
           editUrl:
-            'https://github.com/objectiv/objectiv.io/edit/master/docs/',
-          remarkPlugins: [
-            [remarkGitHub, {repository: 'https://github.com/objectiv/objectiv.io'}],
-            [remarkLicense, {name: 'Objectiv', license: 'MIT', url: 'https://objectiv.io'}],
-            [remarkFootnotes, {inlineNotes: true}],
-            [remarkLint, {plugins: ['remark-preset-lint-recommended', 'remark-preset-lint-markdown-style-guide']}],
-          ],
+            'https://github.com/objectiv/objectiv.io/edit/master/docs/'
         },
         blog: {
           blogTitle: 'Objectiv Blog',
