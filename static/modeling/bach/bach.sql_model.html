@@ -1,0 +1,258 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-bach.sql_model">
+<span id="bach-sql-model"></span><h1>bach.sql_model<a class="headerlink" href="#module-bach.sql_model" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.sql_model.BachSqlModel" title="bach.sql_model.BachSqlModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BachSqlModel</span></code></a>(sql[, name])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.sql_model.SampleSqlModel" title="bach.sql_model.SampleSqlModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SampleSqlModel</span></code></a>(table_name, previous)</p></td>
+<td><p>A custom SqlModel that simply does select * from a table.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.sql_model.</span></span><span class="sig-name descname"><span class="pre">BachSqlModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L12-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.assert_adheres_to_spec">
+<span class="sig-name descname"><span class="pre">assert_adheres_to_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L100-L123"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.assert_adheres_to_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify that the references and properties adhere to the specifications of self.
+:raise Exception: If a reference or property is missing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.build">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L179-L189"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class method that instantiates this SqlModelBuilder class, and uses it to
+recursively instantiate SqlModel[T].</p>
+<p>This might mutate referenced SqlModelBuilder objects, see instantiate_recursively()
+for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.escape_format_string">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">escape_format_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L81-L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.escape_format_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escape value for python’s format() function. i.e. <cite>_escape_value(value).format() == value</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.generic_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">generic_name</span></span><a class="headerlink" href="#bach.sql_model.BachSqlModel.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic name. Can be overridden by subclasses. Must be a constant.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.instantiate">
+<span class="sig-name descname"><span class="pre">instantiate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L220-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.instantiate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an instance of SqlModel[T] based on the properties, references,
+materialization, and properties_to_sql of self.</p>
+<p>If the exact same instance (as determined by result.hash) has been created already by this class,
+then that instance is returned and the newly created instance is discarded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.instantiate_recursively">
+<span class="sig-name descname"><span class="pre">instantiate_recursively</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.TB</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L191-L214"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.instantiate_recursively" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an instance of SqlModel[T] like instantiate(), but unlike instantiate()
+this will convert references that are SqlModelBuilder to SqlModel too.
+And this is done in a recursive manner. Note that this might thus recursively instantiate
+references and thus modify the .references of (indirectly) referenced SqlModelBuilder
+instances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><strong>Exception</strong></a> – If there are cyclic references between the recursively referenced
+SqlBuilderModels</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#bach.sql_model.BachSqlModel.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.properties_to_sql">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">properties_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L37-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.properties_to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>We accept Expressions and lists of expressions as properties too, and they need to escape
+themselves if they want to. This allows them to carry references that will be completed
+in the reference phase in _single_model_to_sql() from sql_generator.py</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">references</span></span><a class="headerlink" href="#bach.sql_model.BachSqlModel.references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.set_materialization">
+<span class="sig-name descname"><span class="pre">set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">sql_models.model.TB</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L261-L267"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the materialization
+:return: self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.set_values">
+<span class="sig-name descname"><span class="pre">set_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="bach.expression.html#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="bach.expression.html#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModelBuilder" title="sql_models.model.SqlModelBuilder"><span class="pre">sql_models.model.SqlModelBuilder</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bach.sql_model.TB</span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L19-L35"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.BachSqlModel.set_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set references that are required to resolve the entire model tree</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.spec_properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_properties</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.sql_model.BachSqlModel.spec_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically determine the property names from the sql property.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.spec_references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">spec_references</span></span><em class="property"><span class="pre">:</span> <span class="pre">Set</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.sql_model.BachSqlModel.spec_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically determine the reference names from the sql property.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.BachSqlModel.sql">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sql</span></span><a class="headerlink" href="#bach.sql_model.BachSqlModel.sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Must be implemented by child class. Return value should typically be a constant.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.sql_model.</span></span><span class="sig-name descname"><span class="pre">SampleSqlModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">previous</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L55-L75"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom SqlModel that simply does select * from a table. In addition to that, this class stores an
+extra property: previous.</p>
+<p>The previous property is not used in the generated sql at all, but can be used to track a previous
+SqlModel. This is useful for how we implemented sampling, as that effectively insert a sql-model in the
+graph that has no regular reference to the previous node in the graph. By storing the previous node
+here, we can later still reconstruct what the actual previous node was with some custom logic.</p>
+<p>See the DataFrame.sample() implementation for more information</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.copy_link">
+<span class="sig-name descname"><span class="pre">copy_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_references</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L406-L426"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel.copy_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy with the given references of this model updated.</p>
+<p>Take care to not create cycles in the reference graph when using this function. Generally when
+working with a full graph of models its best to use the wrapper methods in graph_operations.py</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.copy_set">
+<span class="sig-name descname"><span class="pre">copy_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_properties</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L388-L404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel.copy_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy with the given properties of this model updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.copy_set_materialization">
+<span class="sig-name descname"><span class="pre">copy_set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L428-L441"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel.copy_set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a copy with the given materialization of this model updated.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.generic_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">generic_name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.generic_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.hash">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique 32 character hash based on this object’s attributes and attributes of referenced models.
+If two instances have the same hash, they are equal for all intents and purposes,
+see _calculate_hash() for more information.</p>
+<p>This is different from the __hash__() function, which returns an integer, and is much more likely
+to collide.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.link">
+<span class="sig-name descname"><span class="pre">link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">references</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L463-L481"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from self, with the references of the
+referenced node updated.</p>
+<p>The node identified by the reference_path is copied and updated, as are all nodes that
+(indirectly) refer that node. The updated version of self is returned.</p>
+<p>This instance, and all nodes that it refers recursively are unchanged.
+:param reference_path: references to traverse to get to the node that has to be updated
+:param references: references to update
+:return: an updated copy of this node</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.materialization">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">materialization</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.materialization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.properties">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.properties_formatted">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">properties_formatted</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.properties_formatted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.references">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">references</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">properties</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L443-L461"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from self, with the properties of the
+referenced node updated.</p>
+<p>The node identified by the reference_path is copied and updated, as are all nodes that
+(indirectly) refer that node. The updated version of self is returned.</p>
+<p>This instance, and all nodes that it refers recursively are unchanged.
+:param reference_path: references to traverse to get to the node that has to be updated
+:param properties: properties to update
+:return: an updated copy of this node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.set_materialization">
+<span class="sig-name descname"><span class="pre">set_materialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialization</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.Materialization" title="sql_models.model.Materialization"><span class="pre">sql_models.model.Materialization</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sql_models.model.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/sql_model.py#L483-L501"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.sql_model.SampleSqlModel.set_materialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a (partial) copy of the graph that can be reached from self, with the materialization of the
+referenced node updated.</p>
+<p>The node identified by the reference_path is copied and updated, as are all nodes that
+(indirectly) refer that node. The updated version of self is returned.</p>
+<p>This instance, and all nodes that it refers recursively are unchanged.
+:param reference_path: references to traverse to get to the node that has to be updated
+:param materialization: materialization value
+:return: an updated copy of this node</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.sql_model.SampleSqlModel.sql">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">sql</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.sql_model.SampleSqlModel.sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>
