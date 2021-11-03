@@ -2,6 +2,7 @@
 title: Quickstart
 slug: /quickstart
 ---
+<!--- (this section needs work. we could just add links to the how to guides for the tracker and the playground for ds) -->
 
 * Introduction & Goal
 * How-to items
