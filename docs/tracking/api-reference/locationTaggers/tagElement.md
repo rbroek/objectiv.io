@@ -15,10 +15,10 @@ Our Taxonomy names a logical UI unit as Section. We felt this would be confusing
 :::
 
 ## Parameters
-|          |         | type                                                                                               | default value
-| :-:      | :--     | :--                                                                                                | :--           
-| required | **id**  | string                                                                                             |
-| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                    | `{ trackVisibility: { mode: 'auto' } }`
+|          |         | type                                                                                              | default value
+| :-:      | :--     | :--                                                                                               | :--           
+| required | **id**  | string                                                                                            |
+| optional | options | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | `{ trackVisibility: { mode: 'auto' } }`
 | optional | onError | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
