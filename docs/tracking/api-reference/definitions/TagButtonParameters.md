@@ -8,6 +8,13 @@ type TagButtonParameters = LocationTaggerParameters & {
 }
 ```
 
+## Parameters
+|          |          | type   | default value
+| :-:      | :--      | :--    | :--           
+| required | **text** | string |
+
+<br />
+
 :::info see also
 - [LocationTaggerParameters](/tracking/api-reference/definitions/LocationTaggerParameters.md)
 :::

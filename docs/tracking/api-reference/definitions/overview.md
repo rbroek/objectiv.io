@@ -33,7 +33,7 @@ Interfaces and common TypeScript definitions.
 - [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)
 - [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)
 - [TrackVisibilityAttribute](/tracking/api-reference/definitions/TrackVisibilityAttribute.md)
-- [uuid](/tracking/api-reference/definitions/uuid.md)
+- [uuid](/tracking/api-reference/definitions/Uuid.md)
 - [ValidateAttribute](/tracking/api-reference/definitions/ValidateAttribute.md)
 - [ValidChildrenTaggingQuery](/tracking/api-reference/definitions/ValidChildrenTaggingQuery.md)
 - [WaitForQueueOptions](/tracking/api-reference/definitions/WaitForQueueOptions.md)
