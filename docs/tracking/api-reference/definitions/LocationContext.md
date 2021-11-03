@@ -3,20 +3,21 @@
 [Structs](https://docs.superstructjs.org/) and Unions for each [LocationContext](/taxonomy/location-contexts/overview.md) in the [Taxonomy](/taxonomy/overview.md).
 
 :::tip Struct > TS
-TypeScript types can be inferred from Structs using the `Infer` helper. For example
+TypeScript Definitions for Structs are usually already exported, if not they can be inferred using the `Infer` helper. For example:
 ```typescript
 type AbstractContext = Infer<typeof AbstractContext>;
 ```
 :::
 
-## Context Structs
+## Abstract Context Structs
 
 ### AbstractContext
+All Contexts inherit from AbstractContext.  
 ```typescript
 const AbstractContext = object({
   id: string(),
   _type: string(),
-  });
+});
 ```
 
 ### AbstractLocationContext 
@@ -67,6 +68,15 @@ const AbstractActionContext = assign(
 );
 ```  
 
+## Context Structs
+
+:::info
+Not all Section Contexts have a corresponding [Location Tagger](/tracking/api-reference/locationTaggers/overview.md) shorthand.
+Creating a new Location Tagger is as simple as writing a small wrapper around the low-level [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
+
+If a Location Tagger proves itself useful enough it may add it to the standard set of [Location Taggers](/tracking/api-reference/locationTaggers/overview.md).
+:::
+
 ### SectionContext
 `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
 
@@ -78,6 +88,8 @@ const SectionContext = assign(
   })
 );
 ```
+#### Tagger
+- [tagElement](/tracking/api-reference/locationTaggers/tagElement.md)
 
 ### WebDocumentContext
 `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
@@ -105,7 +117,7 @@ const ScreenContext = assign(
 );
 ```  
 
-### ExpandableSectionContext struct
+### ExpandableSectionContext
 `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
 
 ```typescript
@@ -116,6 +128,9 @@ const ExpandableSectionContext = assign(
   })
 );
 ```  
+
+#### Tagger
+- [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md)
 
 ### MediaPlayerContext
 `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
@@ -129,6 +144,9 @@ const MediaPlayerContext = assign(
 );
 ```  
 
+#### Tagger
+- [tagMediaPlayer](/tracking/api-reference/locationTaggers/tagMediaPlayer.md)
+
 ### NavigationContext
 `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
 
@@ -140,6 +158,9 @@ const NavigationContext = assign(
   })
 );
 ```  
+#### Tagger
+- [tagNavigation](/tracking/api-reference/locationTaggers/tagNavigation.md)
+
 
 ### OverlayContext
 `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
@@ -152,6 +173,9 @@ const OverlayContext = assign(
   })
 );
 ```  
+
+#### Tagger
+- [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md)
 
 ### ItemContext
 `AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
@@ -177,6 +201,9 @@ const InputContext = assign(
 );
 ```  
 
+#### Tagger
+- [tagInput](/tracking/api-reference/locationTaggers/tagInput.md)
+
 ### ActionContext
 `AbstractActionContext` < `AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
 
@@ -201,6 +228,9 @@ const ButtonContext = assign(
 );
 ```  
 
+#### Tagger
+- [tagButton](/tracking/api-reference/locationTaggers/tagButton.md)
+
 ### LinkContext
 `AbstractActionContext` < `AbstractItemContext` < `AbstractSectionContext` < `AbstractLocationContext` < `Abstract Context`
 
@@ -213,6 +243,9 @@ const LinkContext = assign(
   })
 );
 ```  
+
+#### Tagger
+- [tagLink](/tracking/api-reference/locationTaggers/tagLink.md)
 
 ## Unions
 Unions are useful to match multiple Contexts sharing the same abstract or concern.
@@ -236,7 +269,6 @@ const AnyLocationContext = union([
   LinkContext,
 ]);
 ```
-
 
 ### AnySectionContext
 Struct union to match any SectionContext
