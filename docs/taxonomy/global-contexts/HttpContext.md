@@ -1,6 +1,6 @@
 # HttpContext
 
-Context with meta info pertaining to the current session.
+[Global Context](/docs/taxonomy/global-contexts) with meta info pertaining to the current session.
 
 import Mermaid from '@theme/Mermaid';
 

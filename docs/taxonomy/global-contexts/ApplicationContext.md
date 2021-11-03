@@ -2,7 +2,7 @@
 
 import Mermaid from '@theme/Mermaid';
 
-Global Context describing  the origin (application id) of the event, in its `id`.
+A [GlobalContext](/docs/taxonomy/global-contexts) describing the origin (application id) of the event, in its `id`.
 
 <Mermaid chart={`
 	graph LR

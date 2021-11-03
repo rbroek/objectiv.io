@@ -1,7 +1,8 @@
 # ItemContext
 
-ItemContexts are special LocationContexts representing interactive elements of the UI or targets in a system.
-These elements may trigger both Interactive and Non-Interactive Events, e.g. an Input field or a Button.
+A special [LocationContext](/docs/taxonomy/location-contexts) that represents an interactive element of the UI or a target in a system. These elements may trigger both [Interactive](/docs/taxonomy/events/InteractiveEvent) and [Non-Interactive Events](/docs/taxonomy/events/NonInteractiveEvent), e.g. an Input field or a Button.
+
+
 
 
 import Mermaid from '@theme/Mermaid';

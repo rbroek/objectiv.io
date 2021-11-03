@@ -1,7 +1,6 @@
 # OverlayContext
 
-A `SectionContext` that is an overlay.
-
+A [SectionContext](/docs/taxonomy/location-contexts/SectionContext) that describes section of the UI that represents an overlay, i.e. a Modal.
 
 import Mermaid from '@theme/Mermaid';
 

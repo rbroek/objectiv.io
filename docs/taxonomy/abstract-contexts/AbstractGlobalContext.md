@@ -2,7 +2,7 @@
 
 import Mermaid from '@theme/Mermaid';
 
-GlobalContexts are used to populate Trackers or Events with `global_contexts` properties. They carry 
+GlobalContexts are used to populate [Trackers](/docs/tracking/core-concepts/trackers) or [Events](/docs/tracking/core-concepts/events) with `global_contexts` properties. They carry 
 information that is not related to where the Event originated, such as device, platform or business data.
 
 See [Global Contexts](/docs/taxonomy/global-contexts) for all Contexts that inherit from AbstractGlobalContext.
@@ -14,4 +14,4 @@ See [Global Contexts](/docs/taxonomy/global-contexts) for all Contexts that inhe
 `} caption="Figure: AbstractGlobalContext inheritance" baseColor="blue" />
 
 ### Properties
-None.
+All inherited from [AbstractContext](/taxonomy/abstract-contexts/overview.md#abstractcontext).
