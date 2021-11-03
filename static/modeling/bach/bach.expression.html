@@ -220,32 +220,36 @@ occurrences in fmt.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="bach.expression.quote_identifier">
-<span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">quote_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L191-L207"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.quote_identifier" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">quote_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L192-L209"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.quote_identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add quotes around an identifier (e.g. a table or column name), and escape special characters in the name.</p>
 <p>This is in accordance with the Postgres string notation format, no guarantees for other databses.
 See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS">https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS</a></p>
-<p>Examples:
-&gt;&gt;&gt; quote_identifier(‘test’)
-‘“test”’
-&gt;&gt;&gt; quote_identifier(‘te”st’)
-‘“te””st”’
-&gt;&gt;&gt; quote_identifier(‘“te””st”’)
-“”””te””””st””””</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expression</span><span class="o">.</span><span class="n">quote_identifier</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="go">&#39;&quot;test&quot;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expression</span><span class="o">.</span><span class="n">quote_identifier</span><span class="p">(</span><span class="s1">&#39;te&quot;st&#39;</span><span class="p">)</span>
+<span class="go">&#39;&quot;te&quot;&quot;st&quot;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expression</span><span class="o">.</span><span class="n">quote_identifier</span><span class="p">(</span><span class="s1">&#39;&quot;te&quot;&quot;st&quot;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&quot;&quot;&quot;te&quot;&quot;&quot;&quot;st&quot;&quot;&quot;&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="bach.expression.quote_string">
-<span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">quote_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L172-L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.quote_string" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">quote_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L172-L189"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.quote_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add single quotes around the value and escape any quotes in the value.</p>
 <p>This is in accordance with the Postgres string notation format, no guarantees for other databses.
 See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS">https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS</a></p>
-<p>Examples:
-&gt;&gt;&gt; quote_string(“test”)
-“‘test’”
-&gt;&gt;&gt; quote_string(“te’st”)
-“‘te’’st’”
-&gt;&gt;&gt; quote_string(“‘te’’st’”)
-“’’’te’’’’st’’’”</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expression</span><span class="o">.</span><span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+<span class="go">&quot;&#39;test&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expression</span><span class="o">.</span><span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;te&#39;st&quot;</span><span class="p">)</span>
+<span class="go">&quot;&#39;te&#39;&#39;st&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expression</span><span class="o">.</span><span class="n">quote_string</span><span class="p">(</span><span class="s2">&quot;&#39;te&#39;&#39;st&#39;&quot;</span><span class="p">)</span>
+<span class="go">&quot;&#39;&#39;&#39;te&#39;&#39;&#39;&#39;st&#39;&#39;&#39;&quot;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
