@@ -1,0 +1,545 @@
+---
+id: bach.series.series_json
+hide_title: true
+slug: /modeling/bach/series/bach.series.series_json
+sidebar_position: 11
+sidebar_label: bach.series.series_json
+
+tags: ["modeling", "series"]
+---
+
+export const toc = [
+    {
+        "value": "bach.series.series_json",
+        "id": "module-bach.series.series_json",
+        "children": [],
+        "level": 2
+    },
+    {
+        "value": "Classes",
+        "id": "",
+        "children": [
+            {
+                "value": "Json",
+                "id": "bach.series.series_json.Json",
+                "children": [
+                    {
+                        "value": "get_from_context_with_type_series",
+                        "id": "bach.series.series_json.Json.get_from_context_with_type_series",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_value",
+                        "id": "bach.series.series_json.Json.get_value",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": "SeriesJson",
+                "id": "bach.series.series_json.SeriesJson",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "bach.series.series_json.SeriesJson.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.series.series_json.SeriesJson.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.series.series_json.SeriesJson.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.series.series_json.SeriesJson.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.series.series_json.SeriesJson.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.series.series_json.SeriesJson.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "bach.series.series_json.SeriesJson.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "bach.series.series_json.SeriesJson.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "bach.series.series_json.SeriesJson.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "bach.series.series_json.SeriesJson.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "bach.series.series_json.SeriesJson.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "bach.series.series_json.SeriesJson.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "bach.series.series_json.SeriesJson.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "bach.series.series_json.SeriesJson.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.series.series_json.SeriesJson.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "bach.series.series_json.SeriesJson.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.series.series_json.SeriesJson.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.series.series_json.SeriesJson.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.series.series_json.SeriesJson.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.series.series_json.SeriesJson.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "bach.series.series_json.SeriesJson.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.series.series_json.SeriesJson.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.series.series_json.SeriesJson.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "bach.series.series_json.SeriesJson.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "bach.series.series_json.SeriesJson.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "bach.series.series_json.SeriesJson.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "bach.series.series_json.SeriesJson.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "bach.series.series_json.SeriesJson.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.series.series_json.SeriesJson.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "bach.series.series_json.SeriesJson.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "bach.series.series_json.SeriesJson.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "bach.series.series_json.SeriesJson.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "bach.series.series_json.SeriesJson.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "bach.series.series_json.SeriesJson.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "bach.series.series_json.SeriesJson.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "bach.series.series_json.SeriesJson.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "bach.series.series_json.SeriesJson.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "bach.series.series_json.SeriesJson.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "bach.series.series_json.SeriesJson.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "bach.series.series_json.SeriesJson.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": "SeriesJsonb",
+                "id": "bach.series.series_json.SeriesJsonb",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "bach.series.series_json.SeriesJsonb.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.series.series_json.SeriesJsonb.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.series.series_json.SeriesJsonb.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.series.series_json.SeriesJsonb.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.series.series_json.SeriesJsonb.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.series.series_json.SeriesJsonb.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "bach.series.series_json.SeriesJsonb.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "bach.series.series_json.SeriesJsonb.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "bach.series.series_json.SeriesJsonb.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "bach.series.series_json.SeriesJsonb.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "bach.series.series_json.SeriesJsonb.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "bach.series.series_json.SeriesJsonb.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "bach.series.series_json.SeriesJsonb.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "bach.series.series_json.SeriesJsonb.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.series.series_json.SeriesJsonb.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "bach.series.series_json.SeriesJsonb.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.series.series_json.SeriesJsonb.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.series.series_json.SeriesJsonb.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.series.series_json.SeriesJsonb.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.series.series_json.SeriesJsonb.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "bach.series.series_json.SeriesJsonb.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.series.series_json.SeriesJsonb.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.series.series_json.SeriesJsonb.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "bach.series.series_json.SeriesJsonb.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "bach.series.series_json.SeriesJsonb.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "bach.series.series_json.SeriesJsonb.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "bach.series.series_json.SeriesJsonb.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "bach.series.series_json.SeriesJsonb.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.series.series_json.SeriesJsonb.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "bach.series.series_json.SeriesJsonb.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "bach.series.series_json.SeriesJsonb.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "bach.series.series_json.SeriesJsonb.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "bach.series.series_json.SeriesJsonb.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "bach.series.series_json.SeriesJsonb.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "bach.series.series_json.SeriesJsonb.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "bach.series.series_json.SeriesJsonb.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "bach.series.series_json.SeriesJsonb.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "bach.series.series_json.SeriesJsonb.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "bach.series.series_json.SeriesJsonb.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "bach.series.series_json.SeriesJsonb.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            }
+        ],
+        "level": 2
+    }
+];
+
+
+import SphinxPages from '@site/src/components/sphinx-page'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+
+
+<SphinxPages url={useBaseUrl('modeling/bach/series/bach.series.series_json.html')} />
