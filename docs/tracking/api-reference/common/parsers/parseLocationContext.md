@@ -12,11 +12,12 @@ parseLocationContext = parseLocationContext = (stringifiedContext: string | null
 | required | **stringifiedContext** | `string` \| `null` |
 
 ## Returns
-[LocationContext](/tracking/api-reference/definitions/LocationContext.md) instance
+[AnyLocationContext](/tracking/api-reference/definitions/LocationContext.md#anylocationcontext) instance
 
 ## Throws
 Error when the given `stringifiedContext` cannot be parsed
 
 :::info See also
+- [LocationContext](/tracking/api-reference/definitions/LocationContext.md)
 - [LocationContext Core Factories](/tracking/api-reference/core/coreFactories.md#location-context-factories)
 :::
