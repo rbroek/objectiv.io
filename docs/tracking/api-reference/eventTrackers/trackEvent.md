@@ -22,7 +22,7 @@ trackEvent = (parameters: {
 | required | **event** | Instance returned by any [Event Factory](/tracking/api-reference/core/coreFactories.md#event-factories) | 
 | optional | element   | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                                 | [documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
 | optional | tracker   | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                             | The default tracker as returned by [getTracker](/tracking/api-reference/getTracker.md)
-| optional | trackerId | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                             |  
+| optional | trackerId | string                                                                                                  |  
 | optional | onError   | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)       | `console.error`
 
 ## Returns
