@@ -1,6 +1,6 @@
 # GuardableElement
 
-This is the most basic type of [DOM Elements](#TODO) we can traverse: [Nodes](#TODO) and [EventTargets](#TODO).
+This is the most basic type of [DOM Elements](https://developer.mozilla.org/en-US/docs/Web/API/Element) we can traverse: [Nodes](https://developer.mozilla.org/en-US/docs/Web/API/Node) and [EventTargets](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget).
 
 ```typescript
 type GuardableElement = Node | EventTarget | null;

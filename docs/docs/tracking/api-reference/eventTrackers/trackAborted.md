@@ -27,12 +27,31 @@ trackAborted = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackAborted } from '@objectiv/tracker-browser';
+import { trackAborted, trackCompleted } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-TODO
+<form onSubmit={() => {
+  sendFormAsync()
+    .then(
+      () => trackCompleted({ element: form }), 
+      () => {
+        const errorContext = makeErrorContext({ id: "form", message: "Remote rejection." });
+        trackAborted({ globalContexts: [errorContext], element: form });
+      }
+    )
+    .catch(() => {
+      const errorContext = makeErrorContext({ id: "form", message: "Network failure." });
+      trackAborted({ globalContexts: [errorContext], element: form });
+    });
+}}>
+  ...
+</form>
 ```
+
+:::tip
+`trackAborted` can be safely used while network is temporarily down. Events will be queued and sending will be retried.  
+:::
 
 <br />
 

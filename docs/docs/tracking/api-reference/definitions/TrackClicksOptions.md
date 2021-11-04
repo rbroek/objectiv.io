@@ -12,7 +12,7 @@ type TrackClicksOptions = undefined | {
 
 :::info see also
 - [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md)
-- [WaitForQueueOptions](/tracking/api-reference/definitions/WaitForQueueOptions.md)
+- [WaitUntilTrackedOptions](/tracking/api-reference/definitions/WaitUntilTrackedOptions.md)
 - [FlushQueueOptions](/tracking/api-reference/definitions/FlushQueueOptions.md)
 - [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)
 :::
