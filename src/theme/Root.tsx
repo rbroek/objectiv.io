@@ -36,7 +36,6 @@ function Root({children}) {
   const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
   const { trackerApplicationId, trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
-  const isDocs = useRouteMatch("/docs/") !== null;
 
   // Listen for 'CookiebotOnAccept' and if `Cookiebot.consent.statistics` changed, update state
   registerCookiebotEventListeners(function () {
@@ -86,18 +85,6 @@ function Root({children}) {
       }
     },
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
-  )
-
-  // This Effect monitor the `isDocs` state and when it changes it switches the default Tracker instance
-  useEffect(
-    () => {
-      // Skip if we are in SSR
-      if (!windowExists()) {
-        return;
-      }
-      setDefaultTracker((!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string);
-    },
-    [isDocs] // execute every time `isDocs` changes
   )
 
   return (
