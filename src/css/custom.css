@@ -392,24 +392,12 @@ dl.class dt.sig {
 dl.class .property .pre {
   font-size: 14px;
   color: var(--ifm-font-color-light);
-  text-transform: uppercase;
-}
-dl.class .property .pre::after {
-  content: "\A";
-  white-space: pre;
 }
 /* Class heading - class name */
 dl.class .descname {
   font-family: 'Roboto Mono';
 }
-/* Class heading - class namespace (do not show) */
-dl.class .descclassname {
-  display: none;
-}
-dl.class .descname::after {
-  content: "\A";
-  white-space: pre;
-}
+
 /* Class heading - function parameters */
 dl.class dl.property .property .pre, dl.class dl.property .descname .pre, dl.class dl.property .descname .viewcode-link {
   font-size: 18px;
@@ -440,7 +428,7 @@ dl.class dl.property .pre::after, dl.class dl.property .descname::after, dl.clas
 }
 
 /* Class & function headings - function parameters - link to source & permalink */
-dl.class .reference, dl.class .headerlink {
+dl.class .reference, dl.class .headerlink, dl.function .reference, dl.method .reference {
   font-size: 14px;
   font-weight: normal; 
 }
@@ -477,11 +465,10 @@ dl.function .descname {
 dl.function .descclassname {
   display: none;
 }
-dl.function .descname::after {
-  content: "\A";
-  white-space: pre;
-}
 
+span.viewcode-link {
+  float: right;
+}
 
 /* Content of a class or function */
 dd {
@@ -492,12 +479,6 @@ dd {
 dl blockquote {
   padding: 0 0.5em;
 }
-
-.viewcode-link, .headerlink {
-  margin: 0 0.3em;
-}
-
-
 
 /** DIAGRAM (MERMAID) MARKUP **/
 
