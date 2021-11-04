@@ -20,3 +20,11 @@ const trackNewElements = (
 | required | **element** | [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) |
 | required | **element** | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) |
 | optional | console     | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)    |
+
+<br/>
+
+:::info see also
+- [makeMutationCallback](/tracking/api-reference/mutationObserver/makeMutationCallback.md)
+- [trackNewElement](/tracking/api-reference/mutationObserver/trackNewElement.md)
+- [processTagChildrenElement](/tracking/api-reference/mutationObserver/processTagChildrenElement.md)
+:::
