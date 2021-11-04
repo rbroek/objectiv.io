@@ -59,14 +59,14 @@ An example event with `location_stack` and `global_context` properties:
 
 ## Triggers
 For tagged Elements, most Events will be 
-[triggered automatically](/tracking/api-reference/low-level/tagLocation.md#events), based on the 
+[triggered automatically](/tracking/api-reference/locationTaggers/tagLocation.md#events), based on the 
 LocationContext bound to the Tagged Element. To do so, internally, the Web tracker uses a Mutation Observer 
 to monitor the DOM. When existing nodes change or get removed, or if subtrees get added, it traverses the 
 Nodes and scouts for Elements that have been enriched with Tracking Attributes. For those Elements it 
 attaches Event listeners, which will automatically handle their tracking.
 
 However, sometimes it may be preferable, or necessary, to 
-[trigger Events programmatically](/tracking/api-reference/event-trackers/overview.md).
+[trigger Events programmatically](/tracking/api-reference/eventTrackers/overview.md).
 
 ## Out-of-the-box Events
 The Tracker uses the same Observer described above to trigger the events below by default.

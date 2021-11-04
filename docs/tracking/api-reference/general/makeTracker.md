@@ -1,35 +1,39 @@
 # makeTracker
 
-Creates a new [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and adds it to the [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md). Then initiates [auto-tracking](/tracking/api-reference/low-level/startAutoTracking.md) for it.
+Creates a new [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and adds it to the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). Then calls [startAutoTracking](/tracking/api-reference/general/startAutoTracking.md) for it.
 
 ```typescript
 makeTracker = (parameters: {
   applicationId: string,
   trackerId?: string,
+  queue?: TrackerQueue,
   endpoint?: string,
   transport?: TrackerTransport,
   plugins?: TrackerPlugins,
+  active?: boolean;
   trackApplicationLoaded?: boolean,
   trackURLChanges?: boolean;
 }) => BrowserTracker
 ```
 
 :::info
-The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
+The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
 :::
 
 
 ## Parameters
-|          |                        | type                                                                             | default value
-| :-:      | :--                    | :--                                                                              | :--           
-| required | **applicationId**      | string                                                                           |
-| optional | **trackerId**          | string                                                                           | `applicationId`
-| optional | **_endpoint_**         | string                                                                           |
-| optional | **_transport_**        | [TrackerTransport](/tracking/core-concepts/trackers.md#transport)    | [Default Browser Tracker Transport](/tracking/api-reference/general/BrowserTracker.md#default-transport)
-| optional | plugins                | [TrackerPlugins](/tracking/core-concepts/trackers.md#plugins)        | [Default Browser Tracker Plugins](/tracking/api-reference/general/BrowserTracker.md#default-plugins)
-| optional | console                | [TrackerConsole](/tracking/core-concepts/trackers.md#trackerconsole) |
-| optional | trackApplicationLoaded | boolean                                                                          | `true`
-| optional | trackURLChanges        | boolean                                                                          | `true`
+|          |                        | type                                                                 | default value
+| :-:      | :--                    | :--                                                                  | :--           
+| required | **applicationId**      | string                                                               |
+| optional | trackerId              | string                                                               | Same value as `applicationId`
+| optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
+| optional | **_endpoint_**         | string                                                               |
+| optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
+| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultPluginList.md)
+| optional | console                | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
+| optional | active                 | boolean                                                              | `true`
+| optional | trackApplicationLoaded | boolean                                                              | `true`
+| optional | trackURLChanges        | boolean                                                              | `true`
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
@@ -66,10 +70,9 @@ makeTracker({
 <br />
 
 :::info See also
-- [Location Taggers](/tracking/api-reference/location-taggers/overview.md) 
-- [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
+- [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) 
+- [Event Trackers](/tracking/api-reference/eventTrackers/overview.md)
 - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
-- [Transport](/tracking/core-concepts/trackers.md#transport)
 - [Collector](/tracking/core-concepts/collector.md)
-- [startAutoTracking](/tracking/api-reference/low-level/startAutoTracking.md)
+- [startAutoTracking](/tracking/api-reference/general/startAutoTracking.md)
 :::

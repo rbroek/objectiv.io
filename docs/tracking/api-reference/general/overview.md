@@ -4,14 +4,13 @@ sidebar_label: Overview
 title: General
 ---
 
-Global functions, interfaces and common TypeScript definitions used by [Location](/tracking/core-concepts/locations.md) tagging and Event tracking APIs.
+Public interfaces and APIs.
 
 - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
-- [TagLocationOptions](/tracking/api-reference/general/TagLocationOptions.md)
-- [TagLocationReturnValue](/tracking/api-reference/general/TagLocationReturnValue.md)
-- [TaggingAttributes](/tracking/api-reference/general/TaggingAttributes.md)
-- [TrackerOnErrorCallback](/tracking/api-reference/general/TrackerOnErrorCallback.md)
-- [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md)
+- [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md)
 - [getTracker](/tracking/api-reference/general/getTracker.md)
+- [getTrackerRepository](/tracking/api-reference/general/getTrackerRepository.md)
 - [makeTracker](/tracking/api-reference/general/makeTracker.md)
 - [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
+- [startAutoTracking](/tracking/api-reference/general/startAutoTracking.md)
+- [stopAutoTracking](/tracking/api-reference/general/stopAutoTracking.md)
