@@ -1,32 +1,74 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
 const path = require('path');
-const remarkFootnotes = require('remark-footnotes'); // https://github.com/remarkjs/remark-footnotes
-const remarkGitHub = require('remark-github'); // https://github.com/remarkjs/remark-github
-const remarkLicense = require('remark-license'); // https://github.com/remarkjs/remark-license
-const remarkLint = require('remark-lint'); // https://github.com/remarkjs/remark-lint
 const environment = process.env.OBJECTIV_ENVIRONMENT;
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
-// TBD: https://github.com/rehypejs/rehype-meta
 
-module.exports = {
-  baseUrl: (environment == 'staging') ? '/staging/' : '/',
-  url: (environment == 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
-  favicon: 'img/favicon/favicon.ico',
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'Objectiv - creating the ultimate iterative workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
     + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
+  baseUrl: (environment === 'staging') ? '/staging/' : '/',
+  url: (environment === 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
+  favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
-  trailingSlash: false,
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
-  
-  themes: ['@docusaurus/theme-live-codeblock'],
+  trailingSlash: true,
 
-  themeConfig: {
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+        docs: false,
+        blog: {
+          blogTitle: 'Objectiv Blog',
+          blogDescription: 'Objectiv Blog',
+          blogSidebarCount: 0,
+          postsPerPage: 5,
+          showReadingTime: false,
+          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+        },
+      }),
+    ],
+  ],
+  plugins: [
+    path.resolve(__dirname, 'src/plugins/favicons/'),
+    require.resolve('docusaurus-plugin-image-zoom')
+  ],
+  scripts: [
+    {
+      src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
+      'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
+      'data-blockingmode': 'auto',
+      id: 'Cookiebot'
+    },
+  ],
+  customFields: {
+    trackerApplicationId: (environment === 'prod') ? 'objectiv-website' : 'objectiv-website-dev',
+    trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
+    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    slackJoinLink: slackJoinLink,
+    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
+    trackerConsoleEnabled: environment !== 'prod'
+  },
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
     colorMode: {
       disableSwitch: true,
     },
@@ -44,10 +86,8 @@ module.exports = {
           position: 'left'
         },
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
           label: 'Docs',
-          position: 'left',
+          to: '/docs/',
         },
         {
           to: 'about',
@@ -82,47 +122,6 @@ module.exports = {
     },
     footer: {
       style: 'light',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Getting Started',
-              to: 'docs/',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/objectiv',
-            },
-            {
-              label: 'Slack',
-              href: slackJoinLink,
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/objectivhq',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'Jobs',
-              to: 'jobs',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Objectiv`,
       links: [
         {
@@ -139,59 +138,17 @@ module.exports = {
         },
       ],
     },
-  },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-        docs: {
-          path: 'docs',
-          routeBasePath: '/docs',
-          sidebarCollapsible: true,
-          sidebarPath: require.resolve('./docs/sidebars.js'),
-          sidebarCollapsible: true,
-          editUrl:
-            'https://github.com/objectiv/objectiv.io/edit/master/docs/'
-        },
-        blog: {
-          blogTitle: 'Objectiv Blog',
-          blogDescription: 'Objectiv Blog',
-          blogSidebarCount: 0,
-          postsPerPage: 5,
-          showReadingTime: false,
-          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
-        },
-        sitemap: {
-          changefreq: 'weekly',
-          priority: 0.5,
-        },
-      },
-    ],
-  ],
-  plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
-  scripts: [
-    'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
-    {
-      src: 'https://consent.cookiebot.com/uc.js?cbid=7498452c-872b-431a-9859-21045f83f0a0',
-      'data-cbid': '7498452c-872b-431a-9859-21045f83f0a0',
-      'data-blockingmode': 'auto',
-      id: 'Cookiebot'
-    },
-  ],
-  stylesheets: [
-    'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
-  ],
-  customFields: {
-    trackerApplicationId: (environment === 'prod') ? 'objectiv-website' : 'objectiv-website-dev',
-    trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
-    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
-    slackJoinLink: slackJoinLink,
-    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
-    trackerConsoleEnabled: environment === 'dev'
-  }
+    zoom: {
+      config: {
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        }
+      }
+    }    
+  })
 };
 
-console.log("USING OBJECTIV TRACKER ENDPOINT:", module.exports.customFields.trackerEndPoint);
+module.exports = config;
+
+console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);

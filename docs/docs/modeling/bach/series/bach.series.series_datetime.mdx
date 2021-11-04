@@ -1,0 +1,1068 @@
+---
+id: bach.series.series_datetime
+hide_title: true
+slug: /modeling/bach/series/bach.series.series_datetime
+sidebar_position: 10
+sidebar_label: bach.series.series_datetime
+
+tags: ["modeling", "series"]
+---
+
+export const toc = [
+    {
+        "value": "bach.series.series_datetime",
+        "id": "module-bach.series.series_datetime",
+        "children": [],
+        "level": 2
+    },
+    {
+        "value": "Classes",
+        "id": "",
+        "children": [
+            {
+                "value": "SeriesDate",
+                "id": "bach.series.series_datetime.SeriesDate",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "bach.series.series_datetime.SeriesDate.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.series.series_datetime.SeriesDate.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.series.series_datetime.SeriesDate.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.series.series_datetime.SeriesDate.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.series.series_datetime.SeriesDate.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.series.series_datetime.SeriesDate.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "bach.series.series_datetime.SeriesDate.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "bach.series.series_datetime.SeriesDate.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "bach.series.series_datetime.SeriesDate.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "bach.series.series_datetime.SeriesDate.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "bach.series.series_datetime.SeriesDate.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "format",
+                        "id": "bach.series.series_datetime.SeriesDate.format",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "bach.series.series_datetime.SeriesDate.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "bach.series.series_datetime.SeriesDate.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "bach.series.series_datetime.SeriesDate.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.series.series_datetime.SeriesDate.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "bach.series.series_datetime.SeriesDate.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.series.series_datetime.SeriesDate.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.series.series_datetime.SeriesDate.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.series.series_datetime.SeriesDate.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.series.series_datetime.SeriesDate.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "bach.series.series_datetime.SeriesDate.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.series.series_datetime.SeriesDate.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.series.series_datetime.SeriesDate.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "bach.series.series_datetime.SeriesDate.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesDate.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "bach.series.series_datetime.SeriesDate.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "bach.series.series_datetime.SeriesDate.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesDate.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.series.series_datetime.SeriesDate.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "bach.series.series_datetime.SeriesDate.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "bach.series.series_datetime.SeriesDate.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "bach.series.series_datetime.SeriesDate.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "bach.series.series_datetime.SeriesDate.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "bach.series.series_datetime.SeriesDate.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "bach.series.series_datetime.SeriesDate.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "bach.series.series_datetime.SeriesDate.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "bach.series.series_datetime.SeriesDate.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "bach.series.series_datetime.SeriesDate.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "bach.series.series_datetime.SeriesDate.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "bach.series.series_datetime.SeriesDate.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": null,
+                "id": null,
+                "children": [],
+                "level": 3
+            },
+            {
+                "value": "SeriesTime",
+                "id": "bach.series.series_datetime.SeriesTime",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "bach.series.series_datetime.SeriesTime.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.series.series_datetime.SeriesTime.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.series.series_datetime.SeriesTime.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.series.series_datetime.SeriesTime.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.series.series_datetime.SeriesTime.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.series.series_datetime.SeriesTime.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "bach.series.series_datetime.SeriesTime.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "bach.series.series_datetime.SeriesTime.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTime.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "bach.series.series_datetime.SeriesTime.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "bach.series.series_datetime.SeriesTime.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "bach.series.series_datetime.SeriesTime.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "bach.series.series_datetime.SeriesTime.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "bach.series.series_datetime.SeriesTime.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.series.series_datetime.SeriesTime.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "bach.series.series_datetime.SeriesTime.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.series.series_datetime.SeriesTime.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.series.series_datetime.SeriesTime.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.series.series_datetime.SeriesTime.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.series.series_datetime.SeriesTime.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "bach.series.series_datetime.SeriesTime.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.series.series_datetime.SeriesTime.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.series.series_datetime.SeriesTime.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "bach.series.series_datetime.SeriesTime.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTime.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "bach.series.series_datetime.SeriesTime.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "bach.series.series_datetime.SeriesTime.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTime.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.series.series_datetime.SeriesTime.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "bach.series.series_datetime.SeriesTime.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "bach.series.series_datetime.SeriesTime.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "bach.series.series_datetime.SeriesTime.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "bach.series.series_datetime.SeriesTime.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "bach.series.series_datetime.SeriesTime.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "bach.series.series_datetime.SeriesTime.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "bach.series.series_datetime.SeriesTime.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "bach.series.series_datetime.SeriesTime.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "bach.series.series_datetime.SeriesTime.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "bach.series.series_datetime.SeriesTime.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "bach.series.series_datetime.SeriesTime.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": null,
+                "id": null,
+                "children": [],
+                "level": 3
+            },
+            {
+                "value": "SeriesTimedelta",
+                "id": "bach.series.series_datetime.SeriesTimedelta",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "format",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.format",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mean",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.mean",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sum",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.sum",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "bach.series.series_datetime.SeriesTimedelta.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": "SeriesTimestamp",
+                "id": "bach.series.series_datetime.SeriesTimestamp",
+                "children": [
+                    {
+                        "value": "agg",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_aliases",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.dtype_aliases",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "dtype_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.dtype_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "equals",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.equals",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "fillna",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.fillna",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "format",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.format",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_const",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.from_const",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_class_instance",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.get_class_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_column_expression",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.get_column_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "isnull",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.isnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "notnull",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.notnull",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_db_dtype",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.supported_db_dtype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.supported_value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "supported_value_types",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.supported_value_types",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_frame",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.to_frame",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "value_to_expression",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.value_to_expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_cume_dist",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_cume_dist",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_dense_rank",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_dense_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_first_value",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_first_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lag",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_lag",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_last_value",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_last_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_lead",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_lead",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_nth_value",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_nth_value",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_ntile",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_ntile",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_percent_rank",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_percent_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_rank",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_rank",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window_row_number",
+                        "id": "bach.series.series_datetime.SeriesTimestamp.window_row_number",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": null,
+                "id": null,
+                "children": [],
+                "level": 3
+            }
+        ],
+        "level": 2
+    }
+];
+
+
+import SphinxPages from '@site/src/components/sphinx-page'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+
+
+<SphinxPages url={useBaseUrl('modeling/bach/series/bach.series.series_datetime.html')} />

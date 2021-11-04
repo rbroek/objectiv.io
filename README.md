@@ -1,6 +1,4 @@
-# Website
-
-This website and the documentation is built using [Docusaurus 2](https://v2.docusaurus.io/).
+# Objectiv Website
 
 ## Editing website pages
 
@@ -10,15 +8,21 @@ Since Docusaurus uses MDX as the parsing engine, it can also render React compon
 document. See all [Markdown features](https://docusaurus.io/docs/markdown-features) in the Docusaurus 
 documentation.
 
-For using custom components such as lightboxes, or additional markdown features supported by plugins, 
-see [`/src/docs/components-and-plugins.md`](/docs/components-and-plugins).
+## Editing documentation pages
 
-## Editing docs
+The documentation pages are a standalone Docusaurus application, under `/docs/`. To run the docs:
 
-Edit or add the Markdown files under `/docs`. To update the sidebar menu, edit `/docs/sidebars.js`.
+```console
+cd docs
+yarn install
+yarn start
+```
 
-For using custom components such as lightboxes, or additional markdown features supported by plugins, 
-see [`/src/docs/components-and-plugins.md`](/docs/components-and-plugins).
+Alternatively, to just start the docs from the root directory, run `yarn start:docs`.
+
+To edit the documentation pages, edit or add the Markdown files under `/docs`. 
+
+To update the sidebar menu, edit `/docs/sidebars.js`.
 
 ## Editing the blog
 
@@ -37,19 +41,15 @@ yarn start
 This command starts a local development server and open up a browser window. Most changes are reflected live 
 without having to restart the server.
 
-## Build
+## Build the website
 
-First ensure you set the right environment in the environment variables: either `dev`, `staging`, or `prod`.
+First ensure you set the right OBJECTIV_ENVIRONMENT in the environment variables: either `dev`, `staging`, 
+or `prod`.
 
 * `dev`: tracker endpoint is set to `http://localhost:5000`.
 * `staging`: `url` and `baseUrl` are set to the staging environment.
 
 By default, the tracker endpoint is set to `https://collector.objectiv.io`.
-
-Windows Powershell:
-```console
-$env:OBJECTIV_ENVIRONMENT = '<VALUE>'
-```
 
 Then to build:
 
@@ -59,3 +59,6 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents 
 hosting service.
+
+## Acknowledgements
+This documentation site is built using [Docusaurus 2](https://v2.docusaurus.io/).

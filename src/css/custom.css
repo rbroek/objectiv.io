@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
- 
+
 /* Override the default Infima variables here. */
 :root {
   --ifm-color-primary: white;
@@ -22,6 +22,7 @@
   --ifm-heading-color: black;
   --ifm-heading-font-weight: normal;
   --ifm-hero-text-color: black;
+  --ifm-hero-background-color: transparent;
   --ifm-container-width: 960px;
   --ifm-link-color: #06A5FA;
   --ifm-link-hover-color: #06A5FA;
@@ -52,10 +53,8 @@
   --obj-primary-four: rgba(254, 242, 132, 0.1);
 }
 
-@media (min-width: 960px) {
-  :root {
-    --ifm-spacing-horizontal: 0;
-  }
+:root {
+  --doc-sidebar-width: 360px !important;
 }
 
 body {
@@ -133,7 +132,7 @@ div[role=banner] {
   line-height: 150%;
   display: flex;
   align-items:center;
-  background-color: '#FEF284';
+  background-color: #FEF284;
 }
 
 div[role=banner] img {
@@ -163,39 +162,39 @@ div[role=banner] img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto';
+  font-family: 'Roboto', serif;
   font-style: normal;
   font-weight: normal;
   line-height: 150%;
 }
 
-h1, .main-docs-wrapper h1 {
+h1 {
   font-size: 32px;
   margin: 16px 0;
   font-weight: 700;
 }
 
-h2, .main-docs-wrapper h2 {
+h2 {
   font-size: 24px;
   margin: 16px 0;
   font-weight: 700;
 }
 
-h3, .main-docs-wrapper h3 {
+h3 {
   font-size: 18px;
   margin: 16px 0;
   font-weight: 700;
 }
 
-h4, .main-docs-wrapper h4 {
-  font-family: 'Bungee';
+h4 {
+  font-family: 'Bungee', serif;
   font-size: 18px;
   letter-spacing: 0.1em;
   margin: 16px 0;
 }
 
-h5, .main-docs-wrapper h5 {
-  font-family: 'Bungee';
+h5 {
+  font-family: 'Bungee', serif;
   font-size: 14px;
   letter-spacing: 0.1em;
   margin: 16px 0;
@@ -213,17 +212,6 @@ p, .markdown p {
 .button:hover {
   --ifm-button-border-color: #ffffffd4;
   color: #ffffffd4;
-}
-
-.table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
-  color: #06A5FA;
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
 }
 
 .body-extra-large {
@@ -283,7 +271,7 @@ p, .markdown p {
   font-weight: 700;
 }
 .blog-list-page article h3 {
-  font-family: "Georgia";
+  font-family: "Georgia", serif;
   font-size: 18px;
   line-height: 27px;
   font-weight: 400;
@@ -303,8 +291,8 @@ p, .markdown p {
 }
 
 .blog-post-page article p {
-  
-  font-family: "Georgia";
+
+  font-family: "Georgia", serif;
   font-size: 20px;
   line-height: 36px;
   --ifm-font-color-base: #333;
@@ -351,67 +339,6 @@ p, .markdown p {
 
 .blog-post-page .table-of-contents {
   display: none;
-}
-
-/** DOCS **/
-.docs-wrapper footer .col {
-  flex: none;
-  width: 80%;
-  margin: 0 10%;
-}
-
-/** DIAGRAM (MERMAID) MARKUP **/
-
-.mermaid {
-  text-align: center;
-}
-/* Fixes large margins top and bottom */
-.mermaid svg {
-  height: auto;
-}
-
-.diagram-caption {
-  font-style: italic;
-  font-size: 0.8em;
-  text-align: center;
-}
-
- /* HACK: use '!important' as a workaround for styling not being applied to nodes: 
-  https://github.com/mermaid-js/mermaid/issues/1649 */
-.diagram-basic rect {
-  fill: #fff !important;
-  stroke: black !important;
-}
-.hover .diagram-basic rect, .diagram-basic .hover rect {
-  fill: rgb(212, 212, 212) !important;
-}  
-.diagram-blue rect {
-  fill: #abe9feff !important;
-  stroke: rgb(0, 100, 150) !important;
-}
-.hover .diagram-blue rect, .diagram-blue .hover rect {
-  fill: rgb(100, 200, 250) !important;
-}
-.diagram-pink rect {
-  fill: #fba99dff !important;
-  stroke: rgb(200, 50, 25) !important;
-}
-.hover .diagram-pink rect, .diagram-pink .hover rect {
-  fill: rgb(255, 150, 125) !important;
-}
-.diagram-yellow rect {
-  fill: #fef284ff !important;
-  stroke: rgb(150, 133, 0) !important;
-}
-.hover .diagram-yellow rect, .diagram-yellow .hover rect {
-  fill: rgb(255, 243, 81) !important;
-}
-.mermaid .edgeLabel {
-  background-color: rgb(200, 200, 200) !important;
-}
-.mermaid .edgeLabel rect {
-  fill: rgb(200, 200, 200) !important;
-  stroke: none !important;
 }
 
 /** LIGHTBOX MARKUP **/

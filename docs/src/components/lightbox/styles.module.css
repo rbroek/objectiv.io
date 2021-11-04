@@ -1,0 +1,37 @@
+:local(.lightbox) {
+  text-align: center;
+}
+
+:local(.lightbox:hover) {
+  cursor: pointer;
+}
+
+:local(.lightboxImageWidthLarge) {
+  width: 100%;
+}
+:local(.lightboxImageWidthMedium) {
+  width: 75%;
+}
+:local(.lightboxImageWidthSmall) {
+  width: 50%;
+}
+:local(.lightboxImageWidthExtraSmall) {
+  width: 25%;
+}
+
+@media (max-width: 768px) {
+  :local(.lightboxImageWidthMedium) {
+    width: 100%;
+  }
+  :local(.lightboxImageWidthSmall) {
+    width: 75%;
+  }
+  :local(.lightboxImageWidthExtraSmall) {
+    width: 50%;
+  }
+}
+
+:local(.caption) {
+  font-style: italic;
+  text-align: center;
+}
