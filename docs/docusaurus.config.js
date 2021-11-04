@@ -89,25 +89,7 @@ const config = {
           {
             label: 'Taxonomy',
             to: '/taxonomy',
-          },
-          {
-            href: 'https://github.com/objectiv',
-            label: 'GitHub',
-            position: 'right',
-            className: 'navItem navGitHub',
-          },
-          {
-            href: 'https://twitter.com/objectiv_io',
-            label: 'Twitter',
-            position: 'right',
-            className: 'navItem navTwitter',
-          },
-          {
-            href: 'mailto:hi@objectiv.io',
-            label: 'Contact Us',
-            position: 'right',
-            className: 'navItem navEmail',
-          } 
+          }
         ],
       },
       footer: {
