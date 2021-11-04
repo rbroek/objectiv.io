@@ -8,7 +8,7 @@ slug: /
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Mermaid from '@theme/Mermaid';
 
-![MarineGEO circle logo](../static/img/logo-objectiv-large.svg "Objectiv Logo")
+![ObjectivLogo](../static/img/logo-objectiv-large.svg "Objectiv Logo")
 
 ## Welcome to the official Objectiv documentation
 Objectiv is a data collection & modeling library that puts the data scientist first. It is built around [the open taxonomy of analytics](/docs/taxonomy), which is our proposal for a common way to collect, structure and validate data. With Objectiv, you create a [contextual layer for your application](tracking/core-concepts/tagging) by mapping it to the taxonomy, with the goal of collecting better data and more effective modeling.
