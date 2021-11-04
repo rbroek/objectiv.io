@@ -13,7 +13,7 @@ trackApplicationLoaded = (parameters: {
 ```
 
 :::info
-`trackApplicationLoaded` is triggered automatically.
+`trackApplicationLoaded` is triggered automatically when using either [makeTracker](/tracking/api-reference/general/makeTracker.md) or [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md)
 :::
 
 ## Parameters
