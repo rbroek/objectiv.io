@@ -1,4 +1,4 @@
-# parseJson
+# parseLocationContext
 
 [LocationContext](/tracking/api-reference/definitions/LocationContext.md) parser
 
