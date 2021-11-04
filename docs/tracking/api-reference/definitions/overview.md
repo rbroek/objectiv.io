@@ -4,7 +4,7 @@ sidebar_label: Overview
 title: Definition
 ---
 
-Interfaces and common TypeScript definitions.
+Common TypeScript and [Struct](https://docs.superstructjs.org/) definitions.
 
 - [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md)
 - [ChildrenTaggingQueries](/tracking/api-reference/definitions/ChildrenTaggingQueries.md)
@@ -33,7 +33,7 @@ Interfaces and common TypeScript definitions.
 - [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)
 - [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)
 - [TrackVisibilityAttribute](/tracking/api-reference/definitions/TrackVisibilityAttribute.md)
-- [uuid](/tracking/api-reference/definitions/Uuid.md)
+- [Uuid](/tracking/api-reference/definitions/Uuid.md)
 - [ValidateAttribute](/tracking/api-reference/definitions/ValidateAttribute.md)
 - [ValidChildrenTaggingQuery](/tracking/api-reference/definitions/ValidChildrenTaggingQuery.md)
 - [WaitForQueueOptions](/tracking/api-reference/definitions/WaitForQueueOptions.md)

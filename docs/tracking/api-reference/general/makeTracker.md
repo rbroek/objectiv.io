@@ -25,7 +25,7 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 |          |                        | type                                                                 | default value
 | :-:      | :--                    | :--                                                                  | :--           
 | required | **applicationId**      | string                                                               |
-| optional | **trackerId**          | string                                                               | Same value as `applicationId`
+| optional | trackerId              | string                                                               | Same value as `applicationId`
 | optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
 | optional | **_endpoint_**         | string                                                               |
 | optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
