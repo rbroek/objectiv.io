@@ -18,7 +18,7 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 | optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
 | optional | **_endpoint_**         | string                                                               |
 | optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
-| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeDefaultPluginList.md)
+| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
 | optional | console                | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
 | optional | active                 | boolean                                                              | `true`
 | optional | trackApplicationLoaded | boolean                                                              | `true`
@@ -76,7 +76,7 @@ is equivalent to:
 - [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md)
 - [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
 - [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
-- [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeDefaultPluginList.md)
+- [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
 - [FetchAPITransport](/tracking/api-reference/transports/FetchAPITransport.md)
 - [XMLHttpRequestTransport](/tracking/api-reference/transports/XMLHttpRequestTransport.md)
 - [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorage.md)

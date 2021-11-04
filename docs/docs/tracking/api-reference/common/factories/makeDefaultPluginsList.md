@@ -1,4 +1,4 @@
-# makeDefaultPluginList
+# makeDefaultPluginsList
 
 Generates the default list of [TrackerPlugin](/tracking/api-reference/core/TrackerPlugin.md) for [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md).
 
