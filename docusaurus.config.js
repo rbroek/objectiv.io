@@ -19,7 +19,7 @@ const config = {
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
+  trailingSlash: true,
 
   presets: [
     [
@@ -73,6 +73,10 @@ const config = {
         src: 'img/logo-objectiv.svg',
       },
       items: [
+        {
+          label: 'Docs',
+          to: '/docs/',
+        },
         {
           to: 'about',
           label: 'About Us',
