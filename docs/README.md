@@ -1,6 +1,8 @@
 # Objectiv Documentation
 
-## Editing docs
+## Editing documentation pages
+
+The documentation pages are a standalone Docusaurus application, under `/docs/`.
 
 Edit or add the Markdown files under `/docs`. To update the sidebar menu, edit `/docs/sidebars.js`.
 
@@ -17,7 +19,7 @@ yarn start
 This command starts a local development server and open up a browser window. Most changes are reflected live 
 without having to restart the server.
 
-## Build
+## Build the Documentation pages
 
 First ensure you set the right environment in the environment variables: either `dev` or `prod`.
 
