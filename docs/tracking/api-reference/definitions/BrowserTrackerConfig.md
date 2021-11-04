@@ -27,6 +27,6 @@ Internally it will automatically configure the Transport layer for the given `en
 :::info see also
 - [TrackerConfig](/tracking/api-reference/core/TrackerConfig.md)
 - [compareTrackerConfigs](/tracking/api-reference/common/compareTrackerConfigs.md)
-- [makeTracker](/tracking/api-reference/makeTracker.md)
-- [getOrMakeTracker](/tracking/api-reference/getOrMakeTracker.md)
+- [makeTracker](/tracking/api-reference/general/makeTracker.md)
+- [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md)
 :::

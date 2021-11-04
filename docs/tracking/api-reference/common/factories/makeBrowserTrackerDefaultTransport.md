@@ -1,6 +1,6 @@
 # makeBrowserTrackerDefaultTransport
 
-Generates the default [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) instance for [Browser Tracker](/tracking/api-reference/BrowserTracker.md).
+Generates the default [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) instance for [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md).
 
 ```typescript
 makeBrowserTrackerDefaultTransport = (trackerConfig: BrowserTrackerConfig) => TrackerTransportInterface

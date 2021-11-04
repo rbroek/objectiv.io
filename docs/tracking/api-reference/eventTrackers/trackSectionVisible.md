@@ -22,7 +22,7 @@ trackSectionVisible = (parameters: {
 | required | **element**    | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           |
 | optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
 | optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
-| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                               |
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns

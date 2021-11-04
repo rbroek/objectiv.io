@@ -1,6 +1,6 @@
 # makeBrowserTrackerDefaultQueue
 
-Generates the default [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md) instance for [Browser Tracker](/tracking/api-reference/BrowserTracker.md).
+Generates the default [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md) instance for [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md).
 
 ```typescript
 makeBrowserTrackerDefaultQueue = (trackerConfig: BrowserTrackerConfig) => TrackerQueueInterface

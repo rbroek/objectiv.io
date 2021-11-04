@@ -1,6 +1,6 @@
 # trackApplicationLoaded
 
-Triggers a [ApplicationLoadedEvent](/taxonomy/events/ApplicationLoadedEvent.md).
+Triggers an [ApplicationLoadedEvent](/taxonomy/events/ApplicationLoadedEvent.md).
 
 ```typescript
 trackApplicationLoaded = (parameters: {
@@ -22,7 +22,7 @@ trackApplicationLoaded = (parameters: {
 | optional | element        | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           | `document`
 | optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
 | optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
-| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                               |
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
@@ -56,7 +56,7 @@ const App = () => {
 ```
 
 :::warning
-Make sure to set [makeTracker](/tracking/api-reference/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
+Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s `trackApplicationLoaded` to `false`, when manually tracking this event, to avoid double calls.
 :::
 
 <br />
@@ -68,7 +68,7 @@ Make sure to set [makeTracker](/tracking/api-reference/makeTracker.md)'s `trackA
 <br />
 
 :::info See also
-- [makeTracker](/tracking/api-reference/makeTracker.md)
+- [makeTracker](/tracking/api-reference/general/makeTracker.md)
 - [trackURLChange](/tracking/api-reference/eventTrackers/trackURLChange.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

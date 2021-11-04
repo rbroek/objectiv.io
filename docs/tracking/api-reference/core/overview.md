@@ -7,7 +7,7 @@ title: Core
 Core Tracker modules and functions.
 
 :::caution WIP
-This documentation section is incomplete.
+This documentation section is a work-in-progress. Not all the Core Tracker functionality is fully described here, yet.
 :::
 
 - [Core Factories](/tracking/api-reference/core/coreFactories.md)

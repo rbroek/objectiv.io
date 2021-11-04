@@ -14,7 +14,7 @@ type NonInteractiveEventTrackerParameters = Partial<InteractiveEventTrackerParam
 | optional | element        | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           | [Document.documentElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)                
 | optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
 | optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
-| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                               |
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 :::info

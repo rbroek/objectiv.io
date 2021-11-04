@@ -22,7 +22,7 @@ trackURLChange = (parameters: {
 | optional | element        | [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md)                           | `document`
 | optional | locationStack  | [LocationStack](/tracking/api-reference/core/LocationStack.md)                                    |
 | optional | globalContexts | [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)                                  |
-| optional | tracker        | [BrowserTracker](/tracking/api-reference/BrowserTracker.md)                                       |
+| optional | tracker        | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)                               |
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
 ## Returns
@@ -60,7 +60,7 @@ const App = () => {
 ```
 
 :::warning
-Make sure to set [makeTracker](/tracking/api-reference/makeTracker.md)'s `trackURLChanges` to `false`, when manually tracking this event, to avoid double calls.
+Make sure to set [makeTracker](/tracking/api-reference/general/makeTracker.md)'s `trackURLChanges` to `false`, when manually tracking this event, to avoid double calls.
 :::
 
 :::caution Just pseudocode
@@ -80,7 +80,7 @@ In fact, [Browser Tracker](/tracking/core-concepts/trackers.md#browser-tracker) 
 <br />
 
 :::info See also
-- [makeTracker](/tracking/api-reference/makeTracker.md)
+- [makeTracker](/tracking/api-reference/general/makeTracker.md)
 - [trackApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md)
 - [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md)
 :::

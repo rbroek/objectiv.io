@@ -2,6 +2,12 @@
 
 Browser Tracker extends [Core Tracker](/tracking/api-reference/core/Tracker.md) with a simplified constructor and some preconfigured [Plugins](/tracking/api-reference/core/TrackerPlugins.md).
 
+:::tip
+The recommended way of creating Browser Tracker Instances is to use either [makeTracker](/tracking/api-reference/general/makeTracker.md) or [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md).
+
+These helper methods will also push the new instance in [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md) and initiate auto-tracking automatically.
+:::
+
 ### Configuration
 [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md)
 
@@ -65,6 +71,8 @@ is equivalent to:
 <br />
 
 :::info see also
+- [makeTracker](/tracking/api-reference/general/makeTracker.md)
+- [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md)
 - [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md)
 - [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
 - [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
