@@ -1,0 +1,150 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-code-font-size: 95%;
+  --ifm-link-color: #06A5FA;
+  --ifm-link-hover-color: #06A5FA;
+  --ifm-navbar-link-hover-color: #06A5FA;
+  --ifm-menu-color-active: #06A5FA;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+}
+
+@media (min-width: 1440px) {
+  .footer .container {
+    max-width: 960px;
+  }
+}
+
+.footer__item {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0.8em;
+}
+
+.footer__copyright {
+  font-size: 0.9em;
+  color: rgb(100, 100, 100);
+}
+
+/** DOCS **/
+div.docs-wrapper footer {
+  padding: 20px 0;
+  text-align: left;
+  border-top: 1px solid #eee;
+}
+
+.table-of-contents__link:hover, .table-of-contents__link:hover code, .table-of-contents__link--active, .table-of-contents__link--active code {
+  color: #06A5FA;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  /*noinspection CssUnresolvedCustomProperty*/
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  /*noinspection CssUnresolvedCustomProperty*/
+  padding: 0 var(--ifm-pre-padding);
+}
+
+
+/** DIAGRAM (MERMAID) MARKUP **/
+
+.mermaid {
+  text-align: center;
+}
+/* Fixes large margins top and bottom */
+.mermaid svg {
+  height: auto;
+}
+
+.diagram-caption {
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+ /* HACK: use '!important' as a workaround for styling not being applied to nodes: 
+  https://github.com/mermaid-js/mermaid/issues/1649 */
+.diagram-basic rect {
+  fill: #fff !important;
+  stroke: black !important;
+}
+.hover .diagram-basic rect, .diagram-basic .hover rect {
+  fill: rgb(212, 212, 212) !important;
+}  
+.diagram-blue rect {
+  fill: #abe9feff !important;
+  stroke: rgb(0, 100, 150) !important;
+}
+.hover .diagram-blue rect, .diagram-blue .hover rect {
+  fill: rgb(100, 200, 250) !important;
+}
+.diagram-pink rect {
+  fill: #fba99dff !important;
+  stroke: rgb(200, 50, 25) !important;
+}
+.hover .diagram-pink rect, .diagram-pink .hover rect {
+  fill: rgb(255, 150, 125) !important;
+}
+.diagram-yellow rect {
+  fill: #fef284ff !important;
+  stroke: rgb(150, 133, 0) !important;
+}
+.hover .diagram-yellow rect, .diagram-yellow .hover rect {
+  fill: rgb(255, 243, 81) !important;
+}
+.mermaid .edgeLabel {
+  background-color: rgb(200, 200, 200) !important;
+}
+.mermaid .edgeLabel rect {
+  fill: rgb(200, 200, 200) !important;
+  stroke: none !important;
+}
+
+/** LIGHTBOX MARKUP **/
+/* animation */
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}

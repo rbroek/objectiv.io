@@ -74,6 +74,10 @@ const config = {
       },
       items: [
         {
+          label: 'Docs',
+          to: '/docs/',
+        },
+        {
           to: 'about',
           label: 'About Us',
           position: 'right',
