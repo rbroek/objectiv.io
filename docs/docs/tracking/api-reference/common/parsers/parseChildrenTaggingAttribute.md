@@ -1,6 +1,6 @@
 # parseChildrenTaggingAttribute
 
-[StringifiedChildrenTaggingAttributes](/tracking/api-reference/definitions/StringifiedChildrenTaggingAttributes.md) parser
+[TagChildrenAttributes](/tracking/api-reference/definitions/TagChildrenAttributes.md) parser
 
 ```typescript
 parseChildrenTaggingAttribute = (stringifiedChildrenTaggingAttribute: string | null) => ValidChildrenTaggingQuery[]
@@ -12,7 +12,7 @@ parseChildrenTaggingAttribute = (stringifiedChildrenTaggingAttribute: string | n
 | required | **stringifiedChildrenTaggingAttribute** | string \| `null` |
 
 ## Returns
-Array of [ValidChildrenTaggingQuery](/tracking/api-reference/definitions/ValidChildrenTaggingQuery.md)
+Array of [ChildrenTaggingQuery](/tracking/api-reference/definitions/ChildrenTaggingQuery.md)
 
 ## Throws
 Error when the given `stringifiedChildrenTaggingAttribute` cannot be parsed

@@ -5,14 +5,14 @@
 
 ```typescript jsx
 type TrackClicksOptions = undefined | {
-  waitForQueue?: WaitUntilTrackedOptions;
+  waitForQueue?: WaitForQueueOptions;
   flushQueue?: FlushQueueOptions;
 };
 ```
 
 :::info see also
 - [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md)
-- [WaitUntilTrackedOptions](/tracking/api-reference/definitions/WaitUntilTrackedOptions.md)
+- [WaitForQueueOptions](/tracking/api-reference/definitions/WaitForQueueOptions.md)
 - [FlushQueueOptions](/tracking/api-reference/definitions/FlushQueueOptions.md)
 - [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)
 :::

@@ -7,10 +7,10 @@ An object pairing a [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/
 ```typescript
 type ChildrenTaggingQuery = {
   queryAll: string,
-  trackAs: StringifiedLocationTaggingAttributes,
+  trackAs: TagLocationAttributes,
 }
 ```
 
 :::info see also
-- [StringifiedLocationTaggingAttributes](/tracking/api-reference/definitions/StringifiedLocationTaggingAttributes.md)
+- [TagLocationAttributes](/tracking/api-reference/definitions/TagLocationAttributes.md)
 :::

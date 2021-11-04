@@ -3,10 +3,10 @@
 The return value of [tagChildren](/tracking/api-reference/locationTaggers/tagChildren.md).
 
 ```typescript
-type TagChildrenReturnValue = undefined  | StringifiedChildrenTaggingAttributes;
+type TagChildrenReturnValue = undefined  | TagChildrenAttributes;
 ```
 
 :::info see also
-[StringifiedChildrenTaggingAttributes](/tracking/api-reference/definitions/StringifiedChildrenTaggingAttributes.md)
+[TagChildrenAttributes](/tracking/api-reference/definitions/TagChildrenAttributes.md)
 [TaggingAttribute.tagChildren](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetagchildren)
 :::
