@@ -96,9 +96,7 @@ export default function Home() {
             className={clsx("container", styles.contentContainer, styles.solutions, styles.mapToTaxonomy)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>1.</div>
-              <div>
-                Map your application to the open taxonomy
-              </div>
+              <div>Map your application to the open taxonomy</div>
             </div>
             <div className={clsx(styles.solutionRowLeft)}>
               <div>
@@ -149,18 +147,16 @@ export default function Home() {
             className={clsx("container", styles.contentContainer, styles.solutions)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>2.</div>
-              <div>
-                Debug your instrumentation on the fly
-              </div>
+              <div>Debug your instrumentation on the fly</div>
             </div>
 
             <div className={clsx(styles.solutionRowLeft)}>
               <div>
                 <p>Objectiv comes with a set of tools that help you set up error-free tracking 
                   instrumentation.</p>
-                <p>For instance, you can <strong>validate your instrumentation against the taxonomy</strong> 
-                  &nbsp;and get live feedback in your IDE and console while developing, enabling you to catch 
-                  errors before data starts flowing in.</p>
+                <p>For instance, you can <strong>validate your instrumentation against the 
+                  taxonomy</strong> and get live feedback in your IDE and console while developing, enabling 
+                  you to catch errors before data starts flowing in.</p>
                 <Link 
                   href="/docs/tracking" 
                   {...tagLink({id: 'cta-docs-tracking', href: '/docs/tracking', text: 'Docs - Tracking'})}
@@ -173,6 +169,107 @@ export default function Home() {
                 <img
                   src={useBaseUrl("img/solution-tracking.svg")}
                   alt="Live debugging feedback on your instrumentation" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={clsx(styles.pageSection, styles.pageSection)}>
+          <div 
+            {...tagElement({id: 'location-stack'})}
+            className={clsx("container", styles.contentContainer, styles.solutions)}>
+            <div className={clsx(styles.solutionTitle)}>
+              <div>3.</div>
+              <div>Collect rich &amp; descriptive data that’s ready for modeling</div>
+            </div>
+
+            <div className={clsx(styles.solutionRowRight)}>
+              <div>
+                <img
+                  src={useBaseUrl("img/solution-location-stack.svg")}
+                  alt="Validated, rich, descriptive + well-structured" />
+              </div>
+              <div>
+                <p>Objectiv’s tracker collects data that is unusually rich. Events can carry multiple 
+                  contexts, including the <strong>exact location in the UI</strong> from where they were 
+                  triggered.</p>
+                <p>All data is <strong>well-structured, self-descriptive</strong> and has 
+                  been <strong>validated</strong> at the first step of the pipeline, so you can use it for 
+                  modeling with minimal additional gruntwork.</p>
+                <Link 
+                  href="/docs/taxonomy/" 
+                  {...tagLink({id: 'cta-docs-location-stack', href: '/docs/taxonomy', 
+                    text: 'Docs - Location Stack'})}
+                  className={clsx("button", styles.ctaButton)}>
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                  Docs - Location Stack
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
+          <div 
+            {...tagElement({id: 'modeling'})}
+            className={clsx("container", styles.contentContainer, styles.solutions)}>
+            <div className={clsx(styles.solutionTitle)}>
+              <div>4.</div>
+              <div>Use Pandas-like operations on your full data set</div>
+            </div>
+
+            <div className={clsx(styles.solutionRowLeft)}>
+              <div>
+                <p>Objectiv features an SQL abstraction layer for modeling that enables you to 
+                  use <strong>familiar dataframe operations</strong> on your <strong>full data set</strong>, 
+                  straight from your notebook.</p>
+                <p>You can <strong>output your models to SQL queries with a single command</strong>, 
+                  effectively closing the gap between experimentation and production.</p>
+                <Link 
+                  href="/docs/modeling" 
+                  {...tagLink({id: 'cta-docs-modeling', href: '/docs/modeling', text: 'Docs - Modeling'})}
+                  className={clsx("button", styles.ctaButton)}>
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                  Docs - Modeling
+                </Link>
+              </div>
+              <div>
+                <img
+                  src={useBaseUrl("img/solution-modeling.svg")}
+                  alt="Talk Pandas, get SQL" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={clsx(styles.pageSection, styles.pageSection)}>
+          <div 
+            {...tagElement({id: 'reuse-models'})}
+            className={clsx("container", styles.contentContainer, styles.solutions)}>
+            <div className={clsx(styles.solutionTitle)}>
+              <div>5.</div>
+              <div>Reuse parts of any model</div>
+            </div>
+
+            <div className={clsx(styles.solutionRowRight)}>
+              <div>
+                <img
+                  src={useBaseUrl("img/solution-reuse.svg")}
+                  alt="Quickly build models by reusing what others have made" />
+              </div>
+              <div>
+                <p>By embracing the open taxonomy, you can <strong>reuse your own models</strong> for other 
+                  projects and <strong>quickly build models</strong> reusing parts of others.</p>
+                <p>That retention model you’ve built for your campaign site? You can likely reuse that for 
+                  your main site by changing a single line of code.</p>
+                <Link 
+                  href="/docs/modeling/" 
+                  {...tagLink({id: 'cta-docs-reuse', href: '/docs/modeling', 
+                    text: 'Docs - Examples'})}
+                  className={clsx("button", styles.ctaButton)}>
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                  Docs - Examples
+                </Link>
               </div>
             </div>
           </div>

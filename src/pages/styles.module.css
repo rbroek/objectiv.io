@@ -166,7 +166,7 @@ h2 {
   margin-bottom: 37px;
 }
 .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
-  width: 486px; /* 320px + 2x83px grid cols left and right */
+  width: 488px; /* 320px + 2x83px grid cols left and right */
   padding: 0 83px 0 83px;
 }
 .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) { /* the right column */
@@ -214,9 +214,11 @@ h2 {
 }
 
 footer {
+  background-color: #008FDB;
+  color: #fff;
   font-size: 16px;
   text-align: center;
-  padding: 60px 0 120px 0;
+  padding: 50px 0 130px 0;
 }
 
 @media screen and (max-width: 966px) { /* mobile all */
@@ -226,6 +228,7 @@ footer {
 }
 
 footer h2 {
+  font-size: 20px;
   color: #fff;
   margin-bottom: 15px;
 }
