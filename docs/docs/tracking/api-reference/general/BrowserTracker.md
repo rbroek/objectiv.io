@@ -34,7 +34,7 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 TrackerQueue is configured to send events in batches of 10 every 100ms.  
 
 ### Persistence
-TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorageStore.md) to ensure events are persisted across sessions.
+TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorage.md) to ensure events are persisted across sessions.
 
 ### Retry logic
 Configured for 10 retries with exponential backoff starting at 1000ms.
@@ -79,5 +79,5 @@ is equivalent to:
 - [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeDefaultPluginList.md)
 - [FetchAPITransport](/tracking/api-reference/transports/FetchAPITransport.md)
 - [XMLHttpRequestTransport](/tracking/api-reference/transports/XMLHttpRequestTransport.md)
-- [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorageStore.md)
+- [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorage.md)
 :::
