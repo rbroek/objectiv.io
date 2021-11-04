@@ -18,6 +18,8 @@ yarn install
 yarn start
 ```
 
+Alternatively, to just start the docs from the root directory, run `yarn start:docs`.
+
 To edit the documentation pages, edit or add the Markdown files under `/docs`. 
 
 To update the sidebar menu, edit `/docs/sidebars.js`.
