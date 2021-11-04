@@ -1,21 +1,21 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { tagElement } from "@objectiv/tracker-browser";
+import { tagElement, tagLink } from "@objectiv/tracker-browser";
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
+import Link from "@docusaurus/Link";
 import React from 'react';
 import AnnouncementBar from '../components/announcement-bar'
-import KeepMePosted from '../components/keep-me-posted'
 import styles from './styles.module.css';
 
 export default function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig} = context;
+  const {tagline, customFields} = context.siteConfig;
 
   return (
     <Layout
       title=''
-      description={siteConfig?.tagline}> {/*Description will go into a meta tag in <head />*/}
+      description={tagline}>
       <AnnouncementBar 
         title="We're Hiring!"
         content="Join our mission crew as a Data Scientist / Engineer."
@@ -36,83 +36,52 @@ export default function Home() {
           </h1>
           <div className={clsx(styles.heroSubTitleWrapper)}>
             <p className={clsx(styles.heroSubTitle)}>
-              What we’re currently working on:
+              Objectiv is a data collection &amp; modeling library that puts the data scientist first.
             </p>
           </div>
-          <div className={clsx(styles.heroUsps)}>
-            <div>
-              <img
-                className={clsx(styles.heroUspsIcon)}
-                src={useBaseUrl("img/icons/icon-taxonomy.svg")}
-                alt="Taxonomy" /><br />
-              <strong>A common taxonomy for analytics</strong><br />
-              so models can be shared, <br />
-              reused, stacked and interchanged.
-              <div className={clsx(styles.heroUspsArrowUp)}>
-                <img
-                  src={useBaseUrl("img/usp-arrow-up.svg")}
-                  alt="to" />
-              </div>
-            </div>
-            <div>
-              <img
-                className={clsx(styles.heroUspsIcon)}
-                src={useBaseUrl("img/icons/icon-debug.svg")}
-                alt="Debugging" /><br />
-              <strong>Debuggable tracking instrumentation</strong><br />
-              to ensure clean, model-ready data <br />
-              is being collected at entry point
-              <div className={clsx(styles.heroUspsArrowDown)}>
-                <img
-                  src={useBaseUrl("img/usp-arrow-down.svg")}
-                  alt="to" />
-              </div>
-            </div>
-            <div>
-            <img
-                className={clsx(styles.heroUspsIcon)}
-                src={useBaseUrl("img/icons/icon-modeling-workflow.svg")}
-                alt="Workflow" /><br />
-              <strong>An iterative modeling workflow</strong><br />
-              that closes the gap between <br />
-              experimentation and production
-            </div>
+          <div className={clsx(styles.heroRepoButton)}>
+            <Link 
+              to="https://github.com/objectiv/objectiv-analytics" 
+              {...tagLink({id: 'cta-repo-button', href: 'https://github.com/objectiv/objectiv-analytics', 
+                text: 'Objectiv on GitHub'})}
+              className={clsx("button", styles.ctaButton)}>
+              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
+              Objectiv on GitHub
+            </Link> 
           </div>
           <div className={clsx(styles.heroOutro)}>
-            Objectiv is open source and we’re building it in public. Check out&nbsp; 
-            <Link to="https://github.com/objectiv/">
-              GitHub
-            </Link> for the latest release, or join our&nbsp;
-            <Link to={customFields.slackJoinLink}>
-              Slack channel
-            </Link> to stay in the loop.
+            Objectiv is open source and we’re building it in public.
           </div>
         </div>
       </header>
 
-      <main className={clsx('body-large')}>
+      <main 
+        {...tagElement({id: 'main'})}
+        className={clsx('body-large')}>
+
         <div className={clsx(styles.pageSection,styles.pageSectionBlue)}>
-          <div className={clsx("container", styles.intro)}>
+          <div 
+            {...tagElement({id: 'intro'})}
+            className={clsx("container", styles.intro)}>
             <img
               className={clsx(styles.introTitleIcon)}
               src={useBaseUrl("img/icons/icon-data-scientist-thinking.svg")}
               alt="Data Scientist thinking..." /><br />
-            <h2>
-              Data teams often have very similar goals, <br />
-              yet their analytics data and models all look different...
-            </h2>
             <p>
-              There is no common way to do data science. There are plenty of great purpose-built analytics 
-              tools, but teams are still on their own when it comes to defining how to structure, collect, 
-              groom and model data. This leads to the creation of lots of proprietary taxonomies &amp; models 
-              that all have the same intent.
+              Most data scientists spend a significant amount of their time on prepwork to ensure their data 
+              is ready for modeling, and while data teams often have very similar goals, models are usually 
+              built from scratch because there is no common way to structure data.
+            </p>
+            <p>
+              <strong>Objectiv proposes the adoption of a common taxonomy for analytics so models &amp; data 
+                can be reused and data scientists can build on knowledge and practises of others.</strong>
             </p>
             <p className={clsx(styles.introTeaser)}>
               <img
                 className={clsx(styles.introCaretDown)}
                 src={useBaseUrl("img/caret-down.svg")}
                 alt="Down" />
-              Find out what we want to do about it
+              How it works
               <img
                 className={clsx(styles.introCaretDown)}
                 src={useBaseUrl("img/caret-down.svg")}
@@ -122,94 +91,90 @@ export default function Home() {
         </div>
 
         <div className={clsx(styles.pageSection)}>
-          <div className={clsx("container", styles.contentContainer)}>
+          <div 
+            {...tagElement({id: 'taxonomy'})}
+            className={clsx("container", styles.contentContainer, styles.solutions, styles.mapToTaxonomy)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>1.</div>
               <div>
-                A common taxonomy for analytics so models <br />
-                can be shared, reused, stacked and interchanged.
+                Map your application to the open taxonomy
               </div>
             </div>
-            <p>
-              Models are often still built from scratch. Someone in your field has probably already written 
-              a very similar analysis because their goals are similar. Teams keep reinventing the same wheel 
-              because there is no common way to structure and model data, leading to isolated knowledge and 
-              no meaningful way for data scientists to collaborate.
+            <div className={clsx(styles.solutionRowLeft)}>
+              <div>
+                <p>Objectiv is built around the <strong><em>open taxonomy of analytics</em></strong>, which 
+                  is our proposal for a common way to collect, structure and validate data.</p>
+                <p>It defines <strong>classes for each common event type</strong> and the contexts in which 
+                  they can happen. It describes their properties, requirements and their relationships with 
+                  other classes.</p>
+              </div>
+              <div>
+                <img
+                  src={useBaseUrl("img/solution-taxonomy-hierarchy.svg")}
+                  alt="A class for each event type" />
+              </div>
+            </div>
+            <div className={clsx(styles.solutionRowRight)}>
+              <div>
+                <img
+                    src={useBaseUrl("img/solution-taxonomy-mapping.svg")}
+                    alt="Map your application to the open taxonomy" />
+              </div>
+              <div>
+                <p>With Objectiv, you <strong>map your application to this taxonomy</strong>, creating a 
+                  contextual layer that's used for data collection &amp; validation.
+                </p>
+                <p>In most cases you can <strong>skip the discussion on what to track</strong>, because the 
+                  taxonomy is designed to ensure the collected data covers a wide range of common analytics 
+                  use cases. 
+                </p>
+                <Link 
+                  href="/docs/taxonomy" 
+                  {...tagLink({id: 'cta-docs-taxonomy', href: '/docs/taxonomy', text: 'Docs - Taxonomy'})}
+                  className={clsx("button", styles.ctaButton)}>
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                  Docs - Taxonomy
+                </Link>
+              </div>
+            </div>
+            <p className={clsx(styles.footnote)}>
+              The initial version of the taxonomy is built for product analytics. We have plans to support other fields as well.
             </p>
-            <img className={clsx(styles.solutionDiagram)}
-                src={useBaseUrl("img/solution-taxonomy.svg")}
-                alt="Solution Diagram: Taxonomy" />
-            <p>
-              We strive for the adoption of an open standard taxonomy for analytics that enables models to be 
-              shared, reused, stacked and interchanged. Check out our repo to learn more.
-            </p>
-            <a href="https://github.com/objectiv/objectiv-analytics" className={clsx("button", styles.ctaButton)}>
-              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-              Taxonomy - Objectiv on GitHub
-            </a>
           </div>
         </div>
 
         <div className={clsx(styles.pageSection, styles.pageSectionLightBlue)}>
-          <div className={clsx("container", styles.contentContainer)}>
+          <div 
+            {...tagElement({id: 'tracking'})}
+            className={clsx("container", styles.contentContainer, styles.solutions)}>
             <div className={clsx(styles.solutionTitle)}>
               <div>2.</div>
               <div>
-                Debuggable tracking instrumentation to ensure clean, <br />
-                model-ready data is being collected at entry point
+                Debug your instrumentation on the fly
               </div>
             </div>
-            <p>
-              The typical workflow of a data scientist involves a significant amount of cleaning and QC 
-              before they can start modeling. We believe the root cause of this to be the lack of support 
-              software engineers get when instrumenting analytics tracking. Current trackers are not designed 
-              to collect data that you can effectively model on and data validation is often done at a stage 
-              where problems are harder to fix.
-            </p>
-            <img className={clsx(styles.solutionDiagram)}
-                src={useBaseUrl("img/solution-tracking.svg")}
-                alt="Solution Diagram: Tracking" />
-            <p>
-              We’re working on debuggable tracking instrumentation that enables software engineers to collect
-              clean, model-ready data with validation at the first stage of the pipeline.
-            </p>
-            <a 
-              href="https://github.com/objectiv/objectiv-analytics" 
-              className={clsx("button", styles.ctaButton)}>
-              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-              Tracking - Objectiv on GitHub
-            </a>
-          </div>
-        </div>
 
-        <div className={clsx(styles.pageSection, styles.pageSection)}>
-          <div className={clsx("container", styles.contentContainer)}>
-            <div className={clsx(styles.solutionTitle)}>
-              <div>3.</div>
+            <div className={clsx(styles.solutionRowLeft)}>
               <div>
-                An iterative modeling workflow that closes the <br />
-                gap between experimentation and production
+                <p>Objectiv comes with a set of tools that help you set up error-free tracking 
+                  instrumentation.</p>
+                <p>For instance, you can <strong>validate your instrumentation against the taxonomy</strong> 
+                  &nbsp;and get live feedback in your IDE and console while developing, enabling you to catch 
+                  errors before data starts flowing in.</p>
+                <Link 
+                  href="/docs/tracking" 
+                  {...tagLink({id: 'cta-docs-tracking', href: '/docs/tracking', text: 'Docs - Tracking'})}
+                  className={clsx("button", styles.ctaButton)}>
+                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                  Docs - Tracking
+                </Link>
+              </div>
+              <div>
+                <img
+                  src={useBaseUrl("img/solution-tracking.svg")}
+                  alt="Live debugging feedback on your instrumentation" />
               </div>
             </div>
-            <p>
-              By the time data scientists have built their models to get the answers they were looking for, 
-              a significant amount of work is often required to translate that newfound knowledge to something 
-              that’s usable in production. Also, models that are being used in production can’t easily be used 
-              as a starting point for experimentation.
-            </p>
-            <img className={clsx(styles.solutionDiagram)}
-              src={useBaseUrl("img/solution-modeling.svg")}
-              alt="Solution Diagram: Modeling" />
-            <p>
-              We want to close the gap between experimentation and production by enabling data scientists to 
-              run experiments on the full data set straight from their notebooks.
-            </p>
-            <a 
-              href="https://github.com/objectiv/objectiv-analytics" 
-              className={clsx("button", styles.ctaButton)}>
-              <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
-              Modeling - Objectiv on GitHub
-            </a>
           </div>
         </div>
 
@@ -217,12 +182,12 @@ export default function Home() {
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Objectiv is open source and we’re building it in public.</h2>
             <p>Have opinions on where we should take this or want to stay in the loop?</p>
-            <a 
-              href={customFields.slackJoinLink}
+            <Link 
+              to={customFields.slackJoinLink}
               className={clsx("button", styles.ctaButton)}>
               <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
               Join us on Slack
-            </a>
+            </Link>
           </div>
         </footer>
 

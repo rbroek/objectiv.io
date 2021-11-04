@@ -90,7 +90,6 @@ const config = {
         {
           to: 'about',
           label: 'About Us',
-          position: 'right',
         },
         {
           href: 'https://github.com/objectiv',
