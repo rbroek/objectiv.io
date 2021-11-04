@@ -1,6 +1,6 @@
 # makeTracker
 
-Creates a new [BrowserTracker](/tracking/api-reference/BrowserTracker.md) and adds it to the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). Then calls [startAutoTracking](/tracking/api-reference/startAutoTracking.md) for it.
+Creates a new [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) and adds it to the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). Then calls [startAutoTracking](/tracking/api-reference/general/startAutoTracking.md) for it.
 
 ```typescript
 makeTracker = (parameters: {
@@ -17,7 +17,7 @@ makeTracker = (parameters: {
 ```
 
 :::info
-The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). See also [getTracker](/tracking/api-reference/getTracker.md) and [setDefaultTracker](/tracking/api-reference/setDefaultTracker.md)
+The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
 :::
 
 
@@ -40,7 +40,7 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 :::
 
 ## Returns
- - [BrowserTracker](/tracking/api-reference/BrowserTracker.md)
+ - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
 
 ## Usage example
 
@@ -72,7 +72,7 @@ makeTracker({
 :::info See also
 - [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) 
 - [Event Trackers](/tracking/api-reference/eventTrackers/overview.md)
-- [BrowserTracker](/tracking/api-reference/BrowserTracker.md)
+- [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
 - [Collector](/tracking/core-concepts/collector.md)
-- [startAutoTracking](/tracking/api-reference/startAutoTracking.md)
+- [startAutoTracking](/tracking/api-reference/general/startAutoTracking.md)
 :::
