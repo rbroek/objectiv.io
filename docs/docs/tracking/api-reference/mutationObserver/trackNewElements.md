@@ -18,7 +18,7 @@ const trackNewElements = (
 |          |             | type                                                                | default value
 | :-:      | :--         | :--                                                                 | :--           
 | required | **element** | [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) |
-| required | **element** | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) |
+| required | **tracker** | [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) |
 | optional | console     | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)    |
 
 <br/>
