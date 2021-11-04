@@ -1,6 +1,6 @@
 # getTracker
 
-Retrieves a [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) from the [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md).  
+Retrieves a [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md) from the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md).  
 
 ```typescript
 getTracker = (trackerId?: string) => BrowserTracker
@@ -16,7 +16,7 @@ If not `trackerId` is specified, the default [BrowserTracker](/tracking/api-refe
 | optional | **trackerId** | string |
 
 :::caution
-`getTracker` will throw an Error if [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md) is empty.
+`getTracker` will throw an Error if [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md) is empty.
 :::
 
 ## Returns
@@ -42,7 +42,7 @@ const secondaryTracker = getTracker('secondary-tracker');
 :::info See also
 - [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
 - [makeTracker](/tracking/api-reference/general/makeTracker.md)
-- [TrackerRepository](/tracking/api-reference/general/TrackerRepository.md)
-- [Event Trackers](/tracking/api-reference/event-trackers/overview.md)
+- [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md)
+- [Event Trackers](/tracking/api-reference/eventTrackers/overview.md)
 - [BrowserTracker](/tracking/api-reference/general/BrowserTracker.md)
 :::

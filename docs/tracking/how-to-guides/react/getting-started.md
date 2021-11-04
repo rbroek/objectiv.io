@@ -49,7 +49,7 @@ In such cases it's necessary to stabilize `makeTracker` by wrapping it in a [use
 ```typescript
 const App = () => {
   import { makeTracker } from "@objectiv/tracker-browser";
-  …
+  ...
   useEffect(
     () => {
       makeTracker({
@@ -59,7 +59,7 @@ const App = () => {
     },
     [] // no dependencies => no side effects on re-render
   )
-  …
+  ...
 }
 ```
 

@@ -1,0 +1,352 @@
+---
+id: bach.dataframe
+hide_title: true
+slug: /modeling/bach/bach.dataframe
+sidebar_position: 2
+sidebar_label: bach.dataframe
+
+tags: ["modeling", "bach"]
+---
+
+export const toc = [
+    {
+        "value": "bach.dataframe",
+        "id": "module-bach.dataframe",
+        "children": [],
+        "level": 2
+    },
+    {
+        "value": "Classes",
+        "id": "",
+        "children": [
+            {
+                "value": "DataFrame",
+                "id": "bach.dataframe.DataFrame",
+                "children": [
+                    {
+                        "value": "GroupBySingleType",
+                        "id": "bach.dataframe.DataFrame.GroupBySingleType",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "agg",
+                        "id": "bach.dataframe.DataFrame.agg",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "aggregate",
+                        "id": "bach.dataframe.DataFrame.aggregate",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "apply_func",
+                        "id": "bach.dataframe.DataFrame.apply_func",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "astype",
+                        "id": "bach.dataframe.DataFrame.astype",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "copy_override",
+                        "id": "bach.dataframe.DataFrame.copy_override",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.dataframe.DataFrame.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "cube",
+                        "id": "bach.dataframe.DataFrame.cube",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "drop",
+                        "id": "bach.dataframe.DataFrame.drop",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "expanding",
+                        "id": "bach.dataframe.DataFrame.expanding",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_dataframe",
+                        "id": "bach.dataframe.DataFrame.from_dataframe",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_model",
+                        "id": "bach.dataframe.DataFrame.from_model",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "from_table",
+                        "id": "bach.dataframe.DataFrame.from_table",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_current_node",
+                        "id": "bach.dataframe.DataFrame.get_current_node",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_df_materialized_model",
+                        "id": "bach.dataframe.DataFrame.get_df_materialized_model",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_instance",
+                        "id": "bach.dataframe.DataFrame.get_instance",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_order_by_clause",
+                        "id": "bach.dataframe.DataFrame.get_order_by_clause",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_sample",
+                        "id": "bach.dataframe.DataFrame.get_sample",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "get_unsampled",
+                        "id": "bach.dataframe.DataFrame.get_unsampled",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "groupby",
+                        "id": "bach.dataframe.DataFrame.groupby",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "head",
+                        "id": "bach.dataframe.DataFrame.head",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurt",
+                        "id": "bach.dataframe.DataFrame.kurt",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "kurtosis",
+                        "id": "bach.dataframe.DataFrame.kurtosis",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mad",
+                        "id": "bach.dataframe.DataFrame.mad",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "max",
+                        "id": "bach.dataframe.DataFrame.max",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mean",
+                        "id": "bach.dataframe.DataFrame.mean",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "median",
+                        "id": "bach.dataframe.DataFrame.median",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "merge",
+                        "id": "bach.dataframe.DataFrame.merge",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "min",
+                        "id": "bach.dataframe.DataFrame.min",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "mode",
+                        "id": "bach.dataframe.DataFrame.mode",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "nunique",
+                        "id": "bach.dataframe.DataFrame.nunique",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "prod",
+                        "id": "bach.dataframe.DataFrame.prod",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "product",
+                        "id": "bach.dataframe.DataFrame.product",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "rename",
+                        "id": "bach.dataframe.DataFrame.rename",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "reset_index",
+                        "id": "bach.dataframe.DataFrame.reset_index",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "rolling",
+                        "id": "bach.dataframe.DataFrame.rolling",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "rollup",
+                        "id": "bach.dataframe.DataFrame.rollup",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sem",
+                        "id": "bach.dataframe.DataFrame.sem",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "set_index",
+                        "id": "bach.dataframe.DataFrame.set_index",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "skew",
+                        "id": "bach.dataframe.DataFrame.skew",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sort_values",
+                        "id": "bach.dataframe.DataFrame.sort_values",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "std",
+                        "id": "bach.dataframe.DataFrame.std",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "sum",
+                        "id": "bach.dataframe.DataFrame.sum",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "to_df",
+                        "id": "bach.dataframe.DataFrame.to_df",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "var",
+                        "id": "bach.dataframe.DataFrame.var",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "view_sql",
+                        "id": "bach.dataframe.DataFrame.view_sql",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "window",
+                        "id": "bach.dataframe.DataFrame.window",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            },
+            {
+                "value": "SortColumn",
+                "id": "bach.dataframe.SortColumn",
+                "children": [
+                    {
+                        "value": "asc",
+                        "id": "bach.dataframe.SortColumn.asc",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "count",
+                        "id": "bach.dataframe.SortColumn.count",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "expression",
+                        "id": "bach.dataframe.SortColumn.expression",
+                        "children": [],
+                        "level": 3
+                    },
+                    {
+                        "value": "index",
+                        "id": "bach.dataframe.SortColumn.index",
+                        "children": [],
+                        "level": 3
+                    }
+                ],
+                "level": 3
+            }
+        ],
+        "level": 2
+    }
+];
+
+
+import SphinxPages from '@site/src/components/sphinx-page'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+
+
+<SphinxPages url={useBaseUrl('modeling/bach/bach.dataframe.html')} />
