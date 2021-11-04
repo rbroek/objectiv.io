@@ -1,6 +1,6 @@
 # InteractiveEvent
 
-Events that are the direct result of a user interaction, e.g. a button click.
+The parent of [Events](/docs/taxonomy/events) that are the direct result of a user interaction, e.g. a button click.
 
 import Mermaid from '@theme/Mermaid';
 

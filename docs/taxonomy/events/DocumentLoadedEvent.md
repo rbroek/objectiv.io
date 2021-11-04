@@ -1,6 +1,7 @@
 # DocumentLoadedEvent
-A non-interactive event that is emitted after a document finishes loading. It should provide a 
-`WebDocumentContext` which describes the state (eg. URL) of the event.
+
+A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that is emitted after a document finishes loading. It requires a 
+[WebDocumentContext](/docs/taxonomy/location-contexts/WebDocumentContext) which describes the state (eg. URL) of the event.
 
 :::note 
 With SPA's this probably only happens once, as page (re)loads don't happen after the initial page load.

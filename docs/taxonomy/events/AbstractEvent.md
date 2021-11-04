@@ -1,6 +1,6 @@
 # AbstractEvent
 
-This is the abstract parent of all Events.
+This is the abstract parent of all [Events](/docs/taxonomy/events).
 
 ### Parents
 None (root event).

@@ -1,6 +1,6 @@
 # InputContext
 
-A location context, representing user input. For example, a form field, like input.
+A [ItemContext](/docs/taxonomy/location-contexts/ItemContext) that describes an element that accepts user input, i.e. a form field.
 
 import Mermaid from '@theme/Mermaid';
 

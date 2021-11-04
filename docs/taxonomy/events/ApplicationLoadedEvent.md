@@ -1,7 +1,7 @@
 # ApplicationLoadedEvent
 
-Non-interactive event that is emitted after an application (eg. SPA) has finished loading. Contains a 
-`SectionContext`.
+A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that is emitted after an application (eg. SPA) has finished loading. It contains a 
+[SectionContext](/taxonomy/location-contexts/SectionContext.md).
 
 import Mermaid from '@theme/Mermaid';
 

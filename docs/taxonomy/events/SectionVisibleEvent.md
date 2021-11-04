@@ -1,6 +1,6 @@
 # SectionVisibleEvent
 
-Non-interactive event, emitted after a section (`SectionContext`) has become visible.
+A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that's emitted after a section ([SectionContext](/taxonomy/location-contexts/SectionContext.md)) has become visible.
 
 import Mermaid from '@theme/Mermaid';
 

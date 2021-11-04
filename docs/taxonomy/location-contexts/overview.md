@@ -6,8 +6,8 @@ title: Overview
 
 import Mermaid from '@theme/Mermaid';
 
-LocationContexts are used to populate a Tracker's or Event's `location_stack` properties. A Location Stack is 
-meant to describe accurately where an Event originated in the UI, e.g. Sections, Menus, etc.
+LocationContexts are used to populate a [Tracker's](/docs/tracking/core-concepts/trackers) or [Event's](/docs/tracking/core-concepts/events) `location_stack` properties. A Location Stack is 
+meant to describe accurately where an [Event](/docs/tracking/core-concepts/events) originated in the UI, e.g. Sections, Menus, etc.
 
 See the diagram below for the Location Contexts. Click each to learn more.
 

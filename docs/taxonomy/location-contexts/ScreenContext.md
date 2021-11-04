@@ -1,6 +1,6 @@
 # ScreenContext
 
-SectionContext for a screen.
+A [SectionContext](docs/taxonomy/location-contexts/SectionContext) A SectionContext that carries a path in the ```screen``` property, representing a high-level location in the application.
 
 import Mermaid from '@theme/Mermaid';
 

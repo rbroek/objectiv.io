@@ -1,6 +1,6 @@
 # WebDocumentContext
 
-Global context about a web document. Should at least contain the current URL.
+A [SectionContext](docs/taxonomy/location-contexts/SectionContext) that carries a path in the ```URL``` property, representing a high-level location in the application.
 
 import Mermaid from '@theme/Mermaid';
 

@@ -7,7 +7,7 @@ sidebar_position: 4
 
 import Mermaid from '@theme/Mermaid';
 
-First off, thank you for considering to contribute to Objectiv! Please feel welcome - we need volunteer developers like yourself to help this project be a success. We're here to help you find things to work on that you're excited about.
+First off, thank you for considering to contribute to Objectiv! Please feel welcome - we need volunteer developers like yourself. Community adoption and contribution are critical to Objectiv's success. We're here to help you find things to work on that you're excited about.
 
 ## Where to start?
 
@@ -20,7 +20,8 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
 <Mermaid chart={`
 	graph LR
     SecurityIssue["Security Issue"] ----> SecurityPolicy["See Security Policy"];
-    Question ----> Docs["See Documentation"]
+    Question --> Docs["See Documentation"]
+    Docs ---> PostSlack["Post on Slack"]
 		Bug ---> CheckIssues["Check GitHub Issues"];
     CheckIssues --> Comment["Comment/+1"];
     CheckIssues --> GitHubIssue["Create GitHub Issue"];
@@ -36,6 +37,7 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
     click CheckRoadmap "https://github.com/objectiv/objectiv-analytics/projects/2" "Go to Public Roadmap" _blank;
     click PR "https://github.com/objectiv/objectiv-analytics/pulls" "Go to GitHub Pull Requests" _blank;
     click GitHubReleases "https://github.com/objectiv/objectiv-analytics" "Follow Releases on GitHub" _blank;
+    click PostSlack "https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg" "Join Objectiv on Slack" _blank;
 `} caption="Figure: How To Contribute" baseColor="basic" />
 
 The following is a set of guidelines for contributing that help communicate respect for each other's time & contributions. These are mostly guidelines, not rules; simply use your best judgment, and feel free to propose changes to this document in a pull request. 
@@ -54,7 +56,7 @@ We take security issues very seriously. Please do not open up a GitHub issue if 
 
 :::note
 
-Please don't file an issue to ask a question. You'll get faster results by using the resources below.
+Please don't file an issue to ask a question. You'll get faster results by posting it in [Objectiv's Slack channels](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg).
 
 :::
 
@@ -75,7 +77,7 @@ If you find a security vulnerability, please do NOT open an issue; instead, refe
 Before creating bug reports, please check the list below, as you might find out that you don't need to create one:
 
 1. Check if you can reproduce the problem in the latest version of Objectiv.
-2. Perform a cursory search in the GitHub repo to see if the problem has already been reported. 
+2. Perform a cursory search in the [GitHub repo](https://github.com/objectiv/objectiv-analytics/issues) to see if the problem has already been reported. 
     1. If it has and the issue is still Open, please use that issue for any comments (if needed), instead of opening a new one. 
     2. If you find a Closed issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
 

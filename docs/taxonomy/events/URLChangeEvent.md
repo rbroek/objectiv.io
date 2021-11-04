@@ -1,6 +1,6 @@
 # URLChangeEvent
 
-Non-interactive event that is emitted when the URL of a page has changed. Also contains a `WebDocumentContext`
+A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that is emitted when the URL of a page has changed. It requires a [WebDocumentContext](/docs/taxonomy/location-contexts/WebDocumentContext)
 that details the change.
 
 import Mermaid from '@theme/Mermaid';

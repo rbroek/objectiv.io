@@ -1,6 +1,6 @@
 # SectionHiddenEvent
 
-Non-interactive event, emitted after a section (`SectionContext`) has become invisible.
+A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that's emitted after a section ([SectionContext](/taxonomy/location-contexts/SectionContext.md)) has become invisible.
 
 import Mermaid from '@theme/Mermaid';
 

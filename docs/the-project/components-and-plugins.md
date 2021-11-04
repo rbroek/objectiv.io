@@ -7,6 +7,8 @@ import File from '@site/src/components/file';
 import Lightbox from '@site/src/components/lightbox';
 import Mermaid from '@theme/Mermaid';
 
+<!--- (this section needs to be removed entirely) -->
+
 ## Components
 Since Docusaurus uses MDX as the parsing engine, it can also render React components inside a Markdown 
 document. Use the components below directly in Markdown files.

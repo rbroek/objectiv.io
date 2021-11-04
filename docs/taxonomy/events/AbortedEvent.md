@@ -1,6 +1,6 @@
 # AbortedEvent
 
-A non-interactive event, that would be emitted when an action fails or is aborted, e.g. a form that is 
+A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that is emitted when an action fails or is aborted, e.g. a form that is 
 posted, but not successfully.
 
 import Mermaid from '@theme/Mermaid';
