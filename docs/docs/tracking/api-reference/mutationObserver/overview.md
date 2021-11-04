@@ -4,7 +4,7 @@ sidebar_label: Overview
 title: Mutation Observer
 ---
 
-Mutation Observer and auto-tracking related functions.
+Mutation Observer and auto-tracking related functions. All of these APIs are internal.
 
 - [AutoTrackingState](/tracking/api-reference/mutationObserver/AutoTrackingState.md)
 - [makeBlurEventHandler](/tracking/api-reference/mutationObserver/makeBlurEventHandler.md)

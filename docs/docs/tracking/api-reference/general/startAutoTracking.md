@@ -32,7 +32,6 @@ To restart auto-tracking with different options, first call [stopAutoTracking](/
 <br />
 
 :::info see also
-- [startAutoTracking](/tracking/api-reference/general/startAutoTracking.md)
 - [stopAutoTracking](/tracking/api-reference/general/stopAutoTracking.md)
 - [makeTracker](/tracking/api-reference/general/makeTracker.md) 
 - [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md) 

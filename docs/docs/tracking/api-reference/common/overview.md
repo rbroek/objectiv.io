@@ -4,41 +4,41 @@ sidebar_label: Overview
 title: Common
 ---
 
-Common modules and helper functions used across the whole Browser Tracker.
+Common modules and helper functions used across the whole Browser Tracker. All of these APIs are internal.
 
 #### Factories
-- [makeBrowserTrackerDefaultPluginList](factories/makeBrowserTrackerDefaultPluginList.md)
-- [makeBrowserTrackerDefaultQueue](factories/makeBrowserTrackerDefaultQueue.md)
-- [makeBrowserTrackerDefaultTransport](factories/makeBrowserTrackerDefaultTransport.md)
+- [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultPluginList.md)
+- [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
+- [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
 
 #### Guards
-- [isParentTaggedElement](guards/isParentTaggedElement.md)
-- [isTagChildrenElement](guards/isTagChildrenElement.md)
-- [isTaggableElement](guards/isTaggableElement.md)
-- [isTaggedElement](guards/isTaggedElement.md)
+- [isParentTaggedElement](/tracking/api-reference/common/guards/isParentTaggedElement.md)
+- [isTagChildrenElement](/tracking/api-reference/common/guards/isTagChildrenElement.md)
+- [isTaggableElement](/tracking/api-reference/common/guards/isTaggableElement.md)
+- [isTaggedElement](/tracking/api-reference/common/guards/isTaggedElement.md)
 
 #### Parsers
-- [parseChildrenTaggingAttribute](parsers/parseChildrenTaggingAttribute.md)
-- [parseJson](parsers/parseJson.md)
-- [parseLocationContext](parsers/parseLocationContext.md)
-- [parseTrackClicksAttribute](parsers/parseTrackClicksAttribute.md)
-- [parseTrackVisibilityAttribute](parsers/parseTrackVisibilityAttribute.md)
-- [parseValidateAttribute](parsers/parseValidateAttribute.md)
+- [parseChildrenTaggingAttribute](/tracking/api-reference/common/parsers/parseChildrenTaggingAttribute.md)
+- [parseJson](/tracking/api-reference/common/parsers/parseJson.md)
+- [parseLocationContext](/tracking/api-reference/common/parsers/parseLocationContext.md)
+- [parseTrackClicksAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md)
+- [parseTrackVisibilityAttribute](/tracking/api-reference/common/parsers/parseTrackVisibilityAttribute.md)
+- [parseValidateAttribute](/tracking/api-reference/common/parsers/parseValidateAttribute.md)
 
 #### Stringifiers
-- [stringifyChildrenTaggingAttribute](stringifiers/stringifyChildrenTaggingAttribute.md)
-- [stringifyJson](stringifiers/stringifyJson.md)
-- [stringifyLocationContext](stringifiers/stringifyLocationContext.md)
-- [stringifyTrackClicksAttribute](stringifiers/stringifyTrackClicksAttribute.md)
-- [stringifyTrackVisibilityAttribute](stringifiers/stringifyTrackVisibilityAttribute.md)
-- [stringifyValidateAttribute](stringifiers/stringifyValidateAttribute.md)
+- [stringifyChildrenTaggingAttribute](/tracking/api-reference/common/stringifiers/stringifyChildrenTaggingAttribute.md)
+- [stringifyJson](/tracking/api-reference/common/stringifiers/stringifyJson.md)
+- [stringifyLocationContext](/tracking/api-reference/common/stringifiers/stringifyLocationContext.md)
+- [stringifyTrackClicksAttribute](/tracking/api-reference/common/stringifiers/stringifyTrackClicksAttribute.md)
+- [stringifyTrackVisibilityAttribute](/tracking/api-reference/common/stringifiers/stringifyTrackVisibilityAttribute.md)
+- [stringifyValidateAttribute](/tracking/api-reference/common/stringifiers/stringifyValidateAttribute.md)
 
 #### Miscellaneous
-- [compareTrackerConfigs](compareTrackerConfigs.md)
-- [findParentTaggedElements](findParentTaggedElements.md)
-- [getElementLocationStack](getElementLocationStack.md)
-- [getLocationHref](getLocationHref.md)
-- [objectivWindowInterface](objectivWindowInterface.md)
-- [runIfValueIsNotUndefined](runIfValueIsNotUndefined.md)
-- [trackerErrorHandler](trackerErrorHandler.md)
-- [windowExists](windowExists.md)
+- [compareTrackerConfigs](/tracking/api-reference/common/compareTrackerConfigs.md)
+- [findParentTaggedElements](/tracking/api-reference/common/findParentTaggedElements.md)
+- [getElementLocationStack](/tracking/api-reference/common/getElementLocationStack.md)
+- [getLocationHref](/tracking/api-reference/common/getLocationHref.md)
+- [objectivWindowInterface](/tracking/api-reference/common/objectivWindowInterface.md)
+- [runIfValueIsNotUndefined](/tracking/api-reference/common/runIfValueIsNotUndefined.md)
+- [trackerErrorHandler](/tracking/api-reference/common/trackerErrorHandler.md)
+- [windowExists](/tracking/api-reference/common/windowExists.md)
