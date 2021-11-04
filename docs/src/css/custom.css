@@ -3,7 +3,13 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
+@import url('pygments.css');
+  
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #25c2a0;
@@ -73,6 +79,127 @@ div.docs-wrapper footer {
   padding: 0 var(--ifm-pre-padding);
 }
 
+
+/** DOCS - API Reference **/
+
+/* Summary table */
+.autosummary {
+  margin-bottom: 60px;
+}
+.autosummary p {
+  margin-bottom: 0;
+}
+
+/* Heading for a page with classes */
+p.rubric {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 24px 0;
+}
+
+/* Class element */
+dl.class {
+  margin: 40px 0 100px 0;
+  border-top: 1px solid var(--ifm-font-color-base);
+  padding-top: 40px;
+}
+/* Class heading */
+dl.class dt.sig {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 0.5em 0;
+}
+/* Class heading - type (=class) */
+dl.class .property .pre {
+  font-size: 14px;
+  color: var(--ifm-font-color-light);
+}
+/* Class heading - class name */
+dl.class .descname {
+  font-family: 'Roboto Mono';
+}
+
+/* Class heading - function parameters */
+dl.class dl.property .property .pre, dl.class dl.property .descname .pre, dl.class dl.property .descname .viewcode-link {
+  font-size: 18px;
+  text-transform: none;
+}
+.sig-paren, .sig-param, .sig-return {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--ifm-font-color-light);
+}
+/* Class - properties & attributes */
+dl.class .property, dl.class .property dt.sig, dl.class .attribute, dl.class .attribute dt.sig {
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 40px;
+  font-size: 18px;
+}
+dl.class dl.property .pre, dl.class dl.attribute .pre {
+  color: #000;
+}
+dl.class dl.attribute .pre {
+  font-style: italic;
+}
+/* Class - properties - override class heading breaks (keep on one line) */
+dl.class dl.property .pre::after, dl.class dl.property .descname::after, dl.class dl.attribute .pre::after, dl.class dl.attribute .descname::after {
+  content: "";
+  white-space: normal;
+}
+
+/* Class & function headings - function parameters - link to source & permalink */
+dl.class .reference, dl.class .headerlink, dl.function .reference, dl.method .reference {
+  font-size: 14px;
+  font-weight: normal; 
+}
+
+/* Functions (in classes) */
+dl.method, dl.function {
+  margin-top: 40px;
+}
+/* Function content */
+dl.method dd, dl.function dd {
+  margin-inline-start: 40px;
+}
+/* Function content heading */
+dl.method dt, dl.function dt {
+  font-weight: bold;
+}
+/* Function fields (e.g. parameters or notes) */
+dl.method .field-list dd, dl.function .field-list dd {
+  margin-inline-start: 0;
+}
+dl.method .field-list dd strong, dl.function .field-list dd strong {
+  font-family: 'Roboto Mono';
+  font-weight: normal;
+  font-style: italic;
+}
+dl.method dd blockquote, dl.function dd blockquote {
+  border: none;
+}
+/* Function - function namespace (do not show) */
+dl.function .descname {
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+}
+dl.function .descclassname {
+  display: none;
+}
+
+span.viewcode-link {
+  float: right;
+}
+
+/* Content of a class or function */
+dd {
+  margin-inline-start: 0;
+  font-size: 16px;
+}
+
+dl blockquote {
+  padding: 0 0.5em;
+}
 
 /** DIAGRAM (MERMAID) MARKUP **/
 
