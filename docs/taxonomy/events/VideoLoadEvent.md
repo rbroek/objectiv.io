@@ -1,6 +1,6 @@
 # VideoLoadEvent
 
-Event emitted after a video completes loading.
+A [VideoEvent](/docs/taxonomy/events/VideoEvent) that's emitted after a video completes loading.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -11,6 +11,7 @@ import Mermaid from '@theme/Mermaid';
     VideoEvent --> VideoLoadEvent;
     click AbstractEvent "/docs/taxonomy/events/AbstractEvent" "See more details" _self;
     click NonInteractiveEvent "/docs/taxonomy/events/NonInteractiveEvent" "See more details" _self;
+    click VideoEvent "/docs/taxonomy/events/VideoEvent" "See more details" _self;
 `} caption="Figure: Diagram of VideoLoadEvent inheritance" baseColor="blue" />
 
 ### Requires

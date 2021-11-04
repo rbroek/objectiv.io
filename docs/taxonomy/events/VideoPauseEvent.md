@@ -1,6 +1,6 @@
 # VideoPauseEvent
 
-Event emitted after a video pauses playback (toggle).
+A [VideoEvent](/docs/taxonomy/events/VideoEvent) that's emitted after a video pauses playback.
 
 import Mermaid from '@theme/Mermaid';
 
@@ -11,6 +11,7 @@ import Mermaid from '@theme/Mermaid';
     VideoEvent --> VideoPauseEvent;
     click AbstractEvent "/docs/taxonomy/events/AbstractEvent" "See more details" _self;
     click NonInteractiveEvent "/docs/taxonomy/events/NonInteractiveEvent" "See more details" _self;
+    click VideoEvent "/docs/taxonomy/events/VideoEvent" "See more details" _self;
 `} caption="Figure: Diagram of VideoPauseEvent inheritance" baseColor="blue" />
 
 ### Requires

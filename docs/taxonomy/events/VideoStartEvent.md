@@ -1,6 +1,6 @@
 # VideoStartEvent
 
-Event emitted after a video starts playback.
+A [VideoEvent](/docs/taxonomy/events/VideoEvent) that's emitted after a video starts playback.
 
 import Mermaid from '@theme/Mermaid';
 

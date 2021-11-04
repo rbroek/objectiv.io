@@ -1,6 +1,6 @@
 # NonInteractiveEvent
 
-Non-interactive events are events that are not (directly) triggered by an interaction. 
+The parent of [Events](/docs/taxonomy/events) that are not (directly) triggered by an interaction. 
 
 For example, consider the following flow of events:
 

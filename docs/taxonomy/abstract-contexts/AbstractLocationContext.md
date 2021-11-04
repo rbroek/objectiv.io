@@ -2,7 +2,7 @@
 
 import Mermaid from '@theme/Mermaid';
 
-This is the abstract parent of all Location Contexts. LocationContexts are used to populate a [Tracker's](/docs/tracking/core-concepts/trackers) or 
+This is the abstract parent of all [Location Contexts](/docs/taxonomy/location-contexts). Location Contexts are used to populate a [Tracker's](/docs/tracking/core-concepts/trackers) or 
 [Event's](/docs/tracking/core-concepts/events) `location_stack` properties. A Location Stack is meant to describe accurately where an [Event](/docs/tracking/core-concepts/events) 
 originated in the UI, e.g. Sections, Menus, etc.
 
