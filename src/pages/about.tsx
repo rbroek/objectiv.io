@@ -19,34 +19,57 @@ function Contributor({name, gitHubUsername}) {
       className={clsx("card", styles.contributorCard)}
       {...tagElement({id: gitHubUsername})}
     >
-      <div className="card__header">
-        <div className={clsx("avatar", styles.contributorAvatar)}>
-          <a href={ghProfileLink} title={ghProfileTitle}>
-            <Avatar 
-              githubHandle={gitHubUsername} 
-              size='64'
-              round={true} 
-              name={name} 
-              alt={name} 
-              title={name} 
-            />
-          </a>
-        </div>
-        <div className="avatar__intro">
-          <div className={clsx(styles.contributorAvatarSubtitle)}>
-            <a href={ghProfileLink} title={ghProfileTitle}>
-              @{gitHubUsername}
-            </a>
+      <div {...tagElement({id: 'contributor-card'})}>
+        <div className="card__header">
+          <div 
+            className={clsx("avatar", styles.contributorAvatar)}
+            {...tagElement({id: 'avatar'})}
+          >
+            <Link 
+              {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+              href={ghProfileLink} 
+              title={ghProfileTitle}
+            >
+              <Avatar 
+                githubHandle={gitHubUsername} 
+                size='64'
+                round={true} 
+                name={name} 
+                alt={name} 
+                title={name} 
+              />
+            </Link>
           </div>
-          <div className={clsx(styles.contributorName)}>
-            {name}
+          <div className="avatar__intro">
+            <div 
+              className={clsx(styles.contributorAvatarSubtitle)}
+              {...tagElement({id: 'avatar-subtitle'})}
+            >
+              <Link 
+                {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+                href={ghProfileLink} 
+                title={ghProfileTitle}
+              >
+                @{gitHubUsername}
+              </Link>
+            </div>
+            <div className={clsx(styles.contributorName)}>
+              {name}
+            </div>
           </div>
         </div>
-      </div>
-      <div className={clsx("card__footer", styles.contributorFooter)}>
-        <a href={ghProfileLink} title={ghProfileTitle}>
-          <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
-        </a>
+        <div 
+          className={clsx("card__footer", styles.contributorFooter)}
+          {...tagElement({id: 'card-footer'})}
+        >
+          <Link 
+            {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+            href={ghProfileLink} 
+            title={ghProfileTitle}
+          >
+            <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -192,9 +215,12 @@ export default function AboutUs() {
               </Link>
             </p>
           </div>
-          <div className={clsx("container")}>
+          <div 
+            className={clsx("container")}
+
+          >
             {contributors && contributors.length > 0 && (
-              <div {...tagElement({id: 'contributor'})} className={clsx(styles.contributorCards)}>
+              <div {...tagElement({id: 'contributors'})} className={clsx(styles.contributorCards)}>
                 {contributors.map((props, idx) => (
                   <Contributor key={idx} {...props} />
                 ))}

@@ -13,13 +13,14 @@ declare namespace cookiebot {
 
 declare const Cookiebot: cookiebot.Cookiebot;
 
-const registerCookiebotEventListener = (callback: EventListenerOrEventListenerObject) => {
+const registerCookiebotEventListeners = (callback: EventListenerOrEventListenerObject) => {
   // Skip if we are in SSR
   if (!windowExists()) {
     return;
   }
 
   window.addEventListener('CookiebotOnAccept', callback, false);
+  window.addEventListener('CookiebotOnDecline', callback, false);
 }
 
 const cookiebotConsentStatistics = (): boolean => {
@@ -38,7 +39,7 @@ function Root({children}) {
   const isDocs = useRouteMatch("/docs/") !== null;
 
   // Listen for 'CookiebotOnAccept' and if `Cookiebot.consent.statistics` changed, update state
-  registerCookiebotEventListener(function () {
+  registerCookiebotEventListeners(function () {
     if (cookiebotStatisticsConsent !== cookiebotConsentStatistics()) {
       setCookiebotStatisticsConsent(cookiebotConsentStatistics());
     }
