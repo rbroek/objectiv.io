@@ -1,5 +1,5 @@
-# TaggingAttribute enum
-
+# TaggingAttribute
+ 
 [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) and [tagChildren](/tracking/api-reference/locationTaggers/tagChildren.md) decorate [Taggable Elements](/tracking/core-concepts/tagging.md#taggable-elements) by adding [Custom data-* Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*) to them.
 
 | Location Taggers | tagChildren   | Short name      | DOM dataset attribute name

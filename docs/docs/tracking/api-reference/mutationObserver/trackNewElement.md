@@ -1,13 +1,12 @@
 # trackNewElement
 
-Invoked by the [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) [Callback](/tracking/api-reference/mutationObserver/makeMutationCallback.md) when detecting Nodes added to the DOM.
+Given a [GuardableElement](/tracking/api-reference/definitions/GuardableElement.md):
 
-Performs a few operations:
-- All Elements will be checked for visibility tracking and appropriate events will be triggered for them.
-- Elements with [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) are bound to an EventHandler for triggering [trackClick](/tracking/api-reference/eventTrackers/trackClick.md) events.
-- Elements with [TaggingAttribute.trackBlurs](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackblurs) are bound to EventHandler for triggering [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md) events.
-- All processed Elements are decorated with the [TaggingAttribute.tracked](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetracked) so we won't process them again.
-- [LocationStacks](/tracking/api-reference/core/LocationStack.md) of all Elements are validated for uniqueness.
+- Checks its visibility in order to trigger the appropriate visibility events.
+- Checks the [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) in order to bind an EventHandler for triggering [trackClick](/tracking/api-reference/eventTrackers/trackClick.md) events.
+- Checks the [TaggingAttribute.trackBlurs](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackblurs) in order to bind and EventHandler for triggering [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md) events.
+- Decorates it with the [TaggingAttribute.tracked](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetracked) so we won't process them again.
+- Checks and validates its [LocationStacks](/tracking/api-reference/core/LocationStack.md) for uniqueness.
 
 ```typescript
 const trackNewElement = (
