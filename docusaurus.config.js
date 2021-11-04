@@ -7,10 +7,9 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - creating the ultimate iterative workflow for data scientists',
+  title: 'Objectiv - on a mission to create the ultimate workflow for data scientists',
   titleDelimiter: '|',
-  tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
-    + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
+  tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
   baseUrl: (environment === 'staging') ? '/staging/' : '/',
   url: (environment === 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
@@ -62,7 +61,6 @@ const config = {
     trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
     trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
-    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerConsoleEnabled: environment !== 'prod'
   },
 
