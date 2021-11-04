@@ -1,9 +1,9 @@
-# parseTrackClicksAttribute
+# parseTrackClicks
 
 [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) to [TrackClicksOptions](/tracking/api-reference/definitions/TrackClicksOptions.md) parser
 
 ```typescript
-parseTrackClicksAttribute = (stringifiedTrackClicksAttribute: string | null) => TrackClicksOptions
+parseTrackClicks = (stringifiedTrackClicksAttribute: string | null) => TrackClicksOptions
 ```  
 
 :::info

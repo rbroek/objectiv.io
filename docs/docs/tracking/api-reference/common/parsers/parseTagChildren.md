@@ -1,9 +1,9 @@
-# parseChildrenTaggingAttribute
+# parseTagChildren
 
 [TagChildrenAttributes](/tracking/api-reference/definitions/TagChildrenAttributes.md) parser
 
 ```typescript
-parseChildrenTaggingAttribute = (stringifiedChildrenTaggingAttribute: string | null) => ValidChildrenTaggingQuery[]
+parseTagChildren = (stringifiedChildrenTaggingAttribute: string | null) => ValidChildrenTaggingQuery[]
 ```  
 
 ## Parameters

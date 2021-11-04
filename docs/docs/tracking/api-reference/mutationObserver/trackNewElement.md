@@ -29,7 +29,7 @@ const trackNewElement = (
 - [makeMutationCallback](/tracking/api-reference/mutationObserver/makeMutationCallback.md)
 - [makeClickEventHandler](/tracking/api-reference/mutationObserver/makeClickEventHandler.md)
 - [makeBlurEventHandler](/tracking/api-reference/mutationObserver/makeBlurEventHandler.md)
-- [parseTrackClicksAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md)
-- [parseValidateAttribute](/tracking/api-reference/common/parsers/parseValidateAttribute.md)
+- [parseTrackClicks](/tracking/api-reference/common/parsers/parseTrackClicks.md)
+- [parseValidate](/tracking/api-reference/common/parsers/parseValidate.md)
 - [getElementLocationStack](/tracking/api-reference/common/getElementLocationStack.md)
 :::

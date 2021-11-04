@@ -22,5 +22,5 @@ const trackRemovedElement = (
 
 :::info see also
 - [makeMutationCallback](/tracking/api-reference/mutationObserver/makeMutationCallback.md)
-- [parseTrackVisibilityAttribute](/tracking/api-reference/common/parsers/parseTrackVisibilityAttribute.md)
+- [parseTrackVisibility](/tracking/api-reference/common/parsers/parseTrackVisibility.md)
 :::

@@ -1,6 +1,6 @@
 # TrackClicksOptions
 
-[TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) are parsed onto this object via [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md).  
+[TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) are parsed onto this object via [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicks.md).  
 
 
 ```typescript jsx
@@ -11,7 +11,7 @@ type TrackClicksOptions = undefined | {
 ```
 
 :::info see also
-- [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md)
+- [parseTrackClickAttribute](/tracking/api-reference/common/parsers/parseTrackClicks.md)
 - [WaitForQueueOptions](/tracking/api-reference/definitions/WaitForQueueOptions.md)
 - [FlushQueueOptions](/tracking/api-reference/definitions/FlushQueueOptions.md)
 - [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)

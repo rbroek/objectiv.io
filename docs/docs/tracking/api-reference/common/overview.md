@@ -18,20 +18,20 @@ Common modules and helper functions used across the whole Browser Tracker. All o
 - [isTaggedElement](/tracking/api-reference/common/guards/isTaggedElement.md)
 
 #### Parsers
-- [parseChildrenTaggingAttribute](/tracking/api-reference/common/parsers/parseChildrenTaggingAttribute.md)
 - [parseJson](/tracking/api-reference/common/parsers/parseJson.md)
 - [parseLocationContext](/tracking/api-reference/common/parsers/parseLocationContext.md)
-- [parseTrackClicksAttribute](/tracking/api-reference/common/parsers/parseTrackClicksAttribute.md)
-- [parseTrackVisibilityAttribute](/tracking/api-reference/common/parsers/parseTrackVisibilityAttribute.md)
-- [parseValidateAttribute](/tracking/api-reference/common/parsers/parseValidateAttribute.md)
+- [parseTagChildren](/tracking/api-reference/common/parsers/parseTagChildren.md)
+- [parseTrackClicks](/tracking/api-reference/common/parsers/parseTrackClicks.md)
+- [parseTrackVisibility](/tracking/api-reference/common/parsers/parseTrackVisibility.md)
+- [parseValidate](/tracking/api-reference/common/parsers/parseValidate.md)
 
 #### Stringifiers
-- [stringifyChildrenTaggingAttribute](/tracking/api-reference/common/stringifiers/stringifyChildrenTaggingAttribute.md)
 - [stringifyJson](/tracking/api-reference/common/stringifiers/stringifyJson.md)
 - [stringifyLocationContext](/tracking/api-reference/common/stringifiers/stringifyLocationContext.md)
-- [stringifyTrackClicksAttribute](/tracking/api-reference/common/stringifiers/stringifyTrackClicksAttribute.md)
-- [stringifyTrackVisibilityAttribute](/tracking/api-reference/common/stringifiers/stringifyTrackVisibilityAttribute.md)
-- [stringifyValidateAttribute](/tracking/api-reference/common/stringifiers/stringifyValidateAttribute.md)
+- [stringifyTagChildren](/tracking/api-reference/common/stringifiers/stringifyTagChildren.md)
+- [stringifyTrackClicks](/tracking/api-reference/common/stringifiers/stringifyTrackClicks.md)
+- [stringifyTrackVisibility](/tracking/api-reference/common/stringifiers/stringifyTrackVisibility.md)
+- [stringifyValidate](/tracking/api-reference/common/stringifiers/stringifyValidate.md)
 
 #### Miscellaneous
 - [compareTrackerConfigs](/tracking/api-reference/common/compareTrackerConfigs.md)

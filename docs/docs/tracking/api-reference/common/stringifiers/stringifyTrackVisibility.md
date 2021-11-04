@@ -1,9 +1,9 @@
-# stringifyTrackVisibilityAttribute
+# stringifyTrackVisibility
 
 [TaggingAttribute.trackVisibility](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility) stringifier
 
 ```typescript
-stringifyTrackVisibilityAttribute = (trackVisibilityAttribute: TrackVisibilityAttribute) => string
+stringifyTrackVisibility = (trackVisibilityAttribute: TrackVisibilityAttribute) => string
 ```  
 
 ## Parameters
