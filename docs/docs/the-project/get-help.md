@@ -2,7 +2,7 @@
 title: Get Help
 slug: /the-project/get-help
 sidebar_label: Get Help
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 
