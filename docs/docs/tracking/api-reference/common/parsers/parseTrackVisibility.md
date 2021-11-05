@@ -1,9 +1,9 @@
-# parseTrackVisibilityAttribute
+# parseTrackVisibility
 
 [TaggingAttribute.trackVisibility](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackvisibility) parser
 
 ```typescript
-parseTrackVisibilityAttribute = (stringifiedTrackVisibilityAttribute: string | null) => TrackVisibilityAttribute
+parseTrackVisibility = (stringifiedTrackVisibilityAttribute: string | null) => TrackVisibilityAttribute
 ```  
 
 ## Parameters

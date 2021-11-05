@@ -1,9 +1,9 @@
 # TagChildrenElement
 
-A [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) already decorated with our [StringifiedChildrenTaggingAttributes](/tracking/api-reference/definitions/StringifiedLocationTaggingAttributes.md).
+A [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) already decorated with our [TagChildrenAttributes](/tracking/api-reference/definitions/TagChildrenAttributes.md).
 
 ```typescript
-type TagChildrenElement = TaggableElement & StringifiedChildrenTaggingAttributes;
+type TagChildrenElement = TaggableElement & TagChildrenAttributes;
 ```
 
 :::info see also

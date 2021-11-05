@@ -6,4 +6,4 @@ title: Queues
 
 Tracker Queues and related modules
 
-- [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorageStore.md)
+- [TrackerQueueLocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorage.md)

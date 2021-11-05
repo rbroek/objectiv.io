@@ -15,10 +15,10 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 | :-:      | :--                    | :--                                                                  | :--           
 | required | **applicationId**      | string                                                               |
 | optional | trackerId              | string                                                               | Same value as `applicationId`
-| optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
+| optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
 | optional | **_endpoint_**         | string                                                               |
-| optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
-| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultPluginList.md)
+| optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
+| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
 | optional | console                | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
 | optional | active                 | boolean                                                              | `true`
 | optional | trackApplicationLoaded | boolean                                                              | `true`
@@ -34,7 +34,7 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 TrackerQueue is configured to send events in batches of 10 every 100ms.  
 
 ### Persistence
-TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorageStore.md) to ensure events are persisted across sessions.
+TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/TrackerQueueLocalStorage.md) to ensure events are persisted across sessions.
 
 ### Retry logic
 Configured for 10 retries with exponential backoff starting at 1000ms.
@@ -74,10 +74,10 @@ is equivalent to:
 - [makeTracker](/tracking/api-reference/general/makeTracker.md)
 - [getOrMakeTracker](/tracking/api-reference/general/getOrMakeTracker.md)
 - [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md)
-- [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
-- [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
-- [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultPluginList.md)
+- [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
+- [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
+- [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
 - [FetchAPITransport](/tracking/api-reference/transports/FetchAPITransport.md)
 - [XMLHttpRequestTransport](/tracking/api-reference/transports/XMLHttpRequestTransport.md)
-- [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorageStore.md)
+- [TrackerQueueLocalStorageStore](/tracking/api-reference/queues/TrackerQueueLocalStorage.md)
 :::
