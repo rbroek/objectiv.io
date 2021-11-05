@@ -36,7 +36,8 @@ export default function Home() {
           </h1>
           <div className={clsx(styles.heroSubTitleWrapper)}>
             <p className={clsx(styles.heroSubTitle)}>
-              Objectiv is a data collection &amp; modeling library that puts the data scientist first.
+              Objectiv is a data collection &amp; modeling library that puts the data scientist first. <br />
+              Embrace an open taxonomy. Collect better data. Model more effectively.
             </p>
           </div>
           <div className={clsx(styles.heroRepoButton)}>
@@ -126,13 +127,15 @@ export default function Home() {
                   taxonomy is designed to ensure the collected data covers a wide range of common analytics 
                   use cases. 
                 </p>
-                <Link 
-                  href="/docs/taxonomy" 
-                  {...tagLink({id: 'cta-docs-taxonomy', href: '/docs/taxonomy', text: 'Docs - Taxonomy'})}
-                  className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                  Docs - Taxonomy
-                </Link>
+                <div className={clsx(styles.solutionRowCta)}>
+                  <Link 
+                    href="/docs/taxonomy" 
+                    {...tagLink({id: 'cta-docs-taxonomy', href: '/docs/taxonomy', text: 'Docs - Taxonomy'})}
+                    className={clsx("button", styles.ctaButton)}>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    Docs - Taxonomy
+                  </Link>
+                </div>
               </div>
             </div>
             <p className={clsx(styles.footnote)}>
@@ -157,13 +160,15 @@ export default function Home() {
                 <p>For instance, you can <strong>validate your instrumentation against the 
                   taxonomy</strong> and get live feedback in your IDE and console while developing, enabling 
                   you to catch errors before data starts flowing in.</p>
-                <Link 
-                  href="/docs/tracking" 
-                  {...tagLink({id: 'cta-docs-tracking', href: '/docs/tracking', text: 'Docs - Tracking'})}
-                  className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                  Docs - Tracking
-                </Link>
+                <div className={clsx(styles.solutionRowCta)}>
+                  <Link 
+                    href="/docs/tracking" 
+                    {...tagLink({id: 'cta-docs-tracking', href: '/docs/tracking', text: 'Docs - Tracking'})}
+                    className={clsx("button", styles.ctaButton)}>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    Docs - Tracking
+                  </Link>
+                </div>
               </div>
               <div>
                 <img
@@ -196,14 +201,16 @@ export default function Home() {
                 <p>All data is <strong>well-structured, self-descriptive</strong> and has 
                   been <strong>validated</strong> at the first step of the pipeline, so you can use it for 
                   modeling with minimal additional gruntwork.</p>
-                <Link 
-                  href="/docs/taxonomy/" 
-                  {...tagLink({id: 'cta-docs-location-stack', href: '/docs/taxonomy', 
-                    text: 'Docs - Location Stack'})}
-                  className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                  Docs - Location Stack
-                </Link>
+                <div className={clsx(styles.solutionRowCta)}>
+                  <Link 
+                    href="/docs/taxonomy/" 
+                    {...tagLink({id: 'cta-docs-location-stack', href: '/docs/taxonomy', 
+                      text: 'Docs - Location Stack'})}
+                    className={clsx("button", styles.ctaButton)}>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    Docs - Location Stack
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -225,13 +232,15 @@ export default function Home() {
                   straight from your notebook.</p>
                 <p>You can <strong>output your models to SQL queries with a single command</strong>, 
                   effectively closing the gap between experimentation and production.</p>
-                <Link 
-                  href="/docs/modeling" 
-                  {...tagLink({id: 'cta-docs-modeling', href: '/docs/modeling', text: 'Docs - Modeling'})}
-                  className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                  Docs - Modeling
-                </Link>
+                <div className={clsx(styles.solutionRowCta)}>
+                  <Link 
+                    href="/docs/modeling" 
+                    {...tagLink({id: 'cta-docs-modeling', href: '/docs/modeling', text: 'Docs - Modeling'})}
+                    className={clsx("button", styles.ctaButton)}>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    Docs - Modeling
+                  </Link>
+                </div>
               </div>
               <div>
                 <img
@@ -262,14 +271,16 @@ export default function Home() {
                   projects and <strong>quickly build models</strong> reusing parts of others.</p>
                 <p>That retention model you’ve built for your campaign site? You can likely reuse that for 
                   your main site by changing a single line of code.</p>
-                <Link 
-                  href="/docs/modeling/" 
-                  {...tagLink({id: 'cta-docs-reuse', href: '/docs/modeling', 
-                    text: 'Docs - Examples'})}
-                  className={clsx("button", styles.ctaButton)}>
-                  <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                  Docs - Examples
-                </Link>
+                <div className={clsx(styles.solutionRowCta)}>
+                  <Link 
+                    href="/docs/modeling/" 
+                    {...tagLink({id: 'cta-docs-reuse', href: '/docs/modeling', 
+                      text: 'Docs - Examples'})}
+                    className={clsx("button", styles.ctaButton)}>
+                    <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
+                    Docs - Examples
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -279,12 +290,12 @@ export default function Home() {
           <div className={clsx("container", styles.contentContainer)}>
             <h2>Objectiv is open source and we’re building it in public.</h2>
             <p>Have opinions on where we should take this or want to stay in the loop?</p>
-            <Link 
+            <Link
               to={customFields.slackJoinLink}
               className={clsx("button", styles.ctaButton)}>
-              <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
-              Join us on Slack
-            </Link>
+                <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
+                Join us on Slack
+              </Link>
           </div>
         </footer>
 

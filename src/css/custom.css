@@ -23,7 +23,7 @@
   --ifm-heading-font-weight: normal;
   --ifm-hero-text-color: black;
   --ifm-hero-background-color: transparent;
-  --ifm-container-width: 960px;
+  --ifm-container-width: 966px;
   --ifm-link-color: #06A5FA;
   --ifm-link-hover-color: #06A5FA;
   --ifm-navbar-link-hover-color: #06A5FA;
@@ -51,6 +51,10 @@
   --obj-primary-two: rgba(171, 233, 254, 0.1);
   --obj-primary-three: rgba(196, 166, 252, 0.1);
   --obj-primary-four: rgba(254, 242, 132, 0.1);
+}
+
+nav {
+  display: none;
 }
 
 :root {

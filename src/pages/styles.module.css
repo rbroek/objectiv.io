@@ -1,9 +1,9 @@
 /* stylelint-disable docusaurus/copyright-header */
 @media screen and (min-width: 966px) { /* desktop */
 }
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
 }
-@media screen and (max-width: 768px) { /* mobile medium */
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
 }
 @media screen and (max-width: 480px) { /* mobile small */
 }
@@ -23,15 +23,21 @@
   margin: 0 0 57px 0;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .heroBanner {
     padding: 2rem;
   }
-  .heroTitle {
-    font-size: 28px;
-  }
   .heroTitle br, .heroSubTitle br {
     display: none
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .heroBanner {
+    padding: 2rem 0;
+  }
+  .heroTitle {
+    font-size: 24px;
   }
 }
 
@@ -49,7 +55,7 @@
   margin-bottom: 20px;
   padding: 0 10%;
 }
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
   }
@@ -84,20 +90,13 @@
   margin: 0 40px;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
-  /* do not display the teaser, no need */
-  .introTeaser {
-    display: none;
-  }
-}
-
 h2 {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 38px;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   h2 br {
     display: none;
   }
@@ -133,6 +132,7 @@ h2 {
 
 .solutionTitle {
   display: flex;
+  flex-wrap: nowrap; /* keep on one line */
   margin: 0 0 30px 83px;
 }
 .solutionTitle>div:nth-child(1) { /* the number */
@@ -148,13 +148,25 @@ h2 {
   font-size: 20px;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .solutionTitle {
-    display: block;
+    margin: 0 0 0 40px;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .solutionTitle {
+    flex-wrap: wrap; /* do not keep on one line */
+    margin: 0 0 0 10px;
+    text-align: center;
     margin-bottom: 40px;
   }
   .solutionTitle>div:nth-child(1) { /* the number */
-    margin-bottom: 23px;
+    width: 100%;
+    margin: 0 0 23px 0;
+  }
+  .solutionTitle>div:nth-child(2) { /* the title */
+    width: 100%;
   }
   .solutionTitle br {
     display: none;
@@ -163,16 +175,19 @@ h2 {
 
 .solutionRowLeft, .solutionRowRight {
   display: flex;
-  margin-bottom: 37px;
+  flex-flow: row;
 }
 .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
   width: 488px; /* 320px + 2x83px grid cols left and right */
   padding: 0 83px 0 83px;
 }
-.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) { /* the right column */
+.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
   flex: 50%;
 }
 /* Minor styling exceptions for the very first solution (mapping to taxonomy) */
+.mapToTaxonomy .solutionRowLeft  {
+  margin-bottom: 37px;
+}
 .mapToTaxonomy .solutionRowLeft>div:nth-child(1)  {
   padding-top: 40px;
 }
@@ -180,6 +195,53 @@ h2 {
   text-align: center;
   font-size: 14px;
   margin: 30px 0 0 0;
+}
+
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .solutionRowLeft {
+    flex-flow: row wrap-reverse;
+  }
+  .solutionRowRight {
+    flex-flow: row wrap;
+  }
+  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+  .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
+    text-align: center;
+  }
+  .solutions .ctaButton {
+    margin: 0 auto;
+  }
+  /* Minor styling exceptions for the very first solution (mapping to taxonomy) */
+  .mapToTaxonomy .solutionRowLeft  {
+    margin-bottom: 0;
+  }
+  .mapToTaxonomy .solutionRowLeft>div:nth-child(1)  {
+    padding-top: 0;
+  }
+  /* on tablets, only center the CTA button for mapToTaxonomy solution */
+  .mapToTaxonomy .solutionRowCta {
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+  .mapToTaxonomy .footnote {
+    max-width: 400px;
+    margin: 30px auto 0 auto;
+  }  
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+    padding: 0 10px 0 10px;
+  }
+  /* on mobile, center _all_ CTA buttons for all solutions */
+  .solutionRowCta, .mapToTaxonomy .solutionRowCta {
+    text-align: center;
+    margin: 24px 0 0 0;
+  }
+
 }
 
 .ctaButton {
@@ -193,7 +255,7 @@ h2 {
   font-family: Roboto, serif;
   font-size: 18px;
   font-weight: normal;
-  margin: 5px 0;
+  margin: 10px 0;
   transition: 0.5s;
 }
 
