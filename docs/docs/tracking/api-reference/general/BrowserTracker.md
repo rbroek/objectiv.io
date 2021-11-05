@@ -41,9 +41,10 @@ TrackerQueue is configured to use [LocalStorage](/tracking/api-reference/queues/
 ### Retry logic
 Configured for 10 retries with exponential backoff starting at 1000ms.
 
-### Plugins
-- [ApplicationContextPlugin](/tracking/api-reference/core/TrackerPlugins.md#applicationcontextplugin)
-- [WebDocumentContextPlugin](/tracking/api-reference/core/TrackerPlugins.md#webdocumentcontextplugin)
+### Default Plugins
+Browser Tracker comes preconfigured with the following plugins:
+- ApplicationContextPlugin (inherited from Core Tracker)
+- WebDocumentContextPlugin
 
 ## Under the hood
 To get an idea of how much Browser Tracker automates under the hood, this statement:

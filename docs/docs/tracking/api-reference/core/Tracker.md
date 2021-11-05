@@ -25,32 +25,46 @@ Plugins can also contribute to this process by adding more LocationStacks and/or
 
 ## Properties
 
-### active: boolean 
-Optional. Determines if trackEvent will process Events or not.
+### active
+Optional, boolean.    
+Determines if trackEvent will process Events or not.
 
-### applicationId: string
-Required. Application identifier. Used to automatically generate [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md).
+### applicationId
+Required, string.   
+Application identifier. Used to automatically generate [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md).
 
-### console: [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)
-Optional. TrackerConsole instance for logging.
+### console
+Optional, [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md).   
+TrackerConsole instance for logging.
 
-### global_contexts: [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)
-Optional. Array of GlobalContext instances.
+### global_contexts
+Optional, [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md).   
+Array of GlobalContext instances.
 
-### location_stack: [LocationStack](/tracking/api-reference/core/LocationStack.md)
-Optional. Array of LocationContext instances.
+### location_stack
+Optional, [LocationStack](/tracking/api-reference/core/LocationStack.md).  
+Array of LocationContext instances.
 
-### queue: [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)
-Optional. TrackerQueue instance. Responsible for queueing and batching Events.
+### queue
+Optional, [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md).  
+TrackerQueue instance. Responsible for queueing and batching Events.
 
-### trackerId:  `string`
-Optional. Unique identifier for the TrackerInstance. Defaults to the same value of `applicationId`.
+### trackerId
+Optional, string.  
+Unique identifier for the TrackerInstance. Defaults to the same value of `applicationId`.
 
-### transport: [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md)
-Optional. TrackerTransport instance. Responsible for sending Events.
+### transport
+Optional, [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md).   
+TrackerTransport instance. Responsible for sending Events.
 
-### plugins: [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)
-Optional. Plugins will be executed when the Tracker initializes and before the Event is sent.
+### plugins
+Optional, [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md).  
+Plugins will be executed when the Tracker initializes and before the Event is sent.
+
+## Default Plugins
+Core Tracker comes preconfigured with the following plugins:
+- ApplicationContextPlugin
+
 
 ## Methods
 
