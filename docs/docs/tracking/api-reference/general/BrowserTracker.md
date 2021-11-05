@@ -26,6 +26,8 @@ These helper methods will also push the new instance in [TrackerRepository](/tra
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
+
+When providing only `endpoint`, the Tracker will automatically create a Transport configuration initialized with it.
 :::
 ### Transport
 [Fetch](/tracking/api-reference/transports/FetchAPITransport.md) + [XMLHttpRequest](/tracking/api-reference/transports/XMLHttpRequestTransport.md) Transport Switch.

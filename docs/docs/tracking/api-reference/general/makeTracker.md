@@ -36,6 +36,8 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
+
+When providing only `endpoint`, the Tracker will automatically create a Transport configuration initialized with it.
 :::
 
 ## Returns

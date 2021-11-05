@@ -2,7 +2,7 @@
 
 Object used to construct BrowserTracker instances. 
 
-BrowserTrackerConfig Extends [TrackerConfig](/tracking/api-reference/core/TrackerConfig.md). 
+BrowserTrackerConfig extends the Core [TrackerConfig](/tracking/api-reference/core/TrackerConfig.md). 
 
 ```typescript
 type BrowserTrackerConfig = TrackerConfig & {
@@ -49,6 +49,8 @@ Internally it will automatically configure the Transport layer for the given `en
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
+
+When providing only `endpoint`, the Tracker will automatically create a Transport configuration initialized with it.
 :::
 
 <br/>
