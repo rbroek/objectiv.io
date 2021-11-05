@@ -1,9 +1,110 @@
 # Tracker
 
-## flushQueue
+Core Tracker is mainly responsible for finalizing Events and Queueing them for Transport. 
 
-## setActive
+:::caution
+This is a Core module meant to be used by contributors writing their own Trackers or Plugins.  
+We heavily discourage using Core modules directly. Use [General APIs](/tracking/api-reference/general/overview.md), [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) and [Event Trackers](/tracking/api-reference/eventTrackers/overview.md) instead.
+:::
 
-## trackEvent
+## Construction
+Trackers can be initialized with a TrackerConfig object and, optionally, one or more ContextsConfig.
 
-## waitForQueue
+```typescript
+new Tracker(trackerConfig: TrackerConfig, ...contextConfigs: ContextsConfig[])
+```
+
+The instance will merge ContextsConfig in the correct order to produce valid LocationStack and GlobalContexts.
+
+:::info 
+Tracker's own LocationStack and GlobalContexts will be added to every Event being tracked. 
+This enables the creation of Tracker instances preconfigured with LocationStacks and/or GlobalContexts.
+
+Plugins can also contribute to this process by adding more LocationStacks and/or GlobalContexts. 
+:::
+
+## Properties
+
+### active: boolean 
+Optional. Determines if trackEvent will process Events or not.
+
+### applicationId: string
+Required. Application identifier. Used to automatically generate [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md).
+
+### console: [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)
+Optional. TrackerConsole instance for logging.
+
+### global_contexts: [GlobalContexts](/tracking/api-reference/core/GlobalContexts.md)
+Optional. Array of GlobalContext instances.
+
+### location_stack: [LocationStack](/tracking/api-reference/core/LocationStack.md)
+Optional. Array of LocationContext instances.
+
+### queue: [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)
+Optional. TrackerQueue instance. Responsible for queueing and batching Events.
+
+### trackerId:  `string`
+Optional. Unique identifier for the TrackerInstance. Defaults to the same value of `applicationId`.
+
+### transport: [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md)
+Optional. TrackerTransport instance. Responsible for sending Events.
+
+### plugins: [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)
+Optional. Plugins will be executed when the Tracker initializes and before the Event is sent.
+
+## Methods
+
+### flushQueue
+```typescript
+flushQueue(): void
+```
+Empties the TrackerQueue. Events that have not been sent yet will be permanently lost.
+
+:::caution
+This method is usually combined with `waitForQueue`, to allow the TrackerQueue to finish sending Events. 
+:::
+
+### setActive
+```typescript
+setActive(newActiveState: boolean): void
+```
+
+Set the `active` property state. If state transitions from `false` to `true`: 
+- Initializes Plugins
+- If Queue has been configured
+  - Binds Transport to Queue
+  - Starts Queue Runner
+
+### trackEvent
+```typescript
+async trackEvent(event: TrackerEvent) => Promise<TrackerEvent>
+```
+The main entry point of the Tracker Instance:
+- Prepends given Event's LocationStack and GlobalContexts with the Tracker's LocationStack and GlobalContexts
+- Sets the Event's `time` attribute
+- Invokes all Plugins `beforeTransport` lifecycle method
+- If Queue has been configured
+  - Hands the Event over to Queue 
+- Else if Transport has been configured
+  - Hands the Event over to Queue
+- Depending on whether Queue and Transport have been configured, returns a Promise resolving to either 
+  - The Event itself
+  - The Queued Event
+  - The Transported Event
+
+### waitForQueue
+```typescript
+async waitForQueue(parameters?: { 
+  intervalMs?: number; 
+  timeoutMs?: number 
+}): Promise<boolean>
+```
+Attempts to wait for TrackerQueue to be empty. This is usually invoked in combination with `flushQueue` when
+attempting to finish the Tracker's work before starting a new session.
+
+#### Parameters
+|          |            | type    | default value                  | description
+| :-:      | :--        | :--     | :--                            | :--
+| optional | intervalMs | boolean | `100`                          | How often to poll the TrackerQueue
+| optional | timeoutMs  | boolean | `2 * QueueConfig.batchDelayMs` | For how long to poll the TrackerQueue
+
