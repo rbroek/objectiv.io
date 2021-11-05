@@ -20,7 +20,6 @@ makeTracker = (parameters: {
 The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
 :::
 
-
 ## Parameters
 |          |                        | type                                                                 | default value
 | :-:      | :--                    | :--                                                                  | :--           
