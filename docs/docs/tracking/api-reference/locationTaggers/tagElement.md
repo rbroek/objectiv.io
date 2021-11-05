@@ -10,7 +10,7 @@ tagElement = (parameters: {
 }) => TagLocationReturnValue
 ```
 
-::: info Element vs Section
+:::info Element vs Section
 Our Taxonomy names a logical UI unit as Section. We felt this would be confusing in Browser's world, hence Element.
 :::
 

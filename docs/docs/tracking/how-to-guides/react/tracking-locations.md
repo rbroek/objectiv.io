@@ -66,16 +66,22 @@ Elements that cause other Elements, usually their children, to be expanded and d
 ## Tracking Locations
 To make modeling easier it's important to ensure all Tracked interactive Elements are uniquely identifiable.   
 
-That said, assigning a unique identifier to each Element is not always possible and most often impractical. Think of reusable components for example. 
+That said, assigning a unique identifier to each Element is not always possible and most often impractical. 
+Think of reusable components for example.
 
-### Uniqueness among siblings
-Let's define some logical Sections instead. Objectiv Taxonomy comes with a number of them and can be easily extended if needed.
+See [Core Concepts - Locations](/tracking/core-concepts/locations.md#applying-locations) for an explanation 
+of how Sections can be tagged to make Events unique without having to assign a unique idenitifier to each.
 
-[placeholder: prepare a complex example with conflicting components solved by wrapping them in a few Section Contexts]
-
-[placeholder: quick overview of most useful Location Taggers, directing user to the API Reference for full list]
-
-[placeholder: hard to explain why would FE bother with Location tracking: there's no advantage for them to using it]
-
-### Tracking multiple siblings at once
-[placeholder]
+An example for React:
+```js
+<Layout {...tagElement({ id: 'layout' })}>
+  <header {...tagElement({ id: 'homepage-hero' })}>
+    <div {...tagElement({ id: 'section1' })}>
+      <a {...tagLink({ id: 'my-link', text: 'Link 1', href: '/link1' })} href="/link1">Link 1</a>
+    </div>
+    <div {...tagElement({ id: 'section2' })}>
+      <a {...tagLink({ id: 'my-link', text: 'Link 2', href: '/link2' })} href="/link2">Link 2</a>
+    </div>
+  </header>
+</Layout>
+```
