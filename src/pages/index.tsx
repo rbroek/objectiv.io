@@ -37,7 +37,6 @@ export default function Home() {
           <div className={clsx(styles.heroSubTitleWrapper)}>
             <p className={clsx(styles.heroSubTitle)}>
               Objectiv is a data collection &amp; modeling library that puts the data scientist first. <br />
-              Embrace an open taxonomy. Collect better data. Model more effectively.
             </p>
           </div>
           <div className={clsx(styles.heroRepoButton)}>
