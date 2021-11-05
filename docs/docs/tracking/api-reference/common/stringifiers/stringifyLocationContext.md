@@ -18,5 +18,5 @@ string
 Error when the given `contextObject` cannot be stringified
 
 :::info See also
-- [LocationContext Core Factories](/tracking/api-reference/core/coreFactories.md#location-context-factories)
+- [LocationContext Core Factories](/tracking/api-reference/core/CoreFactories.md#location-context-factories)
 :::

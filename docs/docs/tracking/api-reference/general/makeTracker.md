@@ -20,7 +20,6 @@ makeTracker = (parameters: {
 The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
 :::
 
-
 ## Parameters
 |          |                        | type                                                                 | default value
 | :-:      | :--                    | :--                                                                  | :--           
@@ -37,6 +36,8 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
+
+When providing only `endpoint`, the Tracker will automatically create a Transport configuration initialized with it.
 :::
 
 ## Returns
