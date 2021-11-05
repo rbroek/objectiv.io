@@ -18,7 +18,7 @@ export default function Home() {
       description={tagline}>
       <AnnouncementBar 
         title="We're Hiring!"
-        content="Join our mission crew as a Data Scientist / Engineer."
+        content="Join our mission crew as a Senior Software Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
       />
