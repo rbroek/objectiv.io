@@ -2,7 +2,7 @@
 title: FAQ
 slug: /the-project/faq
 sidebar_label: FAQ
-sidebar_position: 5
+sidebar_position: 1
 ---
 # Frequently Asked Questions
 
