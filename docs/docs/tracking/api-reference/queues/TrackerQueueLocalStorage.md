@@ -1,6 +1,6 @@
 # TrackerQueueLocalStorage
 
-A [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) implementation of a [TrackerQueueStoreInterface](/tracking/api-reference/core/TrackerQueue.md#trackerqueuestoreinterface). 
+A [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) implementation of a [TrackerQueueStore](/tracking/api-reference/core/TrackerQueue.md#trackerqueuestore). 
 
 Whenever JavaScript gets reloaded across sessions, for example when following a link, this Queue ensures Events are not lost.
 

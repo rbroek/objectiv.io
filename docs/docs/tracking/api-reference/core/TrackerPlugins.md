@@ -2,7 +2,7 @@
 
 A special Plugin that wraps around a list of Plugins. Offers methods to call their lifecycle methods in bulk.
 
-# Construction
+## Construction
 TrackerPlugins is initialized with a list of plugins and, optionally, a TrackerConsole.
 
 ```typescript
