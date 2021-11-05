@@ -72,11 +72,11 @@ A TrackerTransport implementing exponential backoff retries.
 ```typescript
 new TrackerTransportRetry({
   transport: TrackerTransportInterface,
-  maxAttempts?: number, // defaults to 10
-  maxRetryMs?: number,  // defaults to Infinity
+  maxAttempts?: number,  // defaults to 10
+  maxRetryMs?: number,   // defaults to Infinity
   minTimeoutMs?: number, // defaults to 1000
   maxTimeoutMs?: number, // defaults to Infinity
-  retryFactor?: number, // defaults to 2
+  retryFactor?: number,  // defaults to 2
 });
 ```
 
@@ -107,7 +107,7 @@ new TrackerTransportRetry({
 :::tip
 If your Transport is too complex to structure with the Transports we offer, you can always opt to either create your custom ones or even provide your own entirely custom implementation.
 
-In the following example we just create a Transport class inline when making a new Tracker.
+In the following example we just create a Transport instance on the fly when making a new Tracker.
 
 ```typescript
 makeTracker({
