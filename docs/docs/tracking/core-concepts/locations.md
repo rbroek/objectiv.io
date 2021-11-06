@@ -33,7 +33,7 @@ An example Location Stack for an Event:
   ]
 ```
 
-In this example, there is a link that lives in Section 'hero' within Section 'homepage'.
+In this example, there is a link that lives in Section 'hero', within Section 'homepage'.
 
 ## Every Event is unique
 Together with an `id`, a Location Stack makes every Event unique. For example, another Link with the same 
@@ -89,27 +89,31 @@ You can tag logical sections in your application's UI (e.g. the hero element on 
 [SectionContext](taxonomy/location-contexts/SectionContext.md) to it.
 
 This might seem without benefit, as no Events are triggered (by default) on tagged Sections. However, 
-tagging Elements is definitely very useful, in two main ways:
+tagging Elements is useful in two main ways:
 
 1. When any Event triggers, a hierarchical Location Stack is generated for it, including all the Sections it 
-  originated from. From the resulting data, Data Scientists can fully understand where every Event came from.
+  originated from. When analyzing the resulting data, you can fully understand where every Event came from.
 2. Every Event becomes unique (see next section about collisions).
 
 An example of tagging Sections and Links in your UI:
 ```js
-import { tagElement } from '@objectiv/tracker-browser';
-import { tagLink } from '@objectiv/tracker-browser';
+...
+import { tagElement, tagLink } from '@objectiv/tracker-browser';
 
-<Layout {...tagElement({ id: 'layout' })}>
-  <header {...tagElement({ id: 'homepage-hero' })}>
-    <div {...tagElement({ id: 'section1' })}>
-      <a {...tagLink({ id: 'my-link', text: 'Link 1', href: '/link1' })} href="/link1">Link 1</a>
-    </div>
-    <div {...tagElement({ id: 'section2' })}>
-      <a {...tagLink({ id: 'my-link', text: 'Link 2', href: '/link2' })} href="/link2">Link 2</a>
-    </div>
-  </header>
-</Layout>
+export default function Test() {
+  return (
+    <Layout {...tagElement({ id: 'layout' })}>
+      <header {...tagElement({ id: 'homepage-hero' })}>
+        <div {...tagElement({ id: 'section1' })}>
+          <Link {...tagLink({ id: 'my-link', text: 'Link 1', href: '/link1' })} to="/link1">Link 1</Link>
+        </div>
+        <div {...tagElement({ id: 'section2' })}>
+          <Link {...tagLink({ id: 'my-link', text: 'Link 2', href: '/link2' })} to="/link2">Link 2</Link>
+        </div>
+      </header>
+    </Layout>
+  );
+}
 ```
 
 As you can see, there are two links with the same ID (`my-link`). However, as they are contained within 
@@ -117,69 +121,20 @@ different tagged Sections, they are still unique, and Data Scientists can follow
 understand where in the UI each Event originated.
 
 ### Solving collisions
-TODO
+See below for a simplified example taken from [our website's About page](https://objectiv.io/about), which 
+lists the contributors to Objectiv. It renders a link to each Contributor's profile:
 
 ```js
 function Contributor({name, gitHubUsername}) {
   const ghProfileLink = "https://github.com/" + gitHubUsername;
-  const ghProfileTitle = "Check out @" + gitHubUsername + " on GitHub";
+
   return (
-    <div 
-      className={clsx("card", styles.contributorCard)}
-      {...tagElement({id: gitHubUsername})}
-    >
-      <div {...tagElement({id: 'contributor-card'})}>
-        <div className="card__header">
-          <div 
-            className={clsx("avatar", styles.contributorAvatar)}
-            {...tagElement({id: 'avatar'})}
-          >
-            <Link 
-              {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
-              href={ghProfileLink} 
-              title={ghProfileTitle}
-            >
-              <Avatar 
-                githubHandle={gitHubUsername} 
-                size='64'
-                round={true} 
-                name={name} 
-                alt={name} 
-                title={name} 
-              />
-            </Link>
-          </div>
-          <div className="avatar__intro">
-            <div 
-              className={clsx(styles.contributorAvatarSubtitle)}
-              {...tagElement({id: 'avatar-subtitle'})}
-            >
-              <Link 
-                {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
-                href={ghProfileLink} 
-                title={ghProfileTitle}
-              >
-                @{gitHubUsername}
-              </Link>
-            </div>
-            <div className={clsx(styles.contributorName)}>
-              {name}
-            </div>
-          </div>
-        </div>
-        <div 
-          className={clsx("card__footer", styles.contributorFooter)}
-          {...tagElement({id: 'card-footer'})}
-        >
-          <Link 
-            {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
-            href={ghProfileLink} 
-            title={ghProfileTitle}
-          >
-            <img src={useBaseUrl('img/icons/icon-github.svg')} alt={ghProfileTitle} />
-          </Link>
-        </div>
-      </div>
+    <div {...tagElement({id: 'contributor'})}>
+      <Link 
+        {...tagLink({id: gitHubUsername, text: '@'+gitHubUsername, href: ghProfileLink})}
+        href={ghProfileLink}>
+        @{gitHubUsername}
+      </Link>
     </div>
   );
 }
@@ -187,6 +142,7 @@ function Contributor({name, gitHubUsername}) {
 export default function Contributors() {
   return (
     <Layout>
+      // `contributors` is retrieved from a JSON file
       {contributors && contributors.length > 0 && (
         <div {...tagElement({id: 'contributors'})}>
           {contributors.map((props, idx) => (
@@ -197,6 +153,22 @@ export default function Contributors() {
     </Layout>
   );
 }
+```
+
+As you can see, each contributor `<div>` has the same `id`, 'contributor'. This will result in collisions in 
+the Location Stack, and the browser console will show a warning about the colliding elements:
+
+![Collisions in browser console](/img/docs/tracking-collision-browser-console.png)
+
+How to fix this?
+
+* You could remove the `<div>` with the 'contributor' `<id>`. But it probably serves a purpose.
+* Or: you could change the `id` to be unique, e.g. every contributor's GitHub username.
+
+We will use the second option, making each contributor `<div>` ID unique:
+
+```js
+<div {...tagElement({id: gitHubUsername})}>
 ```
 
 ### Applying Locations manually
