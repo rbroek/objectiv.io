@@ -53,10 +53,6 @@
   --obj-primary-four: rgba(254, 242, 132, 0.1);
 }
 
-nav {
-  display: none;
-}
-
 :root {
   --doc-sidebar-width: 360px !important;
 }
