@@ -70,9 +70,17 @@
   width: 100%;
 }
 
-.intro {
+.intro, .container.intro {
+  /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
+  max-width: 746px !important;
   text-align: center;
-  max-width: 746px;
+}
+@media (min-width: 1440px) {
+  .intro, .container.intro {
+    /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
+    max-width: 746px !important;
+    text-align: center;
+  }
 }
 
 .introTitleIcon {

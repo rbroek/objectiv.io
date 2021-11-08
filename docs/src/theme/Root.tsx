@@ -79,7 +79,10 @@ function Root({children}) {
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
   )
 
-  useLayoutEffect(scrollToAnchor, [location.href]);
+  // Skip if we are in SSR
+  if (windowExists()) {
+    useLayoutEffect(scrollToAnchor, [location.href]);
+  }
 
   return (
     <>

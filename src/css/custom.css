@@ -150,6 +150,13 @@ div[role=banner] img {
   }
 }
 
+@media (min-width: 1440px) {
+  /* fix: Docusaurus builds set container max-width to var(--ifm-container-width-xl) on large screens */
+  .container {
+    max-width: 996px !important;
+  }
+}
+
 .footer__item {
   display: inline-block;
   margin: 0 10px;
