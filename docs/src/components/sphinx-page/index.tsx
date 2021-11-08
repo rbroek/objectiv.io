@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { scrollToAnchor } from "../scroll-to-anchor/scrollToAnchor";
-import { tagChild, tagLink } from "@objectiv-analytics/tracker-browser";
 
 const SphinxPage = (props) => {
     const [data, setData] = useState('loading');
@@ -181,18 +180,6 @@ const SphinxPage = (props) => {
           .then(() => {
               scrollToAnchor();
           });
-    }, [])
-
-    // track links on the introductory page
-    useEffect(() => {
-      tagChild({ 
-        queryAll: `a[href="${'https://notebook.objectiv.io'}"]`, 
-        tagAs: tagLink({ 
-          id: 'notebook', 
-          href: 'https://notebook.objectiv.io', 
-          text: 'sandboxed notebook' 
-        }) 
-      })
     }, [])
 
     return (<div dangerouslySetInnerHTML={{ __html: data}} />);
