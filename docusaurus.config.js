@@ -7,7 +7,7 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - on a mission to create the ultimate workflow for data scientists',
+  title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
   baseUrl: (environment === 'staging') ? '/staging/' : '/',
