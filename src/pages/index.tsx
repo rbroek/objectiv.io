@@ -202,7 +202,7 @@ export default function Home() {
                   modeling with minimal additional gruntwork.</p>
                 <div className={clsx(styles.solutionRowCta)}>
                   <Link 
-                    href="/docs/taxonomy/" 
+                    href="/docs/tracking/core-concepts/locations" 
                     {...tagLink({id: 'cta-docs-location-stack', href: '/docs/taxonomy', 
                       text: 'Docs - Location Stack'})}
                     className={clsx("button", styles.ctaButton)}>
