@@ -36,8 +36,8 @@ An example Location Stack for an Event:
 In this example, there is a link that lives in Section 'hero', within Section 'homepage'.
 
 ## Every Event is unique
-Together with an `id`, a Location Stack makes every Event unique. For example, another Link with the same 
-`id` on the homepage, but in a Section called 'footer', is still unique:
+Together with an `id`, a Location Stack makes every Event unique. For example, taking the previous example, 
+another Link with the same `id` on the homepage, but in a Section called 'footer', is still unique:
 
 ```json
   "location_stack":[
@@ -68,8 +68,8 @@ Having a Location Stack for Events is like having a contextual layer over your U
 purposes:
 * The collected data becomes **rich and descriptive**. You can pinpoint exactly what event happened, which 
   type it was, in which context it happened and from which location in the UI it was triggered.
-* Your tracking instrumentation becomes **debuggable**. You'll be able to catch tracking instrumentation 
-  errors early on because it is being validated as you’re developing it.
+* Your tracking instrumentation becomes [**debuggable**](./validation.md). You'll be able to catch tracking 
+  instrumentation errors early on because it is being validated as you’re developing it.
 * The collected data **no longer requires significant cleaning and restructuring** before it can be used for 
   modeling because it was collected in a structured manner and validated at the first step of the pipeline.
 
@@ -98,7 +98,7 @@ tagging Elements is useful in two main ways:
 An example of tagging Sections and Links in your UI:
 ```js
 ...
-import { tagElement, tagLink } from '@objectiv/tracker-browser';
+import { tagElement, tagLink } from '@objectiv-analytics/tracker-browser';
 
 export default function Test() {
   return (
@@ -117,8 +117,8 @@ export default function Test() {
 ```
 
 As you can see, there are two links with the same ID (`my-link`). However, as they are contained within 
-different tagged Sections, they are still unique, and Data Scientists can follow the Location Stack to 
-understand where in the UI each Event originated.
+different tagged Sections, they are still unique, and when analyzing the data, you can follow the Location 
+Stack to understand where in the UI each Event originated.
 
 ### Solving collisions
 See below for a simplified example taken from [our website's About page](https://objectiv.io/about), which 
@@ -155,7 +155,7 @@ export default function Contributors() {
 }
 ```
 
-As you can see, each contributor `<div>` has the same `id`, 'contributor'. This will result in collisions in 
+As you can see, each contributor `<div>` has the same `id`, _'contributor'_. This will result in collisions in 
 the Location Stack, and the browser console will show a warning about the colliding elements:
 
 ![Collisions in browser console](/img/docs/tracking-collision-browser-console.png)
@@ -168,7 +168,11 @@ How to fix this?
 We will use the second option, making each contributor `<div>` ID unique:
 
 ```js
-<div {...tagElement({id: gitHubUsername})}>
+    <div {...tagElement({id: gitHubUsername})}>
+```
+instead of
+```js
+    <div {...tagElement({id: 'contributor'})}>
 ```
 
 ### Applying Locations manually

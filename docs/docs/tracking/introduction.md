@@ -28,13 +28,13 @@ import Mermaid from '@theme/Mermaid';
       Event --- Location
     end
     EventsGraph --> Collector
-    click Tracker href "/docs/tracking/core-concepts/trackers" "See more details" _self
-    click Tagging href "/docs/tracking/core-concepts/tagging" "See more details" _self
-    click Plugins href "/docs/tracking/core-concepts/trackers#extensibility-plugins" "See more details" _self
-    click Validation href "/docs/tracking/core-concepts/validation" "See more details" _self
-    click Event href "/docs/tracking/core-concepts/events" "See more details" _self
-    click Location href "/docs/tracking/core-concepts/locations" "See more details" _self
-    click Collector href "/docs/tracking/core-concepts/collector" "See more details" _self
+    click Tracker href "core-concepts/trackers" "See more details" _self
+    click Tagging href "core-concepts/tagging" "See more details" _self
+    click Plugins href "core-concepts/trackers#extensibility-plugins" "See more details" _self
+    click Validation href "core-concepts/validation" "See more details" _self
+    click Event href "core-concepts/events" "See more details" _self
+    click Location href "core-concepts/locations" "See more details" _self
+    click Collector href "core-concepts/collector" "See more details" _self
     linkStyle 0,1,2,4 stroke:#fff,anything;
 `} caption="Figure: Objectiv Tracking" baseColor="basic" />
 

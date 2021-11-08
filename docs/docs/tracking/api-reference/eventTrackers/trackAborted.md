@@ -27,7 +27,7 @@ trackAborted = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackAborted, trackCompleted } from '@objectiv/tracker-browser';
+import { trackAborted, trackCompleted } from '@objectiv-analytics/tracker-browser';
 ```
 
 ```typescript jsx

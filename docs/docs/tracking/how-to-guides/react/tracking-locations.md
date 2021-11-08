@@ -4,7 +4,10 @@ sidebar_position: 3
 
 # Tagging Locations
 
-Now that the [Tracker is up and running](/tracking/how-to-guides/react/getting-started.md) we can start thinking about Tagging some [Elements](/tracking/core-concepts/tagging.md#elements) as [LocationContexts](/taxonomy/location-contexts/overview.md) using [Location Taggers](/tracking/api-reference/locationTaggers/overview.md).  
+Now that the [Tracker is up and running](/tracking/how-to-guides/react/getting-started.md) we can start 
+thinking about Tagging some [Elements](/tracking/core-concepts/tagging.md#elements) as 
+[LocationContexts](/taxonomy/location-contexts/overview.md) using 
+[Location Taggers](/tracking/api-reference/locationTaggers/overview.md).  
 
 ## Tagging Interactive Elements
 A good rule of thumb is to start by identifying all interactive Elements in the Application. 
@@ -40,12 +43,14 @@ Links are interactive elements that cause, directly or indirectly, a change in t
 ```
 
 :::info WIP
-Currently it's necessary to specify `text` and `href` manually. We are working on improvements to make this easier.
+Currently it's necessary to specify `text` and `href` manually. We are working on improvements to make this 
+easier.
 :::
 
 
 ### Expandable Elements
-Elements that cause other Elements, usually their children, to be expanded and displayed to the user. Such as Accordions and collapsible Menus. 
+Elements that cause other Elements, usually their children, to be expanded and displayed to the user, such as 
+Accordions and collapsible Menus. 
 
 ```typescript jsx
 // an Accordion-like component 

@@ -12,7 +12,7 @@ import {
   defaultFetchFunction, 
   defaultFetchParameters, 
   FetchAPITransport 
-} from '@objectiv/tracker-browser';
+} from '@objectiv-analytics/tracker-browser';
 
 const COLLECTOR_ENDPOINT = 'https://collector.application.dev';
 

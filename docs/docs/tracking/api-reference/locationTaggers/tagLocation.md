@@ -47,7 +47,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="react" label="React" default>
 
 ```typescript jsx
-import { tagLocation } from '@objectiv/tracker-browser';
+import { tagLocation } from '@objectiv-analytics/tracker-browser';
 ```
 
 ```typescript jsx

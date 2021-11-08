@@ -25,7 +25,7 @@ with the goal of collecting better data and more effective modeling.
 * Instrumentation gets validated against the taxonomy to provide 
   [live feedback in your IDE and console while you’re developing](tracking/core-concepts/validation.md).
 * Tracked events can carry multiple contexts, including the 
-  [exact location in the UI](taxonomy/abstract-contexts/overview.md) from where they were triggered.
+  [exact location in the UI](/tracking/core-concepts/locations.md) from where they were triggered.
 * Collected data is well-structured, self-descriptive and gets validated at the first step of the pipeline.
 * Familiar Pandas-like dataframe operations can be used on the full data set, straight from a notebook. 
 * Models can be built by taking parts of other models. Models can be reused for other projects by changing a 

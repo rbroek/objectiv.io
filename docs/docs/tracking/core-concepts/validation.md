@@ -27,17 +27,13 @@ browser console:
   properties.
 * **Uniqueness**: If an Event `id` and its [Location Stack](locations.md) are not unique, an Error is thrown.
   In the browser console, the error can be hovered/clicked to identify the existing and colliding Elements.
-
-[TODO: Example uniqueness failure in browser console:]
-```console
-TODO
-```
+  [See Locations - Solving Collisions](./locations.md#solving-collisions) for an example.
 
 ## Collector validation
 As a final catch-all, Objectiv's [Collector](./collector.md) validates any incoming Event against the 
 [Taxonomy and its properties](/taxonomy/events/overview.md). 
 
-For more background, see [Collector docs](./collector.md).
+For more background, see the [Collector docs](./collector.md).
 
 ## Logging
 When you run your application, you can observe all tracking calls and other tracking events by enabling 

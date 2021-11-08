@@ -17,16 +17,28 @@ core tracking methods out of the box.
 
 Example usage:
 ```js
-Example code
+import { trackClick } from '@objectiv-analytics/tracker-browser';
+```
+```js
+<div
+  onClick={(event) => {
+    trackClick({ element: event.target })
+  }}
+/>
 ```
 
-TODO: Support for auto-tracking (Application loaded, URL change)
+By default, the Browser Tracker automatically tracks 
+[ApplicationLoaded](/tracking/api-reference/eventTrackers/trackApplicationLoaded.md) and 
+[URLChange](/tracking/api-reference/eventTrackers/trackURLChange.md) events.
 
 ## React Tracker
 The React Tracker is available via npm to be directly installed into your React application. It supports all 
 core tracking methods out of the box, and provides added shorthands for React components.
 
 Example usage:
+```js
+import { tagButton } from '@objectiv-analytics/tracker-browser';
+```
 ```js
 <Button {...tagButton({ id: 'button-2', text: "Do It!" })}>Do It!</Button>
 ```

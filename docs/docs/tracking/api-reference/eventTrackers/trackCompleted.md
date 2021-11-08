@@ -27,7 +27,7 @@ trackCompleted = (parameters: {
 ## Usage example
 
 ```typescript jsx
-import { trackCompleted } from '@objectiv/tracker-browser';
+import { trackCompleted } from '@objectiv-analytics/tracker-browser';
 ```
 
 ```typescript jsx
