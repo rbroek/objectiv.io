@@ -1,7 +1,7 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
-import useScrollToAnchor from "../components/scroll-to-anchor/scrollToAnchor";
-import React, { useEffect, useState, useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
 
 declare namespace cookiebot {
   class Cookiebot {
@@ -79,7 +79,7 @@ function Root({children}) {
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
   )
 
-  useScrollToAnchor();
+  useLayoutEffect(scrollToAnchor, [location.href]);
 
   return (
     <>
