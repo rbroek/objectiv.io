@@ -10,7 +10,7 @@ TrackerConsole instance for logging.
 
 ### pluginName
 Required, string.  
-Used in logging messages and, in general, to uniquely identify this plugin.
+Used for logging messages and, in general, to uniquely identify this plugin.
 
 ## Methods
 
