@@ -1633,30 +1633,24 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@objectiv/plugin-web-document-context@^0.0.1":
+"@objectiv-analytics/plugin-web-document-context@^0.0.1":
   version "0.0.1"
-  resolved "http://127.0.0.1:4873/@objectiv%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#5ef332dbfabfff937c389277bb71eacdfa459826"
-  integrity sha512-mmemdDWFk/U2qgDkaNrQZYiVPjRJsFrRpbhLxdKWfe1h4ffnB6UVl//e7+k2ZIfPyrxV/16HU0eHLdnGX0vkOg==
+  resolved "http://localhost:4873/@objectiv-analytics%2fplugin-web-document-context/-/plugin-web-document-context-0.0.1.tgz#fd46afa237d44fc29458065ad57eb11fa83c0219"
+  integrity sha512-6PmL/zxMS5pDblw5d8gwT3nhWFR53UITX9YScVTN7r5MEhhpUqgUQDdrFnWyQN8BMW0TT976de+CU58L+/8hEg==
 
-"@objectiv/schema@^0.0.1":
+"@objectiv-analytics/tracker-browser@^0.0.1":
   version "0.0.1"
-  resolved "http://127.0.0.1:4873/@objectiv%2fschema/-/schema-0.0.1.tgz#c79eab0efad3d46e79f71c1b010841cb210787e0"
-  integrity sha512-vlb6jz/ihHEwBpdMs6uNBBHS1g6z6EyhjHiCyFh9gQcvLWs1cRDImA4vSpBtg6u7FQimGJmX3xBUK/spdJZw/Q==
-
-"@objectiv/tracker-browser@^0.0.1":
-  version "0.0.1"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-browser/-/tracker-browser-0.0.1.tgz#59c9cf825044102f5a27e931efa38c95051d4ac3"
-  integrity sha512-jTKxapHn5dyiYV/3LMBEInWfdYb/YC1kcHZi5byOIDdkjSoDkFHbKLd82ZZAPUZ2wtUxnnaGRfE54OsOIAq1uQ==
+  resolved "http://localhost:4873/@objectiv-analytics%2ftracker-browser/-/tracker-browser-0.0.1.tgz#2be7f8e59e6ad56971596c662ffa67178a470922"
+  integrity sha512-PQRePqIRnV69mf37Qft0tyi6o16MIEFlVvNx1C+hJYXAWF/p7FyppQM+CLKDw/gvSzZR4gyRdlSfnJblKGFRxA==
   dependencies:
-    "@objectiv/plugin-web-document-context" "^0.0.1"
-    "@objectiv/schema" "^0.0.1"
-    "@objectiv/tracker-core" "^0.0.1"
+    "@objectiv-analytics/plugin-web-document-context" "^0.0.1"
+    "@objectiv-analytics/tracker-core" "^0.0.1"
     superstruct "^0.15.3"
 
-"@objectiv/tracker-core@^0.0.1":
+"@objectiv-analytics/tracker-core@^0.0.1":
   version "0.0.1"
-  resolved "http://127.0.0.1:4873/@objectiv%2ftracker-core/-/tracker-core-0.0.1.tgz#ee9356338658032a91346afa7d12bc2a6a1d8cd0"
-  integrity sha512-PTHDXqNBIGzi4Clm1zcXiVnhJIEwsRZ2ARngRUEu4fDi/v0m+OLKVIjSctrDBKHb9QRnytUl7yf2m64vLE84xA==
+  resolved "http://localhost:4873/@objectiv-analytics%2ftracker-core/-/tracker-core-0.0.1.tgz#9bf5e75cd361f18c1aa347c617eb022fabf4fb21"
+  integrity sha512-jAw6r7zAzAPTiAWuBUeR6BrMte9L1WRVCke+XnJkeJFLsDEE1+Op1QZlbs08SB7jN1crG+3+PZaGPq2LzqP07A==
   dependencies:
     es6-error "^4.1.1"
     uuid-random "^1.3.2"

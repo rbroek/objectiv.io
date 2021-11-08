@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { tagElement } from '@objectiv/tracker-browser';
+import { tagElement } from '@objectiv-analytics/tracker-browser';
 import OriginalDocSidebar from '@theme-original/DocSidebar';
 import React from 'react';
 

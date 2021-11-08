@@ -74,7 +74,7 @@ const SphinxPage = (props) => {
                             // of a class, so we increase the header type
 
                             if ( firstChar === firstChar.toLowerCase() ){
-                               headerType = "h3";
+                              headerType = "h3";
                             }
                         }
 
