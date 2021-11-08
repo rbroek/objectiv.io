@@ -1,9 +1,9 @@
-# parseValidateAttribute
+# parseValidate
 
 [TaggingAttribute.validate](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributevalidate) parser
 
 ```typescript
-parseValidateAttribute = (stringifiedValidateAttribute: string | null) => ValidateAttribute
+parseValidate = (stringifiedValidateAttribute: string | null) => ValidateAttribute
 ```  
 
 ## Parameters

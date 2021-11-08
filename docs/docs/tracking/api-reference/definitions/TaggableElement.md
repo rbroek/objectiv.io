@@ -1,6 +1,6 @@
 # TaggableElement
 
-Either an [HTMLElement](#TODO) or an [SVGElement](#TODO).
+Either an [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) or an [SVGElement](https://developer.mozilla.org/en-US/docs/Web/API/SVGElement).
 
 ```typescript
 type TaggableElement = HTMLElement | SVGElement;

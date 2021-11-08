@@ -1,9 +1,9 @@
-# stringifyValidateAttribute
+# stringifyValidate
 
 [TaggingAttribute.validate](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributevalidate) stringifier
 
 ```typescript
-stringifyValidateAttribute = (validateAttribute: ValidateAttribute) => string
+stringifyValidate = (validateAttribute: ValidateAttribute) => string
 ```  
 
 ## Parameters

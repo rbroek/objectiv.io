@@ -1,8 +1,8 @@
 ---
 title: Contributing
-slug: /the-project/contributing
-sidebar_label: Contributing
-sidebar_position: 4
+slug: /the-project/contribute
+sidebar_label: Contribute
+sidebar_position: 3
 ---
 
 import Mermaid from '@theme/Mermaid';

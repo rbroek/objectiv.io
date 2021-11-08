@@ -1,9 +1,9 @@
-# makeBrowserTrackerDefaultPluginList
+# makeDefaultTransport
 
-Generates the default list of [TrackerPlugin](/tracking/api-reference/core/TrackerPlugin.md) for [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md).
+Generates the default [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) instance for [Browser Tracker](/tracking/api-reference/general/BrowserTracker.md).
 
 ```typescript
-makeDefaultBrowserTrackerPluginsList = (trackerConfig: BrowserTrackerConfig) => TrackerPluginInterface[]
+makeDefaultTransport = (trackerConfig: BrowserTrackerConfig) => TrackerTransportInterface
 ```
 
 ## Parameters
@@ -12,4 +12,4 @@ makeDefaultBrowserTrackerPluginsList = (trackerConfig: BrowserTrackerConfig) => 
 | required | **trackerConfig** | [BrowserTrackerConfig](/tracking/api-reference/definitions/BrowserTrackerConfig.md) |
 
 ## Returns
-Array of [TrackerPlugin](/tracking/api-reference/core/TrackerPlugin.md) instances
+[TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) instance

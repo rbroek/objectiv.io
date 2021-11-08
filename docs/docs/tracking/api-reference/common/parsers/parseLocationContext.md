@@ -1,4 +1,4 @@
-# parseJson
+# parseLocationContext
 
 [LocationContext](/tracking/api-reference/definitions/LocationContext.md) parser
 
@@ -19,5 +19,5 @@ Error when the given `stringifiedContext` cannot be parsed
 
 :::info See also
 - [LocationContext](/tracking/api-reference/definitions/LocationContext.md)
-- [LocationContext Core Factories](/tracking/api-reference/core/coreFactories.md#location-context-factories)
+- [LocationContext Core Factories](/tracking/api-reference/core/CoreFactories.md#location-context-factories)
 :::

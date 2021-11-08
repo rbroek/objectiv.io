@@ -5,8 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useRouteMatch } from "@docusaurus/router";
-import Translate from '@docusaurus/Translate';
 
 import type {Props} from '@theme/EditThisPage';
 
@@ -14,9 +15,12 @@ import Link from '@docusaurus/Link';
 import { tagLink, tagElement } from "@objectiv/tracker-browser";
 
 export default function EditThisPage({editUrl}: Props): JSX.Element {
+  const context = useDocusaurusContext();
+  const {customFields} = context.siteConfig;
+
   // if in the 'modeling' section, edit the source code that is used to auto-generate the docs instead
   let editThisPageUrl = useRouteMatch("/modeling") !== null ? 
-    'https://github.com/objectiv/objectiv-analytics/tree/main/bach' : editUrl;
+    useBaseUrl('/the-project/update-the-docs') : editUrl;
 
   return (
     <div 
@@ -26,18 +30,14 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
         <li>
           <Link
             to={editThisPageUrl}
-            target="_blank"
+            {...tagLink({ id: 'edit-docs-page', text: 'Suggest an edit', href: editThisPageUrl })}
             rel="noreferrer noopener">
-            <Translate
-              id="theme.common.editThisPage"
-              description="The link label to edit the current page">
-              Suggest an edit
-            </Translate>
+            Suggest an edit
           </Link>
         </li>
         <li>
           <Link
-            to={'https://discourse.objectiv.io'}
+            to={customFields.slackJoinLink as string}
             target="_blank"
             {...tagLink({ id: 'get-help', text: 'Get help', href: 'https://discourse.objectiv.io' })}
           >

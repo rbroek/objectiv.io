@@ -20,16 +20,15 @@ makeTracker = (parameters: {
 The first created Tracker is automatically set as default in the [TrackerRepository](/tracking/api-reference/core/TrackerRepository.md). See also [getTracker](/tracking/api-reference/general/getTracker.md) and [setDefaultTracker](/tracking/api-reference/general/setDefaultTracker.md)
 :::
 
-
 ## Parameters
 |          |                        | type                                                                 | default value
 | :-:      | :--                    | :--                                                                  | :--           
 | required | **applicationId**      | string                                                               |
 | optional | trackerId              | string                                                               | Same value as `applicationId`
-| optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeBrowserTrackerDefaultQueue](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultQueue.md)
+| optional | queue                  | [TrackerQueue](/tracking/api-reference/core/TrackerQueue.md)         | The result of [makeDefaultQueue](/tracking/api-reference/common/factories/makeDefaultQueue.md)
 | optional | **_endpoint_**         | string                                                               |
-| optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeBrowserTrackerDefaultTransport](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultTransport.md)
-| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeBrowserTrackerDefaultPluginList](/tracking/api-reference/common/factories/makeBrowserTrackerDefaultPluginList.md)
+| optional | **_transport_**        | [TrackerTransport](/tracking/api-reference/core/TrackerTransport.md) | The result of [makeDefaultTransport](/tracking/api-reference/common/factories/makeDefaultTransport.md)
+| optional | plugins                | [TrackerPlugins](/tracking/api-reference/core/TrackerPlugins.md)     | TrackerPlugins initiated with the result of [makeDefaultPluginsList](/tracking/api-reference/common/factories/makeDefaultPluginsList.md)
 | optional | console                | [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md)     |
 | optional | active                 | boolean                                                              | `true`
 | optional | trackApplicationLoaded | boolean                                                              | `true`
@@ -37,6 +36,8 @@ The first created Tracker is automatically set as default in the [TrackerReposit
 
 :::caution
 `endpoint` and `transport` are mutually exclusive. While both optional, either one must be specified.
+
+When providing only `endpoint`, the Tracker will automatically create a Transport configuration initialized with it.
 :::
 
 ## Returns

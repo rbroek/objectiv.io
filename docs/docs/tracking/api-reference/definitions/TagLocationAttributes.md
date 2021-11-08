@@ -1,9 +1,9 @@
-# StringifiedLocationTaggingAttributes
+# TagLocationAttributes
 
 The stringified return value of [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 
 ```typescript
-type StringifiedLocationTaggingAttributes = {
+type TagLocationAttributes = {
   [TaggingAttribute.elementId]: string;
   [TaggingAttribute.parentElementId]: string;
   [TaggingAttribute.context]: string;

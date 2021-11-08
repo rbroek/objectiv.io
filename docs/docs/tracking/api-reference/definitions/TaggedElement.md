@@ -1,9 +1,9 @@
 # TaggedElement
 
-A [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) already decorated with our [StringifiedLocationTaggingAttributes](/tracking/api-reference/definitions/StringifiedLocationTaggingAttributes.md).
+A [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) already decorated with our [TagLocationAttributes](/tracking/api-reference/definitions/TagLocationAttributes.md).
 
 ```typescript
-type TaggedElement = TaggableElement & StringifiedLocationTaggingAttributes;
+type TaggedElement = TaggableElement & TagLocationAttributes;
 ```
 
 :::info see also

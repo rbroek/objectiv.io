@@ -75,7 +75,7 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
 </Tabs>
 
 :::tip Did you notice ?
-In the example above we factored the `instance` parameters by using [Location Context Core Factories](/tracking/api-reference/core/coreFactories.md#location-context-factories).
+In the example above we factored the `instance` parameters by using [Location Context Core Factories](/tracking/api-reference/core/CoreFactories.md#location-context-factories).
 :::
 
 <br />

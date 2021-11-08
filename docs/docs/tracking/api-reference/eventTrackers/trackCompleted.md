@@ -31,7 +31,13 @@ import { trackCompleted } from '@objectiv/tracker-browser';
 ```
 
 ```typescript jsx
-TODO
+<form onSubmit={() => {
+  sendFormAsync().then(
+    () => trackCompleted({ element: form })
+  );
+}}>
+  ...
+</form>
 ```
 
 <br />

@@ -4,5 +4,5 @@ A [TaggedElement](/tracking/api-reference/definitions/TaggedElement.md) with at 
 
 ```typescript
 type ParentTaggedElement = TaggableElement &
-  Pick<StringifiedLocationTaggingAttributes, TaggingAttribute.parentElementId>;
+  Pick<TagLocationAttributes, TaggingAttribute.parentElementId>;
 ```

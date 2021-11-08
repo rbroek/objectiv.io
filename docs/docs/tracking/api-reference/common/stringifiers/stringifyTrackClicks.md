@@ -1,9 +1,9 @@
-# stringifyTrackClicksAttribute
+# stringifyTrackClicks
 
 [TaggingAttribute.trackClicks](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetrackclicks) stringifier
 
 ```typescript
-stringifyTrackClicksAttribute = (trackClicksAttribute: TrackClicksAttribute) => string
+stringifyTrackClicks = (trackClicksAttribute: TrackClicksAttribute) => string
 ```  
 
 ## Parameters

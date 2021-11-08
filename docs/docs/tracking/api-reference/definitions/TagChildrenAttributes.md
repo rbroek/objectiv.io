@@ -1,9 +1,9 @@
-# StringifiedChildrenTaggingAttributes
+# TagChildrenAttributes
 
 The stringified return value of [tagChildren](/tracking/api-reference/locationTaggers/tagChildren.md).
 
 ```typescript
-type StringifiedChildrenTaggingAttributes = {
+type TagChildrenAttributes = {
   [TaggingAttribute.tagChildren]: string;
 }
 ```

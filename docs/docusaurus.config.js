@@ -35,7 +35,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           path: './docs',
-          editUrl: 'https://github.com/objectiv/objectiv.io/edit/main/',
+          editUrl: 'https://github.com/objectiv/objectiv.io/edit/main/docs/',
           showLastUpdateTime: false,
           showLastUpdateAuthor: false
         },

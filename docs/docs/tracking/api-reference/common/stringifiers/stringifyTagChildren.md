@@ -1,9 +1,9 @@
-# stringifyChildrenTaggingAttribute
+# stringifyTagChildren
 
 [TaggingAttribute.tagChildren](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetagchildren) stringifier
 
 ```typescript
-stringifyChildrenTaggingAttribute = (queries: ChildrenTaggingQueries) => string
+stringifyTagChildren = (queries: ChildrenTaggingQueries) => string
 ```  
 
 ## Parameters
