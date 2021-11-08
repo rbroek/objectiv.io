@@ -1,9 +1,9 @@
 /* stylelint-disable docusaurus/copyright-header */
 @media screen and (min-width: 966px) { /* desktop */
 }
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
 }
-@media screen and (max-width: 768px) { /* mobile medium */
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
 }
 @media screen and (max-width: 480px) { /* mobile small */
 }
@@ -23,15 +23,21 @@
   margin: 0 0 57px 0;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .heroBanner {
     padding: 2rem;
   }
-  .heroTitle {
-    font-size: 28px;
-  }
   .heroTitle br, .heroSubTitle br {
     display: none
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .heroBanner {
+    padding: 2rem 0;
+  }
+  .heroTitle {
+    font-size: 24px;
   }
 }
 
@@ -46,73 +52,17 @@
 .heroSubTitle {
   font-size: 18px;
   line-height: 150%;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   padding: 0 10%;
 }
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   .heroSubTitle {
     padding: 0;
   }
 }
 
-.heroKeepMePosted {
-  margin: 90px 0 50px 0;
-}
-
-.heroUsps {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: space-between;
-  margin-bottom: 100px;
-}
-
-.heroUsps>div {
-  width: 220px;
-  font-size: 14px;
-  position: relative;
-}
-
-.heroUsps>div:nth-child(1) { /* the first USP */
-  margin-right: 60px;
-}
-
-.heroUsps>div:nth-child(2) { /* the middle USP */
-  width: 240px;
-  margin-right: 60px;
-}
-
-.heroUspsIcon {
-  float: none;
-  margin-bottom: 53px;
-}
-
-@media screen and (max-width: 966px) { /* all mobile */
-  /* do not show the arrows between the USPs, and subsequently no margins */
-  .heroUsps>div:nth-child(1), .heroUsps>div:nth-child(2) { 
-    margin: 0 0 60px 0;
-  }
-
-  .heroUspsArrowUp, .heroUspsArrowDown {
-    display: none;
-  }
-
-  .heroUspsIcon {
-    margin-bottom: 43px;
-  }
-}
-
-.heroUspsArrowUp {
-  position: absolute;
-  top: 20px;
-  right: -80px;
-}
-.heroUspsArrowDown {
-  position: absolute;
-  top: 40px;
-  right: -80px;
+.heroRepoButton {
+  margin-bottom: 20px;
 }
 
 .heroOutro {
@@ -122,7 +72,7 @@
 
 .intro {
   text-align: center;
-  max-width: 694px;
+  max-width: 746px;
 }
 
 .introTitleIcon {
@@ -133,18 +83,11 @@
 .introTeaser {
   font-weight: bold;
   font-size: 14px;
-  margin: 104px 0 -18px 0;
+  margin: 60px 0 -18px 0;
 }
 
 .introCaretDown {
   margin: 0 40px;
-}
-
-@media screen and (max-width: 966px) { /* mobile all */
-  /* do not display the teaser, no need */
-  .introTeaser {
-    display: none;
-  }
 }
 
 h2 {
@@ -153,14 +96,14 @@ h2 {
   margin-bottom: 38px;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 966px) { /* mobile/tablet all */
   h2 br {
     display: none;
   }
 }
 
 .pageSection {
-  padding: 60px 0 60px 0;
+  padding: 60px 0;
 }
 
 .pageSectionBlue {
@@ -184,18 +127,19 @@ h2 {
 }
 
 .contentContainer {
-  max-width: 750px;
+  max-width: 996px;
 }
 
 .solutionTitle {
   display: flex;
-  margin-bottom: 60px;
+  flex-wrap: nowrap; /* keep on one line */
+  margin: 0 0 30px 83px;
 }
 .solutionTitle>div:nth-child(1) { /* the number */
   width: 56px;
-  margin-right: 50px;
+  margin: 0 0 0 10px;
   font-family: Bungee, serif;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 150%;
 }
 .solutionTitle>div:nth-child(2) { /* the text */
@@ -204,34 +148,100 @@ h2 {
   font-size: 20px;
 }
 
-@media screen and (max-width: 966px) { /* mobile all */
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
   .solutionTitle {
-    display: block;
+    margin: 0 0 0 40px;
+  }
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .solutionTitle {
+    flex-wrap: wrap; /* do not keep on one line */
+    margin: 0 0 0 10px;
+    text-align: center;
     margin-bottom: 40px;
   }
   .solutionTitle>div:nth-child(1) { /* the number */
-    margin-bottom: 23px;
+    width: 100%;
+    margin: 0 0 23px 0;
+  }
+  .solutionTitle>div:nth-child(2) { /* the title */
+    width: 100%;
   }
   .solutionTitle br {
     display: none;
   }
 }
 
-.solutionDiagram {
-  max-width: 95%;
-  display: block;
-  margin: 32px auto;
+.solutionRowLeft, .solutionRowRight {
+  display: flex;
+  flex-flow: row;
+}
+.solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+  width: 488px; /* 320px + 2x83px grid cols left and right */
+  padding: 0 83px 0 83px;
+}
+.solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
+  flex: 50%;
+}
+/* Minor styling exceptions for the very first solution (mapping to taxonomy) */
+.mapToTaxonomy .solutionRowLeft  {
+  margin-bottom: 37px;
+}
+.mapToTaxonomy .solutionRowLeft>div:nth-child(1)  {
+  padding-top: 40px;
+}
+.mapToTaxonomy .footnote {
+  text-align: center;
+  font-size: 14px;
+  margin: 30px 0 0 0;
 }
 
-@media screen and (min-width: 966px) { /* desktop */
-  /* grow the diagram to 110 it's size and reposition to center */
-  .solutionDiagram {
-    max-width: 110%;
-    width: 110%;
-    left: -5%;
-    position: relative;
-    margin: 70px 0;
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+  .solutionRowLeft {
+    flex-flow: row wrap-reverse;
   }
+  .solutionRowRight {
+    flex-flow: row wrap;
+  }
+  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+    width: 100%;
+    padding: 0 40px 0 40px;
+  }
+  .solutionRowLeft>div:nth-child(2), .solutionRowRight>div:nth-child(1) {
+    text-align: center;
+  }
+  .solutions .ctaButton {
+    margin: 0 auto;
+  }
+  /* Minor styling exceptions for the very first solution (mapping to taxonomy) */
+  .mapToTaxonomy .solutionRowLeft  {
+    margin-bottom: 0;
+  }
+  .mapToTaxonomy .solutionRowLeft>div:nth-child(1)  {
+    padding-top: 0;
+  }
+  /* on tablets, only center the CTA button for mapToTaxonomy solution */
+  .mapToTaxonomy .solutionRowCta {
+    text-align: center;
+    margin: 50px 0 0 0;
+  }
+  .mapToTaxonomy .footnote {
+    max-width: 400px;
+    margin: 30px auto 0 auto;
+  }  
+}
+
+@media screen and (max-width: 480px) { /* mobile small */
+  .solutionRowLeft>div:nth-child(1), .solutionRowRight>div:nth-child(2) {
+    padding: 0 10px 0 10px;
+  }
+  /* on mobile, center _all_ CTA buttons for all solutions */
+  .solutionRowCta, .mapToTaxonomy .solutionRowCta {
+    text-align: center;
+    margin: 24px 0 0 0;
+  }
+
 }
 
 .ctaButton {
@@ -245,7 +255,7 @@ h2 {
   font-family: Roboto, serif;
   font-size: 18px;
   font-weight: normal;
-  margin: 20px 0;
+  margin: 10px 0;
   transition: 0.5s;
 }
 
@@ -266,9 +276,11 @@ h2 {
 }
 
 footer {
+  background-color: #008FDB;
+  color: #fff;
   font-size: 16px;
   text-align: center;
-  padding: 60px 0 120px 0;
+  padding: 50px 0 130px 0;
 }
 
 @media screen and (max-width: 966px) { /* mobile all */
@@ -278,6 +290,7 @@ footer {
 }
 
 footer h2 {
+  font-size: 20px;
   color: #fff;
   margin-bottom: 15px;
 }

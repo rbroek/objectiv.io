@@ -10,10 +10,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv Documentation - creating the ultimate workflow for data scientists',
+  title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
-  tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first. Embrace a '
-    + 'common taxonomy. Collect better data. Model more effectively.',
+  tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
   url: 'https://objectiv.io/',
   baseUrl: '/',
   favicon: 'img/favicon/favicon.ico',

@@ -7,10 +7,9 @@ const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6x
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Objectiv - creating the ultimate iterative workflow for data scientists',
+  title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
-  tagline: 'Build & orchestrate reusable, stackable and interchangeable models that embrace a standardized ' 
-    + ' event taxonomy. Straight from your Jupyter notebook.', //meta description, and og:description
+  tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
   baseUrl: (environment === 'staging') ? '/staging/' : '/',
   url: (environment === 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
@@ -30,7 +29,14 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         docs: false,
-        blog: false,
+        blog: {
+          blogTitle: 'Objectiv Blog',
+          blogDescription: 'Objectiv Blog',
+          blogSidebarCount: 0,
+          postsPerPage: 5,
+          showReadingTime: false,
+          editUrl: 'https://github.com/facebook/objectiv/objectiv.io/edit/master/blog/',
+        },
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
@@ -55,7 +61,6 @@ const config = {
     trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
     trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
-    emailJsUserId: 'user_uD6x4OVJwk9gqRX4DKU6k',
     trackerConsoleEnabled: environment !== 'prod'
   },
 
@@ -80,13 +85,18 @@ const config = {
         {
           to: 'about',
           label: 'About Us',
-          position: 'right',
         },
         {
           href: 'https://github.com/objectiv',
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
+        },
+        {
+          href: slackJoinLink,
+          label: 'Slack',
+          position: 'right',
+          className: 'navItem navSlack',
         },
         {
           href: 'https://twitter.com/objectiv_io',

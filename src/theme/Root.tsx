@@ -1,6 +1,5 @@
-import { useRouteMatch } from "@docusaurus/router";
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getOrMakeTracker, getTrackerRepository, setDefaultTracker, windowExists } from "@objectiv/tracker-browser";
+import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
 import React, { useEffect, useState } from 'react';
 
 declare namespace cookiebot {
@@ -35,8 +34,7 @@ const cookiebotConsentStatistics = (): boolean => {
 function Root({children}) {
   const [cookiebotStatisticsConsent, setCookiebotStatisticsConsent] = useState<boolean>(cookiebotConsentStatistics());
   const { siteConfig } = useDocusaurusContext();
-  const { trackerApplicationId, trackerDocsApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
-  const isDocs = useRouteMatch("/docs/") !== null;
+  const { trackerApplicationId, trackerEndPoint, trackerConsoleEnabled } = siteConfig?.customFields ?? {};
 
   // Listen for 'CookiebotOnAccept' and if `Cookiebot.consent.statistics` changed, update state
   registerCookiebotEventListeners(function () {
@@ -61,14 +59,6 @@ function Root({children}) {
           active: cookiebotStatisticsConsent,
         });
       }
-
-      if (trackerDocsApplicationId) {
-        getOrMakeTracker({
-          applicationId: trackerDocsApplicationId as string,
-          ...trackerOptions,
-          active: cookiebotStatisticsConsent,
-        });
-      }
     }
   }
 
@@ -86,18 +76,6 @@ function Root({children}) {
       }
     },
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
-  )
-
-  // This Effect monitor the `isDocs` state and when it changes it switches the default Tracker instance
-  useEffect(
-    () => {
-      // Skip if we are in SSR
-      if (!windowExists()) {
-        return;
-      }
-      setDefaultTracker((!isDocs ? trackerApplicationId : trackerDocsApplicationId) as string);
-    },
-    [isDocs] // execute every time `isDocs` changes
   )
 
   return (

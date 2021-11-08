@@ -86,7 +86,7 @@ export default function AboutUs() {
 
       <AnnouncementBar
         title="We're Hiring!"
-        content="Join our mission crew as a Data Scientist / Engineer."
+        content="Join our mission crew as a Senior Software Engineer."
         ctaLink='/jobs'
         ctaText='Check the vacancy'
       />
@@ -104,7 +104,10 @@ export default function AboutUs() {
             About Objectiv and why we're here
           </h2>
           <p className={clsx('body-large')}>
-            Objectiv started as a product analytics suite for enterprise that ran on existing analytics data (from Google Analytics, Adobe Analytics, Mixpanel, etc.). We spent a significant amount of time cleaning and reorganizing that data to get it to a point where we could use it for modeling. The process was tedious and inefficient, so we started looking for better ways.
+            Objectiv started as a product analytics suite for enterprise that ran on existing analytics data 
+            (from Google Analytics, Adobe Analytics, Mixpanel, etc.). We spent a significant amount of time 
+            cleaning and reorganizing that data to get it to a point where we could use it for modeling. The 
+            process was tedious and inefficient, so we started looking for better ways.
           </p>
         </div>
       </header>
@@ -123,13 +126,20 @@ export default function AboutUs() {
               alt="Icon: raised hands" />
             <h2>It wasn't just us</h2>
             <p>
-              We asked around how fellow data scientists were handling this. Answers varied from ‘manually’ to ‘automated data ingestion pipelines with transformation workflows and automated testing’, but in all cases, significant data wrangling was involved and everyone had their own way of doing it.
+              We asked around how fellow data scientists were handling this. Answers varied from ‘manually’ 
+              to ‘automated data ingestion pipelines with transformation workflows and automated testing’, 
+              but in all cases, significant data wrangling was involved and everyone had their own way of 
+              doing it.
             </p>
             <p>
-              There is a big gap between what data scientists want their data to look like for modeling and what data actually looks like when it comes from the tracker. It often lacks the essential context and structure required for effective feature creation and validation is done at a stage where problems are hard to fix.
+              There is a big gap between what data scientists want their data to look like for modeling and 
+              what data actually looks like when it comes from the tracker. It often lacks the essential 
+              context and structure required for effective feature creation and validation is done at a stage 
+              where problems are hard to fix.
             </p>
             <p>
-              Perhaps even more importantly, there is no common way to collect &amp; model data. Data teams all have similar goals, but everyone builds their own taxonomies and models from scratch.
+              Perhaps even more importantly, there is no common way to collect &amp; model data. Data teams 
+              all have similar goals, but everyone builds their own taxonomies and models from scratch.
             </p>
           </div>
         </div>
@@ -144,13 +154,24 @@ export default function AboutUs() {
               alt="Icon: dancing astronaut" />
             <h2>We decided to take it on</h2>
             <p>
-              We ultimately didn't succeed in significantly reducing data wrangling time with existing tech and started thinking of building our own. It led to discussions about what the ultimate workflow of data scientists would look like. Many of these discussions revolved around the concept of a common taxonomy for analytics.
+              We ultimately didn't succeed in significantly reducing data wrangling time with existing tech 
+              and started thinking of building our own. It led to discussions about what the ultimate 
+              workflow of data scientists would look like. Many of these discussions revolved around the 
+              concept of a common taxonomy for analytics.
             </p>
             <p>
-              We think data scientists could be much more efficient if there was a shared way to collect, structure and label data. No longer would you have to define your taxonomies and models from scratch; you could take what others have already made and build on that. You could jump into other data projects and understand how the data was collected and what it means. You could get to modeling quicker because the data has been validated at tracker level and collected with modeling in mind.
+              We think data scientists could be much more efficient if there was a shared way to collect, 
+              structure and label data. No longer would you have to define your taxonomies and models from 
+              scratch; you could take what others have already made and build on that. You could jump into 
+              other data projects and understand how the data was collected and what it means. You could get 
+              to modeling quicker because the data has been validated at tracker level and collected with 
+              modeling in mind.
             </p>
             <p>
-              Establishing such a common taxonomy isn't trivial. Requirements vary and widespread adoption is critical for success. Since early 2021, our team has worked tirelessly on what we think could be the foundation of an open standard taxonomy for analytics, along with the required tools to enable data scientists to use it effectively.
+              Establishing such a common taxonomy isn't trivial. Requirements vary and widespread adoption is 
+              critical for success. Since early 2021, our team has worked tirelessly on what we think could 
+              be the foundation of an open standard taxonomy for analytics, along with the required tools to 
+              enable data scientists to use it effectively.
             </p>
           </div>
         </div>
@@ -170,7 +191,9 @@ export default function AboutUs() {
               </div>
               <div>
                 <strong>We care about this space</strong><br />
-                We know this space well and have grown to care about it after building analytics tools for over a decade. We've experienced its problems first hand and have a personal incentive to fix them.
+                We know this space well and have grown to care about it after building analytics tools for 
+                over a decade. We've experienced its problems first hand and have a personal incentive to 
+                fix them.
               </div>
             </div>
             <div className={clsx(styles.whyUsReason)}>
@@ -181,7 +204,18 @@ export default function AboutUs() {
               </div>
               <div>
                 <strong>We have the right backing</strong><br />
-                We're backed by Fly Ventures and LocalGlobe. They share our vision on the future of data science and have the right experience &amp; network to help us execute our mission.
+                We're backed by&nbsp;
+                <Link 
+                  to="https://www.fly.vc/"
+                  {...tagLink({ id: 'vc-fly', text: 'Fly Ventures', href: 'https://www.fly.vc/' })}>
+                  Fly Ventures
+                </Link> &amp;&nbsp; 
+                <Link 
+                  to="https://localglobe.vc/"
+                  {...tagLink({ id: 'vc-localglobe', text: 'LocalGlobe', href: 'https://localglobe.vc/' })}>
+                  LocalGlobe
+                </Link>. They share our vision on the future of data science and have the right 
+                experience &amp; network to help us execute our mission.
               </div>
             </div>
             <div className={clsx(styles.whyUsReason)}>
@@ -192,7 +226,9 @@ export default function AboutUs() {
               </div>
               <div>
                 <strong>The playbook already exists</strong><br />
-                Reusing parts of what others have already built is common practise amongst software engineers, enabling them to build quality software much faster. The same can also be applied to data science.
+                Reusing parts of what others have already built is common practise amongst software 
+                engineers, enabling them to build quality software much faster. The same can also be applied 
+                to data science.
               </div>
             </div>
 
@@ -200,7 +236,8 @@ export default function AboutUs() {
         </div>
 
         <div
-          className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, styles.aboutUsPageContributors)}
+          className={clsx(styles.aboutUsPageSection, styles.pageSectionYellow, 
+            styles.aboutUsPageContributors)}
           {...tagElement({id: 'core-team'})}
         >
           <div className={clsx("container", styles.contentContainer)}>
@@ -209,7 +246,8 @@ export default function AboutUs() {
               Meet the mission crew. Also,&nbsp;
               <Link
                 to="/jobs"
-                {...tagLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", href: '/jobs' })}
+                {...tagLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", 
+                href: '/jobs' })}
               >
                 we're hiring a Senior Data Engineer. Join us!
               </Link>
