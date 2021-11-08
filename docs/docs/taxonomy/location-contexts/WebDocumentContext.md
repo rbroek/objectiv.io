@@ -1,6 +1,6 @@
 # WebDocumentContext
 
-A [SectionContext](docs/taxonomy/location-contexts/SectionContext) that carries a path in the ```URL``` property, representing a high-level location in the application.
+A [SectionContext](/taxonomy/location-contexts/SectionContext.md) that carries a path in the ```URL``` property, representing a high-level location in the application.
 
 import Mermaid from '@theme/Mermaid';
 

@@ -2,11 +2,11 @@
 
 import Mermaid from '@theme/Mermaid';
 
-This is the abstract parent of all [Location Contexts](/docs/taxonomy/location-contexts). Location Contexts are used to populate a [Tracker's](/docs/tracking/core-concepts/trackers) or 
-[Event's](/docs/tracking/core-concepts/events) `location_stack` properties. A Location Stack is meant to describe accurately where an [Event](/docs/tracking/core-concepts/events) 
+This is the abstract parent of all [Location Contexts](/taxonomy/location-contexts/overview.md). Location Contexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 
+[Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is meant to describe accurately where an [Event](/tracking/core-concepts/events.md) 
 originated in the UI, e.g. Sections, Menus, etc.
 
-See [Location Contexts](/docs/taxonomy/location-contexts) for all Contexts that inherit from AbstractGlobalContext.
+See [Location Contexts](/taxonomy/location-contexts/overview.md) for all Contexts that inherit from AbstractGlobalContext.
 
 <Mermaid chart={`
 	graph LR

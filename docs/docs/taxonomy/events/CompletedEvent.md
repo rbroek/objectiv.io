@@ -1,6 +1,6 @@
 # CompletedEvent
 
-A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that is emitted when an action completes successfully, e.g. a form that is 
+A [NonInteractiveEvent](/taxonomy/events/NonInteractiveEvent.md) that is emitted when an action completes successfully, e.g. a form that is 
 posted.
 
 import Mermaid from '@theme/Mermaid';

@@ -1,6 +1,6 @@
 # SectionContext
 
-SectionContext is a special [LocationContext](/docs/taxonomy/location-contexts) representing a logical area of the UI or the system. It is used to build hierarchy and usually contains other [LocationContexts](/docs/taxonomy/location-contexts). [Events](/docs/taxonomy/events) typically target its children, not the SectionContext itself.
+SectionContext is a special [LocationContext](/taxonomy/location-contexts/overview.md) representing a logical area of the UI or the system. It is used to build hierarchy and usually contains other [LocationContexts](/taxonomy/location-contexts/overview.md). [Events](/taxonomy/events) typically target its children, not the SectionContext itself.
 
 import Mermaid from '@theme/Mermaid';
 

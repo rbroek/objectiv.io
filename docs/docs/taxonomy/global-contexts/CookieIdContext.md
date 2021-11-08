@@ -1,6 +1,6 @@
 # CookieIdContext
 
-A [GlobalContext](/docs/taxonomy/global-contexts) describing information needed to reconstruct a user session.
+A [GlobalContext](/taxonomy/global-contexts/overview.md) describing information needed to reconstruct a user session.
 
 import Mermaid from '@theme/Mermaid';
 

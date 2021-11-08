@@ -1,6 +1,6 @@
 # DeviceContext
 
-A [GlobalContext](/docs/taxonomy/global-contexts) describing meta information about the device that emitted the event.
+A [GlobalContext](/taxonomy/global-contexts/overview.md) describing meta information about the device that emitted the event.
 
 import Mermaid from '@theme/Mermaid';
 

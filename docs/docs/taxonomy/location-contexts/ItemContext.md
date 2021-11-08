@@ -1,6 +1,6 @@
 # ItemContext
 
-A special [LocationContext](/docs/taxonomy/location-contexts) that represents an interactive element of the UI or a target in a system. These elements may trigger both [Interactive](/docs/taxonomy/events/InteractiveEvent) and [Non-Interactive Events](/docs/taxonomy/events/NonInteractiveEvent), e.g. an Input field or a Button.
+A special [LocationContext](/taxonomy/location-contexts/overview.md) that represents an interactive element of the UI or a target in a system. These elements may trigger both [Interactive](/taxonomy/events/InteractiveEvent) and [Non-Interactive Events](/taxonomy/events/NonInteractiveEvent.md), e.g. an Input field or a Button.
 
 
 

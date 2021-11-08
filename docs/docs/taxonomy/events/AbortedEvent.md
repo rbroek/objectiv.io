@@ -1,6 +1,6 @@
 # AbortedEvent
 
-A [NonInteractiveEvent](/docs/taxonomy/events/NonInteractiveEvent) that is emitted when an action fails or is aborted, e.g. a form that is 
+A [NonInteractiveEvent](/taxonomy/events/NonInteractiveEvent.md) that is emitted when an action fails or is aborted, e.g. a form that is 
 posted, but not successfully.
 
 import Mermaid from '@theme/Mermaid';
@@ -14,4 +14,4 @@ import Mermaid from '@theme/Mermaid';
 `} caption="Figure: Diagram of NonInteractiveEvent inheritance" baseColor="blue" />
 
 ### Requires
-- [ErrorContext](/docs/taxonomy/global-contexts/ErrorContext).
+- [ErrorContext](/taxonomy/global-contexts/ErrorContext.md).

@@ -1,6 +1,6 @@
 # LinkContext
 
-An [ActionContext](/docs/taxonomy/location-contexts/ActionContext) that describes an interactive element that represents a (hyper)link.
+An [ActionContext](/taxonomy/location-contexts/ActionContext) that describes an interactive element that represents a (hyper)link.
 
 import Mermaid from '@theme/Mermaid';
 
