@@ -189,6 +189,7 @@ const SphinxPage = (props) => {
                         }
                     })
 
+                    // Apply attributes manually (Idea to make this in a new API for WP or other old school websites?)
                     for (let [key, value] of Object.entries<string>(playgroundLinkTag)) {
                         playgroundLinkElement.setAttribute(key, value);
                     }
