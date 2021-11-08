@@ -6,6 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:docs": "cd docs && docusaurus start",
+    "tsc": "tsc && (cd docs && tsc)",
     "build": "docusaurus clear && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
