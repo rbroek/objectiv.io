@@ -274,9 +274,6 @@ Sometimes we can also leverage 3rd party event callbacks, like so:
 In the example above the Accordion API has a `onChange` event handler triggered whenever the Accordion changes state.   
 We can directly hook that information into our event tracking.
 
-### Tracking from a parent Element
-[placeholder: tagChildren]
-
 :::info Why not just wrapping components?
 Many of the issues above may be solved by just wrapping the problematic components in some extra HTML element.
 
