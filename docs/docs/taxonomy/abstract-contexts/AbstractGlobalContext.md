@@ -2,10 +2,10 @@
 
 import Mermaid from '@theme/Mermaid';
 
-This is the abstract parent of all [Global Contexts](/docs/taxonomy/global-contexts). Global Contexts are used to populate [Trackers](/docs/tracking/core-concepts/trackers) or [Events](/docs/tracking/core-concepts/events) with `global_contexts` properties. They carry 
+This is the abstract parent of all [Global Contexts](/taxonomy/global-contexts/overview.md). Global Contexts are used to populate [Trackers](/tracking/core-concepts/trackers.md) or [Events](/tracking/core-concepts/events.md) with `global_contexts` properties. They carry 
 information that is not related to where the Event originated, such as device, platform or business data.
 
-See [Global Contexts](/docs/taxonomy/global-contexts) for all Contexts that inherit from AbstractGlobalContext.
+See [Global Contexts](/taxonomy/global-contexts/overview.md) for all Contexts that inherit from AbstractGlobalContext.
 
 <Mermaid chart={`
 	graph LR

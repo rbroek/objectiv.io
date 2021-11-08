@@ -1,6 +1,6 @@
 # VideoLoadEvent
 
-A [VideoEvent](/docs/taxonomy/events/VideoEvent) that's emitted after a video completes loading.
+A [VideoEvent](/taxonomy/events/VideoEvent) that's emitted after a video completes loading.
 
 import Mermaid from '@theme/Mermaid';
 

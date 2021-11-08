@@ -6,8 +6,8 @@ title: Overview
 
 import Mermaid from '@theme/Mermaid';
 
-Global contexts add global / general information about an [Event](/docs/tracking/core-concepts/events). They carry information that is not related 
-to where the [Event](/docs/tracking/core-concepts/events) originated (location), such as device, platform or business data.
+Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They carry information that is not related 
+to where the [Event](/tracking/core-concepts/events.md) originated (location), such as device, platform or business data.
 
 See the diagram below for the Global Contexts. Click each to learn more.
 

@@ -1,6 +1,6 @@
 # HttpContext
 
-A [GlobalContext](/docs/taxonomy/global-contexts) describing meta information about the agent that sent the event.
+A [GlobalContext](/taxonomy/global-contexts/overview.md) describing meta information about the agent that sent the event.
 
 import Mermaid from '@theme/Mermaid';
 

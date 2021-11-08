@@ -1,6 +1,6 @@
 # VideoPauseEvent
 
-A [VideoEvent](/docs/taxonomy/events/VideoEvent) that's emitted after a video pauses playback.
+A [VideoEvent](/taxonomy/events/VideoEvent) that's emitted after a video pauses playback.
 
 import Mermaid from '@theme/Mermaid';
 

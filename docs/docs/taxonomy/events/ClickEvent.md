@@ -1,6 +1,6 @@
 # ClickEvent
 
-An [InteractiveEvent](/docs/taxonomy/events/InteractiveEvents) that's triggered by a user clicking on an element.
+An [InteractiveEvent](/taxonomy/events/InteractiveEvent.md that's triggered by a user clicking on an element.
 
 import Mermaid from '@theme/Mermaid';
 

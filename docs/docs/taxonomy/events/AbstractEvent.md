@@ -1,12 +1,12 @@
 # AbstractEvent
 
-This is the abstract parent of all [Events](/docs/taxonomy/events).
+This is the abstract parent of all [Events](/taxonomy/events).
 
 ### Parents
 None (root event).
 
 ### Requires
-- [ApplicationContext](/docs/taxonomy/global-contexts/ApplicationContext).
+- [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md).
 
 ### Properties
 |                | type        | description    | contains

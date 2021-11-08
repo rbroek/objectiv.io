@@ -1,6 +1,6 @@
 # InputChangeEvent
 
-An [InteractiveEvent](/docs/taxonomy/events/InteractiveEvents) that's triggered when user input is modified.
+An [InteractiveEvent](/taxonomy/events/InteractiveEvent.md that's triggered when user input is modified.
 
 import Mermaid from '@theme/Mermaid';
 

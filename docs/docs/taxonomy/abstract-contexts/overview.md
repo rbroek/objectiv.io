@@ -5,7 +5,7 @@ title: Overview
 
 import Mermaid from '@theme/Mermaid';
 
-AbstractContexts define either properties required by [Collectors](/docs/tracking/core-concepts/collector) or internal ones, ensuring hierarchical 
+AbstractContexts define either properties required by [Collectors](/tracking/core-concepts/collector.md) or internal ones, ensuring hierarchical 
 uniqueness.
 
 <!--- (what is meant by internal ones? custom defined properties?) -->

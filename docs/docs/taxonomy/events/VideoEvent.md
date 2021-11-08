@@ -1,6 +1,6 @@
 # VideoEvent
 
-The parent of [non-interactive events](/docs/taxonomy/events/NonInteractiveEvent) that are triggered by a video player. It requires a [MediaPlayerContext](/docs/taxonomy/location-contexts/MediaPlayerContext) to detail the origin of the event.
+The parent of [non-interactive events](/taxonomy/events/NonInteractiveEvent.md) that are triggered by a video player. It requires a [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext) to detail the origin of the event.
 
 import Mermaid from '@theme/Mermaid';
 

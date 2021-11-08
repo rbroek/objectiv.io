@@ -99,11 +99,11 @@ const config = {
             items: [
               {
                 label: 'Privacy Policy',
-                to: '/privacy/',
+                to: 'https://objectiv.io/privacy/',
               },
               {
                 label: 'Cookies',
-                to: '/privacy/cookies',
+                to: 'https://objectiv.io/privacy/cookies',
               },
             ],
           },

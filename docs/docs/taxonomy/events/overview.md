@@ -8,7 +8,7 @@ sidebar_label: Overview
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Mermaid from '@theme/Mermaid';
 
-Events must provide an `id` and optionally can, but most likely will, carry a list of [LocationContexts](/docs/taxonomy/location-contexts) and [GlobalContexts](/docs/taxonomy/global-contexts). Additionally, every event must have an [ApplicationContext](/docs/taxonomy/global-contexts/ApplicationContext) to be able to distinguish from what 
+Events must provide an `id` and optionally can, but most likely will, carry a list of [LocationContexts](/taxonomy/location-contexts/overview.md) and [GlobalContexts](/taxonomy/global-contexts/overview.md). Additionally, every event must have an [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md) to be able to distinguish from what 
 application the event originated.
 
 <Mermaid chart={`

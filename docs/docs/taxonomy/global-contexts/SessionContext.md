@@ -1,6 +1,6 @@
 # SessionContext
 
-A [GlobalContext](/docs/taxonomy/global-contexts) describing meta information about the current session.
+A [GlobalContext](/taxonomy/global-contexts/overview.md) describing meta information about the current session.
 
 import Mermaid from '@theme/Mermaid';
 

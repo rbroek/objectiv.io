@@ -1,7 +1,7 @@
 # ActionContext
 
-An [ItemContext](/docs/taxonomy/location-contexts/ItemContext) describes an actionable item. 
-It represents an interactive element that will trigger an [Interactive Event](/docs/taxonomy/events/InteractiveEvent), e.g. a Button or a Link.
+An [ItemContext](/taxonomy/location-contexts/ItemContext) describes an actionable item. 
+It represents an interactive element that will trigger an [Interactive Event](/taxonomy/events/InteractiveEvent), e.g. a Button or a Link.
 
 import Mermaid from '@theme/Mermaid';
 

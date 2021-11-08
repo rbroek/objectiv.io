@@ -1,6 +1,6 @@
 # ButtonContext
 
-An [ActionContext](/docs/taxonomy/location-contexts/ActionContext) that describes an interactive element that represents a button.
+An [ActionContext](/taxonomy/location-contexts/ActionContext) that describes an interactive element that represents a button.
 
 import Mermaid from '@theme/Mermaid';
 

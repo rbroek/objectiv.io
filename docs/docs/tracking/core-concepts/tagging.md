@@ -45,13 +45,15 @@ A **tagging** example in React:
 </a>
 ```
 
-When the Tracker wants to send an [Event](events) related to an Element (e.g. a click), it uses its decorated 
-[TaggingAttributes](/tracking/api-reference/definitions/TaggingAttribute.md) to compose the Event.
+When the Tracker wants to send an [Event](/tracking/core-concepts/events.md) related to an Element (e.g. a 
+click), it uses its decorated [TaggingAttributes](/tracking/api-reference/definitions/TaggingAttribute.md) to 
+compose the Event.
 
 ## Tagged Elements
 These are **Taggable Elements** that have been already decorated by the Objectiv Tracker with at least the 
 `elementId` and `context` [TaggingAttributes](/tracking/api-reference/definitions/TaggingAttribute.md). The 
-Tagging Attributes supply the Tracker with the information needed to compose & send the right [Events](events).
+Tagging Attributes supply the Tracker with the information needed to compose & send the right 
+[Events](/tracking/core-concepts/events.md).
 
 ## Children Tagging Elements
 These are **Taggable Elements** that have been already decorated with the 

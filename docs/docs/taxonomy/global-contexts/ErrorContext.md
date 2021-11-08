@@ -1,6 +1,6 @@
 # ErrorContext
 
-A [GlobalContext](/docs/taxonomy/global-contexts) to encapsulate errors.
+A [GlobalContext](/taxonomy/global-contexts/overview.md) to encapsulate errors.
 
 import Mermaid from '@theme/Mermaid';
 
