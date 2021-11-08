@@ -1,5 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv/tracker-browser";
+import useScrollToAnchor from "../components/scroll-to-anchor/scrollToAnchor";
 import React, { useEffect, useState, useLayoutEffect } from 'react';
 
 declare namespace cookiebot {
@@ -78,19 +79,7 @@ function Root({children}) {
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
   )
 
-  // Scroll to the right anchor if it's in the URL
-  useLayoutEffect ( () => {
-    const location = window.location;
-    // the id of the element is the part after # in the url
-    const id = location.toString().split('#')[1];
-
-    const element = document.getElementById(id);
-
-    // if we can find the element, try to scroll to it
-    if (element) {
-        element.scrollIntoView();
-    }
-  });  
+  useScrollToAnchor();
 
   return (
     <>
