@@ -1,3 +1,4 @@
+import { tagLink } from "@objectiv-analytics/tracker-browser";
 import React, { useEffect, useState } from 'react';
 import { scrollToAnchor } from "../scroll-to-anchor/scrollToAnchor";
 
@@ -173,6 +174,25 @@ const SphinxPage = (props) => {
                     const old = codeBlockContainer.className;
                     codeBlockContainer.className = old + " codeBlockContent_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module python";
                 });
+
+                // tag dynamically created playground link, if present
+                const playgroundLinkElement = tempDiv.querySelector('a[href="https://notebook.objectiv.io/"]');
+                if (playgroundLinkElement) {
+                    const playgroundLinkTag = tagLink({
+                        id: 'notebook-product-analytics',
+                        href: 'https://notebook.objectiv.io/',
+                        text: 'sandboxed notebook',
+                        options: {
+                            trackClicks: {
+                                waitUntilTracked: true
+                            }
+                        }
+                    })
+
+                    for (let [key, value] of Object.entries<string>(playgroundLinkTag)) {
+                        playgroundLinkElement.setAttribute(key, value);
+                    }
+                }
 
                 const data = tempDiv.innerHTML;
                 setData(data)
