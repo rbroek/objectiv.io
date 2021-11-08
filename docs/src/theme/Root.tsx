@@ -1,5 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { getOrMakeTracker, getTrackerRepository, windowExists } from "@objectiv-analytics/tracker-browser";
+import { getOrMakeTracker, getTrackerRepository, getLocationHref, windowExists } from "@objectiv-analytics/tracker-browser";
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { scrollToAnchor } from '../components/scroll-to-anchor/scrollToAnchor';
 
@@ -79,10 +79,14 @@ function Root({children}) {
     [cookiebotStatisticsConsent] // execute every time `cookiebotStatisticsConsent` changes
   )
 
-  // Skip if we are in SSR
-  if (windowExists()) {
-    useLayoutEffect(scrollToAnchor, [location.href]);
-  }
+  // Ignore if we are in SSR
+  const locationHref = getLocationHref();
+  useLayoutEffect(() => {
+    if (!locationHref) {
+      return;
+    }
+    scrollToAnchor();
+  }, [locationHref]);
 
   return (
     <>
