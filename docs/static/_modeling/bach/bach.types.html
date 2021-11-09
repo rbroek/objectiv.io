@@ -1,0 +1,133 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-bach.types">
+<span id="bach-types"></span><h1>bach.types<a class="headerlink" href="#module-bach.types" title="Permalink to this headline">¶</a></h1>
+<p>Functions for looking up the right classes to handle types and values, and for registering new custom
+types.</p>
+<p>To prevent cyclic imports, the functions in this file should not be used by dataframe.py before the file
+is fully initialized (that is, only use within functions).</p>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.types.get_dtype_from_db_dtype" title="bach.types.get_dtype_from_db_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dtype_from_db_dtype</span></code></a>(db_dtype)</p></td>
+<td><p>Given a database datatype, return the dtype of the Series subclass for that datatype.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.types.get_series_type_from_db_dtype" title="bach.types.get_series_type_from_db_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_series_type_from_db_dtype</span></code></a>(db_dtype)</p></td>
+<td><p>Given a database datatype, return the correct Series subclass.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.types.get_series_type_from_dtype" title="bach.types.get_series_type_from_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_series_type_from_dtype</span></code></a>(dtype)</p></td>
+<td><p>Given a dtype, return the correct Series subclass.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.types.register_dtype" title="bach.types.register_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_dtype</span></code></a>([value_types, ...])</p></td>
+<td><p>Decorator to register a Series subclass as dtype series :value_types: List of Types for which values should be instantiated as the registered class :override_registerd_types: If False an Exception is raised if the class' dtype or db_dtype conflict     with existing registerd types or if one of the value_types are already coupled. If True this new     registration will override the existing one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.types.value_to_dtype" title="bach.types.value_to_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_to_dtype</span></code></a>(value)</p></td>
+<td><p>Give the dtype, as a string of the given value.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.types.TypeRegistry" title="bach.types.TypeRegistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeRegistry</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.types.TypeRegistry">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.types.</span></span><span class="sig-name descname"><span class="pre">TypeRegistry</span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L64-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.TypeRegistry" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="bach.types.TypeRegistry.get_series_type_from_db_dtype">
+<span class="sig-name descname"><span class="pre">get_series_type_from_db_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L183-L191"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.TypeRegistry.get_series_type_from_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a db_dtype string, will return the correct Series object to represent such data from the
+database..</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.types.TypeRegistry.get_series_type_from_dtype">
+<span class="sig-name descname"><span class="pre">get_series_type_from_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L174-L181"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.TypeRegistry.get_series_type_from_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dtype string, will return the correct Series object to represent such data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.types.TypeRegistry.register_dtype_series">
+<span class="sig-name descname"><span class="pre">register_dtype_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_registered_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L160-L172"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.TypeRegistry.register_dtype_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a Series sub-class to this registry.
+Will register the given series_type as the default type for its dtype and db_dtype</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.types.TypeRegistry.value_to_dtype">
+<span class="sig-name descname"><span class="pre">value_to_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L193-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.TypeRegistry.value_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a python value, return the dtype string of the Series that’s registered as the default
+for the type of value.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bach.types.get_dtype_from_db_dtype">
+<span class="sig-prename descclassname"><span class="pre">bach.types.</span></span><span class="sig-name descname"><span class="pre">get_dtype_from_db_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L30-L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.get_dtype_from_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a database datatype, return the dtype of the Series subclass for that datatype.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bach.types.get_series_type_from_db_dtype">
+<span class="sig-prename descclassname"><span class="pre">bach.types.</span></span><span class="sig-name descname"><span class="pre">get_series_type_from_db_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L25-L27"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.get_series_type_from_db_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a database datatype, return the correct Series subclass.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bach.types.get_series_type_from_dtype">
+<span class="sig-prename descclassname"><span class="pre">bach.types.</span></span><span class="sig-name descname"><span class="pre">get_series_type_from_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L20-L22"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.get_series_type_from_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a dtype, return the correct Series subclass.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bach.types.register_dtype">
+<span class="sig-prename descclassname"><span class="pre">bach.types.</span></span><span class="sig-name descname"><span class="pre">register_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">override_registered_types</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L45-L61"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.register_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to register a Series subclass as dtype series
+:value_types: List of Types for which values should be instantiated as the registered class
+:override_registerd_types: If False an Exception is raised if the class’ dtype or db_dtype conflict</p>
+<blockquote>
+<div><p>with existing registerd types or if one of the value_types are already coupled. If True this new
+registration will override the existing one.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bach.types.value_to_dtype">
+<span class="sig-prename descclassname"><span class="pre">bach.types.</span></span><span class="sig-name descname"><span class="pre">value_to_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/types.py#L35-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.types.value_to_dtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the dtype, as a string of the given value.</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>

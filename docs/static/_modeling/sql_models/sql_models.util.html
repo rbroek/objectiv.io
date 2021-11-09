@@ -1,0 +1,91 @@
+
+
+
+
+    <div class="container-xl">
+      <div class="row">
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-sql_models.util">
+<span id="sql-models-util"></span><h1>sql_models.util<a class="headerlink" href="#module-sql_models.util" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.util.extract_format_fields" title="sql_models.util.extract_format_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_format_fields</span></code></a>(format_string[, nested])</p></td>
+<td><p>Given a python format string, return a set with all field names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sql_models.util.quote_identifier" title="sql_models.util.quote_identifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quote_identifier</span></code></a>(name)</p></td>
+<td><p>Add quotes around an identifier (e.g.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sql_models.util.quote_string" title="sql_models.util.quote_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quote_string</span></code></a>(value)</p></td>
+<td><p>Add single quotes around the value and escape any quotes in the value.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.util.extract_format_fields">
+<span class="sig-prename descclassname"><span class="pre">sql_models.util.</span></span><span class="sig-name descname"><span class="pre">extract_format_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/sql_models/util.py#L8-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.util.extract_format_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a python format string, return a set with all field names.</p>
+<dl class="simple">
+<dt>If nested is set, it will do x rounds of:</dt><dd><ol class="arabic simple">
+<li><p>find field names in input string</p></li>
+<li><p>fill out values for field names. Use this as input string for step 1.</p></li>
+</ol>
+</dd>
+<dt>Examples:</dt><dd><p>extract_format_fields(‘{x} {{y}} {{{{z}}}} {a}’, 1) == {‘x’, ‘a’}
+extract_format_fields(‘{x} {{y}} {{{{z}}}} {a}’, 2) == {‘y’}
+extract_format_fields(‘{x} {{y}} {{{{z}}}} {a}’, 3) == {‘z’}
+extract_format_fields(‘{x} {{y}} {{{{z}}}}’, 3)     == {‘z’}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.util.quote_identifier">
+<span class="sig-prename descclassname"><span class="pre">sql_models.util.</span></span><span class="sig-name descname"><span class="pre">quote_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/sql_models/util.py#L36-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.util.quote_identifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add quotes around an identifier (e.g. a table or column name), and escape special characters in the name.</p>
+<p>This is in accordance with the Postgres string notation format, no guarantees for other databses.
+See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS">https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS</a></p>
+<p>Examples:
+&gt;&gt;&gt; quote_identifier(‘test’)
+‘“test”’
+&gt;&gt;&gt; quote_identifier(‘te”st’)
+‘“te””st”’
+&gt;&gt;&gt; quote_identifier(‘“te””st”’)
+‘”””te””””st”””’</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sql_models.util.quote_string">
+<span class="sig-prename descclassname"><span class="pre">sql_models.util.</span></span><span class="sig-name descname"><span class="pre">quote_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/sql_models/util.py#L55-L71"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sql_models.util.quote_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add single quotes around the value and escape any quotes in the value.</p>
+<p>This is in accordance with the Postgres string notation format, no guarantees for other databses.
+See <a class="reference external" href="https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS">https://www.postgresql.org/docs/14/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS</a></p>
+<p>Examples:
+&gt;&gt;&gt; quote_string(“test”)
+“‘test’”
+&gt;&gt;&gt; quote_string(“te’st”)
+“‘te’’st’”
+&gt;&gt;&gt; quote_string(“‘te’’st’”)
+“’’’te’’’’st’’’”</p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+          
+
+      </div>
+    </div>
