@@ -14,14 +14,14 @@ const config = {
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
   url: 'https://objectiv.io/',
-  baseUrl: '/',
+  baseUrl: (environment==='production') ? '/docs/' : '/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: true,
+  trailingSlash: false,
 
   presets: [
     [
