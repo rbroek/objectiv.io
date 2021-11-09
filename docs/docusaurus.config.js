@@ -14,14 +14,14 @@ const config = {
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
   url: 'https://objectiv.io/',
-  baseUrl: '/',
+  baseUrl: (environment==='prod') ? '/docs/' : '/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: true,
+  trailingSlash: false,
 
   presets: [
     [
@@ -79,15 +79,15 @@ const config = {
         items: [
           {
             label: 'Tracking',
-            to: '/tracking',
+            to: '/tracking//',
           },
           {
             label: 'Modeling',
-            to: '/modeling',
+            to: '/modeling//',
           },
           {
             label: 'Taxonomy',
-            to: '/taxonomy',
+            to: '/taxonomy//',
           }
         ],
       },
@@ -122,3 +122,4 @@ const config = {
 module.exports = config;
 
 console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("USING BASEURL:", config.baseUrl);
