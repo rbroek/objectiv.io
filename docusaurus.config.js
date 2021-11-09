@@ -18,7 +18,7 @@ const config = {
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: true,
+  trailingSlash: false,
 
   presets: [
     [
