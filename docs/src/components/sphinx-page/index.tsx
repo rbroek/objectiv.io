@@ -176,7 +176,7 @@ const SphinxPage = (props) => {
                 });
 
                 // tag dynamically created playground link, if present
-                const playgroundLinkElement = tempDiv.querySelector('a[href="https://notebook.objectiv.io/"]');
+                const playgroundLinkElement = tempDiv.querySelector('a[href^="https://notebook.objectiv.io/"]');
                 if (playgroundLinkElement) {
                     const playgroundLinkTag = tagLink({
                         id: 'notebook-product-analytics',
