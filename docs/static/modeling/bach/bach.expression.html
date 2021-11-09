@@ -14,18 +14,6 @@
                 
   <section id="module-bach.expression">
 <span id="bach-expression"></span><h1>bach.expression<a class="headerlink" href="#module-bach.expression" title="Permalink to this headline">¶</a></h1>
-<p class="rubric">Functions</p>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.expression_to_sql" title="bach.expression.expression_to_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expression_to_sql</span></code></a>(expression)</p></td>
-<td><p>Compile the expression to a SQL fragment.</p></td>
-</tr>
-</tbody>
-</table>
 <p class="rubric">Classes</p>
 <table class="longtable table autosummary">
 <colgroup>
@@ -33,57 +21,56 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.ColumnReferenceToken" title="bach.expression.ColumnReferenceToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColumnReferenceToken</span></code></a>(column_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.AggregateFunctionExpression" title="bach.expression.AggregateFunctionExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AggregateFunctionExpression</span></code></a>([data])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Expression</span></code></a>(data)</p></td>
-<td><p>An Expression object represents a fragment of SQL as a series of sql-tokens.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.ColumnReferenceToken" title="bach.expression.ColumnReferenceToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ColumnReferenceToken</span></code></a>(column_name)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.ConstValueExpression" title="bach.expression.ConstValueExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConstValueExpression</span></code></a>([data])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Expression</span></code></a>([data])</p></td>
+<td><p>Immutable object representing a fragment of SQL as a sequence of sql-tokens or Expressions.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExpressionToken</span></code></a>()</p></td>
 <td><p>Abstract base class of ExpressionTokens</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.ModelReferenceToken" title="bach.expression.ModelReferenceToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelReferenceToken</span></code></a>(model)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.IndependentSubqueryExpression" title="bach.expression.IndependentSubqueryExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IndependentSubqueryExpression</span></code></a>([data])</p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.ModelReferenceToken" title="bach.expression.ModelReferenceToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModelReferenceToken</span></code></a>(model)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.NonAtomicExpression" title="bach.expression.NonAtomicExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NonAtomicExpression</span></code></a>([data])</p></td>
+<td><p>An expression that needs '( .</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.RawToken" title="bach.expression.RawToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RawToken</span></code></a>(raw)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.StringValueToken" title="bach.expression.StringValueToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringValueToken</span></code></a>(value)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.SingleValueExpression" title="bach.expression.SingleValueExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SingleValueExpression</span></code></a>([data])</p></td>
+<td><p>An Expression that is expected to return just one value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bach.expression.StringValueToken" title="bach.expression.StringValueToken"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringValueToken</span></code></a>(value)</p></td>
 <td><p>Wraps a string value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bach.expression.WindowedAggregateFunctionExpression" title="bach.expression.WindowedAggregateFunctionExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WindowedAggregateFunctionExpression</span></code></a>([data])</p></td>
+<td><p>A WindowedAggregateFunctionExpression contains an aggregation- or window function, and a window clause: e.g.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
-<dt class="sig sig-object py" id="bach.expression.ColumnReferenceToken">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ColumnReferenceToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L31-L32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ColumnReferenceToken" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py attribute">
-<dt class="sig sig-object py" id="bach.expression.ColumnReferenceToken.column_name">
-<span class="sig-name descname"><span class="pre">column_name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.expression.ColumnReferenceToken.column_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="bach.expression.Expression">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data:</span> <span class="pre">List[bach.expression.ExpressionToken]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L50-L140"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression" title="Permalink to this definition">¶</a></dt>
-<dd><p>An Expression object represents a fragment of SQL as a series of sql-tokens.</p>
-<p>Expressions can easily be converted to a string with actual sql using the to_sql() function. Storing a
-sql-expression using this class, rather than storing it directly as a string, makes it possible to
-for example substitute the table-name after constructing the expression.
-Additionally this move this burden of correctly quoting and escaping string literals to this class, if
-literals are expressed with the correct tokens at least.
-In the future we might add support for more literal types.</p>
-<p>This class does not offer full-tokenization of sql. There are only a limited number of tokens for the
-needed use-cases. Most sql is simply encoded as a ‘raw’ token.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="bach.expression.Expression.column_reference">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L110-L113"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">AggregateFunctionExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L280-L286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.column_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="bach.expression.Expression.construct">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L66-L95"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.construct" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.construct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an Expression using a format string that can refer existing expressions.
 Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
 they are given). All other parts of fmt will be converted to RawTokens.</p>
@@ -100,58 +87,470 @@ occurrences in fmt.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py attribute">
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.get_references">
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.get_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.model_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.model_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for model, where model is a reference to a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single RawToken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.resolve_column_references">
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve the table name aliases for all columns in this expression</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.string_value">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.string_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single StringValueToken with the value.
+:param value: unquoted, unescaped string value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.AggregateFunctionExpression.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.AggregateFunctionExpression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
+<p>:return SQL representation of the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.ColumnReferenceToken">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ColumnReferenceToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L38-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ColumnReferenceToken" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="bach.expression.ColumnReferenceToken.column_name">
+<span class="sig-name descname"><span class="pre">column_name</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.expression.ColumnReferenceToken.column_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ColumnReferenceToken.resolve">
+<span class="sig-name descname"><span class="pre">resolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.RawToken" title="bach.expression.RawToken"><span class="pre">bach.expression.RawToken</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L45-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ColumnReferenceToken.resolve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ColumnReferenceToken.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L41-L43"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ColumnReferenceToken.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ConstValueExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L276-L277"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an Expression using a format string that can refer existing expressions.
+Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
+they are given). All other parts of fmt will be converted to RawTokens.</p>
+<p>As a convenience, instead of Expressions it is also possible to give Series as args, in that
+case the series’s expression is taken as Expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fmt</strong> – format string</p></li>
+<li><p><strong>args</strong> – 0 or more Expressions or Series. Number of args must exactly match number of <cite>{}</cite>
+occurrences in fmt.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.ConstValueExpression.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.get_references">
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.get_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.ConstValueExpression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.ConstValueExpression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.ConstValueExpression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.ConstValueExpression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.ConstValueExpression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.model_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.model_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for model, where model is a reference to a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single RawToken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.resolve_column_references">
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve the table name aliases for all columns in this expression</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.string_value">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.string_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single StringValueToken with the value.
+:param value: unquoted, unescaped string value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ConstValueExpression.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ConstValueExpression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
+<p>:return SQL representation of the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.Expression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L70-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Immutable object representing a fragment of SQL as a sequence of sql-tokens or Expressions.</p>
+<p>Expressions can easily be converted to a string with actual sql using the to_sql() function. Storing a
+sql-expression using this class, rather than storing it directly as a string, makes it possible to
+for example substitute the table-name after constructing the expression.
+Additionally this move this burden of correctly quoting and escaping string literals to this class, if
+literals are expressed with the correct tokens at least.
+In the future we might add support for more literal types.</p>
+<p>This class does not offer full-tokenization of sql. There are only a limited number of tokens for the
+needed use-cases. Most sql is simply encoded as a ‘raw’ token.</p>
+<p>For special type Expressions, this class is subclassed to assign special properties to a subexpression.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.Expression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.Expression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an Expression using a format string that can refer existing expressions.
+Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
+they are given). All other parts of fmt will be converted to RawTokens.</p>
+<p>As a convenience, instead of Expressions it is also possible to give Series as args, in that
+case the series’s expression is taken as Expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fmt</strong> – format string</p></li>
+<li><p><strong>args</strong> – 0 or more Expressions or Series. Number of args must exactly match number of <cite>{}</cite>
+occurrences in fmt.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="bach.expression.Expression.data">
-<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.Expression.data" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.Expression.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.Expression.get_references">
-<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L131-L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.get_references" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.get_references" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.Expression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.Expression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.Expression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.Expression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.Expression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.Expression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.Expression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.Expression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.Expression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.Expression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.Expression.model_reference">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L115-L118"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.model_reference" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.model_reference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an expression for model, where model is a reference to a model.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.Expression.raw">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L97-L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.raw" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an expression that contains a single RawToken.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.Expression.resolve_column_references">
-<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L120-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
 <dd><p>resolve the table name aliases for all columns in this expression</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.Expression.string_value">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L102-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.string_value" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.string_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an expression that contains a single StringValueToken with the value.
 :param value: unquoted, unescaped string value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.Expression.to_sql">
-<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L138-L140"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.to_sql" title="Permalink to this definition">¶</a></dt>
-<dd><p>Short cut for expression_to_sql(self, table_name).</p>
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.Expression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
+<p>:return SQL representation of the expression.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.expression.ExpressionToken">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ExpressionToken</span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L16-L22"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ExpressionToken" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ExpressionToken</span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L16-L26"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ExpressionToken" title="Permalink to this definition">¶</a></dt>
 <dd><p>Abstract base class of ExpressionTokens</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ExpressionToken.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L24-L26"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ExpressionToken.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">IndependentSubqueryExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L259-L260"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an Expression using a format string that can refer existing expressions.
+Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
+they are given). All other parts of fmt will be converted to RawTokens.</p>
+<p>As a convenience, instead of Expressions it is also possible to give Series as args, in that
+case the series’s expression is taken as Expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fmt</strong> – format string</p></li>
+<li><p><strong>args</strong> – 0 or more Expressions or Series. Number of args must exactly match number of <cite>{}</cite>
+occurrences in fmt.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.get_references">
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.get_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.model_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.model_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for model, where model is a reference to a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single RawToken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.resolve_column_references">
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve the table name aliases for all columns in this expression</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.string_value">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.string_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single StringValueToken with the value.
+:param value: unquoted, unescaped string value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.IndependentSubqueryExpression.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.IndependentSubqueryExpression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
+<p>:return SQL representation of the expression.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.expression.ModelReferenceToken">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ModelReferenceToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">sql_models.model.SqlModel[ForwardRef('BachSqlModel')]</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L36-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ModelReferenceToken" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">ModelReferenceToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">sql_models.model.SqlModel[ForwardRef('BachSqlModel')]</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L51-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ModelReferenceToken" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="bach.expression.ModelReferenceToken.model">
 <span class="sig-name descname"><span class="pre">model</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.ModelReferenceToken.model" title="Permalink to this definition">¶</a></dt>
@@ -159,25 +558,270 @@ occurrences in fmt.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.expression.ModelReferenceToken.refname">
-<span class="sig-name descname"><span class="pre">refname</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L39-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ModelReferenceToken.refname" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">refname</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L54-L55"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ModelReferenceToken.refname" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.ModelReferenceToken.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L57-L58"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.ModelReferenceToken.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">NonAtomicExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L249-L256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p>An expression that needs ‘( .. )’ around it when used together with other Expressions
+in Expression.construct(). This subclass is required, because not all Expressions need to be wrapped
+in parenthesis, e.g. <cite>expression</cite> <cite>&lt;</cite> <cite>ANY (subquery)</cite> should probably have <cite>expression</cite> wrapped if it’s
+a complex expression, but not the <cite>ANY …</cite> part, since that would not be valid SQL.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an Expression using a format string that can refer existing expressions.
+Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
+they are given). All other parts of fmt will be converted to RawTokens.</p>
+<p>As a convenience, instead of Expressions it is also possible to give Series as args, in that
+case the series’s expression is taken as Expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fmt</strong> – format string</p></li>
+<li><p><strong>args</strong> – 0 or more Expressions or Series. Number of args must exactly match number of <cite>{}</cite>
+occurrences in fmt.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.NonAtomicExpression.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.get_references">
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.get_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.NonAtomicExpression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.NonAtomicExpression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.NonAtomicExpression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.NonAtomicExpression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.NonAtomicExpression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.model_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.model_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for model, where model is a reference to a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single RawToken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.resolve_column_references">
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve the table name aliases for all columns in this expression</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.string_value">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.string_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single StringValueToken with the value.
+:param value: unquoted, unescaped string value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.NonAtomicExpression.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.NonAtomicExpression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
+<p>:return SQL representation of the expression.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.expression.RawToken">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">RawToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L26-L27"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.RawToken" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">RawToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L30-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.RawToken" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="bach.expression.RawToken.raw">
 <span class="sig-name descname"><span class="pre">raw</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.expression.RawToken.raw" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.RawToken.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L33-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.RawToken.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">SingleValueExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L263-L273"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p>An Expression that is expected to return just one value.
+If wrapped around IndependentSubqueryExpression, this will still have is_independent_subquery == True</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an Expression using a format string that can refer existing expressions.
+Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
+they are given). All other parts of fmt will be converted to RawTokens.</p>
+<p>As a convenience, instead of Expressions it is also possible to give Series as args, in that
+case the series’s expression is taken as Expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fmt</strong> – format string</p></li>
+<li><p><strong>args</strong> – 0 or more Expressions or Series. Number of args must exactly match number of <cite>{}</cite>
+occurrences in fmt.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.SingleValueExpression.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.get_references">
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.get_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.SingleValueExpression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.SingleValueExpression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.SingleValueExpression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.SingleValueExpression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.SingleValueExpression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.model_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.model_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for model, where model is a reference to a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single RawToken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.resolve_column_references">
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve the table name aliases for all columns in this expression</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.string_value">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.string_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single StringValueToken with the value.
+:param value: unquoted, unescaped string value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.SingleValueExpression.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.SingleValueExpression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
+<p>:return SQL representation of the expression.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.expression.StringValueToken">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">StringValueToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L44-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.StringValueToken" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">StringValueToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L62-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.StringValueToken" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps a string value. The value in this object is unescaped and unquoted.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.StringValueToken.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L66-L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.StringValueToken.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py attribute">
 <dt class="sig sig-object py" id="bach.expression.StringValueToken.value">
 <span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></em><a class="headerlink" href="#bach.expression.StringValueToken.value" title="Permalink to this definition">¶</a></dt>
@@ -185,31 +829,118 @@ occurrences in fmt.</p></li>
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="bach.expression.expression_to_sql">
-<span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">expression_to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L143-L170"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.expression_to_sql" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Compile the expression to a SQL fragment.</dt><dd><ul class="simple">
-<li><p>RawTokens will be represented by the raw string they embed.</p></li>
-<li><p>StringValueTokens will be quoted and escaped</p></li>
-<li><dl class="simple">
-<dt>ColumnReferenceTokens will be quoted and escaped, and if table_name is provided preceded by the</dt><dd><p>table name.</p>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">bach.expression.</span></span><span class="sig-name descname"><span class="pre">WindowedAggregateFunctionExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L289-L294"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression" title="Permalink to this definition">¶</a></dt>
+<dd><p>A WindowedAggregateFunctionExpression contains an aggregation- or window function, and a window clause:
+e.g. agg_func() OVER (…). The agg_func</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.column_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">column_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L157-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.column_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for field-name, where field-name is a column in a table or CTE.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.construct">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L108-L142"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.construct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an Expression using a format string that can refer existing expressions.
+Every occurrence of <cite>{}</cite> in the fmt string will be replace with a provided expression (in order that
+they are given). All other parts of fmt will be converted to RawTokens.</p>
+<p>As a convenience, instead of Expressions it is also possible to give Series as args, in that
+case the series’s expression is taken as Expression.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>expression</strong> – Expression</p></li>
-<li><p><strong>table_name</strong> – Optional table name, if set all column-references will be compiled as
-‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p></li>
+<li><p><strong>fmt</strong> – format string</p></li>
+<li><p><strong>args</strong> – 0 or more Expressions or Series. Number of args must exactly match number of <cite>{}</cite>
+occurrences in fmt.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#bach.expression.ExpressionToken" title="bach.expression.ExpressionToken"><span class="pre">bach.expression.ExpressionToken</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.get_references">
+<span class="sig-name descname"><span class="pre">get_references</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L230-L237"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.get_references" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.has_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.has_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a AggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.has_windowed_aggregate_function">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">has_windowed_aggregate_function</span></span><em class="property"><span class="pre">:</span> <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></em><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.has_windowed_aggregate_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>True iff we are a WindowedAggregateFunctionExpression, or there is at least one in this Expression.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.is_constant">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_constant</span></span><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.is_constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does this expression represent a constant value, or an expressions constructed of only constants</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are constant
+is considered constant. Leaves consisting only of Tokens are considered not constant, so
+at least one ConstValueExpressions need to be present for a branch to become constant.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.is_independent_subquery">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_independent_subquery</span></span><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.is_independent_subquery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.is_single_value">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_single_value</span></span><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.is_single_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will this expression return just one value (at most)</p>
+<p>Any Expression made up out of Tokens and Expressions, where all Expressions are single values,
+are expected to also yield a single value. Leaves consisting only of Tokens are considered
+not single valued, so at least one SingleValueExpression need to be present for a branch to
+become single valued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.model_reference">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">model_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../sql_models/sql_models.model.html#sql_models.model.SqlModel" title="sql_models.model.SqlModel"><span class="pre">sql_models.model.SqlModel</span></a><span class="p"><span class="pre">[</span></span><span class="pre">BachSqlModel</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L162-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.model_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an expression for model, where model is a reference to a model.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.raw">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L144-L147"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single RawToken.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.resolve_column_references">
+<span class="sig-name descname"><span class="pre">resolve_column_references</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L218-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.resolve_column_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>resolve the table name aliases for all columns in this expression</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.string_value">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">string_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#bach.expression.Expression" title="bach.expression.Expression"><span class="pre">bach.expression.Expression</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L149-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.string_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an expression that contains a single StringValueToken with the value.
+:param value: unquoted, unescaped string value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.expression.WindowedAggregateFunctionExpression.to_sql">
+<span class="sig-name descname"><span class="pre">to_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/expression.py#L239-L246"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.expression.WindowedAggregateFunctionExpression.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile the expression to a SQL fragment by calling to_sql() on every token or expression in data
+:param table_name: Optional table name, if set all column-references will be compiled as</p>
+<blockquote>
+<div><p>‘”{table_name}”.”{column_name}”’ instead of just ‘”{column_name}”’.</p>
+</div></blockquote>
 <p>:return SQL representation of the expression.</p>
+</dd></dl>
+
 </dd></dl>
 
 </section>
