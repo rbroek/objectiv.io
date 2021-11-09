@@ -246,7 +246,7 @@ export default function AboutUs() {
               Meet the mission crew. Also,&nbsp;
               <Link
                 to="/jobs"
-                {...tagLink({ id: 'hiring', text: "we're hiring a Senior Data Engineer. Join us!", 
+                {...tagLink({ id: 'hiring', text: "we're hiring a Senior Software Engineer. Join us!", 
                 href: '/jobs' })}
               >
                 we're hiring a Senior Data Engineer. Join us!

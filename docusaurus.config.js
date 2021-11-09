@@ -80,7 +80,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: '/docs/',
+          to: 'https://objectiv.io/docs/',
         },
         {
           to: 'about',
