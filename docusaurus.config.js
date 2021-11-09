@@ -46,6 +46,7 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
+    path.resolve(__dirname, 'src/plugins/post-build/'),
     require.resolve('docusaurus-plugin-image-zoom')
   ],
   scripts: [
