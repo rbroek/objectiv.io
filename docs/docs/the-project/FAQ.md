@@ -18,7 +18,7 @@ The open taxonomy for analytics is our proposal for a common way to collect, str
 
 Just like the taxonomy of the animal kingdom does for animals, the open taxonomy for analytics describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements, restrictions and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
 
-Check out the [Taxonomy](/taxonomy/overview.md) section of our Docs to see what it looks like, or try [Play with Objectiv](https://notebook.objectiv.io/) to see how it's used
+Check out the [Taxonomy](/taxonomy/overview.md) section of our Docs to see what it looks like, or try [Play with Objectiv](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) to see how it's used
 
 ### Why an open taxonomy for analytics?
 When it comes to product analytics, we noticed that most data teams have similar goals (optimize conversion, increase engagement, reduce churn, etc.) yet their data and models all look different. Models are often built from scratch. Someone in your field has probably already written a very similar analysis, but data teams keep reinventing the wheel because there is no common way to structure and model data. This leads to isolated knowledge and no meaningful way for data scientists to collaborate. 
@@ -57,7 +57,7 @@ While most trackers simply track everything by inserting a simple script, the da
 ##### MODELING
 
 ### What does Objectiv’s tracker data look like?
-Rich, descriptive, clean and well-structured. Check out our our [sandboxed notebook](https://notebook.objectiv.io/) to play with Objectiv. It uses the real untransformed data that was collected with an unaltered version of Objectiv's tracker. 
+Rich, descriptive, clean and well-structured. Check out our our [sandboxed notebook](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) to play with Objectiv. It uses the real untransformed data that was collected with an unaltered version of Objectiv's tracker. 
 
 ### Why is Objectiv SQL-based?
 SQL is widely used, versatile, not overly complex, and with developments in cloud technology, SQL databases have become very powerful and scalable. It’s supported by all major cloud providers and easy to self host.

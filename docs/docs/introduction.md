@@ -36,7 +36,7 @@ with the goal of collecting better data and more effective modeling.
 ## Quick Start
 
 ### Play with Objectiv
-We’ve set up a [sandboxed notebook with real data from objectiv.io](https://notebook.objectiv.io/) for you to 
+We’ve set up a [sandboxed notebook with real data from objectiv.io](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) for you to 
 play with. Give it a try and see what Objectiv can do.
 
 ### Running all Objectiv components Dockerized
