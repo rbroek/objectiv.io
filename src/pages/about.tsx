@@ -249,7 +249,7 @@ export default function AboutUs() {
                 {...tagLink({ id: 'hiring', text: "we're hiring a Senior Software Engineer. Join us!", 
                 href: '/jobs' })}
               >
-                we're hiring a Senior Data Engineer. Join us!
+                we're hiring a Senior Software Engineer. Join us!
               </Link>
             </p>
           </div>
