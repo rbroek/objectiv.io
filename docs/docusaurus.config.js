@@ -79,15 +79,15 @@ const config = {
         items: [
           {
             label: 'Tracking',
-            to: '/tracking',
+            to: '/tracking//',
           },
           {
             label: 'Modeling',
-            to: '/modeling',
+            to: '/modeling//',
           },
           {
             label: 'Taxonomy',
-            to: '/taxonomy',
+            to: '/taxonomy//',
           }
         ],
       },
