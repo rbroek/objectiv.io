@@ -283,6 +283,16 @@ h2 {
   float: left;
 }
 
+.tryItHere {
+  display: block;
+  margin: 12px 0 0 44px;
+}
+@media screen and (max-width: 480px) { /* mobile small */
+  .tryItHere {
+    margin: 24px auto 30px auto;
+  }  
+}
+
 footer {
   background-color: #008FDB;
   color: #fff;
