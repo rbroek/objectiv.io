@@ -87,7 +87,7 @@ const config = {
           label: 'About Us',
         },
         {
-          href: 'https://github.com/objectiv',
+          href: 'https://github.com/objectiv/objectiv-analytics',
           label: 'GitHub',
           position: 'right',
           className: 'navItem navGitHub',
