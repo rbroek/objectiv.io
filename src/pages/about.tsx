@@ -140,7 +140,7 @@ export default function AboutUs() {
               </p>
               <p>
                 Perhaps even more importantly, there is no common way to collect &amp; model data. Data teams 
-                all have similar goals, but everyone builds their own taxonomies and models from scratch.
+                all have similar goals, but everyone builds their own schemas and models from scratch.
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function AboutUs() {
               </p>
               <p>
                 We think data scientists could be much more efficient if there was a shared way to collect, 
-                structure and label data. No longer would you have to define your taxonomies and models from 
+                structure and label data. No longer would you have to define your schemas and models from 
                 scratch; you could take what others have already made and build on that. You could jump into 
                 other data projects and understand how the data was collected and what it means. You could get 
                 to modeling quicker because the data has been validated at tracker level and collected with 
