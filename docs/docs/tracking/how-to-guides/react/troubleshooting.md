@@ -93,7 +93,7 @@ const parent = tagElement({ id: 'card' });
 ```
 
 ## Problem: Events not triggering 
-Usually this happens because the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [ement](/tracking/core-concepts/tagging.md#elements). This happens
+Usually this happens because the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [Element](/tracking/core-concepts/tagging.md#elements). This happens
 almost exclusively when dealing with Components. 
 
 ### Check if TaggingAttributes are set

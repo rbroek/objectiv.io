@@ -4,9 +4,6 @@ title: Locations
 slug: locations
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## Well-defined hierarchical UI positions
 Locations in Objectiv describe the exact position in an application's UI from where an Event was triggered. 
 It is composed of a hierarchical stack of UI elements; the order defines the hierarchy.
