@@ -274,10 +274,10 @@ export default function Home() {
                   <Link 
                     href="https://objectiv.io/docs/modeling/" 
                     {...tagLink({id: 'cta-docs-reuse', href: '/docs/modeling/', 
-                      text: 'Docs - Examples'})}
+                      text: 'Docs - Modeling'})}
                     className={clsx("button", styles.ctaButton)}>
                     <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                    Docs - Examples
+                    Docs - Modeling
                   </Link>
                 </div>
               </div>
