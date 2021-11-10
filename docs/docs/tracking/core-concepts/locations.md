@@ -4,6 +4,9 @@ title: Locations
 slug: locations
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Well-defined hierarchical UI positions
 Locations in Objectiv describe the exact position in an application's UI from where an Event was triggered. 
 It is composed of a hierarchical stack of UI elements; the order defines the hierarchy.
@@ -120,6 +123,10 @@ As you can see, there are two links with the same ID (`my-link`). However, as th
 different tagged Sections, they are still unique, and when analyzing the data, you can follow the Location 
 Stack to understand where in the UI each Event originated.
 
+:::note
+Tagging Sections can/should also be applied to pages, see section [Applying Locations to pages](#applying-locations-to-pages) below.
+:::
+
 ### Solving collisions
 See below for a simplified example taken from [our website's About page](https://objectiv.io/about), which 
 lists the contributors to Objectiv. It renders a link to each Contributor's profile:
@@ -179,3 +186,53 @@ instead of
 Sometimes it may be preferable, or necessary, to tag Locations manually; for these cases, a low-level 
 [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md) API is available, which tags a Taggable 
 Element to be tracked as any LocationContext.
+
+## Applying Locations to pages
+When you have multiple pages in your application/website, you can distinguish each via the corresponding [URLChangeEvent](/taxonomy/events/URLChangeEvent.md) with a [WebDocumentContext](taxonomy/location-contexts/WebDocumentContext.md). However, analyzing features with the same `id` on multiple pages (not uncommon in many implementations) for each page separately, is not so trivial.
+
+To illustrate, consider different pages that all contain a Section with `id: 'main'`, as in the partial Sankey chart below. In order to analyze a feature in the `main` Section (or the Section itself) separately for each unique page, you will have to somehow factor in or slice on each page's URL; and each URL can have multiple versions with GET parameters, the chosen language, a trailing slash, etc. 
+
+![Sankey chart - different pages with same Section IDs](/img/docs/different-pages-same-section-id-sankey-chart.png)
+
+Therefore, **we highly recommend to tag the root of each page with a unique identifier**, using [`tagElement`](/tracking/api-reference/locationTaggers/tagElement.md), as we'll explain below.
+
+### Method 1: Use the root
+On every page, apply `tagElement` to a root element that contains all content. For example:
+
+```js
+<Layout {...tagElement({ id: 'page-home' })}>
+  ...here goes the content of the page
+</Layout>
+```
+
+### Method 2: Wrap content in a new Element
+If you don't have access to the root element for a page, or you cannot tag it for any other reason, you can add a wrapper around the content, and tag that wrapper. For example, a `<div>`:
+
+```js
+<div {...tagElement({ id: 'page-home' })}>
+  <Layout>
+    ...here goes the content of the page
+  </Layout>
+</div>
+```
+
+:::note
+While this works, sometimes it's not an option. Adding DOM Elements may affect CSS, other query selectors or even performance. Other times, especially with 3rd party components, events may not be bubbling up to our wrappers. 
+
+We prefer to approach each of these issues with the idea of not changing the application to fit the tracking requirements if not needed. Therefore, the third option below may be a good option for your use case.
+:::
+
+### TODO: Method 3: Surai's case
+TODO
+
+### Page identifier convention
+For all methods, we recommend the following convention for the page's unique `id`: 
+
+`page-[page_path]` (e.g. `page-product-features`).
+
+This `page_path` will generally be the path in the URL, or its place on the filesystem in your code.
+
+### Result
+As a result of assigning a unique identifier for each page, you can:
+* Easily distinguish each feature for every page separately, e.g. "Section with `id` _page-home_ > feature with `id` _cta-button_";
+* But also easily aggregate the same feature over all pages, e.g. just "feature with `id` _cta-button_".
