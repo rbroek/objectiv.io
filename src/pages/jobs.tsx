@@ -10,7 +10,7 @@ export default function Jobs() {
   const context = useDocusaurusContext();
   const {siteConfig} = context;
   return (
-    <div {...tagElement({id: 'page-privacy-jobs'})}>
+    <div {...tagElement({id: 'page-jobs'})}>
       <Layout
         title='Jobs'
         description={siteConfig?.tagline}>
