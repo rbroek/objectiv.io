@@ -74,7 +74,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Objectiv Documentation Logo',
-          src: '/img/logo-objectiv.svg',
+          src: '/img/objectiv_docs_logo_40px_nomargin.svg',
         },
         items: [
           {
@@ -88,6 +88,11 @@ const config = {
           {
             label: 'Taxonomy',
             to: '/taxonomy//',
+          },
+          {
+            label: 'Objectiv.io',
+            position: 'right',
+            to: 'https://objectiv.io/',
           }
         ],
       },
