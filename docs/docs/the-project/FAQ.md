@@ -40,7 +40,7 @@ Objectiv tracker works with any JavaScript-based web and mobile application. It 
 No. You can typically instrument Objectiv’s tracker and leave your existing tracking instrumentation alone and both will work fine. You can start small and expand as you go.
 
 ### Do I need a tracking plan?
-The recurring discussion on what to track and how to track it can be eliminated because the modeling requirements are carried by the design of the open taxonomy. It ensures that you collect the required data to effectively build models for common analyses (conversion, retention, engagement, etc.). The taxonomy can be extended to also cover less common analyses. Check out our examples section to get an impression of the types of analyses that Objectiv supports out of the box. 
+In most cases, the recurring discussion on what to track and how to track it can be eliminated because the modeling requirements are carried by the design of the open taxonomy. It ensures that you collect the required data to effectively build models for common analyses (conversion, retention, engagement, etc.). The taxonomy can be extended to also cover less common analyses.
 
 ### Why do I need to tag sections and events in my UI?
 While most trackers simply track everything by inserting a simple script, the data they collect is often incomplete or overcomplete, unstructured and ambiguous. Significant gruntwork is typically required before it can be used for modeling. Objectiv asks the frontend engineer to tag events and sections in the application’s UI. This creates a contextual layer for your tracker that serves multiple purposes:
@@ -62,9 +62,10 @@ Rich, descriptive, clean and well-structured. Check out our our [sandboxed noteb
 ### Why is Objectiv SQL-based?
 SQL is widely used, versatile, not overly complex, and with developments in cloud technology, SQL databases have become very powerful and scalable. It’s supported by all major cloud providers and easy to self host.
 
-Objectiv’s Modeler features an SQL abstraction layer that enables you to use Pandas-like operations on your full data set, combining the modeling power of Pandas with the versatility of SQL
+Objectiv Bach, our modeling library, features an SQL abstraction layer that enables you to use Pandas-like operations on your full data set, combining the modeling power of Pandas with the versatility of SQL
+
 ### Which Pandas-like operations can I use to build SQL models?
-Objectiv has support for an initial set of Pandas-like operations. For all supported operations, check the Modeler reference.
+Objectiv Bach has support for an initial set of Pandas-like operations. For all supported operations, check the reference in the [Modeling](/modeling) section.
 
 ### Can I run these models in production?
 Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in production. We plan to offer seamless integration for [DBT](https://www.getdbt.com/) in the future. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for details.
@@ -72,10 +73,13 @@ Yes. You can use for example [DBT](https://www.getdbt.com/) to run these in prod
 ##### DATA PRIVACY & LEGAL
 ### Does Objectiv’s tracker collect personally identifiable information? (PII)
 Yes, but not before the user has given explicit consent. In order to identify returning users, Objectiv creates a unique user ID. Objectiv only tracks what is strictly required in order to model effectively. 
+
 ### Does Objectiv store or share any user data?
 No. Objectiv’s data is strictly first party and we do not have access to the generated event data. You’re free to choose how and where to store your data and have full control over who gets to see and use it.
+
 ### What’s the default expiration date on Objectiv’s cookies?
 One year. You can change the expiration date in your Objectiv configuration.
+
 ### What kind of license does Objectiv use?
 Objectiv is licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) . It is a permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
@@ -86,7 +90,7 @@ Objectiv is licensed under the [Apache License, Version 2.0](https://www.apache.
 Objectiv currently requires a PostgreSQL database and works in any environment where you can run containers. More databases will be supported in the future. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for details.
 
 ### Does it scale?
-Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. Check out our benchmarks for more details.
+Objectiv’s architecture is built to scale. It is only restricted by the capacity of your databases. Collection is stateless and can be run in parallel. Objectiv currently uses PostgreSQL as a database backend and features an SQL abstraction layer that enables you to run Pandas operations from your notebook on the full dataset. We have plans to support other databases as well. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for details. 
 
 ### Can I run it on-premise?
 Yes. We don’t have any plans for a hosted version for the near future. Check out our [quickstart section](/#quick-start) of the introduction for installation instructions.
@@ -94,7 +98,7 @@ Yes. We don’t have any plans for a hosted version for the near future. Check o
 - - - 
 ##### COMPANY
 ### Is it supported properly?
-We’re well-funded and are actively working on the project on a daily basis with 9 full-time team members. Check out our [Github repo](https://github.com/objectiv/objectiv-analytics) to see our activity.
+We’re well-funded and are actively working on the project on a daily basis with 8 full-time team members. Check out our [Github repo](https://github.com/objectiv/objectiv-analytics) to see our activity.
 
 ### What’s your business model?
 Objectiv ultimately wants to monetize with paid offerings to users of the ecosystem that we believe will emerge around the open taxonomy for analytics. Objectiv’s core library and the taxonomy are and always will be open source and free to use.
