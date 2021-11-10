@@ -132,7 +132,7 @@ export default function Home() {
                   </p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      href="https://objectiv.io/docs/taxonomy/" 
+                      to="https://objectiv.io/docs/taxonomy/" 
                       {...tagLink({id: 'cta-docs-taxonomy', href: '/docs/taxonomy/', text: 'Docs - Taxonomy'})}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
@@ -166,7 +166,7 @@ export default function Home() {
                     you to catch errors before data starts flowing in.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      href="https://objectiv.io/docs/tracking/" 
+                      to="https://objectiv.io/docs/tracking/" 
                       {...tagLink({id: 'cta-docs-tracking', href: '/docs/tracking/', text: 'Docs - Tracking'})}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
@@ -208,7 +208,7 @@ export default function Home() {
                     modeling with minimal additional gruntwork.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      href="https://objectiv.io/docs/tracking/core-concepts/locations" 
+                      to="https://objectiv.io/docs/tracking/core-concepts/locations" 
                       {...tagLink({id: 'cta-docs-location-stack', href: '/docs/taxonomy', 
                         text: 'Docs - Location Stack'})}
                       target="_self" 
@@ -240,7 +240,7 @@ export default function Home() {
                     effectively closing the gap between experimentation and production.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      href="https://objectiv.io/docs/modeling/" 
+                      to="https://objectiv.io/docs/modeling/" 
                       {...tagLink({id: 'cta-docs-modeling', href: '/docs/modeling/', text: 'Docs - Modeling'})}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
@@ -280,7 +280,7 @@ export default function Home() {
                     your main site by changing a single line of code.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      href="https://objectiv.io/docs/modeling/" 
+                      to="https://objectiv.io/docs/modeling/" 
                       {...tagLink({id: 'cta-docs-reuse', href: '/docs/modeling/', 
                         text: 'Docs - Modeling'})}
                       target="_self" 
