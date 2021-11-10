@@ -27,11 +27,6 @@
   --ifm-navbar-height: 80px; /* Fixes issue with internal links hiding under navbar */
 }
 
-/* fix: scrolling to their anchor from the TOC fails, because height is computed to 0 */
-h2, h3, h4, h5, h6 {
-  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
-}
-
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
