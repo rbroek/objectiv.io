@@ -100,6 +100,7 @@ const config = {
             label: 'Objectiv.io \u{1F855}',
             position: 'right',
             to: 'https://objectiv.io/',
+            target: '_self',
           }
         ],
       },

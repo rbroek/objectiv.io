@@ -85,6 +85,7 @@ const config = {
         {
           label: 'Docs',
           to: 'https://objectiv.io/docs/',
+          target: '_self'
         },
         {
           to: 'about',
