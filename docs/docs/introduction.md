@@ -45,6 +45,8 @@ setup can also be used for low-traffic sites and apps.
 
 The below commands assume that you have `docker-compose` [installed](https://docs.docker.com/compose/install/).
 ```bash
+git clone git@github.com:objectiv/objectiv-analytics.git
+cd objectiv-analytics
 docker-compose pull  # pull pre-built images from gcr
 docker-compose up    # spin up Objective pipeline
 ```
