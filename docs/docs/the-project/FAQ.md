@@ -34,7 +34,7 @@ We believe a widespread adoption of the open taxonomy for analytics would be ben
 ##### TRACKING
 
 ### Does Objectiv work for mobile and web?
-Objectiv tracker works with any JavaScript-based web and mobile application. It is built on top of Objectiv’s core tracker, which has been designed to be platform & device agnostic and follows a zero-dependency policy. You can combine data from various platforms and devices in your analyses without additional transformation. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for upcoming tracker development.
+Objectiv tracker works with any JavaScript-based web and mobile application. It is built on top of Objectiv’s core tracker, which has been designed to be platform & device agnostic and have minimal dependencies. You can combine data from various platforms and devices in your analyses without additional transformation. Check out the [roadmap](https://github.com/objectiv/objectiv-analytics/projects/2) for upcoming tracker development.
 
 ### Do I need to replace my existing analytics tracker?
 No. You can typically instrument Objectiv’s tracker and leave your existing tracking instrumentation alone and both will work fine. You can start small and expand as you go.
