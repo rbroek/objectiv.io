@@ -2,7 +2,11 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const path = require('path');
+
 const environment = process.env.OBJECTIV_ENVIRONMENT;
+const isStagingEnv = environment ? environment.startsWith('staging') : false;
+const isProductionEnv = environment ? environment.startsWith('prod') : false;
+
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -10,8 +14,8 @@ const config = {
   title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: (environment === 'staging') ? '/staging/' : '/',
-  url: (environment === 'staging') ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
+  baseUrl: isStagingEnv ? '/staging/' : '/',
+  url: isStagingEnv ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -58,11 +62,10 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: (environment === 'prod') ? 'objectiv-website' : 'objectiv-website-dev',
-    trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
-    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerApplicationId: isProductionEnv ? 'objectiv-website' : 'objectiv-website-dev',
+    trackerEndPoint: isProductionEnv ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: environment !== 'prod'
+    trackerConsoleEnabled: !isProductionEnv
   },
 
   themeConfig:
