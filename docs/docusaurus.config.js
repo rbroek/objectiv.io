@@ -2,7 +2,11 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const path = require('path');
+
 const environment = process.env.OBJECTIV_ENVIRONMENT;
+const isStagingEnv = environment ? environment.startsWith('staging') : false;
+const isProductionEnv = environment ? environment.startsWith('prod') : false;
+
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
@@ -14,7 +18,7 @@ const config = {
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
   url: 'https://objectiv.io/',
-  baseUrl: (environment==='prod') ? '/docs/' : '/',
+  baseUrl: isProductionEnv ? '/docs/' : '/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -47,7 +51,10 @@ const config = {
       })
     ],
   ],
-  plugins: [path.resolve(__dirname, 'src/plugins/favicons/')],
+  plugins: [
+    path.resolve(__dirname, 'src/plugins/favicons/'),
+    path.resolve(__dirname, 'src/plugins/post-build/')
+  ],
   scripts: [
     'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js',
     {
@@ -61,10 +68,10 @@ const config = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerDocsApplicationId: (environment === 'prod') ? 'objectiv-docs' : 'objectiv-docs-dev',
-    trackerEndPoint: (environment === 'prod') ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerDocsApplicationId: isProductionEnv ? 'objectiv-docs' : 'objectiv-docs-dev',
+    trackerEndPoint: isProductionEnv ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: environment !== 'prod'
+    trackerConsoleEnabled: !isProductionEnv
   },
 
   themeConfig:
