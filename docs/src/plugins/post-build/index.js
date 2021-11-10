@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 module.exports = function (context, options) {
   return {
@@ -6,7 +7,7 @@ module.exports = function (context, options) {
     async postBuild({siteConfig = {}, routesPaths = [], outDir}) {
       // copy .htaccess from root to ./build
       // destination will be created or overwritten by default.
-      fs.copyFile('./.htaccess', './build/.htaccess', (err) => {
+      fs.copyFile('.htaccess', path.join('build', '.htaccess'), (err) => {
         if (err) throw err;
         console.log('.htaccess file was copied to the build directory');
       });
