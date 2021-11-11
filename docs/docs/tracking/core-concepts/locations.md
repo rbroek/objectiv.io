@@ -219,8 +219,53 @@ While this works, sometimes it's not an option. Adding DOM Elements may affect C
 We prefer to approach each of these issues with the idea of not changing the application to fit the tracking requirements if not needed. Therefore, the third option below may be a good option for your use case.
 :::
 
-### TODO: Method 3: Surai's case
-TODO
+### Method 3: Use a Plugin to observe URLs
+When wrapping elements is also not a viable option, another option is to have a Plugin automatically generate a Location Stack root element for you.
+
+In the following example we are going to create a Plugin to monitor URLs and create Page Contexts for us. Then add it to our main Tracker Instance. 
+
+First let's create the Plugin:
+
+```typescript
+class PageContextFromURLPlugin implements TrackerPluginInterface {
+  pluginName: `PageContextFromURLPlugin`;
+
+  // Before sending any Event, get the current URL and parse it into a pagePath
+  beforeTransport(contexts: Required<ContextsConfig>): void {
+    // Build pagePath: get pathname and replace all '/' with '-', then prefix it with 'page'
+    const pagePath = `page${document.location.pathname.replace(/\//g, '-')}`;
+    
+    // Create a new Section Context and push it on top of the Location Stack
+    contexts.location_stack.unshift(makeSectionContext({ id: pagePath }));
+  }
+
+  // Make this plugin usable only if we have access to the Location API
+  isUsable(): boolean {
+    return typeof document !== 'undefined' && typeof document.location !== 'undefined';
+  }
+}
+```
+
+And now we can reconfigure our Tracker Instance to use it:
+
+```typescript
+const trackerConfig: BrowserTrackerConfig = {
+  applicationId: APPLICATION_ID,
+  endpoint: COLLECTOR_ENDPOINT
+}
+
+// Make a new list of Plugins
+const customPluginsList = [
+  new PageContextFromURLPlugin(),
+  ...makeDefaultPluginsList(trackerConfig),
+];
+
+// Configure Tracker with custom Plugins
+makeTracker({
+  ...trackerConfig,
+  plugins: new TrackerPlugins({ plugins: customPluginsList })
+});
+```
 
 ### Page identifier convention
 For all methods, we recommend the following convention for the page's unique `id`: 

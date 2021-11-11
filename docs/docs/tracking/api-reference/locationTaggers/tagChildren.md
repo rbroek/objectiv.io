@@ -26,7 +26,7 @@ tagChild = (parameters: ChildrenTaggingQuery) => TagLocationReturnValue
 ### Parameters
 |          |                | type
 | :-:      | :--            | :--                                                                                       
-| required | **parameters** | [ChildrenTaggingQuery](/tracking/api-reference/definitions/ChildrenTaggingQueries.md)
+| required | **parameters** | [ChildrenTaggingQuery](/tracking/api-reference/definitions/ChildrenTaggingQuery.md)
 | optional | onError        | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md)
 
 ## Returns
@@ -49,11 +49,11 @@ import { tagChildren } from '@objectiv-analytics/tracker-browser';
   {...tagChildren([
     {
       queryAll: 'button[aria-label="Previous"]',
-      trackAs: tagButton({ id: 'prev', text: 'Previous' })
+      tagAs: tagButton({ id: 'prev', text: 'Previous' })
     },
     {
       queryAll: 'button[aria-label="Next"]',
-      trackAs: tagButton({ id: 'next', text: 'Next' })
+      tagAs: tagButton({ id: 'next', text: 'Next' })
     }
   ])}
 >
@@ -71,11 +71,11 @@ Taggers only work by installing the [Taggers Directive](/tracking/how-to-guides/
   [tagChildren]="[
     {
       queryAll: 'button[aria-label=&quot;Previous&quot;]',
-      trackAs: tagButton({ id: 'prev', text: 'Previous' })
+      tagAs: tagButton({ id: 'prev', text: 'Previous' })
     },
     {
       queryAll: 'button[aria-label=&quot;Next&quot;]',
-      trackAs: tagButton({ id: 'next', text: 'Next' })
+      tagAs: tagButton({ id: 'next', text: 'Next' })
     }
   ]"
 >

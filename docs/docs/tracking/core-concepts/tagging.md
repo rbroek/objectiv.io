@@ -57,7 +57,23 @@ Tagging Attributes supply the Tracker with the information needed to compose & s
 
 ## Children Tagging Elements
 These are **Taggable Elements** that have been already decorated with the 
-[tagChildren](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetagchildren) Tagging 
-Attribute, because their parent was tagged to 
-[track its children](/tracking/api-reference/locationTaggers/tagChildren.md#childrentaggingquery-parameter)
-using a CSS Selector query.
+[TaggingAttribute.tagChildren](/tracking/api-reference/definitions/TaggingAttribute.md#taggingattributetagchildren) by using the [tagChildren](/tracking/api-reference/locationTaggers/tagChildren.md) Location Tagger. They will execute the given [ChildrenTaggingQueries](/tracking/api-reference/definitions/ChildrenTaggingQueries.md), at runtime, and tag matching children Elements.
+
+[ChildrenTaggingQuery](/tracking/api-reference/definitions/ChildrenTaggingQuery.md) objects are composed of a CSS Selector query and a set of TaggingAttributes. Each matching Element will be decorated with the given Location Tagger result. 
+
+A **tagChildren** example in React:
+
+```typescript jsx
+<div
+  {...tagChildren([
+    {
+      queryAll: 'button[aria-label="Previous"]',
+      tagAs: tagButton({ id: 'prev', text: 'Previous' })
+    }
+  ])}
+>
+  ...
+</div>
+```
+
+The div Element above has been decorated with a ChildrenTaggingQuery. It will execute the given `queryAll` and apply the result of the `tagButton` parameter to any matching child Element. 
