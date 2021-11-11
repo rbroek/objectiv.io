@@ -122,7 +122,7 @@ Stack to understand where in the UI each Event originated.
 
 :::note
 Tagging Sections can/should also be applied to pages/screens, see section 
-[Applying Locations to pages/screens](#applying-locations-to-pages-screens) below.
+[Applying Locations to pages/screens](#applying-locations-to-pagesscreens) below.
 :::
 
 ### Solving collisions
