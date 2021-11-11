@@ -43,6 +43,14 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   }
 }
 
+.navbar-sidebar .activeDocsMenu ul {
+  margin-left: 16px;
+}
+.navbar-sidebar h2.activeDocsSection {
+  font-size: 18px;
+  margin: 16px 0 16px 16px;
+}
+
 .footer {
   padding: 10px;
   text-align: center;
