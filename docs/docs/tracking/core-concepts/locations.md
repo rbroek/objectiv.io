@@ -120,6 +120,10 @@ As you can see, there are two links with the same ID (`my-link`). However, as th
 different tagged Sections, they are still unique, and when analyzing the data, you can follow the Location 
 Stack to understand where in the UI each Event originated.
 
+:::note
+Tagging Sections can/should also be applied to pages, see section [Applying Locations to pages](#applying-locations-to-pages) below.
+:::
+
 ### Solving collisions
 See below for a simplified example taken from [our website's About page](https://objectiv.io/about), which 
 lists the contributors to Objectiv. It renders a link to each Contributor's profile:
@@ -179,3 +183,104 @@ instead of
 Sometimes it may be preferable, or necessary, to tag Locations manually; for these cases, a low-level 
 [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md) API is available, which tags a Taggable 
 Element to be tracked as any LocationContext.
+
+## Applying Locations to pages
+When you have multiple pages in your application/website, you can distinguish each via the corresponding [URLChangeEvent](/taxonomy/events/URLChangeEvent.md) with a [WebDocumentContext](taxonomy/location-contexts/WebDocumentContext.md). However, analyzing features with the same `id` on multiple pages (not uncommon in many implementations) for each page separately, is not so trivial.
+
+To illustrate, consider different pages that all contain a Section with `id: 'main'`, as in the partial Sankey chart below. In order to analyze a feature in the `main` Section (or the Section itself) separately for each unique page, you will have to somehow factor in or slice on each page's URL; and each URL can have multiple versions with GET parameters, the chosen language, a trailing slash, etc. 
+
+![Sankey chart - different pages with same Section IDs](/img/docs/different-pages-same-section-id-sankey-chart.png)
+
+Therefore, **we highly recommend to tag the root of each page with a unique identifier**, using [`tagElement`](/tracking/api-reference/locationTaggers/tagElement.md), as we'll explain below.
+
+### Method 1: Use the root
+On every page, apply `tagElement` to a root element that contains all content. For example:
+
+```js
+<Layout {...tagElement({ id: 'page-home' })}>
+  ...here goes the content of the page
+</Layout>
+```
+
+### Method 2: Wrap content in a new Element
+If you don't have access to the root element for a page, or you cannot tag it for any other reason, you can add a wrapper around the content, and tag that wrapper. For example, a `<div>`:
+
+```js
+<div {...tagElement({ id: 'page-home' })}>
+  <Layout>
+    ...here goes the content of the page
+  </Layout>
+</div>
+```
+
+:::note
+While this works, sometimes it's not an option. Adding DOM Elements may affect CSS, other query selectors or even performance. Other times, especially with 3rd party components, events may not be bubbling up to our wrappers. 
+
+We prefer to approach each of these issues with the idea of not changing the application to fit the tracking requirements if not needed. Therefore, the third option below may be a good option for your use case.
+:::
+
+### Method 3: Use a Plugin to observe URLs
+When wrapping elements is also not a viable option, another way is to have a Plugin automatically generate a Location Stack page item for you.
+
+In the following example we are going to create a Plugin to monitor URLs and create Section Contexts with a pagePath id for us. 
+
+First let's create the Plugin:
+
+```typescript
+class PageContextFromURLPlugin implements TrackerPluginInterface {
+  pluginName: `PageContextFromURLPlugin`;
+
+  // Before sending any Event, get the current URL and parse it into a pagePath
+  beforeTransport(contexts: Required<ContextsConfig>): void {
+    // Build pagePath: get pathname and replace all '/' with '-', then prefix it with 'page'
+    const pagePath = `page${document.location.pathname.replace(/\//g, '-')}`;
+    
+    // Create a new Section Context and push it on top of the Location Stack
+    contexts.location_stack.unshift(makeSectionContext({ id: pagePath }));
+  }
+
+  // Make this plugin usable only if we have access to the Location API
+  isUsable(): boolean {
+    return typeof document !== 'undefined' && typeof document.location !== 'undefined';
+  }
+}
+```
+
+And now we can reconfigure our Tracker Instance to use it:
+
+```typescript
+const trackerConfig: BrowserTrackerConfig = {
+  applicationId: APPLICATION_ID,
+  endpoint: COLLECTOR_ENDPOINT
+}
+
+// Make a new list of Plugins
+const customPluginsList = [
+  new PageContextFromURLPlugin(),
+  ...makeDefaultPluginsList(trackerConfig),
+];
+
+// Configure Tracker with custom Plugins
+makeTracker({
+  ...trackerConfig,
+  plugins: new TrackerPlugins({ plugins: customPluginsList })
+});
+```
+
+:::tip sharing is caring
+Did you come up with some cool Plugin idea that may be of interest to others as well?  
+
+Let us know or [submit a PR](https://www.objectiv.io/docs/the-project/contribute#submitting-a-pr), we are looking forward to checking it out! 
+:::
+
+### Page identifier convention
+For all methods, we recommend the following convention for the page's unique `id`: 
+
+`page-[page_path]` (e.g. `page-product-features`).
+
+This `page_path` will generally be the path in the URL, or its place on the filesystem in your code.
+
+### Result
+As a result of assigning a unique identifier for each page, you can:
+* Easily distinguish each feature for every page separately, e.g. "Section with `id` _page-home_ > feature with `id` _cta-button_";
+* But also easily aggregate the same feature over all pages, e.g. just "feature with `id` _cta-button_".
