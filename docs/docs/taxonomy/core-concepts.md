@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: /taxonomy/core-concepts
-title: Overview
+title: Core Concepts
 ---
 
 # Core Concepts
