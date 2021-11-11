@@ -102,9 +102,9 @@ export default function Jobs() {
             </ul>
 
             <h2><img width="32px" src='/img/icons/icon-video-call.svg' alt='Our work setup' /> Our work setup</h2>
-            <p>Our team meets in Utrecht every Tuesday. This is the day where we do all the team updates, 
-              syncs, and make decisions to move forward together. The rest of the week everyone works remotely 
-              and we limit meetings to standups and syncs that cannot wait.</p>
+            <p>We have a battle-tested remote-friendly work setup: daily video standups, and Tuesdays for all-team
+              updates, syncs and making decisions on how to move forward together. We also bring the team together 
+              f2f on a quarterly basis for outings.</p>
             <p>We don’t care when work is being done, we care about what is being done. So our team is used to 
               taking exercise breaks or spending family time during the day and then getting stuff done in the 
               evening. Things like that.</p>
