@@ -121,7 +121,8 @@ different tagged Sections, they are still unique, and when analyzing the data, y
 Stack to understand where in the UI each Event originated.
 
 :::note
-Tagging Sections can/should also be applied to pages, see section [Applying Locations to pages](#applying-locations-to-pages) below.
+Tagging Sections can/should also be applied to pages/screens, see section 
+[Applying Locations to pages/screens](#applying-locations-to-pages-screens) below.
 :::
 
 ### Solving collisions
@@ -184,45 +185,60 @@ Sometimes it may be preferable, or necessary, to tag Locations manually; for the
 [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md) API is available, which tags a Taggable 
 Element to be tracked as any LocationContext.
 
-## Applying Locations to pages
-When you have multiple pages in your application/website, you can distinguish each via the corresponding [URLChangeEvent](/taxonomy/events/URLChangeEvent.md) with a [WebDocumentContext](taxonomy/location-contexts/WebDocumentContext.md). However, analyzing features with the same `id` on multiple pages (not uncommon in many implementations) for each page separately, is not so trivial.
+## Applying Locations to pages/screens
+When you have multiple pages or screens in your application/website, you can distinguish each via the 
+corresponding [URLChangeEvent](/taxonomy/events/URLChangeEvent.md) with a 
+[WebDocumentContext](taxonomy/location-contexts/WebDocumentContext.md). However, analyzing features with the 
+same `id` on multiple pages/screens (not uncommon in many implementations) for each page/screen separately, 
+is not so trivial.
 
-To illustrate, consider different pages that all contain a Section with `id: 'main'`, as in the partial Sankey chart below. In order to analyze a feature in the `main` Section (or the Section itself) separately for each unique page, you will have to somehow factor in or slice on each page's URL; and each URL can have multiple versions with GET parameters, the chosen language, a trailing slash, etc. 
+To illustrate, consider different pages/screens that all contain a Section with `id: 'main'`, as in the 
+partial Sankey chart below. In order to analyze a feature in the `main` Section (or the Section itself) 
+separately for each unique page/screen, you will have to somehow factor in or slice on each 
+page/screen's URL or path; and each URL or path can have multiple versions with GET parameters, the chosen 
+language, a trailing slash, etc. 
 
-![Sankey chart - different pages with same Section IDs](/img/docs/different-pages-same-section-id-sankey-chart.png)
+![Sankey chart - different pages/screens with same Section IDs](/img/docs/different-pages-same-section-id-sankey-chart.png)
 
-Therefore, **we highly recommend to tag the root of each page with a unique identifier**, using [`tagElement`](/tracking/api-reference/locationTaggers/tagElement.md), as we'll explain below.
+Therefore, **we highly recommend to tag the root of each page/screen with a unique identifier**, 
+using [`tagElement`](/tracking/api-reference/locationTaggers/tagElement.md), as we'll explain below.
 
 ### Method 1: Use the root
-On every page, apply `tagElement` to a root element that contains all content. For example:
+On every page/screen, apply `tagElement` to a root element that contains all content. For example:
 
 ```js
 <Layout {...tagElement({ id: 'page-home' })}>
-  ...here goes the content of the page
+  ...here goes the content of the page/screen
 </Layout>
 ```
 
 ### Method 2: Wrap content in a new Element
-If you don't have access to the root element for a page, or you cannot tag it for any other reason, you can add a wrapper around the content, and tag that wrapper. For example, a `<div>`:
+If you don't have access to the root element for a page/screen, or you cannot tag it for any other reason, 
+you can add a wrapper around the content, and tag that wrapper. For example, a `<div>`:
 
 ```js
 <div {...tagElement({ id: 'page-home' })}>
   <Layout>
-    ...here goes the content of the page
+    ...here goes the content of the page/screen
   </Layout>
 </div>
 ```
 
 :::note
-While this works, sometimes it's not an option. Adding DOM Elements may affect CSS, other query selectors or even performance. Other times, especially with 3rd party components, events may not be bubbling up to our wrappers. 
+While this works, sometimes it's not an option. Adding DOM Elements may affect CSS, other query selectors or 
+even performance. Other times, especially with 3rd party components, events may not be bubbling up to our 
+wrappers. 
 
-We prefer to approach each of these issues with the idea of not changing the application to fit the tracking requirements if not needed. Therefore, the third option below may be a good option for your use case.
+We prefer to approach each of these issues with the idea of not changing the application to fit the tracking 
+requirements if not needed. Therefore, the third option below may be a good option for your use case.
 :::
 
 ### Method 3: Use a Plugin to observe URLs
-When wrapping elements is also not a viable option, another way is to have a Plugin automatically generate a Location Stack page item for you.
+When wrapping elements is also not a viable option, another way is to have a Plugin automatically generate a 
+Location Stack page/screen item for you.
 
-In the following example we are going to create a Plugin to monitor URLs and create Section Contexts with a pagePath id for us. 
+In the following example we are going to create a Plugin to monitor URLs and create Section Contexts with a 
+pagePath id for us. 
 
 First let's create the Plugin:
 
@@ -270,7 +286,8 @@ makeTracker({
 :::tip sharing is caring
 Did you come up with some cool Plugin idea that may be of interest to others as well?  
 
-Let us know or [submit a PR](https://www.objectiv.io/docs/the-project/contribute#submitting-a-pr), we are looking forward to checking it out! 
+Let us know or [submit a PR](https://www.objectiv.io/docs/the-project/contribute#submitting-a-pr), we are 
+looking forward to checking it out! 
 :::
 
 ### Page identifier convention
@@ -278,9 +295,16 @@ For all methods, we recommend the following convention for the page's unique `id
 
 `page-[page_path]` (e.g. `page-product-features`).
 
-This `page_path` will generally be the path in the URL, or its place on the filesystem in your code.
+or if you're on an app:
+
+`screen-[screen_path]` (e.g. `screen-product-features`).
+
+This `page_path` or `screen_path` will generally be the path in the URL, or its place on the filesystem in 
+your code.
 
 ### Result
-As a result of assigning a unique identifier for each page, you can:
-* Easily distinguish each feature for every page separately, e.g. "Section with `id` _page-home_ > feature with `id` _cta-button_";
-* But also easily aggregate the same feature over all pages, e.g. just "feature with `id` _cta-button_".
+As a result of assigning a unique identifier for each page/screen, you can:
+* Easily distinguish each feature for every page/screen separately, e.g. "Section with `id` _page-home_ > 
+  feature with `id` _cta-button_";
+* But also easily aggregate the same feature over all pages/screens, e.g. just "feature with `id`
+  _cta-button_".
