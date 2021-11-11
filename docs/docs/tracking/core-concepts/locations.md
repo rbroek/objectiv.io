@@ -220,9 +220,9 @@ We prefer to approach each of these issues with the idea of not changing the app
 :::
 
 ### Method 3: Use a Plugin to observe URLs
-When wrapping elements is also not a viable option, another option is to have a Plugin automatically generate a Location Stack root element for you.
+When wrapping elements is also not a viable option, another way is to have a Plugin automatically generate a Location Stack page item for you.
 
-In the following example we are going to create a Plugin to monitor URLs and create Page Contexts for us. Then add it to our main Tracker Instance. 
+In the following example we are going to create a Plugin to monitor URLs and create Section Contexts with a pagePath id for us. 
 
 First let's create the Plugin:
 
