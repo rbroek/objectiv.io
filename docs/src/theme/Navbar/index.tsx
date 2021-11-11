@@ -26,6 +26,7 @@ import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 import styles from './styles.module.css'; // retrocompatible with v1
 import { tagElement, tagOverlay } from "@objectiv-analytics/tracker-browser";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const DefaultNavItemPosition = 'right';
 
@@ -148,6 +149,19 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
     sidebarShown,
     toggleSidebar,
   });
+
+  // Determine active Docs section
+  const {leftItems} = splitNavItemsByPosition(useNavbarItems());
+  let activeDocsSection = '';
+  for (const item of leftItems) {
+    const toUrl = useBaseUrl(item.to);
+    // strip last '/' from end of URL
+    const toUrlStripped = toUrl.substring(0, toUrl.length-1);
+    if (location.pathname.startsWith(toUrlStripped)) {
+      activeDocsSection = item.label;
+    }
+  }
+
   return (
     <div className="navbar-sidebar"
       {...tagOverlay({
@@ -203,14 +217,17 @@ function NavbarMobileSidebar({sidebarShown, toggleSidebar}) {
               type="button"
               className="clean-btn navbar-sidebar__back"
               onClick={secondaryMenu.hide}>
-              <Translate
-                id="theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel"
-                description="The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)">
-                ← Back to main menu
-              </Translate>
+                ← All Sections
             </button>
           )}
-          {secondaryMenu.content}
+          {/* show the active Docs Section */}
+          {activeDocsSection != '' && (
+            <div className="activeDocsMenu">
+              <h2 className="activeDocsSection">{activeDocsSection}</h2>
+              {secondaryMenu.content}
+            </div>
+          )}
+          {activeDocsSection == '' && secondaryMenu.content}
         </div>
       </div>
     </div>

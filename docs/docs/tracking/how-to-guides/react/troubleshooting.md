@@ -6,8 +6,21 @@ sidebar_position: 4
 When dealing with regular HTML [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) should just work flawlessly. Unfortunately [JSX](https://reactjs.org/docs/introducing-jsx.html) and [React Components](https://reactjs.org/docs/components-and-props.html) may carry some challenges at times.
 
 The most common issues will be:
-- Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html)
-- [Events](/taxonomy/events/overview.md) no triggering due to missing [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md)
+- Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html).
+- [Events](/taxonomy/events/overview.md) not triggering due to missing [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md).
+- Non-unique [Locations](/tracking/core-concepts/locations.md), aka [Collisions](/tracking/core-concepts/locations.md#solving-collisions).
+
+
+:::info Why not just wrap components?
+Many of the issues below may be solved by just wrapping the problematic components in some extra HTML element.
+
+While that works, sometimes it's not an option. Adding DOM Elements may affect CSS, other query selectors or even performance. 
+Other times, especially with 3rd party components, events may not be bubbling up to our wrappers.
+
+We prefer to approach each of these issues with the idea of not changing the Application to fit the tracking requirements.
+
+That said, if adding an extra `<div>` around a hard-to-track Component works, that's probably a good option as well.
+:::
 
 ## Problem: Incorrect Locations
 If [Events](/taxonomy/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
@@ -79,9 +92,8 @@ const parent = tagElement({ id: 'card' });
 </Card>
 ```
 
-
 ## Problem: Events not triggering 
-Usually this happens because the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [ement](/tracking/core-concepts/tagging.md#elements). This happens
+Usually this happens because the [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md) did not end up being applied to the target [Element](/tracking/core-concepts/tagging.md#elements). This happens
 almost exclusively when dealing with Components. 
 
 ### Check if TaggingAttributes are set
@@ -179,6 +191,16 @@ Simply spread the [Tagging Attributes](/tracking/api-reference/definitions/Taggi
 ```
 :::
 
+
+## Problem: Collisions
+Sometimes the browser console will show a warning about  colliding elements, e.g.:
+
+![Collisions in browser console](/img/docs/tracking-collision-browser-console.png)
+
+
+The [Core Concepts section explains Collisions and how to solve them](/tracking/core-concepts/locations.md#solving-collisions).
+
+
 ## Manual orchestration
 When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to tag both
 Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
@@ -273,14 +295,3 @@ Sometimes we can also leverage 3rd party event callbacks, like so:
 
 In the example above the Accordion API has a `onChange` event handler triggered whenever the Accordion changes state.   
 We can directly hook that information into our event tracking.
-
-:::info Why not just wrapping components?
-Many of the issues above may be solved by just wrapping the problematic components in some extra HTML element.
-
-While that works, sometimes it's not an option. Adding DOM Elements may affect CSS, other query selectors or even performance. 
-Other times, especially with 3rd party components, events may not be bubbling up to our wrappers.
-
-We prefer to approach each of these issues with the idea of not changing the Application to fit the tracking requirements.
-
-That said, if adding an extra `<div>` around a hard-to-track Component works, that's probably a good option as well.
-:::
