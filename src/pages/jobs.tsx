@@ -30,7 +30,7 @@ export default function Jobs() {
             <p>If that excites you, you’ll be glad to hear we have big plans for Bach, and are looking for able hands to help us execute them.</p>
 
             <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
-            <p>Objectiv is an open-source project. We are developing the project in public under the Apache 2.0 License. Check out our Github Repo or the Objectiv Docs for details</p>
+            <p>Objectiv is an open-source project. We are developing it in public under the Apache 2.0 License. Check out our Github Repo or the Objectiv Docs for details</p>
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The team</h2>
             <p>You will be joining an early team of 10 analytics enthusiasts that are together building a great 
