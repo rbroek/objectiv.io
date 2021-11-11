@@ -24,13 +24,60 @@ export default function Jobs() {
         </header>
         <main {...tagElement({id: 'main'})}>
           <div className={clsx('container', styles.jobsContainer)}>
-            <p>Objectiv is looking for a Senior Software Engineer to join our crew, a team of experienced software engineers and data scientists on a mission to create the ultimate workflow for the data scientists.</p>
-            <p>After almost a year of hard work. we’ve just released the first public version of our data collection & modeling library. One of its major components is Bach, a data modeling library that enables you to compose models with familiar Pandas-like dataframe operations in your notebook. It uses an SQL abstraction layer that enables models to run on the full dataset, and you can output models to SQL with a single command. </p>
-            <p>It includes a set of operations that enable effective feature creation for datasets that embrace the open taxonomy of analytics, which is our proposal for a common way to collect, structure and validate data so models & data can be reused, and data scientists can build on the knowledge and practices of others.</p>
-            <p>If that excites you, you’ll be glad to hear we have big plans for Bach, and are looking for able hands to help us execute them.</p>
+            <p>Objectiv is looking for a Senior Software Engineer to join our crew, a team of experienced 
+              software engineers and data scientists on a mission to create the ultimate workflow for the 
+              data scientist.</p>
+            <p>After almost a year of hard work, we've just released the first public version of our data 
+              collection &amp; modeling library. One of its major components is Bach, a data modeling library 
+              that enables you to compose models with familiar Pandas-like dataframe operations in your 
+              notebook. It uses an SQL abstraction layer that enables models to run on the full dataset, and 
+              you can output models to SQL with a single command.</p>
+            <p>It includes a set of operations that enable effective feature creation for datasets that 
+              embrace the open taxonomy of analytics, which is our proposal for a common way to collect, 
+              structure and validate data so models &amp; data can be reused, and data scientists can build 
+              on the knowledge and practices of others.</p>
+            <p>If that excites you, you’ll be glad to hear we have big plans for Bach, and are looking for 
+              able hands to help us execute them.</p>
 
-            <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
-            <p>Objectiv is an open-source project. We are developing it in public under the Apache 2.0 License. Check out our Github Repo or the Objectiv Docs for details</p>
+            <div {...tagElement({ id: 'the-project' })}>
+              <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
+              <p>Objectiv is an open-source project. We are developing it in public under the Apache 2.0 
+                License. Check out our&nbsp;
+                <Link
+                  to="https://github.com/objectiv/objectiv-analytics" 
+                  {...tagLink({
+                      id: 'github-repo', 
+                      href: 'https://github.com/objectiv/objectiv-analytics', 
+                      text: 'Docs - Taxonomy',
+                      options: {
+                        trackClicks: {
+                          waitUntilTracked: true
+                        }
+                      }
+                    })
+                  }
+                  target="_self"
+                >
+                  GitHub repo
+                </Link>
+                &nbsp;or the&nbsp;
+                <Link 
+                  to="https://objectiv.io/docs/" 
+                  {...tagLink({
+                      id: 'docs', 
+                      href: '/docs/', 
+                      text: 'Objectiv Docs',
+                      options: {
+                        trackClicks: {
+                          waitUntilTracked: true
+                        }
+                      }
+                    }
+                  )}
+                  target="_self">
+                    Objectiv Docs
+                </Link> for details.</p>
+            </div>
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The team</h2>
             <p>You will be joining an early team of 10 analytics enthusiasts that are together building a great 
