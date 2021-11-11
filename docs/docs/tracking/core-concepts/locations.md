@@ -267,6 +267,12 @@ makeTracker({
 });
 ```
 
+:::tip sharing is caring
+Did you come up with some cool Plugin idea that may be of interest to others as well?  
+
+Let us know or [submit a PR](https://www.objectiv.io/docs/the-project/contribute#submitting-a-pr), we are looking forward to checking it out! 
+:::
+
 ### Page identifier convention
 For all methods, we recommend the following convention for the page's unique `id`: 
 
