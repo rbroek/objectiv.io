@@ -78,15 +78,15 @@ purposes:
 ### Tag any Element
 Locations are usually applied automatically by 
 [tagging](/tracking/api-reference/locationTaggers/overview.md) Elements in the UI. This binds the 
-appropriate [LocationContext](/taxonomy/location-contexts/overview.md) to it, using 
+appropriate [LocationContext](/taxonomy/reference/location-contexts/overview.md) to it, using 
 [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md). Events are then triggered 
-automatically based on that [LocationContext](/taxonomy/location-contexts/overview.md) bound to the 
+automatically based on that [LocationContext](/taxonomy/reference/location-contexts/overview.md) bound to the 
 [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
 
 ### Tag Sections
 You can tag logical sections in your application's UI (e.g. the hero element on a homepage) using 
 [tagElement](tracking/api-reference/locationTaggers/tagElement.md). This binds a 
-[SectionContext](taxonomy/location-contexts/SectionContext.md) to it.
+[SectionContext](taxonomy/reference/location-contexts/SectionContext.md) to it.
 
 This might seem without benefit, as no Events are triggered (by default) on tagged Sections. However, 
 tagging Elements is useful in two main ways:
@@ -185,7 +185,7 @@ Sometimes it may be preferable, or necessary, to tag Locations manually; for the
 Element to be tracked as any LocationContext.
 
 ## Applying Locations to pages
-When you have multiple pages in your application/website, you can distinguish each via the corresponding [URLChangeEvent](/taxonomy/events/URLChangeEvent.md) with a [WebDocumentContext](taxonomy/location-contexts/WebDocumentContext.md). However, analyzing features with the same `id` on multiple pages (not uncommon in many implementations) for each page separately, is not so trivial.
+When you have multiple pages in your application/website, you can distinguish each via the corresponding [URLChangeEvent](/taxonomy/reference/events/URLChangeEvent.md) with a [WebDocumentContext](taxonomy/reference/location-contexts/WebDocumentContext.md). However, analyzing features with the same `id` on multiple pages (not uncommon in many implementations) for each page separately, is not so trivial.
 
 To illustrate, consider different pages that all contain a Section with `id: 'main'`, as in the partial Sankey chart below. In order to analyze a feature in the `main` Section (or the Section itself) separately for each unique page, you will have to somehow factor in or slice on each page's URL; and each URL can have multiple versions with GET parameters, the chosen language, a trailing slash, etc. 
 

@@ -13,14 +13,14 @@ import Mermaid from '@theme/Mermaid';
 
 ## Welcome to the official Objectiv documentation
 Objectiv is a data collection & modeling library that puts the data scientist first. It is built around 
-[the open taxonomy of analytics](taxonomy/overview.md), which is our proposal for a common way to collect, 
+[the open taxonomy of analytics](/taxonomy/introduction.md), which is our proposal for a common way to collect, 
 structure and validate data. With Objectiv, you create a 
 [contextual layer for your application](tracking/core-concepts/tagging.md) by mapping it to the taxonomy, 
 with the goal of collecting better data and more effective modeling.
 
 #### Key features
 
-* [Event & context classes are predefined](taxonomy/overview.md), designed to ensure the collected data 
+* [Event & context classes are predefined](/taxonomy/introduction.md), designed to ensure the collected data 
   covers a wide range of common analytics use cases. 
 * Instrumentation gets validated against the taxonomy to provide 
   [live feedback in your IDE and console while you’re developing](tracking/core-concepts/validation.md).

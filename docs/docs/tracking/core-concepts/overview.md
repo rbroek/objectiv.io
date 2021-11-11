@@ -14,7 +14,7 @@ High level overview of all concepts enabling tracking:
 * [Visibility](/tracking/core-concepts/visibility.md) Events to track whether Elements are shown/hidden.
 * [Trackers](/tracking/core-concepts/trackers.md) to instrument on various platforms.
 * [Validation](/tracking/core-concepts/validation.md) of Events according to the 
-  [Taxonomy](/taxonomy/overview.md).
+  [Taxonomy](//taxonomy/introduction.md).
 * [Collector](/tracking/core-concepts/validation.md) to receive, validate and store 
   [Events](/tracking/core-concepts/events.md).
 
