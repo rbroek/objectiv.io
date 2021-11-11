@@ -73,8 +73,13 @@ documentation sections.
     Tracking --- Taxonomy;
     Modeling --- Taxonomy;
     linkStyle 0,1 stroke:#000,anything;
-    click Tracking "/docs/tracking" "See more details" _self;
-    click Modeling "/docs/modeling" "See more details" _self;
-    click Taxonomy "/docs/taxonomy" "See more details" _self;
     class Tracking,Modeling,Taxonomy diagramBlocks;
-`} caption="Objectiv Documentation Areas" baseColor="basic" />
+`} 
+  caption="Objectiv Documentation Areas" 
+  baseColor="basic" 
+  links={[
+    { name: 'Tracking', to: '/tracking', tooltip: 'See more details', target: '_self' }, 
+    { name: 'Modeling', to: '/modeling' },
+    { name: 'Taxonomy', to: '/taxonomy' }
+  ]}
+  />
