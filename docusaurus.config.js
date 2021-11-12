@@ -50,7 +50,7 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    path.resolve(__dirname, 'src/plugins/post-build/'),
+    !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null }),
     require.resolve('docusaurus-plugin-image-zoom')
   ],
   scripts: [
