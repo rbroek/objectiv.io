@@ -17,8 +17,8 @@ const config = {
   title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
-  url: 'https://objectiv.io/',
-  baseUrl: isProductionEnv ? '/docs/' : '/',
+  url: isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/',
+  baseUrl: (isProductionEnv || isStagingEnv) ? '/docs/' : '/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -68,8 +68,8 @@ const config = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerDocsApplicationId: isProductionEnv ? 'objectiv-docs' : 'objectiv-docs-dev',
-    trackerEndPoint: isProductionEnv ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerDocsApplicationId: isProductionEnv ? 'objectiv-docs' : (isStagingEnv ? 'objectiv-docs-staging' : 'objectiv-docs-dev'),
+    trackerEndPoint: (isProductionEnv || isStagingEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
   },
@@ -134,5 +134,6 @@ const config = {
 
 module.exports = config;
 
+console.log("USING OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
 console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
 console.log("USING BASEURL:", config.baseUrl);
