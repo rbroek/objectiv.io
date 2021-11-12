@@ -68,7 +68,7 @@ const config = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerDocsApplicationId: (isProductionEnv || isStagingEnv) ? 'objectiv-docs' : 'objectiv-docs-dev',
+    trackerDocsApplicationId: isProductionEnv ? 'objectiv-docs' : (isStagingEnv ? 'objectiv-docs-staging' : 'objectiv-docs-dev'),
     trackerEndPoint: (isProductionEnv || isStagingEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
@@ -134,5 +134,6 @@ const config = {
 
 module.exports = config;
 
+console.log("USING OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
 console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
 console.log("USING BASEURL:", config.baseUrl);

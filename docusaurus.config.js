@@ -148,4 +148,6 @@ const config = {
 
 module.exports = config;
 
+console.log("USING OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
 console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("USING BASEURL:", config.baseUrl);
