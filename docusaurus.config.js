@@ -14,15 +14,15 @@ const config = {
   title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: isStagingEnv ? '/staging/' : '/',
-  url: isStagingEnv ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
+  baseUrl: '/',
+  url: isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
+  trailingSlash: true,
 
   presets: [
     [
@@ -62,8 +62,8 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: isProductionEnv ? 'objectiv-website' : 'objectiv-website-dev',
-    trackerEndPoint: isProductionEnv ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerApplicationId: (isProductionEnv || isStagingEnv) ? 'objectiv-website' : 'objectiv-website-dev',
+    trackerEndPoint: (isProductionEnv || isStagingEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
   },
@@ -84,7 +84,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: 'https://objectiv.io/docs/',
+          to: '/docs/',
           target: '_self'
         },
         {
