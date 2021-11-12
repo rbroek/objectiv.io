@@ -62,7 +62,7 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: (isProductionEnv || isStagingEnv) ? 'objectiv-website' : 'objectiv-website-dev',
+    trackerApplicationId: isProductionEnv ? 'objectiv-website' : (isStagingEnv ? 'objectiv-website-staging' : 'objectiv-website-dev'),
     trackerEndPoint: (isProductionEnv || isStagingEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
