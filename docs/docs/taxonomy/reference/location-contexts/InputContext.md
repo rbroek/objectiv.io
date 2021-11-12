@@ -9,10 +9,15 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
     AbstractLocationContext --> ItemContext;
     ItemContext --> InputContext;
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
-    click ItemContext "/docs/taxonomy/reference/location-contexts/ItemContext" "See more details" _self;
-`} caption="Figure: Diagram of InputContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: InputContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
+    { name: 'InputContext', to: '/taxonomy/reference/location-contexts/InputContext' }
+  ]}
+/>
 
 ### Properties
 None.

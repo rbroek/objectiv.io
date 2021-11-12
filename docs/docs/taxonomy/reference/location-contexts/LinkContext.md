@@ -10,11 +10,17 @@ import Mermaid from '@theme/Mermaid';
     AbstractLocationContext --> ItemContext;
     ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
     ActionContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
-    click ItemContext "/docs/taxonomy/reference/location-contexts/ItemContext" "See more details" _self;
-    click ActionContext "/docs/taxonomy/reference/location-contexts/ActionContext" "See more details" _self;
-`} caption="Figure: Diagram of LinkContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: LinkContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
+    { name: 'ActionContext', to: '/taxonomy/reference/location-contexts/ActionContext' },
+    { name: 'LinkContext', to: '/taxonomy/reference/location-contexts/LinkContext' }
+  ]}
+/>
+
 
 ### Properties
 |               | type        | description

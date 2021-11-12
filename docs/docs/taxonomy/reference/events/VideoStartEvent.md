@@ -6,12 +6,20 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"] --> NonInteractiveEvent;
+    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
+    AbstractEvent --> NonInteractiveEvent;
     NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
     VideoEvent --> VideoStartEvent;
-    click AbstractEvent "/docs/taxonomy/reference/events/AbstractEvent" "See more details" _self;
-    click NonInteractiveEvent "/docs/taxonomy/reference/events/NonInteractiveEvent" "See more details" _self;
-`} caption="Figure: Diagram of VideoStartEvent inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: VideoStartEvent" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
+    { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
+    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },
+    { name: 'VideoStartEvent', to: '/taxonomy/reference/events/VideoStartEvent' }
+  ]}
+/>
 
 ### Requires
 - None.

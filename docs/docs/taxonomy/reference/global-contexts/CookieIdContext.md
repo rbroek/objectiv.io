@@ -8,9 +8,14 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
     AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractGlobalContext "/docs/taxonomy/reference/abstract-contexts/AbstractGlobalContext" "See more details" _self;
-`} caption="Figure: Diagram of CookieIdContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: CookieIdContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
+  ]}
+/>
 
 ### Properties
 |                | type        | description

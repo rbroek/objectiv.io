@@ -6,13 +6,20 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"] --> NonInteractiveEvent;
+    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
+    AbstractEvent --> NonInteractiveEvent;
     NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
     VideoEvent --> VideoStopEvent;
-    click AbstractEvent "/docs/taxonomy/reference/events/AbstractEvent" "See more details" _self;
-    click NonInteractiveEvent "/docs/taxonomy/reference/events/NonInteractiveEvent" "See more details" _self;
-    click VideoEvent "/docs/taxonomy/reference/events/VideoEvent" "See more details" _self;
-`} caption="Figure: Diagram of VideoStopEvent inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: VideoStopEvent" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
+    { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
+    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },
+    { name: 'VideoStopEvent', to: '/taxonomy/reference/events/VideoStopEvent' },
+  ]}
+/>
 
 ### Requires
 - None.

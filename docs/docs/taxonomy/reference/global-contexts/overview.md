@@ -6,8 +6,9 @@ title: Overview
 
 import Mermaid from '@theme/Mermaid';
 
-Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They carry information that is not related 
-to where the [Event](/tracking/core-concepts/events.md) originated (location), such as device, platform or business data.
+Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They 
+carry information that is not related to where the [Event](/tracking/core-concepts/events.md) originated 
+(location), such as device, platform or business data.
 
 See the diagram below for the Global Contexts. Click each to learn more.
 
@@ -20,19 +21,17 @@ See the diagram below for the Global Contexts. Click each to learn more.
     AbstractGlobalContext --> CookieIdContext["CookieIdContext<br><span class='properties'>cookie_id: string</span>"];
     AbstractGlobalContext --> SessionContext["SessionContext<br><span class='properties'>hit_number: integer</span>"];
     AbstractGlobalContext --> HttpContext["HttpContext<br><span class='properties'>referer: string<br>user_agent: string<br>remote_address: string</span>"];
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractGlobalContext "#abstractglobalcontext" "See more details" _self;
-    click ApplicationContext "/docs/taxonomy/reference/global-contexts/ApplicationContext" "See more details" _self;
-    click DeviceContext "/docs/taxonomy/reference/global-contexts/DeviceContext" "See more details" _self;
-    click ErrorContext "/docs/taxonomy/reference/global-contexts/ErrorContext" "See more details" _self;
-    click CookieIdContext "/docs/taxonomy/reference/global-contexts/CookieIdContext" "See more details" _self;
-    click SessionContext "/docs/taxonomy/reference/global-contexts/SessionContext" "See more details" _self;
-    click HttpContext "/docs/taxonomy/reference/global-contexts/HttpContext" "See more details" _self;
-`} caption="Figure: Diagram of all Global Contexts" baseColor="blue" />
-
-## AbstractGlobalContext
-AbstractGlobalContext defines the bare minimum properties for every Global Context. All Global Contexts 
-inherit from it.
-
-### Properties
-All inherited from [AbstractContext](/taxonomy/reference/abstract-contexts/overview.md#abstractcontext).
+`} 
+  caption="Diagram: Global Contexts" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
+    { name: 'ApplicationContext', to: '/taxonomy/reference/global-contexts/ApplicationContext' },
+    { name: 'DeviceContext', to: '/taxonomy/reference/global-contexts/DeviceContext' },
+    { name: 'ErrorContext', to: '/taxonomy/reference/global-contexts/ErrorContext' },
+    { name: 'CookieIdContext', to: '/taxonomy/reference/global-contexts/CookieIdContext' },
+    { name: 'SessionContext', to: '/taxonomy/reference/global-contexts/SessionContext' },
+    { name: 'HttpContext', to: '/taxonomy/reference/global-contexts/HttpContext' }
+  ]}
+/>

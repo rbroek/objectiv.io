@@ -45,8 +45,17 @@ export default function Home() {
             <div className={clsx(styles.heroRepoButton)}>
               <Link 
                 to="https://github.com/objectiv/objectiv-analytics" 
-                {...tagLink({id: 'cta-repo-button', href: 'https://github.com/objectiv/objectiv-analytics', 
-                  text: 'Objectiv on GitHub'})}
+                {...tagLink({
+                    id: 'cta-repo-button', 
+                    href: 'https://github.com/objectiv/objectiv-analytics', 
+                    text: 'Objectiv on GitHub',
+                    options: {
+                      trackClicks: {
+                        waitUntilTracked: true
+                      }
+                    }
+                  }
+                )}
                 target="_self" 
                 className={clsx("button", styles.ctaButton)}>
                 <span><img src={useBaseUrl("img/icons/icon-github-blue.svg")} /></span>
@@ -133,7 +142,17 @@ export default function Home() {
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
                       to="https://objectiv.io/docs/taxonomy/" 
-                      {...tagLink({id: 'cta-docs-taxonomy', href: '/docs/taxonomy/', text: 'Docs - Taxonomy'})}
+                      {...tagLink({
+                          id: 'cta-docs-taxonomy', 
+                          href: '/docs/taxonomy/', 
+                          text: 'Docs - Taxonomy',
+                          options: {
+                            trackClicks: {
+                              waitUntilTracked: true
+                            }
+                          }
+                        }
+                      )}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
                       <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
@@ -167,7 +186,17 @@ export default function Home() {
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
                       to="https://objectiv.io/docs/tracking/" 
-                      {...tagLink({id: 'cta-docs-tracking', href: '/docs/tracking/', text: 'Docs - Tracking'})}
+                      {...tagLink({
+                          id: 'cta-docs-tracking', 
+                          href: '/docs/tracking/', 
+                          text: 'Docs - Tracking',
+                          options: {
+                            trackClicks: {
+                              waitUntilTracked: true
+                            }
+                          }
+                        }
+                      )}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
                       <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
@@ -209,8 +238,17 @@ export default function Home() {
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
                       to="https://objectiv.io/docs/tracking/core-concepts/locations" 
-                      {...tagLink({id: 'cta-docs-location-stack', href: '/docs/taxonomy', 
-                        text: 'Docs - Location Stack'})}
+                      {...tagLink({
+                          id: 'cta-docs-location-stack', 
+                          href: '/docs/taxonomy', 
+                          text: 'Docs - Location Stack',
+                          options: {
+                            trackClicks: {
+                              waitUntilTracked: true
+                            }
+                          }
+                        })
+                      }
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
                       <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
@@ -240,13 +278,27 @@ export default function Home() {
                     effectively closing the gap between experimentation and production.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to="https://objectiv.io/docs/modeling/" 
-                      {...tagLink({id: 'cta-docs-modeling', href: '/docs/modeling/', text: 'Docs - Modeling'})}
+                      to="https://notebook.objectiv.io/lab?path=product_analytics.ipynb" 
+                      {...tagLink({
+                          id: 'cta-docs-demo-notebook', 
+                          href: 'https://notebook.objectiv.io/lab?path=product_analytics.ipynb', 
+                          text: 'Live Demo Notebook',
+                          options: {
+                            trackClicks: {
+                              waitUntilTracked: true
+                            }
+                          }
+                        }
+                      )}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
-                      <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
-                      Docs - Modeling
+                      <span><img src={useBaseUrl("img/icons/icon-jupyter-notebook.svg")} /></span>
+                      Live Demo Notebook
                     </Link>
+                    <img
+                      src={useBaseUrl("img/try-it-here.svg")}
+                      className={clsx(styles.tryItHere)}
+                      alt="Try it here" />
                   </div>
                 </div>
                 <div>
@@ -281,8 +333,17 @@ export default function Home() {
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
                       to="https://objectiv.io/docs/modeling/" 
-                      {...tagLink({id: 'cta-docs-reuse', href: '/docs/modeling/', 
-                        text: 'Docs - Modeling'})}
+                      {...tagLink({
+                          id: 'cta-docs-reuse', 
+                          href: '/docs/modeling/', 
+                          text: 'Docs - Modeling',
+                          options: {
+                            trackClicks: {
+                              waitUntilTracked: true
+                            }
+                          }
+                        }
+                      )}
                       target="_self" 
                       className={clsx("button", styles.ctaButton)}>
                       <span><img src={useBaseUrl("img/icons/icon-docs-blue.svg")} /></span>
@@ -300,6 +361,17 @@ export default function Home() {
               <p>Have opinions on where we should take this or want to stay in the loop?</p>
               <Link
                 to={customFields.slackJoinLink}
+                {...tagLink({
+                    id: 'join-slack', 
+                    href: customFields.slackJoinLink,
+                    text: 'Join us on Slack',
+                    options: {
+                      trackClicks: {
+                        waitUntilTracked: true
+                      }
+                    }
+                  }
+                )}
                 className={clsx("button", styles.ctaButton)}>
                   <span><img src={useBaseUrl("img/icons/icon-slack.svg")} /></span>
                   Join us on Slack

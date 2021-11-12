@@ -8,9 +8,27 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
-`} caption="Figure: Diagram of SectionContext inheritance" baseColor="blue" />
+    SectionContext --> WebDocumentContext["WebDocumentContext<br><span class='properties'>url: string</span>"];
+    SectionContext --> ScreenContext["ScreenContext<br /><span class='properties'>screen: string</span>"];
+    SectionContext --> ExpandableSectionContext;
+    SectionContext --> MediaPlayerContext;
+    SectionContext --> NavigationContext;
+    SectionContext --> OverlayContext;
+`} 
+  caption="Diagram: SectionContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
+    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
+    { name: 'WebDocumentContext', to: '/taxonomy/reference/location-contexts/WebDocumentContext' },
+    { name: 'ScreenContext', to: '/taxonomy/reference/location-contexts/ScreenContext' },
+    { name: 'ExpandableSectionContext', to: '/taxonomy/reference/location-contexts/ExpandableSectionContext' },
+    { name: 'MediaPlayerContext', to: '/taxonomy/reference/location-contexts/MediaPlayerContext' },
+    { name: 'NavigationContext', to: '/taxonomy/reference/location-contexts/NavigationContext' },
+    { name: 'OverlayContext', to: '/taxonomy/reference/location-contexts/OverlayContext' }
+  ]}
+/>
 
 ### Properties
 None.

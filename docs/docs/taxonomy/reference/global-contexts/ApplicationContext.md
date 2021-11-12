@@ -8,9 +8,14 @@ A [GlobalContext](/taxonomy/reference/global-contexts/overview.md) describing th
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
     AbstractGlobalContext --> ApplicationContext;
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractGlobalContext "/docs/taxonomy/reference/abstract-contexts/AbstractGlobalContext" "See more details" _self;
-`} caption="Figure: Diagram of ApplicationContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: ApplicationContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' }
+  ]}
+/>
 
 ### Properties
 None.

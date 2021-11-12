@@ -7,11 +7,18 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"] --> NonInteractiveEvent;
+    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
+    AbstractEvent --> NonInteractiveEvent;
     NonInteractiveEvent --> ApplicationLoadedEvent["ApplicationLoadedEvent<br /><span class='properties'>requires:<br />SectionContext</span>"];
-    click AbstractEvent "/docs/taxonomy/reference/events/AbstractEvent" "See more details" _self;
-    click NonInteractiveEvent "/docs/taxonomy/reference/events/NonInteractiveEvent" "See more details" _self;
-`} caption="Figure: Diagram of ApplicationLoadedEvent inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: ApplicationLoadedEvent" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
+    { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
+    { name: 'ApplicationLoadedEvent', to: '/taxonomy/reference/events/ApplicationLoadedEvent' }
+  ]}
+/>
 
 ### Requires
 - [SectionContext](/taxonomy/reference/location-contexts/SectionContext.md).

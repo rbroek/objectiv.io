@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import mermaid from "mermaid";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 mermaid.initialize({
   logLevel: 4,
@@ -40,11 +41,28 @@ mermaid.initialize({
 `,
 });
 
-const Mermaid = ({ chart, caption, baseColor}) => {
+const Mermaid = ({ chart, caption, baseColor, links}) => {
 	useEffect(() => {
 		mermaid.contentLoaded();
 	}, []);
-	return <div className={"diagram-"+baseColor}><div className="mermaid">{chart}</div><p className="diagram-caption">{caption}</p></div>;
+
+  if(links && links.length > 0) {
+    for (const link of links) {
+      const name = link.name ? link.name : '';
+      // use the base URL for all links
+      const linkTo = link.to ? useBaseUrl(link.to) : '#';
+      const tooltip = link.tooltip ? link.tooltip : 'See details';
+      const target = link.target ? link.target : '_self';
+      chart = chart + '\n click ' + name + ' "' + linkTo + '" "' + tooltip + '" ' + target + '';
+    }
+  }
+
+	return (
+    <div className={"diagram-"+baseColor}>
+      <div className="mermaid">{chart}</div>
+      <p className="diagram-caption">{caption}</p>
+    </div>
+  );
 };
 
 export default Mermaid;

@@ -6,9 +6,20 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"] --> InteractiveEvent;
-    click AbstractEvent "/docs/taxonomy/reference/events/AbstractEvent" "See more details" _self;
-`} caption="Figure: Diagram of InteractiveEvent inheritance" baseColor="blue" />
+    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
+    AbstractEvent --> InteractiveEvent;
+    InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
+    InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
+`} 
+  caption="Diagram: InteractiveEvent" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
+    { name: 'InteractiveEvent', to: '/taxonomy/reference/events/InteractiveEvent' },
+    { name: 'ClickEvent', to: '/taxonomy/reference/events/ClickEvent' },
+    { name: 'InputChangeEvent', to: '/taxonomy/reference/events/InputChangeEvent' }
+  ]}
+/>
 
 ### Requires
 - [SectionContext](/taxonomy/reference/location-contexts/SectionContext.md).

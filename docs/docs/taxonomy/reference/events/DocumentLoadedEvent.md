@@ -4,18 +4,25 @@ A [NonInteractiveEvent](/taxonomy/reference/events/NonInteractiveEvent.md) that 
 [WebDocumentContext](/taxonomy/reference/location-contexts/WebDocumentContext) which describes the state (eg. URL) of the event.
 
 :::note 
-With SPA's this probably only happens once, as page (re)loads don't happen after the initial page load.
+With SPAs this probably only happens once, as page (re)loads don't happen after the initial page load.
 :::
 
 import Mermaid from '@theme/Mermaid';
 
 <Mermaid chart={`
 	graph LR
-    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"] --> NonInteractiveEvent;
+    AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
+    AbstractEvent --> NonInteractiveEvent;
     NonInteractiveEvent --> DocumentLoadedEvent["DocumentLoadedEvent<br /><span class='properties'>requires:<br />WebDocumentContext</span>"];
-    click AbstractEvent "/docs/taxonomy/reference/events/AbstractEvent" "See more details" _self;
-    click NonInteractiveEvent "/docs/taxonomy/reference/events/NonInteractiveEvent" "See more details" _self;
-`} caption="Figure: Diagram of DocumentLoadedEvent inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: DocumentLoadedEvent" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
+    { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
+    { name: 'DocumentLoadedEvent', to: '/taxonomy/reference/events/DocumentLoadedEvent' }
+  ]}
+/>
 
 ### Requires
 - [WebDocumentContext](/taxonomy/reference/location-contexts/WebDocumentContext.md).

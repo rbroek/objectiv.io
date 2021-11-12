@@ -24,28 +24,60 @@ export default function Jobs() {
         </header>
         <main {...tagElement({id: 'main'})}>
           <div className={clsx('container', styles.jobsContainer)}>
-            <p>It’s our mission to create the ultimate, SQL model based, experimental workflow for data science. 
-              Let’s break that down.</p>
-            <p>Building a great model as a data scientist happens in experimental iterations. That’s why so 
-              many of us live in Notebooks. The analytics data that you work on clearly does not fit a local 
-              machine, so it’s either working with samples, or spinning up complex data lakes. We believe there 
-              is so much development going on in the SQL space, that today it’s possible to create a single 
-              interactive &amp; experimental environment for the data scientist to build models, while 
-              iterating on the full dataset.</p>
-            <p>We are building a workflow where the data scientist can perform any operation or basic model on 
-              a full SQL stored dataset, and get interactive results in a dataframe in a Notebook. Then, 
-              easily go back a few steps to any point in the DAG, apply some other operations or models again, 
-              and with a single click get the results back in a dataframe. From that point, have the full 
-              freedom to add any machine learning model on that.</p>
-            <p>To make this all happen, we have started our journey in the space of product analytics. Creating 
-              a standardized taxonomy and validation that carries through a whole pipeline that ends all the 
-              way in the notebook. We see product analytics as a stepping stone in a much larger ambition. To 
-              create the dream experimental modelling workflow for data science.</p>
+            <p>Objectiv is looking for a Senior Software Engineer to join our crew, a team of experienced 
+              software engineers and data scientists on a mission to create the ultimate workflow for the 
+              data scientist.</p>
+            <p>After almost a year of hard work, we've just released the first public version of our data 
+              collection &amp; modeling library. One of its major components is Bach, a data modeling library 
+              that enables you to compose models with familiar Pandas-like dataframe operations in your 
+              notebook. It uses an SQL abstraction layer that enables models to run on the full dataset, and 
+              you can output models to SQL with a single command.</p>
+            <p>It includes a set of operations that enable effective feature creation for datasets that 
+              embrace the open taxonomy of analytics, which is our proposal for a common way to collect, 
+              structure and validate data so models &amp; data can be reused, and data scientists can build 
+              on the knowledge and practices of others.</p>
+            <p>If that excites you, you’ll be glad to hear we have big plans for Bach, and are looking for 
+              able hands to help us execute them.</p>
 
-            <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
-            <p>Objectiv is open-source and we are developing the project in public. Our initial version was just 
-              released, to showcase how we think about solving the hard parts of this challenge. It’s early days 
-              and there is so much to do, this is where you possibly come in :-).</p>
+            <div {...tagElement({ id: 'the-project' })}>
+              <h2><img width="32px" src='/img/icons/icon-cake.svg' alt='The project'/>The project</h2>
+              <p>Objectiv is an open-source project. We are developing it in public under the Apache 2.0 
+                License. Check out our&nbsp;
+                <Link
+                  to="https://github.com/objectiv/objectiv-analytics" 
+                  {...tagLink({
+                      id: 'github-repo', 
+                      href: 'https://github.com/objectiv/objectiv-analytics', 
+                      text: 'Docs - Taxonomy',
+                      options: {
+                        trackClicks: {
+                          waitUntilTracked: true
+                        }
+                      }
+                    })
+                  }
+                  target="_self"
+                >
+                  GitHub repo
+                </Link>
+                &nbsp;or the&nbsp;
+                <Link 
+                  to="https://objectiv.io/docs/" 
+                  {...tagLink({
+                      id: 'docs', 
+                      href: '/docs/', 
+                      text: 'Objectiv Docs',
+                      options: {
+                        trackClicks: {
+                          waitUntilTracked: true
+                        }
+                      }
+                    }
+                  )}
+                  target="_self">
+                    Objectiv Docs
+                </Link> for details.</p>
+            </div>
 
             <h2><img width="32px" src='/img/icons/icon-cap.svg' alt='The team' /> The team</h2>
             <p>You will be joining an early team of 10 analytics enthusiasts that are together building a great 
@@ -70,9 +102,9 @@ export default function Jobs() {
             </ul>
 
             <h2><img width="32px" src='/img/icons/icon-video-call.svg' alt='Our work setup' /> Our work setup</h2>
-            <p>Our team meets in Utrecht every Tuesday. This is the day where we do all the team updates, 
-              syncs, and make decisions to move forward together. The rest of the week everyone works remotely 
-              and we limit meetings to standups and syncs that cannot wait.</p>
+            <p>We have a battle-tested remote-friendly work setup: daily video standups, and Tuesdays for all-team
+              updates, syncs and making decisions on how to move forward together. We also bring the team together 
+              f2f on a quarterly basis for outings.</p>
             <p>We don’t care when work is being done, we care about what is being done. So our team is used to 
               taking exercise breaks or spending family time during the day and then getting stuff done in the 
               evening. Things like that.</p>

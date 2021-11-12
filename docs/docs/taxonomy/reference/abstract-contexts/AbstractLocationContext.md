@@ -1,3 +1,8 @@
+---
+sidebar_position: 4
+title: AbstractLocationContext
+---
+
 # AbstractLocationContext
 
 import Mermaid from '@theme/Mermaid';
@@ -11,8 +16,14 @@ See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for a
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
-    click AbstractLocationContext "/docs/taxonomy/reference/abstract-contexts/AbstractLocationContext" "See more details" _self;
-`} caption="Figure: AbstractLocationContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: AbstractLocationContext inheritance" 
+  baseColor="blue"
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractLocationContext', to: '/taxonomy/reference/abstract-contexts/AbstractLocationContext' },
+  ]}
+/>
 
 ### Properties
 All inherited from [AbstractContext](/taxonomy/reference/abstract-contexts/overview.md#abstractcontext).

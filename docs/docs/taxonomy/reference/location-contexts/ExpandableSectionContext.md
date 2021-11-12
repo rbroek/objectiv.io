@@ -9,10 +9,16 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
     SectionContext --> ExpandableSectionContext;
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
-    click SectionContext "/docs/taxonomy/reference/location-contexts/SectionContext" "See more details" _self;
-`} caption="Figure: Diagram of ExpandableSectionContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: ExpandableSectionContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
+    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
+    { name: 'ExpandableSectionContext', to: '/taxonomy/reference/location-contexts/ExpandableSectionContext' }
+  ]}
+/>
 
 ### Properties
 None.

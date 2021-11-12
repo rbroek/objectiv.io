@@ -8,9 +8,14 @@ import Mermaid from '@theme/Mermaid';
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
     AbstractGlobalContext --> ErrorContext["ErrorContext<br><span class='properties'>message: string</span>"];
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractGlobalContext "/docs/taxonomy/reference/abstract-contexts/AbstractGlobalContext" "See more details" _self;
-`} caption="Figure: Diagram of ErrorContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: ErrorContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/global-contexts/AbstractGlobalContext' },
+  ]}
+/>
 
 ### Properties
 |              | type        | description

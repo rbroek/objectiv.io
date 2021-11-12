@@ -9,10 +9,16 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
     SectionContext --> WebDocumentContext["WebDocumentContext<br><span class='properties'>url: string</span>"];
-    click AbstractContext "/docs/taxonomy/reference/abstract-contexts/overview#abstractcontext" "See more details" _self;
-    click AbstractLocationContext "#abstractlocationcontext" "See more details" _self;
-    click SectionContext "/docs/taxonomy/reference/location-contexts/SectionContext" "See more details" _self;
-`} caption="Figure: Diagram of WebDocumentContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: WebDocumentContext inheritance" 
+  baseColor="blue" 
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
+    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
+    { name: 'WebDocumentContext', to: '/taxonomy/reference/location-contexts/WebDocumentContext' },
+  ]}
+/>
 
 ### Properties
 |                | type        | description

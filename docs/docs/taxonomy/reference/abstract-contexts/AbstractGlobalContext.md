@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+title: AbstractGlobalContext
+---
+
 # AbstractGlobalContext
 
 import Mermaid from '@theme/Mermaid';
@@ -10,8 +15,14 @@ See [Global Contexts](/taxonomy/reference/global-contexts/overview.md) for all C
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
-    click AbstractGlobalContext "/docs/taxonomy/reference/abstract-contexts/AbstractGlobalContext" "See more details" _self;
-`} caption="Figure: AbstractGlobalContext inheritance" baseColor="blue" />
+`} 
+  caption="Diagram: AbstractGlobalContext inheritance" 
+  baseColor="blue"
+  links={[
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/abstract-contexts/AbstractGlobalContext' }
+  ]}
+/>
 
 ### Properties
 All inherited from [AbstractContext](/taxonomy/reference/abstract-contexts/overview.md#abstractcontext).

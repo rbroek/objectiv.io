@@ -18,32 +18,12 @@ import Mermaid from '@theme/Mermaid';
 	graph TD
     Event["Event&lt;AbstractEvent&gt;"]--*--> GlobalContext["GlobalContext&lt;AbstractContext&gt;"]
     Event--*--> LocationContext["LocationContext&lt;AbstractContext&gt;"]
-    click Event href "/docs/taxonomy/reference/events/" "See more details" _self
-    click GlobalContext href "/docs/taxonomy/reference/global-contexts/" "See more details" _self
-    click LocationContext href "/docs/taxonomy/reference/location-contexts/" "See more details" _self
-`} caption="Click on one of the definitions to learn more" baseColor="basic" />
-
-
-<!-- <Mermaid chart={`
-	classDiagram
-    Event --|> "*" GlobalContext~AbstractContext~
-    Event --|> "*" LocationContext~AbstractContext~
-    class Event{
-      array~GlobalContext~ global_contexts
-      array~LocationContext~ location_stack
-      +string _type
-      +string id
-      +integer time
-      requires(~ApplicationContext~)
-    }
-    link Event "http://www.github.com" "This is a link"
-    class GlobalContext{
-      +string _type
-      +string id
-    }
-    class LocationContext{
-      +string _type
-      +string id
-    }
-    click Event href "/docs/taxonomy/reference/events/" "See more details" _self
-`} caption="Click on one of the definitions to learn more" baseColor="basic" /> -->
+`}
+  caption="Click on one of the definitions to learn more" 
+  baseColor="basic" 
+  links={[
+    { name: 'Event', to: '/taxonomy/events/' }, 
+    { name: 'GlobalContext', to: '/taxonomy/global-contexts/' }, 
+    { name: 'LocationContext', to: '/taxonomy/location-contexts/' }, 
+  ]}
+/>
