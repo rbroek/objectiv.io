@@ -12,18 +12,12 @@ their properties, requirements, and relationships with other classes.
 Using the open taxonomy ensures models & data can be reused, and data scientists can build on the knowledge 
 and practices of others.
 
-import Mermaid from '@theme/Mermaid';
+## Core Concepts
+To understand in more detail how the Taxonomy works, read about the underlying core concepts.
 
-<Mermaid chart={`
-	graph TD
-    Event["Event&lt;AbstractEvent&gt;"]--*--> GlobalContext["GlobalContext&lt;AbstractContext&gt;"]
-    Event--*--> LocationContext["LocationContext&lt;AbstractContext&gt;"]
-`}
-  caption="Click on one of the definitions to learn more" 
-  baseColor="basic" 
-  links={[
-    { name: 'Event', to: '/taxonomy/events/' }, 
-    { name: 'GlobalContext', to: '/taxonomy/global-contexts/' }, 
-    { name: 'LocationContext', to: '/taxonomy/location-contexts/' }, 
-  ]}
-/>
+[Read up on the Core Concepts](./core-concepts.md)
+
+## Reference
+To implement the taxonomy, all Contexts and Events are open and documented. 
+
+[Check out the Reference](./reference/overview.md)
