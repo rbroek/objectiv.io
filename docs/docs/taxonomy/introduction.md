@@ -6,11 +6,21 @@ title: Introduction
 
 # Introduction
 
-Objectiv's open taxonomy of analytics is a proposal for a common way to collect, structure, and validate data. It defines classes for each common event type and the contexts in which they can happen. It also describes
-their properties, requirements, and relationships with other classes.
+The Objectiv Taxonomy is [our](https://objectiv.io/about/) proposal for a common way to collect, structure, 
+and validate analytics data. We aim to tackle the problems that most data scientists face: 
+* Having to spend a significant amount of time on prepwork to ensure data is ready for modeling; and
+* Having to usually build models from scratch, because there is no common way to structure data or share 
+  models - even though data teams often have very similar goals.
 
-Using the open taxonomy ensures models & data can be reused, and data scientists can build on the knowledge 
-and practices of others.
+Our proposed solution entails:
+* An initial set of classes for common event types for analytics, and the context in which they can happen;
+* Their properties, requirements, and relationships;
+* Plus: [tracking](/tracking/introduction.md), [collecting](/tracking/core-concepts/collector.md), and 
+  [modeling](/modeling) implementations that fully build on the taxonomy.
+
+**We're actively looking for feedback**: Just like the rest of the code, the taxonomy is open source and 
+we're building it in public. If you have any ideas or opinions on where to take it next, please see our 
+[Contribution Guide](/the-project/contributing.md).
 
 ## Core Concepts
 To understand in more detail how the Taxonomy works, read about the underlying core concepts.
