@@ -46,22 +46,20 @@ const Mermaid = ({ chart, caption, baseColor, links}) => {
 		mermaid.contentLoaded();
 	}, []);
 
-  let clicks = '';
   if(links && links.length > 0) {
     for (const link of links) {
-      // todo: use baseUrl
       const name = link.name ? link.name : '';
+      // use the base URL for all links
       const linkTo = link.to ? useBaseUrl(link.to) : '#';
       const tooltip = link.tooltip ? link.tooltip : 'See details';
       const target = link.target ? link.target : '_self';
-      clicks = clicks + '\n click '+name+' "'+linkTo+'" "'+tooltip+'" '+target+'';
+      chart = chart + '\n click ' + name + ' "' + linkTo + '" "' + tooltip + '" ' + target + '';
     }
   }
-  const chartClicks = chart + clicks;
 
 	return (
     <div className={"diagram-"+baseColor}>
-      <div className="mermaid">{chartClicks}</div>
+      <div className="mermaid">{chart}</div>
       <p className="diagram-caption">{caption}</p>
     </div>
   );

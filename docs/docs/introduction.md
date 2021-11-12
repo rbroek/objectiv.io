@@ -78,8 +78,8 @@ documentation sections.
   caption="Objectiv Documentation Areas" 
   baseColor="basic" 
   links={[
-    { name: 'Tracking', to: '/tracking', tooltip: 'See more details', target: '_self' }, 
-    { name: 'Modeling', to: '/modeling' },
-    { name: 'Taxonomy', to: '/taxonomy' }
+    { name: 'Tracking', to: '/tracking', tooltip: 'Go to Tracking section' }, 
+    { name: 'Modeling', to: '/modeling', tooltip: 'Go to Tracking section' },
+    { name: 'Taxonomy', to: '/taxonomy', tooltip: 'Go to Taxonomy section' }
   ]}
-  />
+/>
