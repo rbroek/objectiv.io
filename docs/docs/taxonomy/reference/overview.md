@@ -15,20 +15,6 @@ uniqueness.
 * [AbstractLocationContext](./abstract-contexts/AbstractLocationContext.md)
 
 
-## Global Contexts
-Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They 
-carry information that is not related to where the [Event](/tracking/core-concepts/events.md) originated 
-(location), such as device, platform or business data.
-
-* [AbstractGlobalContext](./global-contexts/AbstractGlobalContext.md)
-* [ApplicationContext](./global-contexts/ApplicationContext.md)
-* [CookieIdContext](./global-contexts/CookieIdContext.md)
-* [DeviceContext](./global-contexts/DeviceContext.md)
-* [ErrorContext](./global-contexts/ErrorContext.md)
-* [HttpContext](./global-contexts/HttpContext.md)
-* [SessionContext](./global-contexts/SessionContext.md)
-
-
 ## Location Contexts
 LocationContexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 
 [Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is 
@@ -48,6 +34,20 @@ Sections, Menus, etc.
 * [ScreenContext](./location-contexts/ScreenContext.md)
 * [SectionContext](./location-contexts/SectionContext.md)
 * [WebDocumentContext](./location-contexts/WebDocumentContext.md)
+
+
+## Global Contexts
+Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They 
+carry information that is not related to where the [Event](/tracking/core-concepts/events.md) originated 
+(location), such as device, platform or business data.
+
+* [AbstractGlobalContext](./global-contexts/AbstractGlobalContext.md)
+* [ApplicationContext](./global-contexts/ApplicationContext.md)
+* [CookieIdContext](./global-contexts/CookieIdContext.md)
+* [DeviceContext](./global-contexts/DeviceContext.md)
+* [ErrorContext](./global-contexts/ErrorContext.md)
+* [HttpContext](./global-contexts/HttpContext.md)
+* [SessionContext](./global-contexts/SessionContext.md)
 
 
 ## Events

@@ -10,6 +10,7 @@ import Mermaid from '@theme/Mermaid';
     AbstractLocationContext --> ItemContext;
     ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
     ActionContext --> ButtonContext;
+    class ButtonContext diagramActive;
 `} 
   caption="Diagram: ButtonContext inheritance" 
   baseColor="blue" 

@@ -10,6 +10,7 @@ import Mermaid from '@theme/Mermaid';
     AbstractEvent --> NonInteractiveEvent;
     NonInteractiveEvent --> VideoEvent["VideoEvent<br /><span class='requires_context'>requires:<br />MediaPlayerContext</span>"];
     VideoEvent --> VideoLoadEvent;
+    class VideoLoadEvent diagramActive;
 `} 
   caption="Diagram: VideoLoadEvent" 
   baseColor="blue" 

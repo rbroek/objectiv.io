@@ -16,6 +16,7 @@ See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for a
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+    class AbstractLocationContext diagramActive;
 `} 
   caption="Diagram: AbstractLocationContext inheritance" 
   baseColor="blue"

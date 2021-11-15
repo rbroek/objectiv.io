@@ -10,6 +10,7 @@ import Mermaid from '@theme/Mermaid';
     AbstractLocationContext --> ItemContext;
     ItemContext --> ActionContext["ActionContext<br><span class='properties'>text: string"];
     ActionContext --> LinkContext["LinkContext<br><span class='properties'>href: string"];
+    class LinkContext diagramActive;
 `} 
   caption="Diagram: LinkContext inheritance" 
   baseColor="blue" 

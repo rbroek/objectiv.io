@@ -25,6 +25,7 @@ import Mermaid from '@theme/Mermaid';
     VideoEvent --> VideoPauseEvent;
     VideoEvent --> VideoStopEvent;
     VideoEvent --> VideoStartEvent;
+    class NonInteractiveEvent diagramActive;
 `} 
   caption="Diagram: NonInteractiveEvent" 
   baseColor="blue" 

@@ -14,6 +14,7 @@ import Mermaid from '@theme/Mermaid';
     SectionContext --> MediaPlayerContext;
     SectionContext --> NavigationContext;
     SectionContext --> OverlayContext;
+    class SectionContext diagramActive;
 `} 
   caption="Diagram: SectionContext inheritance" 
   baseColor="blue" 

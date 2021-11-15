@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
     AbstractEvent["AbstractEvent<br><span class='requires_context'>requires:<br />ApplicationContext<span class='properties'>location_stack: array<br />global_contexts: array<br />_type: string<br />id: string<br />time: integer</span></span>"];
     AbstractEvent --> InteractiveEvent;
     InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
+    class ClickEvent diagramActive;
 `} 
   caption="Diagram: InteractiveEvent" 
   baseColor="blue" 

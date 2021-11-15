@@ -15,6 +15,7 @@ See [Global Contexts](/taxonomy/reference/global-contexts/overview.md) for all C
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractGlobalContext;
+    class AbstractGlobalContext diagramActive;
 `} 
   caption="Diagram: AbstractGlobalContext inheritance" 
   baseColor="blue"

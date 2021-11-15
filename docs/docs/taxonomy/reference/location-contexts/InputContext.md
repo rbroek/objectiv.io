@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
     AbstractLocationContext --> ItemContext;
     ItemContext --> InputContext;
+    class InputContext diagramActive;
 `} 
   caption="Diagram: InputContext inheritance" 
   baseColor="blue" 

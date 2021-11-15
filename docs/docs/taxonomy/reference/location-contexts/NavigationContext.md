@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
     SectionContext --> NavigationContext;
+    class NavigationContext diagramActive;
 `} 
   caption="Diagram: NavigationContext inheritance" 
   baseColor="blue" 

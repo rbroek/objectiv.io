@@ -13,6 +13,7 @@ import Mermaid from '@theme/Mermaid';
     VideoEvent --> VideoPauseEvent;
     VideoEvent --> VideoStopEvent;
     VideoEvent --> VideoStartEvent;
+    class VideoEvent diagramActive;
 `} 
   caption="Diagram: VideoEvent" 
   baseColor="blue" 

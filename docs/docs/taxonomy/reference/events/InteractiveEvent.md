@@ -10,6 +10,7 @@ import Mermaid from '@theme/Mermaid';
     AbstractEvent --> InteractiveEvent;
     InteractiveEvent["InteractiveEvent<br /><span class='properties'>requires:<br />SectionContext</span>"] --> ClickEvent;
     InteractiveEvent --> InputChangeEvent["InputChangeEvent<br /><span class='properties'>requires:<br />InputContext</span>"];
+    class InteractiveEvent diagramActive;
 `} 
   caption="Diagram: InteractiveEvent" 
   baseColor="blue" 

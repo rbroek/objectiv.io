@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
     SectionContext --> WebDocumentContext["WebDocumentContext<br><span class='properties'>url: string</span>"];
+    class WebDocumentContext diagramActive;
 `} 
   caption="Diagram: WebDocumentContext inheritance" 
   baseColor="blue" 

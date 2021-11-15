@@ -9,6 +9,7 @@ import Mermaid from '@theme/Mermaid';
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
 		AbstractLocationContext --> SectionContext;
     SectionContext --> MediaPlayerContext;
+    class MediaPlayerContext diagramActive;
 `} 
   caption="Diagram: MediaPlayerContext inheritance" 
   baseColor="blue" 
