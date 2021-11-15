@@ -5,7 +5,7 @@ title: Validation
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Data tracked by Objectiv adheres to an open, standardized [Taxonomy](/taxonomy/overview.md). This means it's 
+Data tracked by Objectiv adheres to an open, standardized [Taxonomy](//taxonomy/introduction.md). This means it's 
 well-structured & self-descriptive, and can be validated at the first step of the pipeline. Objectiv provides 
 several tools to catch errors before data starts flowing in, outlined below.
 
@@ -31,7 +31,7 @@ browser console:
 
 ## Collector validation
 As a final catch-all, Objectiv's [Collector](./collector.md) validates any incoming Event against the 
-[Taxonomy and its properties](/taxonomy/events/overview.md). 
+[Taxonomy and its properties](/taxonomy/reference/events/overview.md). 
 
 For more background, see the [Collector docs](./collector.md).
 

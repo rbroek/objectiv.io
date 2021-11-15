@@ -1,6 +1,6 @@
 # trackVideoStart
 
-Triggers a [trackVideoStart](/taxonomy/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [trackVideoStart](/taxonomy/reference/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackVideoStart = (parameters: {

@@ -1,6 +1,6 @@
 # trackVisibility
 
-Triggers either a [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md) or [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md) based on state.
+Triggers either a [SectionVisibleEvent](/taxonomy/reference/events/SectionVisibleEvent.md) or [SectionHiddenEvent](/taxonomy/reference/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md) based on state.
 
 ```typescript
 trackVisibility = (parameters: {

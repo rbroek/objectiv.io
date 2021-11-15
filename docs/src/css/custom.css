@@ -248,7 +248,7 @@ dl blockquote {
 .hover .diagram-blue rect, .diagram-blue .hover rect {
   fill: rgb(100, 200, 250) !important;
 }
-.diagram-pink rect {
+.diagram-pink rect, .diagramActive rect {
   fill: #fba99dff !important;
   stroke: rgb(200, 50, 25) !important;
 }

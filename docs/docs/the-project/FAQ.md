@@ -18,7 +18,7 @@ The open taxonomy for analytics is our proposal for a common way to collect, str
 
 Just like the taxonomy of the animal kingdom does for animals, the open taxonomy for analytics describes analytics events in a class system. Each common event type has its own class, which defines its properties, requirements, restrictions and relationships with other classes. It also includes context classes, which describe the context in which an event took place, rather than the type of event that took place.
 
-Check out the [Taxonomy](/taxonomy/overview.md) section of our Docs to see what it looks like, or try [Play with Objectiv](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) to see how it's used
+Check out the [Taxonomy](//taxonomy/introduction.md) section of our Docs to see what it looks like, or try [Play with Objectiv](https://notebook.objectiv.io/lab?path=product_analytics.ipynb) to see how it's used
 
 ### Why an open taxonomy for analytics?
 When it comes to product analytics, we noticed that most data teams have similar goals (optimize conversion, increase engagement, reduce churn, etc.) yet their data and models all look different. Models are often built from scratch. Someone in your field has probably already written a very similar analysis, but data teams keep reinventing the wheel because there is no common way to structure and model data. This leads to isolated knowledge and no meaningful way for data scientists to collaborate. 

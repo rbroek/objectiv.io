@@ -1,6 +1,6 @@
 # trackCompleted
 
-Triggers a [CompletedEvent](/taxonomy/events/CompletedEvent.md).
+Triggers a [CompletedEvent](/taxonomy/reference/events/CompletedEvent.md).
 
 ```typescript
 trackCompleted = (parameters: {
