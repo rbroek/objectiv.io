@@ -101,6 +101,5 @@ In this example, the Event carries `GlobalContext`s that identify the applicatio
 context of the user, in this case their referer, user agent, and IP address.
 
 
-## Mapping to your application
-The taxonomy is designed to cover a wide range of common analytics use cases, and should be mapped to your 
-application by [instrumenting it with the Objectiv trackers](/tracking/introduction.md).
+## Taxonomy Mapping
+In order to enable Objectiv's tracker to collect data that embraces the Open Taxonomy, you need to map your application to it. You can find step-by-step instructions on how to do that in [our Tracking instrumentation guides](/tracking/introduction.md).

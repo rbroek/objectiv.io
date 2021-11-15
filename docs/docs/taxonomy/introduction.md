@@ -6,18 +6,14 @@ title: Introduction
 
 # Introduction
 
-The open Taxonomy is [our](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
-validate analytics data. It is designed to cover a wide range of common analytics use cases. It provides:
-* An initial set of classes for common event types for analytics, and the context in which they can happen; and
-* Their properties, requirements, and relationships.
+The Open Taxonomy of Analytics is [Objectiv's](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
+validate analytics data. Adoption of the Open Taxonomy enables data & models to be reused and allows data scientists to build on knowledge and practises of others.
 
-Objectiv also provides [tracking](/tracking/introduction.md), 
-[collecting](/tracking/core-concepts/collector.md), and 
-[modeling](/modeling) implementations that fully build on the taxonomy.
+Each common event type and the contexts in which they can happen are defined in a class, which describes their properties, requirements and relationships with other classes.
 
-**We're actively looking for feedback**: Just like the rest of the code, the taxonomy is open source and 
-we're building it in public. If you have any ideas or opinions on where to take it next, please see our 
-[Contribution Guide](/the-project/contributing.md).
+Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/core-concepts/collector) and [Bach](/modeling) (our modeling library) are built around the Open Taxonomy and support it out of the box.
+
+![Objectiv Pipeline](/img/objectiv-pipeline.svg "Objectiv Pipeline")
 
 ## Core Concepts
 To understand in more detail how the Taxonomy works, read about the underlying core concepts.
@@ -28,3 +24,7 @@ To understand in more detail how the Taxonomy works, read about the underlying c
 To implement the taxonomy, all Contexts and Events are open and documented. 
 
 [Check out the Reference](./reference/overview.md)
+
+:::info join the discussion
+Objectiv and the Open Taxonomy are open-source and we're building it in public. Have opinions on where we should take this next? [Join us on Slack](https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg)
+:::
