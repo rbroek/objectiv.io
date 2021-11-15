@@ -44,48 +44,33 @@ const SphinxPage = (props) => {
                     // fix the href's in the overview/index page in case of missing trailing 
                     if ( url == "/_modeling/index.html" ){
                         if ( a.href.indexOf('modeling') == -1){
-                            a.href = a.href.replace(/^(http(s)?:\/\/[a-z0-9\:\.]+)\/(.*?)/, '$1/modeling/$2');	
+                            a.href = a.href.replace(/^(http(s)?:\/\/[a-z0-9:.]+)\/(.*?)/, '$1/modeling/$2');
                         }
                     }
                     a.href = a.href.replace(/\.html/g, '');
                 });
 
                 // fix #anchors
-                // we do this, by adding empty h2/h3's with the appropriate css classes
-                // apply to <section> and <dt> elements
-                const headings = [];
-                Object.values(tempDiv.getElementsByTagName('section')).forEach(element =>{
-                    headings.push(element);
-                })
-                Object.values(tempDiv.getElementsByTagName('dt')).forEach(element => {
-                    headings.push(element);
-                })
-                Object.values(headings).forEach( (element: HTMLElement) => {
-                    const originalId = element.id;
+                // we do this, by finding sections with a header
+                // and moving the id to the heading rather than the section
 
-                    if ( originalId && originalId !== "" ) {
-                        const parts = originalId.split('.');
+                const sections = tempDiv.getElementsByTagName('section')
 
-                        let headerType = "h2";
-                        if (parts.length > 2){
-                            const lastPart = parts.slice(-1);
-                            const firstChar = lastPart.toString().charAt(0);
-                            // if the first character is lowercase, this is not a class, but a property/method
-                            // of a class, so we increase the header type
+                Object.values(sections).forEach( (section: HTMLElement) => {
 
-                            if ( firstChar === firstChar.toLowerCase() ){
-                              headerType = "h3";
-                            }
+                    const originalId = section.id;
+
+                    // try for h2
+                    const headings_h2 = section.getElementsByTagName('h2');
+                    if ( headings_h2.length > 0 ){
+                        section.id = '_' + originalId;
+                        headings_h2[0].id = originalId;
+                    } else {
+                        const headings_h3 = section.getElementsByTagName('h3');
+                        if (headings_h3.length > 0){
+                            section.id = '_' + originalId;
+                            headings_h3[0].id = originalId;
                         }
-
-                        // change id of item in original definition list
-                        element.id = '_' + originalId;
-
-                        // create new heading element
-                        const heading = document.createElement(headerType);
-                        heading.id = originalId;
-                        heading.className = "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
-                        element.insertBefore(heading, element.firstChild);
                     }
                 });
 
