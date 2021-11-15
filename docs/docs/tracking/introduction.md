@@ -4,10 +4,11 @@ slug: /tracking
 ---
 
 # Introduction
-Objectiv’s Tracker enables you to track user behaviour for web applications, websites and other JavaScript-based applications. Instrumenting Objectiv's Tracker involves mapping your application to the [Open Taxonomy for Analytics](/taxonomy) to ensure the collected data is clean, well-structured and ready for modeling.
+Objectiv’s Tracker enables you to track user behaviour for web applications, websites and other JavaScript-based applications. Instrumentation involves mapping your application to the [Open Taxonomy for Analytics](/taxonomy) to ensure the collected data is clean, well-structured and ready for modeling.
 
+![Objectiv Pipeline](/img/objectiv-pipeline.svg "Objectiv Pipeline")
 
-It is available for multiple frameworks and comes with a set of tools that enable you to validate your instrumentation against the taxonomy and get live debugging feedback in your IDE and console while your're developing.
+The Tracker is available for multiple frameworks and comes with a set of tools that enable you to validate your instrumentation against the taxonomy and get live debugging feedback in your IDE and console while your're developing.
 
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides.
