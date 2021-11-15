@@ -26,13 +26,14 @@ We’ve set up a [Live Demo Notebook](https://notebook.objectiv.io/lab?path=prod
 play with. Give it a try and see what Objectiv can do.
 
 ## Running Objectiv locally - Quickstart 
-In order to run Objectiv for local development, We'll help you set up the following components:
+In order to run Objectiv for local development, we'll help you set up the following components:
 
 * The **Objectiv Tracker** to track user behavior from your website or web application. 
 * The **Objectiv Collector** and a **PostgreSQL data store** to collect, validate & store event data from the tracker.
 * A **Notebook** with the **Objectiv Bach** modeling library to explore and model your data.  
 
-![Objectiv Pipeline](/img/objectiv-pipeline.svg "Objectiv Pipeline")
+<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />;
+
 
 To get the latest stable build, run the following commands:
 ```bash
@@ -66,7 +67,7 @@ This will spin up a notebook with the Objectiv Bach modeling library that enable
 
 
 :::info
-if you want to run step 1 and 3 in one go, just run `docker-compose up`)
+if you want to run step 1 and 3 in one go, just run `docker-compose up`.
 :::
 ---
 

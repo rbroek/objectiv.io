@@ -9,7 +9,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 @import url('pygments.css');
-  
+
+@media screen and (min-width: 966px) { /* desktop */
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+}
+@media screen and (max-width: 480px) { /* mobile small */
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #25c2a0;
@@ -94,6 +103,20 @@ div.docs-wrapper footer {
   padding: 0 var(--ifm-pre-padding);
 }
 
+@media screen and (min-width: 1440px) { /* desktop large */
+  .img-s {
+    max-width: 25%;
+  }
+  .img-m {
+    max-width: 50%;
+  }
+  .img-l {
+    max-width: 75%;
+  }
+  .img-xl {
+    max-width: 100%;
+  } 
+}
 
 /** DOCS - API Reference **/
 
