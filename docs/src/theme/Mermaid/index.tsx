@@ -48,11 +48,14 @@ const Mermaid = ({ chart, caption, baseColor, links}) => {
 
   if(links && links.length > 0) {
     for (const link of links) {
-      const name = link.name ? link.name : '';
+      if (!link?.to) {
+        break;
+      }
       // use the base URL for all links
-      const linkTo = link.to ? useBaseUrl(link.to) : '#';
-      const tooltip = link.tooltip ? link.tooltip : 'See details';
-      const target = link.target ? link.target : '_self';
+      const linkTo = useBaseUrl(link.to);
+      const name = link.name ? link.name : '';
+      const tooltip = link?.tooltip ?? 'See details';
+      const target = link?.target ?? '_self';
       chart = chart + '\n click ' + name + ' "' + linkTo + '" "' + tooltip + '" ' + target + '';
     }
   }
