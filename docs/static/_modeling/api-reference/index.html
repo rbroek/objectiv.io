@@ -18,9 +18,9 @@ processing is handled by the database. As a result, local memory does not limit 
 can be analysed with Bach.</p>
 <p>The two main data classes of Bach are the DataFrame and Series:</p>
 <ul class="simple">
-<li><p>A <a class="reference internal" href="dataframe/introduction/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> represents data in a tabular form, with all rows having the same
+<li><p>A <a class="reference internal" href="dataframe/bach.DataFrame.html#bach.DataFrame" title="bach.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> represents data in a tabular form, with all rows having the same
 columns, and each column having a specific data type and a distinct name.</p></li>
-<li><p>A <a class="reference internal" href="series/introduction/bach.Series.html#bach.Series" title="bach.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> object represents a single column in a DataFrame, with
+<li><p>A <a class="reference internal" href="series/bach.Series.html#bach.Series" title="bach.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> object represents a single column in a DataFrame, with
 different subclasses per data type that allow for type specific operations.</p></li>
 </ul>
 <dl class="footnote brackets">
@@ -57,10 +57,10 @@ transfer any data from the database to Bach. All operations are combined and com
 which is executed only when one of a few specific data-transfer functions is called on either a DataFrame or
 a Series object:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="dataframe/introduction/bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_pandas()</span></code></a></p></li>
-<li><p><a class="reference internal" href="dataframe/introduction/bach.DataFrame.head.html#bach.DataFrame.head" title="bach.DataFrame.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.head()</span></code></a></p></li>
-<li><p>The property accessors <a class="reference internal" href="dataframe/introduction/bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.values</span></code></a>, <a class="reference internal" href="dataframe/introduction/bach.DataFrame.array.html#bach.DataFrame.array" title="bach.DataFrame.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.array</span></code></a> and
-<a class="reference internal" href="series/introduction/bach.Series.value.html#bach.Series.value" title="bach.Series.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.value</span></code></a> (Series only),</p></li>
+<li><p><a class="reference internal" href="dataframe/bach.DataFrame.to_pandas.html#bach.DataFrame.to_pandas" title="bach.DataFrame.to_pandas"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.to_pandas()</span></code></a></p></li>
+<li><p><a class="reference internal" href="dataframe/bach.DataFrame.head.html#bach.DataFrame.head" title="bach.DataFrame.head"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.head()</span></code></a></p></li>
+<li><p>The property accessors <a class="reference internal" href="dataframe/bach.DataFrame.values.html#bach.DataFrame.values" title="bach.DataFrame.values"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.values</span></code></a>, <a class="reference internal" href="dataframe/bach.DataFrame.array.html#bach.DataFrame.array" title="bach.DataFrame.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">DataFrame.array</span></code></a> and
+<a class="reference internal" href="series/bach.Series.value.html#bach.Series.value" title="bach.Series.value"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.value</span></code></a> (Series only),</p></li>
 </ul>
 <p>Typical usage would be to do all heavy lifting inside the database, and only query the aggregated/summarized
 output.</p>
@@ -77,7 +77,7 @@ database. This also results in a few differences in how DataFrames form both lib
 situations:</p>
 <ul class="simple">
 <li><p>The order of rows in a Bach DataFrame can be non-deterministic. If there is not a deterministic
-<a class="reference internal" href="dataframe/introduction/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_values()</span></code></a> call, then the order of the rows that the data-transfer
+<a class="reference internal" href="dataframe/bach.DataFrame.sort_values.html#bach.DataFrame.sort_values" title="bach.DataFrame.sort_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.sort_values()</span></code></a> call, then the order of the rows that the data-transfer
 functions return can be unpredictable.</p></li>
 <li><p>Bach DataFrames can distinguish between <cite>NULL</cite>/<cite>None</cite> and Not-a-Number (<cite>NaN</cite>). Pandas generally doesn&#8217;t
 and mainly uses NaN. When outputting data from a Bach DataFrame to a pandas DataFrame, most of this
