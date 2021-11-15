@@ -290,3 +290,8 @@ dl blockquote {
     box-shadow: 0 0 500px rgba(241, 241, 241, 0);
   }
 }
+
+.sphinxAnchor {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+}
+

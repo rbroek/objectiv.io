@@ -62,9 +62,11 @@ const SphinxPage = (props) => {
                     ['h1', 'h2', 'h3'].every(heading_type => {
                         const headings = section.getElementsByTagName(heading_type);
                         if ( headings.length > 0 ){
+                            // move ID to the actual heading
                             section.id = '_' + originalId;
                             headings[0].id = originalId;
-                            headings[0].className = "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
+                            headings[0].className = "sphinxAnchor";
+
                             // stop the loop if we are successful
                             return false;
                         }
@@ -75,7 +77,7 @@ const SphinxPage = (props) => {
                 const dts = tempDiv.getElementsByTagName('dt');
                 Object.values(dts).forEach( (dt: HTMLElement) => {
                   if ( dt.id != null ){
-                      dt.className = dt.className + " anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
+                      dt.className = dt.className + " sphinxAnchor";
                   }
                 });
 
