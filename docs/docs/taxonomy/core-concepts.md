@@ -6,7 +6,6 @@ title: Core Concepts
 
 import Mermaid from '@theme/Mermaid';
 
-## Events & Contexts
 The open taxonomy consists of:
 * Classes for each common analytics event type (e.g. a button click), called **Events**.
 * The contexts in which they can happen, e.g. the device, called **Contexts**. There are two types: Location 
@@ -28,7 +27,7 @@ The open taxonomy consists of:
   ]}
 />
 
-### Events
+## Events
 Events collect data about relevant occurrences in your application. They are either triggered directly when a 
 user interacts with your application (an [InteractiveEvent](/taxonomy/reference/events/InteractiveEvent.md)), 
 or automatically, e.g. when a form callback or payments completes at a later time (a 
@@ -48,7 +47,7 @@ An snippet for a potential Event:
 For more details about Event triggers, properties, requirements, etc., see the 
 [Tracking Core Concepts](/tracking/core-concepts/events.md).
 
-### Location Contexts
+## Location Contexts
 Locations in the taxonomy describe the exact position in an application's UI from where an Event was 
 triggered, e.g. Sections, Menus, etc. It is composed of a hierarchical stack of UI elements, meaning that the 
 order in the stack is the order in the UI as well.
@@ -67,16 +66,16 @@ A snippet of a potential stack with multiple `LocationContexts` for an Event:
   },
   {
     "_type":"LinkContext",
-    "id":"link-id",
+    "id":"cta-go",
     "text":"Go!",
     "href":"/path"
   }
 ]
 ```
 
-In this example, there is a link called `link-id` that lives in Section `hero`, within Section `homepage`.
+In this example, there is a link called `cta-go` that lives in Section `hero`, within Section `homepage`.
 
-### Global Contexts
+## Global Contexts
 Global contexts add global / general information about an Event. They carry information that is not related 
 to where the Event originated (which is captured in the LocationContext). Examples are device, platform or 
 marketing information.
@@ -102,14 +101,6 @@ In this example, the Event carries `GlobalContext`s that identify the applicatio
 context of the user, in this case their referer, user agent, and IP address.
 
 
-## Map a contextual layer to your application
+## Mapping to your application
 The taxonomy is designed to cover a wide range of common analytics use cases, and should be mapped to your 
-application by [instrumenting it with the Objectiv trackers](/tracking/introduction.md). This creates a 
-contextual layer over your application that's used for data collection & validation, meaning:
-
-* The collected data becomes **rich and descriptive**. You can pinpoint exactly what event happened, which 
-  type it was, in which context it happened and from which location in the UI it was triggered.
-* Your tracking instrumentation becomes [**debuggable**](/tracking/core-concepts/validation.md). You'll be able to catch tracking 
-  instrumentation errors early on because it is being validated as you’re developing it.
-* The collected data **no longer requires significant cleaning and restructuring** before it can be used for 
-  modeling because it was collected in a structured manner and validated at the first step of the pipeline.
+application by [instrumenting it with the Objectiv trackers](/tracking/introduction.md).
