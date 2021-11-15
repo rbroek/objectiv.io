@@ -50,30 +50,6 @@ const SphinxPage = (props) => {
                     a.href = a.href.replace(/\.html/g, '');
                 });
 
-                // fix #anchors
-                // we do this, by finding sections with a header
-                // and moving the id to the heading rather than the section
-
-                const sections = tempDiv.getElementsByTagName('section')
-
-                Object.values(sections).forEach( (section: HTMLElement) => {
-
-                    const originalId = section.id;
-
-                    // try for h2
-                    const headings_h2 = section.getElementsByTagName('h2');
-                    if ( headings_h2.length > 0 ){
-                        section.id = '_' + originalId;
-                        headings_h2[0].id = originalId;
-                    } else {
-                        const headings_h3 = section.getElementsByTagName('h3');
-                        if (headings_h3.length > 0){
-                            section.id = '_' + originalId;
-                            headings_h3[0].id = originalId;
-                        }
-                    }
-                });
-
                 // map styles of tokens (spans)
                 const tokens = tempDiv.querySelectorAll("div.highlight pre span");
                 Object.values(tokens).forEach((token: HTMLElement) => {
