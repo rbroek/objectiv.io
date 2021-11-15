@@ -1,13 +1,13 @@
 # Core Factories
 
-Automatically generated factories based on the [Taxonomy](/taxonomy/overview.md) schema. 
+Automatically generated factories based on the [Taxonomy](//taxonomy/introduction.md) schema. 
 
 :::caution
 These are core-level APIs needed only when diving into low-level tracking via [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md) or [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).   
 :::
 
 ## Location Context Factories
-These factories produce [LocationContext](/taxonomy/location-contexts/overview.md) instances ready to be handed over to [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
+These factories produce [LocationContext](/taxonomy/reference/location-contexts/overview.md) instances ready to be handed over to [tagLocation](/tracking/api-reference/locationTaggers/tagLocation.md).
 
 ### Location Context Factory list
 
@@ -89,15 +89,15 @@ makeWebDocumentContext = (props: {
 ```
 
 ## Event Factories
-These factories produce [Event](/taxonomy/events/overview.md) instances ready to be handed over to [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
+These factories produce [Event](/taxonomy/reference/events/overview.md) instances ready to be handed over to [trackEvent](/tracking/api-reference/eventTrackers/trackEvent.md).
 
 ### Common parameters
 All Event factories share some common, optional, parameters: 
 
 |          |                 | type                                                                              | default value
 | :-:      | :--             | :--                                                                               | :--           
-| optional | location_stack  | [AbstractLocationContext](/taxonomy/abstract-contexts/AbstractLocationContext.md) | `[]` 
-| optional | global_contexts | [AbstractGlobalContext](/taxonomy/abstract-contexts/AbstractGlobalContext.md)     | `[]`
+| optional | location_stack  | [AbstractLocationContext](/taxonomy/reference/abstract-contexts/AbstractLocationContext.md) | `[]` 
+| optional | global_contexts | [AbstractGlobalContext](/taxonomy/reference/abstract-contexts/AbstractGlobalContext.md)     | `[]`
 
 ### Event Factory list
 

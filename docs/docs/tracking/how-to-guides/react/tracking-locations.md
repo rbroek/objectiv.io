@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Now that the [Tracker is up and running](/tracking/how-to-guides/react/getting-started.md) we can start 
 thinking about Tagging some [Elements](/tracking/core-concepts/tagging.md#elements) as 
-[LocationContexts](/taxonomy/location-contexts/overview.md) using 
+[LocationContexts](/taxonomy/reference/location-contexts/overview.md) using 
 [Location Taggers](/tracking/api-reference/locationTaggers/overview.md).  
 
 ## Tagging Interactive Elements

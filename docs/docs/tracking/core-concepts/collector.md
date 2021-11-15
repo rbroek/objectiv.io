@@ -25,7 +25,7 @@ We aim to support more storage solutions in the near future.
 
 ## Validation
 Objectiv's [Collector](./collector.md) validates any incoming Event against the 
-[Taxonomy and its properties](/taxonomy/events/overview.md). If it fails, the Collector will respond with an 
+[Taxonomy and its properties](/taxonomy/reference/events/overview.md). If it fails, the Collector will respond with an 
 error, and store the Event in the `NOK` folder on disk.
 
 This means no Event sent to the Collector is ever discarded. This enables you to for instance 'repair' any 
@@ -38,5 +38,5 @@ The Collector can enhance your [Event](/tracking/core-concepts/events.md) data w
 
 Out of the box, the Collector provide a **sessions** enrichment, by setting a session cookie on the client
 once it starts receiving [Events](/tracking/core-concepts/events.md) from it, and then adding a 
-corresponding [SessionContext](/taxonomy/global-contexts/SessionContext.md) to all 
+corresponding [SessionContext](/taxonomy/reference/global-contexts/SessionContext.md) to all 
 [Events](/tracking/core-concepts/events.md) it receives.

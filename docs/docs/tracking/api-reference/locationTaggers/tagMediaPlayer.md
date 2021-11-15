@@ -1,6 +1,6 @@
 # tagMediaPlayer
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md).
 
 ```typescript
 tagMediaPlayer = (parameters: {

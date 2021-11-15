@@ -1,6 +1,6 @@
 # tagNavigation
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [NavigationContext](/taxonomy/location-contexts/NavigationContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md).
 
 ```typescript
 tagNavigation = (parameters: {

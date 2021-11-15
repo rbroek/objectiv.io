@@ -52,7 +52,7 @@ export class AppModule {
 ## Optional - Configure Taggers Directive
 
 While not required we highly recommend configuring our **ObjectivTrackerDirective** as well. This will enable tagging in
-templates. Making it much easier to tag [Locations](/taxonomy/location-contexts/overview.md).
+templates. Making it much easier to tag [Locations](/taxonomy/reference/location-contexts/overview.md).
 
 How to do so varies widely depending on the architecture of the target Application. Here is just an example of a possible one-time configuration approach.
 

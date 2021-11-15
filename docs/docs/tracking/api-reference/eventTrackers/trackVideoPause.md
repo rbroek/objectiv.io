@@ -1,6 +1,6 @@
 # trackVideoPause
 
-Triggers a [VideoPauseEvent](/taxonomy/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [VideoPauseEvent](/taxonomy/reference/events/VideoPauseEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackVideoPause = (parameters: {
