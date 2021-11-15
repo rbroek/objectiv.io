@@ -8,6 +8,10 @@ const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
 const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
 const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+if (!isProductionEnv && !objectivEnvironment.startsWith('dev')) {
+  console.error("WARNING: Running in development mode, but OBJECTIV_ENVIRONMENT is set to '" 
+    + objectivEnvironment + "'")
+}
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
