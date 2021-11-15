@@ -28,15 +28,20 @@ import Mermaid from '@theme/Mermaid';
       Event --- Location
     end
     EventsGraph --> Collector
-    click Tracker href "/docs/tracking/core-concepts/trackers" "See more details" _self
-    click Tagging href "/docs/tracking/core-concepts/tagging" "See more details" _self
-    click Plugins href "/docs/tracking/core-concepts/trackers#extensibility-plugins" "See more details" _self
-    click Validation href "/docs/tracking/core-concepts/validation" "See more details" _self
-    click Event href "/docs/tracking/core-concepts/events" "See more details" _self
-    click Location href "/docs/tracking/core-concepts/locations" "See more details" _self
-    click Collector href "/docs/tracking/core-concepts/collector" "See more details" _self
     linkStyle 0,1,2,4 stroke:#fff,anything;
-`} caption="Figure: Objectiv Tracking" baseColor="basic" />
+`} 
+  caption="Figure: Objectiv Tracking" 
+  baseColor="basic" 
+  links={[
+    { name: 'Tracker', to: '/tracking/core-concepts/trackers' },
+    { name: 'Tagging', to: '/tracking/core-concepts/tagging' },
+    { name: 'Plugins', to: '/tracking/core-concepts/trackers#extensibility-plugins' },
+    { name: 'Validation', to: '/tracking/core-concepts/validation' },
+    { name: 'Event', to: '/tracking/core-concepts/events' },
+    { name: 'Location', to: '/tracking/core-concepts/locations' },
+    { name: 'Collector', to: '/tracking/core-concepts/collector' }
+  ]}
+/>
 
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides.
