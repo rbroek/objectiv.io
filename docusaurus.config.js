@@ -84,7 +84,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: '/docs/',
+          to: 'https://objectiv.io/docs/', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
