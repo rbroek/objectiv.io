@@ -100,7 +100,7 @@ const config = {
           {
             label: 'Objectiv.io \u{1F855}',
             position: 'right',
-            to: 'https://objectiv.io/',
+            to: isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/',
             target: '_self',
           }
         ],
@@ -113,11 +113,11 @@ const config = {
             items: [
               {
                 label: 'Privacy Policy',
-                to: 'https://objectiv.io/privacy/',
+                to: isStagingEnv ? 'https://staging.objectiv.io/privacy' : 'https://objectiv.io/privacy',
               },
               {
                 label: 'Cookies',
-                to: 'https://objectiv.io/privacy/cookies',
+                to: isStagingEnv ? 'https://staging.objectiv.io/privacy/cookies' : 'https://objectiv.io/privacy/cookies',
               },
             ],
           },

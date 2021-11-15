@@ -85,7 +85,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: 'https://objectiv.io/docs/', // ensure Docusaurus redirects to standalone docs
+          to: isStagingEnv ? 'https://staging.objectiv.io/docs' : 'https://objectiv.io/docs/', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
