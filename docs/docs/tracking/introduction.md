@@ -4,39 +4,10 @@ slug: /tracking
 ---
 
 # Introduction
+Objectiv’s Tracker enables you to track user behaviour for web applications, websites and other JavaScript-based applications. Instrumenting Objectiv's Tracker involves mapping your application to the [Open Taxonomy for Analytics](/taxonomy) to ensure the collected data is clean, well-structured and ready for modeling.
 
-Objectiv comes with a set of tools that help you set up error-free tracking instrumentation:
-* A Tracker for several web & mobile platforms and frameworks;
-* Validation & Debugging; and
-* A Collector to receive, validate & store events.
 
-See the diagram below for each major tracking component. Click for more detail.
-
-import Mermaid from '@theme/Mermaid';
-
-<Mermaid chart={`
-	flowchart LR
-    subgraph TrackerGraph["Tracking"]
-      direction LR
-      Tracker["Tracker"]---Tagging
-      Tagging---Plugins
-      Plugins---Validation
-    end
-    TrackerGraph --> EventsGraph
-    subgraph EventsGraph["Events"]
-      direction LR
-      Event --- Location
-    end
-    EventsGraph --> Collector
-    click Tracker href "/docs/tracking/core-concepts/trackers" "See more details" _self
-    click Tagging href "/docs/tracking/core-concepts/tagging" "See more details" _self
-    click Plugins href "/docs/tracking/core-concepts/trackers#extensibility-plugins" "See more details" _self
-    click Validation href "/docs/tracking/core-concepts/validation" "See more details" _self
-    click Event href "/docs/tracking/core-concepts/events" "See more details" _self
-    click Location href "/docs/tracking/core-concepts/locations" "See more details" _self
-    click Collector href "/docs/tracking/core-concepts/collector" "See more details" _self
-    linkStyle 0,1,2,4 stroke:#fff,anything;
-`} caption="Figure: Objectiv Tracking" baseColor="basic" />
+It is available for multiple frameworks and comes with a set of tools that enable you to validate your instrumentation against the taxonomy and get live debugging feedback in your IDE and console while your're developing.
 
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides.
