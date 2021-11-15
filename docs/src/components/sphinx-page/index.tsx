@@ -50,6 +50,35 @@ const SphinxPage = (props) => {
                     a.href = a.href.replace(/\.html/g, '');
                 });
 
+                // fix #anchors
+                // we do this, by finding sections with a header
+                // and moving the id to the heading rather than the section
+
+                const sections = tempDiv.getElementsByTagName('section');
+                Object.values(sections).forEach( (section: HTMLElement) => {
+
+                    const originalId = section.id;
+                    // move id's from sections to headers, otherwise # anchors won't work
+                    ['h1', 'h2', 'h3'].every(heading_type => {
+                        const headings = section.getElementsByTagName(heading_type);
+                        if ( headings.length > 0 ){
+                            section.id = '_' + originalId;
+                            headings[0].id = originalId;
+                            headings[0].className = "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
+                            // stop the loop if we are successful
+                            return false;
+                        }
+                        return true;
+                    });
+                });
+                // now fix the links/anchors in a <dt id="some_id">
+                const dts = tempDiv.getElementsByTagName('dt');
+                Object.values(dts).forEach( (dt: HTMLElement) => {
+                  if ( dt.id != null ){
+                      dt.className = dt.className + " anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
+                  }
+                });
+
                 // map styles of tokens (spans)
                 const tokens = tempDiv.querySelectorAll("div.highlight pre span");
                 Object.values(tokens).forEach((token: HTMLElement) => {
