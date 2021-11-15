@@ -3,9 +3,10 @@
 
 const path = require('path');
 
-const environment = process.env.OBJECTIV_ENVIRONMENT;
-const isStagingEnv = environment ? environment.startsWith('staging') : false;
-const isProductionEnv = environment ? environment.startsWith('prod') : false;
+const nodeEnv = process.env.NODE_ENV;
+const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
+const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -62,8 +63,8 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: isProductionEnv ? 'objectiv-website' : (isStagingEnv ? 'objectiv-website-staging' : 'objectiv-website-dev'),
-    trackerEndPoint: (isProductionEnv || isStagingEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerApplicationId: isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev',
+    trackerEndPoint: (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
   },
@@ -148,6 +149,7 @@ const config = {
 
 module.exports = config;
 
-console.log("USING OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
-console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
-console.log("USING BASEURL:", config.baseUrl);
+console.log("OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
+console.log("OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("DOCUSAURUS URL:", config.baseUrl);
+console.log("DOCUSAURUS BASEURL:", config.baseUrl);
