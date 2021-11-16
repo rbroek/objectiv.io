@@ -3,9 +3,15 @@
 
 const path = require('path');
 
-const environment = process.env.OBJECTIV_ENVIRONMENT;
-const isStagingEnv = environment ? environment.startsWith('staging') : false;
-const isProductionEnv = environment ? environment.startsWith('prod') : false;
+const nodeEnv = process.env.NODE_ENV;
+const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
+const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
+const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+if (!isProductionEnv && !objectivEnvironment.startsWith('dev')) {
+  console.error("WARNING: Running in development mode, but OBJECTIV_ENVIRONMENT is set to '" 
+    + objectivEnvironment + "'")
+}
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -17,8 +23,8 @@ const config = {
   title: 'Objectiv Docs - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
-  url: 'https://objectiv.io/',
-  baseUrl: isProductionEnv ? '/docs/' : '/',
+  url: websiteUrl,
+  baseUrl: (isProductionEnv) ? '/docs/' : '/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -68,8 +74,8 @@ const config = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerDocsApplicationId: isProductionEnv ? 'objectiv-docs' : 'objectiv-docs-dev',
-    trackerEndPoint: isProductionEnv ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerDocsApplicationId: isProductionEnv ? (isStagingEnv? 'objectiv-docs-staging' : 'objectiv-docs') : 'objectiv-docs-dev',
+    trackerEndPoint: (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
   },
@@ -99,7 +105,7 @@ const config = {
           {
             label: 'Objectiv.io \u{1F855}',
             position: 'right',
-            to: 'https://objectiv.io/',
+            to: websiteUrl,
             target: '_self',
           }
         ],
@@ -112,11 +118,11 @@ const config = {
             items: [
               {
                 label: 'Privacy Policy',
-                to: 'https://objectiv.io/privacy/',
+                to: websiteUrl + '/privacy'
               },
               {
                 label: 'Cookies',
-                to: 'https://objectiv.io/privacy/cookies',
+                to: websiteUrl + '/privacy/cookies'
               },
             ],
           },
@@ -143,5 +149,7 @@ const config = {
 
 module.exports = config;
 
-console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
-console.log("USING BASEURL:", config.baseUrl);
+console.log("OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerDocsApplicationId);
+console.log("OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("DOCUSAURUS URL:", config.baseUrl);
+console.log("DOCUSAURUS BASEURL:", config.baseUrl);

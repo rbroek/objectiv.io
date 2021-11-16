@@ -16,8 +16,8 @@ Objectiv therefore allows you to manually specify whether and how an Element tri
 
 ## Visibility Events
 Objectiv supports two Events for Elements that become visible or hidden:
-* [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md); and
-* [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md).
+* [SectionHiddenEvent](/taxonomy/reference/events/SectionHiddenEvent.md); and
+* [SectionVisibleEvent](/taxonomy/reference/events/SectionVisibleEvent.md).
 
 ## How To Use
 You can manually specify whether and how an Element triggers Visibility Events, via:
@@ -47,7 +47,7 @@ A [tagOverlay](/tracking/api-reference/locationTaggers/tagOverlay.md) method is 
 
 ### Expandable Elements
 When an Element shows in the current UI only on interaction (but does not overlay it), we define these as 
-[ExpandableSections](/taxonomy/location-contexts/ExpandableSectionContext.md).
+[ExpandableSections](/taxonomy/reference/location-contexts/ExpandableSectionContext.md).
 
 A [tagExpandableElement](/tracking/api-reference/locationTaggers/tagExpandableElement.md) method is 
 available for these cases.

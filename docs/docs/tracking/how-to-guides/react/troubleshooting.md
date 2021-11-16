@@ -7,7 +7,7 @@ When dealing with regular HTML [Location Taggers](/tracking/api-reference/locati
 
 The most common issues will be:
 - Incorrect [Locations](/tracking/core-concepts/locations.md) due to [React Portals](https://reactjs.org/docs/portals.html).
-- [Events](/taxonomy/events/overview.md) not triggering due to missing [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md).
+- [Events](/taxonomy/reference/events/overview.md) not triggering due to missing [Tagging Attributes](/tracking/api-reference/definitions/TaggingAttribute.md).
 - Non-unique [Locations](/tracking/core-concepts/locations.md), aka [Collisions](/tracking/core-concepts/locations.md#solving-collisions).
 
 
@@ -23,7 +23,7 @@ That said, if adding an extra `<div>` around a hard-to-track Component works, th
 :::
 
 ## Problem: Incorrect Locations
-If [Events](/taxonomy/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
+If [Events](/taxonomy/reference/events/overview.md) are triggering correctly but Location are missing [Sections](/taxonomy/reference/location-contexts/overview.md), the most likely cause is [React Portals](https://reactjs.org/docs/portals.html).
 
 [Event Trackers](/tracking/api-reference/eventTrackers/overview.md) can reconstruct Locations by traversing the DOM from the target [Element](/tracking/core-concepts/tagging.md#elements) upwards. Unfortunately we cannot 
 follow, nor detect (yet), portaled subtrees. 
@@ -110,7 +110,7 @@ The values of the [Tagging Attributes](/tracking/api-reference/definitions/Taggi
 
 We can now attempt to fix the issue in two ways:
 1. Verify props forwarding
-2. Manually orchestrating [events](/taxonomy/events/overview.md)
+2. Manually orchestrating [events](/taxonomy/reference/events/overview.md)
    1. Via event handlers
    2. Via state
    3. Via a [Parent Element](/tracking/core-concepts/tagging.md#children-tracking-elements)
@@ -203,7 +203,7 @@ The [Core Concepts section explains Collisions and how to solve them](/tracking/
 
 ## Manual orchestration
 When forwarding properties is not possible, for whatever reason, there are still workarounds to be able to tag both
-Elements and attach the correct [Events](/taxonomy/events/overview.md) to uncooperative components.
+Elements and attach the correct [Events](/taxonomy/reference/events/overview.md) to uncooperative components.
 
 Everything that [Location Taggers](/tracking/api-reference/locationTaggers/overview.md) try to automate, together with the Tagged Elements Observer, can be done manually.
 

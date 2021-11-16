@@ -3,9 +3,10 @@
 
 const path = require('path');
 
-const environment = process.env.OBJECTIV_ENVIRONMENT;
-const isStagingEnv = environment ? environment.startsWith('staging') : false;
-const isProductionEnv = environment ? environment.startsWith('prod') : false;
+const nodeEnv = process.env.NODE_ENV;
+const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
+const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -14,15 +15,15 @@ const config = {
   title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: isStagingEnv ? '/staging/' : '/',
-  url: isStagingEnv ? 'https://objectiv.io/staging/' : 'https://objectiv.io/',
+  baseUrl: '/',
+  url: isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/',
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
+  trailingSlash: true,
 
   presets: [
     [
@@ -50,7 +51,7 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    path.resolve(__dirname, 'src/plugins/post-build/'),
+    !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null }),
     require.resolve('docusaurus-plugin-image-zoom')
   ],
   scripts: [
@@ -62,8 +63,8 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: isProductionEnv ? 'objectiv-website' : 'objectiv-website-dev',
-    trackerEndPoint: isProductionEnv ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerApplicationId: isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev',
+    trackerEndPoint: (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
     slackJoinLink: slackJoinLink,
     trackerConsoleEnabled: !isProductionEnv
   },
@@ -84,7 +85,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: 'https://objectiv.io/docs/',
+          to: isStagingEnv ? 'https://staging.objectiv.io/docs' : 'https://objectiv.io/docs/', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
@@ -148,4 +149,7 @@ const config = {
 
 module.exports = config;
 
-console.log("USING OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("OBJECTIV TRACKER APPLICATION ID:", config.customFields.trackerApplicationId);
+console.log("OBJECTIV TRACKER ENDPOINT:", config.customFields.trackerEndPoint);
+console.log("DOCUSAURUS URL:", config.baseUrl);
+console.log("DOCUSAURUS BASEURL:", config.baseUrl);

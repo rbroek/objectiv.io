@@ -1,6 +1,6 @@
 # trackSectionHidden
 
-Triggers a [SectionHiddenEvent](/taxonomy/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [SectionHiddenEvent](/taxonomy/reference/events/SectionHiddenEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackSectionHidden = (parameters: {

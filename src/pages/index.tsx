@@ -10,7 +10,7 @@ import styles from './styles.module.css';
 
 export default function Home() {
   const context = useDocusaurusContext();
-  const {tagline, customFields} = context.siteConfig;
+  const {url, tagline, customFields} = context.siteConfig;
 
   return (
     <div {...tagElement({id: 'page-home'})}>
@@ -141,7 +141,7 @@ export default function Home() {
                   </p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to="https://objectiv.io/docs/taxonomy/" 
+                      to={url + "docs/taxonomy/"}
                       {...tagLink({
                           id: 'cta-docs-taxonomy', 
                           href: '/docs/taxonomy/', 
@@ -185,7 +185,7 @@ export default function Home() {
                     you to catch errors before data starts flowing in.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to="https://objectiv.io/docs/tracking/" 
+                      to={url + "docs/tracking/"}
                       {...tagLink({
                           id: 'cta-docs-tracking', 
                           href: '/docs/tracking/', 
@@ -237,7 +237,7 @@ export default function Home() {
                     modeling with minimal additional gruntwork.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to="https://objectiv.io/docs/tracking/core-concepts/locations" 
+                      to={url + "docs/tracking/core-concepts/locations"} 
                       {...tagLink({
                           id: 'cta-docs-location-stack', 
                           href: '/docs/taxonomy', 
@@ -332,7 +332,7 @@ export default function Home() {
                     your main site by changing a single line of code.</p>
                   <div className={clsx(styles.solutionRowCta)}>
                     <Link 
-                      to="https://objectiv.io/docs/modeling/" 
+                      to={url + "docs/modeling/"} 
                       {...tagLink({
                           id: 'cta-docs-reuse', 
                           href: '/docs/modeling/', 

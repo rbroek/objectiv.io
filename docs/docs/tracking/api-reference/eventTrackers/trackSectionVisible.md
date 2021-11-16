@@ -1,6 +1,6 @@
 # trackSectionVisible
 
-Triggers a [SectionVisibleEvent](/taxonomy/events/SectionVisibleEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers a [SectionVisibleEvent](/taxonomy/reference/events/SectionVisibleEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackSectionVisible = (parameters: {
