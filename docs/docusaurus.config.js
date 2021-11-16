@@ -5,7 +5,7 @@ const path = require('path');
 
 const nodeEnv = process.env.NODE_ENV;
 const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
-const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'dev';
 const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
 const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
 if (!isProductionEnv && !objectivEnvironment.startsWith('dev')) {

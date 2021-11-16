@@ -5,7 +5,7 @@ const path = require('path');
 
 const nodeEnv = process.env.NODE_ENV;
 const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
-const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT;
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'dev';
 const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
