@@ -100,6 +100,9 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
     collapsed,
     setCollapsed,
   });
+
+  const [firstItem] = items;
+
   // @ts-ignore
   return (
     <li
@@ -117,7 +120,7 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
         },
       )}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a
+      <Link
         className={clsx('menu__link', {
           'menu__link--sublist': collapsible,
           'menu__link--active': collapsible && isActive,
@@ -126,16 +129,15 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
         onClick={
           collapsible
             ? (e) => {
-                e.preventDefault();
                 toggleCollapsed();
                 trackClick({ element: e.target })
               }
             : undefined
         }
-        href={collapsible ? '#' : undefined}
+        href={collapsible ? firstItem.href : undefined}
         {...props}>
         {label}
-      </a>
+      </Link>
 
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
         <DocSidebarItems
