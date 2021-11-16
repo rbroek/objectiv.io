@@ -43,13 +43,12 @@ without having to restart the server.
 
 ## Build the website
 
-First ensure you set the right OBJECTIV_ENVIRONMENT in the environment variables: either `dev`, `staging`, 
-or `prod`.
+First ensure you set the right environment in the environment variables: either `staging` or `prod`.
 
-* `dev`: tracker endpoint is set to `http://localhost:5000`.
-* `staging`: `url` and `baseUrl` are set to the staging environment.
-
-By default, the tracker endpoint is set to `https://collector.objectiv.io`.
+* `staging`: `url` is set to the staging environment (https://staging.objectiv.io), the tracker applicationId 
+  is set to `objectiv-website-staging`, and the tracker endpoint is set to `https://collector.objectiv.io`.
+* `prod`: `url` is set to the production environment (https://objectiv.io), the tracker applicationId is set 
+  to `objectiv-website`, and the tracker endpoint is set to `https://collector.objectiv.io`.
 
 Then to build:
 
