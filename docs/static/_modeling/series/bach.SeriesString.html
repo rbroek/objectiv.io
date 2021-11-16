@@ -1,0 +1,67 @@
+<div>
+                
+  <section id="bach-seriesstring">
+<h1>bach.SeriesString<a class="headerlink" href="#bach-seriesstring" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="bach.SeriesString">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">SeriesString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series_string.py#L83-L125"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.SeriesString" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>A Series that represents the string type and its specific operations</p>
+<p><strong>Operations</strong></p>
+<p>Strings can be concatenated using the &#8216;+&#8217; operator, and the &#8216;str&#8217; accessor can be used to get access
+to slices.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span/><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># concat the strings.</span>
+<span class="n">a</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>   <span class="c1"># get one char</span>
+<span class="n">a</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># get a slice from char 3-5</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesString.dtype_to_expression.html#bach.SeriesString.dtype_to_expression" title="bach.SeriesString.dtype_to_expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype_to_expression</span></code></a>(source_dtype,&#160;expression)</p></td>
+<td><p>INTERNAL: Give the sql expression to convert the given expression, of the given source dtype to the dtype of this Series.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesString.supported_value_to_expression.html#bach.SeriesString.supported_value_to_expression" title="bach.SeriesString.supported_value_to_expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supported_value_to_expression</span></code></a>(value)</p></td>
+<td><p>INTERNAL: Give the expression for the given value.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesString.dtype.html#bach.SeriesString.dtype" title="bach.SeriesString.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></p></td>
+<td><p/></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesString.dtype_aliases.html#bach.SeriesString.dtype_aliases" title="bach.SeriesString.dtype_aliases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype_aliases</span></code></a></p></td>
+<td><p/></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesString.str.html#bach.SeriesString.str" title="bach.SeriesString.str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p></td>
+<td><p>Get access to string operations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bach.SeriesString.supported_db_dtype.html#bach.SeriesString.supported_db_dtype" title="bach.SeriesString.supported_db_dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supported_db_dtype</span></code></a></p></td>
+<td><p/></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="bach.SeriesString.supported_value_types.html#bach.SeriesString.supported_value_types" title="bach.SeriesString.supported_value_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">supported_value_types</span></code></a></p></td>
+<td><p/></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              

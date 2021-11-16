@@ -1,0 +1,34 @@
+<div>
+                
+  <section id="bach-seriesstring-supported-value-to-expression">
+<h1>bach.SeriesString.supported_value_to_expression<a class="headerlink" href="#bach-seriesstring-supported-value-to-expression" title="Permalink to this headline">&#182;</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="bach.SeriesString.supported_value_to_expression">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SeriesString.</span></span><span class="sig-name descname"><span class="pre">supported_value_to_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series_string.py#L106-L108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.SeriesString.supported_value_to_expression" title="Permalink to this definition">&#182;</a></dt>
+<dd><p>INTERNAL: Give the expression for the given value.</p>
+<p>Consider calling the wrapper value_to_expression() instead.</p>
+<p>Implementations of this function are responsible for correctly quoting and escaping special
+characters in the given value. Either by using ExpressionTokens that allow unsafe values (e.g.
+StringValueToken), or by making sure that the quoting and escaping is done already on the value
+inside the ExpressionTokens.</p>
+<p>Implementations only need to be able to support the value specified by supported_value_types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) &#8211; All values of types listed by self.supported_value_types should be supported.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Expression representing the the value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bach.expression.Expression</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              
