@@ -103,6 +103,11 @@ div.docs-wrapper footer {
   padding: 0 var(--ifm-pre-padding);
 }
 
+img {
+  display: block;
+  margin: 20px auto;
+}
+
 @media screen and (min-width: 1440px) { /* desktop large */
   .img-s {
     max-width: 25%;

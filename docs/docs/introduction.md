@@ -32,7 +32,7 @@ In order to run Objectiv for local development, we'll help you set up the follow
 * The **Objectiv Collector** and a **PostgreSQL data store** to collect, validate & store event data from the tracker.
 * A **Notebook** with the **Objectiv Bach** modeling library to explore and model your data.  
 
-<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />;
+<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
 
 
 To get the latest stable build, run the following commands:
