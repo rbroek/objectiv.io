@@ -1,6 +1,6 @@
 # tagLocation
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as any [LocationContext](/taxonomy/location-contexts/overview.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as any [LocationContext](/taxonomy/reference/location-contexts/overview.md).
 
 ```typescript
 tagLocation = (parameters: {
@@ -17,7 +17,7 @@ tagLocation = (parameters: {
 ## Parameters
 |          |              | type                                                                                              | default value
 | :-:      | :--          | :--                                                                                               | :--           
-| required | **instance** | [LocationContext](/taxonomy/location-contexts/overview.md)                                        |
+| required | **instance** | [LocationContext](/taxonomy/reference/location-contexts/overview.md)                                        |
 | optional | options      | [TagLocationOptions](/tracking/api-reference/definitions/TagLocationOptions.md)                   | Dynamically calculated based on `instance`. See the [Events](#events) table below.
 | optional | onError      | [TrackerErrorHandlerCallback](/tracking/api-reference/definitions/TrackerErrorHandlerCallback.md) | `console.error`
 
@@ -29,14 +29,14 @@ Unless customized via the `options` parameter, the given `instance` determines w
 
 | LocationContext | Automatically triggers
 | :--                                                                                 | :--           
-| [ButtonContext](/taxonomy/location-contexts/ButtonContext.md)                       | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-| [SectionContext](/taxonomy/location-contexts/SectionContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
-| [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md) | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
-| [InputContext](/taxonomy/location-contexts/InputContext.md)                         | [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
-| [LinkContext](/taxonomy/location-contexts/LinkContext.md)                           | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
-| [MediaPlayerContext](/taxonomy/location-contexts/MediaPlayerContext.md)             | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
-| [NavigationContext](/taxonomy/location-contexts/NavigationContext.md)               | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
-| [OverlayContext](/taxonomy/location-contexts/OverlayContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [ButtonContext](/taxonomy/reference/location-contexts/ButtonContext.md)                       | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+| [SectionContext](/taxonomy/reference/location-contexts/SectionContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [ExpandableSectionContext](/taxonomy/reference/location-contexts/ExpandableSectionContext.md) | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md), [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [InputContext](/taxonomy/reference/location-contexts/InputContext.md)                         | [trackInputChange](/tracking/api-reference/eventTrackers/trackInputChange.md)
+| [LinkContext](/taxonomy/reference/location-contexts/LinkContext.md)                           | [trackClick](/tracking/api-reference/eventTrackers/trackClick.md)
+| [MediaPlayerContext](/taxonomy/reference/location-contexts/MediaPlayerContext.md)             | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [NavigationContext](/taxonomy/reference/location-contexts/NavigationContext.md)               | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
+| [OverlayContext](/taxonomy/reference/location-contexts/OverlayContext.md)                     | [trackSectionVisible](/tracking/api-reference/eventTrackers/trackSectionVisible.md), [trackSectionHidden](/tracking/api-reference/eventTrackers/trackSectionHidden.md)
 
 ## Usage example
 

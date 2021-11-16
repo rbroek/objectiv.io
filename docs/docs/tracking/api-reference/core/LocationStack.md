@@ -1,13 +1,13 @@
 # LocationStack
 
-An array of [LocationContext](/taxonomy/location-contexts/overview.md) instances
+An array of [LocationContext](/taxonomy/reference/location-contexts/overview.md) instances
 
 ```typescript jsx
 type LocationStack = AbstractLocationContext[]
 ```
 
 :::info see also
-- [Taxonomy](/taxonomy/overview.md)
-- [GlobalContexts](/taxonomy/global-contexts/overview.md)
-- [LocationContexts](/taxonomy/global-contexts/overview.md)
+- [Taxonomy](//taxonomy/introduction.md)
+- [GlobalContexts](/taxonomy/reference/global-contexts/overview.md)
+- [LocationContexts](/taxonomy/reference/global-contexts/overview.md)
 :::

@@ -1,6 +1,6 @@
 # trackClick
 
-Triggers a [ClickEvent](/taxonomy/events/ClickEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).  
+Triggers a [ClickEvent](/taxonomy/reference/events/ClickEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).  
 
 ```typescript
 trackClick = (parameters: {

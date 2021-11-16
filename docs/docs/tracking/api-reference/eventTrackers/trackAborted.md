@@ -1,6 +1,6 @@
 # trackAborted
 
-Triggers an [AbortedEvent](/taxonomy/events/AbortedEvent.md).
+Triggers an [AbortedEvent](/taxonomy/reference/events/AbortedEvent.md).
 
 ```typescript
 trackAborted = (parameters: {

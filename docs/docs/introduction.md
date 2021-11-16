@@ -13,7 +13,7 @@ import Mermaid from '@theme/Mermaid';
 
 ## Welcome to the official Objectiv documentation
 Objectiv is a data collection & modeling library that puts the data scientist first. It is built around 
-[the open taxonomy of analytics](taxonomy/overview.md), which is our proposal for a common way to collect, 
+[the open taxonomy of analytics](/taxonomy/introduction.md), which is our proposal for a common way to collect, 
 structure and validate data. With Objectiv, you create a 
 [contextual layer for your application](tracking/core-concepts/tagging.md) by mapping it to the taxonomy, 
 with the goal of collecting better data and more effective modeling.
