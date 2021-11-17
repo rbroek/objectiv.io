@@ -103,7 +103,7 @@ div.docs-wrapper footer {
   padding: 0 var(--ifm-pre-padding);
 }
 
-img {
+.docs-wrapper img {
   display: block;
   margin: 20px auto;
 }
