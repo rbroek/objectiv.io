@@ -84,6 +84,28 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 /** DOCS **/
+
+/* Hide/show anchors on auto-generated modeling docs */
+.sphinxAnchor {
+  display: inline-block;
+}
+.sphinxAnchor:hover > a.headerlink {
+  display: inline-block;
+  margin-left: 5px;
+}
+.sphinxAnchor .headerlink {
+  display: none;
+}
+.reference {
+  display: inline-block;
+}
+.reference:hover > a.headerlink {
+  display: inline-block;
+}
+.reference .headerlink {
+  display: none;
+}
+
 div.docs-wrapper footer {
   padding: 20px 0;
   text-align: left;
