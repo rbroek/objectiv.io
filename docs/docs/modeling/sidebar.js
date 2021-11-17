@@ -34,11 +34,6 @@ module.exports = [
                         "id": "modeling/DataFrame"
                     },
                     {
-                        "type": "link",
-                        "label": "Introduction",
-                        "href": "/modeling/DataFrame#introduction"
-                    },
-                    {
                         "type": "category",
                         "label": "Usage",
                         "items": [
@@ -528,11 +523,6 @@ module.exports = [
                         "type": "doc",
                         "label": "Overview",
                         "id": "modeling/Series"
-                    },
-                    {
-                        "type": "link",
-                        "label": "Introduction",
-                        "href": "/modeling/Series#introduction"
                     },
                     {
                         "type": "category",
@@ -1143,11 +1133,6 @@ module.exports = [
                         "type": "doc",
                         "label": "Overview",
                         "id": "modeling/Objectiv"
-                    },
-                    {
-                        "type": "link",
-                        "label": "Introduction",
-                        "href": "/modeling/Objectiv#introduction"
                     },
                     {
                         "type": "category",

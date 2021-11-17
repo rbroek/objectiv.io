@@ -4,7 +4,7 @@
 <h1>bach.DataFrame.from_table<a class="headerlink" href="#bach-dataframe-from-table" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="bach.DataFrame.from_table">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py#L345-L362"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.from_table" title="Permalink to this definition">&#182;</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/dataframe.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.DataFrame.from_table" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>Instantiate a new DataFrame based on the content of an existing table in the database.</p>
 <p>This will create and remove a temporary table to asses meta data for the setting the correct dtypes.</p>
 <dl class="field-list simple">
@@ -19,13 +19,14 @@ selected for the index.</p></li>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A DataFrame based on a sql table.</p>
 </dd>
-<dt class="field-odd">Note</dt>
-<dd class="field-odd"><p>In order to create this temporary table the source data is queried.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame">bach.dataframe.DataFrame</a></p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="bach.DataFrame.html#bach.DataFrame" title="bach.dataframe.DataFrame">bach.dataframe.DataFrame</a></p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to create this temporary table the source data is queried.</p>
+</div>
 </dd></dl>
 
 </section>

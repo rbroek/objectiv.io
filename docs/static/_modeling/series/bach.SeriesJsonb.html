@@ -4,18 +4,17 @@
 <h1>bach.SeriesJsonb<a class="headerlink" href="#bach-seriesjsonb" title="Permalink to this headline">&#182;</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="bach.SeriesJsonb">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">SeriesJsonb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series_json.py#L17-L268"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.SeriesJsonb" title="Permalink to this definition">&#182;</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bach.</span></span><span class="sig-name descname"><span class="pre">SeriesJsonb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorted_ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/objectiv/objectiv-analytics/blob/main/bach/bach/series/series_json.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bach.SeriesJsonb" title="Permalink to this definition">&#182;</a></dt>
 <dd><p>A Series that represents the postgres jsonb type and its specific operations.</p>
 <p>This is the standard and recommended type to use for handling json like data.</p>
-<p><strong>Getting data</strong>
-It is possible to get a selection of data from the json in the json type column. For selecting data from
+<p><strong>Getting data</strong></p>
+<p>It is possible to get a selection of data from the json in the json type column. For selecting data from
 json, arrays and objects are supported. The data can be selected using <cite>.json[]</cite> on the json column</p>
 <p>Selecting data from an array is based on position. It works similar to slicing through python lists.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Note</dt>
-<dd class="field-odd"><p>Slicing is only possible if <em>all</em> values in the column are lists or None.</p>
-</dd>
-</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Slicing is only possible if <em>all</em> values in the column are lists or None.</p>
+</div>
 <p>Selecting from objects is possible by key.</p>
 <p>Examples:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span/><span class="gp">&gt;&gt;&gt; </span><span class="c1"># load some json strings and convert them to jsonb type</span>
@@ -83,6 +82,8 @@ of the dict are found in an object. This can be used for selecting a subset of a
 </tr>
 </tbody>
 </table>
+<dl class="field-list simple">
+</dl>
 </dd></dl>
 
 </section>
