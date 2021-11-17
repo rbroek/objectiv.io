@@ -148,6 +148,9 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
         onClick={
           collapsible
             ? (e) => {
+                if(!collapsed) {
+                  e.preventDefault();
+                }
                 toggleCollapsed();
                 trackClick({ element: e.target })
               }
