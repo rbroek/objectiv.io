@@ -1,6 +1,8 @@
 import { tagLink } from "@objectiv-analytics/tracker-browser";
 import React, { useEffect, useState } from 'react';
 import { scrollToAnchor } from "../scroll-to-anchor/scrollToAnchor";
+import baseUrl from "@generated/docusaurus.config"
+
 
 const SphinxPage = (props) => {
     const [data, setData] = useState('loading');
@@ -42,26 +44,36 @@ const SphinxPage = (props) => {
                 tempDiv.innerHTML = raw;
 
                 // get base from window.location, should be something like https://objectiv.io, or http://localhost:3000
-                const currentSite = window.location.toString().match(/^(http:\/\/[a-z0-9\.:]+\/).*?/g);
+                const currentSite = window.location.toString().match(/^(http[s]?:\/\/[a-z0-9.:]+\/).*?$/);
 
-                // fix anchors (remove .html)
+                // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
-                    // fix the hrefs in the overview/index page in case of missing trailing
-                    if ( url == "/_modeling/intro.html" ){
+                    // a link is internal if the first part matches the current location,
+                    // or if it's a relative URL
+                    const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
+                        !a.href.startsWith('http'));
+                    // fix the hrefs in the overview/index page in case of missing trailing slash
+                    if ( url == `${baseUrl.baseUrl}_modeling/intro.html` && isInternal ){
                         if ( a.href.indexOf('modeling') == -1){
-                            a.href = a.href.replace(/^(http(s)?:\/\/[a-z0-9:.]+)\/(.*?)/, '$1/modeling/$2');
+                            // we add the baseURL to the match, to make sure it works in dev and prod mode
+                            const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
+                            a.href = a.href.replace(new RegExp(regex), '$1modeling/$2');
                         }
                     }
                     // only remove the .html if local links, leave external links alone
-                    if (a.href.startsWith(currentSite[0])) {
+                    if ( isInternal ){
                         a.href = a.href.replace(/\.html/g, '');
+
+                        // fix content of (internal) permalinks, change from ¶ to #
+                        if ( a.className == 'headerlink' && a.text == '¶' ){
+                            a.text = '#';
+                        }
                     }
                 });
 
                 // fix #anchors
                 // we do this, by finding sections with a header
                 // and moving the id to the heading rather than the section
-
                 const sections = tempDiv.getElementsByTagName('section');
                 Object.values(sections).forEach( (section: HTMLElement) => {
 
