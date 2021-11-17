@@ -4,18 +4,18 @@ slug: /taxonomy
 title: Introduction
 ---
 
-# Introduction
+# The open taxonomy of analytics
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Open Taxonomy of Analytics is [Objectiv's](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
+The open taxonomy of analytics is [Objectiv's](https://objectiv.io/about/) proposal for a common way to collect, structure, and 
 validate analytics data. Adoption of the Open Taxonomy enables data & models to be reused and allows data scientists to build on knowledge and practises of others.
 
 Each common event type and the contexts in which they can happen are defined in a class, which describes their properties, requirements and relationships with other classes.
 
 Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/core-concepts/collector) and [Bach](/modeling) (our modeling library) are built around the Open Taxonomy and support it out of the box.
 
-<img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
+<img src={useBaseUrl('/img/objectiv-pipeline-taxonomy.svg')} alt="Objectiv Pipeline" class="img-l" />
 
 ## Core Principles
 To help ensure that the open taxonomy will meet its goals, we’ve created a set of core principles.
