@@ -1,6 +1,6 @@
 # tagExpandableElement
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ExpandableSectionContext](/taxonomy/location-contexts/ExpandableSectionContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ExpandableSectionContext](/taxonomy/reference/location-contexts/ExpandableSectionContext.md).
 
 ```typescript
 tagExpandableElement = (parameters: {

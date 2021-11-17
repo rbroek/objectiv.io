@@ -30,15 +30,21 @@ To jump straight to what you're looking for, see Objectiv's contribution map bel
     Contribution ----> PR["Create a Pull Request"];
     LabelUpdate["GitHub Label update"] ----> PR["Create a Pull Request"];
     StayUpToDate["Receive Updates"] ----> GitHubReleases["Follow Releases on GitHub"];
-    click SecurityPolicy "https://github.com/objectiv/objectiv-analytics/blob/main/SECURITY.md" "See Security Policy" _blank;
-    click Docs "https://objectiv.io/docs" "See Objectiv Documentation" _blank;
-    click CheckIssues "https://github.com/objectiv/objectiv-analytics/issues" "Go to GitHub Issues" _blank;
-    click GitHubIssue "https://github.com/objectiv/objectiv-analytics/issues" "Go to GitHub Issues" _blank;
-    click CheckRoadmap "https://github.com/objectiv/objectiv-analytics/projects/2" "Go to Public Roadmap" _blank;
-    click PR "https://github.com/objectiv/objectiv-analytics/pulls" "Go to GitHub Pull Requests" _blank;
-    click GitHubReleases "https://github.com/objectiv/objectiv-analytics" "Follow Releases on GitHub" _blank;
     click PostSlack "https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg" "Join Objectiv on Slack" _blank;
-`} caption="Figure: How To Contribute" baseColor="basic" />
+`} 
+  caption="Figure: How To Contribute" 
+  baseColor="basic" 
+  links={[
+    { name: 'SecurityPolicy', to: 'https://github.com/objectiv/objectiv-analytics/blob/main/SECURITY.md', tooltip: 'See Security Policy', target: '_blank' }, 
+    { name: 'Docs', to: 'https://objectiv.io/docs', tooltip: 'See Objectiv Documentation', target: '_self' },
+    { name: 'CheckIssues', to: 'https://github.com/objectiv/objectiv-analytics/issues', tooltip: 'Go to GitHub Issues', target: '_blank' },
+    { name: 'GitHubIssue', to: 'https://github.com/objectiv/objectiv-analytics/issues', tooltip: 'Go to GitHub Issues', target: '_blank' },
+    { name: 'CheckRoadmap', to: 'https://github.com/objectiv/objectiv-analytics/projects/2', tooltip: 'Go to Public Roadmap', target: '_blank' },
+    { name: 'PR', to: 'https://github.com/objectiv/objectiv-analytics/pulls', tooltip: 'Go to GitHub Pull Requests', target: '_blank' },
+    { name: 'GitHubReleases', to: 'https://github.com/objectiv/objectiv-analytics', tooltip: 'Follow Releases on GitHub', target: '_blank' },
+    { name: 'PostSlack', to: 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg', tooltip: 'Join Objectiv on Slack', target: '_blank' }
+  ]}
+/>
 
 The following is a set of guidelines for contributing that help communicate respect for each other's time & contributions. These are mostly guidelines, not rules; simply use your best judgment, and feel free to propose changes to this document in a pull request. 
 

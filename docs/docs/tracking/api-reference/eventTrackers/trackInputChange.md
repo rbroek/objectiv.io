@@ -1,6 +1,6 @@
 # trackInputChange
 
-Triggers an [InputChangeEvent](/taxonomy/events/InputChangeEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
+Triggers an [InputChangeEvent](/taxonomy/reference/events/InputChangeEvent.md) for the given [TrackedElement](/tracking/api-reference/definitions/TrackedElement.md).
 
 ```typescript
 trackInputChange = (parameters: {

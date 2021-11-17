@@ -1,6 +1,6 @@
 # tagLink
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [LinkContext](/taxonomy/location-contexts/LinkContext.md).
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [LinkContext](/taxonomy/reference/location-contexts/LinkContext.md).
 
 ```typescript
 tagLink = (parameters: {

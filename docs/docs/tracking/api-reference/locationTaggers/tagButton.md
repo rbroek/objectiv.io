@@ -1,6 +1,6 @@
 # tagButton
 
-Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ButtonContext](/taxonomy/location-contexts/ButtonContext.md).  
+Tags a [TaggableElement](/tracking/api-reference/definitions/TaggableElement.md) to be tracked as [ButtonContext](/taxonomy/reference/location-contexts/ButtonContext.md).  
 
 ```typescript
 tagButton = (parameters: {

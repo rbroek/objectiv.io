@@ -70,7 +70,7 @@ The Core Tracker is extensible through plugins. Each plugin can control when it'
 environment is available.
 
 Three plugins are supported out of the box, and automatically enabled when the environment supports them:
-* `application-context`: adds a Global [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md) 
+* `application-context`: adds a Global [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md) 
   to each Event;
 * `web-document-context`: adds a [Location](/tracking/core-concepts/locations.md) 
-  [WebDocumentContext](/taxonomy/location-contexts/WebDocumentContext.md) to each Event;
+  [WebDocumentContext](/taxonomy/reference/location-contexts/WebDocumentContext.md) to each Event;

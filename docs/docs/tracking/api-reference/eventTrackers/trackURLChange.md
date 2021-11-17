@@ -1,6 +1,6 @@
 # trackURLChange
 
-Triggers a [URLChangeEvent](/taxonomy/events/URLChangeEvent.md).
+Triggers a [URLChangeEvent](/taxonomy/reference/events/URLChangeEvent.md).
 
 ```typescript
 trackURLChange = (parameters: {

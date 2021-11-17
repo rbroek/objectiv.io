@@ -18,7 +18,7 @@
 A unique identifier used internally to pinpoint a specific [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).
 
 ### TaggingAttribute.context
-A serialized [Location Context](/taxonomy/location-contexts/overview.md) instance.
+A serialized [Location Context](/taxonomy/reference/location-contexts/overview.md) instance.
 
 ### TaggingAttribute.parentElementId
 Rebuilding [Locations](/tracking/core-concepts/locations.md) via the DOM is not always accurate (eg: [React Portals](https://reactjs.org/docs/portals.html)). This allows specifying a parent [Tagged Element](/tracking/core-concepts/tagging.md#tagged-elements).

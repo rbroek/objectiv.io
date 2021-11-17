@@ -31,7 +31,7 @@ Determines if trackEvent will process Events or not.
 
 ### applicationId
 Required, string.   
-Application identifier. Used to automatically generate [ApplicationContext](/taxonomy/global-contexts/ApplicationContext.md).
+Application identifier. Used to automatically generate [ApplicationContext](/taxonomy/reference/global-contexts/ApplicationContext.md).
 
 ### console
 Optional, [TrackerConsole](/tracking/api-reference/core/TrackerConsole.md).   

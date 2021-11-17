@@ -1,6 +1,6 @@
 # trackApplicationLoaded
 
-Triggers an [ApplicationLoadedEvent](/taxonomy/events/ApplicationLoadedEvent.md).
+Triggers an [ApplicationLoadedEvent](/taxonomy/reference/events/ApplicationLoadedEvent.md).
 
 ```typescript
 trackApplicationLoaded = (parameters: {
