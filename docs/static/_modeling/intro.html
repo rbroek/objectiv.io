@@ -12,8 +12,8 @@ install anything. Beware this is python compiled to javascript, running in the b
 is not the same as running Bach in a normal python notebook. Especially the initial loading can be slow.</p>
 <section id="what-is-bach">
 <h2>What is Bach?<a class="headerlink" href="#what-is-bach" title="Permalink to this headline">&#182;</a></h2>
-<p>Bach is a library for analysing data that is stored in a SQL database <a class="footnote-reference brackets" href="#id2" id="id1">*</a>, using an interface that&#8217;s
-mostly compatible with <a class="reference external" href="https://pandas.pydata.org/docs/reference/index.html">pandas</a>. All data storage and
+<p>Bach is a library for analysing data that is stored in a SQL database. Currently we only support Postgres,
+but we plan on supporting more databases. We&#8217;re using an interface that&#8217;s mostly compatible with <a class="reference external" href="https://pandas.pydata.org/docs/reference/index.html">pandas</a>. All data storage and
 processing is handled by the database. As a result, local memory does not limit the size of the data that
 can be analysed with Bach.</p>
 <p>The two main data classes of Bach are the DataFrame and Series:</p>
@@ -23,11 +23,6 @@ columns, and each column having a specific data type and a distinct name.</p></l
 <li><p>A <a class="reference internal" href="series/bach.Series.html#bach.Series" title="bach.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> object represents a single column in a DataFrame, with
 different subclasses per data type that allow for type specific operations.</p></li>
 </ul>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">*</a></span></dt>
-<dd><p>Currently we only support Postgres, but we plan on supporting more databases</p>
-</dd>
-</dl>
 </section>
 </section>
 
