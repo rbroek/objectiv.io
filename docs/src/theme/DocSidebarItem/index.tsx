@@ -116,7 +116,7 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
 
       // Else keep searching deeper
       case 'category':
-        findFirstLinkItem(firstItem.items)
+        return findFirstLinkItem(firstItem.items)
     }
   }
 
