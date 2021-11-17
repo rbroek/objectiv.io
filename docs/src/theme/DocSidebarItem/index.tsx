@@ -101,7 +101,26 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
     setCollapsed,
   });
 
-  const [firstItem] = items;
+  const findFirstLinkItem = (items) => {
+    const [firstItem] = items;
+
+    // There are no items :(
+    if(!firstItem) {
+      return;
+    }
+
+    switch(firstItem.type) {
+      // If the item is a link we are done and we can return it
+      case 'link':
+        return firstItem;
+
+      // Else keep searching deeper
+      case 'category':
+        findFirstLinkItem(firstItem.items)
+    }
+  }
+
+  const firstLinkItem = findFirstLinkItem(items);
 
   // @ts-ignore
   return (
@@ -134,7 +153,7 @@ function DocSidebarItemCategory({item, onItemClick, activePath, ...props}) {
               }
             : undefined
         }
-        href={collapsible ? firstItem.href : undefined}
+        href={collapsible ? firstLinkItem.href : undefined}
         {...props}>
         {label}
       </Link>
