@@ -17,7 +17,7 @@ uniqueness.
 
 ## Location Contexts
 LocationContexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 
-[Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is a visual representation of the UI location where a user is when an [Event](/tracking/core-concepts/events.md) occurs.  It is composed of a hierarchical stack of UI elements, meaning that the 
+[Event's](/tracking/core-concepts/events.md) `location_stack` properties. A Location Stack is a visual representation of the UI location a user is currently viewing when an [Event](/tracking/core-concepts/events.md) occurs.  It is composed of a hierarchical stack of UI elements, meaning that the 
 order in the stack is the order in the UI as well.
 
 * [AbstractLocationContext](./location-contexts/AbstractLocationContext.md)
