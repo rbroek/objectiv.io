@@ -1,31 +1,35 @@
 import { tagLink } from "@objectiv-analytics/tracker-browser";
 import React, { useEffect, useState } from 'react';
 import { scrollToAnchor } from "../scroll-to-anchor/scrollToAnchor";
+import baseUrl from "@generated/docusaurus.config"
+
 
 const SphinxPage = (props) => {
     const [data, setData] = useState('loading');
 
     // map from sphinx css selector to style and/or class in Docusaurus (classic theme)
     const styleMap = {
-        'c':  {'class': 'token comment'},                                                           // Comment
+        'c':  {'class': 'token comment', 'style': 'color: rgb(153, 153, 136); font-style: italic;'}, // Comment
+        'c1': {'class': 'token comment', 'style': 'color: rgb(153, 153, 136); font-style: italic;'},   // Comment
         'fm': {'class': 'token function', 'style': 'color: rgb(130, 170, 255);'},                   // class method
         'gh': {'class': 'token plain'},                                                             // generic header (out)
-        'go': {'class': 'token comment', 'style': 'color: rgb(105, 112, 152); font-style: italic;'},// generic output
+        'go': {'class': 'token comment', 'style': 'color: rgb(153, 153, 136); font-style: italic;'},// generic output
         'gp': {'class': 'token plain'},                                                             // generic prompt (in)
         'k':  {'class': 'token keyword', 'style': 'font-style: italic'},                            // keyword
+        'kc': {'class': 'token boolean', 'style': 'color: rgb(54, 172, 170);'},                     // boolean
         'kn': {'class': 'token keyword', 'style': 'font-style: italic'},                            // keyword namespace
-        'mi': {'class': 'token number', 'style': 'color: rgb(247, 140, 108);'},                     // literal number integer
+        'mi': {'class': 'token number', 'style': 'color: rgb(54, 172, 170);'},                     // literal number integer
         'n':  {'class': 'token plain'},                                                             // name
         'nb': {'class': 'token builtin', 'style': 'color: rgb(130, 170, 255);'},                    // builtin in type
         'nd': {'class': 'token decorator annotation punctuation', 'style': 'color: rgb(199, 146, 234);'}, // decorator
         'nc': {'class': 'token class-name', 'style': 'color: rgb(255, 203, 107);'},                 // class name
         'nf': {'class': 'token function', 'style': 'color: rgb(130, 170, 255);'},                   // function
         'nn': {'class': 'token plain'},                                                             // namespace
-        'o':  {'class': 'token operator', 'style': 'color: rgb(137, 221, 255);'},                   // operator
+        'o':  {'class': 'token operator', 'style': 'color: rgb(57, 58, 52);'},                   // operator
         'ow': {'class': 'token keyword', 'style': 'font-style: italic'},                   // operator word
         'p':  {'class': 'token punctuation', 'style': 'color: rgb(199, 146, 234);'},                // punctuation
         'sd': {'class': 'token triple-quoted-string string', 'style': 'color: rgb(195, 232, 141);'},// triple quoted string
-        's1': {'class': 'token string', 'style': 'color: rgb(195, 232, 141);'}                      // string
+        's1': {'class': 'token string', 'style': 'color: rgb(227, 17, 108);'}                      // string
     };
 
     useEffect(() => {
@@ -39,54 +43,62 @@ const SphinxPage = (props) => {
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = raw;
 
-                // fix anchors (remove .html)
+                // get base from window.location, should be something like https://objectiv.io, or http://localhost:3000
+                const currentSite = window.location.toString().match(/^(http[s]?:\/\/[a-z0-9.:]+\/).*?$/);
+
+                // fix anchors (remove .html) and fix path
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
-                    // fix the href's in the overview/index page in case of missing trailing 
-                    if ( url == "/_modeling/index.html" ){
+                    // a link is internal if the first part matches the current location,
+                    // or if it's a relative URL
+                    const isInternal = ((currentSite[1] !== undefined && a.href.startsWith(currentSite[1])) ||
+                        !a.href.startsWith('http'));
+                    // fix the hrefs in the overview/index page in case of missing trailing slash
+                    if ( url == `${baseUrl.baseUrl}_modeling/intro.html` && isInternal ){
                         if ( a.href.indexOf('modeling') == -1){
-                            a.href = a.href.replace(/^(http(s)?:\/\/[a-z0-9\:\.]+)\/(.*?)/, '$1/modeling/$2');	
+                            // we add the baseURL to the match, to make sure it works in dev and prod mode
+                            const regex = `^(http[s]?://[a-z0-9:.]+${baseUrl.baseUrl})(.*?)$`.replace('\\', '\\\/');
+                            a.href = a.href.replace(new RegExp(regex), '$1modeling/$2');
                         }
                     }
-                    a.href = a.href.replace(/\.html/g, '');
+                    // only remove the .html if local links, leave external links alone
+                    if ( isInternal ){
+                        a.href = a.href.replace(/\.html/g, '');
+
+                        // fix content of (internal) permalinks, change from ¶ to #
+                        if ( a.className == 'headerlink' && a.text == '¶' ){
+                            a.text = '#';
+                        }
+                    }
                 });
 
                 // fix #anchors
-                // we do this, by adding empty h2/h3's with the appropriate css classes
-                // apply to <section> and <dt> elements
-                const headings = [];
-                Object.values(tempDiv.getElementsByTagName('section')).forEach(element =>{
-                    headings.push(element);
-                })
-                Object.values(tempDiv.getElementsByTagName('dt')).forEach(element => {
-                    headings.push(element);
-                })
-                Object.values(headings).forEach( (element: HTMLElement) => {
-                    const originalId = element.id;
+                // we do this, by finding sections with a header
+                // and moving the id to the heading rather than the section
+                const sections = tempDiv.getElementsByTagName('section');
+                Object.values(sections).forEach( (section: HTMLElement) => {
 
-                    if ( originalId && originalId !== "" ) {
-                        const parts = originalId.split('.');
+                    const originalId = section.id;
+                    // move id's from sections to headers, otherwise # anchors won't work
+                    ['h1', 'h2', 'h3'].every(heading_type => {
+                        const headings = section.getElementsByTagName(heading_type);
+                        if ( headings.length > 0 ){
+                            // move ID to the actual heading
+                            section.id = '_' + originalId;
+                            headings[0].id = originalId;
+                            headings[0].className = "sphinxAnchor";
 
-                        let headerType = "h2";
-                        if (parts.length > 2){
-                            const lastPart = parts.slice(-1);
-                            const firstChar = lastPart.toString().charAt(0);
-                            // if the first character is lowercase, this is not a class, but a property/method
-                            // of a class, so we increase the header type
-
-                            if ( firstChar === firstChar.toLowerCase() ){
-                              headerType = "h3";
-                            }
+                            // stop the loop if we are successful
+                            return false;
                         }
-
-                        // change id of item in original definition list
-                        element.id = '_' + originalId;
-
-                        // create new heading element
-                        const heading = document.createElement(headerType);
-                        heading.id = originalId;
-                        heading.className = "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-next-theme-Heading-styles-module";
-                        element.insertBefore(heading, element.firstChild);
-                    }
+                        return true;
+                    });
+                });
+                // now fix the links/anchors in a <dt id="some_id">
+                const dts = tempDiv.getElementsByTagName('dt');
+                Object.values(dts).forEach( (dt: HTMLElement) => {
+                  if ( dt.id != null ){
+                      dt.className = dt.className + " sphinxAnchor";
+                  }
                 });
 
                 // map styles of tokens (spans)
@@ -119,13 +131,13 @@ const SphinxPage = (props) => {
                     const old = codeBlock.className;
                     codeBlock.className = old + " prism-code language-python codeBlock_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module thin-scrollbar";
 
-                    codeBlock.style.setProperty('color', "rgb(191, 199, 213)");
-                    codeBlock.style.setProperty('background-color', "rgb(41, 45, 62)");
+                    codeBlock.style.setProperty('color', "rgb(57, 58, 52)");
+                    codeBlock.style.setProperty('background-color', "rgb(246, 248, 250)");
                     codeBlock.style.setProperty('padding', "var(--ifm-pre-padding)");
 
                     const code = document.createElement("code");
                     code.className = "codeBlockLines_node_modules-@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module";
-                    code.style.setProperty("color", "rgb(191, 199, 213)");
+                    code.style.setProperty("color", "rgb(57, 58, 52)");
                     
                     // get lines
                     const lines = codeBlock.innerHTML.split("\n");
