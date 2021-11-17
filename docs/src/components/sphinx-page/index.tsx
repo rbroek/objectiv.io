@@ -41,15 +41,21 @@ const SphinxPage = (props) => {
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = raw;
 
+                // get base from window.location, should be something like https://objectiv.io, or http://localhost:3000
+                const currentSite = window.location.toString().match(/^(http:\/\/[a-z0-9\.:]+\/).*?/g);
+
                 // fix anchors (remove .html)
                 Object.values(tempDiv.getElementsByTagName('a')).forEach( a => {
-                    // fix the href's in the overview/index page in case of missing trailing 
-                    if ( url == "/_modeling/index.html" ){
+                    // fix the hrefs in the overview/index page in case of missing trailing
+                    if ( url == "/_modeling/intro.html" ){
                         if ( a.href.indexOf('modeling') == -1){
                             a.href = a.href.replace(/^(http(s)?:\/\/[a-z0-9:.]+)\/(.*?)/, '$1/modeling/$2');
                         }
                     }
-                    a.href = a.href.replace(/\.html/g, '');
+                    // only remove the .html if local links, leave external links alone
+                    if (a.href.startsWith(currentSite[0])) {
+                        a.href = a.href.replace(/\.html/g, '');
+                    }
                 });
 
                 // fix #anchors
