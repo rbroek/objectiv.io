@@ -295,3 +295,6 @@ dl blockquote {
   scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
 }
 
+a.headerlink {
+  display: none;
+}
