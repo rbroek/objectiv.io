@@ -17,6 +17,11 @@ Objectiv's [Tracker](/tracking/introduction.md), [Collector](/tracking/core-conc
 
 <img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
 
+## Core Principles
+To help ensure that the open taxonomy will meet its goals, we’ve created a set of core principles.
+
+[Read up on the Core Principles](./core-principles.md)
+
 ## Core Concepts
 To understand in more detail how the Taxonomy works, read about the underlying core concepts.
 
