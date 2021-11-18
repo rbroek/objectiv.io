@@ -136,13 +136,11 @@ const config = {
         disableSwitch: true
       },
       algolia: {
-        // If Algolia did not provide you any appId, use 'BH4D9OD16A'
         appId: 'BH4D9OD16A',
-          // Public API key: it is safe to commit it
-        apiKey: 'YOUR_SEARCH_API_KEY',
-        indexName: 'YOUR_INDEX_NAME',
-        // Optional: see doc section below
-        contextualSearch: true
+          // Public API key, safe to commit
+        apiKey: 'bd5e6d3621d6506eb80485738c90a674',
+        indexName: 'objectiv',
+        container: 'main'
       },
     }),
 };
