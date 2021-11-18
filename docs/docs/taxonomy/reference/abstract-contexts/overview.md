@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Overview
 ---
 
+# Abstract Contexts
+
 import Mermaid from '@theme/Mermaid';
 
 AbstractContexts define either properties required by [Collectors](/tracking/core-concepts/collector.md) or 

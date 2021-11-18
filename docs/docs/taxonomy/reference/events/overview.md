@@ -5,6 +5,8 @@ title: Overview
 sidebar_label: Overview
 ---
 
+# Events
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Mermaid from '@theme/Mermaid';
 

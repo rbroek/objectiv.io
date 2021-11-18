@@ -4,7 +4,7 @@ slug: /tracking/core-concepts
 title: Overview
 ---
 
-# Core Concepts
+# Tracking Core Concepts
 
 High level overview of all concepts enabling tracking:
 * [Tagging](/tracking/core-concepts/tagging.md) of Elements to track.

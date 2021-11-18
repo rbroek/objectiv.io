@@ -1,47 +1,19 @@
 ---
 sidebar_position: 1
 slug: /tracking
+title: Introduction
 ---
+# Tracking with Objectiv
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Introduction
-
-Objectiv comes with a set of tools that help you set up error-free tracking instrumentation:
+Objectiv comes with a set of tools that help you set up error-free user behavior tracking instrumentation:
 * A Tracker for several web & mobile platforms and frameworks;
-* Validation & Debugging; and
+* A live debugger that provides instrumentation feedback in your IDE or console; and
 * A Collector to receive, validate & store events.
 
-See the diagram below for each major tracking component. Click for more detail.
+<img src={useBaseUrl('/img/objectiv-pipeline-tracking.svg')} alt="Objectiv Pipeline" class="img-l" />
 
-import Mermaid from '@theme/Mermaid';
-
-<Mermaid chart={`
-	flowchart LR
-    subgraph TrackerGraph["Tracking"]
-      direction LR
-      Tracker["Tracker"]---Tagging
-      Tagging---Plugins
-      Plugins---Validation
-    end
-    TrackerGraph --> EventsGraph
-    subgraph EventsGraph["Events"]
-      direction LR
-      Event --- Location
-    end
-    EventsGraph --> Collector
-    linkStyle 0,1,2,4 stroke:#fff,anything;
-`} 
-  caption="Figure: Objectiv Tracking" 
-  baseColor="basic" 
-  links={[
-    { name: 'Tracker', to: '/tracking/core-concepts/trackers' },
-    { name: 'Tagging', to: '/tracking/core-concepts/tagging' },
-    { name: 'Plugins', to: '/tracking/core-concepts/trackers#extensibility-plugins' },
-    { name: 'Validation', to: '/tracking/core-concepts/validation' },
-    { name: 'Event', to: '/tracking/core-concepts/events' },
-    { name: 'Location', to: '/tracking/core-concepts/locations' },
-    { name: 'Collector', to: '/tracking/core-concepts/collector' }
-  ]}
-/>
+Instrumentation involves mapping your application to the [open taxonomy for analytics](/taxonomy) to ensure the collected data is clean, well-structured and ready for modeling.
 
 ## How-to Guides
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides.
