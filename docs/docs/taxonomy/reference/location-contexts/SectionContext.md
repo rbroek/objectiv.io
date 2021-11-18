@@ -21,7 +21,6 @@ import Mermaid from '@theme/Mermaid';
   links={[
     { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
     { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
-    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
     { name: 'WebDocumentContext', to: '/taxonomy/reference/location-contexts/WebDocumentContext' },
     { name: 'ScreenContext', to: '/taxonomy/reference/location-contexts/ScreenContext' },
     { name: 'ExpandableSectionContext', to: '/taxonomy/reference/location-contexts/ExpandableSectionContext' },

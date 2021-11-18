@@ -286,13 +286,18 @@ dl blockquote {
   fill: rgb(212, 212, 212) !important;
 }  
 .diagram-blue rect {
-  fill: #abe9feff !important;
-  stroke: rgb(0, 100, 150) !important;
+  fill: #EAF9FE !important;
+  stroke: #64C8FA !important;
 }
 .hover .diagram-blue rect, .diagram-blue .hover rect {
-  fill: rgb(100, 200, 250) !important;
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
 }
-.diagram-pink rect, .diagramActive rect {
+.diagramActive rect {
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
+}
+.diagram-pink rect {
   fill: #fba99dff !important;
   stroke: rgb(200, 50, 25) !important;
 }
