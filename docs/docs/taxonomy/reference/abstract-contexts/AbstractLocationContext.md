@@ -16,12 +16,16 @@ See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for a
 <Mermaid chart={`
 	graph LR
 		AbstractContext["AbstractContext<br><span class='properties'>id: string<br />_type: string</span>"] --> AbstractLocationContext;
+		AbstractLocationContext --> SectionContext;
+    AbstractLocationContext --> ItemContext;
     class AbstractLocationContext diagramActive;
 `} 
   caption="Diagram: AbstractLocationContext inheritance" 
-  baseColor="blue"
+  baseColor="blue" 
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' }
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
+    { name: 'SectionContext', to: '/taxonomy/reference/location-contexts/SectionContext' },
+    { name: 'ItemContext', to: '/taxonomy/reference/location-contexts/ItemContext' }
   ]}
 />
 
