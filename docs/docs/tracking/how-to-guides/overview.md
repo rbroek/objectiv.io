@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: /how-to-guides
+slug: /tracking/how-to-guides/
 title: Overview
 ---
 

@@ -17,8 +17,7 @@ import Mermaid from '@theme/Mermaid';
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
     { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' },
-    { name: 'VideoPauseEvent', to: '/taxonomy/reference/events/VideoPauseEvent' }
+    { name: 'VideoEvent', to: '/taxonomy/reference/events/VideoEvent' }
   ]}
 />
 ### Requires

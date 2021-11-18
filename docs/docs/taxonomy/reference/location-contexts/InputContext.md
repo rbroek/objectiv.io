@@ -16,7 +16,7 @@ import Mermaid from '@theme/Mermaid';
   links={[
     { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
     { name: 'AbstractLocationContext', to: '/taxonomy/reference/location-contexts/AbstractLocationContext' },
-    { name: 'InputContext', to: '/taxonomy/reference/location-contexts/InputContext' }
+    { name: 'ItemContext', to: '/taxonomy/reference/location-contexts/ItemContext' }
   ]}
 />
 

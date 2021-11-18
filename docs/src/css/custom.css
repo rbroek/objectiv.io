@@ -9,7 +9,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 @import url('pygments.css');
-  
+
+@media screen and (min-width: 966px) { /* desktop */
+}
+@media screen and (max-width: 966px) { /* mobile/tablet all */
+}
+@media screen and (max-width: 768px) { /* mobile medium (/tablet) */
+}
+@media screen and (max-width: 480px) { /* mobile small */
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #06A5FA;
@@ -116,6 +125,22 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 /** DOCS **/
+
+/* Hide/show anchors on auto-generated modeling docs */
+.sphinxAnchor:hover > a.headerlink {
+  display: inline-block;
+  margin-left: 5px;
+}
+.sphinxAnchor .headerlink {
+  display: none;
+}
+.reference:hover > a.headerlink {
+  display: inline-block;
+}
+.reference .headerlink {
+  display: none;
+}
+
 div.docs-wrapper footer {
   padding: 20px 0;
   text-align: left;
@@ -135,6 +160,25 @@ div.docs-wrapper footer {
   padding: 0 var(--ifm-pre-padding);
 }
 
+.docs-wrapper img {
+  display: block;
+  margin: 20px auto;
+}
+
+@media screen and (min-width: 1440px) { /* desktop large */
+  .img-s {
+    max-width: 25%;
+  }
+  .img-m {
+    max-width: 50%;
+  }
+  .img-l {
+    max-width: 75%;
+  }
+  .img-xl {
+    max-width: 100%;
+  } 
+}
 
 /** DOCS - API Reference **/
 
@@ -283,13 +327,18 @@ dl blockquote {
   fill: rgb(212, 212, 212) !important;
 }  
 .diagram-blue rect {
-  fill: #abe9feff !important;
-  stroke: rgb(0, 100, 150) !important;
+  fill: #EAF9FE !important;
+  stroke: #64C8FA !important;
 }
 .hover .diagram-blue rect, .diagram-blue .hover rect {
-  fill: rgb(100, 200, 250) !important;
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
 }
-.diagram-pink rect, .diagramActive rect {
+.diagramActive rect {
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
+}
+.diagram-pink rect {
   fill: #fba99dff !important;
   stroke: rgb(200, 50, 25) !important;
 }
@@ -330,4 +379,12 @@ dl blockquote {
     opacity: 1;
     box-shadow: 0 0 500px rgba(241, 241, 241, 0);
   }
+}
+
+.sphinxAnchor {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+}
+
+a.headerlink {
+  display: none;
 }

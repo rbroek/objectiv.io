@@ -16,7 +16,6 @@ import Mermaid from '@theme/Mermaid';
   baseColor="blue" 
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
-    { name: 'InteractiveEvent', to: '/taxonomy/reference/events/InteractiveEvent' },
     { name: 'ClickEvent', to: '/taxonomy/reference/events/ClickEvent' },
     { name: 'InputChangeEvent', to: '/taxonomy/reference/events/InputChangeEvent' }
   ]}
