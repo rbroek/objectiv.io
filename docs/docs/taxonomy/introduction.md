@@ -28,7 +28,7 @@ To understand in more detail how the Taxonomy works, read about the underlying c
 [Read up on the Core Concepts](./core-concepts.md)
 
 ## Taxonomy Reference
-To implement the taxonomy, all Contexts and Events are open and documented. 
+Find out everything about the taxonomy: all Contexts and Events are open and documented. 
 
 [Check out the Reference](./reference/overview.md)
 
