@@ -4,6 +4,8 @@ slug: /tracking/how-to-guides/
 title: Overview
 ---
 
+# How-to Guides
+
 ## Tracking Instrumentation
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides below:
 
