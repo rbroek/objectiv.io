@@ -4,6 +4,8 @@ slug: /taxonomy/location-contexts
 title: Overview
 ---
 
+# Location Contexts
+
 import Mermaid from '@theme/Mermaid';
 
 LocationContexts are used to populate a [Tracker's](/tracking/core-concepts/trackers) or 

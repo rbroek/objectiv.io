@@ -4,6 +4,8 @@ slug: /taxonomy/global-contexts
 title: Overview
 ---
 
+# Global Contexts
+
 import Mermaid from '@theme/Mermaid';
 
 Global contexts add global / general information about an [Event](/tracking/core-concepts/events.md). They 
