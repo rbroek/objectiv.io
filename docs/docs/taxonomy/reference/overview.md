@@ -4,7 +4,7 @@ slug: /taxonomy/reference
 title: Overview
 ---
 
-# Reference
+# Taxonomy Reference
 
 High level overview of all the Events & Contexts available in the open taxonomy.
 
