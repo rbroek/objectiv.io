@@ -20,8 +20,7 @@ See [Global Contexts](/taxonomy/reference/global-contexts/overview.md) for all C
   caption="Diagram: AbstractGlobalContext inheritance" 
   baseColor="blue"
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractGlobalContext', to: '/taxonomy/reference/abstract-contexts/AbstractGlobalContext' }
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' }
   ]}
 />
 

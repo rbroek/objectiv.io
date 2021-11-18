@@ -16,8 +16,7 @@ import Mermaid from '@theme/Mermaid';
   baseColor="blue" 
   links={[
     { name: 'AbstractEvent', to: '/taxonomy/reference/events/AbstractEvent' },
-    { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' },
-    { name: 'AbortedEvent', to: '/taxonomy/reference/events/AbortedEvent' },
+    { name: 'NonInteractiveEvent', to: '/taxonomy/reference/events/NonInteractiveEvent' }
   ]}
 />
 

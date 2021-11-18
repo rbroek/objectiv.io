@@ -21,8 +21,7 @@ See [Location Contexts](/taxonomy/reference/location-contexts/overview.md) for a
   caption="Diagram: AbstractLocationContext inheritance" 
   baseColor="blue"
   links={[
-    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' },
-    { name: 'AbstractLocationContext', to: '/taxonomy/reference/abstract-contexts/AbstractLocationContext' },
+    { name: 'AbstractContext', to: '/taxonomy/reference/abstract-contexts/AbstractContext' }
   ]}
 />
 
