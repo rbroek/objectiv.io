@@ -103,6 +103,10 @@ const config = {
             to: '/taxonomy//',
           },
           {
+            type: 'search',
+            position: 'right',
+          },
+          {
             label: 'Objectiv.io \u{1F855}',
             position: 'right',
             to: websiteUrl,
