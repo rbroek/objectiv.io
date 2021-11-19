@@ -280,7 +280,7 @@ export default function Home() {
                     <Link 
                       to="https://notebook.objectiv.io/lab?path=product_analytics.ipynb" 
                       {...tagLink({
-                          id: 'docs', 
+                          id: 'demo-notebook', 
                           href: 'https://notebook.objectiv.io/lab?path=product_analytics.ipynb', 
                           text: 'Live Demo Notebook',
                           options: {
