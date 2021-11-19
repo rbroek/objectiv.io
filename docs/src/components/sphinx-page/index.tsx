@@ -32,6 +32,8 @@ const SphinxPage = (props) => {
         's1': {'class': 'token string', 'style': 'color: rgb(227, 17, 108);'}                      // string
     };
 
+    // map Sphinx admonition classes to docusaurus/ remark admonitions
+    // see: https://github.com/elviswolcott/remark-admonitions/blob/master/lib/index.js for svg data
     const admonitionMap = {
         'admonition attention': {
             'class': 'admonition admonition-caution alert alert--warning',
