@@ -95,7 +95,8 @@ const SphinxPage = (props) => {
                         const admonition = admonitionMap[element.className]
                         // fix class of content div
                         element.className = admonition['class'];
-                        Object.values(tempDiv.querySelectorAll('p.admonition-title')).forEach(title => {
+                        Object.values(element.querySelectorAll('p.admonition-title')).forEach(
+                            (title: HTMLParagraphElement) => {
                             // create new heading 5, with content of original paragraph
                             const heading = document.createElement('h5');
                             const span = document.createElement('span');
