@@ -13,6 +13,10 @@ if (nodeEnv !== objectivEnvironment) {
 const isProductionEnv = objectivEnvironment ? objectivEnvironment.startsWith('prod') : false;
 const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
 const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+const baseUrl = (isProductionEnv) ? '/docs/' : '/';
+const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-docs-staging' : 'objectiv-docs') : 'objectiv-docs-dev';
+const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
+const trackerConsoleEnabled = !isProductionEnv;
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -25,7 +29,7 @@ const config = {
   titleDelimiter: '|',
   tagline: 'Objectiv is a data collection & modeling library that puts the data scientist first.',
   url: websiteUrl,
-  baseUrl: (isProductionEnv) ? '/docs/' : '/',
+  baseUrl: baseUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
@@ -75,10 +79,10 @@ const config = {
     'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css',
   ],
   customFields: {
-    trackerDocsApplicationId: isProductionEnv ? (isStagingEnv? 'objectiv-docs-staging' : 'objectiv-docs') : 'objectiv-docs-dev',
-    trackerEndPoint: (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerDocsApplicationId: trackerApplicationId,
+    trackerEndPoint: trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: !isProductionEnv
+    trackerConsoleEnabled: trackerConsoleEnabled
   },
 
   themeConfig:

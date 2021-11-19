@@ -13,6 +13,11 @@ if (nodeEnv !== objectivEnvironment) {
 const isProductionEnv = objectivEnvironment ? objectivEnvironment.startsWith('prod') : false;
 const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
 const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
+const baseUrl = '/';
+const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev';
+const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
+const trackerConsoleEnabled = !isProductionEnv;
+const postBuildPlugin = !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null });
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -21,7 +26,7 @@ const config = {
   title: 'Objectiv - creating the ultimate workflow for data scientists',
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
-  baseUrl: '/',
+  baseUrl: baseUrl,
   url: websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
@@ -57,7 +62,7 @@ const config = {
   ],
   plugins: [
     path.resolve(__dirname, 'src/plugins/favicons/'),
-    !isStagingEnv ? path.resolve(__dirname, 'src/plugins/post-build/') : (function noPlugin() { return null }),
+    postBuildPlugin,
     require.resolve('docusaurus-plugin-image-zoom')
   ],
   scripts: [
@@ -69,10 +74,10 @@ const config = {
     },
   ],
   customFields: {
-    trackerApplicationId: isProductionEnv ? (isStagingEnv? 'objectiv-website-staging' : 'objectiv-website') : 'objectiv-website-dev',
-    trackerEndPoint: (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000',
+    trackerApplicationId: trackerApplicationId,
+    trackerEndPoint: trackerEndPoint,
     slackJoinLink: slackJoinLink,
-    trackerConsoleEnabled: !isProductionEnv
+    trackerConsoleEnabled: trackerConsoleEnabled
   },
 
   themeConfig:
@@ -91,7 +96,7 @@ const config = {
       items: [
         {
           label: 'Docs',
-          to: isStagingEnv ? 'https://staging.objectiv.io/docs' : 'https://objectiv.io/docs/', // ensure Docusaurus redirects to standalone docs
+          to: websiteUrl + 'docs', // ensure Docusaurus redirects to standalone docs
           target: '_self'
         },
         {
