@@ -31,7 +31,7 @@ const config = {
 
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'throw',
-  trailingSlash: false,
+  trailingSlash: true,
 
   presets: [
     [
@@ -92,15 +92,15 @@ const config = {
         items: [
           {
             label: 'Tracking',
-            to: '/tracking//',
+            to: '/tracking/',
           },
           {
             label: 'Modeling',
-            to: '/modeling//',
+            to: '/modeling/',
           },
           {
             label: 'Taxonomy',
-            to: '/taxonomy//',
+            to: '/taxonomy/',
           },
           {
             label: 'Objectiv.io \u{1F855}',
