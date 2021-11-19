@@ -3,7 +3,7 @@
 
 const path = require('path');
 
-const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'dev';
+const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
 const nodeEnv = process.env.NODE_ENV;
 // Ensure that production builds are not run on local machines, and vice versa
 if (nodeEnv != objectivEnvironment) {
