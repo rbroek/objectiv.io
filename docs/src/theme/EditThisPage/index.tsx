@@ -23,48 +23,46 @@ export default function EditThisPage({editUrl}: Props): JSX.Element {
     useBaseUrl('/the-project/update-the-docs') : editUrl;
 
   return (
-    <noindex>
-      <div 
-        {...tagElement({id: 'edit-this-page'})}
-      >
-        <ul>
-          <li className="ignore-for-search">
-            <Link
-              to={editThisPageUrl}
-              {...tagLink({ id: 'edit-docs-page', text: 'Suggest an edit', href: editThisPageUrl })}
-              rel="noopener nofollow">
-              Suggest an edit
-            </Link>
-          </li>
-          <li className="ignore-for-search">
-            <Link
-              to={customFields.slackJoinLink as string}
-              target="_blank"
-              {...tagLink({ id: 'get-help', text: 'Get help', href: customFields.slackJoinLink as string })}
-              rel="noopener nofollow">
-              Get help on Slack
-            </Link>
-          </li>
-          <li className="ignore-for-search">
-            <Link
-              to={'https://github.com/objectiv/objectiv-analytics'}
-              target="_blank"
-              {...tagLink({ id: 'submit-idea-or-bug-report', text: 'Submit idea or bug report', href: 'https://github.com/objectiv/objectiv-analytics' })}
-              rel="noopener nofollow">
-              Request feature or report issue
-            </Link>
-          </li>
-          <li className="ignore-for-search">
-            <Link
-              to={'https://github.com/objectiv/objectiv-analytics/projects/2'}
-              target="_blank"
-              {...tagLink({ id: 'roadmap', text: 'See the Roadmap', href: 'https://github.com/objectiv/objectiv-analytics/projects/2' })}
-              rel="noopener nofollow">
-              See the Roadmap
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </noindex>
+    <div 
+      {...tagElement({id: 'edit-this-page'})}
+    >
+      <ul>
+        <li className="ignore-for-search">
+          <Link
+            to={editThisPageUrl}
+            {...tagLink({ id: 'edit-docs-page', text: 'Suggest an edit', href: editThisPageUrl })}
+            rel="noopener">
+            Suggest an edit
+          </Link>
+        </li>
+        <li className="ignore-for-search">
+          <Link
+            to={customFields.slackJoinLink as string}
+            target="_blank"
+            {...tagLink({ id: 'get-help', text: 'Get help', href: customFields.slackJoinLink as string })}
+            rel="noopener">
+            Get help on Slack
+          </Link>
+        </li>
+        <li className="ignore-for-search">
+          <Link
+            to={'https://github.com/objectiv/objectiv-analytics'}
+            target="_blank"
+            {...tagLink({ id: 'submit-idea-or-bug-report', text: 'Submit idea or bug report', href: 'https://github.com/objectiv/objectiv-analytics' })}
+            rel="noopener">
+            Request feature or report issue
+          </Link>
+        </li>
+        <li className="ignore-for-search">
+          <Link
+            to={'https://github.com/objectiv/objectiv-analytics/projects/2'}
+            target="_blank"
+            {...tagLink({ id: 'roadmap', text: 'See the Roadmap', href: 'https://github.com/objectiv/objectiv-analytics/projects/2' })}
+            rel="noopener">
+            See the Roadmap
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 }
