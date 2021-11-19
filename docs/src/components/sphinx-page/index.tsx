@@ -90,6 +90,7 @@ const SphinxPage = (props) => {
                 // <p class="admonition-title"> ==> <div class="admonition-heading"><h5>[TITLE]</h5></div>
                 // <div class="admonition note"> ==> <div class="admonition admonition-tip alert alert--success">
                 // <div class="admonition warning"> ==> <div class="admonition admonition-danger alert alert--danger">
+                //  add span with svg icon to the header
                 Object.values(tempDiv.getElementsByTagName('div')).forEach( (element: HTMLDivElement) => {
                     if ( element.className in admonitionMap ) {
                         const admonition = admonitionMap[element.className]
@@ -105,12 +106,15 @@ const SphinxPage = (props) => {
                             span.innerHTML = admonition['icon'];
                             span.className = 'admonition-icon';
                             heading.appendChild(span);
+
                             heading.appendChild(document.createTextNode(title.textContent));
+
                             // create div container for the heading
                             const container = document.createElement('div');
                             container.appendChild(heading);
                             container.className = 'admonition-heading';
                             const parent = title.parentElement;
+
                             // swap paragraph with new div
                             parent.replaceChild(container, title);
                         });
