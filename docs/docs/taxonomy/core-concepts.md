@@ -4,6 +4,8 @@ slug: /taxonomy/core-concepts
 title: Core Concepts
 ---
 
+# Taxonomy Core Concepts
+
 import Mermaid from '@theme/Mermaid';
 
 The open taxonomy consists of:

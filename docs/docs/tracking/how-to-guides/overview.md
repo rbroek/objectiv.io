@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-slug: /how-to-guides
+slug: /tracking/how-to-guides/
 title: Overview
 ---
 
-## Tracking Instrumentation
+# Tracking How-to Guides
+
 To immediately jump into instrumenting your application, follow the step-by-step How-to Guides below:
 
 * Getting started with [React](/tracking/how-to-guides/react/getting-started.md).

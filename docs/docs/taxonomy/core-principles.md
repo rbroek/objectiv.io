@@ -1,8 +1,10 @@
 ---
 sidebar_position: 2
 slug: /taxonomy/core-principles
-title: Core Principles
+title: Principles
 ---
+
+# Taxonomy Principles
 
 To help ensure that the open taxonomy will enable data scientists to collect better data and model more effectively, we’ve created a set of core principles. Any new development or update will be checked against these principles.
 
