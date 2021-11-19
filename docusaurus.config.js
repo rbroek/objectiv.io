@@ -3,10 +3,16 @@
 
 const path = require('path');
 
-const nodeEnv = process.env.NODE_ENV;
-const isProductionEnv = nodeEnv ? nodeEnv.startsWith('prod') : false;
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'dev';
-const isStagingEnv = objectivEnvironment ? (isProductionEnv && objectivEnvironment.startsWith('staging')) : false;
+const nodeEnv = process.env.NODE_ENV;
+// Ensure that production builds are not run on local machines, and vice versa
+if (nodeEnv != objectivEnvironment) {
+  throw new Error("WARNING: NODE_ENV ("+nodeEnv+") and OBJECTIV_ENVIRONMENT (" + objectivEnvironment + ") "
+    + "are not equal");
+}
+const isProductionEnv = objectivEnvironment ? objectivEnvironment.startsWith('prod') : false;
+const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
+const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
@@ -16,7 +22,7 @@ const config = {
   titleDelimiter: '|',
   tagline: 'A data collection & modeling library that puts the data scientist first.', //meta description, and og:description
   baseUrl: '/',
-  url: isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/',
+  url: websiteUrl,
   favicon: 'img/favicon/favicon.ico',
   organizationName: 'objectiv', // Usually your GitHub org/user name.
   projectName: 'objectiv.io', // Usually your repo name.
