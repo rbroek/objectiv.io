@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 slug: /taxonomy/core-concepts
 title: Core Concepts
 ---
+
+# Taxonomy Core Concepts
 
 import Mermaid from '@theme/Mermaid';
 

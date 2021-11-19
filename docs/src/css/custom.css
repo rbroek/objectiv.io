@@ -84,6 +84,22 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 /** DOCS **/
+
+/* Hide/show anchors on auto-generated modeling docs */
+.sphinxAnchor:hover > a.headerlink {
+  display: inline-block;
+  margin-left: 5px;
+}
+.sphinxAnchor .headerlink {
+  display: none;
+}
+.reference:hover > a.headerlink {
+  display: inline-block;
+}
+.reference .headerlink {
+  display: none;
+}
+
 div.docs-wrapper footer {
   padding: 20px 0;
   text-align: left;
@@ -103,7 +119,7 @@ div.docs-wrapper footer {
   padding: 0 var(--ifm-pre-padding);
 }
 
-img {
+.docs-wrapper img {
   display: block;
   margin: 20px auto;
 }
@@ -270,13 +286,18 @@ dl blockquote {
   fill: rgb(212, 212, 212) !important;
 }  
 .diagram-blue rect {
-  fill: #abe9feff !important;
-  stroke: rgb(0, 100, 150) !important;
+  fill: #EAF9FE !important;
+  stroke: #64C8FA !important;
 }
 .hover .diagram-blue rect, .diagram-blue .hover rect {
-  fill: rgb(100, 200, 250) !important;
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
 }
-.diagram-pink rect, .diagramActive rect {
+.diagramActive rect {
+  fill: #ABE9FE !important;
+  stroke: #006496 !important;
+}
+.diagram-pink rect {
   fill: #fba99dff !important;
   stroke: rgb(200, 50, 25) !important;
 }
@@ -317,4 +338,12 @@ dl blockquote {
     opacity: 1;
     box-shadow: 0 0 500px rgba(241, 241, 241, 0);
   }
+}
+
+.sphinxAnchor {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+}
+
+a.headerlink {
+  display: none;
 }

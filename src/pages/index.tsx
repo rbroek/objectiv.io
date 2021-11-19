@@ -144,7 +144,7 @@ export default function Home() {
                       to={url + "docs/taxonomy/"}
                       {...tagLink({
                           id: 'cta-docs-taxonomy', 
-                          href: '/docs/taxonomy/', 
+                          href: '/docs/taxonomy/',
                           text: 'Docs - Taxonomy',
                           options: {
                             trackClicks: {
@@ -280,7 +280,7 @@ export default function Home() {
                     <Link 
                       to="https://notebook.objectiv.io/lab?path=product_analytics.ipynb" 
                       {...tagLink({
-                          id: 'cta-docs-demo-notebook', 
+                          id: 'demo-notebook', 
                           href: 'https://notebook.objectiv.io/lab?path=product_analytics.ipynb', 
                           text: 'Live Demo Notebook',
                           options: {
