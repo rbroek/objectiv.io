@@ -43,6 +43,42 @@ const SphinxPage = (props) => {
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = raw;
 
+                // fix admonitions
+                // <p class="admonition-title"> ==> <div class="admonition-heading"><h5>[TITLE]</h5></div>
+                // first get all paragraphs that match
+                const _titles = document.evaluate('//p[@class="admonition-title"]',
+                    tempDiv, null, XPathResult.ANY_TYPE, null);
+
+                const titles = [];
+                while (true) {
+                    const title = _titles.iterateNext();
+                    if ( !title ){
+                        break;
+                    }
+                    titles.push(title);
+                }
+                Object.values(titles).forEach(title => {
+
+                    // create new heading 5, with content of original paragraph
+                    const heading = document.createElement('h5');
+                    heading.textContent = title.textContent;
+                    // create div container for the heading
+                    const container = document.createElement('div');
+                    container.appendChild(heading);
+                    container.className = 'admonition-heading';
+                    const parent = title.parentElement;
+                    // swap paragraph with new div
+                    parent.replaceChild(container, title);
+                });
+                // <div class="admonition note"> ==> <div class="admonition admonition-tip alert alert--success">
+                // <div class="admonition warning"> ==> <div class="admonition admonition-danger alert alert--danger">
+                Object.values(tempDiv.getElementsByTagName('div')).forEach( (element: HTMLDivElement) => {
+                    if ( element.className == 'admonition note' ){
+                        element.className = 'admonition admonition-tip alert alert--success';
+                    } else if ( element.className == 'admonition warning') {
+                        element.className = 'admonition admonition-danger alert alert--danger';
+                    }
+                });
                 // get base from window.location, should be something like https://objectiv.io, or http://localhost:3000
                 const currentSite = window.location.toString().match(/^(http[s]?:\/\/[a-z0-9.:]+\/).*?$/);
 
@@ -68,6 +104,9 @@ const SphinxPage = (props) => {
                         if ( a.className == 'headerlink' && a.text == '¶' ){
                             a.text = '#';
                         }
+                    } else {
+                        // add target="_blank" to the <a> link for non-internal links, such as to pandas docs
+                        a.target = '_blank';
                     }
                 });
 
