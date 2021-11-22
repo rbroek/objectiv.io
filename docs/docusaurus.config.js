@@ -4,19 +4,28 @@
 const path = require('path');
 
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
-const nodeEnv = process.env.NODE_ENV;
-// Ensure that production builds are not run on local machines, and vice versa
-if (nodeEnv !== objectivEnvironment) {
-  throw new Error("WARNING: NODE_ENV ("+nodeEnv+") and OBJECTIV_ENVIRONMENT (" + objectivEnvironment + ") "
-    + "are not equal");
+
+// this is development, which is the default
+let baseUrl = '/';
+let trackerConsoleEnabled = true;
+let trackerApplicationId = 'objectiv-docs-dev';
+let websiteUrl = 'http://localhost:3000/';
+let trackerEndPoint = 'http://localhost:5000';
+
+if ( objectivEnvironment == 'production' ){
+  baseUrl = '/docs/';
+  trackerApplicationId = 'objectiv-docs';
+  trackerConsoleEnabled = false;
+  websiteUrl = 'https://objectiv.io/';
+  trackerEndPoint = 'https://collector.objectiv.io';
+} else if ( objectivEnvironment == 'staging' ){
+  baseUrl = '/docs/';
+  trackerApplicationId = 'objectiv-docs-staging';
+  trackerConsoleEnabled = true;
+  websiteUrl = 'https://staging.objectiv.io/';
+  trackerEndPoint = 'https://collector.objectiv.io';
 }
-const isProductionEnv = objectivEnvironment ? objectivEnvironment.startsWith('prod') : false;
-const isStagingEnv = objectivEnvironment ? (objectivEnvironment.startsWith('staging')) : false;
-const websiteUrl = isStagingEnv ? 'https://staging.objectiv.io/' : 'https://objectiv.io/';
-const baseUrl = (isProductionEnv) ? '/docs/' : '/';
-const trackerApplicationId = isProductionEnv ? (isStagingEnv? 'objectiv-docs-staging' : 'objectiv-docs') : 'objectiv-docs-dev';
-const trackerEndPoint = (isProductionEnv) ? 'https://collector.objectiv.io' : 'http://localhost:5000';
-const trackerConsoleEnabled = !isProductionEnv;
+
 
 const slackJoinLink = 'https://join.slack.com/t/objectiv-io/shared_invite/zt-u6xma89w-DLDvOB7pQer5QUs5B_~5pg';
 
