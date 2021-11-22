@@ -4,6 +4,12 @@
 const path = require('path');
 
 const objectivEnvironment = process.env.OBJECTIV_ENVIRONMENT ?? 'development';
+const nodeEnv = process.env.NODE_ENV;
+
+// only allow yarn start (dev) in dev mode
+if (nodeEnv === 'development' && objectivEnvironment !== 'development'){
+  throw new Error(`Not allowed to use 'yarn start' on non dev build (OBJECTIV_ENVIRONMENT=${process.env.OBJECTIV_ENVIRONMENT})`);
+}
 
 // this is development, which is the default
 let baseUrl = '/';
@@ -12,13 +18,13 @@ let trackerApplicationId = 'objectiv-docs-dev';
 let websiteUrl = 'http://localhost:3000/';
 let trackerEndPoint = 'http://localhost:5000';
 
-if ( objectivEnvironment == 'production' ){
+if ( objectivEnvironment === 'production' ){
   baseUrl = '/docs/';
   trackerApplicationId = 'objectiv-docs';
   trackerConsoleEnabled = false;
   websiteUrl = 'https://objectiv.io/';
   trackerEndPoint = 'https://collector.objectiv.io';
-} else if ( objectivEnvironment == 'staging' ){
+} else if ( objectivEnvironment === 'staging' ){
   baseUrl = '/docs/';
   trackerApplicationId = 'objectiv-docs-staging';
   trackerConsoleEnabled = true;
