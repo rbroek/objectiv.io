@@ -31,9 +31,6 @@ This will spin up the following containers
 
 <img src={useBaseUrl('/img/objectiv-pipeline.svg')} alt="Objectiv Pipeline" class="img-l" />
 
-**Security Warning:** The above `docker-compose` command starts a postgres container that allows connections
-without verifying passwords. Do not use this in production or on a shared system!
-
 The initial startup may take a bit longer because the image is quite big (~2GB) and needs to be downloaded first.
 
 ### Exploring the data
@@ -43,7 +40,6 @@ To explore the data in the demo notebook, go to:
 ```bash
 http://localhost:8888/lab/tree/product_analytics.ipynb?token=objectiv
 ```
-
 For detailed modeling instructions, check out our [modeling docs](/modeling).
 
 ### Generating Events
@@ -53,8 +49,11 @@ To generate event data yourself, simply go to the local version of the objectiv 
 http://localhost:8080/
 ```
 
-When you trigger an event, you can see a request show up in your docker logs. If you used a terminal to spin up the containers, it shows there as well. If you rerun the models in your notebook, the new event data is now included.
+When you trigger an event, you can see a request show up in your docker logs. If you used a terminal to spin up the containers, it shows there as well. 
 
+:::info
+Please note that all events have a UTC timestamp. To see/use your new events in the Demo Notebook, please rebuild the full dataframe in the third cell of the notebook and re-run all cells up to 'Set the timeframe'
+:::
 ### Next Steps
 
 We hope you enjoy playing around with Objectiv. If you want to learn more about tracking & modeling with Objectiv, or about the open taxonomy, check out the rest of the Docs:
