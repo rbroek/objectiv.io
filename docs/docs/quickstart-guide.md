@@ -52,7 +52,7 @@ http://localhost:8080/
 When you trigger an event, you can see a request show up in your docker logs. If you used a terminal to spin up the containers, it shows there as well. 
 
 :::info
-Please note that all events have a UTC timestamp. To see/use your new events in the Demo Notebook, please rebuild the full dataframe in the third cell of the notebook and re-run all cells up to 'Set the timeframe'
+Please note that all events have a UTC timestamp. To see/use your new events in the Demo Notebook, just rerun the 'Explore the data' cell.
 :::
 ### Next Steps
 
