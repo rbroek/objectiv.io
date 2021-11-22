@@ -7,8 +7,8 @@ slug: /modeling/dataframe/bach.DataFrame.materialize
 
 ---
 <head>
-    <meta name="description" content="Create a copy of this DataFrame with as base_node the current DataFrame’s state." />
-    <meta property="og:description" content="Create a copy of this DataFrame with as base_node the current DataFrame’s state." />
+    <meta name="description" content="Create a copy of this DataFrame with as base_node the current DataFrame’s state. This effectively adds a node to the underlying SqlModel graph. Generally adding nodes increases the size of the generated SQL query. But this can be useful if the current DataFrame contains expressions that you want to evaluate before further expressions are build on top of them. This might make sense for very large expressions, or for non-deterministic expressions (e.g. see  ).  – The name of the node that’s going " />
+    <meta property="og:description" content="Create a copy of this DataFrame with as base_node the current DataFrame’s state. This effectively adds a node to the underlying SqlModel graph. Generally adding nodes increases the size of the generated SQL query. But this can be useful if the current DataFrame contains expressions that you want to evaluate before further expressions are build on top of them. This might make sense for very large expressions, or for non-deterministic expressions (e.g. see  ).  – The name of the node that’s going " />
 </head>
 
 export const toc = [];

@@ -7,8 +7,8 @@ slug: /modeling/dataframe/bach.DataFrame.copy
 
 ---
 <head>
-    <meta name="description" content="Return a copy of this DataFrame." />
-    <meta property="og:description" content="Return a copy of this DataFrame." />
+    <meta name="description" content="Return a copy of this DataFrame. As this dataframe only represents data in the backing SQL store, and does not contain any data, this is a metadata copy only, no actual data is duplicated and changes to the underlying data will represented in both copy and original. Changes to data, index, sorting, grouping etc. on the copy will not affect the original. If you want to create a snapshot of the data, have a look at  a copy of the dataframe previous bach.DataFrame.astype next bach.DataFrame.count" />
+    <meta property="og:description" content="Return a copy of this DataFrame. As this dataframe only represents data in the backing SQL store, and does not contain any data, this is a metadata copy only, no actual data is duplicated and changes to the underlying data will represented in both copy and original. Changes to data, index, sorting, grouping etc. on the copy will not affect the original. If you want to create a snapshot of the data, have a look at  a copy of the dataframe previous bach.DataFrame.astype next bach.DataFrame.count" />
 </head>
 
 export const toc = [];
