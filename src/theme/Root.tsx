@@ -28,7 +28,7 @@ const cookiebotConsentStatistics = (): boolean => {
     return false;
   }
 
-  return Cookiebot.consent.statistics ?? false;
+  return Cookiebot?.consent?.statistics ?? false;
 }
 
 function Root({children}) {
